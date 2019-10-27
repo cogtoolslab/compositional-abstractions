@@ -1,0 +1,31 @@
+{
+  "name": "refgameserver",
+  "version": "0.0.1",
+  "scripts": {
+    "build": "webpack --mode development ./src/client.js --output ./dist/js/bundle.js; node app.js"
+  },
+  "private": true,
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "color-convert": "~1.0.0",
+    "colors": "^1.3.0",
+    "csv-parse": "~0.0.6",
+    "delta-e": "~0.0.7",
+    "express": "^4.16.3",
+    "jsonfile": "~2.4.0",
+    "lodash": "^4.17.10",
+    "minimist": "^1.2.0",
+    "mkdirp": "^0.5.1",
+    "mongodb": "^2.2.35",
+    "request": "^2.87.0",
+    "socket.io": "^2.1.1",
+    "socket.io-client": "^2.2.0",
+    "underscore": "~1.7.0",
+    "uuid": "^3.3.2",
+    "webpack": "^4.28.3",
+    "xmldom": "^0.1.27"
+  },
+  "devDependencies": {
+    "webpack-cli": "^3.2.0"
+  }
+}

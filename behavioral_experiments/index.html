@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title> Reference game </title>
+    <!-- Load style sheet -->
+    <link href="/dist/css/custom.css" media="screen" rel="stylesheet" type="text/css">
+
+    <!-- Load jQuery, which lets us handle mouse events -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    
+    <script type="text/javascript" src="dist/js/bundle.js"></script>
+
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font: 13px Helvetica, Arial; }
+        #messages li { padding: 5px 10px; }
+        /*#messages li:nth-child(odd) { background: #eee; }*/
+    </style>
+
+    </head>
+
+  <body>
+
+    <div id='header'>
+      <div id='textInfo'>
+	<h1 id='roleLabel'></h1> 
+	<p id='instructs'> </p>
+      </div>
+      <p style="color:white" id='feedback'> </p>
+      <p style="color:red" id='roundnumber'>Waiting room</p>
+      <p style="color:green" id='score'>total bonus: $0.00</p>
+    </div>
+
+    <p id="waiting"></p>
+
+    <div id='main'>
+      <div id='message_panel'>
+        <ul id="messages"></ul>
+        <hr>
+        <div id="chatarea">
+	  <form action="">
+            <input type="text" id="chatbox" autocomplete="off" />
+            <input type="submit" id="chatbutton" value="Send"></>
+	  </form>
+        </div>
+      </div>
+      <div id="object_grid"> </div>
+    </div>
+    
+
+    <div id="exit_survey" style="display:none">
+      <br><br><br><br><br>
+      <p> How would you describe your strategy in this experiment? </p>
+      <textarea id='strategy' rows="4" cols="50"></textarea>
+      <!-- <p> Did you believe you were playing against another human player? </p> -->
+      <!-- <select onChange="dropdownTip('human::' + this.value)"> -->
+      <!-- 	<option value=""></option> -->
+      <!-- 	<option value="yes">Yes, I thought they were a human</option> -->
+      <!-- 	<option value="no">No, I thought it was a computer program</option> -->
+      <!-- </select> -->
+      <!-- <p id='humanResult' style="display:none;color:red"> Thank you for your response -- in fact, all players were paired with other human turkers! <p> -->
+
+	<br> <br>
+      <p> Are you a native English speaker? </p>
+      <select onChange="dropdownTip('language::' + this.value)">
+	<option value = ""></option>
+	<option value="yes">Yes</option>
+	<option value="no">No</option>
+      </select>
+      <br><br>
+      <p> How much did you like working with your partner? </p>
+      <select onChange="dropdownTip('partner::' + this.value)">
+        <option value = ""></option>
+        <option value="not much">Not that much</option>
+        <option value="okay">My partner was fine</option>
+        <option value="liked">I liked working with my partner</option>
+        <option value="loved">I really enjoyed working with my partner</option>
+      </select>
+      <br><br>
+      <p> Did you read the instructions and do you think you did the 
+	HIT correctly? </p>
+      <select onChange="dropdownTip('confused::' + this.value)">
+	<option value = ""></option>
+	<option value="yes">Yes</option>
+	<option value="no">No</option>
+	<option value="confused">I was confused</option>
+      </select>
+
+      <br><br>
+
+      <p> Did you notice any problems or have any other comments on the experiment? </p>
+      <textarea id='comments' rows="4" cols="50"></textarea>
+      <br>
+      <p> Clicking this button should automatically submit the HIT and close this tab. </p>
+      <div><button id="surveySubmit" onclick="dropdownTip('submit');$('#button_error').show()" type="button">Submit HIT</button></div>
+      <center><div style="display:none;width:70%;" id="button_error">
+	  <p>
+	    If you have clicked the button and nothing happened, you
+	    can use the code box that appeared on the mturk tab as
+	    a <b>backup method</b> to make sure you still get paid: just
+	    enter the code <strong>E2iZwi8d</strong> -- no need to contact us!
+	  </p>
+	  <p>
+	    If still experience a problem submitting with that method,
+	    please contact rxdh@stanford.edu for compensation.
+	  </p>
+    </div>
+  </body>
+</html>
