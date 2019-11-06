@@ -13,16 +13,44 @@
     <button id="send-message" type="button" class="btn btn-primary">Send.</button>
     <button id="leave-chat" type="button" class="btn">Leave chat.</button>
   </div>
-  <div id="object-grid"></div>
-  <p id='score'></p>
-  <div id="trial-counter">Loading...</div>
+  
+  <div class="row">
+    <div class="col-md" id="stimulus-window"></div>
+    <div class="col-md" id="environment-window"></div>
+  </div>
+
+  <div class="row pt-2" id="experiment-button-col">
+    <div class="col-auto mr-auto button-col">
+      <button type="something" class="btn btn-primary" id="something" value="something" onclick="">Something</button>
+    </div>
+    <div class="col-auto button-col" id="env-buttons">
+      <button type="button" class="btn btn-success" id="done" value="done" onclick="donePressed();">Done</button>
+      <button type="button" class="btn btn-danger" id="reset" value="reset" onclick="resetPressed();">Reset</button>
+    </div>
+  </div>
+
+  <div class="row pt-2" id="trial-info">
+    <p id='score'></p>
+    <div class="col align-text-center" id="trial-counter">
+      <p>Trial 1 of 1</p>
+    </div>
+  </div>
 </div>
 {% endblock %}
 
 {% block libs %}
 {{ super() }}
   <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/2.4.1/lodash.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.10.2/p5.js"></script>
+  <script src="/static/scripts/boundary.js"></script>
+  <script src="/static/scripts/blockMenu.js"></script>
+  <script src="/static/scripts/block.js"></script>
+  <script src="/static/scripts/blockKind.js"></script>
+  <script src="/static/scripts/canvasInteraction.js"></script>
+  <script src="/static/scripts/displayStimuli.js"></script>
+  <script src="/static/scripts/experimentEnvironment.js"></script>
   <script src="/static/scripts/pubsub.js" type="text/javascript"> </script>
   <script src="/static/scripts/matter.js" type="text/javascript"> </script>
+  <script src="/static/scripts/p5.js"></script>
   <script src="/static/scripts/experiment.js" type="text/javascript"> </script>
 {% endblock %}
