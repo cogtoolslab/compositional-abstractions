@@ -45,6 +45,7 @@ class CoordinationChatRoomClient {
   }
 
   initializeUI() {
+    const p5stim, p5env = buildStage(this.currStim);
     $("#chat-history").show();
     $("#feedback").html("");
     $("#trial-counter").text('trial ' + (this.trialNum + 1) + '/24');
@@ -56,38 +57,6 @@ class CoordinationChatRoomClient {
     $("#reproduction").focus();
   }
   
-  initializeStimGrid() {
-    $('#object-grid').empty();
-    _.forEach(_.shuffle(this.currStim), (stim, i) => {
-      const bkg = 'url(./static/images/' + stim.url + ')';
-      const div = $('<div/>')
-	  .addClass('pressable')
-	  .attr({'id' : stim.targetStatus})
-	  .css({'background' : bkg})
-	  .css({
-	    'position': 'relative',
-	    'grid-row': 1, 'grid-column': i+1,
-	    'background-size' :'cover'
-	  });
-      $("#object-grid").append(div);
-    });
-
-    // Outline target if speaker; set click handlers if listener
-    if(this.role === 'speaker') {
-      $('#target').css({'outline' : 'solid 10px #5DADE2', 'z-index': 2});
-    } else if (this.role === 'listener') {
-      $('div.pressable').click(event => {
-	if(self.messageSent & !self.alreadyClicked) {
-	  const clickedId = event.target.id;
-	  this.alreadyClicked = true;
-	  this.socket.broadcast({
-	    'type' : 'clickedObj', 'object_id' : clickedId,
-	    'networkid' : this.networkid, 'participantid' : this.participantid});
-	}
-      });
-    }
-  };
-
   handleClickedObj(msg) {
     const correct = msg.object_id == "target";
     
