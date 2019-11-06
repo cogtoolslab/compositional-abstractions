@@ -1,0 +1,27 @@
+{% extends "layout.html" %}
+
+{% block body %}
+<div class="main_div">
+  <p id='feedback'> </p>
+  <p>Chat log:</p>
+  <div id="chat-history">
+    <div><blockquote id="story"></blockquote></div>
+  </div>
+  <div id="response-form" style="display:none;">
+    <input type="text" id="reproduction" class="form-control" />
+    <p></p>
+    <button id="send-message" type="button" class="btn btn-primary">Send.</button>
+    <button id="leave-chat" type="button" class="btn">Leave chat.</button>
+  </div>
+  <div id="object-grid"></div>
+  <p id='score'></p>
+  <div id="trial-counter">Loading...</div>
+</div>
+{% endblock %}
+
+{% block libs %}
+{{ super() }}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/2.4.1/lodash.min.js"></script>
+    <script src="/static/scripts/experiment.js" type="text/javascript"> </script>
+    <script src="/static/scripts/pubsub.js" type="text/javascript"> </script>    
+{% endblock %}
