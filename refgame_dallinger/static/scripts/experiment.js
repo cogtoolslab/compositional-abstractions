@@ -45,7 +45,20 @@ class CoordinationChatRoomClient {
   }
 
   initializeUI() {
-    const p5stim, p5env = buildStage(this.currStim);
+    // TODO: refactor to get rid of p5env and p5stim globals (e.g. make canvasInteraction part of class)
+    this.p5 = buildStage(this.currStim, this.socket);
+    p5env = this.p5.env;
+    p5stim = this.p5.stim;
+    if(this.role == 'speaker') {
+      $('#experiment-button-col').hide();
+      $('#environment-window').hide();
+      $('#stimulus-window').show();
+    } else if(this.role == 'listener') {
+      $('#experiment-button-col').show();
+      $('#environment-window').show();
+      $('#stimulus-window').hide();
+    }
+    
     $("#chat-history").show();
     $("#feedback").html("");
     $("#trial-counter").text('trial ' + (this.trialNum + 1) + '/24');
@@ -121,7 +134,6 @@ class CoordinationChatRoomClient {
     this.currStim = msg['currStim'];
     this.alreadyClicked = false;
     this.messageSent = false;      
-    this.initializeStimGrid();
     this.initializeUI();
   }
 
@@ -139,7 +151,21 @@ class CoordinationChatRoomClient {
     // Handle messages from server
     this.socket.subscribe(self.block(this.newRound.bind(this)), "newRound", this);
     this.socket.subscribe(self.block(this.handleChatReceived.bind(this)), "chatMessage", this);
-    this.socket.subscribe(self.block(this.handleClickedObj.bind(this)), "clickedObj", this);
+
+    // if reset button clicked, reset build a fresh p5 instance
+    $('#reset').click(e => {
+      resetEnv();
+      p5env = new p5(setupEnvironment, 'environment-canvas');
+    });
+
+    // if done button clicked, tell the server to advance to next round
+    $('#done').click(e => {
+      clearP5Envs();
+      self.socket.broadcast({
+	type : 'done',
+	networkid: this.networkid
+      });  
+    })
     
     // Send whatever is in the chatbox when button clicked
     $("#send-message").click(() => {
