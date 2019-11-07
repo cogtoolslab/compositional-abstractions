@@ -1,7 +1,6 @@
 // Experiment frame, with Matter canvas and surrounding buttons
 
 var imagePath = '../img/';
-const  socket = io.connect();
 
 // TEMPORARY VARIABLES TO BE READ IN
 
@@ -73,7 +72,7 @@ var blockDims = [
     [4, 2]
 ];
 
-var setupEnvironment = function (env, disabledEnvironment = false) {
+var setupEnvironment = function (env, socket, disabledEnvironment = false) {
 
     // Processing JS Function, defines initial environment.
     env.setup = function() {
@@ -274,57 +273,17 @@ var setupStimulus = function (p5stim, stimBlocks) {
 
 };
 
-var trial = function(condition='external') {
-    if (condition=='external'){
-        explore()
-    }
-    else if (condition=='internal'){
-        simulate()
-    }
-    else {
-        console.log('Unrecognised condition type, use `external` or `internal`')
-    }
-    //wait until returned, then
-    /*
-    p5stim = new p5(setupStimulus,'stimulus-canvas');
-    p5env = new p5(setupEnvironment,'environment-canvas');*/
-
-    // then
-    //resetStimWindow()
-
-}
-var simulate = function (targetBlocks) {
-    p5stim = new p5((env) => {
-        setupStimulus(env, targetBlocks)
-    }, 'stimulus-canvas');
-    p5env = new p5((env) => {
-        setupEnvironment(env, disabledEnvironment = true)
-    }, 'environment-canvas');
-    return p5stim, p5env
+var buildStage = function (targetBlocks, socket, role) {
+  const p5stim = new p5((env) => {
+    setupStimulus(env, targetBlocks);
+  }, 'stimulus-canvas');
+  const p5env = new p5((env) => {
+    setupEnvironment(env, socket, false);
+  }, 'environment-canvas');
+  return {stim: p5stim, env: p5env};
 }
 
-var explore = function (targetBlocks) {
-    p5stim = new p5((env) => {
-        setupStimulus(env, targetBlocks)
-    }, 'stimulus-canvas');
-    p5env = new p5((env) => {
-        setupEnvironment(env, disabledEnvironment = false)
-    }, 'environment-canvas');
-    return p5stim, p5env
-}
-
-var buildStage = function (targetBlocks) {
-    p5stim = new p5((env) => {
-        setupStimulus(env,targetBlocks)
-    }, 'stimulus-canvas');
-    p5env = new p5((env) => {
-        setupEnvironment(env, disabledEnvironment = false)
-    }, 'environment-canvas');
-    return p5stim, p5env
-}
-
-var resetEnv = function(){
-    
+var resetEnv = function(){    
     // remove environment
     p5env.remove(); 
     
