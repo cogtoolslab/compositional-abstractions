@@ -1,4 +1,4 @@
-/*globals $, dallinger */
+/*globals $, dallinger, pubsub, p5 */
 const ws_scheme = (window.location.protocol === "https:") ? 'wss://' : 'ws://';
 
 class CoordinationChatRoomClient {
@@ -128,6 +128,11 @@ class CoordinationChatRoomClient {
     $("#send-message").html("Send");
   }
 
+  handleDone(msg) {
+    this.score += msg.score;
+    $('score').html(msg.score);
+  }
+  
   newRound(msg) {
     this.trialNum = msg['trialNum'];
     this.role = msg['roles']['speaker'] == this.participantid ? 'speaker' : 'listener';
@@ -151,6 +156,7 @@ class CoordinationChatRoomClient {
     // Handle messages from server
     this.socket.subscribe(self.block(this.newRound.bind(this)), "newRound", this);
     this.socket.subscribe(self.block(this.handleChatReceived.bind(this)), "chatMessage", this);
+    this.socket.subscribe(self.block(this.handleDone.bind(this)), "done", this);    
 
     // if reset button clicked, reset build a fresh p5 instance
     $('#reset').click(e => {
@@ -160,10 +166,15 @@ class CoordinationChatRoomClient {
 
     // if done button clicked, tell the server to advance to next round
     $('#done').click(e => {
+      const score = getMatchScore('defaultCanvas0', 'defaultCanvas1', 64);
+      console.log('score = ', score);
       clearP5Envs();
+
       self.socket.broadcast({
 	type : 'done',
-	networkid: this.networkid
+	participantid : this.participantid,
+	networkid: this.networkid,
+	score: score
       });  
     })
     
