@@ -1,6 +1,5 @@
 // Experiment frame, with Matter canvas and surrounding buttons
 
-var imagePath = '../img/';
 
 // TEMPORARY VARIABLES TO BE READ IN
 
@@ -65,194 +64,166 @@ var newSelectedBlockKind; // init this variable so we can inspect it in the cons
 var newBlock; // init this variable so we can inspect it in the console
 
 var blockDims = [
-    [1, 2],
-    [2, 1],
-    [2, 2],
-    [2, 4],
-    [4, 2]
+  [1, 2],
+  [2, 1],
+  [2, 2],
+  [2, 4],
+  [4, 2]
 ];
 
 var setupEnvironment = function (env, socket, disabledEnvironment = false) {
 
-    // Processing JS Function, defines initial environment.
-    env.setup = function() {
+  // Processing JS Function, defines initial environment.
+  env.setup = function() {
 
-        // Create Experiment Canvas
-        environmentCanvas = env.createCanvas(canvasX, canvasY); // creates a P5 canvas (which is a wrapper for an HTML canvas)
-        environmentCanvas.parent('environment-window'); // add parent div 
+    // Create Experiment Canvas
+    const environmentCanvas = env.createCanvas(canvasX, canvasY); // creates a P5 canvas (which is a wrapper for an HTML canvas)
+    environmentCanvas.parent('environment-window'); // add parent div 
 
-        // Set up Matter Physics Engine
-        engineOptions = {
-            enableSleeping: true,
-            velocityIterations: 24,
-            positionIterations: 12
-        }
-
-        world = World.create({
-            gravity: {
-                y: 2
-            }
-        })
-        engine = Engine.create(engineOptions);
-        engine.world = world;
-        //engine.world.gravity.y= 2;
-
-
-
-        // Create block kinds that will appear in environment/menu. Later on this will need to be represented in each task.
-        
-        var block_color = [15, 139, 141, 200];
-        if (disabledEnvironment) {
-            block_color = [100, 100, 100, 30];
-        }
-
-        blockDims.forEach(dims => {
-            w = dims[0]
-            h = dims[1]
-            blockKinds.push(new BlockKind(w, h, block_color));
-        });
-
-        // Create Block Menu
-        blockMenu = new BlockMenu(menuHeight, blockKinds);
-
-        // Add things to the physics engine world
-        ground = new Boundary(canvasX/2, (environmentCanvas.height - menuHeight)*1.15, canvasX*1.5, canvasY/3);
-        //box1 = new Box(200, 100, 30, 30);
-
-        // Runner- use instead of line above if changes to game loop needed
-
-        runner = Matter.Runner.create({
-            isFixed: true
-        });
-        Runner.run(runner, engine);
-
-        // Set up interactions with physics objects
-        // TO DO: stop interactions with menu bar rect
-        var canvasMouse = Mouse.create(environmentCanvas.elt); //canvas.elt is the html element associated with the P5 canvas
-        canvasMouse.pixelRatio = env.pixelDensity(); // Required for mouse's selected pixel to work on high-resolution displays
-
-        var options = {
-            mouse: canvasMouse // set object to mouse object in canvas
-        }
-        /* set up constraint between mouse and block- used to move around blocks with mouse click
-        mConstraint = MouseConstraint.create(engine, options); // Create 'constraint' (like a spring) between mouse and 'body' object. 'body' is defined when mouse clicked.
-        mConstraint.constraint.stiffness = 0.2; // can change properties of mouse interaction by playing with this constraint
-        mConstraint.constraint.angularStiffness = 1;
-        World.add(engine.world, mConstraint); // add the mouse constraint to physics engine world    
-        */
-
+    // Set up Matter Physics Engine
+    const engineOptions = {
+      enableSleeping: true,
+      velocityIterations: 24,
+      positionIterations: 12
     }
 
+    const world = World.create({
+      gravity: {
+        y: 2
+      }
+    })
+    engine = Engine.create(engineOptions);
+    engine.world = world;
+    //engine.world.gravity.y= 2;
 
-    env.draw = function() { // Called continuously by Processing JS 
-        env.background(220);
-        ground.show(env);
 
-        // Menu
-        blockMenu.show(env);
-        /*
-        // Rotate button
-        env.noFill();
-        env.stroke(200);
-        env.arc(canvasX - 50, 50, 50, 50, env.TWO_PI, env.PI + 3 * env.QUARTER_PI);
-        env.line(canvasX - 50 + 25, 50 - 23, canvasX - 50 + 25, 40);
-        env.line(canvasX - 50 + 12, 40, canvasX - 50 + 25, 40);
-        */
 
-        blocks.forEach(b => {
-            b.show(env);
-        });
-        /* For moving blocks with mouse drag
-        if (mConstraint.body) { //if the constraint exists
-            var pos = mConstraint.body.position;
-            var offset = mConstraint.constraint.pointB;
-            var m = mConstraint.mouse.position;
-            stroke(0, 255, 0);
-            line(pos.x + offset.x, pos.y + offset.y, m.x, m.y); // draw line of mouse constraint
-        }*/
-        if (isPlacingObject) {
-            env.noCursor(); //feel like this is horribly ineffecient...
-            selectedBlockKind.showGhost(env,env.mouseX, env.mouseY, rotated);
-        }
-
+    // Create block kinds that will appear in environment/menu. Later on this will need to be represented in each task.
+    
+    var block_color = [15, 139, 141, 200];
+    if (disabledEnvironment) {
+      block_color = [100, 100, 100, 30];
     }
 
-    env.mouseClicked = function() {
-        //check to see if in env
+    blockDims.forEach(dims => {
+      const w = dims[0]
+      const h = dims[1]
+      blockKinds.push(new BlockKind(w, h, block_color));
+    });
 
-        /* //Is clicking in top right of environment
-        if (env.mouseY < 80 && env.mouseX > canvasX - 80 && isPlacingObject) {
-            rotated = !rotated;
+    // Create Block Menu
+    blockMenu = new BlockMenu(menuHeight, blockKinds);
+
+    // Add things to the physics engine world
+    ground = new Boundary(canvasX/2, (environmentCanvas.height - menuHeight)*1.15, canvasX*1.5, canvasY/3);
+    //box1 = new Box(200, 100, 30, 30);
+
+    // Runner- use instead of line above if changes to game loop needed
+    const runner = Matter.Runner.create({
+      isFixed: true
+    });
+    Runner.run(runner, engine);
+
+    // Set up interactions with physics objects
+    // TO DO: stop interactions with menu bar rect
+    var canvasMouse = Mouse.create(environmentCanvas.elt); //canvas.elt is the html element associated with the P5 canvas
+    canvasMouse.pixelRatio = env.pixelDensity(); // Required for mouse's selected pixel to work on high-resolution displays
+
+    var options = {
+      mouse: canvasMouse // set object to mouse object in canvas
+    }
+
+  }
+
+
+  env.draw = function() { // Called continuously by Processing JS 
+    env.background(220);
+    ground.show(env);
+
+    // Menu
+    blockMenu.show(env);
+    blocks.forEach(b => {
+      b.show(env);
+    });
+    if (isPlacingObject) {
+      env.noCursor(); //feel like this is horribly ineffecient...
+      selectedBlockKind.showGhost(env,env.mouseX, env.mouseY, rotated);
+    }
+
+  }
+
+  env.mouseClicked = function() {
+    //check to see if in env
+
+    /* //Is clicking in top right of environment
+       if (env.mouseY < 80 && env.mouseX > canvasX - 80 && isPlacingObject) {
+       rotated = !rotated;
+       }
+    */
+    
+    if (!disabledEnvironment){ //environment will be disabled in some conditions
+      
+      // if mouse in main environment
+      if (env.mouseY > 0 && (env.mouseY < canvasY - menuHeight) && (env.mouseX > 0 && env.mouseX < canvasX)) {
+        if (isPlacingObject) {          
+          const test_block = new Block(selectedBlockKind, env.mouseX, env.mouseY, rotated, testing_placement = true);
+          if(test_block.can_be_placed()){
+            newBlock = new Block(selectedBlockKind, env.mouseX, env.mouseY, rotated);
+            blocks.push(newBlock);                        
+            selectedBlockKind = null;
+            env.cursor();
+            isPlacingObject = false;
+
+            blocks.forEach(b => {
+              Sleeping.set(b.body, false);
+            });
+          }                                        
+          
+          // test out sending newBlock info to server/mongodb
+          propertyList = Object.keys(newBlock.body); // extract block properties;
+	  // omit self-referential properties that cause max call stack exceeded error
+          propertyList = _.pullAll(propertyList,['parts','plugin','vertices','parent']);
+	  // pick out all and only the block body properties in the property list
+          blockProperties = _.pick(newBlock['body'],propertyList); 
+
+          // custom de-borkification
+          const vertices = _.map(newBlock.body.vertices, function(key,value) {return _.pick(key,['x','y'])});
+          
+          const block_data = {
+	    type: 'blockPlaced',
+            timePoint: 'initial', // initial block placement decision vs. final block resting position.
+            gameID: 'GAMEID_PLACEHOLDER', // TODO: generate this on server and send to client when session is created
+            time: performance.now(), // time since session began
+            timeAbsolute: Date.now(),  
+            blockWidth: newBlock['w'],
+            blockHeight: newBlock['h'],
+            blockCenterX: newBlock['body']['position']['x'],
+            blockCenterY: newBlock['body']['position']['y'],
+            blockVertices: vertices,
+            blockBodyProperties: blockProperties
+            // TODO: add WORLD information
+          };            
+          console.log('block_data',block_data);
+          //socket.broadcast(block_data);
+          
         }
-        */
-        
-        if (!disabledEnvironment){ //environment will be disabled in some conditions
+      }
+      else if (env.mouseY > 0 && (env.mouseY < canvasY) && (env.mouseX > 0 && env.mouseX < canvasX)){ //or if in menu then update selected blockkind
+        // is mouse clicking a block?
+        newSelectedBlockKind = blockMenu.hasClickedButton(env.mouseX, env.mouseY, selectedBlockKind);
+        if (newSelectedBlockKind) {
+          if (newSelectedBlockKind == selectedBlockKind) {
             
-            // if mouse in main environment
-            if (env.mouseY > 0 && (env.mouseY < canvasY - menuHeight) && (env.mouseX > 0 && env.mouseX < canvasX)) {
-                if (isPlacingObject) {
-                    
-                    test_block = new Block(selectedBlockKind, env.mouseX, env.mouseY, rotated, testing_placement = true)
-                    if(test_block.can_be_placed()){
-                        newBlock = new Block(selectedBlockKind, env.mouseX, env.mouseY, rotated);
-                        blocks.push(newBlock);                        
-                        // blocks.push(new Block(selectedBlockKind, env.mouseX, env.mouseY, rotated));
-                        selectedBlockKind = null;
-                        env.cursor();
-                        isPlacingObject = false;
-
-                        blocks.forEach(b => {
-                            Sleeping.set(b.body, false);
-                        });
-                    }                                        
-                    
-                    // test out sending newBlock info to server/mongodb
-                    propertyList = Object.keys(newBlock.body); // extract block properties;
-                    propertyList = _.pullAll(propertyList,['parts','plugin','vertices','parent']);  // omit self-referential properties that cause max call stack exceeded error
-                    blockProperties = _.pick(newBlock['body'],propertyList); // pick out all and only the block body properties in the property list
-
-                    // custom de-borkification
-                    vertices = _.map(newBlock.body.vertices, function(key,value) {return _.pick(key,['x','y'])});                    
-                    
-                    block_data = {dbname: dbname,
-                                colname: colname,
-                                iterationName: iterationName,
-                                dataType: 'block',
-                                timePoint: 'initial', // initial block placement decision vs. final block resting position.
-                                gameID: 'GAMEID_PLACEHOLDER', // TODO: generate this on server and send to client when session is created
-                                time: performance.now(), // time since session began
-                                timeAbsolute: Date.now(),  
-                                blockWidth: newBlock['w'],
-                                blockHeight: newBlock['h'],
-                                blockCenterX: newBlock['body']['position']['x'],
-                                blockCenterY: newBlock['body']['position']['y'],
-                                blockVertices: vertices,
-                                blockBodyProperties: blockProperties
-                                // TODO: add WORLD information
-                                };            
-                    console.log('block_data',block_data);
-                    currMatchScore = getMatchScore('defaultCanvas0', 'defaultCanvas1', 64);
-                    console.log('current match score = ',currMatchScore);
-                    socket.emit('block',block_data);
-                    
-                }
-            }
-            else if (env.mouseY > 0 && (env.mouseY < canvasY) && (env.mouseX > 0 && env.mouseX < canvasX)){ //or if in menu then update selected blockkind
-                // is mouse clicking a block?
-                newSelectedBlockKind = blockMenu.hasClickedButton(env.mouseX, env.mouseY, selectedBlockKind);
-                if (newSelectedBlockKind) {
-                    if (newSelectedBlockKind == selectedBlockKind) {
-                        
-                        //rotated = !rotated; // uncomment to allow rotation by re-selecting block from menu
-                    } else {
-                        rotated = false;
-                    }
-                    selectedBlockKind = newSelectedBlockKind;
-                    isPlacingObject = true;
-                }
-            }
+            //rotated = !rotated; // uncomment to allow rotation by re-selecting block from menu
+          } else {
+            rotated = false;
+          }
+          selectedBlockKind = newSelectedBlockKind;
+          isPlacingObject = true;
         }
+      }
     }
+  }
 
 }
 
