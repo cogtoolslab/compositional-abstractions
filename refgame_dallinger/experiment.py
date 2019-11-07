@@ -25,60 +25,33 @@ def extra_parameters():
 
 class RefGame :
     def __init__(self, network_id) :
+        # Apparently must be imported at run-time to not break dallinger init
+        from . import interesting_structures
+        self.trialList = interesting_structures.structures.copy()
+
         self.network_id = network_id
         self.players = []
-        self.context = ['tangram_A.png', 'tangram_B.png', 'tangram_C.png', 'tangram_D.png']
         self.numRepetitions = 6
         self.trialNum = -1
-        self.trialList = [];
-        self.makeTrialList()
-        
-    def makeTrialList(self) :
-        # Keep sampling trial lists until we meet criterion
-        # Show each object once as target in each repetition block
-        while not self.checkTrialList() :
-            self.trialList = [];
-            for repetition in range(self.numRepetitions) :
-                for target in random.sample(self.context, len(self.context)) :
-                    self.trialList.append(self.sampleTrial(repetition, target));
-
-    def checkTrialList (self) :
-        trialList = self.trialList
-        lengthMatch = len(trialList) == 24 
-        noRepeats = all([trialList[i]['targetImg']['url'] != trialList[i+1]['targetImg']['url']
-                         for i in range(len(trialList) - 1)])
-        return lengthMatch and noRepeats
-  
-    def sampleTrial (self, repetition, targetUrl) :
-        target = {'url': targetUrl , 'targetStatus' : 'target'};
-        distNums = list(range(len(self.context) - 1))
-        distractors = [{'url': d, 'targetStatus': "distr" + str(distNums.pop())}
-                       for d in self.context if d != targetUrl]
-        return {
-            'targetImg' : target,
-            'stimuli': distractors + [target]
-        }
-
+ 
     def newRound (self) :
-        # TODO: this would be a lot more elegant if diff networks had diff channels
-        # instead of sending everything through single channel (so everyone has to check if they're recipient)
+        # Send packet for next round to players in network
         self.trialNum = self.trialNum + 1
         newTrial = self.trialList[self.trialNum]
         packet = json.dumps({
             'type': 'newRound',
             'networkid' : self.network_id,
             'trialNum' : self.trialNum,
-            'currStim' : newTrial['stimuli'],
+            'currStim' : newTrial['blocks'],
             'roles' : {'speaker' : self.players[0], 'listener' : self.players[1]}
         })
         redis_conn.publish('refgame', packet)
 
 class RefGameServer(Experiment):
-    """Define the structure of the experiment."""
-
     def __init__(self, session=None):
         """Initialize the experiment."""
         super(RefGameServer, self).__init__(session)
+        
         self.channel = 'refgame'
         self.games = {}
         if session:
@@ -93,6 +66,10 @@ class RefGameServer(Experiment):
         # Recruit for all networks at once
         self.initial_recruitment_size = repeats * self.quorum
 
+    def create_node(self, participant, network):
+        """Create a node for a participant."""
+        return Agent(network=network, participant=participant)
+
     def create_network(self):
         """Create a new network by reading the configuration file."""
         class_ = getattr(networks, self.network_class)
@@ -102,16 +79,7 @@ class RefGameServer(Experiment):
         # Choose first available network rather than random
         return networks[0]
 
-    def info_post_request(self, node, info):
-        """Run when a request to create an info is complete."""
-        for agent in node.neighbors():
-            node.transmit(what=info, to_whom=agent)
-
-    def create_node(self, participant, network):
-        """Create a node for a participant."""
-        return Agent(network=network, participant=participant)
-
-    def handle_clicked_obj(self, msg) :
+    def handle_done(self, msg) :
         """ When we find out listener has made response, schedule next round to begin """
         currGame = self.games[msg['networkid']]
         t = threading.Timer(2, currGame.newRound)
@@ -142,7 +110,7 @@ class RefGameServer(Experiment):
         """override default send to handle participant messages on channel"""
         handlers = {
             'connect' : self.handle_connect,
-            'clickedObj' : self.handle_clicked_obj
+            'done' : self.handle_done
         }
         if raw_message.startswith(self.channel + ":") :
             logger.info("We received a message for our channel: {}".format(raw_message))

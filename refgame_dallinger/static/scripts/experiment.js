@@ -1,4 +1,4 @@
-/*globals $, dallinger */
+/*globals $, dallinger, pubsub, p5 */
 const ws_scheme = (window.location.protocol === "https:") ? 'wss://' : 'ws://';
 
 class CoordinationChatRoomClient {
@@ -45,6 +45,20 @@ class CoordinationChatRoomClient {
   }
 
   initializeUI() {
+    // TODO: refactor to get rid of p5env and p5stim globals (e.g. make canvasInteraction part of class)
+    this.p5 = buildStage(this.currStim, this.socket);
+    p5env = this.p5.env;
+    p5stim = this.p5.stim;
+    if(this.role == 'speaker') {
+      $('#experiment-button-col').hide();
+      $('#environment-window').hide();
+      $('#stimulus-window').show();
+    } else if(this.role == 'listener') {
+      $('#experiment-button-col').show();
+      $('#environment-window').show();
+      $('#stimulus-window').hide();
+    }
+    
     $("#chat-history").show();
     $("#feedback").html("");
     $("#trial-counter").text('trial ' + (this.trialNum + 1) + '/24');
@@ -56,38 +70,6 @@ class CoordinationChatRoomClient {
     $("#reproduction").focus();
   }
   
-  initializeStimGrid() {
-    $('#object-grid').empty();
-    _.forEach(_.shuffle(this.currStim), (stim, i) => {
-      const bkg = 'url(./static/images/' + stim.url + ')';
-      const div = $('<div/>')
-	  .addClass('pressable')
-	  .attr({'id' : stim.targetStatus})
-	  .css({'background' : bkg})
-	  .css({
-	    'position': 'relative',
-	    'grid-row': 1, 'grid-column': i+1,
-	    'background-size' :'cover'
-	  });
-      $("#object-grid").append(div);
-    });
-
-    // Outline target if speaker; set click handlers if listener
-    if(this.role === 'speaker') {
-      $('#target').css({'outline' : 'solid 10px #5DADE2', 'z-index': 2});
-    } else if (this.role === 'listener') {
-      $('div.pressable').click(event => {
-	if(self.messageSent & !self.alreadyClicked) {
-	  const clickedId = event.target.id;
-	  this.alreadyClicked = true;
-	  this.socket.broadcast({
-	    'type' : 'clickedObj', 'object_id' : clickedId,
-	    'networkid' : this.networkid, 'participantid' : this.participantid});
-	}
-      });
-    }
-  };
-
   handleClickedObj(msg) {
     const correct = msg.object_id == "target";
     
@@ -146,13 +128,17 @@ class CoordinationChatRoomClient {
     $("#send-message").html("Send");
   }
 
+  handleDone(msg) {
+    this.score += msg.score;
+    $('score').html(msg.score);
+  }
+  
   newRound(msg) {
     this.trialNum = msg['trialNum'];
     this.role = msg['roles']['speaker'] == this.participantid ? 'speaker' : 'listener';
     this.currStim = msg['currStim'];
     this.alreadyClicked = false;
     this.messageSent = false;      
-    this.initializeStimGrid();
     this.initializeUI();
   }
 
@@ -170,7 +156,27 @@ class CoordinationChatRoomClient {
     // Handle messages from server
     this.socket.subscribe(self.block(this.newRound.bind(this)), "newRound", this);
     this.socket.subscribe(self.block(this.handleChatReceived.bind(this)), "chatMessage", this);
-    this.socket.subscribe(self.block(this.handleClickedObj.bind(this)), "clickedObj", this);
+    this.socket.subscribe(self.block(this.handleDone.bind(this)), "done", this);    
+
+    // if reset button clicked, reset build a fresh p5 instance
+    $('#reset').click(e => {
+      resetEnv();
+      p5env = new p5(setupEnvironment, 'environment-canvas');
+    });
+
+    // if done button clicked, tell the server to advance to next round
+    $('#done').click(e => {
+      const score = getMatchScore('defaultCanvas0', 'defaultCanvas1', 64);
+      console.log('score = ', score);
+      clearP5Envs();
+
+      self.socket.broadcast({
+	type : 'done',
+	participantid : this.participantid,
+	networkid: this.networkid,
+	score: score
+      });  
+    })
     
     // Send whatever is in the chatbox when button clicked
     $("#send-message").click(() => {
