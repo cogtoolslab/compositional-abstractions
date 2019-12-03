@@ -107,9 +107,9 @@ class CoordinationChatRoomClient {
 
   handleDone(msg) {
     // increment and display score
-    const numericScore = (_.toNumber(msg.score) * 100).toFixed(0);
-    this.score += numericScore;
-    $('#score').empty().html(numericScore.toFixed(0));
+    console.log(msg);
+    this.score += msg.score;
+    $('#score').empty().html(this.score.toFixed(2));
 
     // freeze UI
     $("#send-message").prop("disabled", true);
@@ -117,6 +117,7 @@ class CoordinationChatRoomClient {
     $('#reproduction').prop('disabled', true);    
 
     // display interpetable feedback
+    const numericScore = (parseFloat(msg.score) * 100).toFixed(0);
     $('#feedback')
       .html(numericScore > 80 ? "Excellent!" : "Nice job.")
       .append("You earned " + numericScore + " cents.");
