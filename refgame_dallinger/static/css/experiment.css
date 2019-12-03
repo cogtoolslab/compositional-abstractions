@@ -23,30 +23,6 @@
     margin-right: auto
 }
 
-#feedback {
-    height: 5%;
-    width: 30%;
-    text-align: left;
-    margin-left: 0;
-    margin-right: auto;
-    margin-bottom: auto;
-    left:auto; right:5%; top:5%; bottom: 0;
-    position: absolute;
-    font-weight:lighter;
-}
-
-#score {
-    height: 2vh;
-    width: 50vh;
-    text-align: left;
-    margin-right: 85%;
-    margin-top: 1%;
-    margin-left: auto;
-    margin-bottom: auto;
-    left:5%; bottom:5%;
-    position: absolute;
-}
-
 #trial-counter {
     height: 2vh;
     width: 20vh;
