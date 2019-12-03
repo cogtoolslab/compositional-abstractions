@@ -70,29 +70,6 @@ class CoordinationChatRoomClient {
     $("#reproduction").focus();
   }
   
-  handleClickedObj(msg) {
-    const correct = msg.object_id == "target";
-    
-    // freeze UI
-    $("#send-message").prop("disabled", true);
-    $('#reproduction').val('');
-    $('#reproduction').prop('disabled', true);    
-    
-    // show highlights as outlines
-    const targetcolor = this.role == 'speaker' ? '#5DADE2' : '#000000';
-    const clickedcolor = correct ? '#32CD32' :'#FF4136';
-    $('#target').css({outline: 'solid 10px ' + targetcolor, 'z-index': 2});
-    $('#' + msg.object_id).css({outline: 'solid 10px ' + clickedcolor, 'z-index': 3});
-    $('#feedback').html(correct ? "Nice! You earned " + this.bonusAmt + " cents." :
-			this.role == 'speaker' ? "Oh no! Your partner didn't pick the target!" :
-			"Oh no! Your partner was describing a different image.");
-    
-    // update score
-    this.score += correct ? this.bonusAmt : 0;
-    const bonus_score = (parseFloat(this.score) / 100).toFixed(2);
-    $('#score').empty().append('total bonus: $' + bonus_score);
-  }
-  
   handleChatReceived (msg) {
     // Only allow to click after speaker produces message
     if(msg.role == 'speaker') {
@@ -129,8 +106,20 @@ class CoordinationChatRoomClient {
   }
 
   handleDone(msg) {
-    this.score += msg.score;
-    $('score').html(msg.score);
+    // increment and display score
+    const numericScore = (_.toNumber(msg.score) * 100).toFixed(0);
+    this.score += numericScore;
+    $('#score').empty().html(numericScore.toFixed(0));
+
+    // freeze UI
+    $("#send-message").prop("disabled", true);
+    $('#reproduction').val('');
+    $('#reproduction').prop('disabled', true);    
+
+    // display interpetable feedback
+    $('#feedback')
+      .html(numericScore > 80 ? "Excellent!" : "Nice job.")
+      .append("You earned " + numericScore + " cents.");
   }
   
   newRound(msg) {
