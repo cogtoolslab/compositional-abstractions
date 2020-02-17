@@ -1,8 +1,8 @@
 var _ = require('lodash');
 var fs    = require('fs');
 var assert = require('assert');
-var utils  = require(__base + 'src/sharedUtils.js');
-var ServerGame = require(__base + 'src/game.js')['ServerGame'];
+var utils  = require(__base + 'static/js/sharedUtils.js');
+var ServerGame = require(__base + 'static/js/game.js')['ServerGame'];
 
 class ServerRefGame extends ServerGame {
   constructor(config) {

@@ -2,7 +2,7 @@
   "name": "refgameserver",
   "version": "0.0.1",
   "scripts": {
-    "build": "webpack --mode development ./src/client.js --output ./dist/js/bundle.js; node app.js"
+    "build": "webpack --mode development ./static/js/client.js --output ./static/js/bundle.js; node app.js"
   },
   "private": true,
   "dependencies": {
