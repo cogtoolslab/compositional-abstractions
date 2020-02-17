@@ -1,1 +1,0 @@
-var practice_structure = {"blocks": [{"width": 2, "height": 1, "x": 2, "y": 0}, {"width": 2, "height": 4, "x": 4, "y": 0}, {"width": 2, "height": 1, "x": 2, "y": 1}, {"width": 1, "height": 2, "x": 2, "y": 2}, {"width": 4, "height": 2, "x": 2, "y": 4}, {"width": 2, "height": 2, "x": 3, "y": 6}]};
