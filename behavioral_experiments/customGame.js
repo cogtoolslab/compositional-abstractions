@@ -7,9 +7,12 @@ var ServerGame = require(__base + 'static/js/game.js')['ServerGame'];
 class ServerRefGame extends ServerGame {
   constructor(config) {
     super(config);
-    this.trialList = [];
     this.numRounds = config.numRounds;
-    this.firstRole = _.sample(['speaker', 'listener']);
+    this.playerRoleNames = {
+      role1: 'speaker',
+      role2: 'listener'
+    }
+    this.trialList = this.makeTrialList();
   }
 
   customEvents (socket) {
@@ -42,8 +45,7 @@ class ServerRefGame extends ServerGame {
     for (var i = 0; i < conditionList.length; i++) {
       var condition = conditionList[i];
       var trialInfo = this.sampleTrial(condition); // Sample three objects 
-      var roleNames = (this.playersThreshold == 1 ? [this.firstRole] : 
-		       _.values(this.playerRoleNames));
+      var roleNames = _.values(this.playerRoleNames);
       trialList.push({
 	stimuli: trialInfo, 
 	condition: condition, 
