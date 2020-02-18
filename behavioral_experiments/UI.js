@@ -1,0 +1,34 @@
+var blocks = require('./static/js/experimentEnvironment.js');
+var Confetti = require('./static/js/confetti.js');
+var confetti = new Confetti(300);
+
+class UI {
+
+  constructor () {}
+
+  reset (game, data) {
+    blocks.setupEnvs(game.currStim);
+
+    if(game.role == 'speaker') {
+      $('#experiment-button-col').hide();
+      $('#environment-canvas').hide();
+      $('#stimulus-canvas').show();
+    } else if(game.role == 'listener') {
+      $('#experiment-button-col').show();
+      $('#environment-canvas').show();
+      $('#stimulus-canvas').hide();
+    }
+    
+    $("#chat-history").show();
+    $("#feedback").html("");
+    $("#trial-counter").text('trial ' + (game.trialNum + 1) + '/24');
+    $("#story").empty();
+    $("#response-form").show();    
+    $("#send-message").prop("disabled", false);
+    $('#reproduction').prop('disabled', false);    
+    $("#send-message").html("Send");
+    $("#reproduction").focus();
+  }
+}
+
+module.exports = new UI();
