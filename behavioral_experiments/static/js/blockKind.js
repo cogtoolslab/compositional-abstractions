@@ -1,8 +1,8 @@
 var config = require('./display_config.js');
-
+var Block = require('./block.js');
 class BlockKind {
 
-  constructor(w, h, blockColor, blockName = '') {
+  constructor(engine, w, h, blockColor, blockName = '') {
     // BlockKinds are a type of block- of which several might be placed
     // in the environment. To be concretely instantiated, a Block must
     // be created that inherets its properties from a BlockKind
@@ -10,6 +10,7 @@ class BlockKind {
     // associated with that blockKind.  BlockKind width and height
     // should be given in small integers. They are scaled in the block
     // class.
+    this.engine = engine;
     this.x = undefined;
     this.y = undefined;
     this.w = w;
@@ -114,6 +115,57 @@ class BlockKind {
       env.pop();
     }
   }
+
+  snapToGrid(preciseMouseX, preciseMouseY, discreteWorld,
+             rotated = false, testing_placement = false, snapY = true) {
+
+    // snaps X location of dropped block to grid
+    var snappedX;
+    var x_index;
+    var y_index;
+    if (this.w % 2 == 1) {
+      snappedX = ((preciseMouseX + config.stim_scale / 2) % (config.stim_scale) < (config.stim_scale / 2) ?
+                  preciseMouseX - (preciseMouseX % (config.stim_scale / 2)) :
+                  preciseMouseX - (preciseMouseX % (config.stim_scale)) + (config.stim_scale / 2));
+      x_index = snappedX / config.stim_scale - snappedX % config.stim_scale + 7 + 5; // + 7 for structure world, -
+    } else if (this.h % 2 == 1) {
+      snappedX = (preciseMouseX % (config.stim_scale) < (config.stim_scale / 2) ?
+                  preciseMouseX - preciseMouseX % (config.stim_scale) :
+                  preciseMouseX - preciseMouseX % (config.stim_scale) + config.stim_scale);
+      x_index = snappedX / config.stim_scale - snappedX % config.stim_scale - this.w / 2 - 5 + 5;
+    } else {
+      snappedX = (preciseMouseX % (config.stim_scale) < (config.stim_scale / 2) ?
+                  preciseMouseX - preciseMouseX % (config.stim_scale) :
+                  preciseMouseX - preciseMouseX % (config.stim_scale) + config.stim_scale);
+      x_index = snappedX / config.stim_scale - snappedX % config.stim_scale - this.w / 2 - 5 + 5;
+    }
+    if (!snapY) {
+      return new Block(this.engine, this, snappedX, preciseMouseY,
+                       rotated, testing_placement = testing_placement, x_index = x_index);
+    } else {
+      // check rows from mousy y, down
+      var y = Math.round(13 - (this.h / 2) -
+                         ((preciseMouseY + (config.stim_scale / 2)) / config.stim_scale)) + 2;
+      let rowFree = true;
+      while (rowFree && y >= 0) {
+        y -= 1;
+        var blockEnd = x_index + this.w;
+        for (let x = x_index; x < blockEnd; x++) { // check if row directly beneath block are all free at height y
+          rowFree = rowFree && discreteWorld[x][y];
+        }
+
+      }
+      y_index = y + 1;
+
+      // ADD SNAP TO Y
+      var snappedY = ((config.envCanvasHeight - config.floorHeight) - (config.stim_scale * (this.h / 2))
+                      - (config.stim_scale * (y_index)) + config.stim_scale / 2 + 6);
+
+      return new Block(this.engine, this, snappedX, snappedY, rotated,
+                       testing_placement = testing_placement, x_index = x_index, y_index = y_index);
+    }
+  }
+
 }
 
 module.exports = BlockKind;

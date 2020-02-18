@@ -74,7 +74,29 @@ class Block {
 
   }
 
+  snapBodyToGrid () {
+    // snaps matter locations of block bodies to grid
+    // to be called after all blocks are sleeping?  
+    var currentX = this.body.position.x / config.worldScale;
+    var currentY = this.body.position.y / config.worldScale;
+    var snappedX;
+    var snappedY = currentY;
+    if (((this.blockKind.w % 2 == 1) && (Math.abs(this.body.angle) % (Math.PI / 2) < Math.PI / 4)) ||
+        ((this.blockKind.h % 2 == 1) && (Math.abs(this.body.angle) % (Math.PI / 2) > Math.PI / 4))) {
+      snappedX = ((currentX + config.stim_scale / 2) % (config.stim_scale) < (config.stim_scale / 2) ?
+                  currentX - (currentX % (config.stim_scale / 2)) :
+                  currentX - (currentX % (config.stim_scale)) + (config.stim_scale / 2));
+    } else {
+      snappedX = (currentX % (config.stim_scale) < (config.stim_scale / 2) ?
+                  currentX - currentX % (config.stim_scale) :
+                  currentX - currentX % (config.stim_scale) + config.stim_scale);
+    }
+    var snapped_location = Matter.Vector.create(snappedX * config.worldScale, snappedY * config.worldScale);
+    Matter.Body.setPosition(this.body, snapped_location);
+  }
+
   can_be_placed () {
+    console.log(this);
     var colliding_bodies = Matter.Query.region(this.engine.world.bodies, this.test_body.bounds);
     return (colliding_bodies === undefined || colliding_bodies.length == 0)
   }
