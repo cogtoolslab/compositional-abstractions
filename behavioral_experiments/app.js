@@ -30,9 +30,9 @@ if(argv.expname) {
 var refGameServer = new RefGameServer(expPath);  
 
 try {
-  var pathToCerts = '/etc/apache2/ssl/rxdhawkins.me';
-  var privateKey  = fs.readFileSync(pathToCerts + '.key'),
-      certificate = fs.readFileSync(pathToCerts + '.crt'),
+  var pathToCerts = '/etc/letsencrypt/live/cogtoolslab.org/';
+  var privateKey  = fs.readFileSync(pathToCerts + 'privkey.pem'),
+      certificate = fs.readFileSync(pathToCerts + 'cert.pem'),
       options     = {key: privateKey, cert: certificate},
       server      = require('https').createServer(options,app).listen(gameport),
       io          = require('socket.io')(server);
