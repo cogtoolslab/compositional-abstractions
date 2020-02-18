@@ -1,0 +1,23 @@
+{
+  "email" : "rxdh@stanford.edu",
+  "projectName" : "hri-conventions",
+  "experimentName" : "MSCOCO",
+  "iterationName" : "testing",
+  "anonymizeCSV" : true,
+  "bonusAmt" : 5, 
+  "dataStore" : ["csv", "mongo"],
+  "playersThreshold" : 2,
+  "playerRoleNames" : {
+    "role1" : "speaker",
+    "role2" : "listener"
+  },
+  "numRounds" : 8,
+  "numHorizontalCells" : 3,
+  "numVerticalCells" : 1,
+  "cellDimensions" : {
+    "height" : 300,
+    "width" : 300
+  }, 
+  "cellPadding" : 0,
+  "delay" : 1500
+}
