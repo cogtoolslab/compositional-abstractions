@@ -1,39 +1,6 @@
 // Handles interaction between html elements and the experiment canvas
 
 
-// function resetPressed(){
-//     /* Called to clear building environment window. 
-//     Works by resetting variables then building a new p5 instance.
-//     */
-//     resetEnv();
-//     p5env = new p5(setupEnvironment,'environment-canvas');
-
-//     // update reset counter
-
-// }
-
-// function donePressed(){
-//     // Update variables
-//     clearP5Envs();
-//     // Move on jsPsych
-//     jsPsych.finishTrial();
-    
-// }
-
-// function clearP5Envs(){
-//     // Removes P5 environments to start new experiment phase or trial
-
-//     p5env.remove(); // remove environment display
-//     p5stim.remove();// remove stimulus display
-
-//     blocks = [];
-//     blockKinds = [];
-//     isPlacingObject = false;
-//     rotated = false;
-//     selectedBlockKind = null;
-
-// }
-
 function checkPressed(){
     startBlocks = Matter.Query.region(blocks.map(bl => bl.body), world.bodies[1].bounds)
     finishBlocks = Matter.Query.region(blocks.map(bl => bl.body), world.bodies[2].bounds)
