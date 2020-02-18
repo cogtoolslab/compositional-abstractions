@@ -1,13 +1,15 @@
-var blocks = require('./static/js/experimentEnvironment.js');
+var BlockUniverse = require('./static/js/experimentEnvironment.js');
 var Confetti = require('./static/js/confetti.js');
 var confetti = new Confetti(300);
 
 class UI {
-
-  constructor () {}
+  // Since all the action is happening in experimentEnvironment, this is basically a glorified wrapper
+  constructor () {
+    this.blockUniverse = new BlockUniverse();
+  }
 
   reset (game, data) {
-    blocks.setupEnvs(game.currStim);
+    this.blockUniverse.setupEnvs(game.currStim);
 
     if(game.role == 'speaker') {
       $('#experiment-button-col').hide();
