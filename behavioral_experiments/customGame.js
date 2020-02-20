@@ -101,8 +101,7 @@ class ServerRefGame extends ServerGame {
     var target = gc.getPlayer(client.userid);
     var others = gc.getOthers(client.userid);
     switch(message_type) {
-
-  
+      
     case 'chatMessage' :
       console.log('received chat message');
       if(client.game.playerCount == gc.playersThreshold && !gc.paused) {
@@ -114,7 +113,7 @@ class ServerRefGame extends ServerGame {
       }
       break;
       
-    case 'clickedObj' :
+    case 'endTrial' :
       _.map(all, p => p.player.instance.emit('updateScore', {
 	outcome: message_parts[2]
       }));
