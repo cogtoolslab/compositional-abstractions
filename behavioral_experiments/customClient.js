@@ -24,7 +24,11 @@ function updateState (game, data){
 };
 
 var customEvents = function(game) {
- 
+
+  $('#done_button').click(function(){
+    game.socket.send('endTrial');
+  })
+    
   $('#response-form').submit(function(){
     var origMsg = $('#chatbox').val();
     var timeElapsed = Date.now() - game.typingStartTime;
