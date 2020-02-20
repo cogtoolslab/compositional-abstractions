@@ -3,7 +3,8 @@ var Confetti = require('./static/js/confetti.js');
 var confetti = new Confetti(300);
 
 class UI {
-  // Since all the action is happening in experimentEnvironment, this is basically a glorified wrapper
+  // Since all the action is happening in experimentEnvironment, this
+  // is basically a glorified wrapper
   constructor () {
     this.blockUniverse = new BlockUniverse();
   }

@@ -25,11 +25,11 @@ function updateState (game, data){
 
 var customEvents = function(game) {
 
-  $('#done_button').click(function(){
+  $('#done_button').click(() => {
     game.socket.send('endTrial');
   })
-    
-  $('#response-form').submit(function(){
+
+  $("#send-message").click(() => {    
     var origMsg = $('#chatbox').val();
     var timeElapsed = Date.now() - game.typingStartTime;
     var msg = ['chatMessage', origMsg.replace(/\./g, '~~~'), timeElapsed].join('.');
@@ -44,13 +44,13 @@ var customEvents = function(game) {
  
   game.socket.on('chatMessage', function(data){
     var source = data.user === game.my_id ? "you" : "partner";    
-    var color = data.user === game.my_id ? "#363636" : "#707070";    
+    var color = data.user === game.my_id ? "#A9A9A9" : "#000000";
     // To bar responses until speaker has uttered at least one message
     game.messageSent = true;
     $('#messages')
-      .append($('<li style="padding: 5px 10px; background: ' + color + '">')
-    	      .text(source + ": " + data.msg))
-      .stop(true,true)
+      .append('<p style="padding: 5px 10px; color: ' + color + '">' +
+    	      source + ": " + data.msg + "</p>")
+      .stop(true, true)
       .animate({
 	scrollTop: $("#messages").prop("scrollHeight")
       }, 800);
@@ -66,5 +66,11 @@ var customEvents = function(game) {
   });
 };
 
+$(document).keypress(e => {
+  if (e.which === 13) {
+    $("#send-message").click();
+    return false;
+  }
+});
 
 module.exports = customEvents;
