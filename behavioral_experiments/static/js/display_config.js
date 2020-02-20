@@ -16,7 +16,7 @@ var config = {
 // Environment parameters
 config.menuHeight = config.canvasHeight / 4.2;
 config.menuWidth = config.canvasWidth;
-config.floorY = (config.canvasHeight - config.menuHeight);
+config.floorY = (config.canvasHeight - config.menuHeight) + 2*config.sF;
 config.floorHeight = config.canvasHeight / 3;
 config.aboveGroundProp = config.floorY / config.canvasHeight;
 
