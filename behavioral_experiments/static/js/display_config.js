@@ -1,6 +1,6 @@
 var config = {
-  canvasHeight : 450,
-  canvasWidth : 450,
+  canvasHeight : 500,
+  canvasWidth : 500,
   worldHeight : 8,
   worldWidth : 8,
   sF : 25, //scaling factor to change appearance of blocks
@@ -16,9 +16,9 @@ var config = {
 // Environment parameters
 config.menuHeight = config.canvasHeight / 4.2;
 config.menuWidth = config.canvasWidth;
-config.floorY = (config.canvasHeight - config.menuHeight) + 2*config.sF;
-config.floorHeight = config.canvasHeight / 3;
-config.aboveGroundProp = config.floorY / config.canvasHeight;
+config.floorHeight = config.canvasHeight / 3.5;
+config.floorY = config.canvasHeight - (config.floorHeight/2);
+//config.aboveGroundProp = config.floorY / config.canvasHeight;
 
 // Stimulus parameters
 config.stimCanvasWidth = config.canvasWidth;

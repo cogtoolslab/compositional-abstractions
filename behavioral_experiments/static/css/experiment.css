@@ -70,3 +70,12 @@
     -webkit-box-shadow: 0 0 1px rgba(50,50,50,.5);
 }
 
+#stimulus-canvas{
+    resize: none;
+}
+
+#evnironment-canvas{
+    resize: none;
+}
+
+

@@ -72,7 +72,6 @@ class BlockUniverse {
        .parent('stimulus-canvas')); // add parent div 
     };
 
-    console.log(trialObj.blockColor);
     p5stim.draw = function () {
       p5stim.background(220);
       display.showStimulus(p5stim, testStim, false, trialObj.blockColor);
