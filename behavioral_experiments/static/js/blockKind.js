@@ -54,7 +54,7 @@ class BlockKind {
   }
 
   showGhost (env, mouseX, mouseY, rotated, discreteWorld,
-             disabledBlockPlacement = false, snapToGrid = true) {
+             disabledBlockPlacement = false, snapToGrid = false) {
     if((mouseX > (config.sF*(this.w/2))) &&
        (mouseX < config.canvasWidth-(config.sF*(this.w/2)))){
 
@@ -72,9 +72,11 @@ class BlockKind {
 
         mouseX = snappedX
 
-        var y = Math.round(13 - (this.h/2) - ((mouseY+(stim_scale/2))/stim_scale)) + 2;
+        //get mouse position in terms of grid squares
+        var y = Math.round(13 - (this.h/2) - ((mouseY+(stim_scale/2))/stim_scale)) + 2; // 13 HARDCODED IN- need to change to reflect maximum height (in unit squares)
+        
         var rowFree = true;
-        while (rowFree && y>=0) {
+        while (rowFree && y>=0) { //iterate down through rows from block location to find first that is free
           y-=1;
           var blockEnd = x_index + this.w
           for (let x = x_index; x < blockEnd; x++) { // check if row directly beneath block are all free at height y
@@ -89,7 +91,7 @@ class BlockKind {
         mouseY = (
           (config.canvasHeight - config.floorHeight) -
             (config.stim_scale*(this.h/2)) -
-            (stim_scale*(y_index)) + stim_scale/2 + 6
+            (config.stim_scale*(y_index)) + config.stim_scale/2
         );
       }
 
@@ -143,7 +145,7 @@ class BlockKind {
       return new Block(this.engine, this, snappedX, preciseMouseY,
                        rotated, testing_placement = testing_placement, x_index = x_index);
     } else {
-      // check rows from mousy y, down
+      // check rows from mouse y, down
       var y = Math.round(13 - (this.h / 2) -
                          ((preciseMouseY + (config.stim_scale / 2)) / config.stim_scale)) + 2;
       let rowFree = true;

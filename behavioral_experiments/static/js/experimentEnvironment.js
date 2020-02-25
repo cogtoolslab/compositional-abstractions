@@ -257,7 +257,7 @@ class BlockUniverse {
     //test whether there is a block underneath this area
     //maybe redundant with y-snapping?
     var test_block = this.selectedBlockKind.snapToGrid(
-      env.mouseX, env.mouseY, this.discreteWorld,this.rotated, true
+      env.mouseX, env.mouseY, this.discreteWorld, this.rotated, true
     ); 
 
     if (test_block.can_be_placed() && trialObj.blockFell == false) {

@@ -1,6 +1,6 @@
 var config = {
-  canvasHeight : 500,
-  canvasWidth : 500,
+  canvasHeight : 450,
+  canvasWidth : 450,
   worldHeight : 8,
   worldWidth : 8,
   sF : 25, //scaling factor to change appearance of blocks
