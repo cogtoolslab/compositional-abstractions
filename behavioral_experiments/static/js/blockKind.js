@@ -63,40 +63,7 @@ class BlockKind {
         var snappedX;
         var x_index;
         
-        var [mouseX, mouseY, x_index, y_index] = this.snapToGrid(mouseX, mouseY, discreteWorld)
-
-        // if (this.w % 2 == 1) {
-        //   snappedX = (mouseX + stim_scale / 2) % (stim_scale) < (stim_scale / 2) ? mouseX - (mouseX % (stim_scale / 2)) : mouseX - (mouseX % (stim_scale)) + (stim_scale / 2);
-        //   x_index = snappedX / stim_scale - snappedX % stim_scale + 7 + 5;
-        // } else {
-        //   snappedX = mouseX % (stim_scale) < (stim_scale / 2) ? mouseX - mouseX % (stim_scale) : mouseX - mouseX % (stim_scale) + stim_scale;
-        //   x_index = snappedX / stim_scale - snappedX % stim_scale - this.w / 2 - 5 + 5;
-        // };
-
-        // mouseX = snappedX
-
-        // //get mouse position in terms of grid squares
-        // var y = Math.round(13 - (this.h / 2) - ((mouseY + (stim_scale / 2)) / stim_scale)); // 13 HARDCODED IN- need to change to reflect maximum height (in unit squares)
-
-        // // var rowFree = true;
-        // // while (rowFree && y>=0) { //iterate down through rows from block location to find first that is free
-        // //   y-=1;
-        // //   var blockEnd = x_index + this.w
-        // //   for (let x = x_index; x < blockEnd; x++) { // check if row directly beneath block are all free at height y
-        // //     //console.log('checking:', y, x)
-        // //     rowFree = rowFree && discreteWorld[x][y];
-        // //   }
-
-        // // }
-        // // var y_index = y+1;
-        // var y_index = y;
-
-        // ADD SNAP TO Y
-        // mouseY = (
-        //   (config.canvasHeight - config.floorHeight) -
-        //   (config.stim_scale * (this.h / 2)) -
-        //   (config.stim_scale * (y_index)) + config.stim_scale / 2
-        // );
+        var [mouseX, mouseY, x_index, y_index] = this.snapToGrid(mouseX, mouseY, discreteWorld);
       }
 
       env.push();
@@ -147,27 +114,9 @@ class BlockKind {
       x_index = snappedX / stim_scale - snappedX % stim_scale - this.w / 2;
     };
 
-    // if (this.w % 2 == 1) {
-    //   snappedX = ((preciseMouseX + config.stim_scale / 2) % (config.stim_scale) < (config.stim_scale / 2) ?
-    //     preciseMouseX - (preciseMouseX % (config.stim_scale / 2)) :
-    //     preciseMouseX - (preciseMouseX % (config.stim_scale)) + (config.stim_scale / 2));
-    //   x_index = snappedX / config.stim_scale - snappedX % config.stim_scale + 12; // + 7 for structure world, -
-    // } else if (this.h % 2 == 1) {
-    //   snappedX = (preciseMouseX % (config.stim_scale) < (config.stim_scale / 2) ?
-    //     preciseMouseX - preciseMouseX % (config.stim_scale) :
-    //     preciseMouseX - preciseMouseX % (config.stim_scale) + config.stim_scale);
-    //   x_index = snappedX / config.stim_scale - snappedX % config.stim_scale - this.w / 2;
-    // } else {
-    //   snappedX = (preciseMouseX % (config.stim_scale) < (config.stim_scale / 2) ?
-    //     preciseMouseX - preciseMouseX % (config.stim_scale) :
-    //     preciseMouseX - preciseMouseX % (config.stim_scale) + config.stim_scale);
-    //   x_index = snappedX / config.stim_scale - snappedX % config.stim_scale - this.w / 2;
-    // }
-
     if (!snapY) {
       return [snappedX, snappedY, x_index, y_index];
-      // return new Block(this.engine, this, snappedX, preciseMouseY,
-      //   rotated, testing_placement = testing_placement, x_index = x_index);
+      
     } else {
       // check rows from mouse y, down
       var top = 13;
@@ -184,12 +133,6 @@ class BlockKind {
 
       }
       y_index = y + 1;
-
-      // var y = (config.canvasHeight - config.floorHeight) - (config.stim_scale/2) - (config.stim_scale * j)
-
-      // var y = Math.round(13 - (this.h / 2) - ((mouseY + (stim_scale / 2)) /stim_scale))
-
-      // y_index = y;
 
       // ADD SNAP TO Y
       var snappedY = ((config.envCanvasHeight - config.floorHeight) - (stim_scale * (this.h / 2))
