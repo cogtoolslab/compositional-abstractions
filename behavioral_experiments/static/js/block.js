@@ -39,10 +39,10 @@ class Block {
       Matter.World.add(this.engine.world, this.body);
     } else {
       this.test_body = Matter.Bodies.rectangle(
-        x * this.worldScale, 
-        y * this.worldScale,
-        this.w * this.worldScale * 0.85,
-        this.h * this.worldScale * 0.85
+        x * config.worldScale, 
+        y * config.worldScale,
+        this.w * config.worldScale * 0.85,
+        this.h * config.worldScale * 0.85
       );
       this.test_body.collisionFilter.category = 3;
     }
@@ -95,9 +95,10 @@ class Block {
     Matter.Body.setPosition(this.body, snapped_location);
   }
 
-  can_be_placed () {
-    console.log(this);
-    var colliding_bodies = Matter.Query.region(this.engine.world.bodies, this.test_body.bounds);
+  can_be_placed (engine) {
+    console.log('bounds', this.test_body.bounds);
+    var colliding_bodies = Matter.Query.region(engine.world.bodies, this.test_body.bounds);
+    console.log('colliding bodies', colliding_bodies);
     return (colliding_bodies === undefined || colliding_bodies.length == 0)
   }
 

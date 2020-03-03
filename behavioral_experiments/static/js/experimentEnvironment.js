@@ -256,14 +256,19 @@ class BlockUniverse {
   placeBlock(env, trialObj) {
     //test whether there is a block underneath this area
     //maybe redundant with y-snapping?
-    var test_block = this.selectedBlockKind.snapToGrid(
-      env.mouseX, env.mouseY, this.discreteWorld, this.rotated, true
+    var test_block = this.selectedBlockKind.createSnappedBlock(
+      env.mouseX, env.mouseY, this.discreteWorld, true
     ); 
 
-    if (test_block.can_be_placed() && trialObj.blockFell == false) {
-      var newBlock = this.selectedBlockKind.snapToGrid(
-        env.mouseX, env.mouseY, this.discreteWorld, this.rotated
+    //console.log(test_block.body);
+    //console.log(this.ground.body);
+
+    if (test_block.can_be_placed(this.engine) && trialObj.blockFell == false) {
+      var newBlock = this.selectedBlockKind.createSnappedBlock(
+        env.mouseX, env.mouseY, this.discreteWorld, false
       );
+      
+
       this.blocks.push(newBlock);
 
       // jsPsych.pluginAPI.setTimeout(function () {
