@@ -63,7 +63,7 @@ class BlockKind {
         var snappedX;
         var x_index;
         
-        var [mouseX, snappedY, x_index, y_index] = this.snapToGrid(mouseX, mouseY, discreteWorld)
+        var [mouseX, mouseY, x_index, y_index] = this.snapToGrid(mouseX, mouseY, discreteWorld)
 
         // if (this.w % 2 == 1) {
         //   snappedX = (mouseX + stim_scale / 2) % (stim_scale) < (stim_scale / 2) ? mouseX - (mouseX % (stim_scale / 2)) : mouseX - (mouseX % (stim_scale)) + (stim_scale / 2);
@@ -92,11 +92,11 @@ class BlockKind {
         // var y_index = y;
 
         // ADD SNAP TO Y
-        mouseY = (
-          (config.canvasHeight - config.floorHeight) -
-          (config.stim_scale * (this.h / 2)) -
-          (config.stim_scale * (y_index)) + config.stim_scale / 2
-        );
+        // mouseY = (
+        //   (config.canvasHeight - config.floorHeight) -
+        //   (config.stim_scale * (this.h / 2)) -
+        //   (config.stim_scale * (y_index)) + config.stim_scale / 2
+        // );
       }
 
       env.push();
@@ -170,26 +170,30 @@ class BlockKind {
       //   rotated, testing_placement = testing_placement, x_index = x_index);
     } else {
       // check rows from mouse y, down
-      // var y = Math.round(13 - (this.h / 2) -
-      //                    ((preciseMouseY + (config.stim_scale / 2)) / config.stim_scale)) + 2;
-      // let rowFree = true;
-      // while (rowFree && y >= 0) {
-      //   y -= 1;
-      //   var blockEnd = x_index + this.w;
-      //   for (let x = x_index; x < blockEnd; x++) { // check if row directly beneath block are all free at height y
-      //     rowFree = rowFree && discreteWorld[x][y];
-      //   }
+      var top = 13;
+      var y = top;
+      //var y = Math.round(top - (this.h / 2) -
+      //                   ((mouseY + (config.stim_scale / 2)) / config.stim_scale)) + 2;
+      let rowFree = true;
+      while (rowFree && y >= 0) {
+        y -= 1;
+        var blockEnd = x_index + this.w;
+        for (let x = x_index; x < blockEnd; x++) { // check if row directly beneath block are all free at height y
+          rowFree = rowFree && discreteWorld[x][y];
+        }
 
-      // }
-      // y_index = y + 1;
+      }
+      y_index = y + 1;
 
-      var y = Math.round(13 - (this.h / 2) - ((mouseY + (stim_scale / 2)) /stim_scale))
+      // var y = (config.canvasHeight - config.floorHeight) - (config.stim_scale/2) - (config.stim_scale * j)
 
-      y_index = y;
+      // var y = Math.round(13 - (this.h / 2) - ((mouseY + (stim_scale / 2)) /stim_scale))
+
+      // y_index = y;
 
       // ADD SNAP TO Y
       var snappedY = ((config.envCanvasHeight - config.floorHeight) - (stim_scale * (this.h / 2))
-        - (stim_scale * (y_index)) + stim_scale / 2 + 6);
+        - (stim_scale * (y_index)));
 
       return [snappedX, snappedY, x_index, y_index];
     };
