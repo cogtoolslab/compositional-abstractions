@@ -15,7 +15,7 @@ function updateState (game, data){
       {"x": 2, "y": 4, "width": 4, "height": 2}
     ],
     condition: 'repeated',
-    blockColor: 'blue',
+    blockColor: '#a10316',
     blockFell: false
   };
   game.active = data.active;

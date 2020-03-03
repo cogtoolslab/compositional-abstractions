@@ -18,6 +18,7 @@ config.menuHeight = config.canvasHeight / 4.2;
 config.menuWidth = config.canvasWidth;
 config.floorHeight = config.canvasHeight / 3.5;
 config.floorY = config.canvasHeight - (config.floorHeight/2);
+config.top = Math.round((config.canvasHeight - config.floorHeight)/config.stim_scale);
 //config.aboveGroundProp = config.floorY / config.canvasHeight;
 
 // Stimulus parameters

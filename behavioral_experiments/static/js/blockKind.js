@@ -26,7 +26,7 @@ class BlockKind {
     env.push();
     env.rectMode(env.CENTER);
     env.fill(this.blockColor);
-    env.stroke([60, 90, 110]);
+    env.stroke([189, 185, 185]);
     env.strokeWeight(2);
     env.translate(x, y);
     env.rect(0, 0, this.w * config.sF, this.h * config.sF);
@@ -119,9 +119,7 @@ class BlockKind {
 
     } else {
       // check rows from mouse y, down
-      var top = 13;
-      var y = top;
-      var y = Math.round(top - (this.h / 2) -
+      var y = Math.round(config.top - (this.h / 2) -
                          ((mouseY + (config.stim_scale / 2)) / config.stim_scale)) + 2;
       let rowFree = true;
       while (rowFree && y >= 0) {
