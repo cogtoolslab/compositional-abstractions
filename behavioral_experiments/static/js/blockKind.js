@@ -116,13 +116,13 @@ class BlockKind {
 
     if (!snapY) {
       return [snappedX, snappedY, x_index, y_index];
-      
+
     } else {
       // check rows from mouse y, down
       var top = 13;
       var y = top;
-      //var y = Math.round(top - (this.h / 2) -
-      //                   ((mouseY + (config.stim_scale / 2)) / config.stim_scale)) + 2;
+      var y = Math.round(top - (this.h / 2) -
+                         ((mouseY + (config.stim_scale / 2)) / config.stim_scale)) + 2;
       let rowFree = true;
       while (rowFree && y >= 0) {
         y -= 1;
