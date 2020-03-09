@@ -207,6 +207,9 @@ class BlockUniverse {
       }
     }.bind(this);
 
+    
+    //ADD IF TO EVENT HANDLER, CHANGE TURNS ON BUTTON
+
     env.mouseClicked = function () {
       // if mouse in main environment
       if (env.mouseY > 0 && (env.mouseY < config.envCanvasHeight - config.menuHeight) &&

@@ -35,6 +35,7 @@ class BlockMenu {
   // Display menu
   show(env) {
     env.push();
+    // Menu background
     env.rectMode(env.CORNER);
     env.stroke([28,54,62,100]);
     env.fill([236,232,226]);
@@ -44,7 +45,7 @@ class BlockMenu {
       config.canvasWidth,
       this.h
     );
-    
+    // Blocks in menu
     var i;
     for (i = 0; i < this.blockKinds.length; i++) {
       this.blockKinds[i].showMenuItem(
