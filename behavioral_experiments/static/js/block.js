@@ -96,9 +96,7 @@ class Block {
   }
 
   can_be_placed (engine) {
-    console.log('bounds', this.test_body.bounds);
     var colliding_bodies = Matter.Query.region(engine.world.bodies, this.test_body.bounds);
-    console.log('colliding bodies', colliding_bodies);
     return (colliding_bodies === undefined || colliding_bodies.length == 0)
   }
 
