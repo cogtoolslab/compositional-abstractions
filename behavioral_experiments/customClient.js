@@ -34,6 +34,13 @@ var customEvents = function (game) {
     game.socket.send('endTrial');
   })
 
+  $('#reset_button').click(() => {
+    //game.socket.send('reset');
+    UI.blockUniverse.removeEnv();
+    UI.blockUniverse.removeStimWindow();
+    UI.blockUniverse.setupEnvs(game.currStim);
+  })
+
 
   // TOGGLE TURNS IN HERE?
   $("#send-message").click(() => {
