@@ -4,6 +4,8 @@ var UI = require('./UI.js');
 // Update client versions of variables with data received from
 // server_send_update function in game.core.js
 // -- data: packet send by server
+
+
 function updateState(game, data) {
   game.speakerTurn = true;
   console.log('id: ' + game.my_id);
@@ -23,6 +25,7 @@ function updateState(game, data) {
   game.active = data.active;
   game.roundNum = data.roundNum;
   game.roundStartTime = Date.now();
+  $('#chatbox').prop('disabled', game.speakerTurn && game.role == 'listener' ||  !game.speakerTurn && game.role == 'speaker');
 };
 
 var customEvents = function (game) {
@@ -45,24 +48,21 @@ var customEvents = function (game) {
         game.socket.send(switchTurn);
         game.sentTyping = false;
         $('#chatbox').val('');
-        //game.socket.on('speakerDone', function(data){speakerTurn = !speakerTurn})
       }
       // This prevents the form from submitting & disconnecting person
       return false;
     }
     else {
-      alert('currently not your turn')
+      alert('currently not your turn');
     }
 
   });
 
-  // $("#end-turn").click(() => {
-  //   console.log("here");
-  //   game.socket.send();
-  // });
 
   game.socket.on('switchTurn', function (data){
     game.speakerTurn = !game.speakerTurn
+    $('#chatbox').prop('disabled', game.speakerTurn && game.role == 'listener' ||  !game.speakerTurn && game.role == 'speaker');
+  
   });
 
   game.socket.on('chatMessage', function (data) {
