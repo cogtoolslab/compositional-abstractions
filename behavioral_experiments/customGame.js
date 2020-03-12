@@ -25,6 +25,14 @@ class ServerRefGame extends ServerGame {
       }, 1000);
       socket.game.newRound(4000);
     });
+
+    socket.on('sendStructure', function (blocks) {
+      var all = socket.game.activePlayers(); // sends data to everyone
+      _.map(all, p => p.player.instance.emit('sendStructure', {
+        blocks: blocks
+      }));
+    });
+
   }
 
   // *

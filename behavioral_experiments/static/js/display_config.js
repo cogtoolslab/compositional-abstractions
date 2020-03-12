@@ -9,6 +9,7 @@ var config = {
   buildColor : [179, 47, 10, 255],
   disabledColor : [100, 100, 100, 30],
   mistakeColor : [215, 30, 30, 200],
+  structureGhostColor: [30, 30, 200, 100],
   discreteEnvHeight : 13,   // discrete world representation for y-snapping
   discreteEnvWidth : 18
 };

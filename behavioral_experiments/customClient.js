@@ -41,7 +41,6 @@ var customEvents = function (game) {
     UI.blockUniverse.setupEnvs(game.currStim);
   })
 
-
   // TOGGLE TURNS IN HERE?
   $("#send-message").click(() => {
     console.log("message", game.speakerTurn);
@@ -49,10 +48,9 @@ var customEvents = function (game) {
       var origMsg = $('#chatbox').val();
       var timeElapsed = Date.now() - game.typingStartTime;
       var msg = ['chatMessage', origMsg.replace(/\./g, '~~~'), timeElapsed].join('.');
-      var switchTurn = 'switchTurn';
       if ($('#chatbox').val() != '') {
         game.socket.send(msg);
-        game.socket.send(switchTurn);
+        game.socket.send('switchTurn');
         game.sentTyping = false;
         $('#chatbox').val('');
       }
@@ -65,6 +63,39 @@ var customEvents = function (game) {
 
   });
 
+  $("#send-structure").click(() => {
+    //check if any blocks placed this turn
+    console.log("send structure");
+    let blocksPlaced = true;
+
+    if (blocksPlaced) { 
+      // if so send block
+      //var msg = ['chatMessage', origMsg.replace(/\./g, '~~~'), timeElapsed].join('.'); //CHANGE TO BLOCKS
+      //game.socket.send(msg);
+      game.socket.emit('sendStructure', UI.blockUniverse.sendingBlocks);
+      
+      game.socket.send('switchTurn');
+      // This prevents the form from submitting & disconnecting person
+      
+      blocksPlaced = false;
+      return false;
+      
+      //reset block counter (for turn)
+    
+    } else {
+      alert('Please place a block');
+    }
+
+  });
+
+  // game.socket.on('sendStructure', function (blocks) {
+  //   console.log(blocks)
+  // });
+  
+
+  game.socket.on('sendStructure', function (data) {
+    UI.blockUniverse.sendingBlocks = data.blocks;
+  });
 
   game.socket.on('switchTurn', function (data){
     game.speakerTurn = !game.speakerTurn

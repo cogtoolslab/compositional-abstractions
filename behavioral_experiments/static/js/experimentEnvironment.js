@@ -49,6 +49,8 @@ class BlockUniverse {
     this.dbname = 'block_construction';
     this.colname = 'silhouette';
 
+    this.sendingBlocks = [];
+
     // Scaling values
     display.grid.setup(); // initialize grid
   }
@@ -65,6 +67,8 @@ class BlockUniverse {
   };
 
   setupStimulus (p5stim, trialObj) {
+    var localThis = this;
+
     var testStim = trialObj.targetBlocks;
     p5stim.setup = function () {
       (p5stim
@@ -74,7 +78,8 @@ class BlockUniverse {
 
     p5stim.draw = function () {
       p5stim.background(220);
-      display.showStimulus(p5stim, testStim, false, trialObj.blockColor);
+      display.showStimulus(p5stim, testStim, false, config.buildColor, false);
+      display.showStimulus(p5stim, localThis.sendingBlocks, false, config.structureGhostColor, true);
       display.showStimFloor(p5stim);
       display.grid.show(p5stim);
     };
@@ -270,9 +275,14 @@ class BlockUniverse {
       var newBlock = this.selectedBlockKind.createSnappedBlock(
         env.mouseX, env.mouseY, this.discreteWorld, false
       );
-      
 
       this.blocks.push(newBlock);
+      this.sendingBlocks.push({
+        "x": newBlock.x_index - 5, 
+        "y": newBlock.y_index, 
+        "width": newBlock.blockKind.w, 
+        "height": newBlock.blockKind.h},
+      );
 
       // jsPsych.pluginAPI.setTimeout(function () {
       //   var moved = newBlock.checkMotion();

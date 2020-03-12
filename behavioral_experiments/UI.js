@@ -13,13 +13,16 @@ class UI {
     this.blockUniverse.setupEnvs(game.currStim);
 
     if(game.role == 'speaker') {
-      $('#experiment-button-col').hide();
+      $('#experiment-button-col').show();
       $('#environment-canvas').hide();
       $('#stimulus-canvas').show();
+      $('#send-structure').hide();
     } else if(game.role == 'listener') {
-      $('#experiment-button-col').show();
+      $('#experiment-button-col').hide();
       $('#environment-canvas').show();
       $('#stimulus-canvas').hide();
+      $('#chatbox').hide();
+      $('#send-message').hide();
     }
     
     $("#chat-history").show();
