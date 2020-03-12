@@ -33,12 +33,12 @@ class BlockMenu {
   }
 
   // Display menu
-  show(env) {
+  show(env, disabled) {
     env.push();
     // Menu background
     env.rectMode(env.CORNER);
     env.stroke([28,54,62,100]);
-    env.fill([236,232,226]);
+    env.fill(config.menuColor);
     env.rect(
       0,
       config.canvasHeight - this.h,
@@ -53,7 +53,8 @@ class BlockMenu {
         ((i+1)*(config.menuWidth/(this.blockKinds.length+1))) +
           this.blockKinds[i].w * config.sF / 2.2 -
           config.worldWidth * config.sF / 5,
-        config.canvasHeight - config.menuHeight / 2
+        config.canvasHeight - config.menuHeight / 2,
+        disabled
       );
     } 
     env.pop();

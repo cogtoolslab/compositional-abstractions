@@ -20,12 +20,18 @@ class BlockKind {
   }
 
   // show block scaled according to given ratio, in a given location
-  showMenuItem(env, x, y) {
+  showMenuItem(env, x, y, disabled) {
     this.x = x;
     this.y = y;
     env.push();
     env.rectMode(env.CENTER);
-    env.fill(this.blockColor);
+    //env.fill(this.blockColor);
+    if (disabled){
+      env.fill(config.disabledColor);
+    }
+    else {
+      env.fill(config.buildColor);
+    }
     env.stroke([189, 185, 185]);
     env.strokeWeight(2);
     env.translate(x, y);

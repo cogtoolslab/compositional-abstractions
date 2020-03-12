@@ -7,7 +7,8 @@ var config = {
   worldScale : 2.2, //scaling factor within matterjs
   stim_scale : 25, //scale of stimulus silhouette (same as sF here)
   buildColor : [179, 47, 10, 255],
-  disabledColor : [100, 100, 100, 30],
+  menuColor : [236,232,226],
+  disabledColor : [100, 100, 100],
   mistakeColor : [215, 30, 30, 200],
   structureGhostColor: [30, 30, 200, 100],
   discreteEnvHeight : 13,   // discrete world representation for y-snapping

@@ -178,7 +178,7 @@ class BlockUniverse {
       display.showMarker(env);
 
       // Menu & grid
-      this.blockMenu.show(env, config.envCanvasHeight, config.envCanvasWidth);
+      this.blockMenu.show(env, this.disabledBlockPlacement);
       display.grid.show(env);
 
       if (trialObj.condition == 'practice' && !this.scoring) {
@@ -216,46 +216,50 @@ class BlockUniverse {
     //ADD IF TO EVENT HANDLER, CHANGE TURNS ON BUTTON
 
     env.mouseClicked = function () {
-      // if mouse in main environment
-      if (env.mouseY > 0 && (env.mouseY < config.envCanvasHeight - config.menuHeight) &&
-          (env.mouseX > 0 && env.mouseX < config.envCanvasWidth)) {
-        if (this.isPlacingObject) {
-          // test whether all blocks are sleeping
-          this.sleeping = this.blocks.filter((block) => block.body.isSleeping);
-          this.allSleeping = this.sleeping.length == this.blocks.length;
 
-          this.time_placing = Date.now();
+      if(!this.disabledBlockPlacement){
 
-          if ((this.allSleeping || (this.time_placing - this.timeLastPlaced > 3000)) &&
-              ((env.mouseX > (config.sF * (this.selectedBlockKind.w / 2))) &&
-               (env.mouseX < config.envCanvasWidth - (config.sF * (this.selectedBlockKind.w / 2))))) {
-            // SEND WORLD DATA AFTER PREVIOUS BLOCK HAS SETTLED
-            // Sends information about the state of the world prior to next block being placed
-            this.placeBlock(env, trialObj);
-          } else {
-            this.disabledBlockPlacement = true;
-            // jsPsych.pluginAPI.setTimeout(function () { // change color of bonus back to white
-            //   disabledBlockPlacement = false;
-            // }, 100);
+        // if mouse in main environment
+        if (env.mouseY > 0 && (env.mouseY < config.envCanvasHeight - config.menuHeight) &&
+            (env.mouseX > 0 && env.mouseX < config.envCanvasWidth)) {
+          if (this.isPlacingObject) {
+            // test whether all blocks are sleeping
+            this.sleeping = this.blocks.filter((block) => block.body.isSleeping);
+            this.allSleeping = this.sleeping.length == this.blocks.length;
+
+            this.time_placing = Date.now();
+
+            if ((this.allSleeping || (this.time_placing - this.timeLastPlaced > 3000)) &&
+                ((env.mouseX > (config.sF * (this.selectedBlockKind.w / 2))) &&
+                (env.mouseX < config.envCanvasWidth - (config.sF * (this.selectedBlockKind.w / 2))))) {
+              // SEND WORLD DATA AFTER PREVIOUS BLOCK HAS SETTLED
+              // Sends information about the state of the world prior to next block being placed
+              this.placeBlock(env, trialObj);
+            } else {
+              this.disabledBlockPlacement = true;
+              // jsPsych.pluginAPI.setTimeout(function () { // change color of bonus back to white
+              //   disabledBlockPlacement = false;
+              // }, 100);
+            }
           }
         }
-      }
 
-      // or if in menu then update selected blockkind
-      if (env.mouseY > 0 && (env.mouseY < config.envCanvasHeight) &&
-          (env.mouseX > 0 && env.mouseX < config.envCanvasWidth)) { 
+        // or if in menu then update selected blockkind
+        if (env.mouseY > 0 && (env.mouseY < config.envCanvasHeight) &&
+            (env.mouseX > 0 && env.mouseX < config.envCanvasWidth)) { 
 
-        // is mouse clicking a block?
-        var newSelectedBlockKind = this.blockMenu.hasClickedButton(env.mouseX, env.mouseY, this.selectedBlockKind);
-        if (newSelectedBlockKind) {
-          if (newSelectedBlockKind == this.selectedBlockKind) {
-            this.timeBlockSelected = Date.now();
-            //rotated = !rotated; // uncomment to allow rotation by re-selecting block from menu
-          } else {
-            this.rotated = false;
+          // is mouse clicking a block?
+          var newSelectedBlockKind = this.blockMenu.hasClickedButton(env.mouseX, env.mouseY, this.selectedBlockKind);
+          if (newSelectedBlockKind) {
+            if (newSelectedBlockKind == this.selectedBlockKind) {
+              this.timeBlockSelected = Date.now();
+              //rotated = !rotated; // uncomment to allow rotation by re-selecting block from menu
+            } else {
+              this.rotated = false;
+            }
+            this.selectedBlockKind = newSelectedBlockKind;
+            this.isPlacingObject = true;
           }
-          this.selectedBlockKind = newSelectedBlockKind;
-          this.isPlacingObject = true;
         }
       }
     }.bind(this);

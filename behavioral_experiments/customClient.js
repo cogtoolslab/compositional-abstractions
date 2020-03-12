@@ -8,6 +8,7 @@ var UI = require('./UI.js');
 
 function updateState(game, data) {
   game.speakerTurn = true;
+  UI.blockUniverse.disabledBlockPlacement = true;
   console.log('id: ' + game.my_id);
 
   game.role = data.currStim.roles[game.my_id];
@@ -73,7 +74,6 @@ var customEvents = function (game) {
       //var msg = ['chatMessage', origMsg.replace(/\./g, '~~~'), timeElapsed].join('.'); //CHANGE TO BLOCKS
       //game.socket.send(msg);
       game.socket.emit('sendStructure', UI.blockUniverse.sendingBlocks);
-      
       game.socket.send('switchTurn');
       // This prevents the form from submitting & disconnecting person
       
@@ -100,7 +100,8 @@ var customEvents = function (game) {
   game.socket.on('switchTurn', function (data){
     game.speakerTurn = !game.speakerTurn
     $('#chatbox').prop('disabled', game.speakerTurn && game.role == 'listener' ||  !game.speakerTurn && game.role == 'speaker');
-  
+    $('#send-structure').prop('disabled', game.speakerTurn);
+    UI.blockUniverse.disabledBlockPlacement = game.speakerTurn;
   });
 
   game.socket.on('chatMessage', function (data) {

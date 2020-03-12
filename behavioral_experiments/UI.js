@@ -32,6 +32,7 @@ class UI {
     $("#response-form").show();    
     $("#send-message").prop("disabled", false);
     $('#reproduction').prop('disabled', false);    
+    $('#send-structure').prop('disabled', true);
     $("#send-message").html("Send");
     $("#reproduction").focus();
   }
