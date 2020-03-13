@@ -96,7 +96,7 @@ class BlockUniverse {
     
     this.engine.world = Matter.World.create({
       gravity: {
-        y: 2
+        y: 0
       }
     });
   }
