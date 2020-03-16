@@ -45,7 +45,7 @@ var customEvents = function (game) {
   // TOGGLE TURNS IN HERE?
   $("#send-message").click(() => {
     console.log("message", game.speakerTurn);
-    if (game.speakerTurn && game.role == 'speaker' || !game.speakerTurn && game.role == 'listener') {
+    // if (game.speakerTurn && game.role == 'speaker' || !game.speakerTurn && game.role == 'listener') {
       var origMsg = $('#chatbox').val();
       var timeElapsed = Date.now() - game.typingStartTime;
       var msg = ['chatMessage', origMsg.replace(/\./g, '~~~'), timeElapsed].join('.');
@@ -57,10 +57,7 @@ var customEvents = function (game) {
       }
       // This prevents the form from submitting & disconnecting person
       return false;
-    }
-    else {
-      alert('currently not your turn');
-    }
+    
 
   });
 
@@ -101,6 +98,7 @@ var customEvents = function (game) {
     game.speakerTurn = !game.speakerTurn
     $('#chatbox').prop('disabled', game.speakerTurn && game.role == 'listener' ||  !game.speakerTurn && game.role == 'speaker');
     $('#send-structure').prop('disabled', game.speakerTurn);
+    $('#send-message').prop('disabled', !game.speakerTurn);
     UI.blockUniverse.disabledBlockPlacement = game.speakerTurn;
   });
 
