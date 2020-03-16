@@ -78,4 +78,6 @@
     resize: none;
 }
 
-
+#chat-history { 
+    text-align: left; 
+}
