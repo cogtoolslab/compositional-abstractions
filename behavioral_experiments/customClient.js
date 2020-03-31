@@ -26,7 +26,7 @@ function updateState(game, data) {
   game.active = data.active;
   game.roundNum = data.roundNum;
   game.roundStartTime = Date.now();
-  $('#chatbox').prop('disabled', game.speakerTurn && game.role == 'listener' ||  !game.speakerTurn && game.role == 'speaker');
+  $('#chatbox').prop('disabled', game.speakerTurn && game.role == 'listener' || !game.speakerTurn && game.role == 'speaker');
 };
 
 var customEvents = function (game) {
@@ -46,18 +46,18 @@ var customEvents = function (game) {
   $("#send-message").click(() => {
     console.log("message", game.speakerTurn);
     // if (game.speakerTurn && game.role == 'speaker' || !game.speakerTurn && game.role == 'listener') {
-      var origMsg = $('#chatbox').val();
-      var timeElapsed = Date.now() - game.typingStartTime;
-      var msg = ['chatMessage', origMsg.replace(/\./g, '~~~'), timeElapsed].join('.');
-      if ($('#chatbox').val() != '') {
-        game.socket.send(msg);
-        game.socket.send('switchTurn');
-        game.sentTyping = false;
-        $('#chatbox').val('');
-      }
-      // This prevents the form from submitting & disconnecting person
-      return false;
-    
+    var origMsg = $('#chatbox').val();
+    var timeElapsed = Date.now() - game.typingStartTime;
+    var msg = ['chatMessage', origMsg.replace(/\./g, '~~~'), timeElapsed].join('.');
+    if ($('#chatbox').val() != '') {
+      game.socket.send(msg);
+      game.socket.send('switchTurn');
+      game.sentTyping = false;
+      $('#chatbox').val('');
+    }
+    // This prevents the form from submitting & disconnecting person
+    return false;
+
 
   });
 
@@ -66,19 +66,19 @@ var customEvents = function (game) {
     console.log("send structure");
     let blocksPlaced = true;
 
-    if (blocksPlaced) { 
+    if (blocksPlaced) {
       // if so send block
       //var msg = ['chatMessage', origMsg.replace(/\./g, '~~~'), timeElapsed].join('.'); //CHANGE TO BLOCKS
       //game.socket.send(msg);
       game.socket.emit('sendStructure', UI.blockUniverse.sendingBlocks);
       game.socket.send('switchTurn');
       // This prevents the form from submitting & disconnecting person
-      
+
       blocksPlaced = false;
       return false;
-      
+
       //reset block counter (for turn)
-    
+
     } else {
       alert('Please place a block');
     }
@@ -88,15 +88,15 @@ var customEvents = function (game) {
   // game.socket.on('sendStructure', function (blocks) {
   //   console.log(blocks)
   // });
-  
+
 
   game.socket.on('sendStructure', function (data) {
     UI.blockUniverse.sendingBlocks = data.blocks;
   });
 
-  game.socket.on('switchTurn', function (data){
+  game.socket.on('switchTurn', function (data) {
     game.speakerTurn = !game.speakerTurn
-    $('#chatbox').prop('disabled', game.speakerTurn && game.role == 'listener' ||  !game.speakerTurn && game.role == 'speaker');
+    $('#chatbox').prop('disabled', game.speakerTurn && game.role == 'listener' || !game.speakerTurn && game.role == 'speaker');
     $('#send-structure').prop('disabled', game.speakerTurn);
     $('#send-message').prop('disabled', !game.speakerTurn);
     UI.blockUniverse.disabledBlockPlacement = game.speakerTurn;
@@ -117,13 +117,13 @@ var customEvents = function (game) {
     console.log('done');
   });
 
-game.socket.on('newRoundUpdate', function (data) {
-  console.log('received newroundupdate');
-  if (data.active) {
-    updateState(game, data);
-    UI.reset(game, data);
-  }
-});
+  game.socket.on('newRoundUpdate', function (data) {
+    console.log('received newroundupdate');
+    if (data.active) {
+      updateState(game, data);
+      UI.reset(game, data);
+    }
+  });
 };
 
 $(document).keypress(e => {
