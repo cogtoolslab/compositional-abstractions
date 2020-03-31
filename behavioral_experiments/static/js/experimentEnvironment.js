@@ -54,8 +54,8 @@ class BlockUniverse {
     // Scaling values
     display.grid.setup(); // initialize grid
   }
-  
-  setupEnvs (trialObj) {
+
+  setupEnvs(trialObj) {
     var localThis = this;
     this.p5stim = new p5((env) => {
       localThis.setupStimulus(env, trialObj);
@@ -66,14 +66,14 @@ class BlockUniverse {
     }, 'environment-canvas');
   };
 
-  setupStimulus (p5stim, trialObj) {
+  setupStimulus(p5stim, trialObj) {
     var localThis = this;
 
     var testStim = trialObj.targetBlocks;
     p5stim.setup = function () {
       (p5stim
-       .createCanvas(config.stimCanvasWidth, config.stimCanvasHeight)
-       .parent('stimulus-canvas')); // add parent div 
+        .createCanvas(config.stimCanvasWidth, config.stimCanvasHeight)
+        .parent('stimulus-canvas')); // add parent div 
     };
 
     p5stim.draw = function () {
@@ -86,14 +86,14 @@ class BlockUniverse {
 
   };
 
-  setupEngine () {
+  setupEngine() {
     // Set up Matter Physics Engine
     this.engine = Matter.Engine.create({
       enableSleeping: true,
       velocityIterations: 24,
       positionIterations: 12
     });
-    
+
     this.engine.world = Matter.World.create({
       gravity: {
         y: 0
@@ -101,7 +101,7 @@ class BlockUniverse {
     });
   }
 
-  setupBlockMenu (buildColor) {
+  setupBlockMenu(buildColor) {
     // Create block kinds that will appear in environment &
     // menu. Later on this will need to be represented in each task.
     this.blockDims.forEach((dims, i) => {
@@ -112,7 +112,7 @@ class BlockUniverse {
     this.blockMenu = new BlockMenu(config.menuHeight, this.blockKinds);
   }
 
-  setupBoundaries () {
+  setupBoundaries() {
     this.ground = new Boundary(
       config.envCanvasWidth / 2,
       config.floorY,
@@ -125,15 +125,15 @@ class BlockUniverse {
     this.rightSide = new Boundary(
       config.envCanvasWidth + 30, config.envCanvasHeight / 2, 60, config.envCanvasHeight
     );
-    Matter.World.add(this.engine.world, this.ground.body); 
+    Matter.World.add(this.engine.world, this.ground.body);
     Matter.World.add(this.engine.world, this.leftSide.body);
-    Matter.World.add(this.engine.world, this.rightSide.body);    
+    Matter.World.add(this.engine.world, this.rightSide.body);
   }
-  
-  setupEnvironment (env, trialObj = null) {
+
+  setupEnvironment(env, trialObj = null) {
     const buildColor = trialObj.blockColor;
     const disabledColor = trialObj.blockColor;
-    
+
     // reset discrete world representation
     for (let i = 0; i < this.discreteWorld.length; i++) {
       this.discreteWorld[i] = new Array(config.discreteEnvHeight).fill(true); // true represents free
@@ -143,15 +143,15 @@ class BlockUniverse {
     env.setup = function () {
       // Create Experiment Canvas
       // creates a P5 canvas (which is a wrapper for an HTML canvas)
-      var envCanvas = env.createCanvas(config.envCanvasWidth, config.envCanvasHeight); 
+      var envCanvas = env.createCanvas(config.envCanvasWidth, config.envCanvasHeight);
       envCanvas.parent('environment-canvas'); // add parent div 
 
       this.setupEngine();
       this.setupBlockMenu(buildColor);
       this.setupBoundaries();
-      
+
       // Add things to the physics engine world
-      
+
       // Runner- use instead of line above if changes to game loop needed
       Matter.Runner.run(Matter.Runner.create({
         isFixed: true
@@ -163,7 +163,7 @@ class BlockUniverse {
       var canvasMouse = Matter.Mouse.create(envCanvas.elt);
 
       // Required for mouse's selected pixel to work on high-resolution displays
-      canvasMouse.pixelRatio = env.pixelDensity(); 
+      canvasMouse.pixelRatio = env.pixelDensity();
 
       var options = {
         mouse: canvasMouse // set object to mouse object in canvas
@@ -174,7 +174,7 @@ class BlockUniverse {
       env.background(220);
       this.ground.show(env);
       this.leftSide.show(env);
-      this.rightSide.show(env);      
+      this.rightSide.show(env);
       display.showMarker(env);
 
       // Menu & grid
@@ -212,16 +212,16 @@ class BlockUniverse {
       }
     }.bind(this);
 
-    
+
     //ADD IF TO EVENT HANDLER, CHANGE TURNS ON BUTTON
 
     env.mouseClicked = function () {
 
-      if(!this.disabledBlockPlacement){
+      if (!this.disabledBlockPlacement) {
 
         // if mouse in main environment
         if (env.mouseY > 0 && (env.mouseY < config.envCanvasHeight - config.menuHeight) &&
-            (env.mouseX > 0 && env.mouseX < config.envCanvasWidth)) {
+          (env.mouseX > 0 && env.mouseX < config.envCanvasWidth)) {
           if (this.isPlacingObject) {
             // test whether all blocks are sleeping
             this.sleeping = this.blocks.filter((block) => block.body.isSleeping);
@@ -230,7 +230,7 @@ class BlockUniverse {
             this.time_placing = Date.now();
 
             if ((this.allSleeping || (this.time_placing - this.timeLastPlaced > 3000)) &&
-                ((env.mouseX > (config.sF * (this.selectedBlockKind.w / 2))) &&
+              ((env.mouseX > (config.sF * (this.selectedBlockKind.w / 2))) &&
                 (env.mouseX < config.envCanvasWidth - (config.sF * (this.selectedBlockKind.w / 2))))) {
               // SEND WORLD DATA AFTER PREVIOUS BLOCK HAS SETTLED
               // Sends information about the state of the world prior to next block being placed
@@ -246,7 +246,7 @@ class BlockUniverse {
 
         // or if in menu then update selected blockkind
         if (env.mouseY > 0 && (env.mouseY < config.envCanvasHeight) &&
-            (env.mouseX > 0 && env.mouseX < config.envCanvasWidth)) { 
+          (env.mouseX > 0 && env.mouseX < config.envCanvasWidth)) {
 
           // is mouse clicking a block?
           var newSelectedBlockKind = this.blockMenu.hasClickedButton(env.mouseX, env.mouseY, this.selectedBlockKind);
@@ -270,7 +270,7 @@ class BlockUniverse {
     //maybe redundant with y-snapping?
     var test_block = this.selectedBlockKind.createSnappedBlock(
       env.mouseX, env.mouseY, this.discreteWorld, true
-    ); 
+    );
 
     //console.log(test_block.body);
     //console.log(this.ground.body);
@@ -282,10 +282,11 @@ class BlockUniverse {
 
       this.blocks.push(newBlock);
       this.sendingBlocks.push({
-        "x": newBlock.x_index - 5, 
-        "y": newBlock.y_index, 
-        "width": newBlock.blockKind.w, 
-        "height": newBlock.blockKind.h},
+        "x": newBlock.x_index - 5,
+        "y": newBlock.y_index,
+        "width": newBlock.blockKind.w,
+        "height": newBlock.blockKind.h
+      },
       );
 
       // jsPsych.pluginAPI.setTimeout(function () {
@@ -332,7 +333,7 @@ class BlockUniverse {
 
 
   }
-  
+
   removeEnv() {
     // remove environment
     this.p5env.remove();

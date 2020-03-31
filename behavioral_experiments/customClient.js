@@ -15,9 +15,30 @@ function updateState(game, data) {
   console.log('my role', game.role);
   game.currStim = {
     targetBlocks: [
-      { "x": 1, "y": 0, "width": 2, "height": 4 },
-      { "x": 5, "y": 0, "width": 2, "height": 4 },
-      { "x": 2, "y": 4, "width": 4, "height": 2 }
+      // { "x": 1, "y": 0, "width": 2, "height": 4 },
+      // { "x": 5, "y": 0, "width": 2, "height": 4 },
+      // { "x": 2, "y": 4, "width": 4, "height": 2 }
+
+      // { "x": -3, "y": 0, "width": 2, "height": 4 },
+      // { "x": -3, "y": 4, "width": 4, "height": 2 },
+      // { "x": 7, "y": 0, "width": 4, "height": 2 },
+      // { "x": 9, "y": 2, "width": 2, "height": 4 }
+
+      // { "x": -1, "y": 0, "width": 2, "height": 2 },
+      // { "x": -3, "y": 2, "width": 4, "height": 2 },
+      // { "x": -1, "y": 4, "width": 2, "height": 2 },
+      // { "x": 7, "y": 0, "width": 4, "height": 2},
+      // { "x": 8, "y": 2, "width": 2, "height": 4 }
+
+      { "x": -3, "y": 0, "width": 2, "height": 1 },
+      { "x": -3, "y": 1, "width": 1, "height": 2 },
+      { "x": -4, "y": 3, "width": 2, "height": 1 },
+      { "x": 2, "y": 0, "width": 4, "height": 2},
+      { "x": 3, "y": 2, "width": 2, "height": 2 },
+      { "x": 2, "y": 4, "width": 4, "height": 2 },
+      { "x": 9, "y": 0, "width": 2, "height": 2 },
+      { "x": 8, "y": 2, "width": 2, "height": 1 },
+      { "x": 10, "y": 2, "width": 2, "height": 1 }
     ],
     condition: 'repeated',
     blockColor: '#a10316',
