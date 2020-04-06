@@ -10,6 +10,8 @@ class UI {
   }
 
   reset(game, data) {
+    // this.blockUniverse.removeEnv();
+    // this.blockUniverse.removeStimWindow();
     this.blockUniverse.setupEnvs(game.currStim);
 
     if (game.role == 'speaker') {

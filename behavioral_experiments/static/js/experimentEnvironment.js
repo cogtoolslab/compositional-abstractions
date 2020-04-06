@@ -10,6 +10,7 @@ var display = require('./displayStimuli.js');
 var imagePath = '../img/';
 
 class BlockUniverse {
+
   constructor() {
     this.scoring = false;
 
@@ -37,13 +38,10 @@ class BlockUniverse {
 
     this.blockDims = [
       [1, 2],
-      [2, 1],
-      [2, 2],
-      [2, 4],
-      [4, 2]
+      [2, 1]
     ];
 
-    this.blockNames = ['A', 'B', 'C', 'D', 'E'];
+    this.blockNames = ['v', 'h'];
 
     // Metavariables
     this.dbname = 'block_construction';
