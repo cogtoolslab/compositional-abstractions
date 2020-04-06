@@ -98,6 +98,7 @@ class BlockKind {
   createSnappedBlock(preciseMouseX, preciseMouseY, discreteWorld, testing_placement) {
 
     var [snappedX, snappedY, x_index, y_index] = this.snapToGrid(preciseMouseX, preciseMouseY, discreteWorld)
+    // index is the location in discrete world (i.e. the whole grid)
 
     return new Block(this.engine, this, snappedX, snappedY, false,
       testing_placement = testing_placement, x_index = x_index, y_index = y_index);
@@ -112,12 +113,21 @@ class BlockKind {
     var y_index;
     var stim_scale = config.stim_scale;
 
+    
+
+
     if (this.w % 2 == 1) {
-      snappedX = (mouseX + stim_scale / 2) % (stim_scale) < (stim_scale / 2) ? mouseX - (mouseX % (stim_scale / 2)) : mouseX - (mouseX % (stim_scale)) + (stim_scale / 2);
-      x_index = snappedX / stim_scale - snappedX % stim_scale + 12;
+
+      snappedX = (mouseX + stim_scale / 2) % (stim_scale) < (stim_scale / 2) ? 
+                              mouseX - (mouseX % (stim_scale / 2)) : 
+                              mouseX - (mouseX % (stim_scale)) + (stim_scale / 2);
+
+      x_index = (snappedX / stim_scale) - (snappedX % stim_scale) + stim_scale/2 - 0.5;
     } else {
-      snappedX = mouseX % (stim_scale) < (stim_scale / 2) ? mouseX - mouseX % (stim_scale) : mouseX - mouseX % (stim_scale) + stim_scale;
-      x_index = snappedX / stim_scale - snappedX % stim_scale - this.w / 2;
+      snappedX = mouseX % (stim_scale) < (stim_scale / 2) ?
+                              mouseX - mouseX % (stim_scale) : 
+                              mouseX - mouseX % (stim_scale) + stim_scale;
+      x_index = (snappedX / stim_scale) - (snappedX % stim_scale) - this.w / 2;
     };
 
     if (!snapY) {
@@ -128,7 +138,7 @@ class BlockKind {
       var y = Math.round(config.top - (this.h / 2) -
                          ((mouseY + (config.stim_scale / 2)) / config.stim_scale)) + 2;
       let rowFree = true;
-      while (rowFree && y >= 0) {
+      while (rowFree && y >=0 ) {
         y -= 1;
         var blockEnd = x_index + this.w;
         for (let x = x_index; x < blockEnd; x++) { // check if row directly beneath block are all free at height y
@@ -141,7 +151,7 @@ class BlockKind {
       // ADD SNAP TO Y
       var snappedY = ((config.envCanvasHeight - config.floorHeight) - (stim_scale * (this.h / 2))
         - (stim_scale * (y_index)));
-
+        
       return [snappedX, snappedY, x_index, y_index];
     };
 

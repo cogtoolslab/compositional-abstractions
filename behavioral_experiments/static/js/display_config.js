@@ -1,19 +1,21 @@
 var config = {
   canvasHeight : 450,
   canvasWidth : 450,
-  worldHeight : 8,
-  worldWidth : 8,
-  sF : 25, //scaling factor to change appearance of blocks
-  worldScale : 2.2, //scaling factor within matterjs
-  stim_scale : 25, //scale of stimulus silhouette (same as sF here)
+  worldHeight : 10,
+  worldWidth : 12,
   buildColor : [179, 47, 10, 255],
   menuColor : [236,232,226],
   disabledColor : [100, 100, 100],
   mistakeColor : [215, 30, 30, 200],
   structureGhostColor: [30, 30, 200, 100],
-  discreteEnvHeight : 13,   // discrete world representation for y-snapping
-  discreteEnvWidth : 18
+  discreteEnvHeight : 10,   // discrete world representation for y-snapping
+  discreteEnvWidth : 12,
+  worldScale : 2.2, //scaling factor within matterjs
+  menuOffset: 70
 };
+
+config.sF = config.canvasWidth / config.discreteEnvWidth; //scaling factor to change appearance of blocks
+config.stim_scale = config.sF; //scale of stimulus silhouette (same as sF here)
 
 // Environment parameters
 config.menuHeight = config.canvasHeight / 4.2;

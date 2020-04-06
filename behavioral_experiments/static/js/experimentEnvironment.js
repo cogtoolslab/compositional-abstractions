@@ -264,16 +264,8 @@ class BlockUniverse {
   }
 
   placeBlock(env, trialObj) {
-    //test whether there is a block underneath this area
-    //maybe redundant with y-snapping?
-    var test_block = this.selectedBlockKind.createSnappedBlock(
-      env.mouseX, env.mouseY, this.discreteWorld, true
-    );
 
-    //console.log(test_block.body);
-    //console.log(this.ground.body);
-
-    if (test_block.can_be_placed(this.engine) && trialObj.blockFell == false) {
+    if (true) { // don't test for anything with placement
       var newBlock = this.selectedBlockKind.createSnappedBlock(
         env.mouseX, env.mouseY, this.discreteWorld, false
       );

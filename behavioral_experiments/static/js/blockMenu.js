@@ -52,7 +52,8 @@ class BlockMenu {
         env,
         ((i+1)*(config.menuWidth/(this.blockKinds.length+1))) +
           this.blockKinds[i].w * config.sF / 2.2 -
-          config.worldWidth * config.sF / 5,
+          config.worldWidth * config.sF / 5
+          + config.menuOffset,
         config.canvasHeight - config.menuHeight / 2,
         disabled
       );
