@@ -265,7 +265,11 @@ class BlockUniverse {
 
   placeBlock(env, trialObj) {
 
-    if (true) { // don't test for anything with placement
+    var testBlock = this.selectedBlockKind.createSnappedBlock(
+      env.mouseX, env.mouseY, this.discreteWorld, true
+    );
+
+    if (testBlock.can_be_placed_discrete(this.discreteWorld)) { // don't test for anything with placement
       var newBlock = this.selectedBlockKind.createSnappedBlock(
         env.mouseX, env.mouseY, this.discreteWorld, false
       );
@@ -278,18 +282,6 @@ class BlockUniverse {
         "height": newBlock.blockKind.h
       },
       );
-
-      // jsPsych.pluginAPI.setTimeout(function () {
-      //   var moved = newBlock.checkMotion();
-      //   if (moved) {
-      //     trialObj.blockFell = true;
-      //     newBlock.color = mistakeColor;
-      //     var env_divs = document.getElementsByClassName("col-md env-div");
-      //     Array.prototype.forEach.call(env_divs, env_div => {
-      //       env_div.style.backgroundColor = "#F02020";
-      //     });
-      //   } 
-      // }, 1500);
 
       // update discrete world map
 
@@ -315,7 +307,7 @@ class BlockUniverse {
       });
 
     } else {
-      this.disabledBlockPlacement = true;
+      //this.disabledBlockPlacement = true;
       // jsPsych.pluginAPI.setTimeout(function () { // change color of bonus back to white
       //   disabledBlockPlacement = false;
       // }, 100);

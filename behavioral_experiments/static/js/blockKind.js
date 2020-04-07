@@ -113,11 +113,7 @@ class BlockKind {
     var y_index;
     var stim_scale = config.stim_scale;
 
-    
-
-
     if (this.w % 2 == 1) {
-
       snappedX = (mouseX + stim_scale / 2) % (stim_scale) < (stim_scale / 2) ? 
                               mouseX - (mouseX % (stim_scale / 2)) : 
                               mouseX - (mouseX % (stim_scale)) + (stim_scale / 2);
@@ -138,7 +134,16 @@ class BlockKind {
       var y = Math.round(config.top - (this.h / 2) -
                          ((mouseY + (config.stim_scale / 2)) / config.stim_scale)) + 2;
       let rowFree = true;
-      while (rowFree && y >=0 ) {
+
+      for (let x = x_index; x < blockEnd; x++) { // check if row directly beneath block are all free at height y
+        rowFree = rowFree && discreteWorld[x][y];
+      }
+
+      if (!rowFree){ // if can't place directly here, try from top
+        y = config.discreteEnvHeight;
+      }
+      
+      while (rowFree && y>=0 ) { // move down until row free
         y -= 1;
         var blockEnd = x_index + this.w;
         for (let x = x_index; x < blockEnd; x++) { // check if row directly beneath block are all free at height y
@@ -151,7 +156,7 @@ class BlockKind {
       // ADD SNAP TO Y
       var snappedY = ((config.envCanvasHeight - config.floorHeight) - (stim_scale * (this.h / 2))
         - (stim_scale * (y_index)));
-        
+
       return [snappedX, snappedY, x_index, y_index];
     };
 

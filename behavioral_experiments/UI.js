@@ -19,6 +19,7 @@ class UI {
       $('#environment-canvas').hide();
       $('#stimulus-canvas').show();
       $('#send-structure').hide();
+      // add something to display block menu to speaker
     } else if (game.role == 'listener') {
       $('#experiment-button-col').hide();
       $('#environment-canvas').show();

@@ -60,7 +60,7 @@ class Block {
       x_top_corner = this.x_index*config.sF + config.sF;
     }
 
-    if(this.blockKind.h ==1) {
+    if(this.blockKind.h % 2 == 1) {
       y_top_corner = (config.canvasHeight - config.floorHeight) - (this.y_index + this.blockKind.h - 0.5)*config.sF;
     } else {
       y_top_corner = (config.canvasHeight - config.floorHeight) - (this.y_index + this.blockKind.h - 1)*config.sF;
@@ -111,6 +111,19 @@ class Block {
   can_be_placed (engine) {
     var colliding_bodies = Matter.Query.region(engine.world.bodies, this.test_body.bounds);
     return (colliding_bodies === undefined || colliding_bodies.length == 0)
+  }
+
+  can_be_placed_discrete (discreteWorld) {
+    var x = this.x_index;
+    var y = this.y_index;
+    var free = true;
+    for (let i = x; i < x+this.blockKind.w; i++){
+      for (let j = y; j < y+this.blockKind.h; j++){
+        free = free && discreteWorld[i][j];
+        //console.log('testing', i, j);
+      }
+    }
+    return free;
   }
 
   checkMotion () {
