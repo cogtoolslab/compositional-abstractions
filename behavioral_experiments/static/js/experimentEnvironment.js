@@ -272,7 +272,7 @@ class BlockUniverse {
 
       this.blocks.push(newBlock);
       this.sendingBlocks.push({
-        "x": newBlock.x_index - 5,
+        "x": newBlock.x_index,
         "y": newBlock.y_index,
         "width": newBlock.blockKind.w,
         "height": newBlock.blockKind.h
