@@ -99,11 +99,13 @@ class BlockUniverse {
     });
   }
 
-  setupBlockMenu(buildColor) {
+  setupBlockMenu() {
     // Create block kinds that will appear in environment &
     // menu. Later on this will need to be represented in each task.
+    var c = 0;
     this.blockDims.forEach((dims, i) => {
-      this.blockKinds.push(new BlockKind(this.engine, dims[0], dims[1], buildColor, this.blockNames[i]));
+      this.blockKinds.push(new BlockKind(this.engine, dims[0], dims[1], config.buildColors[c], this.blockNames[i]));
+      c++;
     });
 
     // Create Block Menu
@@ -129,8 +131,6 @@ class BlockUniverse {
   }
 
   setupEnvironment(env, trialObj = null) {
-    const buildColor = trialObj.blockColor;
-    const disabledColor = trialObj.blockColor;
 
     // reset discrete world representation
     for (let i = 0; i < this.discreteWorld.length; i++) {
@@ -145,7 +145,7 @@ class BlockUniverse {
       envCanvas.parent('environment-canvas'); // add parent div 
 
       this.setupEngine();
-      this.setupBlockMenu(buildColor);
+      this.setupBlockMenu();
       this.setupBoundaries();
 
       // Add things to the physics engine world

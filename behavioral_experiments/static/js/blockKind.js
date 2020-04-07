@@ -16,6 +16,7 @@ class BlockKind {
     this.w = w;
     this.h = h;
     this.blockColor = blockColor;
+    console.log(this.blockColor);
     this.blockName = blockName;
   }
 
@@ -30,7 +31,7 @@ class BlockKind {
       env.fill(config.disabledColor);
     }
     else {
-      env.fill(config.buildColor);
+      env.fill(this.blockColor);
     }
     env.stroke([189, 185, 185]);
     env.strokeWeight(2);

@@ -4,6 +4,8 @@ var config = {
   worldHeight : 10,
   worldWidth : 12,
   buildColor : [179, 47, 10, 255],
+  buildColors: [[179, 47, 10, 255],
+                [10, 47, 179, 255]],
   menuColor : [236,232,226],
   disabledColor : [100, 100, 100],
   mistakeColor : [215, 30, 30, 200],
