@@ -114,10 +114,16 @@ function showMarker(p5stim) {
   p5stim.stroke([255, 0, 0]);
   p5stim.strokeWeight(1);
   p5stim.line(
-    config.canvasWidth / 2,
-    config.canvasHeight - config.floorHeight + 10,
-    config.canvasWidth / 2,
-    config.canvasHeight - config.floorHeight + 35
+    config.canvasWidth / (4/3),
+    config.canvasHeight - config.floorHeight,
+    config.canvasWidth / (4/3),
+    config.canvasHeight - config.floorHeight + 15
+  );
+  p5stim.line(
+    config.canvasWidth / 4,
+    config.canvasHeight - config.floorHeight,
+    config.canvasWidth / 4,
+    config.canvasHeight - config.floorHeight + 15
   );
   p5stim.pop();
 }
