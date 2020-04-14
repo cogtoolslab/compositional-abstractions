@@ -93,39 +93,29 @@ var customEvents = function (game) {
   });
 
   //change this to done
-  $("#send-structure").click(() => {
-    //check if any blocks placed this turn
-    console.log("send structure");
-    let blocksPlaced = true;
+  // $("#send-structure").click(() => {
+  //   //check if any blocks placed this turn
+  //   console.log("send structure");
+  //   let blocksPlaced = true;
 
-    if (blocksPlaced) {
-      // if so send block
-      // game.socket.emit('sendStructure', UI.blockUniverse.sendingBlocks);
-      game.socket.send('switchTurn');
-      // This prevents the form from submitting & disconnecting person
+  //   if (blocksPlaced) {
+  //     // if so send block
+  //     // game.socket.emit('sendStructure', UI.blockUniverse.sendingBlocks);
+  //     game.socket.send('switchTurn');
+  //     // This prevents the form from submitting & disconnecting person
 
-      blocksPlaced = false;
-      return false;
+  //     blocksPlaced = false;
+  //     return false;
 
-      //reset block counter (for turn)
+  //     //reset block counter (for turn)
 
-    } else {
-      alert('Please place a block');
-    }
+  //   } else {
+  //     alert('Please place a block');
+  //   }
 
-  });
-
-  // game.socket.on('sendStructure', function (blocks) {
-  //   console.log(blocks)
-  // });
-
-
-  // game.socket.on('sendStructure', function (data) {
-  //   UI.blockUniverse.sendingBlocks = data.blocks;
   // });
 
   game.socket.on('sendBlock', function (data) {
-    console.log('block received ', data);
     UI.blockUniverse.sendingBlocks.push(data.block);
   });
 

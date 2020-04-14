@@ -78,10 +78,10 @@ class BlockUniverse {
 
     p5stim.draw = function () {
       p5stim.background(220);
-      display.showStimulus(p5stim, testStim, false, config.buildColor, false);
-      display.showStimulus(p5stim, localThis.sendingBlocks, false, config.structureGhostColor, true);
+      display.showStimulus(p5stim, testStim, false, config.stimColor);
       display.showStimFloor(p5stim);
       display.grid.show(p5stim);
+      display.showReconstruction(p5stim, localThis.sendingBlocks, false);
     };
 
   };
@@ -278,12 +278,18 @@ class BlockUniverse {
 
       this.blocks.push(newBlock);
 
-      const sendingBlockData = {block: {
-        "x": newBlock.x_index,
-        "y": newBlock.y_index,
-        "width": newBlock.blockKind.w,
-        "height": newBlock.blockKind.h
-      }}
+      var transluscent_color = _.cloneDeep(this.selectedBlockKind.blockColor);
+      transluscent_color[3] -= 100;
+
+      const sendingBlockData = {
+        block: {
+          x: newBlock.x_index,
+          y: newBlock.y_index,
+          width: newBlock.blockKind.w,
+          height: newBlock.blockKind.h,
+          color: transluscent_color // appends alpha value to color of block- will fail if block is not opaque
+        }
+      }
 
       this.sendingBlocks.push(sendingBlockData.block);
       this.blockSender(sendingBlockData);

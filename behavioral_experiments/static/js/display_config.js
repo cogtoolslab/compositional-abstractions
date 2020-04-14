@@ -1,18 +1,20 @@
 var config = {
-  canvasHeight : 450,
-  canvasWidth : 450,
-  worldHeight : 10,
-  worldWidth : 12,
-  buildColor : [179, 47, 10, 255],
+  canvasHeight: 450,
+  canvasWidth: 450,
+  worldHeight: 10,
+  worldWidth: 12,
+  buildColor: [30, 30, 200],
   buildColors: [[179, 47, 10, 255],
                 [10, 47, 179, 255]],
-  menuColor : [236,232,226],
-  disabledColor : [100, 100, 100],
-  mistakeColor : [215, 30, 30, 200],
+  menuColor: [236, 232, 226],
+  disabledColor: [100, 100, 100],
+  mistakeColor: [215, 30, 30, 200],
   structureGhostColor: [30, 30, 200, 100],
-  discreteEnvHeight : 10,   // discrete world representation for y-snapping
-  discreteEnvWidth : 12,
-  worldScale : 2.2, //scaling factor within matterjs
+  floorColor: [28, 54, 62],
+  stimColor: [28, 54, 62],
+  discreteEnvHeight: 10,   // discrete world representation for y-snapping
+  discreteEnvWidth: 12,
+  worldScale: 2.2, //scaling factor within matterjs
   menuOffset: 70
 };
 
@@ -23,8 +25,8 @@ config.stim_scale = config.sF; //scale of stimulus silhouette (same as sF here)
 config.menuHeight = config.canvasHeight / 4.2;
 config.menuWidth = config.canvasWidth;
 config.floorHeight = config.canvasHeight / 3.5;
-config.floorY = config.canvasHeight - (config.floorHeight/2);
-config.top = Math.round((config.canvasHeight - config.floorHeight)/config.stim_scale);
+config.floorY = config.canvasHeight - (config.floorHeight / 2);
+config.top = Math.round((config.canvasHeight - config.floorHeight) / config.stim_scale);
 //config.aboveGroundProp = config.floorY / config.canvasHeight;
 
 // Stimulus parameters

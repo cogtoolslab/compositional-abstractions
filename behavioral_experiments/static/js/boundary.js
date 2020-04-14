@@ -35,7 +35,7 @@ class Boundary {
     env.rotate(angle);
     env.stroke(220);
     env.strokeWeight(2);
-    env.fill([28,54,62]);
+    env.fill(config.floorColor);
     env.rect(0, 0, this.w, this.h);
     env.pop();
   };

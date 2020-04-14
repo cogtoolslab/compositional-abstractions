@@ -6,7 +6,13 @@ function showStimulus(env, stimulus, individual_blocks = false, blockColor = [28
   });
 }
 
-function showBlock(env, block, individual_blocks = false, blockColor = [28, 54, 62]) {
+function showReconstruction(env, stimulus, individual_blocks = false) {
+  Array.prototype.forEach.call(stimulus, block => {
+    showBlock(env, block, true, block.color);
+  });
+}
+
+function showBlock(env, block, individual_blocks = false, blockColor = config.structureGhostColor) {
   const width = block.width;
   const height = block.height;
   const x_left = block.x - config.worldWidth / 2;
@@ -30,9 +36,8 @@ function showBlock(env, block, individual_blocks = false, blockColor = [28, 54, 
   env.stroke(blockColor);
   env.fill(blockColor);
   if (individual_blocks) {
-    env.strokeWeight(2);
-    env.stroke([201, 201, 201]);
-    env.fill(blockColor);
+    env.strokeWeight(2.5);
+    env.stroke([240, 225, 0]);
   }
   env.rect(0, 0, config.stim_scale * width, config.stim_scale * height);
   env.pop();
@@ -130,6 +135,7 @@ function showMarker(p5stim) {
 
 module.exports = {
   showStimulus,
+  showReconstruction,
   showMarker,
   showStimFloor,
   grid: new Grid()
