@@ -53,6 +53,9 @@ class BlockUniverse {
     display.grid.setup(); // initialize grid
 
     this.blockSender = undefined;
+
+    this.blockMenu = this.setupBlockMenu();
+
   }
 
   setupEnvs(trialObj) {
@@ -71,9 +74,10 @@ class BlockUniverse {
 
     var testStim = trialObj.targetBlocks;
     p5stim.setup = function () {
-      (p5stim
+      p5stim
         .createCanvas(config.stimCanvasWidth, config.stimCanvasHeight)
-        .parent('stimulus-canvas')); // add parent div 
+        .parent('stimulus-canvas'); // add parent div 
+
     };
 
     p5stim.draw = function () {
@@ -82,6 +86,8 @@ class BlockUniverse {
       display.showStimFloor(p5stim);
       display.grid.show(p5stim);
       display.showReconstruction(p5stim, localThis.sendingBlocks, false);
+      
+      localThis.blockMenu.show(p5stim, false);
     };
 
   };
@@ -111,7 +117,7 @@ class BlockUniverse {
     });
 
     // Create Block Menu
-    this.blockMenu = new BlockMenu(config.menuHeight, this.blockKinds);
+    return new BlockMenu(config.menuHeight, this.blockKinds);
   }
 
   setupBoundaries() {
@@ -147,7 +153,7 @@ class BlockUniverse {
       envCanvas.parent('environment-canvas'); // add parent div 
 
       this.setupEngine();
-      this.setupBlockMenu();
+      //this.setupBlockMenu();
       this.setupBoundaries();
 
       // Add things to the physics engine world

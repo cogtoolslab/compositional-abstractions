@@ -36,7 +36,7 @@ class Block {
       this.body = Matter.Bodies.rectangle(this.originalX, this.originalY,
                                           this.w * config.worldScale,
                                           this.h * config.worldScale, options);
-      Matter.World.add(this.engine.world, this.body);
+      //Matter.World.add(this.engine.world, this.body); // disabled for current version
     } else {
       this.test_body = Matter.Bodies.rectangle(
         x * config.worldScale, 
