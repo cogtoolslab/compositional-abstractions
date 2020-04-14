@@ -1,10 +1,10 @@
 var UI = require('./UI.js');
-
+var stim = require('./static/js/stimList.js');
 
 // Update client versions of variables with data received from
 // server_send_update function in game.core.js
 // -- data: packet send by server
-
+console.log(stim.shiftStimulus(stim.rawStimList.T,3));
 
 function updateState(game, data) {
   game.speakerTurn = true;
