@@ -21,7 +21,10 @@ var rawStimList = {
     { "x": 2, "y": 2, "width": 2, "height": 1 }]
 };
 
-function shiftStimulus(stimulus, shift) {
+function shiftStimulus(stimName, shift) {
+
+    stimulus = rawStimList[stimName];
+
     stimulus = _.map(stimulus, function (block) {
         block['x'] = block['x'] + shift;
         return block;
@@ -29,9 +32,24 @@ function shiftStimulus(stimulus, shift) {
     return stimulus;
 };
 
+function placeStimulus(stimName, direction) {
+
+    var directions = {'left': 1, 'right': 7}
+
+    stimulus = shiftStimulus(stimName, directions[direction]);
+
+    return stimulus;
+};
+
+function makeScene(leftStim, rightStim){
+    return _.concat(placeStimulus(leftStim, 'left'),placeStimulus(rightStim, 'right'));
+}
+
 
 
 module.exports = {
     rawStimList,
-    shiftStimulus
+    shiftStimulus,
+    placeStimulus,
+    makeScene
 }
