@@ -52,6 +52,11 @@ function updateState(game, data) {
   game.roundNum = data.roundNum;
   game.roundStartTime = Date.now();
   $('#chatbox').prop('disabled', game.speakerTurn && game.role == 'listener' || !game.speakerTurn && game.role == 'speaker');
+
+  UI.blockUniverse.blockSender = function(blockData){
+    game.socket.emit('sendBlock', blockData);
+  };
+
 };
 
 var customEvents = function (game) {
@@ -87,6 +92,7 @@ var customEvents = function (game) {
 
   });
 
+  //change this to done
   $("#send-structure").click(() => {
     //check if any blocks placed this turn
     console.log("send structure");
@@ -94,9 +100,7 @@ var customEvents = function (game) {
 
     if (blocksPlaced) {
       // if so send block
-      //var msg = ['chatMessage', origMsg.replace(/\./g, '~~~'), timeElapsed].join('.'); //CHANGE TO BLOCKS
-      //game.socket.send(msg);
-      game.socket.emit('sendStructure', UI.blockUniverse.sendingBlocks);
+      // game.socket.emit('sendStructure', UI.blockUniverse.sendingBlocks);
       game.socket.send('switchTurn');
       // This prevents the form from submitting & disconnecting person
 
@@ -116,8 +120,13 @@ var customEvents = function (game) {
   // });
 
 
-  game.socket.on('sendStructure', function (data) {
-    UI.blockUniverse.sendingBlocks = data.blocks;
+  // game.socket.on('sendStructure', function (data) {
+  //   UI.blockUniverse.sendingBlocks = data.blocks;
+  // });
+
+  game.socket.on('sendBlock', function (data) {
+    console.log('block received ', data);
+    UI.blockUniverse.sendingBlocks.push(data.block);
   });
 
   game.socket.on('switchTurn', function (data) {

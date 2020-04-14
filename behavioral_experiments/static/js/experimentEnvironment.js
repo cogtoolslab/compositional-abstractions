@@ -51,6 +51,8 @@ class BlockUniverse {
 
     // Scaling values
     display.grid.setup(); // initialize grid
+
+    this.blockSender = undefined;
   }
 
   setupEnvs(trialObj) {
@@ -275,13 +277,16 @@ class BlockUniverse {
       );
 
       this.blocks.push(newBlock);
-      this.sendingBlocks.push({
+
+      const sendingBlockData = {block: {
         "x": newBlock.x_index,
         "y": newBlock.y_index,
         "width": newBlock.blockKind.w,
         "height": newBlock.blockKind.h
-      },
-      );
+      }}
+
+      this.sendingBlocks.push(sendingBlockData.block);
+      this.blockSender(sendingBlockData);
 
       // update discrete world map
 
