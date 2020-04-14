@@ -92,28 +92,28 @@ var customEvents = function (game) {
 
   });
 
-  //change this to done
-  // $("#send-structure").click(() => {
-  //   //check if any blocks placed this turn
-  //   console.log("send structure");
-  //   let blocksPlaced = true;
 
-  //   if (blocksPlaced) {
-  //     // if so send block
-  //     // game.socket.emit('sendStructure', UI.blockUniverse.sendingBlocks);
-  //     game.socket.send('switchTurn');
-  //     // This prevents the form from submitting & disconnecting person
+  $("#end-turn").click(() => {
+    //check if any blocks placed this turn
+    let blocksPlaced = true; // undefined for now- decide what we want to do when people don't place a block
 
-  //     blocksPlaced = false;
-  //     return false;
+    if (blocksPlaced) {
+      // if so send block
+      // game.socket.emit('sendStructure', UI.blockUniverse.sendingBlocks); // Blocks now sent as they are placed.
+      game.socket.send('switchTurn');
 
-  //     //reset block counter (for turn)
+      blocksPlaced = false;
 
-  //   } else {
-  //     alert('Please place a block');
-  //   }
+      // This prevents the form from submitting & disconnecting person
+      return false;
 
-  // });
+      //reset block counter (for turn)
+
+    } else {
+      alert('Please place a block');
+    }
+
+  });
 
   game.socket.on('sendBlock', function (data) {
     UI.blockUniverse.sendingBlocks.push(data.block);
@@ -122,7 +122,7 @@ var customEvents = function (game) {
   game.socket.on('switchTurn', function (data) {
     game.speakerTurn = !game.speakerTurn
     $('#chatbox').prop('disabled', game.speakerTurn && game.role == 'listener' || !game.speakerTurn && game.role == 'speaker');
-    $('#send-structure').prop('disabled', game.speakerTurn);
+    $('#end-turn').prop('disabled', game.speakerTurn);
     $('#send-message').prop('disabled', !game.speakerTurn);
     UI.blockUniverse.disabledBlockPlacement = game.speakerTurn;
   });
