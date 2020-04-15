@@ -10,13 +10,16 @@ class UI {
   }
 
   reset(game, data) {
+    // this.blockUniverse.removeEnv();
+    // this.blockUniverse.removeStimWindow();
     this.blockUniverse.setupEnvs(game.currStim);
 
     if (game.role == 'speaker') {
       $('#experiment-button-col').show();
       $('#environment-canvas').hide();
       $('#stimulus-canvas').show();
-      $('#send-structure').hide();
+      $('#end-turn').hide();
+      // add something to display block menu to speaker
     } else if (game.role == 'listener') {
       $('#experiment-button-col').hide();
       $('#environment-canvas').show();
@@ -32,7 +35,7 @@ class UI {
     $("#response-form").show();
     $("#send-message").prop("disabled", false);
     $('#reproduction').prop('disabled', false);
-    $('#send-structure').prop('disabled', true);
+    $('#end-turn').prop('disabled', true);
     $("#send-message").html("Send");
     $("#reproduction").focus();
   }

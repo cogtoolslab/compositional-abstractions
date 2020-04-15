@@ -10,6 +10,7 @@ var display = require('./displayStimuli.js');
 var imagePath = '../img/';
 
 class BlockUniverse {
+
   constructor() {
     this.scoring = false;
 
@@ -37,13 +38,10 @@ class BlockUniverse {
 
     this.blockDims = [
       [1, 2],
-      [2, 1],
-      [2, 2],
-      [2, 4],
-      [4, 2]
+      [2, 1]
     ];
 
-    this.blockNames = ['A', 'B', 'C', 'D', 'E'];
+    this.blockNames = ['v', 'h'];
 
     // Metavariables
     this.dbname = 'block_construction';
@@ -53,6 +51,11 @@ class BlockUniverse {
 
     // Scaling values
     display.grid.setup(); // initialize grid
+
+    this.blockSender = undefined;
+
+    this.blockMenu = this.setupBlockMenu();
+
   }
 
   setupEnvs(trialObj) {
@@ -71,17 +74,20 @@ class BlockUniverse {
 
     var testStim = trialObj.targetBlocks;
     p5stim.setup = function () {
-      (p5stim
+      p5stim
         .createCanvas(config.stimCanvasWidth, config.stimCanvasHeight)
-        .parent('stimulus-canvas')); // add parent div 
+        .parent('stimulus-canvas'); // add parent div 
+
     };
 
     p5stim.draw = function () {
       p5stim.background(220);
-      display.showStimulus(p5stim, testStim, false, config.buildColor, false);
-      display.showStimulus(p5stim, localThis.sendingBlocks, false, config.structureGhostColor, true);
+      display.showStimulus(p5stim, testStim, false, config.stimColor);
       display.showStimFloor(p5stim);
       display.grid.show(p5stim);
+      display.showReconstruction(p5stim, localThis.sendingBlocks, false);
+      
+      localThis.blockMenu.show(p5stim, false);
     };
 
   };
@@ -101,15 +107,17 @@ class BlockUniverse {
     });
   }
 
-  setupBlockMenu(buildColor) {
+  setupBlockMenu() {
     // Create block kinds that will appear in environment &
     // menu. Later on this will need to be represented in each task.
+    var c = 0;
     this.blockDims.forEach((dims, i) => {
-      this.blockKinds.push(new BlockKind(this.engine, dims[0], dims[1], buildColor, this.blockNames[i]));
+      this.blockKinds.push(new BlockKind(this.engine, dims[0], dims[1], config.buildColors[c], this.blockNames[i]));
+      c++;
     });
 
     // Create Block Menu
-    this.blockMenu = new BlockMenu(config.menuHeight, this.blockKinds);
+    return new BlockMenu(config.menuHeight, this.blockKinds);
   }
 
   setupBoundaries() {
@@ -131,8 +139,6 @@ class BlockUniverse {
   }
 
   setupEnvironment(env, trialObj = null) {
-    const buildColor = trialObj.blockColor;
-    const disabledColor = trialObj.blockColor;
 
     // reset discrete world representation
     for (let i = 0; i < this.discreteWorld.length; i++) {
@@ -147,7 +153,7 @@ class BlockUniverse {
       envCanvas.parent('environment-canvas'); // add parent div 
 
       this.setupEngine();
-      this.setupBlockMenu(buildColor);
+      //this.setupBlockMenu();
       this.setupBoundaries();
 
       // Add things to the physics engine world
@@ -266,40 +272,33 @@ class BlockUniverse {
   }
 
   placeBlock(env, trialObj) {
-    //test whether there is a block underneath this area
-    //maybe redundant with y-snapping?
-    var test_block = this.selectedBlockKind.createSnappedBlock(
+
+    var testBlock = this.selectedBlockKind.createSnappedBlock(
       env.mouseX, env.mouseY, this.discreteWorld, true
     );
 
-    //console.log(test_block.body);
-    //console.log(this.ground.body);
-
-    if (test_block.can_be_placed(this.engine) && trialObj.blockFell == false) {
+    if (testBlock.can_be_placed_discrete(this.discreteWorld)) { // don't test for anything with placement
       var newBlock = this.selectedBlockKind.createSnappedBlock(
         env.mouseX, env.mouseY, this.discreteWorld, false
       );
 
       this.blocks.push(newBlock);
-      this.sendingBlocks.push({
-        "x": newBlock.x_index - 5,
-        "y": newBlock.y_index,
-        "width": newBlock.blockKind.w,
-        "height": newBlock.blockKind.h
-      },
-      );
 
-      // jsPsych.pluginAPI.setTimeout(function () {
-      //   var moved = newBlock.checkMotion();
-      //   if (moved) {
-      //     trialObj.blockFell = true;
-      //     newBlock.color = mistakeColor;
-      //     var env_divs = document.getElementsByClassName("col-md env-div");
-      //     Array.prototype.forEach.call(env_divs, env_div => {
-      //       env_div.style.backgroundColor = "#F02020";
-      //     });
-      //   } 
-      // }, 1500);
+      var transluscent_color = _.cloneDeep(this.selectedBlockKind.blockColor);
+      transluscent_color[3] -= 100;
+
+      const sendingBlockData = {
+        block: {
+          x: newBlock.x_index,
+          y: newBlock.y_index,
+          width: newBlock.blockKind.w,
+          height: newBlock.blockKind.h,
+          color: transluscent_color // appends alpha value to color of block- will fail if block is not opaque
+        }
+      }
+
+      this.sendingBlocks.push(sendingBlockData.block);
+      this.blockSender(sendingBlockData);
 
       // update discrete world map
 
@@ -325,7 +324,7 @@ class BlockUniverse {
       });
 
     } else {
-      this.disabledBlockPlacement = true;
+      //this.disabledBlockPlacement = true;
       // jsPsych.pluginAPI.setTimeout(function () { // change color of bonus back to white
       //   disabledBlockPlacement = false;
       // }, 100);

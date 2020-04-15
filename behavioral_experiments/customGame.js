@@ -33,6 +33,13 @@ class ServerRefGame extends ServerGame {
       }));
     });
 
+    socket.on('sendBlock', function (data) {
+      var all = socket.game.activePlayers(); // sends data to everyone
+      _.map(all, p => p.player.instance.emit('sendBlock', {
+        block: data.block
+      }));
+    });
+
   }
 
   // *

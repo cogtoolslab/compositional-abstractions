@@ -36,7 +36,7 @@ class Block {
       this.body = Matter.Bodies.rectangle(this.originalX, this.originalY,
                                           this.w * config.worldScale,
                                           this.h * config.worldScale, options);
-      Matter.World.add(this.engine.world, this.body);
+      //Matter.World.add(this.engine.world, this.body); // disabled for current version
     } else {
       this.test_body = Matter.Bodies.rectangle(
         x * config.worldScale, 
@@ -50,12 +50,25 @@ class Block {
   
   // Display the block
   show (env) {
-    var pos = this.body.position;
     var angle = this.body.angle;
+
+    let x_top_corner;
+    let y_top_corner;
+    if (this.blockKind.w % 2 == 1) {
+      x_top_corner = this.x_index*config.sF + config.sF/2;
+    } else {
+      x_top_corner = this.x_index*config.sF + config.sF;
+    }
+
+    if(this.blockKind.h % 2 == 1) {
+      y_top_corner = (config.canvasHeight - config.floorHeight) - (this.y_index + this.blockKind.h - 0.5)*config.sF;
+    } else {
+      y_top_corner = (config.canvasHeight - config.floorHeight) - (this.y_index + this.blockKind.h - 1)*config.sF;
+    }
 
     env.push(); //saves the current drawing style settings and transformations
     env.rectMode(env.CENTER);
-    env.translate(pos.x / config.worldScale, pos.y / config.worldScale);
+    env.translate(x_top_corner, y_top_corner);
     env.rotate(angle);
     env.stroke([28,54,62]);
     env.strokeWeight(2);
@@ -98,6 +111,19 @@ class Block {
   can_be_placed (engine) {
     var colliding_bodies = Matter.Query.region(engine.world.bodies, this.test_body.bounds);
     return (colliding_bodies === undefined || colliding_bodies.length == 0)
+  }
+
+  can_be_placed_discrete (discreteWorld) {
+    var x = this.x_index;
+    var y = this.y_index;
+    var free = true;
+    for (let i = x; i < x+this.blockKind.w; i++){
+      for (let j = y; j < y+this.blockKind.h; j++){
+        free = free && discreteWorld[i][j];
+        //console.log('testing', i, j);
+      }
+    }
+    return free;
   }
 
   checkMotion () {
