@@ -13,7 +13,7 @@ function updateState(game, data) {
   game.speakerTurn = true;
   game.role = data.currStim.roles[game.my_id];
   game.currStim = {
-    targetBlocks: stim.makeScene(_.shuffle(data.currStim.stimulus))
+    targetBlocks: stim.makeScene(data.currStim.stimulus)
   };
   $('#chatbox').prop('disabled', game.speakerTurn && game.role == 'listener' ||
                      !game.speakerTurn && game.role == 'speaker');
