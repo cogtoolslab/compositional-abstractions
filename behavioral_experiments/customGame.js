@@ -3,6 +3,7 @@ var fs = require('fs');
 var assert = require('assert');
 var utils = require(__base + 'static/js/sharedUtils.js');
 var ServerGame = require(__base + 'static/js/game.js')['ServerGame'];
+var stimList = require(__base + 'static/js/stimList.js');
 
 class ServerRefGame extends ServerGame {
   constructor(config) {
@@ -13,6 +14,7 @@ class ServerRefGame extends ServerGame {
       role2: 'listener'
     }
     this.trialList = this.makeTrialList();
+    console.log(this.trialList);
   }
 
   customEvents(socket) {
@@ -45,61 +47,28 @@ class ServerRefGame extends ServerGame {
   // *
   // * TrialList creation
   // *
-
-  getRandomizedConditions() {
-    var numEach = this.numRounds / 3;
-    var conditions = [].concat(utils.fillArray("equal", numEach),
-      utils.fillArray("closer", numEach),
-      utils.fillArray("further", numEach));
-    return _.shuffle(conditions);
-  };
-
   makeTrialList() {
-    var conditionList = this.getRandomizedConditions();
     var trialList = [];
-    for (var i = 0; i < conditionList.length; i++) {
-      var condition = conditionList[i];
-      var trialInfo = this.sampleTrial(condition); // Sample three objects 
-      var roleNames = _.values(this.playerRoleNames);
-      trialList.push({
-        stimuli: trialInfo,
-        condition: condition,
-        roles: _.zipObject(_.map(this.players, p => p.id), roleNames)
+    var numReps = 4;
+    var numTrialsPerRep = 3;
+
+    // Sample a set of `numTrialsPerRep` towers to repeat...
+    var possibleObjects = _.keys(stimList.getRawStimList());
+    var combinations = _.sampleSize(utils.k_combinations(possibleObjects, 2), numTrialsPerRep);
+
+    // An outer loop of repetitions
+    _.forEach(_.range(numReps), repNum => {
+      // Shuffle the sequence you see each of these towers per repetition
+      _.forEach(_.shuffle(combinations), (tower, towerNum) => {
+        trialList.push({
+          stimulus: tower,
+          repNum : repNum,
+          trialNum : repNum + towerNum,
+          roles: _.zipObject(_.map(this.players, p => p.id), _.values(this.playerRoleNames))
+        });
       });
-    };
-    return (trialList);
-  };
-
-  sampleTrial(condition) {
-    var opts = { fixedL: true };
-    var target = { color: utils.randomColor(opts), targetStatus: "target" };
-    var firstDistractor = { color: utils.randomColor(opts), targetStatus: "distr1" };
-    var secondDistractor = { color: utils.randomColor(opts), targetStatus: "distr2" };
-    if (this.checkItem(condition, target, firstDistractor, secondDistractor)) {
-      // attach "condition" to each stimulus object
-      return [target, firstDistractor, secondDistractor];
-    } else { // Try again if something is wrong
-      return this.sampleTrial(condition);
-    }
-  };
-
-  checkItem(condition, target, firstDistractor, secondDistractor) {
-    var f = 5; // floor difference
-    var t = 20; // threshold
-    var targetVsDistr1 = utils.colorDiff(target.color, firstDistractor.color);
-    var targetVsDistr2 = utils.colorDiff(target.color, secondDistractor.color);
-    var distr1VsDistr2 = utils.colorDiff(firstDistractor.color, secondDistractor.color);
-    if (targetVsDistr1 < f || targetVsDistr2 < f || distr1VsDistr2 < f) {
-      return false;
-    } else if (condition === "equal") {
-      return targetVsDistr1 > t && targetVsDistr2 > t && distr1VsDistr2 > t;
-    } else if (condition === "closer") {
-      return targetVsDistr1 < t && targetVsDistr2 < t && distr1VsDistr2 < t;
-    } else if (condition === "further") {
-      return targetVsDistr1 < t && targetVsDistr2 > t && distr1VsDistr2 > t;
-    } else {
-      throw "condition name (" + condition + ") not known";
-    }
+    });
+    return trialList;
   };
 
   onMessage(client, message) {
