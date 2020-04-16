@@ -25,13 +25,14 @@ const _possibleStims = _.keys(_rawStimList);
 
 // Protect this just in case someone mutates one of these objects down
 // the line (e.g. in shiftStimulus())
+// cloneDeep is required because otherwise will just clone the list
+// but keep pointers to the same underlying {'x' : ...} objects
 function getRawStimList () {
-  return _.clone(_rawStimList);
+  return _.cloneDeep(_rawStimList);
 }
 
 function shiftStimulus(stimName, shift) {
   var stimulus = getRawStimList()[stimName];
-  console.log(getRawStimList()[stimName]);
   return _.map(stimulus, (block) => {
     return _.extend({}, block, {'x' : block.x + shift});
   });
