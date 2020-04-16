@@ -10,8 +10,12 @@ class UI {
   }
 
   reset(game, data) {
-    // this.blockUniverse.removeEnv();
-    // this.blockUniverse.removeStimWindow();
+    // Need to remove old screen if on later round
+    if(data.currStim.trialNum > 0) {
+      this.blockUniverse.removeEnv();
+      this.blockUniverse.removeStimWindow();
+    }
+
     this.blockUniverse.setupEnvs(game.currStim);
 
     if (game.role == 'speaker') {
