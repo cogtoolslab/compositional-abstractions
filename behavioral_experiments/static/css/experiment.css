@@ -1,8 +1,20 @@
 /*!
 * Chatroom Custom CSS
-* @author Raeid Saqur <rsaqur@cs.princeton.edu>
-*
 */
+
+#waiting {
+    height: 5%;
+    width: 50%;
+    text-align: center;
+    top: 35%;
+    left:25%;
+    margin-right: auto;
+    margin-bottom: auto;
+    position: absolute;
+    font-size: 3vh;
+    font-weight:lighter;
+}
+
 #messages {
     overflow-y: scroll;
     height:20vh;

@@ -11,6 +11,7 @@ class UI {
 
   reset(game, data) {
     // Need to remove old screen if on later round
+
     if(data.currStim.trialNum > 0) {
       this.blockUniverse.removeEnv();
       this.blockUniverse.removeStimWindow();
@@ -34,7 +35,9 @@ class UI {
 
     $("#chat-history").show();
     $("#feedback").html("");
-    $("#trial-counter").text('trial ' + (game.trialNum + 1) + '/24');
+    $('#waiting').html('');
+    $('#main_div').show();
+    $("#trial-counter").text('trial ' + (game.trialNum + 1) + '/12');
     $("#story").empty();
     $("#response-form").show();
     $("#send-message").prop("disabled", false);
