@@ -8,7 +8,8 @@ var stim = require('./static/js/stimList.js');
 function updateState(game, data) {
   console.log('updating local state with data from server', data);
   game.active = data.active;
-  game.roundNum = data.roundNum;
+  game.trialNum = data.currStim.trialNum;
+  game.repNum = data.currStim.repNum;  
   game.roundStartTime = Date.now();
   game.speakerTurn = true;
   game.role = data.currStim.roles[game.my_id];
