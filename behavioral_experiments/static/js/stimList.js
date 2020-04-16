@@ -1,5 +1,6 @@
+const _ = require('lodash');
 
-var rawStimList = {
+const _rawStimList = {
     L: [{ "x": 0, "y": 1, "width": 1, "height": 2 },
     { "x": 0, "y": 3, "width": 1, "height": 2 },
     { "x": 0, "y": 0, "width": 2, "height": 1 },
@@ -20,36 +21,39 @@ var rawStimList = {
     { "x": 0, "y": 2, "width": 2, "height": 1 },
     { "x": 2, "y": 2, "width": 2, "height": 1 }]
 };
+const _possibleStims = _.keys(_rawStimList);
+
+// Protect this just in case someone mutates one of these objects down
+// the line (e.g. in shiftStimulus())
+function getRawStimList () {
+  return _.clone(_rawStimList);
+}
 
 function shiftStimulus(stimName, shift) {
-
-    stimulus = rawStimList[stimName];
-
-    stimulus = _.map(stimulus, function (block) {
-        block['x'] = block['x'] + shift;
-        return block;
-    });
-    return stimulus;
+  var stimulus = getRawStimList()[stimName];
+  console.log(getRawStimList()[stimName]);
+  return _.map(stimulus, (block) => {
+    return _.extend({}, block, {'x' : block.x + shift});
+  });
 };
 
 function placeStimulus(stimName, direction) {
-
-    var directions = {'left': 1, 'right': 7}
-
-    stimulus = shiftStimulus(stimName, directions[direction]);
-
-    return stimulus;
+  var directions = {'left': 1, 'right': 7};
+  return shiftStimulus(stimName, directions[direction]);
 };
 
-function makeScene(leftStim, rightStim){
-    return _.concat(placeStimulus(leftStim, 'left'),placeStimulus(rightStim, 'right'));
+function makeScene(stimArray){
+  if(stimArray.length != 2) {
+    console.error('stimulus array must be of length 2; curent length:',
+                  stimArray.length);
+  }
+  return _.concat(placeStimulus(stimArray[0], 'left'),
+                  placeStimulus(stimArray[1], 'right'));
 }
-
-
 
 module.exports = {
-    rawStimList,
-    shiftStimulus,
-    placeStimulus,
-    makeScene
-}
+  getRawStimList,
+  shiftStimulus,
+  placeStimulus,
+  makeScene
+};
