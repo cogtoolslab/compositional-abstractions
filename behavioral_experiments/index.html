@@ -36,7 +36,14 @@
 
 <body>
   <div class="container">
-    <div class="main_div">
+    <p id="waiting">
+      Waiting for another player...<br/>  
+      Please do not refresh the page!<br /> 
+      If wait exceeds 5 minutes, <br/>
+      we recommend returning the HIT <br/>
+      and trying again later.
+    </div>
+    <div class="main_div" id="main_div" style="display:none">
       <div class="row mb-2">
         <div class="col-md-auto" id="score_div">Total bonus: <p id='score'></p>
         </div>
@@ -54,7 +61,7 @@
           <input type="text" id="chatbox" class="form-control" />
           <p></p>
           <button id="send-message" type="button" class="btn btn-primary">Send Message</button>
-          <button id="send-structure" type="button" class="btn btn-primary">Send Structure</button>
+          <button id="end-turn" type="button" class="btn btn-primary">End Turn</button>
           <!-- <button id="end-turn" type="button" class="btn btn-primary">Finish Turn</button> -->
         </div>
       </div>
@@ -71,9 +78,10 @@
           <!-- <button type="button" class="btn btn-danger" id="reset_button" value="reset">Reset</button> -->
         </div>
       </div>
+      
       <div class="row pt-2" id="trial-info">
         <div class="col align-text-center" id="trial-counter">
-          <p>Trial 1 of 1</p>
+          <p>Waiting Room</p>
         </div>
       </div>
     </div> <!-- end: main_div -->

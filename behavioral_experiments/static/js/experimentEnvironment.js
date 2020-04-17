@@ -51,6 +51,11 @@ class BlockUniverse {
 
     // Scaling values
     display.grid.setup(); // initialize grid
+
+    this.blockSender = undefined;
+
+    this.blockMenu = this.setupBlockMenu();
+
   }
 
   setupEnvs(trialObj) {
@@ -69,17 +74,20 @@ class BlockUniverse {
 
     var testStim = trialObj.targetBlocks;
     p5stim.setup = function () {
-      (p5stim
+      p5stim
         .createCanvas(config.stimCanvasWidth, config.stimCanvasHeight)
-        .parent('stimulus-canvas')); // add parent div 
+        .parent('stimulus-canvas'); // add parent div 
+
     };
 
     p5stim.draw = function () {
       p5stim.background(220);
-      display.showStimulus(p5stim, testStim, false, config.buildColor, false);
-      display.showStimulus(p5stim, localThis.sendingBlocks, false, config.structureGhostColor, true);
+      display.showStimulus(p5stim, testStim, false, config.stimColor);
       display.showStimFloor(p5stim);
       display.grid.show(p5stim);
+      display.showReconstruction(p5stim, localThis.sendingBlocks, false);
+      
+      localThis.blockMenu.show(p5stim, false);
     };
 
   };
@@ -109,7 +117,7 @@ class BlockUniverse {
     });
 
     // Create Block Menu
-    this.blockMenu = new BlockMenu(config.menuHeight, this.blockKinds);
+    return new BlockMenu(config.menuHeight, this.blockKinds);
   }
 
   setupBoundaries() {
@@ -145,7 +153,7 @@ class BlockUniverse {
       envCanvas.parent('environment-canvas'); // add parent div 
 
       this.setupEngine();
-      this.setupBlockMenu();
+      //this.setupBlockMenu();
       this.setupBoundaries();
 
       // Add things to the physics engine world
@@ -275,13 +283,22 @@ class BlockUniverse {
       );
 
       this.blocks.push(newBlock);
-      this.sendingBlocks.push({
-        "x": newBlock.x_index,
-        "y": newBlock.y_index,
-        "width": newBlock.blockKind.w,
-        "height": newBlock.blockKind.h
-      },
-      );
+
+      var transluscent_color = _.cloneDeep(this.selectedBlockKind.blockColor);
+      transluscent_color[3] -= 100;
+
+      const sendingBlockData = {
+        block: {
+          x: newBlock.x_index,
+          y: newBlock.y_index,
+          width: newBlock.blockKind.w,
+          height: newBlock.blockKind.h,
+          color: transluscent_color // appends alpha value to color of block- will fail if block is not opaque
+        }
+      }
+
+      this.sendingBlocks.push(sendingBlockData.block);
+      this.blockSender(sendingBlockData);
 
       // update discrete world map
 

@@ -10,15 +10,20 @@ class UI {
   }
 
   reset(game, data) {
-    // this.blockUniverse.removeEnv();
-    // this.blockUniverse.removeStimWindow();
+    // Need to remove old screen if on later round
+
+    if(data.currStim.trialNum > 0) {
+      this.blockUniverse.removeEnv();
+      this.blockUniverse.removeStimWindow();
+    }
+
     this.blockUniverse.setupEnvs(game.currStim);
 
     if (game.role == 'speaker') {
       $('#experiment-button-col').show();
       $('#environment-canvas').hide();
       $('#stimulus-canvas').show();
-      $('#send-structure').hide();
+      $('#end-turn').hide();
       // add something to display block menu to speaker
     } else if (game.role == 'listener') {
       $('#experiment-button-col').hide();
@@ -30,12 +35,14 @@ class UI {
 
     $("#chat-history").show();
     $("#feedback").html("");
-    $("#trial-counter").text('trial ' + (game.trialNum + 1) + '/24');
+    $('#waiting').html('');
+    $('#main_div').show();
+    $("#trial-counter").text('trial ' + (game.trialNum + 1) + '/12');
     $("#story").empty();
     $("#response-form").show();
     $("#send-message").prop("disabled", false);
     $('#reproduction').prop('disabled', false);
-    $('#send-structure').prop('disabled', true);
+    $('#end-turn').prop('disabled', true);
     $("#send-message").html("Send");
     $("#reproduction").focus();
   }

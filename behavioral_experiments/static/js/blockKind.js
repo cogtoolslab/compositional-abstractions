@@ -16,7 +16,6 @@ class BlockKind {
     this.w = w;
     this.h = h;
     this.blockColor = blockColor;
-    console.log(this.blockColor);
     this.blockName = blockName;
   }
 

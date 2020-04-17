@@ -6,60 +6,31 @@ var stim = require('./static/js/stimList.js');
 // -- data: packet send by server
 
 function updateState(game, data) {
-  game.speakerTurn = true;
-  UI.blockUniverse.disabledBlockPlacement = true;
-  console.log('id: ' + game.my_id);
-
-  game.role = data.currStim.roles[game.my_id];
-  console.log('my role', game.role);
-  game.currStim = {
-    targetBlocks: stim.makeScene('T','C')
-
-      // { "x": 1, "y": 0, "width": 2, "height": 4 },
-      // { "x": 5, "y": 0, "width": 2, "height": 4 },
-      // { "x": 2, "y": 4, "width": 4, "height": 2 }
-      //stonehenge
-      // { "x": 1, "y": 0, "width": 1, "height": 2},
-      // { "x": 4, "y": 0, "width": 1, "height": 2 },
-      // { "x": 1, "y": 2, "width": 2, "height": 1 },
-      // { "x": 3, "y": 2, "width": 2, "height": 1 },
-      // // Tall C
-      // { "x": 8, "y": 0, "width": 2, "height": 1 },
-      // { "x": 8, "y": 1, "width": 1, "height": 2 },
-      // { "x": 8, "y": 3, "width": 1, "height": 2 },
-      // { "x": 8, "y": 5, "width": 2, "height": 1 },
-      // L
-      // { "x": 7, "y": 1, "width": 1, "height": 2 },
-      // { "x": 7, "y": 3, "width": 1, "height": 2 },
-      // { "x": 7, "y": 0, "width": 2, "height": 1 },
-      // { "x": 9, "y": 0, "width": 2, "height": 1 },
-      // reverse L
-      // { "x": 10, "y": 1, "width": 1, "height": 2 },
-      // { "x": 10, "y": 3, "width": 1, "height": 2 },
-      // { "x": 7, "y": 0, "width": 2, "height": 1 },
-      // { "x": 9, "y": 0, "width": 2, "height": 1 },
-      // T
-      // { "x": 8, "y": 0, "width": 1, "height": 2 },
-      // { "x": 9, "y": 0, "width": 1, "height": 2 },
-      // { "x": 7, "y": 2, "width": 2, "height": 1 },
-      // { "x": 9, "y": 2, "width": 2, "height": 1 },
-    ,
-    condition: 'repeated',
-    blockColor: '#a10316',
-    blockFell: false
-  };
+  console.log('updating local state with data from server', data);
   game.active = data.active;
-  game.roundNum = data.roundNum;
+  game.trialNum = data.currStim.trialNum;
+  game.repNum = data.currStim.repNum;  
   game.roundStartTime = Date.now();
-  $('#chatbox').prop('disabled', game.speakerTurn && game.role == 'listener' || !game.speakerTurn && game.role == 'speaker');
+  game.speakerTurn = true;
+  game.role = data.currStim.roles[game.my_id];
+  game.currStim = {
+    targetBlocks: stim.makeScene(data.currStim.stimulus)
+  };
+  $('#chatbox').prop('disabled', game.speakerTurn && game.role == 'listener' ||
+                     !game.speakerTurn && game.role == 'speaker');
+
+  UI.blockUniverse.disabledBlockPlacement = true;  
+  UI.blockUniverse.blockSender = function(blockData){
+    game.socket.emit('sendBlock', blockData);
+  };
+
 };
 
 var customEvents = function (game) {
 
   $('#done_button').click(() => {
     game.socket.send('endTrial');
-    removeEnv();
-  })
+  });
 
   $('#reset_button').click(() => {
     //game.socket.send('reset');
@@ -87,20 +58,19 @@ var customEvents = function (game) {
 
   });
 
-  $("#send-structure").click(() => {
+
+  $("#end-turn").click(() => {
     //check if any blocks placed this turn
-    console.log("send structure");
-    let blocksPlaced = true;
+    let blocksPlaced = true; // undefined for now- decide what we want to do when people don't place a block
 
     if (blocksPlaced) {
       // if so send block
-      //var msg = ['chatMessage', origMsg.replace(/\./g, '~~~'), timeElapsed].join('.'); //CHANGE TO BLOCKS
-      //game.socket.send(msg);
-      game.socket.emit('sendStructure', UI.blockUniverse.sendingBlocks);
+      // game.socket.emit('sendStructure', UI.blockUniverse.sendingBlocks); // Blocks now sent as they are placed.
       game.socket.send('switchTurn');
-      // This prevents the form from submitting & disconnecting person
 
       blocksPlaced = false;
+
+      // This prevents the form from submitting & disconnecting person
       return false;
 
       //reset block counter (for turn)
@@ -111,19 +81,14 @@ var customEvents = function (game) {
 
   });
 
-  // game.socket.on('sendStructure', function (blocks) {
-  //   console.log(blocks)
-  // });
-
-
-  game.socket.on('sendStructure', function (data) {
-    UI.blockUniverse.sendingBlocks = data.blocks;
+  game.socket.on('sendBlock', function (data) {
+    UI.blockUniverse.sendingBlocks.push(data.block);
   });
 
   game.socket.on('switchTurn', function (data) {
     game.speakerTurn = !game.speakerTurn
     $('#chatbox').prop('disabled', game.speakerTurn && game.role == 'listener' || !game.speakerTurn && game.role == 'speaker');
-    $('#send-structure').prop('disabled', game.speakerTurn);
+    $('#end-turn').prop('disabled', game.speakerTurn);
     $('#send-message').prop('disabled', !game.speakerTurn);
     UI.blockUniverse.disabledBlockPlacement = game.speakerTurn;
   });
