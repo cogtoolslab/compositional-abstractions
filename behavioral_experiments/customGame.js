@@ -14,19 +14,20 @@ class ServerRefGame extends ServerGame {
       role2: 'listener'
     }
     this.trialList = this.makeTrialList();
+    this.turnNum = 0;
     console.log(this.trialList);
   }
 
   customEvents(socket) {
-    socket.on('endRound', function (data) {
-      var all = socket.game.activePlayers();
-      setTimeout(function () {
-        _.map(all, function (p) {
-          p.player.instance.emit('updateScore', data);
-        });
-      }, 1000);
-      socket.game.newRound(4000);
-    });
+    // socket.on('endRound', function (data) {
+    //   var all = socket.game.activePlayers();
+    //   setTimeout(function () {
+    //     _.map(all, function (p) {
+    //       p.player.instance.emit('updateScore', data);
+    //     });
+    //   }, 1000);
+    //   socket.game.newRound(4000);
+    // });
 
     socket.on('sendStructure', function (blocks) {
       var all = socket.game.activePlayers(); // sends data to everyone
@@ -34,14 +35,6 @@ class ServerRefGame extends ServerGame {
         blocks: blocks
       }));
     });
-
-    socket.on('sendBlock', function (data) {
-      var all = socket.game.activePlayers(); // sends data to everyone
-      _.map(all, p => p.player.instance.emit('sendBlock', {
-        block: data.block
-      }));
-    });
-
   }
 
   // *
@@ -85,7 +78,12 @@ class ServerRefGame extends ServerGame {
     var target = gc.getPlayer(client.userid);
     var others = gc.getOthers(client.userid);
     switch (message_type) {
-
+      case 'block' :
+      _.map(all, p => p.player.instance.emit('block', {
+        block: JSON.parse(message_parts[1]).block
+      }));
+      break;
+      
       case 'chatMessage':
         console.log('received chat message');
         if (client.game.playerCount == gc.playersThreshold && !gc.paused) {
@@ -99,12 +97,15 @@ class ServerRefGame extends ServerGame {
 
       case 'switchTurn':
         console.log('received end turn');
+        gc.turnNum += 1;
         _.map(all, p => p.player.instance.emit('switchTurn', {
           user: client.userid
         }));
         break;
 
-      case 'endTrial':
+    case 'endTrial':
+      // reset turnNum
+      gc.turnNum = 0;
         _.map(all, p => p.player.instance.emit('updateScore', {
           outcome: message_parts[2]
         }));
@@ -135,22 +136,20 @@ class ServerRefGame extends ServerGame {
     Note: If no function provided for an event, no data will be written
   */
   dataOutput() {
-    // function commonOutput (client, message_data) {
-    //   //var target = client.game.currStim.target;
-    //   //var distractor = target == 'g1' ? 'g0' : 'g1';
-    //   return {
-    // 	iterationName: client.game.iterationName,
-    // 	gameid: client.game.id,
-    // 	time: Date.now(),
-    // 	workerId: client.workerid,
-    // 	assignmentId: client.assignmentid,
-    // 	trialNum: client.game.roundNum,
-    // 	trialType: client.game.currStim.currGoalType,
-    // 	// targetGoalSet: client.game.currStim.goalSets[target],
-    // 	// distractorGoalSet: client.game.currStim.goalSets[distractor],
-    // 	firstRole: client.game.firstRole
-    //   };
-    // };
+    function commonOutput (client, message_data) {
+      return {
+    	iterationName: client.game.iterationName,
+    	gameid: client.game.id,
+    	time: Date.now(),
+    	workerId: client.workerid,
+    	assignmentId: client.assignmentid,
+        leftTarget : client.game.currStim.stimulus[0],
+        rightTarget : client.game.currStim.stimulus[1],
+    	trialNum: client.game.currStim.trialNum,
+        turnNum: client.game.turnNum,
+    	repNum: client.game.currStim.repNum
+      };
+    };
 
     // var revealOutput = function(client, message_data) {
     //   var selections = message_data.slice(3);
@@ -177,19 +176,27 @@ class ServerRefGame extends ServerGame {
     // };
 
 
-    // var messageOutput = function(client, message_data) {
-    //   return _.extend(
-    // 	commonOutput(client, message_data), {
-    // 	  cardAskedAbout: message_data[1],
-    // 	  sender: message_data[4],
-    // 	  timeFromRoundStart: message_data[3]
-    // 	}
-    //   );
-    // };
+    var messageOutput = function(client, message_data) {
+      return _.extend(
+    	commonOutput(client, message_data), {
+    	  content : message_data[1]
+    	}
+      );
+    };
+
+    var blockOutput = function(client, message_data) {
+      var parsedData = JSON.parse(message_data[1]);
+      return _.extend(
+    	commonOutput(client, message_data), {
+          block: JSON.stringify(parsedData['block']),
+          blockNum: parsedData['blockNum']
+        }
+      );
+    };
 
     return {
-      // 'chatMessage' : emptyF,
-      // 'reveal' : emptyF,
+      'chatMessage' : messageOutput,
+      'block' : blockOutput
       // 'exitSurvey' : emptyF
     };
   }
