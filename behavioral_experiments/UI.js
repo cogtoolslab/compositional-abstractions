@@ -8,7 +8,6 @@ class UI {
   constructor() {
     this.blockUniverse = new BlockUniverse();
   }
-
   reset(game, data) {
     // Need to remove old screen if on later round
 
