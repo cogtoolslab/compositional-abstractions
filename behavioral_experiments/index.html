@@ -43,19 +43,6 @@
       we recommend returning the HIT <br />
       and trying again later.
   </div>
-  <div class="container" >
-    <p id="instructions">
-      In this task you will be paired with another human. 
-      One partner will be the "architect" and see an outline of two block sturctures. Your job is to describe the structures so your partner can build them. You will press the [insert send button] to send instructions. You do not need to do this all in one turn. 
-      <br>
-      The other partner will be the "builder". You will do your best to build the structures that are communicated to you. When you are done building, you can end your turn to receive more instructions.
-      <br>
-      <br>
-      The architect can decide when to end the round once <strong>8</strong> blocks have been placed. They do so by cliking the [insert done with round image].
-      <br>
-      You can get paritial bonus points for how close your structures are to the target, so try your best even if your partner messes up.
-      <button class="big-button" id="promptCheck2Button" onclick="clickInstructions();">Submit</button>
-  </div> 
   <div class="main_div" id="main_div" style="display:none">
     <div class="row mb-2">
       <div class="col-md-auto" id="score_div">Total bonus: <p id='score'></p>
@@ -71,7 +58,8 @@
         </div>
       </div>
       <div id="response-form">
-        <textarea rows="4" id="chatbox" class="form-control"> </textarea>
+        <textarea rows="4" id="chatbox" class="form-control" maxlength="100"></textarea>
+        <div id="charLimit"><span id = "charRemain">100</span> Characters Remaining</div>
         <p></p>
         <button id="send-message" type="button" class="btn btn-primary">Send Message</button>
         <button id="end-turn" type="button" class="btn btn-primary">End Turn</button>

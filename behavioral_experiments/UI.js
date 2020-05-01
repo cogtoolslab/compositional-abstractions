@@ -25,6 +25,7 @@ class UI {
       $('#end-turn').hide();
       // add something to display block menu to speaker
     } else if (game.role == 'listener') {
+      $('#charLimit').hide();
       $('#experiment-button-col').hide();
       $('#environment-canvas').show();
       $('#stimulus-canvas').hide();

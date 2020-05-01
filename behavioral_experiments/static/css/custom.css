@@ -102,6 +102,11 @@ html , body {
     font-weight:lighter;
 }
 
+#charLimit{
+    font-size: 5px;
+    font-weight:lighter;
+}
+
 #roundnumber {
     height: 2vh;
     width: 20vh;
