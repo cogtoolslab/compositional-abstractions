@@ -55,8 +55,8 @@ class ServerRefGame extends ServerGame {
       _.forEach(_.shuffle(combinations), (tower, towerNum) => {
         trialList.push({
           stimulus: tower,
-          repNum : repNum,
-          trialNum : repNum + towerNum,
+          repNum: repNum,
+          trialNum: repNum + towerNum,
           roles: _.zipObject(_.map(this.players, p => p.id), _.values(this.playerRoleNames))
         });
       });
@@ -78,12 +78,12 @@ class ServerRefGame extends ServerGame {
     var target = gc.getPlayer(client.userid);
     var others = gc.getOthers(client.userid);
     switch (message_type) {
-      case 'block' :
-      _.map(all, p => p.player.instance.emit('block', {
-        block: JSON.parse(message_parts[1]).block
-      }));
-      break;
-      
+      case 'block':
+        _.map(all, p => p.player.instance.emit('block', {
+          block: JSON.parse(message_parts[1]).block
+        }));
+        break;
+
       case 'chatMessage':
         console.log('received chat message');
         if (client.game.playerCount == gc.playersThreshold && !gc.paused) {
@@ -103,9 +103,9 @@ class ServerRefGame extends ServerGame {
         }));
         break;
 
-    case 'endTrial':
-      // reset turnNum
-      gc.turnNum = 0;
+      case 'endTrial':
+        // reset turnNum
+        gc.turnNum = 0;
         _.map(all, p => p.player.instance.emit('updateScore', {
           outcome: message_parts[2]
         }));
@@ -136,18 +136,18 @@ class ServerRefGame extends ServerGame {
     Note: If no function provided for an event, no data will be written
   */
   dataOutput() {
-    function commonOutput (client, message_data) {
+    function commonOutput(client, message_data) {
       return {
-    	iterationName: client.game.iterationName,
-    	gameid: client.game.id,
-    	time: Date.now(),
-    	workerId: client.workerid,
-    	assignmentId: client.assignmentid,
-        leftTarget : client.game.currStim.stimulus[0],
-        rightTarget : client.game.currStim.stimulus[1],
-    	trialNum: client.game.currStim.trialNum,
+        iterationName: client.game.iterationName,
+        gameid: client.game.id,
+        time: Date.now(),
+        workerId: client.workerid,
+        assignmentId: client.assignmentid,
+        leftTarget: client.game.currStim.stimulus[0],
+        rightTarget: client.game.currStim.stimulus[1],
+        trialNum: client.game.currStim.trialNum,
         turnNum: client.game.turnNum,
-    	repNum: client.game.currStim.repNum
+        repNum: client.game.currStim.repNum
       };
     };
 
@@ -176,27 +176,27 @@ class ServerRefGame extends ServerGame {
     // };
 
 
-    var messageOutput = function(client, message_data) {
+    var messageOutput = function (client, message_data) {
       return _.extend(
-    	commonOutput(client, message_data), {
-    	  content : message_data[1]
-    	}
+        commonOutput(client, message_data), {
+        content: message_data[1]
+      }
       );
     };
 
-    var blockOutput = function(client, message_data) {
+    var blockOutput = function (client, message_data) {
       var parsedData = JSON.parse(message_data[1]);
       return _.extend(
-    	commonOutput(client, message_data), {
-          block: JSON.stringify(parsedData['block']),
-          blockNum: parsedData['blockNum']
-        }
+        commonOutput(client, message_data), {
+        block: JSON.stringify(parsedData['block']),
+        blockNum: parsedData['blockNum']
+      }
       );
     };
 
     return {
-      'chatMessage' : messageOutput,
-      'block' : blockOutput
+      'chatMessage': messageOutput,
+      'block': blockOutput
       // 'exitSurvey' : emptyF
     };
   }
