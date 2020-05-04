@@ -12,6 +12,7 @@ var config = {
   structureGhostColor: [30, 30, 200, 100],
   floorColor: [28, 54, 62],
   stimColor: [28, 54, 62],
+  revealedTargetColor: [28, 54, 62, 200],
   discreteEnvHeight: 10,   // discrete world representation for y-snapping
   discreteEnvWidth: 12,
   worldScale: 2.2, //scaling factor within matterjs

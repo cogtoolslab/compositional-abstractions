@@ -108,12 +108,25 @@ var customEvents = function (game) {
   });
 
   game.socket.on('newRoundUpdate', function (data) {
+    
     console.log('received newroundupdate');
-    UI.blockUniverse.sendingBlocks = [];
-    if (data.active) {
-      updateState(game, data);
-      UI.reset(game, data);
+
+    // display feedback here
+    if (game.role == 'listener'){
+      UI.blockUniverse.revealTarget = true;
     }
+
+    setTimeout(function () {
+    // reset variables here
+      UI.blockUniverse.sendingBlocks = [];
+      UI.blockUniverse.revealTarget = false;
+
+      if (data.active) {
+        updateState(game, data);
+        UI.reset(game, data);
+      };
+    }, 5000); // time interval for feedback
+
   });
 };
 

@@ -56,6 +56,8 @@ class BlockUniverse {
 
     this.blockMenu = this.setupBlockMenu();
 
+    this.revealTarget = false;
+
   }
 
   setupEnvs(trialObj) {
@@ -216,6 +218,11 @@ class BlockUniverse {
           });
         }
       }
+
+      if (this.revealTarget){
+        display.showStimulus(env, trialObj.targetBlocks, false, config.revealedTargetColor);
+      }
+
     }.bind(this);
 
 
