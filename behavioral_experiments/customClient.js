@@ -109,6 +109,7 @@ var customEvents = function (game) {
 
   game.socket.on('newRoundUpdate', function (data) {
     console.log('received newroundupdate');
+    UI.blockUniverse.sendingBlocks = [];
     if (data.active) {
       updateState(game, data);
       UI.reset(game, data);
