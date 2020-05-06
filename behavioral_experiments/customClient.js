@@ -56,7 +56,7 @@ var customEvents = function (game) {
       game.sentTyping = false;
       $('#chatbox').val('');
       $('#charRemain').text(100); //reset char Limit counter for text box
-      $('#blocksPlaced').text(0);
+      $('#partnerTyping').hide();
     }
     // This prevents the form from submitting & disconnecting person
     return false;
@@ -78,10 +78,16 @@ var customEvents = function (game) {
     }
 
   });
-
   //update textbox with remaining character count
   $("#chatbox").keyup(function (e) {
-    $('#charRemain').text($('#chatbox').attr('maxlength') - ($("#chatbox").val().length))
+    $('#charRemain').text($('#chatbox').attr('maxlength') - ($("#chatbox").val().length));
+      game.socket.send('typing');
+  });
+
+  game.socket.on('typing', function (data) {
+    if (game.role == 'listener'){
+      $('#partnerTyping').show();
+    }  
   });
 
   game.socket.on('block', function (data) {
@@ -105,9 +111,12 @@ var customEvents = function (game) {
     UI.blockUniverse.disabledBlockPlacement = game.speakerTurn;
   });
 
+
   game.socket.on('chatMessage', function (data) {
     var source = data.user === game.my_id ? "you" : "partner";
     var color = data.user === game.my_id ? "#A9A9A9" : "#000000";
+    //hide for both when message sent
+    $('#partnerTyping').hide();
     // To bar responses until speaker has uttered at least one message
     game.messageSent = true;
     $('#messages')
@@ -121,7 +130,6 @@ var customEvents = function (game) {
   });
 
   game.socket.on('newRoundUpdate', function (data) {
-    
     console.log('received newroundupdate');
 
     // display feedback here
@@ -135,6 +143,7 @@ var customEvents = function (game) {
       UI.blockUniverse.revealTarget = false;
 
       if (data.active) {
+        $('#blocksPlaced').text(0);
         updateState(game, data);
         UI.reset(game, data);
       };

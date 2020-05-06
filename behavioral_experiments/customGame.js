@@ -103,6 +103,13 @@ class ServerRefGame extends ServerGame {
         }));
         break;
 
+        case 'typing':
+          console.log('received typing');
+          _.map(all, p => p.player.instance.emit('typing', {
+            user: client.userid
+          }));
+          break;
+
       case 'endTrial':
         // reset turnNum
         gc.turnNum = 0;

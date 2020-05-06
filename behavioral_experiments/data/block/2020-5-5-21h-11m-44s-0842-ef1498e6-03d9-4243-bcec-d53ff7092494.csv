@@ -1,0 +1,2 @@
+iterationName	gameid	time	leftTarget	rightTarget	trialNum	turnNum	repNum	block	blockNum	eventType
+testing	0842-ef1498e6-03d9-4243-bcec-d53ff7092494	1588738304391	L	Pi	0	1	0	{"x":3,"y":0,"width":1,"height":2,"color":[179,47,10,155]}	0	block

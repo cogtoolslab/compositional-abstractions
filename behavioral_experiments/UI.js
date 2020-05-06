@@ -23,8 +23,10 @@ class UI {
       $('#environment-canvas').hide();
       $('#stimulus-canvas').show();
       $('#end-turn').hide();
+      $('#partnerTyping').hide();
       // add something to display block menu to speaker
     } else if (game.role == 'listener') {
+      $('#partnerTyping').hide();
       $('#charLimit').hide();
       $('#experiment-button-col').hide();
       $('#environment-canvas').show();

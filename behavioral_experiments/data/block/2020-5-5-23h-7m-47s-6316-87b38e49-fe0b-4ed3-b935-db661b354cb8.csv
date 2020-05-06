@@ -1,0 +1,17 @@
+iterationName	gameid	time	leftTarget	rightTarget	trialNum	turnNum	repNum	block	blockNum	eventType
+testing	6316-87b38e49-fe0b-4ed3-b935-db661b354cb8	1588745267747	C	Pi	0	1	0	{"x":3,"y":0,"width":1,"height":2,"color":[179,47,10,155]}	0	block
+testing	6316-87b38e49-fe0b-4ed3-b935-db661b354cb8	1588745269169	C	Pi	0	1	0	{"x":3,"y":2,"width":2,"height":1,"color":[10,47,179,155]}	1	block
+testing	6316-87b38e49-fe0b-4ed3-b935-db661b354cb8	1588745270302	C	Pi	0	1	0	{"x":6,"y":0,"width":2,"height":1,"color":[10,47,179,155]}	2	block
+testing	6316-87b38e49-fe0b-4ed3-b935-db661b354cb8	1588745271251	C	Pi	0	1	0	{"x":6,"y":1,"width":2,"height":1,"color":[10,47,179,155]}	3	block
+testing	6316-87b38e49-fe0b-4ed3-b935-db661b354cb8	1588745272168	C	Pi	0	1	0	{"x":9,"y":0,"width":2,"height":1,"color":[10,47,179,155]}	4	block
+testing	6316-87b38e49-fe0b-4ed3-b935-db661b354cb8	1588745275190	C	Pi	0	1	0	{"x":8,"y":1,"width":2,"height":1,"color":[10,47,179,155]}	5	block
+testing	6316-87b38e49-fe0b-4ed3-b935-db661b354cb8	1588745276794	C	Pi	0	1	0	{"x":10,"y":1,"width":2,"height":1,"color":[10,47,179,155]}	6	block
+testing	6316-87b38e49-fe0b-4ed3-b935-db661b354cb8	1588745278170	C	Pi	0	1	0	{"x":8,"y":2,"width":2,"height":1,"color":[10,47,179,155]}	7	block
+testing	6316-87b38e49-fe0b-4ed3-b935-db661b354cb8	1588745296803	L	Pi	1	1	0	{"x":3,"y":0,"width":1,"height":2,"color":[179,47,10,155]}	0	block
+testing	6316-87b38e49-fe0b-4ed3-b935-db661b354cb8	1588745298009	L	Pi	1	1	0	{"x":2,"y":0,"width":1,"height":2,"color":[179,47,10,155]}	1	block
+testing	6316-87b38e49-fe0b-4ed3-b935-db661b354cb8	1588745299282	L	Pi	1	1	0	{"x":4,"y":0,"width":1,"height":2,"color":[179,47,10,155]}	2	block
+testing	6316-87b38e49-fe0b-4ed3-b935-db661b354cb8	1588745300593	L	Pi	1	1	0	{"x":1,"y":0,"width":1,"height":2,"color":[179,47,10,155]}	3	block
+testing	6316-87b38e49-fe0b-4ed3-b935-db661b354cb8	1588745301561	L	Pi	1	1	0	{"x":5,"y":0,"width":1,"height":2,"color":[179,47,10,155]}	4	block
+testing	6316-87b38e49-fe0b-4ed3-b935-db661b354cb8	1588745303460	L	Pi	1	1	0	{"x":0,"y":0,"width":1,"height":2,"color":[179,47,10,155]}	5	block
+testing	6316-87b38e49-fe0b-4ed3-b935-db661b354cb8	1588745304762	L	Pi	1	1	0	{"x":6,"y":0,"width":1,"height":2,"color":[179,47,10,155]}	6	block
+testing	6316-87b38e49-fe0b-4ed3-b935-db661b354cb8	1588745306111	L	Pi	1	1	0	{"x":7,"y":0,"width":1,"height":2,"color":[179,47,10,155]}	7	block

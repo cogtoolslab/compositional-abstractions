@@ -1,0 +1,4 @@
+iterationName	gameid	time	leftTarget	rightTarget	trialNum	turnNum	repNum	content	eventType
+testing	6316-87b38e49-fe0b-4ed3-b935-db661b354cb8	1588745265374	C	Pi	0	0	0	;JCVNsd	chatMessage
+testing	6316-87b38e49-fe0b-4ed3-b935-db661b354cb8	1588745294013	L	Pi	1	0	0	test	chatMessage
+testing	6316-87b38e49-fe0b-4ed3-b935-db661b354cb8	1588745322947	L	C	2	1	0	acjklB	chatMessage
