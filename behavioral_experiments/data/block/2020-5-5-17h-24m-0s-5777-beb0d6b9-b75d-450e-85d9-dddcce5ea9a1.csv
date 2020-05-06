@@ -1,0 +1,9 @@
+iterationName	gameid	time	leftTarget	rightTarget	trialNum	turnNum	repNum	block	blockNum	eventType
+"height":2,"color":[179,47,10,155]}	0	block
+testing	5777-beb0d6b9-b75d-450e-85d9-dddcce5ea9a1	1588724641592	L	Pi	0	1	0	{"x":3,"y":0,"width":1,"height":2,"color":[179,47,10,155]}	1	block
+testing	5777-beb0d6b9-b75d-450e-85d9-dddcce5ea9a1	1588724643200	L	Pi	0	1	0	{"x":3,"y":2,"width":2,"height":1,"color":[10,47,179,155]}	2	block
+testing	5777-beb0d6b9-b75d-450e-85d9-dddcce5ea9a1	1588724644471	L	Pi	0	1	0	{"x":2,"y":2,"width":1,"height":2,"color":[179,47,10,155]}	3	block
+testing	5777-beb0d6b9-b75d-450e-85d9-dddcce5ea9a1	1588724645589	L	Pi	0	1	0	{"x":4,"y":0,"width":1,"height":2,"color":[179,47,10,155]}	4	block
+testing	5777-beb0d6b9-b75d-450e-85d9-dddcce5ea9a1	1588724647425	L	Pi	0	1	0	{"x":4,"y":3,"width":2,"height":1,"color":[10,47,179,155]}	5	block
+testing	5777-beb0d6b9-b75d-450e-85d9-dddcce5ea9a1	1588724648720	L	Pi	0	1	0	{"x":3,"y":3,"width":1,"height":2,"color":[179,47,10,155]}	6	block
+testing	5777-beb0d6b9-b75d-450e-85d9-dddcce5ea9a1	1588724650427	L	Pi	0	1	0	{"x":4,"y":4,"width":2,"height":1,"color":[10,47,179,155]}	7	block

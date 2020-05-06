@@ -1,0 +1,3 @@
+iterationName	gameid	time	leftTarget	rightTarget	trialNum	turnNum	repNum	content	eventType
+testing	1257-50b77aa2-e31e-4e9b-b428-b2f4c0ce4fd6	1588723003410	L	C	0	0	0	dSVBK	chatMessage
+testing	1257-50b77aa2-e31e-4e9b-b428-b2f4c0ce4fd6	1588723021128	L	C	0	2	0	not good 	chatMessage

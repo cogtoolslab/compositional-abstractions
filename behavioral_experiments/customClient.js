@@ -23,7 +23,11 @@ function updateState(game, data) {
   UI.blockUniverse.disabledBlockPlacement = true;
   UI.blockUniverse.blockSender = function (blockData) {
     game.socket.send('block.' + JSON.stringify(_.extend(blockData, { blockNum: game.blockNum })));
-    game.blockNum += 1;
+    //end trial when 8 blocks have been placed
+    console.log("blockNum in updateState:", game.blockNum);
+    if(game.blockNum == 7){
+      game.socket.send('endTrial');
+    }
   };
 };
 
@@ -52,6 +56,7 @@ var customEvents = function (game) {
       game.sentTyping = false;
       $('#chatbox').val('');
       $('#charRemain').text(100); //reset char Limit counter for text box
+      $('#blocksPlaced').text(0);
     }
     // This prevents the form from submitting & disconnecting person
     return false;
@@ -80,7 +85,15 @@ var customEvents = function (game) {
   });
 
   game.socket.on('block', function (data) {
+    game.blockNum +=1;
+    $('#blocksPlaced').text(game.blockNum);
     UI.blockUniverse.sendingBlocks.push(data.block);
+    if (game.blockNum ==8){
+      UI.blockUniverse.disabledBlockPlacement = true;
+    }
+    // console.log(UI.blockUniverse.sendingBlocks);
+    // game.blockNum = UI.blockUniverse.sendingBlocks.length;
+    console.log("blocknum", game.blockNum);
   });
 
   game.socket.on('switchTurn', function (data) {

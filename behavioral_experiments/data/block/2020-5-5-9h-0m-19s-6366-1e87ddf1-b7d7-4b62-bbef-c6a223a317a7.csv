@@ -1,0 +1,9 @@
+iterationName	gameid	time	leftTarget	rightTarget	trialNum	turnNum	repNum	block	blockNum	eventType
+testing	6366-1e87ddf1-b7d7-4b62-bbef-c6a223a317a7	1588694419773	C	Pi	0	1	0	{"x":2,"y":0,"width":1,"height":2,"color":[179,47,10,155]}	0	block
+testing	6366-1e87ddf1-b7d7-4b62-bbef-c6a223a317a7	1588694421525	C	Pi	0	1	0	{"x":2,"y":2,"width":2,"height":1,"color":[10,47,179,155]}	0	block
+testing	6366-1e87ddf1-b7d7-4b62-bbef-c6a223a317a7	1588694423326	C	Pi	0	1	0	{"x":3,"y":0,"width":1,"height":2,"color":[179,47,10,155]}	0	block
+testing	6366-1e87ddf1-b7d7-4b62-bbef-c6a223a317a7	1588694425131	C	Pi	0	1	0	{"x":3,"y":3,"width":2,"height":1,"color":[10,47,179,155]}	0	block
+testing	6366-1e87ddf1-b7d7-4b62-bbef-c6a223a317a7	1588694426905	C	Pi	0	1	0	{"x":4,"y":4,"width":2,"height":1,"color":[10,47,179,155]}	0	block
+testing	6366-1e87ddf1-b7d7-4b62-bbef-c6a223a317a7	1588694429647	C	Pi	0	1	0	{"x":5,"y":5,"width":2,"height":1,"color":[10,47,179,155]}	0	block
+testing	6366-1e87ddf1-b7d7-4b62-bbef-c6a223a317a7	1588694440463	C	Pi	0	3	0	{"x":8,"y":0,"width":2,"height":1,"color":[10,47,179,155]}	0	block
+testing	6366-1e87ddf1-b7d7-4b62-bbef-c6a223a317a7	1588694442481	C	Pi	0	3	0	{"x":8,"y":1,"width":2,"height":1,"color":[10,47,179,155]}	0	block

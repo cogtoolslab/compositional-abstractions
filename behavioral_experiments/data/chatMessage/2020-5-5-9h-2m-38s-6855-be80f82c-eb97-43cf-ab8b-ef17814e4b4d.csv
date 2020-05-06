@@ -1,0 +1,6 @@
+iterationName	gameid	time	leftTarget	rightTarget	trialNum	turnNum	repNum	content	eventType
+testing	6855-be80f82c-eb97-43cf-ab8b-ef17814e4b4d	1588694558951	L	Pi	0	0	0	test	chatMessage
+testing	6855-be80f82c-eb97-43cf-ab8b-ef17814e4b4d	1588694594146	L	C	1	0	0	round 2	chatMessage
+testing	6855-be80f82c-eb97-43cf-ab8b-ef17814e4b4d	1588694610060	C	Pi	2	1	0	try again	chatMessage
+testing	6855-be80f82c-eb97-43cf-ab8b-ef17814e4b4d	1588694619191	C	Pi	2	2	0	test	chatMessage
+testing	6855-be80f82c-eb97-43cf-ab8b-ef17814e4b4d	1588694696512	C	Pi	1	0	1	test	chatMessage
