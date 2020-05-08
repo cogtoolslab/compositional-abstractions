@@ -75,10 +75,6 @@
                 The goal of the Architect will be to help the Builder construct the target towers.
                 The Architect will use the chat window to instruct the Builder how to buld.
                 The Architect does not need to give all the instructions at once.
-
-                Also note that the sketcher and viewer will not be shown the exact same images. For instance, a group of
-                five owls might appear
-                to each player in a different configuration, such as:
             </p>
             <!-- <p>
                 <center><img src="images/owls_v1_v2.png" alt="Example constellations" style="width:420px;height:140px">
@@ -86,27 +82,27 @@
             </p> -->
 
             <p>
-                The Sketcher will have 140 characters to create their message. Once they are done, they will click “send
+                The Sketcher will have 100 characters to create their message. Once they are done, they will click “send
                 message”.
             </p>
 
             <p>
                 <b>STEP THREE: </b>
                 The message will be shown to the Builder, who will then place as many bloacks as they want onto the
-                grid.
+                grid. The builder does not have to place any blocks if they are confused or uncertain.
                 As each block is placed, the Architect will see it appear on their screen.
                 Once a block is placed it cannot be moved.
                 <br>
                 When the Builder has finished, they can click the "End Turn" button, and the Architect will be able
                 to send another message if they wish, and repeat the process until <strong>8</strong> blocks have
-                been placed.
+                been placed. Do not place more than 8 blocks.
             </p>
             <p>
                 <b>STEP FOUR: </b>
-                When all 8 blocks have been placed, the Architect can end the round by pressing the "End Round" button.
+                When all 8 blocks have been placed, the round will automatically end.
                 The Builder will then be able to see the target outline, and a <strong>BONUS</strong> will be allocated.
                 Partial credit will be given even if a block is not perfect, so keep trying even if there is a mistake!
-                Then the next trial will begin.
+                Then the next round will begin.
             </p>
 
             <p>
@@ -179,59 +175,51 @@
             </br>
             The Architect sends messages.
             </br>
-            <input type="radio" name="dgoal" value="yes"> False
+            <input type="radio" name="sendMessage" value="yes"> True
             </br>
-            <input type="radio" name="dgoal" value="no"> True
+            <input type="radio" name="sendMessage" value="no"> False
             </br>
 
 
             </br>
             The Builder places the blocks.
             </br>
-            <input type="radio" name="mgoal" value="no"> False
+            <input type="radio" name="placeBlocks" value="yes"> True
             </br>
-            <input type="radio" name="mgoal" value="yes"> True
-            </br>
-
-
-            </br>
-            The Builder must place at least one block.
-            </br>
-            <input type="radio" name="round" value="yes"> True
-            </br>
-            <input type="radio" name="round" value="no"> False
+            <input type="radio" name="placeBlocks" value="no"> False
             </br>
 
+
             </br>
-            Only the Sketcher can use the message bar.
+            If the Builder is undercertain, she can place 0 blocks on a turn.
             </br>
-            <input type="radio" name="message" value="no"> False
+            <input type="radio" name="placeZero" value="yes"> True
             </br>
-            <input type="radio" name="message" value="yes"> True
+            <input type="radio" name="placeZero" value="no"> False
             </br>
 
             </br>
             You can recieve patial credit for misplaced blocks.
             </br>
-            <input type="radio" name="comp" value="no"> True
+            <input type="radio" name="partialCredit" value="yes"> True
             </br>
-            <input type="radio" name="comp" value="yes"> False
+            <input type="radio" name="partialCredit" value="no"> False
             </br>
 
             </br>
             The Architect must send all the information in one message.
             </br>
-            <input type="radio" name="location" value="no"> True
+            <input type="radio" name="allInfo" value="no"> True
             </br>
-            <input type="radio" name="location" value="yes"> False
+            <input type="radio" name="allInfo" value="yes"> False
             </br>
 
             </br>
-            Only the Architect can end the round.
+            The round ends when all 8 blocks are placed.
             </br>
-            <input type="radio" name="incorrect" value="no"> True
+            <input type="radio" name="endRound" value="yes"> True
             </br>
-            <input type="radio" name="incorrect" value="yes"> False
+            <input type="radio" name="endRound" value="no"> False
             </br>
 
             </br>
@@ -258,16 +246,16 @@
 
         var counter = 0;
         document.getElementById("quiz_submit").onclick = function () {
-            var ans1 = $('input[name="dgoal"]:checked').val();
-            var ans2 = $('input[name="mgoal"]:checked').val();
-            var ans3 = $('input[name="round"]:checked').val();
-            var ans4 = $('input[name="message"]:checked').val();
-            var ans5 = $('input[name="comp"]:checked').val();
-            var ans6 = $('input[name="location"]:checked').val();
-            var ans7 = $('input[name="incorrect"]:checked').val();
+            var ans1 = $('input[name="sendMessage"]:checked').val();
+            var ans2 = $('input[name="placeBlocks"]:checked').val();
+            var ans3 = $('input[name="placeZero"]:checked').val();
+            var ans4 = $('input[name="partialCredit"]:checked').val();
+            var ans5 = $('input[name="allInfo"]:checked').val();
+            var ans6 = $('input[name="endRound"]:checked').val();
+            // var ans7 = $('input[name="incorrect"]:checked').val();
 
             if (ans1 == "yes" && ans2 == "yes" && ans3 == "yes" &&
-                ans4 == "yes" && ans5 == "yes" && ans6 == "yes" && ans7 == "yes") {
+                ans4 == "yes" && ans5 == "yes" && ans6 == "yes") {
                 var workerId = urlParams.workerId;
                 var assignmentId = urlParams.assignmentId;
                 var hitId = urlParams.hitId;
