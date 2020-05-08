@@ -36,7 +36,12 @@ try {
     certificate = fs.readFileSync(pathToCerts + 'cert.pem'),
     options = { key: privateKey, cert: certificate },
     server = require('https').createServer(options, app).listen(gameport),
-    io = require('socket.io')(server);
+      //io = require('socket.io')(server);
+      // workaround: https://github.com/socketio/socket.io/issues/3259#issuecomment-448058937
+      io = require('socket.io')(server,{
+	  pingTimeout:60000
+      });
+    
 } catch (err) {
   console.log("cannot find SSL certificates; falling back to http");
   var server = app.listen(gameport),
