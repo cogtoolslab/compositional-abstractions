@@ -25,6 +25,9 @@ class UI {
       $('#stimulus-canvas').show();
       $('#end-turn').hide();
       $('#partnerTyping').hide();
+      $("#roleLabel").text("You are the architect.");
+      $('#instructions').text("Send instructions to your partner to \
+                               help them build the building you see on your screen.");
       // add something to display block menu to speaker
     } else if (game.role == 'listener') {
       $('#partnerTyping').hide();
@@ -34,13 +37,25 @@ class UI {
       $('#stimulus-canvas').hide();
       $('#chatbox').hide();
       $('#send-message').hide();
+      $("#roleLabel").text("You are the builder.");
+      $('#instructions').text("Click and place blocks to build the structure\
+                                 your partner is describing.");
+
     }
 
     $("#chat-history").show();
     $("#feedback").html("");
     $('#waiting').html('');
     $('#main_div').show();
-    $("#trial-counter").text('trial ' + (game.trialNum + 1) + '/12');
+
+    // Update counters
+    $("#block-counter").text('0/' + game.blocksInStructure + ' blocks placed');
+    $("#score-counter").text('Total bonus: $' + game.cumulativeBonus);
+    if(game.trialNum === 'practice') {
+      $("#trial-counter").text("Practice building the tower!");
+    } else {
+      $("#trial-counter").text('trial ' + (game.trialNum + 1) + '/12');
+    }
     $("#story").empty();
     $("#response-form").show();
     $("#send-message").prop("disabled", false);
