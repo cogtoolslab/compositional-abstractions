@@ -16,16 +16,18 @@ function updateState(game, data) {
   game.currStim = {
     targetBlocks: stim.makeScene(data.currStim.stimulus)
   };
+  game.blocksInStructure = game.currStim.targetBlocks.length;
   game.blockNum = 0;
   $('#chatbox').prop('disabled', game.speakerTurn && game.role == 'listener' ||
-    !game.speakerTurn && game.role == 'speaker');
+		     !game.speakerTurn && game.role == 'speaker');
 
   UI.blockUniverse.disabledBlockPlacement = true;
   UI.blockUniverse.blockSender = function (blockData) {
     game.socket.send('block.' + JSON.stringify(_.extend(blockData, { blockNum: game.blockNum })));
+
     //end trial when 8 blocks have been placed
     console.log("blockNum in updateState:", game.blockNum);
-    if(game.blockNum == 7){
+    if(game.blockNum == game.blocksInStructure - 1){
       game.socket.send('endTrial');
     }
   };
@@ -62,7 +64,6 @@ var customEvents = function (game) {
     return false;
   });
 
-
   $("#end-turn").click(() => {
     //check if any blocks placed this turn
     let blocksPlaced = true;
@@ -76,12 +77,19 @@ var customEvents = function (game) {
     } else {
       alert('Please place a block');
     }
-
   });
+
   //update textbox with remaining character count
   $("#chatbox").keyup(function (e) {
     $('#charRemain').text($('#chatbox').attr('maxlength') - ($("#chatbox").val().length));
       game.socket.send('typing');
+  });
+
+  game.socket.on('feedback', function(data) {
+    // display feedback here
+    if (game.role == 'listener'){
+      UI.blockUniverse.revealTarget = true;
+    } 
   });
 
   game.socket.on('typing', function (data) {
@@ -94,18 +102,15 @@ var customEvents = function (game) {
     game.blockNum +=1;
     $('#blocksPlaced').text(game.blockNum);
     UI.blockUniverse.sendingBlocks.push(data.block);
-    if (game.blockNum ==8){
+    if (game.blockNum == game.blocksInStructure){
       UI.blockUniverse.disabledBlockPlacement = true;
     }
-    // console.log(UI.blockUniverse.sendingBlocks);
-    // game.blockNum = UI.blockUniverse.sendingBlocks.length;
-    console.log("blocknum", game.blockNum);
   });
 
   game.socket.on('switchTurn', function (data) {
     game.speakerTurn = !game.speakerTurn;
     $('#chatbox').prop('disabled', game.speakerTurn && game.role == 'listener'
-      || !game.speakerTurn && game.role == 'speaker');
+		       || !game.speakerTurn && game.role == 'speaker');
     $('#end-turn').prop('disabled', game.speakerTurn);
     $('#send-message').prop('disabled', !game.speakerTurn);
     UI.blockUniverse.disabledBlockPlacement = game.speakerTurn;
@@ -132,23 +137,15 @@ var customEvents = function (game) {
   game.socket.on('newRoundUpdate', function (data) {
     console.log('received newroundupdate');
 
-    // display feedback here
-    if (game.role == 'listener'){
-      UI.blockUniverse.revealTarget = true;
-    }
-
-    setTimeout(function () {
     // reset variables here
-      UI.blockUniverse.sendingBlocks = [];
-      UI.blockUniverse.revealTarget = false;
+    UI.blockUniverse.sendingBlocks = [];
+    UI.blockUniverse.revealTarget = false;
 
-      if (data.active) {
-        $('#blocksPlaced').text(0);
-        updateState(game, data);
-        UI.reset(game, data);
-      };
-    }, 5000); // time interval for feedback
-
+    if (data.active) {
+      $('#blocksPlaced').text(0);
+      updateState(game, data);
+      UI.reset(game, data);
+    };
   });
 };
 
