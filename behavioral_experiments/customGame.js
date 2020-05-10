@@ -19,16 +19,6 @@ class ServerRefGame extends ServerGame {
   }
 
   customEvents(socket) {
-    // socket.on('endRound', function (data) {
-    //   var all = socket.game.activePlayers();
-    //   setTimeout(function () {
-    //     _.map(all, function (p) {
-    //       p.player.instance.emit('updateScore', data);
-    //     });
-    //   }, 1000);
-    //   socket.game.newRound(4000);
-    // });
-
     socket.on('sendStructure', function (blocks) {
       var all = socket.game.activePlayers(); // sends data to everyone
       _.map(all, p => p.player.instance.emit('sendStructure', {
@@ -46,9 +36,18 @@ class ServerRefGame extends ServerGame {
     var numTrialsPerRep = 3;
 
     // Sample a set of `numTrialsPerRep` towers to repeat...
-    var possibleObjects = _.keys(stimList.getRawStimList());
+    var possibleObjects = stimList.getPossibleObjects();
     var combinations = _.sampleSize(utils.k_combinations(possibleObjects, 2), numTrialsPerRep);
+    var roles = _.zipObject(_.map(this.players, p => p.id), _.values(this.playerRoleNames));
 
+    // Start with a practice trial
+    trialList.push({
+      stimulus: _.shuffle(['horizontal', 'vertical']),
+      repNum: "practice",
+      trialNum: "practice",
+      roles: roles
+    });
+    
     // An outer loop of repetitions
     _.forEach(_.range(numReps), repNum => {
       // Shuffle the sequence you see each of these towers per repetition
@@ -57,7 +56,7 @@ class ServerRefGame extends ServerGame {
           stimulus: tower,
           repNum: repNum,
           trialNum: repNum + towerNum,
-          roles: _.zipObject(_.map(this.players, p => p.id), _.values(this.playerRoleNames))
+          roles: roles
         });
       });
     });
@@ -112,7 +111,7 @@ class ServerRefGame extends ServerGame {
       case 'endTrial':
         // reset turnNum
         gc.turnNum = 0;
-        _.map(all, p => p.player.instance.emit('updateScore', {
+        _.map(all, p => p.player.instance.emit('feedback', {
           outcome: message_parts[2]
         }));
         setTimeout(function () {
@@ -120,7 +119,7 @@ class ServerRefGame extends ServerGame {
             p.player.instance.emit('newRoundUpdate', { user: client.userid });
           });
           gc.newRound();
-        }, 3000);
+        }, 5000);
 
         break;
 
