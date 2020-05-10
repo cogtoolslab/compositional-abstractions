@@ -8,10 +8,11 @@ class UI {
   constructor() {
     this.blockUniverse = new BlockUniverse();
   }
-  reset(game, data) {
-    // Need to remove old screen if on later round
 
-    if(data.currStim.trialNum > 0) {
+  reset(game, data) {
+    // Need to remove old screens
+    if(_.has(this.blockUniverse, 'p5env') ||
+       _.has(this.blockUniverse, 'p5stim')) {
       this.blockUniverse.removeEnv();
       this.blockUniverse.removeStimWindow();
     }
