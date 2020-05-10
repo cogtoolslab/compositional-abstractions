@@ -18,7 +18,7 @@ class UI {
     }
 
     this.blockUniverse.setupEnvs(game.currStim);
-
+    
     if (game.role == 'speaker') {
       $('#experiment-button-col').show();
       $('#environment-canvas').hide();
@@ -45,6 +45,7 @@ class UI {
 
     $("#chat-history").show();
     $("#feedback").html("");
+    $("#messages").html("");    
     $('#waiting').html('');
     $('#main_div').show();
 
