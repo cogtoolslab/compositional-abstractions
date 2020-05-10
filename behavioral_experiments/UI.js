@@ -44,8 +44,8 @@ class UI {
     }
 
     $("#chat-history").show();
-    $("#feedback").html("");
-    $("#messages").html("");    
+    $("#feedback").html("&nbsp;");
+    $("#messages").html("");
     $('#waiting').html('');
     $('#main_div').show();
 
