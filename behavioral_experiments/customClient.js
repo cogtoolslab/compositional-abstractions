@@ -18,6 +18,7 @@ function updateState(game, data) {
   };
   game.blocksInStructure = game.currStim.targetBlocks.length;
   game.blockNum = 0;
+  game.messageNum = 0;  
   $('#chatbox').prop('disabled', game.speakerTurn && game.role == 'listener' ||
 		     !game.speakerTurn && game.role == 'speaker');
 
@@ -37,13 +38,6 @@ var customEvents = function (game) {
   $('#done_button').click(() => {
     game.socket.send('endTrial');
   });
-
-  $('#reset_button').click(() => {
-    //game.socket.send('reset');
-    UI.blockUniverse.removeEnv();
-    UI.blockUniverse.removeStimWindow();
-    UI.blockUniverse.setupEnvs(game.currStim);
-  })
 
   // TOGGLE TURNS IN HERE?
   $("#send-message").click(() => {
@@ -87,6 +81,8 @@ var customEvents = function (game) {
 
   game.socket.on('feedback', function(data) {
     // display feedback here
+    game.cumulativeBonus += data.bonus;
+    
     if (game.role == 'listener'){
       UI.blockUniverse.revealTarget = true;
     } 
@@ -100,7 +96,7 @@ var customEvents = function (game) {
 
   game.socket.on('block', function (data) {
     game.blockNum +=1;
-    $('#blocksPlaced').text(game.blockNum);
+    $('#block-counter').text(game.blockNum + ' / ' + game.blocksInStructure + ' blocks placed');
     UI.blockUniverse.sendingBlocks.push(data.block);
     if (game.blockNum == game.blocksInStructure){
       UI.blockUniverse.disabledBlockPlacement = true;
@@ -118,7 +114,8 @@ var customEvents = function (game) {
 
 
   game.socket.on('chatMessage', function (data) {
-    var source = data.user === game.my_id ? "you" : "partner";
+    game.messageNum += 1;
+    
     var color = data.user === game.my_id ? "#A9A9A9" : "#000000";
     //hide for both when message sent
     $('#partnerTyping').hide();
@@ -126,7 +123,7 @@ var customEvents = function (game) {
     game.messageSent = true;
     $('#messages')
       .append('<p style="padding: 5px 10px; color: ' + color + '">' +
-        source + ": " + data.msg + "</p>")
+	      game.messageNum + ". " + data.msg + "</p>")
       .stop(true, true)
       .animate({
         scrollTop: $("#messages").prop("scrollHeight")
