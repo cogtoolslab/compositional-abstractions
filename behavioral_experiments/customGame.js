@@ -115,9 +115,6 @@ class ServerRefGame extends ServerGame {
           outcome: message_parts[2]
         }));
         setTimeout(function () {
-          _.map(all, function (p) {
-            p.player.instance.emit('newRoundUpdate', { user: client.userid });
-          });
           gc.newRound();
         }, 5000);
 
