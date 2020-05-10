@@ -83,9 +83,13 @@ var customEvents = function (game) {
     // display feedback here
     game.cumulativeBonus += data.bonus;
     
+    
     if (game.role == 'listener'){
       UI.blockUniverse.revealTarget = true;
-    } 
+      $("#feedback").text("Nice work. Here's the true structure!");
+    } else {
+      $("#feedback").text("Nice work. You scored X points!");
+    }
   });
 
   game.socket.on('typing', function (data) {
