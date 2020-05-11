@@ -111,3 +111,93 @@
 #chat-history { 
     text-align: left; 
 }
+
+
+
+
+.btn{
+    border: solid 4px #1c363e;
+    border-radius: 0px;
+    font-family: 'Francois One', sans-serif;
+    font-size: 24px;
+    padding: 6px 12px;
+}
+
+#end-turn{
+    margin: 0 auto;
+}
+
+#zoom-message p{
+    font-size: 18px;
+    margin: 0;
+}
+
+
+#condition-heading {
+    display: inline-block;
+    text-align: center;
+    font-family: 'Francois One', sans-serif;
+    font-size: 28px;
+}
+
+
+#timer-text {
+    color: #00b300;
+    display: block;
+    float: right;
+    text-align: right;
+    font-family: 'Francois One', sans-serif;
+    font-size: 32px;  
+    
+}
+
+.scores {
+    display: block;
+    float: left;
+    text-align: left;
+    font-family: 'Francois One', sans-serif;
+    font-size: 24px;    
+    margin: 0px !important;
+}
+
+.counter {
+    font-size: 32px;
+    border: 8px solid #FFFFFF;
+}
+
+#defaultCanvas0, #defaultCanvas1 {
+    padding-left: 0;
+    padding-right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    border: solid 6px #1C363E;
+    margin: 10px auto;
+}
+
+.env-div {
+    background-color: #FFD819;
+    padding: 10px;
+}
+
+/* #stimulus-window {
+    background-color: aquamarine;
+
+} */
+
+/* #environment-window {
+    background-color: bisque;
+} */
+
+#experiment .col-md{
+    padding: 26px;
+}
+
+#trial-number{
+    float: none;
+    margin: auto;
+}
+
+#trial-number p{
+    text-align: center;
+}
