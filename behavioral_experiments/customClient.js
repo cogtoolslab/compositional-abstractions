@@ -22,8 +22,13 @@ function updateState(game, data) {
   game.blocksInStructure = game.currStim.targetBlocks.length;
   game.blockNum = 0;
   game.messageNum = 0;  
-  game.discreteWorldMap = scoring.makeTargetMap(targetBlocks); // Add discrete map for scoring
-  
+
+  // scoring
+  game.targetMap = scoring.getDiscreteWorld(targetBlocks); // Add discrete map for scoring
+  //game.score = 0; // for bonusing
+  //game.total_score = 0;
+  game.trial_score = 0;
+
   $('#chatbox').prop('disabled', game.speakerTurn && game.role == 'listener' ||
 		     !game.speakerTurn && game.role == 'speaker');
 
@@ -63,7 +68,7 @@ var customEvents = function (game) {
     return false;
   });
 
-  $("#end-turn").click(() => {
+  $("#done-button").click(() => {
     //check if any blocks placed this turn
     let blocksPlaced = true;
     if (blocksPlaced) {
@@ -109,6 +114,8 @@ var customEvents = function (game) {
     UI.blockUniverse.sendingBlocks.push(data.block);
     if (game.blockNum == game.blocksInStructure){
       UI.blockUniverse.disabledBlockPlacement = true;
+      game.trial_score = scoring.getScoreDiscrete(game.targetMap, scoring.getDiscreteWorld(UI.blockUniverse.sendingBlocks));
+      console.log('score', game.trial_score);
     }
   });
 
@@ -116,7 +123,7 @@ var customEvents = function (game) {
     game.speakerTurn = !game.speakerTurn;
     $('#chatbox').prop('disabled', game.speakerTurn && game.role == 'listener'
 		       || !game.speakerTurn && game.role == 'speaker');
-    $('#end-turn').prop('disabled', game.speakerTurn);
+    $('#done-button').prop('disabled', game.speakerTurn);
     $('#send-message').prop('disabled', !game.speakerTurn);
     UI.blockUniverse.disabledBlockPlacement = game.speakerTurn;
   });

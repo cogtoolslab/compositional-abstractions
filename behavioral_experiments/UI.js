@@ -23,7 +23,7 @@ class UI {
       $('#experiment-button-col').show();
       $('#environment-canvas').hide();
       $('#stimulus-canvas').show();
-      $('#end-turn').hide();
+      $('#done-button').hide();
       $('#partnerTyping').hide();
       $("#roleLabel").text("You are the architect.");
       $('#instructions').text("Send instructions to your partner to \
@@ -61,7 +61,7 @@ class UI {
     $("#response-form").show();
     $("#send-message").prop("disabled", false);
     $('#reproduction').prop('disabled', false);
-    $('#end-turn').prop('disabled', true);
+    $('#done-button').prop('disabled', true);
     $("#send-message").html("Send");
     $("#reproduction").focus();
   }
