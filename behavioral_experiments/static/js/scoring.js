@@ -1,3 +1,5 @@
+var config = require('./display_config.js');
+
 // This file contains helper functions for computing the error between 
 // the target and the structure built by the participant.
 
@@ -162,24 +164,25 @@ function getScore(canvas0, canvas1, agprop, imsize) {
 
 function makeTargetMap(blockList) {
 
-  var targetDiscrete = new Array(discreteEnvWidth);
-  for (let i = 0; i < discreteWorld.length; i++) {
-    targetDiscrete[i] = new Array(discreteEnvHeight).fill(true); // true represents free (NOT BLOCK PRESENT)
+  var targetDiscrete = new Array(config.discreteEnvWidth);
+  for (let i = 0; i < config.discreteEnvWidth; i++) {
+    targetDiscrete[i] = new Array(config.discreteEnvHeight).fill(true); // true represents free (NOT BLOCK PRESENT)
   }
 
-  Array.prototype.forEach.call(blockList, block => {
+  Array.prototype.forEach.call(blockList, block => { // not a Block object
     // add block to map
     var width = block.width;
     var height = block.height;
-    var blockLeft = (discreteEnvWidth-worldWidth)/2 + block.x;
+    var blockLeft = block.x;
     var blockBottom = block.y;
     var blockTop = blockBottom + height;
     var blockRight = blockLeft + width;
 
-    //console.log('width', width);
-    //console.log('height', height);
-    //console.log('blockLeft', blockLeft);
-    //console.log('blockBottom', blockBottom);
+    console.log('block', block);
+    console.log('width', width);
+    console.log('height', height);
+    console.log('blockLeft', blockLeft);
+    console.log('blockBottom', blockBottom);
 
     for (let y = blockBottom; y < blockTop; y++) {
       for (let x = blockLeft; x < blockRight; x++) {
@@ -189,7 +192,7 @@ function makeTargetMap(blockList) {
       
   });
 
-  //console.log(stimWorldDiscrete);
+  console.log(targetDiscrete);
 
   return (targetDiscrete);
 }
@@ -212,3 +215,9 @@ function getScoreDiscrete(target, built) {
   return F1Score(target, built);
 
 }
+
+
+module.exports = {
+  makeTargetMap,
+  getScoreDiscrete
+};

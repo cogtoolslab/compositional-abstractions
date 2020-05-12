@@ -1,11 +1,14 @@
 var UI = require('./UI.js');
 var stim = require('./static/js/stimList.js');
+var scoring = require('./static/js/scoring.js');
 
 // Update client versions of variables with data received from
 // server_send_update function in game.core.js
 // -- data: packet send by server
 
 function updateState(game, data) {
+  var targetBlocks = stim.makeScene(data.currStim.stimulus);
+
   console.log('updating local state with data from server', data);
   game.active = data.active;
   game.trialNum = data.currStim.trialNum;
@@ -14,11 +17,13 @@ function updateState(game, data) {
   game.speakerTurn = true;
   game.role = data.currStim.roles[game.my_id];
   game.currStim = {
-    targetBlocks: stim.makeScene(data.currStim.stimulus)
+    targetBlocks: targetBlocks
   };
   game.blocksInStructure = game.currStim.targetBlocks.length;
   game.blockNum = 0;
   game.messageNum = 0;  
+  game.discreteWorldMap = scoring.makeTargetMap(targetBlocks); // Add discrete map for scoring
+  
   $('#chatbox').prop('disabled', game.speakerTurn && game.role == 'listener' ||
 		     !game.speakerTurn && game.role == 'speaker');
 

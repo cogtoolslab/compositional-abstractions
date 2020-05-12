@@ -40,6 +40,8 @@ class ServerRefGame extends ServerGame {
     var combinations = _.sampleSize(utils.k_combinations(possibleObjects, 2), numTrialsPerRep);
     var roles = _.zipObject(_.map(this.players, p => p.id), _.values(this.playerRoleNames));
 
+
+
     // Start with a practice trial
     trialList.push({
       stimulus: _.shuffle(['horizontal', 'vertical']),
