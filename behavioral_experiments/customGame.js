@@ -114,9 +114,8 @@ class ServerRefGame extends ServerGame {
         // reset turnNum
         gc.turnNum = 0;
         var trialData = JSON.parse(message_parts[1]);
-        console.log('sent score:', trialData['score']);
         _.map(all, p => p.player.instance.emit('feedback', {
-          outcome: message_parts[2]
+          outcome: message_parts[2] // don't think this does anything?
         }));
         setTimeout(function () {
           gc.newRound();

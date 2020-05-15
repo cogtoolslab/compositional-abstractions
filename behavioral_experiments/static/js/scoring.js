@@ -215,7 +215,7 @@ function getScoreDiscrete(target, built) {
   // console.log('target', target);
   // console.log('built', built);
 
-  return F1Score(target, built);
+  return parseInt(F1Score(target, built)*100);
 
 }
 

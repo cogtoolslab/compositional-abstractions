@@ -118,7 +118,7 @@ var customEvents = function (game) {
       var trial_score = scoring.getScoreDiscrete(game.targetMap, scoring.getDiscreteWorld(UI.blockUniverse.sendingBlocks));
       game.trial_score = trial_score;
       console.log('score', game.trial_score);
-      game.socket.send('endTrial.' + JSON.stringify({'score': trial_score }));
+      game.socket.send('endTrial.' + JSON.stringify({'score': trial_score })); //error if '.' in score
     }
   });
 
