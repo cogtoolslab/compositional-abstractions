@@ -99,7 +99,7 @@ var customEvents = function (game) {
       UI.blockUniverse.revealTarget = true;
       $("#feedback").text("Nice work. Here's the true structure!");
     } else {
-      $("#feedback").text("Nice work. You scored X points!");
+      $("#feedback").text("Nice work. You scored " + data.bonus + " points!");
     }
   });
 
