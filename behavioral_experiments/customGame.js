@@ -15,6 +15,7 @@ class ServerRefGame extends ServerGame {
     }
     this.trialList = this.makeTrialList();
     this.turnNum = 0;
+    this.cumulative_score = 0;
     console.log(this.trialList);
   }
 
