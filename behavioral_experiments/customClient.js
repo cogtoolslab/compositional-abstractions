@@ -27,7 +27,9 @@ function updateState(game, data) {
   game.targetMap = scoring.getDiscreteWorld(targetBlocks); // Add discrete map for scoring
   //game.score = 0; // for bonusing
   //game.total_score = 0;
-  game.trial_score = 0;
+  if(!game.cumulativeScore){
+    game.cumulativeScore = 0;
+  }
 
   $('#chatbox').prop('disabled', game.speakerTurn && game.role == 'listener' ||
     !game.speakerTurn && game.role == 'speaker');
@@ -116,9 +118,12 @@ var customEvents = function (game) {
     if (game.blockNum == game.blocksInStructure) {
       UI.blockUniverse.disabledBlockPlacement = true;
       var trial_score = scoring.getScoreDiscrete(game.targetMap, scoring.getDiscreteWorld(UI.blockUniverse.sendingBlocks));
-      game.trial_score = trial_score;
-      console.log('score', game.trial_score);
-      game.socket.send('endTrial.' + JSON.stringify({'score': trial_score }));
+      if(game.trialNum != 'practice'){
+        game.cumulativeScore += trial_score;
+      }
+      console.log('Cumulative score', game.cumulativeScore);
+      console.log('score', trial_score);
+      game.socket.send('endTrial.' + JSON.stringify({'score': trial_score })); //error if '.' in score
     }
   });
 
