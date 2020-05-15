@@ -37,11 +37,10 @@ function updateState(game, data) {
   UI.blockUniverse.blockSender = function (blockData) {
     game.socket.send('block.' + JSON.stringify(_.extend(blockData, { blockNum: game.blockNum })));
 
-    //end trial when 8 blocks have been placed
-    console.log("blockNum in updateState:", game.blockNum);
-    if (game.blockNum == game.blocksInStructure - 1) {
-      game.socket.send('endTrial');
-    }
+    // //end trial when 8 blocks have been placed
+    // if (game.blockNum == game.blocksInStructure - 1) {
+    //   game.socket.send('endTrial');
+    // }
   };
 };
 
@@ -116,8 +115,10 @@ var customEvents = function (game) {
     UI.blockUniverse.sendingBlocks.push(data.block);
     if (game.blockNum == game.blocksInStructure) {
       UI.blockUniverse.disabledBlockPlacement = true;
-      game.trial_score = scoring.getScoreDiscrete(game.targetMap, scoring.getDiscreteWorld(UI.blockUniverse.sendingBlocks));
+      var trial_score = scoring.getScoreDiscrete(game.targetMap, scoring.getDiscreteWorld(UI.blockUniverse.sendingBlocks));
+      game.trial_score = trial_score;
       console.log('score', game.trial_score);
+      game.socket.send('endTrial.' + JSON.stringify({'score': trial_score }));
     }
   });
 

@@ -125,8 +125,8 @@ function F1Score(im1, im2) {
   numerator = math.multiply(precision, recall);
   denominator = math.sum(precision, recall);
   quotient = math.divide(numerator, denominator);
-  console.log('recall = ', recall);
-  console.log('precision = ', precision);
+  //console.log('recall = ', recall);
+  //console.log('precision = ', precision);
   // console.log('quotient = ', quotient);  
   score_to_be_returned = math.multiply(2, quotient);
   return score_to_be_returned
