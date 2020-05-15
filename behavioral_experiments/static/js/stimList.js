@@ -1,11 +1,12 @@
 const _ = require('lodash');
 
 const _rawStimList = {
-    L: [{ "x": 0, "y": 1, "width": 1, "height": 2 },
-    { "x": 0, "y": 3, "width": 1, "height": 2 },
-    { "x": 0, "y": 0, "width": 2, "height": 1 },
-    { "x": 2, "y": 0, "width": 2, "height": 1 }],
-
+  "L": [{ "x": 0, "y": 1, "width": 1, "height": 2 },
+	{ "x": 0, "y": 3, "width": 1, "height": 2 },
+	{ "x": 0, "y": 0, "width": 2, "height": 1 },
+	{ "x": 2, "y": 0, "width": 2, "height": 1 }],
+  "horizontal": [{ "x": 1, "y": 0, "width": 2, "height": 1}],
+  "vertical" : [{"x":1, "y":0, "width":1, "height":2}],
     // T: [{ "x": 1, "y": 0, "width": 1, "height": 2 },
     // { "x": 2, "y": 0, "width": 1, "height": 2 },
     // { "x": 0, "y": 2, "width": 2, "height": 1 },
@@ -21,7 +22,10 @@ const _rawStimList = {
     { "x": 0, "y": 2, "width": 2, "height": 1 },
     { "x": 2, "y": 2, "width": 2, "height": 1 }]
 };
-const _possibleStims = _.keys(_rawStimList);
+
+function getPossibleObjects (){
+  return _.keys(_.omit(_rawStimList, ['horizontal', 'vertical']));
+}
 
 // Protect this just in case someone mutates one of these objects down
 // the line (e.g. in shiftStimulus())
@@ -56,5 +60,6 @@ module.exports = {
   getRawStimList,
   shiftStimulus,
   placeStimulus,
+  getPossibleObjects,
   makeScene
 };

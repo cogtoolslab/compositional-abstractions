@@ -1,3 +1,5 @@
+var config = require('./display_config.js');
+
 // This file contains helper functions for computing the error between 
 // the target and the structure built by the participant.
 
@@ -123,8 +125,8 @@ function F1Score(im1, im2) {
   numerator = math.multiply(precision, recall);
   denominator = math.sum(precision, recall);
   quotient = math.divide(numerator, denominator);
-  // console.log('recall = ', recall);
-  // console.log('precision = ', precision);
+  //console.log('recall = ', recall);
+  //console.log('precision = ', precision);
   // console.log('quotient = ', quotient);  
   score_to_be_returned = math.multiply(2, quotient);
   return score_to_be_returned
@@ -160,36 +162,37 @@ function getScore(canvas0, canvas1, agprop, imsize) {
  * Implement F1 score based on two discrete world maps
  */
 
-function makeTargetMap(blockList) {
+function getDiscreteWorld(blockList) {
 
-  var targetDiscrete = new Array(discreteEnvWidth);
-  for (let i = 0; i < discreteWorld.length; i++) {
-    targetDiscrete[i] = new Array(discreteEnvHeight).fill(true); // true represents free (NOT BLOCK PRESENT)
+  var targetDiscrete = new Array(config.discreteEnvWidth);
+  for (let i = 0; i < config.discreteEnvWidth; i++) {
+    targetDiscrete[i] = new Array(config.discreteEnvHeight).fill(false); // true represents free (NOT BLOCK PRESENT)
   }
 
-  Array.prototype.forEach.call(blockList, block => {
+  Array.prototype.forEach.call(blockList, block => { // not a Block object
     // add block to map
     var width = block.width;
     var height = block.height;
-    var blockLeft = (discreteEnvWidth-worldWidth)/2 + block.x;
+    var blockLeft = block.x;
     var blockBottom = block.y;
     var blockTop = blockBottom + height;
     var blockRight = blockLeft + width;
 
-    //console.log('width', width);
-    //console.log('height', height);
-    //console.log('blockLeft', blockLeft);
-    //console.log('blockBottom', blockBottom);
+    // console.log('block', block);
+    // console.log('width', width);
+    // console.log('height', height);
+    // console.log('blockLeft', blockLeft);
+    // console.log('blockBottom', blockBottom);
 
     for (let y = blockBottom; y < blockTop; y++) {
       for (let x = blockLeft; x < blockRight; x++) {
-        targetDiscrete[x][y] = false;
+        targetDiscrete[x][y] = true;
       }
     };
       
   });
 
-  //console.log(stimWorldDiscrete);
+  // console.log(targetDiscrete);
 
   return (targetDiscrete);
 }
@@ -209,6 +212,15 @@ function getScoreDiscrete(target, built) {
   // input: two bitmaps- target and built structure
   // output: score
 
+  // console.log('target', target);
+  // console.log('built', built);
+
   return F1Score(target, built);
 
 }
+
+
+module.exports = {
+  getDiscreteWorld,
+  getScoreDiscrete
+};
