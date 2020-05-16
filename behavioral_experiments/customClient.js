@@ -95,13 +95,12 @@ var customEvents = function (game) {
 
   game.socket.on('feedback', function (data) {
     // display feedback here
-    if (game.role == 'listener') {
-      $('#yourTurn').hide();
-      UI.blockUniverse.revealTarget = true;
-      $("#feedback").text("Nice work. Here's the true structure!");
-    } else {
-      $("#feedback").text("Nice work. You scored X points!");
-    }
+      if (game.role == 'listener') {
+          UI.blockUniverse.revealTarget = true;
+	  $("#feedback").text("Nice work. Here's the true structure!");
+      } else {
+	  $("#feedback").text("Nice work. You scored " + data.bonus + " points!");
+      }
   });
 
   game.socket.on('typing', function (data) {
@@ -142,11 +141,11 @@ var customEvents = function (game) {
     $('#send-message').prop('disabled', !game.speakerTurn);
     if (game.speakerTurn && game.role == 'listener'
       || !game.speakerTurn && game.role == 'speaker') {
-      $('#yourTurn').hide();
+      $('#feedback').html("&nbsp;");
     }
     if (game.speakerTurn && game.role == 'speaker'
       || !game.speakerTurn && game.role == 'listener') {
-      $('#yourTurn').show();
+	$('#feedback').text("YOUR TURN").show();
     }
 
     UI.blockUniverse.disabledBlockPlacement = game.speakerTurn;
