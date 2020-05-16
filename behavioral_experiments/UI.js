@@ -25,7 +25,7 @@ class UI {
       $('#stimulus-canvas').show();
       $('#done-button').hide();
       $('#partnerTyping').hide();
-      $('#yourTurn').show();
+      $('#feedback').html("YOUR TURN").show();
       $("#roleLabel").text("You are the architect.");
       $('#instructions').text("Send instructions to your partner to \
                                help them build the building you see on your screen.");
@@ -38,15 +38,14 @@ class UI {
       $('#stimulus-canvas').hide();
       $('#chatbox').hide();
       $('#send-message').hide();
-      $('#yourTurn').hide();
+      $('#feedback').html("&nbsp;").hide();
       $("#roleLabel").text("You are the builder.");
       $('#instructions').text("Click and place blocks to build the structure\
                                  your partner is describing.");
 
     }
 
-    $("#chat-history").show();
-    $("#feedback").html("&nbsp;");
+    $("#chat-history").show();    
     $("#messages").html("");
     $('#waiting').html('');
     $('#main_div').show();
