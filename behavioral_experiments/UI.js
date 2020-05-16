@@ -54,7 +54,7 @@ class UI {
 
     // Update counters
     $("#block-counter").text('0/' + game.blocksInStructure + ' blocks placed');
-    $("#score-counter").text('Total bonus: $' + game.cumulativeBonus);
+    $("#score-counter").text('Total bonus: $' + String(game.cumulativeBonus.toFixed(2)));
     if(game.trialNum === 'practice') {
       $("#trial-counter").text("Practice building the tower!");
     } else {

@@ -1,6 +1,7 @@
 var UI = require('./UI.js');
 var stim = require('./static/js/stimList.js');
 var scoring = require('./static/js/scoring.js');
+var expConfig = require('./config.json');
 
 // Update client versions of variables with data received from
 // server_send_update function in game.core.js
@@ -29,6 +30,7 @@ function updateState(game, data) {
   //game.total_score = 0;
   if(!game.cumulativeScore){
     game.cumulativeScore = 0;
+    game.cumulativeBonus = 0;
   }
 
   $('#chatbox').prop('disabled', game.speakerTurn && game.role == 'listener' ||
@@ -93,9 +95,6 @@ var customEvents = function (game) {
 
   game.socket.on('feedback', function (data) {
     // display feedback here
-    game.cumulativeBonus += data.bonus;
-
-
     if (game.role == 'listener') {
       $('#yourTurn').hide();
       UI.blockUniverse.revealTarget = true;
@@ -117,13 +116,21 @@ var customEvents = function (game) {
     UI.blockUniverse.sendingBlocks.push(data.block);
     if (game.blockNum == game.blocksInStructure) {
       UI.blockUniverse.disabledBlockPlacement = true;
-      var trial_score = scoring.getScoreDiscrete(game.targetMap, scoring.getDiscreteWorld(UI.blockUniverse.sendingBlocks));
+      var trialScore = scoring.getScoreDiscrete(game.targetMap, scoring.getDiscreteWorld(UI.blockUniverse.sendingBlocks));
+      
       if(game.trialNum != 'practice'){
-        game.cumulativeScore += trial_score;
+        game.cumulativeScore += trialScore;
+        if (trialScore >= expConfig.bonusThresholdHigh) { var trialBonus = expConfig.bonusHigh; }
+        else if (trialScore > expConfig.bonusThresholdMid) { var trialBonus = expConfig.bonusMid; }
+        else if (trialScore > expConfig.bonusThresholdLow) { var trialBonus = expConfig.bonusLow; }
+        else { var trialBonus = 0; }
+        console.log('trialbonus', trialBonus);
+        game.cumulativeBonus += trialBonus;
+
       }
       console.log('Cumulative score', game.cumulativeScore);
-      console.log('score', trial_score);
-      game.socket.send('endTrial.' + JSON.stringify({'score': trial_score })); //error if '.' in score
+      console.log('score', trialScore);
+      game.socket.send('endTrial.' + JSON.stringify({'score': trialScore})); //error if '.' in score
     }
   });
 
@@ -178,6 +185,8 @@ var customEvents = function (game) {
     };
   });
 };
+
+
 
 // $(document).keypress(e => {
 //   if (e.which === 13) {
