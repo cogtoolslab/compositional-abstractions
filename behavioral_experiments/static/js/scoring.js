@@ -219,8 +219,8 @@ function getScoreDiscrete(target, built) {
 
 }
 
-
 module.exports = {
   getDiscreteWorld,
   getScoreDiscrete
 };
+
