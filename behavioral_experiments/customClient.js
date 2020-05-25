@@ -1,7 +1,6 @@
 var UI = require('./UI.js');
 var stim = require('./static/js/stimList.js');
 var scoring = require('./static/js/scoring.js');
-var expConfig = require('./config.json');
 
 // Update client versions of variables with data received from
 // server_send_update function in game.core.js
@@ -28,11 +27,8 @@ function updateState(game, data) {
   game.targetMap = scoring.getDiscreteWorld(targetBlocks); // Add discrete map for scoring
   //game.score = 0; // for bonusing
   //game.total_score = 0;
-  if (!game.cumulativeScore) {
-
-  if(!game.cumulativeScore) {
+  if(!game.cumulativeScore){
     game.cumulativeScore = 0;
-    game.cumulativeBonus = 0;
   }
 
   $('#chatbox').prop('disabled', game.speakerTurn && game.role == 'listener' ||
@@ -42,6 +38,7 @@ function updateState(game, data) {
   UI.blockUniverse.disabledBlockPlacement = true;
   UI.blockUniverse.blockSender = function (blockData) {
     game.socket.send('block.' + JSON.stringify(_.extend(blockData, { blockNum: game.blockNum })));
+
     // //end trial when 8 blocks have been placed
     // if (game.blockNum == game.blocksInStructure - 1) {
     //   game.socket.send('endTrial');
@@ -50,9 +47,9 @@ function updateState(game, data) {
 };
 
 var customEvents = function (game) {
-  // $('#done_button').click(() => {
-  //   game.socket.send('endTrial');
-  // });
+  $('#done_button').click(() => {
+    game.socket.send('endTrial');
+  });
 
   // TOGGLE TURNS IN HERE?
   $("#send-message").click(() => {
@@ -95,31 +92,16 @@ var customEvents = function (game) {
   });
 
   game.socket.on('feedback', function (data) {
-    let trialBonus = 0;
-
-    // Map raw score to bonus $$
-    if(game.trialNum != 'practice'){
-      if (data.score >= expConfig.bonusThresholdHigh) { trialBonus = expConfig.bonusHigh; }
-      else if (data.score > expConfig.bonusThresholdMid) { trialBonus = expConfig.bonusMid; }
-      else if (data.score > expConfig.bonusThresholdLow) { trialBonus = expConfig.bonusLow; }
-      game.cumulativeBonus += trialBonus;
-      game.cumulativeScore += data.score;
-    }
+    // display feedback here
+    game.cumulativeBonus += data.bonus;
 
 
-    if (game.role == 'listener') {
-      UI.blockUniverse.revealTarget = true;
-      $("#feedback").text("Nice work. Here's the true structure!");
-    } else {
-      $("#feedback").text("Nice work. You scored " + data.bonus + " points!")
-    // Display feedback message
-    let message = data.practice_fail ? "Hmm, let's try that one again." : "Nice work.";
-    if (game.role == 'listener') {
-      UI.blockUniverse.revealTarget = true;
-      $("#feedback").text(message + "Here's the true structure!");
-    } else {
-      $("#feedback").text(message + "You scored " + data.score + " points!");
-    }
+      if (game.role == 'listener') {
+          UI.blockUniverse.revealTarget = true;
+	  $("#feedback").text("Nice work. Here's the true structure!");
+      } else {
+	  $("#feedback").text("Nice work. You scored " + data.bonus + " points!");
+      }
   });
 
   game.socket.on('typing', function (data) {
@@ -132,23 +114,16 @@ var customEvents = function (game) {
     game.blockNum += 1;
     $('#block-counter').text(game.blockNum + ' / ' + game.blocksInStructure + ' blocks placed');
     UI.blockUniverse.sendingBlocks.push(data.block);
-
     if (game.blockNum == game.blocksInStructure) {
       UI.blockUniverse.disabledBlockPlacement = true;
       var trial_score = scoring.getScoreDiscrete(game.targetMap, scoring.getDiscreteWorld(UI.blockUniverse.sendingBlocks));
-      if (game.trialNum != 'practice') {
+      if(game.trialNum != 'practice'){
         game.cumulativeScore += trial_score;
       }
       console.log('Cumulative score', game.cumulativeScore);
       console.log('score', trial_score);
-      game.socket.send('endTrial.' + JSON.stringify({ 'score': trial_score })); //error if '.' in score
-
-      var trialScore = scoring.getScoreDiscrete(game.targetMap, scoring.getDiscreteWorld(UI.blockUniverse.sendingBlocks));
-      if(game.role == 'speaker'){
-        game.socket.send('endTrial.' + JSON.stringify({'score': trialScore})); //error if '.' in score
-      }
+      game.socket.send('endTrial.' + JSON.stringify({'score': trial_score })); //error if '.' in score
     }
-
   });
 
   game.socket.on('switchTurn', function (data) {
@@ -163,7 +138,7 @@ var customEvents = function (game) {
     }
     if (game.speakerTurn && game.role == 'speaker'
       || !game.speakerTurn && game.role == 'listener') {
-      $('#feedback').text("YOUR TURN").show();
+	$('#feedback').text("YOUR TURN").show();
     }
 
     UI.blockUniverse.disabledBlockPlacement = game.speakerTurn;
@@ -190,7 +165,7 @@ var customEvents = function (game) {
 
   game.socket.on('newRoundUpdate', function (data) {
     console.log('received newroundupdate');
-
+    
     // reset variables here
     UI.blockUniverse.sendingBlocks = [];
     UI.blockUniverse.revealTarget = false;
@@ -202,8 +177,6 @@ var customEvents = function (game) {
     };
   });
 };
-
-
 
 // $(document).keypress(e => {
 //   if (e.which === 13) {

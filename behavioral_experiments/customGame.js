@@ -109,20 +109,6 @@ class ServerRefGame extends ServerGame {
         break;
 
       case 'endTrial':
-<<<<<<< HEAD
-        // reset turnNum
-        gc.turnNum = 0;
-        // if(this.currStim.trialNum == 'practice') {
-
-        // }
-        var trialData = JSON.parse(message_parts[1]);
-        _.map(all, p => p.player.instance.emit('feedback', {
-          bonus: message_parts[1] // don't think this does anything?
-        }));
-        setTimeout(function () {
-          gc.newRound();
-        }, 5000);
-=======
       // reset turnNum
       gc.turnNum = 0;
       var trialData = JSON.parse(message_parts[1]);
@@ -143,7 +129,6 @@ class ServerRefGame extends ServerGame {
       setTimeout(function () {
         gc.newRound();
       }, 5000);
->>>>>>> 68b8023abf3bc276e75baffa1c16396bf785c797
 
         break;
 
