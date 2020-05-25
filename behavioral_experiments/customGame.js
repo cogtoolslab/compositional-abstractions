@@ -15,7 +15,6 @@ class ServerRefGame extends ServerGame {
     }
     this.trialList = this.makeTrialList();
     this.turnNum = 0;
-    this.cumulative_score = 0;
     console.log(this.trialList);
   }
 
@@ -66,8 +65,9 @@ class ServerRefGame extends ServerGame {
 
   onMessage(client, message) {
     //Cut the message up into sub components
+    console.log(message)
     var message_parts = message.split('.');
-
+    
     //The first is always the type of message
     var message_type = message_parts[0];
 
@@ -96,7 +96,6 @@ class ServerRefGame extends ServerGame {
         break;
 
       case 'switchTurn':
-        console.log('received end turn');
         gc.turnNum += 1;
         _.map(all, p => p.player.instance.emit('switchTurn', {
           user: client.userid
@@ -110,6 +109,7 @@ class ServerRefGame extends ServerGame {
         break;
 
       case 'endTrial':
+<<<<<<< HEAD
         // reset turnNum
         gc.turnNum = 0;
         // if(this.currStim.trialNum == 'practice') {
@@ -122,6 +122,28 @@ class ServerRefGame extends ServerGame {
         setTimeout(function () {
           gc.newRound();
         }, 5000);
+=======
+      // reset turnNum
+      gc.turnNum = 0;
+      var trialData = JSON.parse(message_parts[1]);
+      let practiceFail = false;
+
+      // Force repeat of practice round if not perfect
+      if(this.currStim.trialNum == 'practice' && trialData.score < 100) {
+        gc.roundNum -= 1;
+        practiceFail = true;
+      }
+
+      // Send feedback
+      _.map(all, p => p.player.instance.emit('feedback', {
+        score: trialData.score,
+        practice_fail: practiceFail
+      }));
+
+      setTimeout(function () {
+        gc.newRound();
+      }, 5000);
+>>>>>>> 68b8023abf3bc276e75baffa1c16396bf785c797
 
         break;
 
