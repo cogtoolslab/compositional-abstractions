@@ -11,14 +11,14 @@ class UI {
 
   reset(game, data) {
     // Need to remove old screens
-    if(_.has(this.blockUniverse, 'p5env') ||
-       _.has(this.blockUniverse, 'p5stim')) {
+    if (_.has(this.blockUniverse, 'p5env') ||
+      _.has(this.blockUniverse, 'p5stim')) {
       this.blockUniverse.removeEnv();
       this.blockUniverse.removeStimWindow();
     }
 
     this.blockUniverse.setupEnvs(game.currStim);
-    
+
     if (game.role == 'speaker') {
       $('#experiment-button-col').show();
       $('#environment-canvas').hide();
@@ -45,16 +45,16 @@ class UI {
 
     }
 
-    $("#chat-history").show();    
+    $("#chat-history").show();
     $("#messages").html("");
     $('#waiting').html('');
     $('#main_div').show();
-    
+
 
     // Update counters
     $("#block-counter").text('0/' + game.blocksInStructure + ' blocks placed');
     $("#score-counter").text('Total bonus: $' + game.cumulativeBonus);
-    if(game.trialNum === 'practice') {
+    if (game.trialNum === 'practice') {
       $("#trial-counter").text("Practice building the tower!");
     } else {
       $("#trial-counter").text('trial ' + (game.trialNum + 1) + '/12');
