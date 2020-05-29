@@ -39,7 +39,7 @@ class ServerRefGame extends ServerGame {
     var possibleObjects = stimList.getPossibleObjects();
     var combinations = _.sampleSize(utils.k_combinations(possibleObjects, 2), numTrialsPerRep);
     var roles = _.zipObject(_.map(this.players, p => p.id), _.values(this.playerRoleNames));
-
+    
     // Start with a practice trial
     trialList.push({
       stimulus: _.shuffle(['horizontal', 'vertical']),
@@ -47,7 +47,7 @@ class ServerRefGame extends ServerGame {
       trialNum: "practice",
       roles: roles
     });
-
+    
     // An outer loop of repetitions
     _.forEach(_.range(numReps), repNum => {
       // Shuffle the sequence you see each of these towers per repetition
@@ -102,11 +102,11 @@ class ServerRefGame extends ServerGame {
         }));
         break;
 
-      case 'typing':
-        _.map(all, p => p.player.instance.emit('typing', {
-          user: client.userid
-        }));
-        break;
+        case 'typing':
+          _.map(all, p => p.player.instance.emit('typing', {
+            user: client.userid
+          }));
+          break;
 
       case 'endTrial':
       // reset turnNum
@@ -134,7 +134,7 @@ class ServerRefGame extends ServerGame {
 
       case 'exitSurvey':
         console.log(message_parts.slice(1));
-        break;
+         break;
 
       case 'h': // Receive message when browser focus shifts
         //target.visible = message_parts[1];
