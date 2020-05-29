@@ -47,9 +47,9 @@ function updateState(game, data) {
 };
 
 var customEvents = function (game) {
-  $('#done_button').click(() => {
-    game.socket.send('endTrial');
-  });
+  // $('#done_button').click(() => {
+  //   game.socket.send('endTrial');
+  // });
 
   // TOGGLE TURNS IN HERE?
   $("#send-message").click(() => {
@@ -115,6 +115,7 @@ var customEvents = function (game) {
     $('#block-counter').text(game.blockNum + ' / ' + game.blocksInStructure + ' blocks placed');
     UI.blockUniverse.sendingBlocks.push(data.block);
     if (game.blockNum == game.blocksInStructure) {
+      $('#done-button').attr('disabled','disabled');
       UI.blockUniverse.disabledBlockPlacement = true;
       var trial_score = scoring.getScoreDiscrete(game.targetMap, scoring.getDiscreteWorld(UI.blockUniverse.sendingBlocks));
       if(game.trialNum != 'practice'){
