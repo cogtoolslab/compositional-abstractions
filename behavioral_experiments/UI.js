@@ -29,7 +29,7 @@ class UI {
       $('#feedback').css('border-color', "#56be2d")
       $("#roleLabel").text("You are the architect.");
       $('#instructions').text("Send instructions to your partner to \
-                               help them build the building you see on your screen.");
+                               help them build the towers you see on your screen.");
       // add something to display block menu to speaker
     } else if (game.role == 'listener') {
       $('#partnerTyping').hide();
@@ -43,7 +43,7 @@ class UI {
       $('#feedback').html("Waiting for partner's instructions...").show();
       $('#feedback').css('border-color', "red")
       $("#roleLabel").text("You are the builder.");
-      $('#instructions').text("Click and place blocks to build the structure\
+      $('#instructions').text("Click and place blocks to build the towers\
                                  your partner is describing.");
 
     }
