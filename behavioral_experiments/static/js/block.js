@@ -120,9 +120,9 @@ class Block {
     for (let i = x; i < x+this.blockKind.w; i++){
       for (let j = y; j < y+this.blockKind.h; j++){
         free = free && discreteWorld[i][j];
-        //console.log('testing', i, j);
       }
     }
+
     return free;
   }
 

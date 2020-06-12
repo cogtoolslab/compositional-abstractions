@@ -248,12 +248,14 @@ class BlockUniverse {
               // SEND WORLD DATA AFTER PREVIOUS BLOCK HAS SETTLED
               // Sends information about the state of the world prior to next block being placed
               this.placeBlock(env, trialObj);
-            } else {
-              this.disabledBlockPlacement = true;
-              // jsPsych.pluginAPI.setTimeout(function () { // change color of bonus back to white
-              //   disabledBlockPlacement = false;
-              // }, 100);
-            }
+            } 
+            
+            // else {
+            //   this.disabledBlockPlacement = true;
+            //   // jsPsych.pluginAPI.setTimeout(function () { // change color of bonus back to white
+            //   //   disabledBlockPlacement = false;
+            //   // }, 100);
+            // }
           }
         }
 

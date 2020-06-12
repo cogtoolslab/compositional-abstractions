@@ -38,7 +38,9 @@ function updateState(game, data) {
 
   UI.blockUniverse.disabledBlockPlacement = true;
   UI.blockUniverse.blockSender = function (blockData) {
-    game.socket.send('block.' + JSON.stringify(_.extend(blockData, { blockNum: game.blockNum })));
+    game.socket.send('block.' + JSON.stringify(_.extend(blockData, 
+      { blockNum: game.blockNum, 
+        discreteWorld: scoring.getDiscreteWorld(UI.blockUniverse.sendingBlocks)})));
     // //end trial when 8 blocks have been placed
     // if (game.blockNum == game.blocksInStructure - 1) {
     //   game.socket.send('endTrial');
