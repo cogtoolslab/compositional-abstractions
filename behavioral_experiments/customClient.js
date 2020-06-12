@@ -101,7 +101,7 @@ var customEvents = function (game) {
     }
 
     // Display feedback message
-    let message = data.practice_fail ? "Hmm, let's try that one again." : "Nice work.";
+    let message = data.practice_fail ? "Hmm, let's try that one again. " : "Nice work. ";
     if(data.practice_fail){
       $('#feedback').css('border-color', "red");
     }
@@ -128,6 +128,7 @@ var customEvents = function (game) {
     UI.blockUniverse.sendingBlocks.push(data.block);
 
     if (game.blockNum == game.blocksInStructure) {
+      $('#done-button').prop('disabled', !game.speakerTurn);
       UI.blockUniverse.disabledBlockPlacement = true;
       var trialScore = scoring.getScoreDiscrete(game.targetMap, scoring.getDiscreteWorld(UI.blockUniverse.sendingBlocks));
       if (game.role == 'speaker') {

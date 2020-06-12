@@ -39,7 +39,9 @@ class UI {
       $('#stimulus-canvas').hide();
       $('#chatbox').hide();
       $('#send-message').hide();
-      $('#feedback').html("&nbsp;").hide();
+      // $('#feedback').html("&nbsp;").hide();
+      $('#feedback').html("Waiting for partner's instructions...").show();
+      $('#feedback').css('border-color', "red")
       $("#roleLabel").text("You are the builder.");
       $('#instructions').text("Click and place blocks to build the structure\
                                  your partner is describing.");
