@@ -96,15 +96,15 @@ var customEvents = function (game) {
     if (game.trialNum != 'practice') {
       if (data.score >= expConfig.bonusThresholdHigh) { 
         trialBonus = expConfig.bonusHigh; 
-        message = "Perfect! ⭐️⭐️⭐️";
+        message = "Perfect! ⭐️⭐️⭐️ 5¢ bonus!";
       }
       else if (data.score > expConfig.bonusThresholdMid) { 
         trialBonus = expConfig.bonusMid; 
-        message = "Great Job! ⭐️⭐️";
+        message = "Great Job! ⭐️⭐️ 3¢ bonus!";
       }
       else if (data.score > expConfig.bonusThresholdLow) { 
         trialBonus = expConfig.bonusLow; 
-        message = "Not bad! ⭐️";
+        message = "Not bad! ⭐️ 1¢ bonus!";
       }
       else {
         message = 'Could be better...';
@@ -127,7 +127,7 @@ var customEvents = function (game) {
     if (game.role == 'listener') {
       UI.blockUniverse.revealTarget = true;
       var feedbackObj = $("#feedback").text( message + "\n Here's the true structure!");
-      feedbackObj.html(feedbackObj.html().replace(/\n/g,' '));
+      feedbackObj.html(feedbackObj.html().replace(/\n/g,'<br/>'));
 
     } else {
       $("#feedback").text(message);
