@@ -108,8 +108,9 @@ class ServerRefGame extends ServerGame {
         }));
 	console.log('message length', message_parts.length);
 	if (message_parts.length>1) {
-          
-	}
+            _.map(all, p => p.player.instance.emit('questionMark',{
+		  msg: 'No block placed. Awaiting further instructions!'
+	    }))}
 
         break;
 
