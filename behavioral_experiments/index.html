@@ -79,6 +79,73 @@
 
       </div>
     </div> <!-- end: main_div -->
+    <div id="exit_survey" style="display:none">
+
+      <div class="form-group row">
+        <label for="language" class="col-sm-4 col-form-label"> Are you a native English speaker? </label>
+        <div class="col-sm-2">
+          <select id="language" class="form-control">
+	    <option value="language::noResponse"></option>
+	    <option value="language::yes">Yes</option>
+	    <option value="language::no">No</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="form-group row">
+        <label for="human" class="col-sm-4 col-form-label">
+          Did you believe you were playing against another human?
+        </label>
+        <div class="col-sm-5">
+          <select id="human" class="form-control">
+            <option value="human::NoResponse"></option>
+            <option value="human::human">Yes, I thought they were a human</option>
+            <option value="human::program">No, I thought it was a computer program</option>
+          </select>
+          <small id='humanResult' class="form-text text-muted" style="display:none;color:red">
+            Thank you for your response! In this experiment everyone was human!
+          </small>
+        </div>
+      </div>
+
+      <div class="form-group row">
+        <label for="didCorrectly" class="col-sm-4 col-form-label">
+          Did you read the instructions and do you think you did the HIT correctly?
+        </label>
+        <div class="col-sm-2">
+          <select class="form-control">
+            <option value="didCorrectly::NoResponse"></option>
+            <option value="didCorrectly::yes">Yes</option>
+            <option value="didCorrectly::no">No</option>
+            <option value="didCorrectly::confused">I was confused</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="form-group row">
+        <label for="comments" class="col-sm-4 col-form-label">
+          Did you notice any problems or have any other comments on the experiment?
+        </label>
+        <div class="col-sm-4">
+          <textarea class="form-control" id='comments' rows="4"></textarea>
+        </div>
+      </div>
+      
+      <p> Clicking this button should automatically submit the HIT and close this tab. </p>
+      <div><button id="surveySubmit" class="btn-primary" type="button">Submit HIT</button></div>
+      <small style="display:none" id="button_error">
+        <p>
+          If you have clicked the button and nothing happened, you
+          can use the code box that appeared on the mturk tab as
+          a <b>backup method</b> to make sure you still get paid: just
+          enter the code <strong>E2iZwi8d</strong> -- no need to contact us!
+        </p>
+        <p>
+          If still experience a problem submitting with that method,
+          please contact rxdh@stanford.edu for compensation.
+        </p>
+      </small>
+    </div> <!-- end: exit_survey> -->
   </div> <!-- end: container-fluid -->
 </body>
 
