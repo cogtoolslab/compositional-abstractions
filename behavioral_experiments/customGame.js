@@ -82,6 +82,7 @@ class ServerRefGame extends ServerGame {
     var all = gc.activePlayers();
     var target = gc.getPlayer(client.userid);
     var others = gc.getOthers(client.userid);
+    console.log('message_parts', message_parts);  
     switch (message_type) {
       case 'block':
         _.map(all, p => p.player.instance.emit('block', {
@@ -105,6 +106,12 @@ class ServerRefGame extends ServerGame {
         _.map(all, p => p.player.instance.emit('switchTurn', {
           user: client.userid
         }));
+	console.log('message length', message_parts.length);
+	if (message_parts.length>1) {
+            _.map(all, p => p.player.instance.emit('questionMark',{
+		  msg: 'No block placed. Awaiting further instructions!'
+	    }))}
+
         break;
 
         case 'typing':

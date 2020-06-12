@@ -91,20 +91,20 @@ var customEvents = function (game) {
     return false;
   });
 
-  $("#done-button").click(() => {
-    //check if any blocks placed this turn
-    let blocksPlaced = true;
-    if (blocksPlaced) {
-      // if so send block
-      game.socket.send('switchTurn');
-      blocksPlaced = false;
-
-      // This prevents the form from submitting & disconnecting person
-      return false;
-    } else {
-      alert('Please place a block');
-    }
-  });
+    $("#done-button").click(() => {
+	//check if any blocks placed this turn
+	let blocksPlaced = false;
+	if (game.blockNum > 0) blocksPlaced = true;
+	if (blocksPlaced) {
+	    // if so send block
+	    game.socket.send('switchTurn');
+	    blocksPlaced = false;
+	    // This prevents the form from submitting & disconnecting person
+	    return false;
+	} else {            
+	    game.socket.send('switchTurn.noBlockPlaced');
+	}
+    });
 
   //update textbox with remaining character count
   $("#chatbox").keyup(function (e) {
@@ -112,6 +112,12 @@ var customEvents = function (game) {
     game.socket.send('typing');
   });
 
+  // tell both participants that additional instructions are needed
+  game.socket.on('questionMark', function(data) {
+      $("#feedback").text(data.msg);
+      console.log('questionMarkMsg',data.msg);
+    })
+    
   game.socket.on('feedback', function (data) {
     let trialBonus = 0;
     let message = '';
