@@ -46,6 +46,28 @@ function updateState(game, data) {
   };
 };
 
+//handle timing in the game
+var resetTimer = function(game, timeLeft, timeElem){
+  game.timeLeft = timeLeft;
+  if(_.has(game, 'timerId')){
+    clearInterval(game.timerId);
+    clearTimeout(game.timerId);
+  }
+  game.timerId = setInterval(countdown, 1000);
+  $('#timer').css("color", "black");
+  $('#timer').html("30 seconds remaining");
+  function countdown() {
+    if (game.timeLeft == 0) {
+      clearTimeout(game.timerId);
+      $('#timer').html("Time's up!");
+      $('#timer').css("color", "red");
+    } else {
+      timeElem.innerHTML = game.timeLeft + ' seconds remaining';
+      game.timeLeft--;
+    }
+  }
+};
+
 var customEvents = function (game) {
 
   // TOGGLE TURNS IN HERE?
@@ -128,6 +150,7 @@ var customEvents = function (game) {
     UI.blockUniverse.sendingBlocks.push(data.block);
 
     if (game.blockNum == game.blocksInStructure) {
+      //resetTimer(game, 30, document.getElementById('timer');
       $('#done-button').prop('disabled', !game.speakerTurn);
       UI.blockUniverse.disabledBlockPlacement = true;
       var trialScore = scoring.getScoreDiscrete(game.targetMap, scoring.getDiscreteWorld(UI.blockUniverse.sendingBlocks));
@@ -140,6 +163,7 @@ var customEvents = function (game) {
 
   game.socket.on('switchTurn', function (data) {
     game.speakerTurn = !game.speakerTurn;
+    resetTimer(game, 30, document.getElementById('timer'));
     $('#chatbox').prop('disabled', game.speakerTurn && game.role == 'listener'
       || !game.speakerTurn && game.role == 'speaker');
     $('#done-button').prop('disabled', game.speakerTurn);
@@ -181,7 +205,7 @@ var customEvents = function (game) {
 
   game.socket.on('newRoundUpdate', function (data) {
     console.log('received newroundupdate');
-
+    resetTimer(game, 30, document.getElementById('timer'));
     // reset variables here
     UI.blockUniverse.sendingBlocks = [];
     UI.blockUniverse.revealTarget = false;

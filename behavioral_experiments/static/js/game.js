@@ -26,6 +26,7 @@ class Game {
     },
       this.delay = config.delay;
   }
+ 
 
   // Returns player object corresponding to id
   getPlayer(id) {
