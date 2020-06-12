@@ -5,7 +5,7 @@ var utils = require(__base + 'static/js/sharedUtils.js');
 var ServerGame = require(__base + 'static/js/game.js')['ServerGame'];
 var stimList = require(__base + 'static/js/stimList.js');
 
-var dev_mode = false;
+var dev_mode = true;
 
 class ServerRefGame extends ServerGame {
   constructor(config) {
