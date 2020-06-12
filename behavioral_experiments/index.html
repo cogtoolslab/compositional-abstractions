@@ -125,6 +125,15 @@
       </div>
 
       <div class="form-group row">
+        <label for="strategy" class="col-sm-4 col-form-label">
+          How would you describe your strategy in this experiment? 
+        </label>
+        <div class="col-sm-4">
+          <textarea class="form-control" id='strategy' rows="4"></textarea>
+        </div>
+      </div>
+
+      <div class="form-group row">
         <label for="comments" class="col-sm-4 col-form-label">
           Did you notice any problems or have any other comments on the experiment?
         </label>
@@ -135,7 +144,7 @@
       
       <p> Clicking this button should automatically submit the HIT and close this tab. </p>
       <div><button id="surveySubmit" class="btn-primary" type="button">Submit HIT</button></div>
-      <small style="display:none" id="button_error">
+      <small style="display:none" class="form-text text-muted" id="button_error">
         <p>
           If you have clicked the button and nothing happened, you
           can use the code box that appeared on the mturk tab as

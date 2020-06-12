@@ -96,14 +96,12 @@ class UI {
     game.data = _.extend(game.data, {
       'comments' : $('#comments').val().trim(),
       'strategy' : $('#strategy').val().trim(),
-      'partnerStrategy' : $('#partner_strategy').val().trim(),    
-      'role' : game.my_role,
+      'role' : game.role,
       'totalLength' : Date.now() - game.startTime
     });
     game.submitted = true;
     console.log("data is...");
     console.log(game.data);
-    console.log(game.socket);
     game.socket.send("exitSurvey." + JSON.stringify(game.data));
     if(_.size(game.urlParams) >= 4) {
       window.opener.turk.submit(game.data, true);

@@ -5,8 +5,6 @@ var utils = require(__base + 'static/js/sharedUtils.js');
 var ServerGame = require(__base + 'static/js/game.js')['ServerGame'];
 var stimList = require(__base + 'static/js/stimList.js');
 
-var dev_mode = true;
-
 class ServerRefGame extends ServerGame {
   constructor(config) {
     super(config);
@@ -16,6 +14,7 @@ class ServerRefGame extends ServerGame {
       role2: 'listener'
     }
     this.trialList = this.makeTrialList();
+    this.numRounds = this.trialList.length;
     this.turnNum = 0;
     console.log(this.trialList);
   }
@@ -43,15 +42,12 @@ class ServerRefGame extends ServerGame {
     var roles = _.zipObject(_.map(this.players, p => p.id), _.values(this.playerRoleNames));
     
     // Start with a practice trial
-
-    if (!dev_mode){
-      trialList.push({
-        stimulus: _.shuffle(['horizontal', 'vertical']),
-        repNum: "practice",
-        trialNum: "practice",
-        roles: roles
-      });
-    }
+    trialList.push({
+      stimulus: _.shuffle(['horizontal', 'vertical']),
+      repNum: "practice",
+      trialNum: "practice",
+      roles: roles
+    });
     
     // An outer loop of repetitions
     _.forEach(_.range(numReps), repNum => {
