@@ -19,7 +19,7 @@
     "width" : 300
   }, 
   "cellPadding" : 0,
-  "delay" : 1500,
+  "delay" : 500,
   "bonusThresholdHigh": 100,
   "bonusThresholdMid": 80,
   "bonusThresholdLow": 60,

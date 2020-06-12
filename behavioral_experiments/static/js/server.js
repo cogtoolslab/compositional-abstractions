@@ -143,7 +143,6 @@ class ReferenceGameServer {
 
       // If game is ongoing and someone drops out, tell other players and end game
       // If game is over, remove game when last player drops out
-      console.log("active: " + game.active);
       if (game.active || game.activePlayers().length < 1) {
         game.end();
         delete this.games[id];
