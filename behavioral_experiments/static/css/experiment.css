@@ -17,10 +17,9 @@
 
 #messages {
     overflow-y: scroll;
-    border: 3px solid rgb(28, 54, 62);
+    border-left: 3px solid #6c757d3b;
     height:20vh;
     padding-left: 10px;
-    background-color: rgba(255, 255, 255, 0.75);
 }
 
 /* #instructions { */
@@ -115,12 +114,6 @@
     /* border: solid 1px #1c363e; */
 }
 
-
-#chatbox { 
-    border-radius: 0;
-    border: solid 3px rgb(28, 54, 62);
-}
-
 #feedback { 
     text-align: center;
     background-color: rgba(255, 255, 255, 0.75);
@@ -174,7 +167,7 @@
 }
 
 .counter {
-    font-size: 20px;
+    font-size: 24px;
     border: 8px solid #FFFFFF;
 }
 

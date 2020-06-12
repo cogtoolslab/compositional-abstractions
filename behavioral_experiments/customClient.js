@@ -27,7 +27,7 @@ function updateState(game, data) {
   // scoring
   game.targetMap = scoring.getDiscreteWorld(targetBlocks); // Add discrete map for scoring
 
-  if(!game.cumulativeScore) {
+  if (!game.cumulativeScore) {
     game.cumulativeScore = 0;
     game.cumulativeBonus = 0;
   }
@@ -92,7 +92,7 @@ var customEvents = function (game) {
     let trialBonus = 0;
 
     // Map raw score to bonus $$
-    if(game.trialNum != 'practice'){
+    if (game.trialNum != 'practice') {
       if (data.score >= expConfig.bonusThresholdHigh) { trialBonus = expConfig.bonusHigh; }
       else if (data.score > expConfig.bonusThresholdMid) { trialBonus = expConfig.bonusMid; }
       else if (data.score > expConfig.bonusThresholdLow) { trialBonus = expConfig.bonusLow; }
@@ -101,7 +101,13 @@ var customEvents = function (game) {
     }
 
     // Display feedback message
-    let message = data.practice_fail ? "Hmm, let's try that one again." : "Nice work.";
+    let message = data.practice_fail ? "Hmm, let's try that one again. " : "Nice work. ";
+    if(data.practice_fail){
+      $('#feedback').css('border-color', "red");
+    }
+    else{
+      $('#feedback').css('border-color', "#56be2d");
+    }
     if (game.role == 'listener') {
       UI.blockUniverse.revealTarget = true;
       $("#feedback").text(message + "Here's the true structure!");
@@ -122,10 +128,11 @@ var customEvents = function (game) {
     UI.blockUniverse.sendingBlocks.push(data.block);
 
     if (game.blockNum == game.blocksInStructure) {
+      $('#done-button').prop('disabled', !game.speakerTurn);
       UI.blockUniverse.disabledBlockPlacement = true;
       var trialScore = scoring.getScoreDiscrete(game.targetMap, scoring.getDiscreteWorld(UI.blockUniverse.sendingBlocks));
-      if(game.role == 'speaker'){
-        game.socket.send('endTrial.' + JSON.stringify({'score': trialScore})); //error if '.' in score
+      if (game.role == 'speaker') {
+        game.socket.send('endTrial.' + JSON.stringify({ 'score': trialScore })); //error if '.' in score
       }
     }
 
@@ -139,11 +146,15 @@ var customEvents = function (game) {
     $('#send-message').prop('disabled', !game.speakerTurn);
     if (game.speakerTurn && game.role == 'listener'
       || !game.speakerTurn && game.role == 'speaker') {
-      $('#feedback').html("&nbsp;");
+      // $('#feedback').html("&nbsp;").hide();
+      $('#feedback').html("Waiting for Partner...");
+      $('#feedback').css('border-color', "red");
     }
     if (game.speakerTurn && game.role == 'speaker'
       || !game.speakerTurn && game.role == 'listener') {
-	$('#feedback').text("YOUR TURN").show();
+      $('#feedback').text("YOUR TURN").show();
+      $('#feedback').css('border-color', "#56be2d");
+      // document.getElementById("feedback").style.borderColor = "#56be2d";
     }
 
     UI.blockUniverse.disabledBlockPlacement = game.speakerTurn;
@@ -170,7 +181,7 @@ var customEvents = function (game) {
 
   game.socket.on('newRoundUpdate', function (data) {
     console.log('received newroundupdate');
-    
+
     // reset variables here
     UI.blockUniverse.sendingBlocks = [];
     UI.blockUniverse.revealTarget = false;
