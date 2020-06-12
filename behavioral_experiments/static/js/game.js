@@ -187,7 +187,7 @@ class ClientGame extends Game {
       }
 
       $('#exit_survey').show();
-      $('#main').hide();
+      $('#main_div').hide();
       $('#header').hide();
       $('#context').hide(); // from QA expt
 
