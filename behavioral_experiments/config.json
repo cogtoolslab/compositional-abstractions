@@ -1,7 +1,7 @@
 {
-  "email" : "rxdh@stanford.edu",
-  "projectName" : "hri-conventions",
-  "experimentName" : "MSCOCO",
+  "email" : "cogtoolslab.requester@gmail.com",
+  "projectName" : "compositional-abstractions",
+  "experimentName" : "two-towers",
   "iterationName" : "testing",
   "anonymizeCSV" : true,
   "bonusAmt" : 5, 
