@@ -21,8 +21,8 @@
   "cellPadding" : 0,
   "delay" : 1500,
   "bonusThresholdHigh": 100,
-  "bonusThresholdMid": 90,
-  "bonusThresholdLow": 65,
+  "bonusThresholdMid": 80,
+  "bonusThresholdLow": 60,
   "bonusHigh": 0.05,
   "bonusMid": 0.03,
   "bonusLow": 0.01
