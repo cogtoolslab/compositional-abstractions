@@ -1,92 +1,97 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <title>Experiment</title>
 
-    <!-- Bootstrap core CSS -->
-    <link href="../css/bootstrap.min.css" rel="stylesheet">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <title>Experiment</title>
 
-    <!-- Bootstrap theme -->
-    <link href="../css/bootstrap-theme.min.css" rel="stylesheet">
+  <!-- Bootstrap core CSS -->
+  <link href="../css/bootstrap.min.css" rel="stylesheet">
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-    <!-- <script src="../lib/js/bootstrap.min.js"></script> -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-    
-    <script type="text/javascript" src="../lib/js/mmturkey.js"></script>
+  <!-- Bootstrap theme -->
+  <link href="../css/bootstrap-theme.min.css" rel="stylesheet">
 
-    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
-  </head>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+  <!-- <script src="../lib/js/bootstrap.min.js"></script> -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+    integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+    crossorigin="anonymous"></script>
 
-  <body role="document">
+  <script type="text/javascript" src="../lib/js/mmturkey.js"></script>
 
-    <div class="container theme-showcase" role="main">
+  <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+  <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+        <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+      <![endif]-->
+</head>
 
-      </br>
-      <div class="progress">
-        <div class="progress-bar" role="progressbar" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" style="width: 30%;"><span class="sr-only">40% Complete</span></div>
-      </div>
+<body role="document">
 
-      <div class="page-header">
-        <h1>Congratulations!  You passed the comprehension checks.</h1>
-      </div>
+  <div class="container theme-showcase" role="main">
 
-      <div class="well" style="width:800px; margin 0 auto">
+    </br>
+    <div class="progress">
+      <div class="progress-bar" role="progressbar" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100"
+        style="width: 30%;"><span class="sr-only">40% Complete</span></div>
+    </div>
+
+    <div class="page-header">
+      <h1>Congratulations! You passed the comprehension checks.</h1>
+    </div>
+
+    <div class="well" style="width:800px; margin 0 auto">
       <p align="left">
-	Click below to start the game! 
+        Click below to start the game!
       </p>
 
       <p align="left"> You may have to wait briefly until another player
-	connects. At the end of the game, your HIT will automatically
-	be submitted and the window will close!  Do not worry about
-	using a code to submit with your HIT. Do not refresh the page,
-	or you will not be able to finish the game!
+        connects. At the end of the game, your HIT will automatically
+        be submitted and the window will close! Do not worry about
+        using a code to submit with your HIT. Do not refresh the page,
+        or you will not be able to finish the game!
       </p>
-      </div>
+    </div>
 
-      <p>
-        <center><button id="agree" type="button" class="btn btn-sm btn-primary">START</button></center>
-	<noscript><strong>JavaScript must be enabled to start.</strong></noscript>
-      </p>
+    <p>
+      <center><button id="agree" type="button" class="btn btn-sm btn-primary">START</button></center>
+      <noscript><strong>JavaScript must be enabled to start.</strong></noscript>
+    </p>
 
-    </div> <!-- /container -->
+  </div> <!-- /container -->
 
-    
-    <script type="text/javascript">
-      $('html,body').scrollTop(0);
-      var urlParams;
-      var match,
-          pl     = /\+/g,  // Regex for replacing addition symbol with a space
-          search = /([^&=]+)=?([^&]*)/g,
-          decode = function (s) { return decodeURIComponent(s.replace(pl, " ")); },
-          query  = location.search.substring(1);
 
-      urlParams = {};
-      while (match = search.exec(query))
+  <script type="text/javascript">
+    $('html,body').scrollTop(0);
+    var urlParams;
+    var match,
+      pl = /\+/g,  // Regex for replacing addition symbol with a space
+      search = /([^&=]+)=?([^&]*)/g,
+      decode = function (s) { return decodeURIComponent(s.replace(pl, " ")); },
+      query = location.search.substring(1);
+
+    urlParams = {};
+    while (match = search.exec(query))
       urlParams[decode(match[1])] = decode(match[2]);
-      
-      console.log(urlParams)
 
-      document.getElementById("agree").onclick = function () {
-        var workerId = urlParams.workerId;
-        var assignmentId = urlParams.assignmentId;
-        var hitId = urlParams.hitId;
-        var turkSubmitTo = urlParams.turkSubmitTo;
-        window.open("../index.html?workerId=" + workerId
-                         + "&assignmentId=" + assignmentId
-                         + "&hitId=" + hitId + "&turkSubmitTo=" + turkSubmitTo,
-                    '_blank');
-      };
-    </script>
+    console.log(urlParams)
 
-  </body>
+    document.getElementById("agree").onclick = function () {
+      var workerId = urlParams.workerId;
+      var assignmentId = urlParams.assignmentId;
+      var hitId = urlParams.hitId;
+      var turkSubmitTo = urlParams.turkSubmitTo;
+      window.open("../index.html?workerId=" + workerId
+        + "&assignmentId=" + assignmentId
+        + "&hitId=" + hitId + "&turkSubmitTo=" + turkSubmitTo,
+        '_blank');
+    };
+  </script>
+
+</body>
+
 </html>

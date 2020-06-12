@@ -26,6 +26,7 @@ class UI {
       $('#done-button').hide();
       $('#partnerTyping').hide();
       $('#feedback').html("YOUR TURN").show();
+      $('#feedback').css('border-color', "#56be2d")
       $("#roleLabel").text("You are the architect.");
       $('#instructions').text("Send instructions to your partner to \
                                help them build the building you see on your screen.");
@@ -38,7 +39,9 @@ class UI {
       $('#stimulus-canvas').hide();
       $('#chatbox').hide();
       $('#send-message').hide();
-      $('#feedback').html("&nbsp;").hide();
+      // $('#feedback').html("&nbsp;").hide();
+      $('#feedback').html("Waiting for partner's instructions...").show();
+      $('#feedback').css('border-color', "red")
       $("#roleLabel").text("You are the builder.");
       $('#instructions').text("Click and place blocks to build the structure\
                                  your partner is describing.");
@@ -53,7 +56,7 @@ class UI {
 
     // Update counters
     $("#block-counter").text('0/' + game.blocksInStructure + ' blocks placed');
-    $("#score-counter").text('Total bonus: $' + game.cumulativeBonus);
+    $("#score-counter").text('Total bonus: $' + String(game.cumulativeBonus.toFixed(2)));
     if(game.trialNum === 'practice') {
       $("#trial-counter").text("Practice building the tower!");
     } else {

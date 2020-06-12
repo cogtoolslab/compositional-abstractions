@@ -17,7 +17,8 @@
 
 #messages {
     overflow-y: scroll;
-    border-left: 3px solid #6c757d3b;
+    border: 3px solid #1C363E;
+    background-color: rgba(255, 255, 255, 0.75);
     height:20vh;
     padding-left: 10px;
 }
@@ -109,9 +110,25 @@
 }
 
 #chat-history { 
-    text-align: left; 
+    text-align: left;
+    /* background-color: rgba(255, 255, 255, 0.75); */
+    /* border: solid 1px #1c363e; */
 }
 
+#chatbox{
+    border: 3px solid #1C363E;
+    border-radius: 0px;
+}
+
+#feedback { 
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.75);
+    border: solid 2px #56be2d;
+    width: 450px;
+    margin-left: auto;
+    margin-right: auto; 
+    font-size: larger;
+}
 
 
 
@@ -157,7 +174,7 @@
 }
 
 .counter {
-    font-size: 24px;
+    font-size: 20px;
     border: 8px solid #FFFFFF;
 }
 
