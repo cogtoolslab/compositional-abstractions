@@ -26,6 +26,7 @@ class UI {
       $('#done-button').hide();
       $('#partnerTyping').hide();
       $('#feedback').html("YOUR TURN").show();
+      $('#feedback').css('border-color', "#56be2d")
       $("#roleLabel").text("You are the architect.");
       $('#instructions').text("Send instructions to your partner to \
                                help them build the building you see on your screen.");
