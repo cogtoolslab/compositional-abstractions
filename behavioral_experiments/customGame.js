@@ -199,10 +199,8 @@ class ServerRefGame extends ServerGame {
     var blockOutput = function (client, message_data) {
       var parsedData = JSON.parse(message_data[1]);
       return _.extend(
-        commonOutput(client, message_data), {
-        block: JSON.stringify(parsedData['block']),
-        blockNum: parsedData['blockNum']
-      }
+        commonOutput(client, message_data), 
+        parsedData
       );
     };
 
