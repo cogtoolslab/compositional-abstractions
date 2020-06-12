@@ -90,18 +90,34 @@ var customEvents = function (game) {
 
   game.socket.on('feedback', function (data) {
     let trialBonus = 0;
+    let message = '';
 
     // Map raw score to bonus $$
     if (game.trialNum != 'practice') {
-      if (data.score >= expConfig.bonusThresholdHigh) { trialBonus = expConfig.bonusHigh; }
-      else if (data.score > expConfig.bonusThresholdMid) { trialBonus = expConfig.bonusMid; }
-      else if (data.score > expConfig.bonusThresholdLow) { trialBonus = expConfig.bonusLow; }
+      if (data.score >= expConfig.bonusThresholdHigh) { 
+        trialBonus = expConfig.bonusHigh; 
+        message = "Perfect! ⭐️⭐️⭐️";
+      }
+      else if (data.score > expConfig.bonusThresholdMid) { 
+        trialBonus = expConfig.bonusMid; 
+        message = "Great Job! ⭐️⭐️";
+      }
+      else if (data.score > expConfig.bonusThresholdLow) { 
+        trialBonus = expConfig.bonusLow; 
+        message = "Not bad! ⭐️";
+      }
+      else {
+        message = 'Could be better...';
+      }
       game.cumulativeBonus += trialBonus;
       game.cumulativeScore += data.score;
+
+    }
+    else {
+      message = data.practice_fail ? "Hmm, let's try that one again. " : "Nice work. ";
     }
 
     // Display feedback message
-    let message = data.practice_fail ? "Hmm, let's try that one again. " : "Nice work. ";
     if(data.practice_fail){
       $('#feedback').css('border-color', "red");
     }
@@ -110,9 +126,11 @@ var customEvents = function (game) {
     }
     if (game.role == 'listener') {
       UI.blockUniverse.revealTarget = true;
-      $("#feedback").text(message + "Here's the true structure!");
+      var feedbackObj = $("#feedback").text( message + "\n Here's the true structure!");
+      feedbackObj.html(feedbackObj.html().replace(/\n/g,' '));
+
     } else {
-      $("#feedback").text(message + "You scored " + data.score + " points!");
+      $("#feedback").text(message);
     }
   });
 
