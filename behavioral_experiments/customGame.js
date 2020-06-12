@@ -177,9 +177,9 @@ class ServerRefGame extends ServerGame {
         trialNum: client.game.currStim.trialNum,
         turnNum: client.game.turnNum,
         repNum: client.game.currStim.repNum,
-        trialStartTime: client.game.trialStartTime,
-        turnStartTime: client.game.turnStartTime,
-        turnTimeElapsed: timeNow - client.game.turnStartTime
+        // trialStartTime: client.game.trialStartTime,
+        // turnStartTime: client.game.turnStartTime,
+        // turnTimeElapsed: timeNow - client.game.turnStartTime
       };
     };
 
@@ -194,7 +194,9 @@ class ServerRefGame extends ServerGame {
     var messageOutput = function (client, message_data) {
       return _.extend(
         commonOutput(client, message_data), {
-        content: message_data[1]
+          content: message_data[1],
+          timeElapsedInTurn: message_data[2],
+          timeElapsedInTrial: message_data[3]
         }
       );
     };
@@ -207,12 +209,21 @@ class ServerRefGame extends ServerGame {
     };
 
     var blockOutput = function (client, message_data) {
+
+      let now = Date.now()
+
       var parsedData = JSON.parse(message_data[1]);
       return _.extend(
         commonOutput(client, message_data), 
         parsedData['block'],
-        {discreteWorld: parsedData['discreteWorld'],
-         blockNum: parsedData['blockNum'],}
+        parsedData,
+        {timeElapsedInTurn: now -  parsedData['turnStartTime'],
+         timeElapsedInTrial: now -  parsedData['trialStartTime']}
+        // {discreteWorld: parsedData['discreteWorld'],
+        //  blockNum: parsedData['blockNum'],
+        //  trialStartTime: game.trialStartTime,
+        //  turnStartTime: game.trialStartTime
+        // }
       );
     };
 

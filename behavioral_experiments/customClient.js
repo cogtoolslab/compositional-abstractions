@@ -42,7 +42,9 @@ function updateState(game, data) {
   UI.blockUniverse.blockSender = function (blockData) {
     var packet = _.extend(blockData, {
       blockNum: game.blockNum, 
-      discreteWorld: scoring.getDiscreteWorld(UI.blockUniverse.sendingBlocks)
+      discreteWorld: scoring.getDiscreteWorld(UI.blockUniverse.sendingBlocks),
+      trialStartTime: game.trialStartTime,
+      turnStartTime: game.turnStartTime
     });
     game.socket.send('block.' + JSON.stringify(packet));
   };
@@ -79,8 +81,9 @@ var customEvents = function (game) {
     console.log("message", game.speakerTurn);
     // if (game.speakerTurn && game.role == 'speaker' || !game.speakerTurn && game.role == 'listener') {
     var origMsg = $('#chatbox').val();
-    var timeElapsed = Date.now() - game.typingStartTime;
-    var msg = ['chatMessage', origMsg.replace(/\./g, '~~~'), timeElapsed].join('.');
+    var timeElapsedInTurn = Date.now() - game.turnStartTime;
+    var timeElapsedInTrial = Date.now() - game.trialStartTime;
+    var msg = ['chatMessage', origMsg.replace(/\./g, '~~~'), timeElapsedInTurn, timeElapsedInTrial].join('.');
     if ($('#chatbox').val() != '') {
       game.socket.send(msg);
       game.socket.send('switchTurn');
@@ -204,7 +207,6 @@ var customEvents = function (game) {
     
     UI.blockUniverse.disabledBlockPlacement = game.speakerTurn;
   });
-
 
   game.socket.on('chatMessage', function (data) {
     game.messageNum += 1;
