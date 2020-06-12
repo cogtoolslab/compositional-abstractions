@@ -70,6 +70,48 @@ class UI {
     $("#send-message").html("Send");
     $("#reproduction").focus();
   }
+
+  dropdownTip(event){
+    var game = event.data.game;
+    var data = $(this).find('option:selected').val();
+    console.log(data);
+    var commands = data.split('::');
+    switch(commands[0]) {
+    case 'language' :
+      game.data = _.extend(game.data, {'nativeEnglish' : commands[1]}); break;
+    case 'partner' :
+      game.data = _.extend(game.data, {'ratePartner' : commands[1]}); break;
+    case 'human' :
+      $('#humanResult').show();
+      game.data = _.extend(game.data, {'isHuman' : commands[1]}); break;
+    case 'didCorrectly' :
+      game.data = _.extend(game.data, {'confused' : commands[1]}); break;
+    }
+  }
+
+  submit (event) {
+    $('#button_error').show();
+    var game = event.data.game;
+    game.data = _.extend(game.data, {
+      'comments' : $('#comments').val().trim(),
+      'strategy' : $('#strategy').val().trim(),
+      'partnerStrategy' : $('#partner_strategy').val().trim(),    
+      'role' : game.my_role,
+      'totalLength' : Date.now() - game.startTime
+    });
+    game.submitted = true;
+    console.log("data is...");
+    console.log(game.data);
+    console.log(game.socket);
+    game.socket.send("exitSurvey." + JSON.stringify(game.data));
+    if(_.size(game.urlParams) >= 4) {
+      window.opener.turk.submit(game.data, true);
+      window.close(); 
+    } else {
+      console.log("would have submitted the following :")
+      console.log(game.data);
+    }
+  }
 }
 
 module.exports = new UI();
