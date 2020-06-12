@@ -113,7 +113,7 @@ class ServerRefGame extends ServerGame {
           }));
           break;
 
-      case 'endTrial':
+    case 'endTrial':
       // reset turnNum
       gc.turnNum = 0;
       var trialData = JSON.parse(message_parts[1]);
@@ -132,14 +132,17 @@ class ServerRefGame extends ServerGame {
       }));
 
       setTimeout(function () {
-        gc.newRound();
+        // this catches a rare case where connection drops between rounds
+        if(gc.active) {
+          gc.newRound();
+        }
       }, 5000);
 
-        break;
+      break;
 
       case 'exitSurvey':
         console.log(message_parts.slice(1));
-         break;
+        break;
 
       case 'h': // Receive message when browser focus shifts
         //target.visible = message_parts[1];
@@ -170,30 +173,13 @@ class ServerRefGame extends ServerGame {
       };
     };
 
-    // var revealOutput = function(client, message_data) {
-    //   var selections = message_data.slice(3);
-    //   var allObjs = client.game.currStim.hiddenCards;
-    //   return _.extend(
-    // 	commonOutput(client, message_data), {
-    // 	  sender: message_data[1],
-    // 	  timeFromMessage: message_data[2],
-    // 	  revealedObjs : selections,
-    // 	  numRevealed : selections.length,
-    // 	  fullContext: JSON.stringify(_.map(allObjs, v => {
-    // 	    return _.omit(v, ['rank', 'suit', 'url']);
-    // 	  }))
-    // 	});
-    // };
-
-
-    // var exitSurveyOutput = function(client, message_data) {
-    //   var subjInfo = JSON.parse(message_data.slice(1));
-    //   return _.extend(
-    // 	_.omit(commonOutput(client, message_data),
-    // 	       ['targetGoalSet', 'distractorGoalSet', 'trialType', 'trialNum']),
-    // 	subjInfo);
-    // };
-
+    var exitSurveyOutput = function(client, message_data) {
+      var subjInfo = JSON.parse(message_data.slice(1));
+      return _.extend(
+    	_.omit(commonOutput(client, message_data),
+    	       ['targetGoalSet', 'distractorGoalSet', 'trialType', 'trialNum']),
+    	subjInfo);
+    };
 
     var messageOutput = function (client, message_data) {
       return _.extend(
@@ -215,8 +201,8 @@ class ServerRefGame extends ServerGame {
 
     return {
       'chatMessage': messageOutput,
-      'block': blockOutput
-      // 'exitSurvey' : emptyF
+      'block': blockOutput,
+      'exitSurvey' : exitSurveyOutput
     };
   }
 }

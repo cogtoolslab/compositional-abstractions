@@ -47,6 +47,8 @@ function updateState(game, data) {
 };
 
 var customEvents = function (game) {
+  $('.form-group').change({game: game}, UI.dropdownTip);
+  $('#surveySubmit').click({game: game}, UI.submit);
 
   // TOGGLE TURNS IN HERE?
   $("#send-message").click(() => {
