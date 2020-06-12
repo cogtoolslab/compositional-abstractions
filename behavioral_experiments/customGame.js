@@ -163,17 +163,23 @@ class ServerRefGame extends ServerGame {
   */
   dataOutput() {
     function commonOutput(client, message_data) {
+
+      let timeNow = Date.now();
+
       return {
         iterationName: client.game.iterationName,
         gameid: client.game.id,
-        time: Date.now(),
+        time: timeNow,
         workerId: client.workerid,
         assignmentId: client.assignmentid,
         leftTarget: client.game.currStim.stimulus[0],
         rightTarget: client.game.currStim.stimulus[1],
         trialNum: client.game.currStim.trialNum,
         turnNum: client.game.turnNum,
-        repNum: client.game.currStim.repNum
+        repNum: client.game.currStim.repNum,
+        trialStartTime: client.game.trialStartTime,
+        turnStartTime: client.game.turnStartTime,
+        turnTimeElapsed: timeNow - client.game.turnStartTime
       };
     };
 

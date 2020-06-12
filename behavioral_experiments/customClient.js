@@ -10,11 +10,13 @@ var expConfig = require('./config.json');
 function updateState(game, data) {
   var targetBlocks = stim.makeScene(data.currStim.stimulus);
 
+  game.trialStartTime = Date.now();
+  game.turnStartTime = Date.now();
+
   console.log('updating local state with data from server', data);
   game.active = data.active;
   game.trialNum = data.currStim.trialNum;
   game.repNum = data.currStim.repNum;
-  game.roundStartTime = Date.now();
   game.speakerTurn = true;
   game.role = data.currStim.roles[game.my_id];
   game.currStim = {
@@ -178,6 +180,8 @@ var customEvents = function (game) {
   game.socket.on('switchTurn', function (data) {
     game.speakerTurn = !game.speakerTurn;
     game.blockNumAtTurnBeginning = game.blockNum;
+    game.turnStartTime = Date.now();
+    
     resetTimer(game, 30, document.getElementById('timer'));
     $('#chatbox').prop('disabled',
                        game.speakerTurn && game.role == 'listener'
