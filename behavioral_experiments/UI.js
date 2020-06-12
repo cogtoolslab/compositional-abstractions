@@ -52,7 +52,8 @@ class UI {
     $("#messages").html("");
     $('#waiting').html('');
     $('#main_div').show();
-    
+    $("#timer").html("30 seconds remaining");
+    $("#timer").css("color", "black");
 
     // Update counters
     $("#block-counter").text('0/' + game.blocksInStructure + ' blocks placed');
