@@ -100,13 +100,14 @@ class ServerRefGame extends ServerGame {
       case 'switchTurn':
         gc.turnNum += 1;
         _.map(all, p => p.player.instance.emit('switchTurn', {
-          user: client.userid
+          user: client.userid,
+          noBlockPlaced : message_parts.length > 1
         }));
-	console.log('message length', message_parts.length);
-	if (message_parts.length>1) {
-            _.map(all, p => p.player.instance.emit('questionMark',{
-		  msg: 'No block placed. Awaiting further instructions!'
-	    }))}
+      //console.log('message length', message_parts.length);
+	// if (message_parts.length>1) {
+        //     _.map(all, p => p.player.instance.emit('questionMark',{
+	// 	  msg: 'No block placed. Awaiting further instructions!'
+	//     }))}
 
         break;
 
@@ -176,9 +177,9 @@ class ServerRefGame extends ServerGame {
         trialNum: client.game.currStim.trialNum,
         turnNum: client.game.turnNum,
         repNum: client.game.currStim.repNum,
-        trialStartTime: client.game.trialStartTime,
-        turnStartTime: client.game.turnStartTime,
-        turnTimeElapsed: timeNow - client.game.turnStartTime
+        // trialStartTime: client.game.trialStartTime,
+        // turnStartTime: client.game.turnStartTime,
+        // turnTimeElapsed: timeNow - client.game.turnStartTime
       };
     };
 
@@ -193,25 +194,45 @@ class ServerRefGame extends ServerGame {
     var messageOutput = function (client, message_data) {
       return _.extend(
         commonOutput(client, message_data), {
-        content: message_data[1]
-      }
+          content: message_data[1],
+          timeElapsedInTurn: message_data[2],
+          timeElapsedInTrial: message_data[3]
+        }
+      );
+    };
+
+    var endTrialOutput = function (client, message_data) {
+      return _.extend(
+        JSON.parse(message_data[1]),
+        commonOutput(client, message_data)
       );
     };
 
     var blockOutput = function (client, message_data) {
+
+      let now = Date.now()
+
       var parsedData = JSON.parse(message_data[1]);
       return _.extend(
         commonOutput(client, message_data), 
         parsedData['block'],
-        {discreteWorld: parsedData['discreteWorld'],
-         blockNum: parsedData['blockNum'],}
+        parsedData,
+        {timeElapsedInTurn: now -  parsedData['turnStartTime'],
+         timeElapsedInTrial: now -  parsedData['trialStartTime']}
+        // {discreteWorld: parsedData['discreteWorld'],
+        //  blockNum: parsedData['blockNum'],
+        //  trialStartTime: game.trialStartTime,
+        //  turnStartTime: game.trialStartTime
+        // }
       );
     };
 
     return {
       'chatMessage': messageOutput,
       'block': blockOutput,
+      'endTrial' : endTrialOutput,
       'exitSurvey' : exitSurveyOutput
+      
     };
   }
 }

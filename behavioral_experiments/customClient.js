@@ -40,13 +40,13 @@ function updateState(game, data) {
 
   UI.blockUniverse.disabledBlockPlacement = true;
   UI.blockUniverse.blockSender = function (blockData) {
-    game.socket.send('block.' + JSON.stringify(_.extend(blockData, 
-      { blockNum: game.blockNum, 
-        discreteWorld: scoring.getDiscreteWorld(UI.blockUniverse.sendingBlocks)})));
-    // //end trial when 8 blocks have been placed
-    // if (game.blockNum == game.blocksInStructure - 1) {
-    //   game.socket.send('endTrial');
-    // }
+    var packet = _.extend(blockData, {
+      blockNum: game.blockNum, 
+      discreteWorld: scoring.getDiscreteWorld(UI.blockUniverse.sendingBlocks),
+      trialStartTime: game.trialStartTime,
+      turnStartTime: game.turnStartTime
+    });
+    game.socket.send('block.' + JSON.stringify(packet));
   };
 };
 
@@ -81,8 +81,9 @@ var customEvents = function (game) {
     console.log("message", game.speakerTurn);
     // if (game.speakerTurn && game.role == 'speaker' || !game.speakerTurn && game.role == 'listener') {
     var origMsg = $('#chatbox').val();
-    var timeElapsed = Date.now() - game.typingStartTime;
-    var msg = ['chatMessage', origMsg.replace(/\./g, '~~~'), timeElapsed].join('.');
+    var timeElapsedInTurn = Date.now() - game.turnStartTime;
+    var timeElapsedInTrial = Date.now() - game.trialStartTime;
+    var msg = ['chatMessage', origMsg.replace(/\./g, '~~~'), timeElapsedInTurn, timeElapsedInTrial].join('.');
     if ($('#chatbox').val() != '') {
       game.socket.send(msg);
       game.socket.send('switchTurn');
@@ -95,32 +96,20 @@ var customEvents = function (game) {
     return false;
   });
 
-    $("#done-button").click(() => {
-	//check if any blocks placed this turn
-	let blocksPlaced = false;
-	if (game.blockNum > 0) blocksPlaced = true;
-	if (blocksPlaced) {
-	    // if so send block
-	    game.socket.send('switchTurn');
-	    blocksPlaced = false;
-	    // This prevents the form from submitting & disconnecting person
-	    return false;
-	} else {            
-	    game.socket.send('switchTurn.noBlockPlaced');
-	}
-    });
+  $("#done-button").click(() => {
+    //check if any blocks placed this turn, and let partner know if none placed
+    var packet = game.blockNum > game.blockNumAtTurnBeginning ? 'switchTurn' : 'switchTurn.noBlockPlaced';
+    game.socket.send(packet);
+
+    // This prevents the form from submitting & disconnecting person
+    return false;
+  });
 
   //update textbox with remaining character count
   $("#chatbox").keyup(function (e) {
     $('#charRemain').text($('#chatbox').attr('maxlength') - ($("#chatbox").val().length));
     game.socket.send('typing');
   });
-
-  // tell both participants that additional instructions are needed
-  game.socket.on('questionMark', function(data) {
-      $("#feedback").text(data.msg);
-      console.log('questionMarkMsg',data.msg);
-    })
     
   game.socket.on('feedback', function (data) {
     let trialBonus = 0;
@@ -192,31 +181,32 @@ var customEvents = function (game) {
   });
 
   game.socket.on('switchTurn', function (data) {
-
     game.speakerTurn = !game.speakerTurn;
-    resetTimer(game, 30, document.getElementById('timer'));
+    game.blockNumAtTurnBeginning = game.blockNum;
     game.turnStartTime = Date.now();
-
-    $('#chatbox').prop('disabled', game.speakerTurn && game.role == 'listener'
-      || !game.speakerTurn && game.role == 'speaker');
+    
+    resetTimer(game, 30, document.getElementById('timer'));
+    $('#chatbox').prop('disabled',
+                       game.speakerTurn && game.role == 'listener'
+                       || !game.speakerTurn && game.role == 'speaker');
     $('#done-button').prop('disabled', game.speakerTurn);
     $('#send-message').prop('disabled', !game.speakerTurn);
-    if (game.speakerTurn && game.role == 'listener'
-      || !game.speakerTurn && game.role == 'speaker') {
-      // $('#feedback').html("&nbsp;").hide();
+    if(data.noBlockPlaced) {
+      var msg = 'No block placed. ';
+      msg += game.role == 'listener' ? 'Awaiting further instructions...' : 'Please provide more information!';
+      $('#feedback').text(msg);
+    } else if (game.speakerTurn && game.role == 'listener'
+               || !game.speakerTurn && game.role == 'speaker') {
       $('#feedback').html("Waiting for Partner...");
       $('#feedback').css('border-color', "red");
-    }
-    if (game.speakerTurn && game.role == 'speaker'
-      || !game.speakerTurn && game.role == 'listener') {
+    } else if (game.speakerTurn && game.role == 'speaker'
+               || !game.speakerTurn && game.role == 'listener') {
       $('#feedback').text("YOUR TURN").show();
       $('#feedback').css('border-color', "#56be2d");
-      // document.getElementById("feedback").style.borderColor = "#56be2d";
     }
-
+    
     UI.blockUniverse.disabledBlockPlacement = game.speakerTurn;
   });
-
 
   game.socket.on('chatMessage', function (data) {
     game.messageNum += 1;
