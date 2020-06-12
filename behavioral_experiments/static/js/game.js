@@ -15,7 +15,6 @@ class Game {
     this.dataStore = config.dataStore;
     this.playersThreshold = config.playersThreshold;
     this.playerRoleNames = config.playerRoleNames;
-    this.numRounds = config.numRounds;
     this.numHorizontalCells = config.numHorizontalCells;
     this.numVerticalCells = config.numVerticalCells;
     this.cellDimensions = config.cellDimensions;
@@ -89,7 +88,10 @@ class ServerGame extends Game {
     setTimeout(() => {
       _.forEach(this.activePlayers(), p => {
         try {
-          p.player.instance.emit('showExitSurvey', {});
+          p.player.instance.emit('showExitSurvey', {
+            roundNum: this.roundNum,
+            numRounds: this.numRounds
+          });
         } catch (err) {
           console.log('player did not exist to disconnect');
         }
@@ -180,8 +182,7 @@ class ClientGame extends Game {
         "<h3>Thanks for participating in our experiment!</h3>",
         "<p>Before you submit your HIT, we'd like to ask you a few questions.</p>"
       ].join('');
-
-      if (this.roundNum + 2 > this.numRounds) {
+      if (data.roundNum >= data.numRounds - 1) {
         $('#exit_survey').prepend(successMsg);
       } else {
         $('#exit_survey').prepend(failMsg);
