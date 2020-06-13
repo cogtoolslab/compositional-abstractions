@@ -1,12 +1,12 @@
 var BlockUniverse = require('./static/js/experimentEnvironment.js');
 var Confetti = require('./static/js/confetti.js');
-var confetti = new Confetti(300);
 
 class UI {
   // Since all the action is happening in experimentEnvironment, this
   // is basically a glorified wrapper
   constructor() {
     this.blockUniverse = new BlockUniverse();
+    this.confetti = new Confetti(300);
   }
 
   reset(game, data) {
@@ -16,7 +16,7 @@ class UI {
       this.blockUniverse.removeEnv();
       this.blockUniverse.removeStimWindow();
     }
-
+    this.confetti.reset();
     this.blockUniverse.setupEnvs(game.currStim);
     
     if (game.role == 'speaker') {
@@ -45,7 +45,6 @@ class UI {
       $("#roleLabel").text("You are the builder.");
       $('#instructions').text("Click and place blocks to build the structure\
                                  your partner is describing.");
-
     }
 
     $("#chat-history").show();    
