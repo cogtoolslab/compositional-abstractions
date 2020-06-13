@@ -118,7 +118,8 @@ var customEvents = function (game) {
     // Map raw score to bonus $$
     if (game.trialNum != 'practice') {
       if (data.score >= expConfig.bonusThresholdHigh) { 
-        trialBonus = expConfig.bonusHigh; 
+        trialBonus = expConfig.bonusHigh;
+        UI.confetti.drop();
         message = "Perfect! ⭐️⭐️⭐️ 5¢ bonus!";
       }
       else if (data.score > expConfig.bonusThresholdMid) { 
@@ -138,20 +139,22 @@ var customEvents = function (game) {
     }
     else {
       message = data.practice_fail ? "Hmm, let's try that one again. " : "Nice work. ";
+      console.log('dropping confetti')
+      console.log(UI.confetti);
+      UI.confetti.drop();
     }
 
     // Display feedback message
     if(data.practice_fail){
       $('#feedback').css('border-color', "red");
-    }
-    else{
+    } else {
       $('#feedback').css('border-color', "#56be2d");
     }
+
     if (game.role == 'listener') {
       UI.blockUniverse.revealTarget = true;
       var feedbackObj = $("#feedback").text( message + "\n Here's the true structure!");
       feedbackObj.html(feedbackObj.html().replace(/\n/g,'<br/>'));
-
     } else {
       $("#feedback").text(message);
     }

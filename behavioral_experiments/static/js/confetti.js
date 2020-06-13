@@ -24,7 +24,7 @@ class Confetti {
       "opacity" : Math.random()+0.5,
       "background-color": colour,
       "transform" : "rotate("+Math.random()*360+"deg)"
-    }).appendTo('#header');  
+    }).appendTo('#main_div');  
   }
 
   //Dropp all confetti

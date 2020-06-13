@@ -146,6 +146,10 @@
 }
 
 
+#confetti {
+    position: absolute;
+}
+
 #condition-heading {
     display: inline-block;
     text-align: center;
