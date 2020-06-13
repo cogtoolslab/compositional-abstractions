@@ -11,6 +11,8 @@ var
 
 let gameport;
 let expPath;
+var researchers = ['A4SSYO0HDVD4E', 'A1BOIDKD33QSDK', 'A1MMCS8S8CTWKU', 'A1MMCS8S8CTWKV', 'A1MMCS8S8CTWKS', 'A1RFS3YXD1ZIKG'];
+var blockResearcher = true;
 
 if (argv.gameport) {
   gameport = argv.gameport;
@@ -58,8 +60,10 @@ console.log('\t :: Express :: Listening on port ' + gameport);
 
 app.get('/*', function (req, res) {
   var id = req.query.workerId;
-  if (!id || id === 'undefined') {
-    // If no worker id supplied (e.g. for demo), allow to continue
+  if (!id || id === 'undefined' || isResearcher && !blockResearcher) {
+    // If no worker id supplied (e.g. for demo) OR 
+    // is researcher with blockResearcher off
+    // allow to continue
     return utils.serveFile(req, res);
   } else if (!valid_id(id)) {
     // If invalid id, block them    

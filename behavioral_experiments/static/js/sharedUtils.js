@@ -14,18 +14,18 @@ var serveFile = function(req, res) {
 
 var handleDuplicate = function(req, res) {
   console.log("duplicate id: blocking request");
-  return res.redirect('/sharedUtils/duplicate.html');
+  return res.redirect('../html/duplicate.html');
 };
 
 var handleInvalidID = function(req, res) {
   console.log("invalid id: blocking request");
-  return res.redirect('/sharedUtils/invalid.html');
+  return res.redirect('../html/invalid.html');
 };
 
 var checkPreviousParticipant = function(workerId, callback) {
   var p = {'workerId': workerId};
   var postData = {
-    dbname: 'QA',
+    dbname: 'compositional-abstractions',
     query: p,
     projection: {'_id': 1}
   };
