@@ -5,9 +5,9 @@ class Confetti {
   }
 
   pickColor(index) {
-    return (index == 1 ? '#faa040' : // yellow
-	    index == 2 ? '#e94a3f' : // blue
-	    "#e94a3f");              // red 
+    return (index == 1 ? '#407bfa' : // blue
+	    index == 2 ? '#e94a3f' : // red
+	    "#e9ca3f");              // yellow 
   }
 
   // Initialize confetti particle
