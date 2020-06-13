@@ -71,9 +71,7 @@ function serve() {
       const projection = request.body.projection;
 
       // hardcoded for now (TODO: get list of collections in db)
-      var collectionList = [//'sketchpad_basic','sketchpad_repeated',
-			    //'chatbox_basic', //'chairs_chatbox',
-			    'cards']; 
+      var collectionList = ['two-towers']; 
 
       function checkCollectionForHits(collectionName, query, projection, callback) {
         const collection = database.collection(collectionName);        
@@ -102,14 +100,15 @@ function serve() {
         console.log("hits: ", hits);
         response.json(hits>0);
       }
+      checkEach(collectionList, checkCollectionForHits, query, projection, evaluateTally);
 
-      // Always let the requester test ;) 
-      if(_.includes(['A1BOIDKD33QSDK', 'A4SSYO0HDVD4E', 'A1MMCS8S8CTWKU'],
-		    query.workerId)) {
-	response.json(false);
-      } else {
-	checkEach(collectionList, checkCollectionForHits, query, projection, evaluateTally);
-      }
+      // // Always let the requester test ;) // this is handled by blockResearchers flag in app.js
+      // if(_.includes(['A1BOIDKD33QSDK', 'A4SSYO0HDVD4E', 'A1MMCS8S8CTWKU'],
+		    // query.workerId)) {
+	     //   response.json(false);
+      // } else {
+	     //   checkEach(collectionList, checkCollectionForHits, query, projection, evaluateTally);
+      // }
     });
 
     app.post('/db/insert', (request, response) => {
