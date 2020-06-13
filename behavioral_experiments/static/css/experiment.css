@@ -123,12 +123,12 @@
 #feedback { 
     text-align: center;
     background-color: rgba(255, 255, 255, 0.75);
-    border: solid 2px #56be2d;
+    border: solid 4px #56be2d;
     width: 450px;
     margin-left: auto;
     margin-right: auto; 
     font-size: larger;
-    font-weight: 700;
+    font-weight: 700;    
 }
 
 
