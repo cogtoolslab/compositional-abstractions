@@ -153,7 +153,7 @@ var customEvents = function (game) {
 
     if (game.role == 'listener') {
       UI.blockUniverse.revealTarget = true;
-      var feedbackObj = $("#feedback").text( message + "\n Here's the true structure!");
+      var feedbackObj = $("#feedback").text( message );
       feedbackObj.html(feedbackObj.html().replace(/\n/g,'<br/>'));
     } else {
       $("#feedback").text(message);
