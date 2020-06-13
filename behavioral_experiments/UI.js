@@ -74,7 +74,7 @@ class UI {
   dropdownTip(event){
     var game = event.data.game;
     var data = $(this).find('option:selected').val();
-    console.log(data);
+    // console.log(data);
     var commands = data.split('::');
     switch(commands[0]) {
     case 'language' :

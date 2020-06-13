@@ -138,7 +138,7 @@ var customEvents = function (game) {
 
     }
     else {
-      message = data.practice_fail ? "Hmm, let's try that one again. " : "Nice work. ";
+      message = data.practice_fail ? "Hmm, let's try that one again. " : "Nice work! ";
       console.log('dropping confetti')
       console.log(UI.confetti);
       UI.confetti.drop();

@@ -16,7 +16,7 @@ class ServerRefGame extends ServerGame {
     this.trialList = this.makeTrialList();
     this.numRounds = this.trialList.length;
     this.turnNum = 0;
-    console.log(this.trialList);
+    // console.log(this.trialList);
   }
 
   customEvents(socket) {
@@ -78,7 +78,7 @@ class ServerRefGame extends ServerGame {
     var all = gc.activePlayers();
     var target = gc.getPlayer(client.userid);
     var others = gc.getOthers(client.userid);
-    console.log('message_parts', message_parts);  
+    // console.log('message_parts', message_parts);  
     switch (message_type) {
       case 'block':
         _.map(all, p => p.player.instance.emit('block', {
