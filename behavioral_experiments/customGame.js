@@ -56,7 +56,7 @@ class ServerRefGame extends ServerGame {
         trialList.push({
           stimulus: tower,
           repNum: repNum,
-          trialNum: repNum + towerNum,
+          trialNum: repNum * combinations.length + towerNum,
           roles: roles
         });
       });
