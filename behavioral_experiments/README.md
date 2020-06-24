@@ -23,3 +23,13 @@ The color reference game from [Monroe, Hawkins, Goodman, & Potts, 2017](http://w
 In the demo, all of the jQuery & rendering for the user interface is handled in a UI module called `drawing.js`. Because we use `webpack` to bundle up client-side code, however, you can organize it into modules however you want.
 
 
+# Project Overview
+
+The goal of this study is to examine the language people use to instruct others in a collaborative assembly task, and how this language evolves over time as they continue making the same things with the same collaborator. We are particularly interested in the ability to gradually abstract from exhaustive, fine-grained procedures to more concise, structured representations. 
+
+Participants will be paired in an online environment to perform a collaborative physical assembly task, in which one participant will act as the Architect and the other as the Builder. On each trial, the Architect will view two block towers and issue instructions to the Builder, who is able to place blocks, but unable to see the target structure. The trial ends when all blocks have been placed, and feedback is given on the accuracy of the construction. Importantly, each tower is built multiple times to test how the Architect’s utterances and the Builder’s behavior change as they accumulate shared history.
+
+## Stimuli 
+
+All towers will be constructed from two primitive blocks: a 2x1 (horizontal) domino, and a 1 x 2 (vertical) domino. Specifically, we use three particular towers consisting of four dominoes each: (1) an arch; (2) a tower resembling the letter “C,” and (3) one resembling the letter “L.” On each trial, we will show the Architect a pair of these towers in an 8x12 grid environment, placing one on the left side of the environment, and one on the right side.
+
