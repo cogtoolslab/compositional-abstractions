@@ -168,7 +168,8 @@ var customEvents = function (game) {
 
   game.socket.on('block', function (data) {
     game.blockNum += 1;
-    $('#block-counter').text(game.blockNum + ' / ' + game.blocksInStructure + ' blocks placed');
+    let blockTotal = game.trialNum == 'practice' ? 2 : game.blocksInStructure;
+    $('#block-counter').text(game.blockNum + ' / ' + blockTotal + ' blocks placed');
     UI.blockUniverse.sendingBlocks.push(data.block);
 
     if (game.blockNum == game.blocksInStructure) {
