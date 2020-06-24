@@ -144,9 +144,9 @@ var customEvents = function (game) {
     }
 
     // Display feedback message
-    if(data.practice_fail){
+    if(game.trialNum == 'practice' && data.practice_fail){
       $('#feedback').css('border-color', "red");
-    } else {
+    } else if (game.trialNum == 'practice') {
       $('#feedback').css('border-color', "#56be2d");
       UI.confetti.drop();
     }
