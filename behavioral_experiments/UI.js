@@ -47,6 +47,12 @@ class UI {
                                  your partner is describing.");
     }
 
+    if (game.trialNum == 'practice'){
+      $('#practice-instructions').show();
+    } else {
+      $('#practice-instructions').hide();
+    }
+
     $("#chat-history").show();    
     $("#messages").html("");
     $('#waiting').html('');
