@@ -6,19 +6,19 @@ var
   https = require('https'),
   fs = require('fs'),
   app = require('express')(),
-  _ = require('underscore'),
+  _ = require('lodash'),
   RefGameServer = require('./static/js/server.js');
 
 let gameport;
 let expPath;
 var researchers = ['A4SSYO0HDVD4E', 'A1BOIDKD33QSDK', 'A1MMCS8S8CTWKU', 'A1MMCS8S8CTWKV', 'A1MMCS8S8CTWKS', 'A1RFS3YXD1ZIKG'];
-var blockResearcher = true;
+var blockResearcher = false;
 
 if (argv.gameport) {
   gameport = argv.gameport;
   console.log('using port ' + gameport);
 } else {
-  gameport = 8881;
+  gameport = 8885;
 
   console.log('no gameport specified: using 8888\nUse the --gameport flag to change');
 }
@@ -59,7 +59,8 @@ console.log("info  - socket.io started");
 console.log('\t :: Express :: Listening on port ' + gameport);
 
 app.get('/*', function (req, res) {
-  var id = req.query.workerId;
+    var id = req.query.workerId;
+    var isResearcher = _.includes(researchers, id);
   if (!id || id === 'undefined' || isResearcher && !blockResearcher) {
     // If no worker id supplied (e.g. for demo) OR 
     // is researcher with blockResearcher off

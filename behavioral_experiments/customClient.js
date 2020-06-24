@@ -139,9 +139,8 @@ var customEvents = function (game) {
     }
     else {
       message = data.practice_fail ? "Hmm, let's try that one again. " : "Nice work! ";
-      console.log('dropping confetti')
-      console.log(UI.confetti);
-      UI.confetti.drop();
+      //console.log('dropping confetti')
+      //console.log(UI.confetti); 
     }
 
     // Display feedback message
@@ -149,6 +148,7 @@ var customEvents = function (game) {
       $('#feedback').css('border-color', "red");
     } else {
       $('#feedback').css('border-color', "#56be2d");
+      UI.confetti.drop();
     }
 
     if (game.role == 'listener') {
