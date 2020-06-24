@@ -31,5 +31,5 @@ Participants will be paired in an online environment to perform a collaborative 
 
 ## Stimuli 
 
-All towers will be constructed from two primitive blocks: a 2x1 (horizontal) domino, and a 1 x 2 (vertical) domino. Specifically, we use three particular towers consisting of four dominoes each: (1) an arch; (2) a tower resembling the letter “C,” and (3) one resembling the letter “L.” On each trial, we will show the Architect a pair of these towers in an 8x12 grid environment, placing one on the left side of the environment, and one on the right side.
+Iteration 0 (Pilot): All towers will be constructed from two primitive blocks: a 2x1 (horizontal) domino, and a 1 x 2 (vertical) domino. Specifically, we use three particular towers consisting of four dominoes each: (1) an arch; (2) a tower resembling the letter “C,” and (3) one resembling the letter “L.” On each trial, we will show the Architect a pair of these towers in an 8x12 grid environment, placing one on the left side of the environment, and one on the right side.
 
