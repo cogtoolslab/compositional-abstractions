@@ -202,12 +202,16 @@ class ServerRefGame extends ServerGame {
     };
 
     var endTrialOutput = function (client, message_data) {
+      var scores = JSON.parse(message_data[1]);
       return _.extend(
-        JSON.parse(message_data[1]),
-        commonOutput(client, message_data)
+        commonOutput(client, message_data), {
+          trialScore: scores.score,
+          cumulativeScore: scores.cumulativeScore,
+          cumulativeBonus: scores.cumulativeBonus / 100
+        }
       );
     };
-
+    
     var blockOutput = function (client, message_data) {
 
       let now = Date.now()

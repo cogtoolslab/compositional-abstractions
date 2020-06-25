@@ -72,10 +72,41 @@ var resetTimer = function(game, timeLeft, timeElem){
   }
 };
 
+var constructFeedback = function(game, data) {
+  var feedback = {}
+  if(game.trialNum == 'practice') {
+    return {
+      'message' : data.practice_fail ? "Hmm, let's try that one again. " : "Nice work! ",
+      'trialBonus' : 0
+    };
+  } else if (data.score >= expConfig.bonusThresholdHigh) {
+    UI.confetti.drop();
+    return {
+      'trialBonus' : expConfig.bonusHigh,
+      'message' : "Perfect! ⭐️⭐️⭐️ 10¢ bonus!"
+    }
+  } else if (data.score > expConfig.bonusThresholdMid) { 
+    return {
+      'trialBonus' : expConfig.bonusMid,
+      'message' : "Great Job! ⭐️⭐️ 6¢ bonus!"
+    }
+  } else if (data.score > expConfig.bonusThresholdLow) { 
+    return {
+      'trialBonus' : expConfig.bonusLow,
+      'message' : "Not bad! ⭐️ 2¢ bonus!"
+    } 
+  } else {
+    return {
+      'trialBonus' : 0,
+      'message' : 'Could be better...'
+    }
+  }
+}
+
 var customEvents = function (game) {
   $('.form-group').change({game: game}, UI.dropdownTip);
   $('#surveySubmit').click({game: game}, UI.submit);
-
+  
   // TOGGLE TURNS IN HERE?
   $("#send-message").click(() => {
     console.log("message", game.speakerTurn);
@@ -110,40 +141,13 @@ var customEvents = function (game) {
     $('#charRemain').text($('#chatbox').attr('maxlength') - ($("#chatbox").val().length));
     game.socket.send('typing');
   });
-    
+
   game.socket.on('feedback', function (data) {
-    let trialBonus = 0;
-    let message = '';
-
     // Map raw score to bonus $$
-    if (game.trialNum != 'practice') {
-      if (data.score >= expConfig.bonusThresholdHigh) { 
-        trialBonus = expConfig.bonusHigh;
-        UI.confetti.drop();
-        message = "Perfect! ⭐️⭐️⭐️ 10¢ bonus!";
-      }
-      else if (data.score > expConfig.bonusThresholdMid) { 
-        trialBonus = expConfig.bonusMid; 
-        message = "Great Job! ⭐️⭐️ 6¢ bonus!";
-      }
-      else if (data.score > expConfig.bonusThresholdLow) { 
-        trialBonus = expConfig.bonusLow; 
-        message = "Not bad! ⭐️ 2¢ bonus!";
-      }
-      else {
-        message = 'Could be better...';
-      }
-      game.cumulativeBonus += trialBonus;
-      game.cumulativeScore += data.score;
+    feedback = constructFeedback(game, data);
+    game.cumulativeScore += data.score;
+    game.cumulativeBonus += feedback.trialBonus;
 
-    }
-    else {
-      message = data.practice_fail ? "Hmm, let's try that one again. " : "Nice work! ";
-      //console.log('dropping confetti')
-      //console.log(UI.confetti); 
-    }
-
-    // Display feedback message
     if(game.trialNum == 'practice' && data.practice_fail){
       $('#feedback').css('border-color', "red");
     } else if (game.trialNum == 'practice') {
@@ -151,12 +155,13 @@ var customEvents = function (game) {
       UI.confetti.drop();
     }
 
+    // Display feedback message
     if (game.role == 'listener') {
       UI.blockUniverse.revealTarget = true;
-      var feedbackObj = $("#feedback").text( message );
+      var feedbackObj = $("#feedback").text(feedback.message);
       feedbackObj.html(feedbackObj.html().replace(/\n/g,'<br/>'));
     } else {
-      $("#feedback").text(message);
+      $("#feedback").text(feedback.message);
     }
   });
 
@@ -171,14 +176,19 @@ var customEvents = function (game) {
     let blockTotal = game.trialNum == 'practice' ? 2 : game.blocksInStructure;
     $('#block-counter').text(game.blockNum + ' / ' + blockTotal + ' blocks placed');
     UI.blockUniverse.sendingBlocks.push(data.block);
-
+    
     if (game.blockNum == game.blocksInStructure) {
       //resetTimer(game, 30, document.getElementById('timer');
       $('#done-button').prop('disabled', !game.speakerTurn);
       UI.blockUniverse.disabledBlockPlacement = true;
       var trialScore = scoring.getScoreDiscrete(game.targetMap, scoring.getDiscreteWorld(UI.blockUniverse.sendingBlocks));
       if (game.role == 'speaker') {
-          game.socket.send('endTrial.' + JSON.stringify({ 'score': trialScore, 'cumulativeScore': game.cumulativeScore, 'cumulativeBonus': game.cumulativeBonus })); //error if '.' in score
+        var feedback = constructFeedback(game, {score: trialScore})
+        game.socket.send('endTrial.' + JSON.stringify({
+          'score': trialScore,
+          'cumulativeScore': game.cumulativeScore + trialScore,
+          'cumulativeBonus': (game.cumulativeBonus + feedback.trialBonus)*100
+        })); //error if '.' in score
       }
     }
 
