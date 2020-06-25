@@ -131,7 +131,7 @@ class ServerRefGame extends ServerGame {
 
       // Send feedback
       _.map(all, p => p.player.instance.emit('feedback', {
-        score: trialData.score,
+          score: trialData.score,
         practice_fail: practiceFail
       }));
 
@@ -164,7 +164,7 @@ class ServerRefGame extends ServerGame {
   dataOutput() {
     function commonOutput(client, message_data) {
 
-      let timeNow = Date.now();
+	let timeNow = Date.now();
 
       return {
         iterationName: client.game.iterationName,
@@ -176,9 +176,7 @@ class ServerRefGame extends ServerGame {
         rightTarget: client.game.currStim.stimulus[1],
         trialNum: client.game.currStim.trialNum,
         turnNum: client.game.turnNum,
-        repNum: client.game.currStim.repNum,
-        cumulativeBonus: client.game.cumulativeBonus,
-        cumulativeScore: client.game.cumulativeScore
+        repNum: client.game.currStim.repNum
         // trialStartTime: client.game.trialStartTime,
         // turnStartTime: client.game.turnStartTime,
         // turnTimeElapsed: timeNow - client.game.turnStartTime

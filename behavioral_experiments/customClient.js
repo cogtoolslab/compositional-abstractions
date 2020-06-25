@@ -178,7 +178,7 @@ var customEvents = function (game) {
       UI.blockUniverse.disabledBlockPlacement = true;
       var trialScore = scoring.getScoreDiscrete(game.targetMap, scoring.getDiscreteWorld(UI.blockUniverse.sendingBlocks));
       if (game.role == 'speaker') {
-        game.socket.send('endTrial.' + JSON.stringify({ 'score': trialScore })); //error if '.' in score
+          game.socket.send('endTrial.' + JSON.stringify({ 'score': trialScore, 'cumulativeScore': game.cumulativeScore, 'cumulativeBonus': game.cumulativeBonus })); //error if '.' in score
       }
     }
 
