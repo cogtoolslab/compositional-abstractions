@@ -102,6 +102,7 @@ class UI {
       'comments' : $('#comments').val().trim(),
       'strategy' : $('#strategy').val().trim(),
       'role' : game.role,
+      'score' : game.cumulativeBonus,
       'totalLength' : Date.now() - game.startTime
     });
     game.submitted = true;
