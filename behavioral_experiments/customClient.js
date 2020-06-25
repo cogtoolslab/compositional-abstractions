@@ -120,15 +120,15 @@ var customEvents = function (game) {
       if (data.score >= expConfig.bonusThresholdHigh) { 
         trialBonus = expConfig.bonusHigh;
         UI.confetti.drop();
-        message = "Perfect! ⭐️⭐️⭐️ 5¢ bonus!";
+        message = "Perfect! ⭐️⭐️⭐️ 10¢ bonus!";
       }
       else if (data.score > expConfig.bonusThresholdMid) { 
         trialBonus = expConfig.bonusMid; 
-        message = "Great Job! ⭐️⭐️ 3¢ bonus!";
+        message = "Great Job! ⭐️⭐️ 6¢ bonus!";
       }
       else if (data.score > expConfig.bonusThresholdLow) { 
         trialBonus = expConfig.bonusLow; 
-        message = "Not bad! ⭐️ 1¢ bonus!";
+        message = "Not bad! ⭐️ 2¢ bonus!";
       }
       else {
         message = 'Could be better...';

@@ -2,7 +2,7 @@
   "email" : "cogtoolslab.requester@gmail.com",
   "projectName" : "compositional-abstractions",
   "experimentName" : "two-towers",
-  "iterationName" : "testing",
+  "iterationName" : "livetest1",
   "anonymizeCSV" : true,
   "bonusAmt" : 5, 
   "dataStore" : ["csv", "mongo"],
@@ -22,7 +22,7 @@
   "bonusThresholdHigh": 100,
   "bonusThresholdMid": 80,
   "bonusThresholdLow": 60,
-  "bonusHigh": 0.05,
-  "bonusMid": 0.03,
-  "bonusLow": 0.01
+  "bonusHigh": 0.10,
+  "bonusMid": 0.06,
+  "bonusLow": 0.02
 }
