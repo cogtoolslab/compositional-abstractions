@@ -48,4 +48,5 @@ Iteration 0 (Pilot): All towers will be constructed from two primitive blocks: a
 * remove practice trials from cumulative score
 * bonus changed to reflect advertised amount (10, 6, 2 cents)
 * sending cumulative score to MTruk
-
+* Bugs:
+  * Need to parseInt cumulative Bonus when sending to server 
