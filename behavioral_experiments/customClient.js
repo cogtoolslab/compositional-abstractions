@@ -145,7 +145,7 @@ var customEvents = function (game) {
   game.socket.on('feedback', function (data) {
     // Map raw score to bonus $$
     feedback = constructFeedback(game, data);
-    game.cumulativeScore += data.score;
+    game.cumulativeScore += game.trialNum != 'practice' ? data.score : 0;
     game.cumulativeBonus += feedback.trialBonus;
 
     if(game.trialNum == 'practice' && data.practice_fail){
@@ -181,12 +181,12 @@ var customEvents = function (game) {
       //resetTimer(game, 30, document.getElementById('timer');
       $('#done-button').prop('disabled', !game.speakerTurn);
       UI.blockUniverse.disabledBlockPlacement = true;
-      var trialScore = game.trialNum != 'practice' ? scoring.getScoreDiscrete(game.targetMap, scoring.getDiscreteWorld(UI.blockUniverse.sendingBlocks)) : 0;      
+      var trialScore = scoring.getScoreDiscrete(game.targetMap, scoring.getDiscreteWorld(UI.blockUniverse.sendingBlocks));      
       if (game.role == 'speaker') {
         var feedback = constructFeedback(game, {score: trialScore})
         game.socket.send('endTrial.' + JSON.stringify({
           'score': trialScore,
-          'cumulativeScore': game.cumulativeScore + trialScore,
+          'cumulativeScore': game.trialNum != 'practice' ? game.cumulativeScore + trialScore: 0,
           'cumulativeBonus': (game.cumulativeBonus + feedback.trialBonus)*100
         })); //error if '.' in score
       }
