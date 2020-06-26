@@ -145,7 +145,7 @@ var customEvents = function (game) {
   game.socket.on('feedback', function (data) {
     // Map raw score to bonus $$
     feedback = constructFeedback(game, data);
-    game.cumulativeScore += game.trialNum != 'practice' ? parseInt(data.score) : 0;
+    game.cumulativeScore += game.trialNum != 'practice' ? data.score : 0;
     game.cumulativeBonus += feedback.trialBonus;
 
     if(game.trialNum == 'practice' && data.practice_fail){
@@ -181,7 +181,7 @@ var customEvents = function (game) {
       //resetTimer(game, 30, document.getElementById('timer');
       $('#done-button').prop('disabled', !game.speakerTurn);
       UI.blockUniverse.disabledBlockPlacement = true;
-      var trialScore = parseInt(scoring.getScoreDiscrete(game.targetMap, scoring.getDiscreteWorld(UI.blockUniverse.sendingBlocks)));
+      var trialScore = scoring.getScoreDiscrete(game.targetMap, scoring.getDiscreteWorld(UI.blockUniverse.sendingBlocks));
       if (game.role == 'speaker') {
         var feedback = constructFeedback(game, {score: trialScore})
         game.socket.send('endTrial.' + JSON.stringify({
