@@ -181,7 +181,7 @@ var customEvents = function (game) {
       //resetTimer(game, 30, document.getElementById('timer');
       $('#done-button').prop('disabled', !game.speakerTurn);
       UI.blockUniverse.disabledBlockPlacement = true;
-      var trialScore = scoring.getScoreDiscrete(game.targetMap, scoring.getDiscreteWorld(UI.blockUniverse.sendingBlocks));
+      var trialScore = game.trialNum != 'practice' ? scoring.getScoreDiscrete(game.targetMap, scoring.getDiscreteWorld(UI.blockUniverse.sendingBlocks)) : 0;      
       if (game.role == 'speaker') {
         var feedback = constructFeedback(game, {score: trialScore})
         game.socket.send('endTrial.' + JSON.stringify({
