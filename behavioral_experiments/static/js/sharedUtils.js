@@ -14,12 +14,12 @@ var serveFile = function(req, res) {
 
 var handleDuplicate = function(req, res) {
   console.log("duplicate id: blocking request");
-  return res.redirect('../html/duplicate.html');
+  return res.redirect('static/html/duplicate.html');
 };
 
 var handleInvalidID = function(req, res) {
   console.log("invalid id: blocking request");
-  return res.redirect('../html/invalid.html');
+  return res.redirect('static/html/invalid.html');
 };
 
 var checkPreviousParticipant = function(workerId, callback) {
