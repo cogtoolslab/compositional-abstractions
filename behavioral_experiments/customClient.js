@@ -181,13 +181,13 @@ var customEvents = function (game) {
       //resetTimer(game, 30, document.getElementById('timer');
       $('#done-button').prop('disabled', !game.speakerTurn);
       UI.blockUniverse.disabledBlockPlacement = true;
-      var trialScore = scoring.getScoreDiscrete(game.targetMap, scoring.getDiscreteWorld(UI.blockUniverse.sendingBlocks));
+      var trialScore = parseInt(scoring.getScoreDiscrete(game.targetMap, scoring.getDiscreteWorld(UI.blockUniverse.sendingBlocks)));
       if (game.role == 'speaker') {
         var feedback = constructFeedback(game, {score: trialScore})
         game.socket.send('endTrial.' + JSON.stringify({
           'score': trialScore,
           'cumulativeScore': game.trialNum != 'practice' ? game.cumulativeScore + trialScore: 0,
-          'cumulativeBonus': (game.cumulativeBonus + feedback.trialBonus)*100
+          'cumulativeBonus': parseInt((game.cumulativeBonus + feedback.trialBonus)*100)
         })); //error if '.' in score
       }
     }
