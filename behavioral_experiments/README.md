@@ -47,4 +47,5 @@ Iteration 0 (Pilot): All towers will be constructed from two primitive blocks: a
 #### Livetest1:
 * remove practice trials from cumulative score
 * bonus changed to reflect advertised amount (10, 6, 2 cents)
+* sending cumulative score to MTruk
 
