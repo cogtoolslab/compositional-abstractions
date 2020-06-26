@@ -37,12 +37,12 @@ Iteration 0 (Pilot): All towers will be constructed from two primitive blocks: a
 ### Iterations:
 
 #### Livetest0 (n=1 on 6/24/2020):
-* 3 towers, 12 trials, each scene repeated twice
+* 3 towers (C, arch, L), 12 trials and practice trial, each scene repeated twice
 * two dominoes (1 vertical, 1 horizontal)
 * must get perfect practice trial to proceed
 * Bugs: 
- * bonus needs to be doubled
- * practice trials should not be added to cumulative score 
+  * bonus needs to be doubled
+  * practice trials should not be added to cumulative score 
 
 #### Livetest1:
 * remove practice trials from cumulative score
