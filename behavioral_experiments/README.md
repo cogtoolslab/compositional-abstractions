@@ -36,7 +36,7 @@ Iteration 0 (Pilot): All towers will be constructed from two primitive blocks: a
 
 ### Iterations:
 
-#### Livetest0 (n=1 on 6/24/2020):
+#### livetest0 (n=1 on 6/24/2020):
 * 3 towers (C, arch, L), 12 trials and practice trial, each scene repeated twice
 * two dominoes (1 vertical, 1 horizontal)
 * must get perfect practice trial to proceed
@@ -44,10 +44,14 @@ Iteration 0 (Pilot): All towers will be constructed from two primitive blocks: a
   * bonus needs to be doubled
   * practice trials should not be added to cumulative score 
 
-#### Livetest1:
+#### livetest1 (two broken trials, crashed sending Cumulative Bonus on 6/26/2020):
 * remove practice trials from cumulative score
 * bonus changed to reflect advertised amount (10, 6, 2 cents)
 * sending cumulative score to MTruk
 * Bugs:
   * Need to parseInt cumulative Bonus when sending to server 
   * Score returning "null" when getting 0 points
+  
+#### livetest2:
+* fix parseInt issue when sending cumulative score
+* F1 score, cumulative Score return 0 (not null) when getting 0 points
