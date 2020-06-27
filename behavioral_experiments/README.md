@@ -57,3 +57,8 @@ Iteration 0 (Pilot): All towers will be constructed from two primitive blocks: a
 * fix parseInt issue when sending cumulative score
 * F1 score, cumulative Score return 0 (not null) when getting 0 points
 * Swapping order of tower pairings
+* Bugs:
+  * Score being sent to MTurk has decimal points in it. Multiplying by 100 & making an integer
+  
+#### livetest3:
+
