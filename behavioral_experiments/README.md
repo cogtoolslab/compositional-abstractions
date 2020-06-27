@@ -78,4 +78,9 @@ Iteration 0 (Pilot): All towers will be constructed from two primitive blocks: a
 
 #### `pilot0`:
 * First "production" run
+* n = 8 dyads on 6/27/20
+* estimates of duration were lower than actual: increasing base compensation to $5 (from $4) and bonus amounts per trial (max = $0.15).
+
+#### `pilot1`:
+
 
