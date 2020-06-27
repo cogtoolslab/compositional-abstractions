@@ -2,7 +2,7 @@
   "email" : "cogtoolslab.requester@gmail.com",
   "projectName" : "compositional-abstractions",
   "experimentName" : "two-towers",
-  "iterationName" : "livetest2",
+  "iterationName" : "livetest3",
   "anonymizeCSV" : true,
   "bonusAmt" : 5, 
   "dataStore" : ["csv", "mongo"],
