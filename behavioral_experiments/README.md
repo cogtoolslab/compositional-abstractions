@@ -44,14 +44,16 @@ Iteration 0 (Pilot): All towers will be constructed from two primitive blocks: a
   * bonus needs to be doubled
   * practice trials should not be added to cumulative score 
 
-#### livetest1 (two broken trials, crashed sending Cumulative Bonus on 6/26/2020):
+#### livetest1 (n = 0 -- two broken trials, crashed sending Cumulative Bonus on 6/26/2020):
 * remove practice trials from cumulative score
 * bonus changed to reflect advertised amount (10, 6, 2 cents)
 * sending cumulative score to MTruk
 * Bugs:
   * Need to parseInt cumulative Bonus when sending to server 
   * Score returning "null" when getting 0 points
+  * tower combinations not swapping order (i.e. L (left), Pi (right), but never Pi(left),L(right))
   
 #### livetest2:
 * fix parseInt issue when sending cumulative score
 * F1 score, cumulative Score return 0 (not null) when getting 0 points
+* Swapping order of tower pairings
