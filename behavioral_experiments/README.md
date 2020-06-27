@@ -50,3 +50,4 @@ Iteration 0 (Pilot): All towers will be constructed from two primitive blocks: a
 * sending cumulative score to MTruk
 * Bugs:
   * Need to parseInt cumulative Bonus when sending to server 
+  * Score returning "null" when getting 0 points
