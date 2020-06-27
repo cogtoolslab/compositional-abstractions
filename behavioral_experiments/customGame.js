@@ -52,8 +52,9 @@ class ServerRefGame extends ServerGame {
     _.forEach(_.range(numReps), repNum => {
       // Shuffle the sequence you see each of these towers per repetition
       _.forEach(_.shuffle(combinations), (tower, towerNum) => {
+	// Alternate assignment of towers to sides
         trialList.push({
-          stimulus: tower,
+          stimulus: repNum % 2 == 0 ? tower : _.reverse(tower.slice()),
           repNum: repNum,
           trialNum: repNum + towerNum,
           roles: roles
