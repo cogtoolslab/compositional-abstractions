@@ -39,7 +39,9 @@ Iteration 0 (Pilot): All towers will be constructed from two primitive blocks: a
 #### MongoDB params
 
 `dbname` : `compositional-abstractions`
+
 `colname` : `two-towers`
+
 `iterationName` : see below
 
 #### `livetest0`:
