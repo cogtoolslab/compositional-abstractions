@@ -128,7 +128,8 @@ function F1Score(im1, im2) {
   //console.log('recall = ', recall);
   //console.log('precision = ', precision);
   // console.log('quotient = ', quotient);  
-  score_to_be_returned = math.multiply(2, quotient);
+  score_to_be_returned = denominator == 0 ? 0 : math.multiply(2, quotient);
+
   return score_to_be_returned
 }
 
