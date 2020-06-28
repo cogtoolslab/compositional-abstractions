@@ -82,6 +82,10 @@ Iteration 0 (Pilot): All towers will be constructed from two primitive blocks: a
 
 #### `pilot1`:
 * session durations form `pilot0` longer than initially expected. Increased base compensation to $5 (from $4) and bonus amounts per trial (max = $0.15).
+* n = 2 dyads on 6/27/20
+
+#### `pilot2`:
+* Base comp vs. bonus balance not quite right (does not incentivize strong performance enough): reverting base to $4 and increasing max bonus (up to $2.40)
 
 
 
