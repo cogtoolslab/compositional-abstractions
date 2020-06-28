@@ -22,7 +22,7 @@
   "bonusThresholdHigh": 100,
   "bonusThresholdMid": 80,
   "bonusThresholdLow": 60,
-  "bonusHigh": 0.15,
-  "bonusMid": 0.09,
-  "bonusLow": 0.03
+  "bonusHigh": 0.2,
+  "bonusMid": 0.1,
+  "bonusLow": 0.05
 }
