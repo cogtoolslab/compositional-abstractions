@@ -86,6 +86,6 @@ Iteration 0 (Pilot): All towers will be constructed from two primitive blocks: a
 
 #### `pilot2`:
 * Base comp vs. bonus balance not quite right (does not incentivize strong performance enough): reverting base to $4 and increasing max bonus (up to $2.40)
-
+* n = 2 dyads so far 6/28/20
 
 
