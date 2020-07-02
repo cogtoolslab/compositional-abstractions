@@ -6,7 +6,7 @@ output: html_document
 ---
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = FALSE)
+knitr::opts_chunk$set(message = FALSE, warning = FALSE)
 library(tidyverse)
 library(lme4)
 library(arm)
@@ -16,8 +16,15 @@ library(arm)
 df_block = read.csv('df_block.csv')
 df_chat = read.csv('df_chat.csv')
 df_trial = read.csv('df_trial.csv')
+
 df_exit = read.csv('df_exit.csv')
-View(df.block)
+
+df_chat$trialNum = as.numeric(as.character(df_chat$trialNum))
+df_chat$repNum = as.numeric(as.character(df_chat$repNum))
+
+df_trial <- transform(df_trial, trialScore = ifelse(is.na(trialScore), score, trialScore)) #fix score variable name change from livetest0 to pilots
+df_trial$trialNum = as.numeric(as.character(df_trial$trialNum))
+df_trial$repNum = as.numeric(as.character(df_trial$repNum))
 ```
 
 #### Find GameIDs that satisfy exclusion criteria
@@ -26,10 +33,9 @@ View(df.block)
 #Preprocessing ensures all dyads in these CSVs have completed all trials
 
 #How many dyads fulfill 75% Accuracy on 75% of trials
-  #currently including "score>75" to account for livetest0 which had diff    name
 games75 = df_trial %>% 
   group_by(gameid, trialNum) %>% 
-  filter(trialScore > 75 | score >75 & repNum != 'practice') %>%
+  filter(trialScore > 75  & repNum != 'practice') %>%
   group_by(gameid)%>% 
   tally %>% 
   filter(n/12 >=0.75) %>% 
@@ -58,29 +64,55 @@ df_chat$repNum = as.numeric(as.character(df_chat$repNum))
 df_chat$trialNum = as.numeric(as.character(df_chat$trialNum))
 
 df_chat %>% 
-  select(gameid,repNum,wordCount) %>% 
+  dplyr::select(gameid,repNum, wordCount) %>% 
   group_by(gameid,repNum) %>% 
   summarise(wordCount = sum(wordCount)) %>% 
   group_by(repNum) %>% summarise(wordCountAvg = mean(wordCount)) %>% 
   ggplot(aes(x = repNum, y = wordCountAvg)) + geom_line()
 
 df_chat %>% 
-  select(gameid,repNum,charCount) %>% 
+  dplyr::select(gameid,repNum,charCount) %>% 
   group_by(gameid,repNum) %>% 
   summarise(charCount = sum(charCount)) %>% 
   group_by(repNum) %>% summarise(charCountAvg = mean(charCount)) %>% 
   ggplot(aes(x = repNum, y = charCountAvg)) + geom_line()
+```
+
+##### Blocks placed, Score, etc.
+```{r}
+#Blocks placed per rep
+
+#Average score per rep
 
 ```
-##### Word count per repNum and trialNum
-Join dfs to get score correlations with: numMessages, wordCount
+### Join dfs to get score correlations
+##### Score and Word Count
+```{r}
+#join chat and score to get correlation of words and score
+a = df_chat %>% 
+  dplyr::select(gameid,trialNum,repNum,wordCount) %>% 
+  group_by(gameid,trialNum, repNum) %>% 
+  summarise(wordCount = sum(wordCount))
+
+b = df_trial %>% dplyr::select(gameid,trialNum, repNum,trialScore) %>% 
+  group_by(gameid,trialNum, repNum) %>% 
+  summarise(trialScore = max(trialScore)) #to deal with multiple practices
+
+c = merge(a, b, by = c("gameid", "trialNum", "repNum"))
+#d = merge(c,gamesToKeep, by = "gameid", all.y = TRUE)
+c  %>% 
+  ggplot(aes(x = trialNum, y = trialScore, color = repNum))+
+  geom_point()+
+  geom_smooth()
+```
 
 Predictive model for scores?
 
 ```{r}
-lin = lm(data = df, p ~ tradeoff+prompt.type+jitter)
+lin = lm(data = c, trialScore ~ trialNum + wordCount + repNum)
 summary(lin)
-lme = lme4::lmer(data = df, p ~ 1 + (1|tradeoff) + (1|prompt.type) + (1|jitter))
+
+lme = lme4::lmer(data = c, p ~ 1 + (1|trialNum) + (1|wordCount) + (1|repNum))
 lme_null = lme4::lmer(data = df, p ~ 1 + (1|tradeoff) + (1|jitter))
 anova(lme,lme_null, test = "Chisq")
 lme4::ranef(lme)
