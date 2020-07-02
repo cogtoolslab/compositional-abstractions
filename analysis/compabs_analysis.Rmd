@@ -113,7 +113,7 @@ lin = lm(data = c, trialScore ~ trialNum + wordCount + repNum)
 summary(lin)
 
 lme = lme4::lmer(data = c, p ~ 1 + (1|trialNum) + (1|wordCount) + (1|repNum))
-lme_null = lme4::lmer(data = df, p ~ 1 + (1|tradeoff) + (1|jitter))
+lme_null = lme4::lmer(data = df, p ~ 1 + (1|trialNum) + (1|wordCount))
 anova(lme,lme_null, test = "Chisq")
 lme4::ranef(lme)
 arm::se.ranef(lme)
