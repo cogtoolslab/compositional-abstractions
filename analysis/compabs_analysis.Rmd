@@ -9,6 +9,11 @@ output: html_document
 knitr::opts_chunk$set(message = FALSE, warning = FALSE)
 library(tidyverse)
 library(lme4)
+<<<<<<< HEAD
+=======
+library(arm)
+library(xtable)
+>>>>>>> 6559fc76df0cac1a2a4d29f9819773f2e52c5bcf
 library(lmerTest)
 ```
 #### Start by reading in the data (CSV compiled in compabs_analysis.ipynb)
@@ -23,6 +28,12 @@ df_chat$trialNum = as.numeric(as.character(df_chat$trialNum))
 df_chat$repNum = as.numeric(as.character(df_chat$repNum))
 
 df_trial <- transform(df_trial, trialScore = ifelse(is.na(trialScore), score, trialScore)) #fix score variable name change from livetest0 to pilots
+#Group stimuli into scenes
+df_trial = df_trial %>%
+    dplyr::mutate(towerSet = case_when((leftTarget == 'L' | rightTarget == 'L')
+                              & (leftTarget == 'Pi' | rightTarget == 'Pi')~ 'L/Pi',
+                                (leftTarget == 'L' | rightTarget == 'L')
+                            & (leftTarget == 'C' | rightTarget == 'C') ~ 'L/C', TRUE~'C/Pi'))
 df_trial$trialNum = as.numeric(as.character(df_trial$trialNum))
 df_trial$repNum = as.numeric(as.character(df_trial$repNum))
 ```
@@ -94,33 +105,35 @@ a = df_chat %>%
   group_by(gameid,trialNum, repNum) %>% 
   summarise(wordCount = sum(wordCount))
 
-b = df_trial %>% dplyr::select(gameid,trialNum, repNum,trialScore) %>% 
-  group_by(gameid,trialNum, repNum) %>% 
+b = df_trial %>% dplyr::select(gameid,trialNum, repNum,trialScore, towerSet) %>% 
+  group_by(gameid,trialNum, repNum, towerSet) %>% 
   summarise(trialScore = max(trialScore)) #to deal with multiple practices
 
 c = merge(a, b, by = c("gameid", "trialNum", "repNum"))
 #d = merge(c,gamesToKeep, by = "gameid", all.y = TRUE)
 c  %>% 
-  ggplot(aes(x = trialNum, y = trialScore, color = repNum))+
+  ggplot(aes(x = trialNum, y = wordCount, color = repNum))+
   geom_point()+
   geom_smooth()
+
 ```
 
-Predictive model for scores?
 
 ```{r}
+View(c)
 lin = lm(data = c, trialScore ~ trialNum + wordCount + repNum)
 summary(lin)
-
-lme = lme4::lmer(data = c, p ~ 1 + (1|trialNum) + (1|wordCount) + (1|repNum))
-lme_null = lme4::lmer(data = df, p ~ 1 + (1|trialNum) + (1|wordCount))
-anova(lme,lme_null, test = "Chisq")
-lme4::ranef(lme)
-arm::se.ranef(lme)
-#lme4
-#arm
-#broom.mixed
+#Score
+lme = lmer(data = c, trialScore ~ repNum + (1 | gameid) + (1| towerSet))
+summary(lme)   
+#Word Count
+lme = lmer(data = c, wordCount ~ repNum + (1 | gameid) + (1| towerSet))
+summary(lme)  
+#lme_null = lme4::lmer(data = c, p ~ 1 + (1|trialNum) + (1|wordCount))
+#anova(lme,lme_null, test = "Chisq")
+#lme4::ranef(lme)
+#arm::se.ranef(lme)
 broom.mixed::tidy(lme, effects = c('fixed', 'ran_vals'))
 lme.table = broom.mixed::tidy(lme, effects = c('fixed', 'ran_vals'))
-xtable(lme.table)
+#xtable(lme.table)
 ```

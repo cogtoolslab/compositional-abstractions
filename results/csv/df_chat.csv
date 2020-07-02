@@ -1,0 +1,1001 @@
+Unnamed: 0,_id,iterationName,gameid,time,assignmentId,leftTarget,rightTarget,trialNum,turnNum,repNum,content,timeElapsedInTurn,timeElapsedInTrial,eventType
+0,5ef3a6059bd44a067577f502,livetest0,1560-7c8a5938-8ca4-4d37-8a0d-a600a04650ce,1593026053083.0,33L7PJKHCKYV51US1KPA7UKWIPO8TH,vertical,horizontal,practice,0,practice,"Place the red domino to the left of the left tick mark, and the blue domino directly above the right",85734,85734,chatMessage
+1,5ef3a6399bd44a067577f506,livetest0,1560-7c8a5938-8ca4-4d37-8a0d-a600a04650ce,1593026105672.0,33L7PJKHCKYV51US1KPA7UKWIPO8TH,L,Pi,0,0,0,Place two blue dominos to left and right of left tick mark,31497,31497,chatMessage
+2,5ef3a6669bd44a067577f509,livetest0,1560-7c8a5938-8ca4-4d37-8a0d-a600a04650ce,1593026150005.0,33L7PJKHCKYV51US1KPA7UKWIPO8TH,L,Pi,0,2,0,Place two red dominos above the left part of the leftmost blue domino stacked,32452,75831,chatMessage
+3,5ef3a68d9bd44a067577f50c,livetest0,1560-7c8a5938-8ca4-4d37-8a0d-a600a04650ce,1593026189135.0,33L7PJKHCKYV51US1KPA7UKWIPO8TH,L,Pi,0,4,0,"Place two red dominos left and right of the right tick mark, but with two spaces between them",23777,114957,chatMessage
+4,5ef3a6bf9bd44a067577f50f,livetest0,1560-7c8a5938-8ca4-4d37-8a0d-a600a04650ce,1593026239065.0,33L7PJKHCKYV51US1KPA7UKWIPO8TH,L,Pi,0,6,0,"Place two blue dominos above the red ones you just placed, to make an arch",31542,164892,chatMessage
+5,5ef3a6dd9bd44a067577f513,livetest0,1560-7c8a5938-8ca4-4d37-8a0d-a600a04650ce,1593026269561.0,33L7PJKHCKYV51US1KPA7UKWIPO8TH,L,C,1,0,0,First make the same L shape you made in the last trial,17591,17591,chatMessage
+6,5ef3a7089bd44a067577f518,livetest0,1560-7c8a5938-8ca4-4d37-8a0d-a600a04650ce,1593026312937.0,33L7PJKHCKYV51US1KPA7UKWIPO8TH,L,C,1,2,0,"Now place a blue domino above the right tick mark, and then stack two red dominos above it on left",30500,60961,chatMessage
+7,5ef3a7279bd44a067577f51c,livetest0,1560-7c8a5938-8ca4-4d37-8a0d-a600a04650ce,1593026343625.0,33L7PJKHCKYV51US1KPA7UKWIPO8TH,L,C,1,4,0,"Place one blue domino on top of red stack, to the right",14599,91645,chatMessage
+8,5ef3a74e9bd44a067577f51f,livetest0,1560-7c8a5938-8ca4-4d37-8a0d-a600a04650ce,1593026382911.0,33L7PJKHCKYV51US1KPA7UKWIPO8TH,C,Pi,2,0,0,"Make the last shape from the previous trial, but above the left tick mark",21172,21172,chatMessage
+9,5ef3a7689bd44a067577f524,livetest0,1560-7c8a5938-8ca4-4d37-8a0d-a600a04650ce,1593026408581.0,33L7PJKHCKYV51US1KPA7UKWIPO8TH,C,Pi,2,2,0,Make the arch shape from the first trial,8143,46843,chatMessage
+10,5ef3a7969bd44a067577f52a,livetest0,1560-7c8a5938-8ca4-4d37-8a0d-a600a04650ce,1593026454886.0,33L7PJKHCKYV51US1KPA7UKWIPO8TH,L,C,3,0,1,Make the L shape from the first trial above the left tick mark and then first shape from last trial,30704,30704,chatMessage
+11,5ef3a7cc9bd44a067577f534,livetest0,1560-7c8a5938-8ca4-4d37-8a0d-a600a04650ce,1593026508728.0,33L7PJKHCKYV51US1KPA7UKWIPO8TH,C,Pi,4,0,1,"Last shape from last trial above left tick, then arch above right tick",17183,17183,chatMessage
+12,5ef3a7f29bd44a067577f53e,livetest0,1560-7c8a5938-8ca4-4d37-8a0d-a600a04650ce,1593026546511.0,33L7PJKHCKYV51US1KPA7UKWIPO8TH,L,Pi,5,0,1,"L shape above left tick, arch above right tick",12572,12572,chatMessage
+13,5ef3a8229bd44a067577f548,livetest0,1560-7c8a5938-8ca4-4d37-8a0d-a600a04650ce,1593026594573.0,33L7PJKHCKYV51US1KPA7UKWIPO8TH,L,C,6,0,2,"L shape above left tick, elongated C shape above right tick",17894,17894,chatMessage
+14,5ef3a8409bd44a067577f552,livetest0,1560-7c8a5938-8ca4-4d37-8a0d-a600a04650ce,1593026624694.0,33L7PJKHCKYV51US1KPA7UKWIPO8TH,L,Pi,7,0,2,"L shape on left, arch on right",8176,8176,chatMessage
+15,5ef3a85c9bd44a067577f55c,livetest0,1560-7c8a5938-8ca4-4d37-8a0d-a600a04650ce,1593026652661.0,33L7PJKHCKYV51US1KPA7UKWIPO8TH,C,Pi,8,0,2,"C shape on left, arch on right",6702,6702,chatMessage
+16,5ef3a87b9bd44a067577f566,livetest0,1560-7c8a5938-8ca4-4d37-8a0d-a600a04650ce,1593026683055.0,33L7PJKHCKYV51US1KPA7UKWIPO8TH,C,Pi,9,0,3,Same as last trial,8972,8972,chatMessage
+17,5ef3a8949bd44a067577f570,livetest0,1560-7c8a5938-8ca4-4d37-8a0d-a600a04650ce,1593026708932.0,33L7PJKHCKYV51US1KPA7UKWIPO8TH,L,Pi,10,0,3,"L shape on left, arch on right",6058,6058,chatMessage
+18,5ef3a8b09bd44a067577f57a,livetest0,1560-7c8a5938-8ca4-4d37-8a0d-a600a04650ce,1593026736793.0,33L7PJKHCKYV51US1KPA7UKWIPO8TH,L,C,11,0,3,"L shape on left, C shape on right",7063,7063,chatMessage
+0,5ef78389ce2f7f58fcd0a350,pilot0,1494-029e2297-bd3f-4cfe-be00-d06d36724e4e,1593279369916.0,3E47SOBEYUW78Q4UOK6BV9E6YCECIM,vertical,horizontal,practice,0,practice,place the red one 3 from the left and the blue 3 from the right,60567,60567,chatMessage
+1,5ef783bace2f7f58fcd0a358,pilot0,1494-029e2297-bd3f-4cfe-be00-d06d36724e4e,1593279418484.0,3E47SOBEYUW78Q4UOK6BV9E6YCECIM,vertical,horizontal,practice,0,practice,"close, but put the towers starting on the third blocks from each side
+",20018,20018,chatMessage
+2,5ef783e4ce2f7f58fcd0a35e,pilot0,1494-029e2297-bd3f-4cfe-be00-d06d36724e4e,1593279460649.0,3E47SOBEYUW78Q4UOK6BV9E6YCECIM,C,Pi,0,0,0,put a blue block three from the left~~~ ,28166,28166,chatMessage
+3,5ef78401ce2f7f58fcd0a365,pilot0,1494-029e2297-bd3f-4cfe-be00-d06d36724e4e,1593279489995.0,3E47SOBEYUW78Q4UOK6BV9E6YCECIM,C,Pi,0,2,0,place a red block on top of the left side of the blue block and then another red on top of that red,21993,57512,chatMessage
+4,5ef7842ace2f7f58fcd0a36e,pilot0,1494-029e2297-bd3f-4cfe-be00-d06d36724e4e,1593279530677.0,3E47SOBEYUW78Q4UOK6BV9E6YCECIM,C,Pi,0,4,0,Now place a blue block on top of that that lines up with the bottom blue block,24789,98193,chatMessage
+5,5ef78461ce2f7f58fcd0a37d,pilot0,1494-029e2297-bd3f-4cfe-be00-d06d36724e4e,1593279585887.0,3E47SOBEYUW78Q4UOK6BV9E6YCECIM,C,Pi,0,6,0,"remove that last blue block, place it on top of the red blocks",29367,153402,chatMessage
+6,5ef7848ace2f7f58fcd0a388,pilot0,1494-029e2297-bd3f-4cfe-be00-d06d36724e4e,1593279626687.0,3E47SOBEYUW78Q4UOK6BV9E6YCECIM,C,Pi,0,8,0,"place a red block on the second grid from the right of the screen
+",20695,194201,chatMessage
+7,5ef784a8ce2f7f58fcd0a390,pilot0,1494-029e2297-bd3f-4cfe-be00-d06d36724e4e,1593279656348.0,3E47SOBEYUW78Q4UOK6BV9E6YCECIM,C,Pi,0,10,0,now place another red block three more space to the left of that one,18272,223861,chatMessage
+8,5ef784ccce2f7f58fcd0a39c,pilot0,1494-029e2297-bd3f-4cfe-be00-d06d36724e4e,1593279692807.0,3E47SOBEYUW78Q4UOK6BV9E6YCECIM,C,Pi,0,12,0,"place two blue blocks next to each other connecting on top of the two red blocks
+",20376,260321,chatMessage
+9,5ef78501ce2f7f58fcd0a3ab,pilot0,1494-029e2297-bd3f-4cfe-be00-d06d36724e4e,1593279745969.0,3E47SOBEYUW78Q4UOK6BV9E6YCECIM,L,C,1,0,0,place a blue block starting in the second grid from the left,38147,38147,chatMessage
+10,5ef78519ce2f7f58fcd0a3b3,pilot0,1494-029e2297-bd3f-4cfe-be00-d06d36724e4e,1593279769783.0,3E47SOBEYUW78Q4UOK6BV9E6YCECIM,L,C,1,2,0,"place another blue block directly to the right of it
+",15959,61969,chatMessage
+11,5ef78532ce2f7f58fcd0a3b9,pilot0,1494-029e2297-bd3f-4cfe-be00-d06d36724e4e,1593279794789.0,3E47SOBEYUW78Q4UOK6BV9E6YCECIM,L,C,1,4,0,stack two red blocks on top of eachother on the left side of the first blue block,16323,86975,chatMessage
+12,5ef78557ce2f7f58fcd0a3c2,pilot0,1494-029e2297-bd3f-4cfe-be00-d06d36724e4e,1593279831785.0,3E47SOBEYUW78Q4UOK6BV9E6YCECIM,L,C,1,6,0,place a blue block starting in the 3rd grid from the right,18839,123971,chatMessage
+13,5ef78573ce2f7f58fcd0a3c6,pilot0,1494-029e2297-bd3f-4cfe-be00-d06d36724e4e,1593279859287.0,3E47SOBEYUW78Q4UOK6BV9E6YCECIM,L,C,1,8,0,stack two red blocks on top of eachother on top of the left side of that blue block,16311,151473,chatMessage
+14,5ef78590ce2f7f58fcd0a3cf,pilot0,1494-029e2297-bd3f-4cfe-be00-d06d36724e4e,1593279888759.0,3E47SOBEYUW78Q4UOK6BV9E6YCECIM,L,C,1,10,0,and place a blue block on top of those red blocks that is lined up with the bottom one,15289,180943,chatMessage
+15,5ef785c6ce2f7f58fcd0a3dd,pilot0,1494-029e2297-bd3f-4cfe-be00-d06d36724e4e,1593279942026.0,3E47SOBEYUW78Q4UOK6BV9E6YCECIM,L,Pi,2,0,0,Do the same L shape on the left side as last time with 2x blue and 2x red two spots from the left,36762,36762,chatMessage
+16,5ef785f3ce2f7f58fcd0a3eb,pilot0,1494-029e2297-bd3f-4cfe-be00-d06d36724e4e,1593279987146.0,3E47SOBEYUW78Q4UOK6BV9E6YCECIM,L,Pi,2,2,0,"place a red block two from the right, then a gap of two and another red block then two blues connect",25957,81888,chatMessage
+17,5ef78629ce2f7f58fcd0a3fd,pilot0,1494-029e2297-bd3f-4cfe-be00-d06d36724e4e,1593280041237.0,3E47SOBEYUW78Q4UOK6BV9E6YCECIM,L,Pi,2,4,0,just place the other blue on on top of one of the red blocks,24476,135974,chatMessage
+18,5ef78661ce2f7f58fcd0a410,pilot0,1494-029e2297-bd3f-4cfe-be00-d06d36724e4e,1593280097994.0,3E47SOBEYUW78Q4UOK6BV9E6YCECIM,Pi,C,3,0,1,"two blocks from the left place a red, then space of two and another red~~~ 2 blues on top of them",29943,29943,chatMessage
+19,5ef78696ce2f7f58fcd0a425,pilot0,1494-029e2297-bd3f-4cfe-be00-d06d36724e4e,1593280150271.0,3E47SOBEYUW78Q4UOK6BV9E6YCECIM,Pi,C,3,2,1,"3 from the right place a blue, 2x red stacked on the left side of it, then another blue on top",23742,82221,chatMessage
+20,5ef786d6ce2f7f58fcd0a448,pilot0,1494-029e2297-bd3f-4cfe-be00-d06d36724e4e,1593280214108.0,3E47SOBEYUW78Q4UOK6BV9E6YCECIM,C,L,4,0,1,tall c-shape again three from the left~~~ then tall L-shape two from the right,26475,26475,chatMessage
+21,5ef78712ce2f7f58fcd0a469,pilot0,1494-029e2297-bd3f-4cfe-be00-d06d36724e4e,1593280274821.0,3E47SOBEYUW78Q4UOK6BV9E6YCECIM,C,L,4,2,1,"place the last blue to the right of the other blue block on the L
+",21511,87196,chatMessage
+22,5ef78751ce2f7f58fcd0a488,pilot0,1494-029e2297-bd3f-4cfe-be00-d06d36724e4e,1593280337869.0,3E47SOBEYUW78Q4UOK6BV9E6YCECIM,Pi,L,5,0,1,L in the same spot as last time~~~ Then the upsidedown U shape two from the left,26126,26126,chatMessage
+23,5ef78786ce2f7f58fcd0a4a6,pilot0,1494-029e2297-bd3f-4cfe-be00-d06d36724e4e,1593280390383.0,3E47SOBEYUW78Q4UOK6BV9E6YCECIM,Pi,L,5,2,1,make the upside down U with 2x red and 2x blue,17748,78651,chatMessage
+24,5ef787acce2f7f58fcd0a4bc,pilot0,1494-029e2297-bd3f-4cfe-be00-d06d36724e4e,1593280428517.0,3E47SOBEYUW78Q4UOK6BV9E6YCECIM,Pi,L,5,4,1,"place the last block anywhere, we missed this one",12764,116774,chatMessage
+25,5ef787d5ce2f7f58fcd0a4dd,pilot0,1494-029e2297-bd3f-4cfe-be00-d06d36724e4e,1593280469012.0,3E47SOBEYUW78Q4UOK6BV9E6YCECIM,L,C,6,0,2,L-shape with 2x blue and 2x red starting in the second grid from left,28175,28175,chatMessage
+26,5ef787fbce2f7f58fcd0a4fe,pilot0,1494-029e2297-bd3f-4cfe-be00-d06d36724e4e,1593280507293.0,3E47SOBEYUW78Q4UOK6BV9E6YCECIM,L,C,6,2,2,Tall C-shape starting in the 3rd grid from the right,16094,66457,chatMessage
+27,5ef78835ce2f7f58fcd0a52b,pilot0,1494-029e2297-bd3f-4cfe-be00-d06d36724e4e,1593280565026.0,3E47SOBEYUW78Q4UOK6BV9E6YCECIM,L,Pi,7,0,2,L-shape with 2x red and 2x Blue starting in the second grid from the left,22059,22059,chatMessage
+28,5ef78855ce2f7f58fcd0a548,pilot0,1494-029e2297-bd3f-4cfe-be00-d06d36724e4e,1593280597588.0,3E47SOBEYUW78Q4UOK6BV9E6YCECIM,L,Pi,7,2,2,upsidedown U-shape starting in the second grid from the right,13392,54622,chatMessage
+29,5ef7887dce2f7f58fcd0a565,pilot0,1494-029e2297-bd3f-4cfe-be00-d06d36724e4e,1593280637987.0,3E47SOBEYUW78Q4UOK6BV9E6YCECIM,C,Pi,8,0,2,tall c-shape starting in third grid from left,17387,17387,chatMessage
+30,5ef788a0ce2f7f58fcd0a57d,pilot0,1494-029e2297-bd3f-4cfe-be00-d06d36724e4e,1593280672346.0,3E47SOBEYUW78Q4UOK6BV9E6YCECIM,C,Pi,8,2,2,upsidedown U-shape starting in the second grid from the right,16900,51751,chatMessage
+31,5ef788c1ce2f7f58fcd0a594,pilot0,1494-029e2297-bd3f-4cfe-be00-d06d36724e4e,1593280705952.0,3E47SOBEYUW78Q4UOK6BV9E6YCECIM,C,L,9,0,3,tall c-shape starting in the third grid from the left,11288,11288,chatMessage
+32,5ef788dbce2f7f58fcd0a5b1,pilot0,1494-029e2297-bd3f-4cfe-be00-d06d36724e4e,1593280731885.0,3E47SOBEYUW78Q4UOK6BV9E6YCECIM,C,L,9,2,3,Tall L-shape starting in the second grid from the right,12171,37228,chatMessage
+33,5ef78901ce2f7f58fcd0a5c4,pilot0,1494-029e2297-bd3f-4cfe-be00-d06d36724e4e,1593280769828.0,3E47SOBEYUW78Q4UOK6BV9E6YCECIM,Pi,C,10,0,3,upsidedown U-shape starting in the second grid from the left,18762,18762,chatMessage
+34,5ef78916ce2f7f58fcd0a5d4,pilot0,1494-029e2297-bd3f-4cfe-be00-d06d36724e4e,1593280790281.0,3E47SOBEYUW78Q4UOK6BV9E6YCECIM,Pi,C,10,2,3,tall C-shape starting in the third grid from the right,1488,39226,chatMessage
+35,5ef7893cce2f7f58fcd0a5ec,pilot0,1494-029e2297-bd3f-4cfe-be00-d06d36724e4e,1593280828335.0,3E47SOBEYUW78Q4UOK6BV9E6YCECIM,Pi,L,11,0,3,upsidedown U-shape starting in the second grid from the left,14438,14438,chatMessage
+36,5ef7894cce2f7f58fcd0a5fe,pilot0,1494-029e2297-bd3f-4cfe-be00-d06d36724e4e,1593280844699.0,3E47SOBEYUW78Q4UOK6BV9E6YCECIM,Pi,L,11,2,3,tall L-shape starting in the second grid from the right,1589,30802,chatMessage
+0,5ef783d5ce2f7f58fcd0a35c,pilot0,3224-ea79f879-98a3-43a8-8976-f941c8b8790d,1593279445822.0,3VHP9MDGRRKNYZ24NC0QSC1EIKMCFV,vertical,horizontal,practice,0,practice,Place red block directly to the left of the left tick mark~~~ Place blue in middle of right tick~~~,53556,53556,chatMessage
+1,5ef78425ce2f7f58fcd0a36d,pilot0,3224-ea79f879-98a3-43a8-8976-f941c8b8790d,1593279525373.0,3VHP9MDGRRKNYZ24NC0QSC1EIKMCFV,C,Pi,0,0,0,Place blue in middle of left tick~~~ Stack 2 reds on top of the left side of the blue block ,51971,51971,chatMessage
+2,5ef78451ce2f7f58fcd0a379,pilot0,3224-ea79f879-98a3-43a8-8976-f941c8b8790d,1593279569102.0,3VHP9MDGRRKNYZ24NC0QSC1EIKMCFV,C,Pi,0,2,0,"Place blue block on top of the red you just placed so it looks like an elongated ""C~~~""
+",22802,95717,chatMessage
+3,5ef7847bce2f7f58fcd0a385,pilot0,3224-ea79f879-98a3-43a8-8976-f941c8b8790d,1593279611012.0,3VHP9MDGRRKNYZ24NC0QSC1EIKMCFV,C,Pi,0,4,0,Place red block two spaces from the right red tick~~~ This means there's 1 empty space to the tick,34751,137622,chatMessage
+4,5ef784b2ce2f7f58fcd0a394,pilot0,3224-ea79f879-98a3-43a8-8976-f941c8b8790d,1593279666680.0,3VHP9MDGRRKNYZ24NC0QSC1EIKMCFV,C,Pi,0,6,0,Count two spaces from the red tick to the right and place the red block in that 2nd space~~~,30580,193287,chatMessage
+5,5ef784ddce2f7f58fcd0a3a1,pilot0,3224-ea79f879-98a3-43a8-8976-f941c8b8790d,1593279709068.0,3VHP9MDGRRKNYZ24NC0QSC1EIKMCFV,C,Pi,0,8,0,"Do the same, place a red counting two blocks but this time to the left of the tick~~~",26595,235672,chatMessage
+6,5ef78517ce2f7f58fcd0a3b1,pilot0,3224-ea79f879-98a3-43a8-8976-f941c8b8790d,1593279767299.0,3VHP9MDGRRKNYZ24NC0QSC1EIKMCFV,C,Pi,0,10,0,Place a blue block on top of the right red block~~~ Place it so it goes towards the left,44804,293901,chatMessage
+7,5ef7853bce2f7f58fcd0a3bb,pilot0,3224-ea79f879-98a3-43a8-8976-f941c8b8790d,1593279803681.0,3VHP9MDGRRKNYZ24NC0QSC1EIKMCFV,C,Pi,0,12,0,Place a blue block on the rightmost red block so that the end is going to the left~~~,30078,330289,chatMessage
+8,5ef78568ce2f7f58fcd0a3c4,pilot0,3224-ea79f879-98a3-43a8-8976-f941c8b8790d,1593279848667.0,3VHP9MDGRRKNYZ24NC0QSC1EIKMCFV,L,Pi,1,0,0,"Place 2 blue blocks, each directly next to the left red line~~~",28956,28956,chatMessage
+9,5ef78592ce2f7f58fcd0a3d0,pilot0,3224-ea79f879-98a3-43a8-8976-f941c8b8790d,1593279890518.0,3VHP9MDGRRKNYZ24NC0QSC1EIKMCFV,L,Pi,1,2,0,"Place a red block on top of the leftmost blue square~~~ Place another on top of the red (makes an ""L"")",24932,70807,chatMessage
+10,5ef785b9ce2f7f58fcd0a3da,pilot0,3224-ea79f879-98a3-43a8-8976-f941c8b8790d,1593279929435.0,3VHP9MDGRRKNYZ24NC0QSC1EIKMCFV,L,Pi,1,4,0,Place red block two spaces from the right line similar to last trial,23714,109721,chatMessage
+11,5ef785d4ce2f7f58fcd0a3e2,pilot0,3224-ea79f879-98a3-43a8-8976-f941c8b8790d,1593279956327.0,3VHP9MDGRRKNYZ24NC0QSC1EIKMCFV,L,Pi,1,6,0,"Do the same on the other side with a red block
+
+",15518,136620,chatMessage
+12,5ef785eace2f7f58fcd0a3e7,pilot0,3224-ea79f879-98a3-43a8-8976-f941c8b8790d,1593279978167.0,3VHP9MDGRRKNYZ24NC0QSC1EIKMCFV,L,Pi,1,8,0,Place a blue on the rightmost red block so its end is facing to the left,16116,158445,chatMessage
+13,5ef78601ce2f7f58fcd0a3ee,pilot0,3224-ea79f879-98a3-43a8-8976-f941c8b8790d,1593280001246.0,3VHP9MDGRRKNYZ24NC0QSC1EIKMCFV,L,Pi,1,10,0,Place a blue on the other red block so the two blue ends are touching now,13038,181534,chatMessage
+14,5ef78625ce2f7f58fcd0a3fc,pilot0,3224-ea79f879-98a3-43a8-8976-f941c8b8790d,1593280037927.0,3VHP9MDGRRKNYZ24NC0QSC1EIKMCFV,L,C,2,0,0,"Left tower shape will be the L again (start with the two blue blocks, each on the side of the line)~~~",24966,24966,chatMessage
+15,5ef78652ce2f7f58fcd0a40a,pilot0,3224-ea79f879-98a3-43a8-8976-f941c8b8790d,1593280082660.0,3VHP9MDGRRKNYZ24NC0QSC1EIKMCFV,L,C,2,2,0,Place a blue block over the right line so there's a square on each side of the line~~~,15832,69695,chatMessage
+16,5ef78672ce2f7f58fcd0a415,pilot0,3224-ea79f879-98a3-43a8-8976-f941c8b8790d,1593280114887.0,3VHP9MDGRRKNYZ24NC0QSC1EIKMCFV,L,C,2,4,0,Place two reds on top of the left blue square (right tower),26745,101930,chatMessage
+17,5ef78694ce2f7f58fcd0a423,pilot0,3224-ea79f879-98a3-43a8-8976-f941c8b8790d,1593280148976.0,3VHP9MDGRRKNYZ24NC0QSC1EIKMCFV,L,C,2,6,0,"Place a blue on top making the ""C"" again (we will refer to this design as the C tower going forward)",19584,136013,chatMessage
+18,5ef786b0ce2f7f58fcd0a436,pilot0,3224-ea79f879-98a3-43a8-8976-f941c8b8790d,1593280176927.0,3VHP9MDGRRKNYZ24NC0QSC1EIKMCFV,C,L,3,0,1,"C tower, left side (blue in the middle of the tick, build up, make the C)",16815,16815,chatMessage
+19,5ef786dcce2f7f58fcd0a44a,pilot0,3224-ea79f879-98a3-43a8-8976-f941c8b8790d,1593280220742.0,3VHP9MDGRRKNYZ24NC0QSC1EIKMCFV,C,L,3,2,1,"L tower, right side (two blues on each side of red line, 2 reds up on left side to make the L)",19020,60625,chatMessage
+20,5ef786ffce2f7f58fcd0a460,pilot0,3224-ea79f879-98a3-43a8-8976-f941c8b8790d,1593280255486.0,3VHP9MDGRRKNYZ24NC0QSC1EIKMCFV,Pi,L,4,0,1,"L tower again, right side (blue on each side of right red line)",15079,15079,chatMessage
+21,5ef7872ace2f7f58fcd0a475,pilot0,3224-ea79f879-98a3-43a8-8976-f941c8b8790d,1593280298705.0,3VHP9MDGRRKNYZ24NC0QSC1EIKMCFV,Pi,L,4,2,1,2 reds on each side of the left line leaving a space empty (this will be the arch shape again)~~~,28563,58299,chatMessage
+22,5ef78759ce2f7f58fcd0a48a,pilot0,3224-ea79f879-98a3-43a8-8976-f941c8b8790d,1593280345600.0,3VHP9MDGRRKNYZ24NC0QSC1EIKMCFV,Pi,C,5,0,1,"Arch shape, left side~~~ C shape, right side (place the blue block in the middle of the right line)~~~",21269,21269,chatMessage
+23,5ef78792ce2f7f58fcd0a4ac,pilot0,3224-ea79f879-98a3-43a8-8976-f941c8b8790d,1593280402753.0,3VHP9MDGRRKNYZ24NC0QSC1EIKMCFV,C,Pi,6,0,2,"C shape, left side~~~ Arch shape, right side (same positions as always)",16765,16765,chatMessage
+24,5ef787c3ce2f7f58fcd0a4ce,pilot0,3224-ea79f879-98a3-43a8-8976-f941c8b8790d,1593280451006.0,3VHP9MDGRRKNYZ24NC0QSC1EIKMCFV,L,C,7,0,2,"L shape on the left, C shape on the right",13174,13174,chatMessage
+25,5ef787f3ce2f7f58fcd0a4f5,pilot0,3224-ea79f879-98a3-43a8-8976-f941c8b8790d,1593280499690.0,3VHP9MDGRRKNYZ24NC0QSC1EIKMCFV,L,Pi,8,0,2,"L on the left, arch on the right~~~",8515,8515,chatMessage
+26,5ef78819ce2f7f58fcd0a516,pilot0,3224-ea79f879-98a3-43a8-8976-f941c8b8790d,1593280537406.0,3VHP9MDGRRKNYZ24NC0QSC1EIKMCFV,Pi,C,9,0,3,"Arch on the left, C on the right",7615,7615,chatMessage
+27,5ef78840ce2f7f58fcd0a533,pilot0,3224-ea79f879-98a3-43a8-8976-f941c8b8790d,1593280576733.0,3VHP9MDGRRKNYZ24NC0QSC1EIKMCFV,Pi,L,10,0,3,"Arch on the left, L on the right",6491,6491,chatMessage
+28,5ef78870ce2f7f58fcd0a55a,pilot0,3224-ea79f879-98a3-43a8-8976-f941c8b8790d,1593280624016.0,3VHP9MDGRRKNYZ24NC0QSC1EIKMCFV,C,L,11,0,3,"C on the left, L on the right (and great job!)",13987,13987,chatMessage
+0,5ef783dfce2f7f58fcd0a35d,pilot0,2461-b9a83dc7-d6fc-4939-a889-9d4739a87dc6,1593279455711.0,338JKRMM2AZJJGWCYOSZP2N3YWEHAW,horizontal,vertical,practice,0,practice,red blocks sideways,25329,25329,chatMessage
+1,5ef78400ce2f7f58fcd0a364,pilot0,2461-b9a83dc7-d6fc-4939-a889-9d4739a87dc6,1593279488057.0,338JKRMM2AZJJGWCYOSZP2N3YWEHAW,horizontal,vertical,practice,2,practice,one pair sideways the other vertical,16606,57674,chatMessage
+2,5ef78423ce2f7f58fcd0a36c,pilot0,2461-b9a83dc7-d6fc-4939-a889-9d4739a87dc6,1593279523391.0,338JKRMM2AZJJGWCYOSZP2N3YWEHAW,horizontal,vertical,practice,4,practice,red block horizontal blue block vertical,20590,93006,chatMessage
+3,5ef78454ce2f7f58fcd0a37a,pilot0,2461-b9a83dc7-d6fc-4939-a889-9d4739a87dc6,1593279572091.0,338JKRMM2AZJJGWCYOSZP2N3YWEHAW,horizontal,vertical,practice,0,practice,red blocks horizontal blue blocks vertical,24094,24094,chatMessage
+4,5ef7848bce2f7f58fcd0a389,pilot0,2461-b9a83dc7-d6fc-4939-a889-9d4739a87dc6,1593279627573.0,338JKRMM2AZJJGWCYOSZP2N3YWEHAW,horizontal,vertical,practice,0,practice,"one pair of blocks horizontal, start on the third grid, other pair fourth grid from the right vertic",30462,30462,chatMessage
+5,5ef784bcce2f7f58fcd0a396,pilot0,2461-b9a83dc7-d6fc-4939-a889-9d4739a87dc6,1593279676900.0,338JKRMM2AZJJGWCYOSZP2N3YWEHAW,L,C,0,0,0,start second grid from left 5 vertical,27740,27740,chatMessage
+6,5ef784dece2f7f58fcd0a3a2,pilot0,2461-b9a83dc7-d6fc-4939-a889-9d4739a87dc6,1593279710694.0,338JKRMM2AZJJGWCYOSZP2N3YWEHAW,L,C,0,2,0,place three blocks on top of those two,10291,61533,chatMessage
+7,5ef784f7ce2f7f58fcd0a3a9,pilot0,2461-b9a83dc7-d6fc-4939-a889-9d4739a87dc6,1593279735071.0,338JKRMM2AZJJGWCYOSZP2N3YWEHAW,L,C,0,4,0,one more block on top,6601,85912,chatMessage
+8,5ef78510ce2f7f58fcd0a3b0,pilot0,2461-b9a83dc7-d6fc-4939-a889-9d4739a87dc6,1593279760401.0,338JKRMM2AZJJGWCYOSZP2N3YWEHAW,L,C,0,6,0,next to vertical column place three horizontal,13988,111241,chatMessage
+9,5ef78524ce2f7f58fcd0a3b6,pilot0,2461-b9a83dc7-d6fc-4939-a889-9d4739a87dc6,1593279780077.0,338JKRMM2AZJJGWCYOSZP2N3YWEHAW,L,C,0,8,0,one more horizontal block,10032,130917,chatMessage
+10,5ef78542ce2f7f58fcd0a3bd,pilot0,2461-b9a83dc7-d6fc-4939-a889-9d4739a87dc6,1593279810793.0,338JKRMM2AZJJGWCYOSZP2N3YWEHAW,L,C,0,10,0,"next configuration start third grid from right, place one block",24234,161633,chatMessage
+11,5ef7856fce2f7f58fcd0a3c5,pilot0,2461-b9a83dc7-d6fc-4939-a889-9d4739a87dc6,1593279855856.0,338JKRMM2AZJJGWCYOSZP2N3YWEHAW,L,C,0,12,0,to the left of one block place vertical column of 6 blocks,30751,206697,chatMessage
+12,5ef78597ce2f7f58fcd0a3d1,pilot0,2461-b9a83dc7-d6fc-4939-a889-9d4739a87dc6,1593279895419.0,338JKRMM2AZJJGWCYOSZP2N3YWEHAW,C,Pi,1,0,0,3rd grid from left start horizontal two blocks,22169,22169,chatMessage
+13,5ef785b1ce2f7f58fcd0a3d7,pilot0,2461-b9a83dc7-d6fc-4939-a889-9d4739a87dc6,1593279921802.0,338JKRMM2AZJJGWCYOSZP2N3YWEHAW,C,Pi,1,2,0,starting on top 3rd grid place 5 vertical blocks,17507,48552,chatMessage
+14,5ef785c9ce2f7f58fcd0a3de,pilot0,2461-b9a83dc7-d6fc-4939-a889-9d4739a87dc6,1593279945143.0,338JKRMM2AZJJGWCYOSZP2N3YWEHAW,C,Pi,1,4,0,on top of thatplace 2 horizontal blocks,13025,71895,chatMessage
+15,5ef785e2ce2f7f58fcd0a3e6,pilot0,2461-b9a83dc7-d6fc-4939-a889-9d4739a87dc6,1593279970899.0,338JKRMM2AZJJGWCYOSZP2N3YWEHAW,C,Pi,1,6,0,"next configuration start 2nd grid from right, place vertical 3 blocks",20348,97649,chatMessage
+16,5ef785ffce2f7f58fcd0a3ed,pilot0,2461-b9a83dc7-d6fc-4939-a889-9d4739a87dc6,1593279999235.0,338JKRMM2AZJJGWCYOSZP2N3YWEHAW,C,Pi,1,8,0,on top of those two place horizontal 4 blocks going left,12000,125985,chatMessage
+17,5ef78624ce2f7f58fcd0a3fb,pilot0,2461-b9a83dc7-d6fc-4939-a889-9d4739a87dc6,1593280036967.0,338JKRMM2AZJJGWCYOSZP2N3YWEHAW,C,Pi,1,10,0,two more to the left of those two horizontal,8909,163717,chatMessage
+18,5ef78648ce2f7f58fcd0a408,pilot0,2461-b9a83dc7-d6fc-4939-a889-9d4739a87dc6,1593280072330.0,338JKRMM2AZJJGWCYOSZP2N3YWEHAW,C,Pi,1,12,0,"wrong placement, need to be connected to two horizontal already ( to the left)",23624,199080,chatMessage
+19,5ef78675ce2f7f58fcd0a416,pilot0,2461-b9a83dc7-d6fc-4939-a889-9d4739a87dc6,1593280117574.0,338JKRMM2AZJJGWCYOSZP2N3YWEHAW,C,Pi,1,14,0,place two more horizontal blocks to the left of the blocks already horzintal,31548,244325,chatMessage
+20,5ef78691ce2f7f58fcd0a422,pilot0,2461-b9a83dc7-d6fc-4939-a889-9d4739a87dc6,1593280145814.0,338JKRMM2AZJJGWCYOSZP2N3YWEHAW,L,Pi,2,0,0,start 2nd grid from left 5 vertical blocks,15578,15578,chatMessage
+21,5ef786a1ce2f7f58fcd0a430,pilot0,2461-b9a83dc7-d6fc-4939-a889-9d4739a87dc6,1593280161478.0,338JKRMM2AZJJGWCYOSZP2N3YWEHAW,L,Pi,2,2,0,one more on top of that,5992,31242,chatMessage
+22,5ef786bcce2f7f58fcd0a43b,pilot0,2461-b9a83dc7-d6fc-4939-a889-9d4739a87dc6,1593280188417.0,338JKRMM2AZJJGWCYOSZP2N3YWEHAW,L,Pi,2,4,0,to immediate bottom right place 3 horizontal blocks,22861,58180,chatMessage
+23,5ef786dbce2f7f58fcd0a449,pilot0,2461-b9a83dc7-d6fc-4939-a889-9d4739a87dc6,1593280219981.0,338JKRMM2AZJJGWCYOSZP2N3YWEHAW,L,Pi,2,6,0,next configuration start 2nd from right place 3 vertical blocks,23348,89745,chatMessage
+24,5ef78701ce2f7f58fcd0a461,pilot0,2461-b9a83dc7-d6fc-4939-a889-9d4739a87dc6,1593280257484.0,338JKRMM2AZJJGWCYOSZP2N3YWEHAW,L,Pi,2,8,0,to the left of that place 3 horizontal blocks (start to the left of top vertical block),29544,127247,chatMessage
+25,5ef78732ce2f7f58fcd0a478,pilot0,2461-b9a83dc7-d6fc-4939-a889-9d4739a87dc6,1593280306793.0,338JKRMM2AZJJGWCYOSZP2N3YWEHAW,Pi,L,3,0,1,start 2nd grid from left 3 vertical blocks,22710,22710,chatMessage
+26,5ef78755ce2f7f58fcd0a489,pilot0,2461-b9a83dc7-d6fc-4939-a889-9d4739a87dc6,1593280341337.0,338JKRMM2AZJJGWCYOSZP2N3YWEHAW,Pi,L,3,2,1,to the right place 3 horizontal blocks ( need to place them directly to the right of top block),24851,57253,chatMessage
+27,5ef78783ce2f7f58fcd0a4a3,pilot0,2461-b9a83dc7-d6fc-4939-a889-9d4739a87dc6,1593280387600.0,338JKRMM2AZJJGWCYOSZP2N3YWEHAW,Pi,L,3,4,1,"wrong placement, put them next to top vertical block not at bottom of grid",26680,103516,chatMessage
+28,5ef787aece2f7f58fcd0a4bf,pilot0,2461-b9a83dc7-d6fc-4939-a889-9d4739a87dc6,1593280430832.0,338JKRMM2AZJJGWCYOSZP2N3YWEHAW,Pi,L,3,6,1,3 horizontal blocks starting 3rd row next to vertical column,36612,146749,chatMessage
+29,5ef787cbce2f7f58fcd0a4d4,pilot0,2461-b9a83dc7-d6fc-4939-a889-9d4739a87dc6,1593280459130.0,338JKRMM2AZJJGWCYOSZP2N3YWEHAW,Pi,L,3,8,1,3 vertical blocks next to that,14381,175047,chatMessage
+30,5ef787dbce2f7f58fcd0a4e3,pilot0,2461-b9a83dc7-d6fc-4939-a889-9d4739a87dc6,1593280475891.0,338JKRMM2AZJJGWCYOSZP2N3YWEHAW,Pi,L,3,10,1,two vertical blocks to right,9625,191808,chatMessage
+31,5ef787fdce2f7f58fcd0a500,pilot0,2461-b9a83dc7-d6fc-4939-a889-9d4739a87dc6,1593280509843.0,338JKRMM2AZJJGWCYOSZP2N3YWEHAW,Pi,C,4,0,1,"lets try again, same configuration as last time~~~ 3 vertical blocks 2nd grid from left",26419,26419,chatMessage
+32,5ef78834ce2f7f58fcd0a52a,pilot0,2461-b9a83dc7-d6fc-4939-a889-9d4739a87dc6,1593280564565.0,338JKRMM2AZJJGWCYOSZP2N3YWEHAW,Pi,C,4,2,1,DO NOT DO WHAT YOU DID LAST TIME~~~ place 3 horizontal blocks directly next to 3rd top block,35369,81141,chatMessage
+33,5ef78865ce2f7f58fcd0a554,pilot0,2461-b9a83dc7-d6fc-4939-a889-9d4739a87dc6,1593280613885.0,338JKRMM2AZJJGWCYOSZP2N3YWEHAW,Pi,C,4,4,1,WRONG~~~ i said next to not on top of~~~ place 3 horizontal blocks to the right of 3rd top block,24144,130460,chatMessage
+34,5ef7889dce2f7f58fcd0a57b,pilot0,2461-b9a83dc7-d6fc-4939-a889-9d4739a87dc6,1593280669250.0,338JKRMM2AZJJGWCYOSZP2N3YWEHAW,Pi,C,4,6,1,are you reading what i am writing? 3rd row place 3 horizontal next to vertical block,35272,185826,chatMessage
+35,5ef788cece2f7f58fcd0a5a1,pilot0,2461-b9a83dc7-d6fc-4939-a889-9d4739a87dc6,1593280718008.0,338JKRMM2AZJJGWCYOSZP2N3YWEHAW,Pi,C,4,8,1,"i said next to top vertical block, blahhhhh~~~ on top of that place 2 vertical blocks",25103,234584,chatMessage
+36,5ef788f2ce2f7f58fcd0a5bc,pilot0,2461-b9a83dc7-d6fc-4939-a889-9d4739a87dc6,1593280754114.0,338JKRMM2AZJJGWCYOSZP2N3YWEHAW,C,L,5,0,1,3rd grid from left 6 vertical blocks,21411,21411,chatMessage
+37,5ef78927ce2f7f58fcd0a5e4,pilot0,2461-b9a83dc7-d6fc-4939-a889-9d4739a87dc6,1593280807316.0,338JKRMM2AZJJGWCYOSZP2N3YWEHAW,C,L,5,2,1,PLEASE READ CAREFULLY~~~ next to the 6th block place one block directly next to it horizontally on rig,33285,74612,chatMessage
+38,5ef78960ce2f7f58fcd0a60f,pilot0,2461-b9a83dc7-d6fc-4939-a889-9d4739a87dc6,1593280864726.0,338JKRMM2AZJJGWCYOSZP2N3YWEHAW,C,L,5,4,1,on bottom of vertical block place one horizontal to right,27397,132021,chatMessage
+39,5ef7898bce2f7f58fcd0a62a,pilot0,2461-b9a83dc7-d6fc-4939-a889-9d4739a87dc6,1593280907747.0,338JKRMM2AZJJGWCYOSZP2N3YWEHAW,C,L,5,6,1,next configuration place 4 horizontal blocks starting second grid from right,32392,175042,chatMessage
+40,5ef7899cce2f7f58fcd0a633,pilot0,2461-b9a83dc7-d6fc-4939-a889-9d4739a87dc6,1593280924004.0,338JKRMM2AZJJGWCYOSZP2N3YWEHAW,C,L,5,8,1,i said HORIZONTAL  not vertical,7544,191300,chatMessage
+41,5ef789d1ce2f7f58fcd0a64d,pilot0,2461-b9a83dc7-d6fc-4939-a889-9d4739a87dc6,1593280977798.0,338JKRMM2AZJJGWCYOSZP2N3YWEHAW,L,Pi,6,0,2,honestly i give up~~~ this bonus is not worth it~~~ do what you want,41034,41034,chatMessage
+42,5ef789f3ce2f7f58fcd0a66c,pilot0,2461-b9a83dc7-d6fc-4939-a889-9d4739a87dc6,1593281011103.0,338JKRMM2AZJJGWCYOSZP2N3YWEHAW,C,Pi,7,0,2,keep goingggggg,7767,7767,chatMessage
+43,5ef78a09ce2f7f58fcd0a684,pilot0,2461-b9a83dc7-d6fc-4939-a889-9d4739a87dc6,1593281033558.0,338JKRMM2AZJJGWCYOSZP2N3YWEHAW,L,C,8,0,2,morreeeeee,4700,4700,chatMessage
+44,5ef78a1fce2f7f58fcd0a699,pilot0,2461-b9a83dc7-d6fc-4939-a889-9d4739a87dc6,1593281055806.0,338JKRMM2AZJJGWCYOSZP2N3YWEHAW,C,L,9,0,3,go crazyyyyyy,4223,4223,chatMessage
+45,5ef78a3cce2f7f58fcd0a6b1,pilot0,2461-b9a83dc7-d6fc-4939-a889-9d4739a87dc6,1593281084434.0,338JKRMM2AZJJGWCYOSZP2N3YWEHAW,Pi,C,10,0,3,if you build it they will come,7378,7378,chatMessage
+46,5ef78a57ce2f7f58fcd0a6c3,pilot0,2461-b9a83dc7-d6fc-4939-a889-9d4739a87dc6,1593281111472.0,338JKRMM2AZJJGWCYOSZP2N3YWEHAW,Pi,L,11,0,3,i'm so proud,4210,4210,chatMessage
+0,5ef785b3ce2f7f58fcd0a3d8,pilot0,3878-afb0aafe-768b-485b-9e69-251a58fcf3ff,1593279923641.0,3EICBYG648W331O062RB7AT6BR3CJY,horizontal,vertical,practice,0,practice,one horizontal two piece block on ,117018,117018,chatMessage
+1,5ef785f9ce2f7f58fcd0a3ec,pilot0,3878-afb0aafe-768b-485b-9e69-251a58fcf3ff,1593279993907.0,3EICBYG648W331O062RB7AT6BR3CJY,horizontal,vertical,practice,2,practice,1 horizontal 2piece block on 3rdsquare last row,44497,187369,chatMessage
+2,5ef7864cce2f7f58fcd0a409,pilot0,3878-afb0aafe-768b-485b-9e69-251a58fcf3ff,1593280076393.0,3EICBYG648W331O062RB7AT6BR3CJY,horizontal,vertical,practice,4,practice,4 squares from the blue block vertical 2 piece square,40570,269878,chatMessage
+3,5ef7867fce2f7f58fcd0a41e,pilot0,3878-afb0aafe-768b-485b-9e69-251a58fcf3ff,1593280127081.0,3EICBYG648W331O062RB7AT6BR3CJY,horizontal,vertical,practice,0,practice,"same horizontal block but red
+",24764,24764,chatMessage
+4,5ef786cece2f7f58fcd0a445,pilot0,3878-afb0aafe-768b-485b-9e69-251a58fcf3ff,1593280206099.0,3EICBYG648W331O062RB7AT6BR3CJY,horizontal,vertical,practice,2,practice,5 squares from there vertical block,32651,103648,chatMessage
+5,5ef78712ce2f7f58fcd0a46a,pilot0,3878-afb0aafe-768b-485b-9e69-251a58fcf3ff,1593280274988.0,3EICBYG648W331O062RB7AT6BR3CJY,horizontal,vertical,practice,0,practice,red horizontal two piece block on third square,34629,34629,chatMessage
+6,5ef78750ce2f7f58fcd0a487,pilot0,3878-afb0aafe-768b-485b-9e69-251a58fcf3ff,1593280336758.0,3EICBYG648W331O062RB7AT6BR3CJY,horizontal,vertical,practice,2,practice,vertical 2 piece block on 9th square,37623,96414,chatMessage
+7,5ef78785ce2f7f58fcd0a4a5,pilot0,3878-afb0aafe-768b-485b-9e69-251a58fcf3ff,1593280389190.0,3EICBYG648W331O062RB7AT6BR3CJY,C,Pi,0,0,0,horizontal 2 piece block on 3rd square,34042,34042,chatMessage
+8,5ef787b5ce2f7f58fcd0a4c6,pilot0,3878-afb0aafe-768b-485b-9e69-251a58fcf3ff,1593280437774.0,3EICBYG648W331O062RB7AT6BR3CJY,C,Pi,0,2,0,place vertical 2 piece block on 3rd square on top of the block,31951,82615,chatMessage
+9,5ef787dcce2f7f58fcd0a4e4,pilot0,3878-afb0aafe-768b-485b-9e69-251a58fcf3ff,1593280476604.0,3EICBYG648W331O062RB7AT6BR3CJY,C,Pi,0,4,0,repeat the same over the block,24164,121442,chatMessage
+10,5ef787f3ce2f7f58fcd0a4f4,pilot0,3878-afb0aafe-768b-485b-9e69-251a58fcf3ff,1593280499006.0,3EICBYG648W331O062RB7AT6BR3CJY,C,Pi,0,6,0,now place an horizontal block over it,14002,143807,chatMessage
+11,5ef7880bce2f7f58fcd0a50e,pilot0,3878-afb0aafe-768b-485b-9e69-251a58fcf3ff,1593280523841.0,3EICBYG648W331O062RB7AT6BR3CJY,C,Pi,0,8,0,on square 8 place vertical block,15859,168693,chatMessage
+12,5ef78834ce2f7f58fcd0a529,pilot0,3878-afb0aafe-768b-485b-9e69-251a58fcf3ff,1593280564335.0,3EICBYG648W331O062RB7AT6BR3CJY,C,Pi,0,10,0,on square 11 place another vertical block,20315,209186,chatMessage
+13,5ef78858ce2f7f58fcd0a54b,pilot0,3878-afb0aafe-768b-485b-9e69-251a58fcf3ff,1593280600624.0,3EICBYG648W331O062RB7AT6BR3CJY,C,Pi,0,12,0,on square 8 place horizontal block over vertical block,25261,245480,chatMessage
+14,5ef7886fce2f7f58fcd0a558,pilot0,3878-afb0aafe-768b-485b-9e69-251a58fcf3ff,1593280623686.0,3EICBYG648W331O062RB7AT6BR3CJY,C,Pi,0,14,0,fill the gap with horizontal block,11851,268541,chatMessage
+15,5ef788a5ce2f7f58fcd0a57f,pilot0,3878-afb0aafe-768b-485b-9e69-251a58fcf3ff,1593280677683.0,3EICBYG648W331O062RB7AT6BR3CJY,C,Pi,0,16,0,place horizontal block on square 11 over vertical ,30738,322536,chatMessage
+16,5ef788c6ce2f7f58fcd0a599,pilot0,3878-afb0aafe-768b-485b-9e69-251a58fcf3ff,1593280710039.0,3EICBYG648W331O062RB7AT6BR3CJY,L,C,1,0,0,square 2 horizontal block,17302,17302,chatMessage
+17,5ef788e3ce2f7f58fcd0a5b3,pilot0,3878-afb0aafe-768b-485b-9e69-251a58fcf3ff,1593280739126.0,3EICBYG648W331O062RB7AT6BR3CJY,L,C,1,2,0,square 4 horizontal block,17464,46395,chatMessage
+18,5ef78902ce2f7f58fcd0a5c7,pilot0,3878-afb0aafe-768b-485b-9e69-251a58fcf3ff,1593280770806.0,3EICBYG648W331O062RB7AT6BR3CJY,L,C,1,4,0,square 2 V block over H block,14927,78091,chatMessage
+19,5ef78923ce2f7f58fcd0a5e0,pilot0,3878-afb0aafe-768b-485b-9e69-251a58fcf3ff,1593280803481.0,3EICBYG648W331O062RB7AT6BR3CJY,L,C,1,6,0,square 2 V block over V block,20207,110766,chatMessage
+20,5ef78938ce2f7f58fcd0a5eb,pilot0,3878-afb0aafe-768b-485b-9e69-251a58fcf3ff,1593280824379.0,3EICBYG648W331O062RB7AT6BR3CJY,L,C,1,8,0,square 9 H block,11609,131589,chatMessage
+21,5ef78956ce2f7f58fcd0a602,pilot0,3878-afb0aafe-768b-485b-9e69-251a58fcf3ff,1593280854104.0,3EICBYG648W331O062RB7AT6BR3CJY,L,C,1,10,0,square 9 V block over H block,14481,161390,chatMessage
+22,5ef78971ce2f7f58fcd0a617,pilot0,3878-afb0aafe-768b-485b-9e69-251a58fcf3ff,1593280881956.0,3EICBYG648W331O062RB7AT6BR3CJY,L,C,1,12,0,square 9 V block over V block,18996,189237,chatMessage
+23,5ef78995ce2f7f58fcd0a62f,pilot0,3878-afb0aafe-768b-485b-9e69-251a58fcf3ff,1593280917039.0,3EICBYG648W331O062RB7AT6BR3CJY,L,C,1,14,0,place H block on V block sq 9,27840,224314,chatMessage
+24,5ef789b2ce2f7f58fcd0a642,pilot0,3878-afb0aafe-768b-485b-9e69-251a58fcf3ff,1593280946519.0,3EICBYG648W331O062RB7AT6BR3CJY,L,Pi,2,0,0,sq 2 H blk,15531,15531,chatMessage
+25,5ef789d2ce2f7f58fcd0a64e,pilot0,3878-afb0aafe-768b-485b-9e69-251a58fcf3ff,1593280978724.0,3EICBYG648W331O062RB7AT6BR3CJY,L,Pi,2,2,0,sq 4 H blk,10315,47731,chatMessage
+26,5ef789edce2f7f58fcd0a667,pilot0,3878-afb0aafe-768b-485b-9e69-251a58fcf3ff,1593281005637.0,3EICBYG648W331O062RB7AT6BR3CJY,L,Pi,2,4,0,sq 2 V blk over H blk,16834,74627,chatMessage
+27,5ef78a04ce2f7f58fcd0a67f,pilot0,3878-afb0aafe-768b-485b-9e69-251a58fcf3ff,1593281028715.0,3EICBYG648W331O062RB7AT6BR3CJY,L,Pi,2,6,0,V blk over V blk,15622,97729,chatMessage
+28,5ef78a2cce2f7f58fcd0a6a9,pilot0,3878-afb0aafe-768b-485b-9e69-251a58fcf3ff,1593281068992.0,3EICBYG648W331O062RB7AT6BR3CJY,L,Pi,2,8,0,"sq 8 V blk 
+This figure is like first picture right figure",34280,137995,chatMessage
+29,5ef78a8cce2f7f58fcd0a6e7,pilot0,3878-afb0aafe-768b-485b-9e69-251a58fcf3ff,1593281164484.0,3EICBYG648W331O062RB7AT6BR3CJY,L,Pi,2,10,0,sq 8 V blk,9548,233473,chatMessage
+30,5ef78aa4ce2f7f58fcd0a6f7,pilot0,3878-afb0aafe-768b-485b-9e69-251a58fcf3ff,1593281188406.0,3EICBYG648W331O062RB7AT6BR3CJY,L,Pi,2,12,0,sq 8 H blk over V blk,13194,257417,chatMessage
+31,5ef78ac0ce2f7f58fcd0a707,pilot0,3878-afb0aafe-768b-485b-9e69-251a58fcf3ff,1593281216887.0,3EICBYG648W331O062RB7AT6BR3CJY,L,Pi,2,14,0,sq 11 V blk,22145,285904,chatMessage
+32,5ef78ae2ce2f7f58fcd0a719,pilot0,3878-afb0aafe-768b-485b-9e69-251a58fcf3ff,1593281250111.0,3EICBYG648W331O062RB7AT6BR3CJY,L,Pi,2,16,0,sq 11 H blk over V,18454,319122,chatMessage
+33,5ef78afdce2f7f58fcd0a729,pilot0,3878-afb0aafe-768b-485b-9e69-251a58fcf3ff,1593281277551.0,3EICBYG648W331O062RB7AT6BR3CJY,Pi,L,3,0,1,sq 2 V blk,15312,15312,chatMessage
+34,5ef78b21ce2f7f58fcd0a733,pilot0,3878-afb0aafe-768b-485b-9e69-251a58fcf3ff,1593281313504.0,3EICBYG648W331O062RB7AT6BR3CJY,Pi,L,3,2,1,sq 2 H blk over V blk,29407,51264,chatMessage
+35,5ef78b39ce2f7f58fcd0a739,pilot0,3878-afb0aafe-768b-485b-9e69-251a58fcf3ff,1593281337407.0,3EICBYG648W331O062RB7AT6BR3CJY,Pi,L,3,4,1,sq 5 V blk,14614,75169,chatMessage
+36,5ef78b54ce2f7f58fcd0a73e,pilot0,3878-afb0aafe-768b-485b-9e69-251a58fcf3ff,1593281364069.0,3EICBYG648W331O062RB7AT6BR3CJY,Pi,L,3,6,1,fill the gap~~~ H blk over V blk,16416,101784,chatMessage
+37,5ef78b78ce2f7f58fcd0a74e,pilot0,3878-afb0aafe-768b-485b-9e69-251a58fcf3ff,1593281400237.0,3EICBYG648W331O062RB7AT6BR3CJY,Pi,L,3,8,1,sq 8  H blk,25478,137872,chatMessage
+38,5ef78b9ace2f7f58fcd0a75c,pilot0,3878-afb0aafe-768b-485b-9e69-251a58fcf3ff,1593281434326.0,3EICBYG648W331O062RB7AT6BR3CJY,Pi,L,3,10,1,sq 11 H blk,14060,172086,chatMessage
+39,5ef78bc3ce2f7f58fcd0a76b,pilot0,3878-afb0aafe-768b-485b-9e69-251a58fcf3ff,1593281475405.0,3EICBYG648W331O062RB7AT6BR3CJY,Pi,L,3,12,1,sq 8 V blk over H blk,23843,213166,chatMessage
+40,5ef78bdace2f7f58fcd0a776,pilot0,3878-afb0aafe-768b-485b-9e69-251a58fcf3ff,1593281498461.0,3EICBYG648W331O062RB7AT6BR3CJY,Pi,L,3,14,1,V blk over V blk,9760,236223,chatMessage
+41,5ef78bf6ce2f7f58fcd0a786,pilot0,3878-afb0aafe-768b-485b-9e69-251a58fcf3ff,1593281526161.0,3EICBYG648W331O062RB7AT6BR3CJY,Pi,C,4,0,1,"place fast time is less
+sq 2 H blk",18509,18509,chatMessage
+42,5ef78c1fce2f7f58fcd0a797,pilot0,3878-afb0aafe-768b-485b-9e69-251a58fcf3ff,1593281567207.0,3EICBYG648W331O062RB7AT6BR3CJY,Pi,C,4,2,1,v blk over H blk,18642,59609,chatMessage
+43,5ef78c3ece2f7f58fcd0a7a5,pilot0,3878-afb0aafe-768b-485b-9e69-251a58fcf3ff,1593281598268.0,3EICBYG648W331O062RB7AT6BR3CJY,Pi,C,4,4,1,sq 5 V blk,18231,90646,chatMessage
+44,5ef78c55ce2f7f58fcd0a7aa,pilot0,3878-afb0aafe-768b-485b-9e69-251a58fcf3ff,1593281621514.0,3EICBYG648W331O062RB7AT6BR3CJY,Pi,C,4,6,1,H blk over V blk,15233,113937,chatMessage
+45,5ef78c72ce2f7f58fcd0a7af,pilot0,3878-afb0aafe-768b-485b-9e69-251a58fcf3ff,1593281650778.0,3EICBYG648W331O062RB7AT6BR3CJY,Pi,C,4,8,1,9 sq H blk,16370,143188,chatMessage
+46,5ef78ca6ce2f7f58fcd0a7b9,pilot0,3878-afb0aafe-768b-485b-9e69-251a58fcf3ff,1593281702787.0,3EICBYG648W331O062RB7AT6BR3CJY,Pi,C,4,10,1,9 sq H blk,11381,195216,chatMessage
+47,5ef78cb5ce2f7f58fcd0a7bb,pilot0,3878-afb0aafe-768b-485b-9e69-251a58fcf3ff,1593281717546.0,3EICBYG648W331O062RB7AT6BR3CJY,Pi,C,4,12,1,V blk over H blk,8813,209894,chatMessage
+48,5ef78cc7ce2f7f58fcd0a7c1,pilot0,3878-afb0aafe-768b-485b-9e69-251a58fcf3ff,1593281735450.0,3EICBYG648W331O062RB7AT6BR3CJY,Pi,C,4,14,1,V blk over V blk,10211,227875,chatMessage
+49,5ef78cdcce2f7f58fcd0a7c4,pilot0,3878-afb0aafe-768b-485b-9e69-251a58fcf3ff,1593281756290.0,3EICBYG648W331O062RB7AT6BR3CJY,Pi,C,4,16,1,H blk over V blk,11419,248656,chatMessage
+50,5ef78d10ce2f7f58fcd0a7ce,pilot0,3878-afb0aafe-768b-485b-9e69-251a58fcf3ff,1593281808507.0,3EICBYG648W331O062RB7AT6BR3CJY,Pi,C,4,18,1,5 sq H blk on left,43210,300935,chatMessage
+51,5ef78d2bce2f7f58fcd0a7d3,pilot0,3878-afb0aafe-768b-485b-9e69-251a58fcf3ff,1593281835068.0,3EICBYG648W331O062RB7AT6BR3CJY,C,L,5,0,1,sq 3 H blk,9409,9409,chatMessage
+52,5ef78d39ce2f7f58fcd0a7d7,pilot0,3878-afb0aafe-768b-485b-9e69-251a58fcf3ff,1593281849923.0,3EICBYG648W331O062RB7AT6BR3CJY,C,L,5,2,1,V blk over H blk,8736,24311,chatMessage
+53,5ef78d44ce2f7f58fcd0a7da,pilot0,3878-afb0aafe-768b-485b-9e69-251a58fcf3ff,1593281860905.0,3EICBYG648W331O062RB7AT6BR3CJY,C,L,5,4,1,v over V,4991,35289,chatMessage
+54,5ef78d51ce2f7f58fcd0a7de,pilot0,3878-afb0aafe-768b-485b-9e69-251a58fcf3ff,1593281873853.0,3EICBYG648W331O062RB7AT6BR3CJY,C,L,5,6,1,h ovr v,8308,48238,chatMessage
+55,5ef78d63ce2f7f58fcd0a7e2,pilot0,3878-afb0aafe-768b-485b-9e69-251a58fcf3ff,1593281891819.0,3EICBYG648W331O062RB7AT6BR3CJY,C,L,5,8,1,sq 8 H blk,12085,66174,chatMessage
+56,5ef78d75ce2f7f58fcd0a7e5,pilot0,3878-afb0aafe-768b-485b-9e69-251a58fcf3ff,1593281909467.0,3EICBYG648W331O062RB7AT6BR3CJY,C,L,5,10,1,sq 10 H blk,5967,83777,chatMessage
+57,5ef78d8bce2f7f58fcd0a7e9,pilot0,3878-afb0aafe-768b-485b-9e69-251a58fcf3ff,1593281931245.0,3EICBYG648W331O062RB7AT6BR3CJY,C,L,5,12,1,sq 8 V blk over H blk,13339,105625,chatMessage
+58,5ef78d9ace2f7f58fcd0a7ec,pilot0,3878-afb0aafe-768b-485b-9e69-251a58fcf3ff,1593281946794.0,3EICBYG648W331O062RB7AT6BR3CJY,C,L,5,14,1,v ovr v,5402,121186,chatMessage
+59,5ef78daece2f7f58fcd0a7f7,pilot0,3878-afb0aafe-768b-485b-9e69-251a58fcf3ff,1593281966407.0,3EICBYG648W331O062RB7AT6BR3CJY,L,Pi,6,0,2,sq 2 h blk,9542,9542,chatMessage
+60,5ef78dbcce2f7f58fcd0a7fa,pilot0,3878-afb0aafe-768b-485b-9e69-251a58fcf3ff,1593281980518.0,3EICBYG648W331O062RB7AT6BR3CJY,L,Pi,6,2,2,sq 4 h blk,8235,23649,chatMessage
+61,5ef78dccce2f7f58fcd0a7fd,pilot0,3878-afb0aafe-768b-485b-9e69-251a58fcf3ff,1593281996510.0,3EICBYG648W331O062RB7AT6BR3CJY,L,Pi,6,4,2,sq 2 V over H,8637,39640,chatMessage
+62,5ef78dd6ce2f7f58fcd0a7ff,pilot0,3878-afb0aafe-768b-485b-9e69-251a58fcf3ff,1593282006802.0,3EICBYG648W331O062RB7AT6BR3CJY,L,Pi,6,6,2,v over v,4357,49860,chatMessage
+63,5ef78de2ce2f7f58fcd0a803,pilot0,3878-afb0aafe-768b-485b-9e69-251a58fcf3ff,1593282018043.0,3EICBYG648W331O062RB7AT6BR3CJY,L,Pi,6,8,2,sq 8 V blk,6470,61150,chatMessage
+64,5ef78dfbce2f7f58fcd0a80d,pilot0,3878-afb0aafe-768b-485b-9e69-251a58fcf3ff,1593282043418.0,3EICBYG648W331O062RB7AT6BR3CJY,L,Pi,6,10,2,sq 8 H over V,7437,86535,chatMessage
+65,5ef78e09ce2f7f58fcd0a812,pilot0,3878-afb0aafe-768b-485b-9e69-251a58fcf3ff,1593282057242.0,3EICBYG648W331O062RB7AT6BR3CJY,L,Pi,6,12,2,sq 11 V blk,7426,100367,chatMessage
+66,5ef78e26ce2f7f58fcd0a818,pilot0,3878-afb0aafe-768b-485b-9e69-251a58fcf3ff,1593282086116.0,3EICBYG648W331O062RB7AT6BR3CJY,L,Pi,6,14,2,fill thegap H over V,18684,129243,chatMessage
+67,5ef78e42ce2f7f58fcd0a820,pilot0,3878-afb0aafe-768b-485b-9e69-251a58fcf3ff,1593282114904.0,3EICBYG648W331O062RB7AT6BR3CJY,L,C,7,0,2,Same L figure sq 2 H blk,17723,17723,chatMessage
+68,5ef78e59ce2f7f58fcd0a824,pilot0,3878-afb0aafe-768b-485b-9e69-251a58fcf3ff,1593282137586.0,3EICBYG648W331O062RB7AT6BR3CJY,L,C,7,2,2,sq 4 H blk,10676,40335,chatMessage
+69,5ef78e6dce2f7f58fcd0a82a,pilot0,3878-afb0aafe-768b-485b-9e69-251a58fcf3ff,1593282157597.0,3EICBYG648W331O062RB7AT6BR3CJY,L,C,7,4,2,sq 2 v over h,5821,60261,chatMessage
+70,5ef78e7ece2f7f58fcd0a832,pilot0,3878-afb0aafe-768b-485b-9e69-251a58fcf3ff,1593282174827.0,3EICBYG648W331O062RB7AT6BR3CJY,L,C,7,6,2,v ovr v,10604,77642,chatMessage
+71,5ef78e8dce2f7f58fcd0a839,pilot0,3878-afb0aafe-768b-485b-9e69-251a58fcf3ff,1593282189581.0,3EICBYG648W331O062RB7AT6BR3CJY,L,C,7,8,2,sq 9 H blk,11187,92387,chatMessage
+72,5ef78ea2ce2f7f58fcd0a840,pilot0,3878-afb0aafe-768b-485b-9e69-251a58fcf3ff,1593282210689.0,3EICBYG648W331O062RB7AT6BR3CJY,L,C,7,10,2,v ovr h,7364,113507,chatMessage
+73,5ef78eacce2f7f58fcd0a845,pilot0,3878-afb0aafe-768b-485b-9e69-251a58fcf3ff,1593282220560.0,3EICBYG648W331O062RB7AT6BR3CJY,L,C,7,12,2,v ovr v,4588,123369,chatMessage
+74,5ef78eb6ce2f7f58fcd0a848,pilot0,3878-afb0aafe-768b-485b-9e69-251a58fcf3ff,1593282230234.0,3EICBYG648W331O062RB7AT6BR3CJY,L,C,7,14,2,h over v,5346,133034,chatMessage
+75,5ef78ecbce2f7f58fcd0a851,pilot0,3878-afb0aafe-768b-485b-9e69-251a58fcf3ff,1593282251298.0,3EICBYG648W331O062RB7AT6BR3CJY,C,Pi,8,0,2,sq 3 h blk,9419,9419,chatMessage
+76,5ef78ed7ce2f7f58fcd0a856,pilot0,3878-afb0aafe-768b-485b-9e69-251a58fcf3ff,1593282263663.0,3EICBYG648W331O062RB7AT6BR3CJY,C,Pi,8,2,2,v ovr h,5649,21778,chatMessage
+77,5ef78ee2ce2f7f58fcd0a85c,pilot0,3878-afb0aafe-768b-485b-9e69-251a58fcf3ff,1593282274286.0,3EICBYG648W331O062RB7AT6BR3CJY,C,Pi,8,4,2,v ovr v,4060,32407,chatMessage
+78,5ef78eebce2f7f58fcd0a861,pilot0,3878-afb0aafe-768b-485b-9e69-251a58fcf3ff,1593282283169.0,3EICBYG648W331O062RB7AT6BR3CJY,C,Pi,8,6,2,h ovr v,4440,41282,chatMessage
+79,5ef78ef7ce2f7f58fcd0a86a,pilot0,3878-afb0aafe-768b-485b-9e69-251a58fcf3ff,1593282295739.0,3EICBYG648W331O062RB7AT6BR3CJY,C,Pi,8,8,2,8 sq V blk,7651,53793,chatMessage
+80,5ef78f06ce2f7f58fcd0a870,pilot0,3878-afb0aafe-768b-485b-9e69-251a58fcf3ff,1593282310121.0,3EICBYG648W331O062RB7AT6BR3CJY,C,Pi,8,10,2,h over v,3977,68237,chatMessage
+81,5ef78f11ce2f7f58fcd0a875,pilot0,3878-afb0aafe-768b-485b-9e69-251a58fcf3ff,1593282321446.0,3EICBYG648W331O062RB7AT6BR3CJY,C,Pi,8,12,2,sq 11 v blk,5982,79567,chatMessage
+82,5ef78f20ce2f7f58fcd0a87d,pilot0,3878-afb0aafe-768b-485b-9e69-251a58fcf3ff,1593282336734.0,3EICBYG648W331O062RB7AT6BR3CJY,C,Pi,8,14,2,h blk fill the gap,7138,94856,chatMessage
+83,5ef78f35ce2f7f58fcd0a888,pilot0,3878-afb0aafe-768b-485b-9e69-251a58fcf3ff,1593282357315.0,3EICBYG648W331O062RB7AT6BR3CJY,Pi,C,9,0,3,sq 2 v blk,7702,7702,chatMessage
+84,5ef78f44ce2f7f58fcd0a88f,pilot0,3878-afb0aafe-768b-485b-9e69-251a58fcf3ff,1593282372809.0,3EICBYG648W331O062RB7AT6BR3CJY,Pi,C,9,2,3,h over v,6138,23203,chatMessage
+85,5ef78f50ce2f7f58fcd0a893,pilot0,3878-afb0aafe-768b-485b-9e69-251a58fcf3ff,1593282384273.0,3EICBYG648W331O062RB7AT6BR3CJY,Pi,C,9,4,3,sq 5 v blk,6889,34622,chatMessage
+86,5ef78f5cce2f7f58fcd0a899,pilot0,3878-afb0aafe-768b-485b-9e69-251a58fcf3ff,1593282396289.0,3EICBYG648W331O062RB7AT6BR3CJY,Pi,C,9,6,3,fill the gap h blk,6729,46687,chatMessage
+87,5ef78f68ce2f7f58fcd0a89f,pilot0,3878-afb0aafe-768b-485b-9e69-251a58fcf3ff,1593282408945.0,3EICBYG648W331O062RB7AT6BR3CJY,Pi,C,9,8,3,sq 9 h blk,8815,59280,chatMessage
+88,5ef78f76ce2f7f58fcd0a8a8,pilot0,3878-afb0aafe-768b-485b-9e69-251a58fcf3ff,1593282422074.0,3EICBYG648W331O062RB7AT6BR3CJY,Pi,C,9,10,3,v ovr h,4517,72384,chatMessage
+89,5ef78f7ece2f7f58fcd0a8ad,pilot0,3878-afb0aafe-768b-485b-9e69-251a58fcf3ff,1593282430728.0,3EICBYG648W331O062RB7AT6BR3CJY,Pi,C,9,12,3,v ovr v,4249,81132,chatMessage
+90,5ef78f89ce2f7f58fcd0a8b6,pilot0,3878-afb0aafe-768b-485b-9e69-251a58fcf3ff,1593282441439.0,3EICBYG648W331O062RB7AT6BR3CJY,Pi,C,9,14,3,h ovr v,6891,91839,chatMessage
+91,5ef78f9fce2f7f58fcd0a8bf,pilot0,3878-afb0aafe-768b-485b-9e69-251a58fcf3ff,1593282463711.0,3EICBYG648W331O062RB7AT6BR3CJY,Pi,L,10,0,3,sq 2 v blk,9028,9028,chatMessage
+92,5ef78fa9ce2f7f58fcd0a8c3,pilot0,3878-afb0aafe-768b-485b-9e69-251a58fcf3ff,1593282473471.0,3EICBYG648W331O062RB7AT6BR3CJY,Pi,L,10,2,3,h ovr v,4153,18763,chatMessage
+93,5ef78fb6ce2f7f58fcd0a8c9,pilot0,3878-afb0aafe-768b-485b-9e69-251a58fcf3ff,1593282486175.0,3EICBYG648W331O062RB7AT6BR3CJY,Pi,L,10,4,3,sq 5 v blk,5935,31483,chatMessage
+94,5ef78fc2ce2f7f58fcd0a8d0,pilot0,3878-afb0aafe-768b-485b-9e69-251a58fcf3ff,1593282498132.0,3EICBYG648W331O062RB7AT6BR3CJY,Pi,L,10,6,3,h ovr v fill the gap,6440,43409,chatMessage
+95,5ef78fcece2f7f58fcd0a8da,pilot0,3878-afb0aafe-768b-485b-9e69-251a58fcf3ff,1593282510302.0,3EICBYG648W331O062RB7AT6BR3CJY,Pi,L,10,8,3,sq 8 h blk,8843,55617,chatMessage
+96,5ef78fddce2f7f58fcd0a8e4,pilot0,3878-afb0aafe-768b-485b-9e69-251a58fcf3ff,1593282525799.0,3EICBYG648W331O062RB7AT6BR3CJY,Pi,L,10,10,3,v ovr h,5174,71117,chatMessage
+97,5ef78fe7ce2f7f58fcd0a8ec,pilot0,3878-afb0aafe-768b-485b-9e69-251a58fcf3ff,1593282535085.0,3EICBYG648W331O062RB7AT6BR3CJY,Pi,L,10,12,3,v ovr v,4497,80395,chatMessage
+98,5ef78ff2ce2f7f58fcd0a8f1,pilot0,3878-afb0aafe-768b-485b-9e69-251a58fcf3ff,1593282546290.0,3EICBYG648W331O062RB7AT6BR3CJY,Pi,L,10,14,3,sq 10 h blk,6284,91607,chatMessage
+99,5ef7900fce2f7f58fcd0a902,pilot0,3878-afb0aafe-768b-485b-9e69-251a58fcf3ff,1593282575023.0,3EICBYG648W331O062RB7AT6BR3CJY,C,L,11,0,3,sq 3 h blk,7445,7445,chatMessage
+100,5ef79019ce2f7f58fcd0a90a,pilot0,3878-afb0aafe-768b-485b-9e69-251a58fcf3ff,1593282585495.0,3EICBYG648W331O062RB7AT6BR3CJY,C,L,11,2,3,v ovr h,4825,17916,chatMessage
+101,5ef79021ce2f7f58fcd0a911,pilot0,3878-afb0aafe-768b-485b-9e69-251a58fcf3ff,1593282593243.0,3EICBYG648W331O062RB7AT6BR3CJY,C,L,11,4,3,v ovr v,3758,25648,chatMessage
+102,5ef79028ce2f7f58fcd0a917,pilot0,3878-afb0aafe-768b-485b-9e69-251a58fcf3ff,1593282600707.0,3EICBYG648W331O062RB7AT6BR3CJY,C,L,11,6,3,h ovr v,3782,32929,chatMessage
+103,5ef79034ce2f7f58fcd0a91f,pilot0,3878-afb0aafe-768b-485b-9e69-251a58fcf3ff,1593282612594.0,3EICBYG648W331O062RB7AT6BR3CJY,C,L,11,8,3,sq 8 h blk,7356,44999,chatMessage
+104,5ef79042ce2f7f58fcd0a92a,pilot0,3878-afb0aafe-768b-485b-9e69-251a58fcf3ff,1593282626253.0,3EICBYG648W331O062RB7AT6BR3CJY,C,L,11,10,3,v ovr h,5331,58559,chatMessage
+105,5ef7904cce2f7f58fcd0a930,pilot0,3878-afb0aafe-768b-485b-9e69-251a58fcf3ff,1593282636739.0,3EICBYG648W331O062RB7AT6BR3CJY,C,L,11,12,3,v ovr v,6980,69149,chatMessage
+106,5ef79056ce2f7f58fcd0a935,pilot0,3878-afb0aafe-768b-485b-9e69-251a58fcf3ff,1593282646971.0,3EICBYG648W331O062RB7AT6BR3CJY,C,L,11,14,3,sq 10 h blk,5585,79370,chatMessage
+0,5ef7861dce2f7f58fcd0a3f7,pilot0,3300-92747c2e-ca2a-48cd-996a-54fde9f489be,1593280029665.0,3UXUOQ9OKIXMQRQ0LF6NYPY9KTIA7N,vertical,horizontal,practice,0,practice,place it on three vertical,135354,135354,chatMessage
+1,5ef78656ce2f7f58fcd0a40b,pilot0,3300-92747c2e-ca2a-48cd-996a-54fde9f489be,1593280086801.0,3UXUOQ9OKIXMQRQ0LF6NYPY9KTIA7N,vertical,horizontal,practice,0,practice,place it on three,19080,19080,chatMessage
+2,5ef7867ace2f7f58fcd0a41a,pilot0,3300-92747c2e-ca2a-48cd-996a-54fde9f489be,1593280122399.0,3UXUOQ9OKIXMQRQ0LF6NYPY9KTIA7N,C,Pi,0,0,0,place down,11484,11484,chatMessage
+3,5ef786abce2f7f58fcd0a433,pilot0,3300-92747c2e-ca2a-48cd-996a-54fde9f489be,1593280171910.0,3UXUOQ9OKIXMQRQ0LF6NYPY9KTIA7N,C,Pi,0,2,0,place 2 nd 4,15943,60987,chatMessage
+4,5ef78708ce2f7f58fcd0a464,pilot0,3300-92747c2e-ca2a-48cd-996a-54fde9f489be,1593280264912.0,3UXUOQ9OKIXMQRQ0LF6NYPY9KTIA7N,C,Pi,0,4,0,place vertical,21476,153998,chatMessage
+5,5ef78734ce2f7f58fcd0a47c,pilot0,3300-92747c2e-ca2a-48cd-996a-54fde9f489be,1593280308712.0,3UXUOQ9OKIXMQRQ0LF6NYPY9KTIA7N,L,Pi,1,0,0,place reverse L,15021,15021,chatMessage
+6,5ef78761ce2f7f58fcd0a490,pilot0,3300-92747c2e-ca2a-48cd-996a-54fde9f489be,1593280353119.0,3UXUOQ9OKIXMQRQ0LF6NYPY9KTIA7N,L,Pi,1,2,0,place it doen,6737,59429,chatMessage
+7,5ef78784ce2f7f58fcd0a4a4,pilot0,3300-92747c2e-ca2a-48cd-996a-54fde9f489be,1593280388534.0,3UXUOQ9OKIXMQRQ0LF6NYPY9KTIA7N,L,Pi,1,4,0,place down,13751,94636,chatMessage
+8,5ef787adce2f7f58fcd0a4bd,pilot0,3300-92747c2e-ca2a-48cd-996a-54fde9f489be,1593280429724.0,3UXUOQ9OKIXMQRQ0LF6NYPY9KTIA7N,L,Pi,1,6,0,place again,11242,136032,chatMessage
+9,5ef787c6ce2f7f58fcd0a4d2,pilot0,3300-92747c2e-ca2a-48cd-996a-54fde9f489be,1593280454811.0,3UXUOQ9OKIXMQRQ0LF6NYPY9KTIA7N,L,C,2,0,0,place L,11413,11413,chatMessage
+10,5ef787edce2f7f58fcd0a4f3,pilot0,3300-92747c2e-ca2a-48cd-996a-54fde9f489be,1593280493422.0,3UXUOQ9OKIXMQRQ0LF6NYPY9KTIA7N,L,C,2,2,0,place C,7613,50235,chatMessage
+11,5ef7881ece2f7f58fcd0a51a,pilot0,3300-92747c2e-ca2a-48cd-996a-54fde9f489be,1593280542349.0,3UXUOQ9OKIXMQRQ0LF6NYPY9KTIA7N,L,C,2,4,0,place it up,6480,99086,chatMessage
+12,5ef78836ce2f7f58fcd0a52e,pilot0,3300-92747c2e-ca2a-48cd-996a-54fde9f489be,1593280566964.0,3UXUOQ9OKIXMQRQ0LF6NYPY9KTIA7N,Pi,C,3,0,1,Place small n,11592,11592,chatMessage
+13,5ef7885cce2f7f58fcd0a54d,pilot0,3300-92747c2e-ca2a-48cd-996a-54fde9f489be,1593280604306.0,3UXUOQ9OKIXMQRQ0LF6NYPY9KTIA7N,Pi,C,3,2,1,place C again,8915,48987,chatMessage
+14,5ef78885ce2f7f58fcd0a56b,pilot0,3300-92747c2e-ca2a-48cd-996a-54fde9f489be,1593280645192.0,3UXUOQ9OKIXMQRQ0LF6NYPY9KTIA7N,Pi,C,3,4,1,place it up,5552,89868,chatMessage
+15,5ef7889dce2f7f58fcd0a57c,pilot0,3300-92747c2e-ca2a-48cd-996a-54fde9f489be,1593280669895.0,3UXUOQ9OKIXMQRQ0LF6NYPY9KTIA7N,Pi,L,4,0,1,Place n and L,11739,11739,chatMessage
+16,5ef788bcce2f7f58fcd0a591,pilot0,3300-92747c2e-ca2a-48cd-996a-54fde9f489be,1593280700208.0,3UXUOQ9OKIXMQRQ0LF6NYPY9KTIA7N,Pi,L,4,2,1,Now go with L,11853,42051,chatMessage
+17,5ef788f4ce2f7f58fcd0a5bf,pilot0,3300-92747c2e-ca2a-48cd-996a-54fde9f489be,1593280756570.0,3UXUOQ9OKIXMQRQ0LF6NYPY9KTIA7N,C,L,5,0,1,now C and L,18899,18899,chatMessage
+18,5ef78913ce2f7f58fcd0a5d3,pilot0,3300-92747c2e-ca2a-48cd-996a-54fde9f489be,1593280787838.0,3UXUOQ9OKIXMQRQ0LF6NYPY9KTIA7N,C,L,5,2,1,Now L,6914,50184,chatMessage
+19,5ef7893cce2f7f58fcd0a5ee,pilot0,3300-92747c2e-ca2a-48cd-996a-54fde9f489be,1593280828643.0,3UXUOQ9OKIXMQRQ0LF6NYPY9KTIA7N,C,Pi,6,0,2,now C and n,13149,13149,chatMessage
+20,5ef78967ce2f7f58fcd0a611,pilot0,3300-92747c2e-ca2a-48cd-996a-54fde9f489be,1593280871102.0,3UXUOQ9OKIXMQRQ0LF6NYPY9KTIA7N,C,Pi,6,2,2,now n,8573,55587,chatMessage
+21,5ef78989ce2f7f58fcd0a629,pilot0,3300-92747c2e-ca2a-48cd-996a-54fde9f489be,1593280905945.0,3UXUOQ9OKIXMQRQ0LF6NYPY9KTIA7N,L,Pi,7,0,2,now L and n,8407,8407,chatMessage
+22,5ef789b6ce2f7f58fcd0a644,pilot0,3300-92747c2e-ca2a-48cd-996a-54fde9f489be,1593280950803.0,3UXUOQ9OKIXMQRQ0LF6NYPY9KTIA7N,L,Pi,7,2,2,place and fill it,10109,53266,chatMessage
+23,5ef789d3ce2f7f58fcd0a64f,pilot0,3300-92747c2e-ca2a-48cd-996a-54fde9f489be,1593280979773.0,3UXUOQ9OKIXMQRQ0LF6NYPY9KTIA7N,L,C,8,0,2,Now L and C,11850,11850,chatMessage
+24,5ef78a06ce2f7f58fcd0a682,pilot0,3300-92747c2e-ca2a-48cd-996a-54fde9f489be,1593281030626.0,3UXUOQ9OKIXMQRQ0LF6NYPY9KTIA7N,Pi,L,9,0,3,now n and L,9134,9134,chatMessage
+25,5ef78a3ace2f7f58fcd0a6b0,pilot0,3300-92747c2e-ca2a-48cd-996a-54fde9f489be,1593281082515.0,3UXUOQ9OKIXMQRQ0LF6NYPY9KTIA7N,Pi,L,9,2,3,place upon it vertically,17641,60935,chatMessage
+26,5ef78a56ce2f7f58fcd0a6c0,pilot0,3300-92747c2e-ca2a-48cd-996a-54fde9f489be,1593281110302.0,3UXUOQ9OKIXMQRQ0LF6NYPY9KTIA7N,C,L,10,0,3,now C and L,9156,9156,chatMessage
+27,5ef78a92ce2f7f58fcd0a6e9,pilot0,3300-92747c2e-ca2a-48cd-996a-54fde9f489be,1593281170332.0,3UXUOQ9OKIXMQRQ0LF6NYPY9KTIA7N,Pi,C,11,0,3,now n and C,10101,10101,chatMessage
+0,5ef78671ce2f7f58fcd0a413,pilot0,7109-2ef42705-61df-4552-a6ce-e9e6966dd760,1593280113337.0,30H4UDGLT6ICYY3PE4Q972KUE4DPMT,vertical,horizontal,practice,0,practice,Place one block to the left of the red line,43518,43518,chatMessage
+1,5ef786a0ce2f7f58fcd0a42e,pilot0,7109-2ef42705-61df-4552-a6ce-e9e6966dd760,1593280160886.0,30H4UDGLT6ICYY3PE4Q972KUE4DPMT,vertical,horizontal,practice,2,practice,Stand a block up on its end immediately left of the red line on the left,26344,91069,chatMessage
+2,5ef786c8ce2f7f58fcd0a444,pilot0,7109-2ef42705-61df-4552-a6ce-e9e6966dd760,1593280200461.0,30H4UDGLT6ICYY3PE4Q972KUE4DPMT,vertical,horizontal,practice,4,practice,Put the other one horizontally so its center is on the other red line,20196,130642,chatMessage
+3,5ef786eace2f7f58fcd0a452,pilot0,7109-2ef42705-61df-4552-a6ce-e9e6966dd760,1593280234271.0,30H4UDGLT6ICYY3PE4Q972KUE4DPMT,C,Pi,0,0,0,Put a block horizontally so its center is on the redline on the left,22193,22193,chatMessage
+4,5ef78708ce2f7f58fcd0a465,pilot0,7109-2ef42705-61df-4552-a6ce-e9e6966dd760,1593280264921.0,30H4UDGLT6ICYY3PE4Q972KUE4DPMT,C,Pi,0,2,0,"On the left half of the block just places, stack two vertically~~~",21676,52843,chatMessage
+5,5ef7871fce2f7f58fcd0a470,pilot0,7109-2ef42705-61df-4552-a6ce-e9e6966dd760,1593280287758.0,30H4UDGLT6ICYY3PE4Q972KUE4DPMT,C,Pi,0,4,0,Another just like that forming a tower up~~~,14172,75680,chatMessage
+6,5ef78739ce2f7f58fcd0a47f,pilot0,7109-2ef42705-61df-4552-a6ce-e9e6966dd760,1593280313167.0,30H4UDGLT6ICYY3PE4Q972KUE4DPMT,C,Pi,0,6,0,Now one more horizontally to make a backwards C shape,17183,101091,chatMessage
+7,5ef7875fce2f7f58fcd0a48f,pilot0,7109-2ef42705-61df-4552-a6ce-e9e6966dd760,1593280351454.0,30H4UDGLT6ICYY3PE4Q972KUE4DPMT,C,Pi,0,8,0,"On the other side we're making an arch~~~ One vertical, one block away from the red line",22379,139377,chatMessage
+8,5ef7878ece2f7f58fcd0a4a9,pilot0,7109-2ef42705-61df-4552-a6ce-e9e6966dd760,1593280398868.0,30H4UDGLT6ICYY3PE4Q972KUE4DPMT,C,Pi,0,10,0,The block should be one further away than that actually,23505,186790,chatMessage
+9,5ef787b9ce2f7f58fcd0a4cb,pilot0,7109-2ef42705-61df-4552-a6ce-e9e6966dd760,1593280441898.0,30H4UDGLT6ICYY3PE4Q972KUE4DPMT,C,Pi,0,12,0,"Place the block one block away from the red line, vertically, so there's a gap
+",27721,229820,chatMessage
+10,5ef78801ce2f7f58fcd0a503,pilot0,7109-2ef42705-61df-4552-a6ce-e9e6966dd760,1593280513783.0,30H4UDGLT6ICYY3PE4Q972KUE4DPMT,C,Pi,0,14,0,Put a horizontal block above the left block so it reaches across,37335,301705,chatMessage
+11,5ef7882fce2f7f58fcd0a527,pilot0,7109-2ef42705-61df-4552-a6ce-e9e6966dd760,1593280559414.0,30H4UDGLT6ICYY3PE4Q972KUE4DPMT,C,Pi,0,16,0,Put one on the opposite side of the red line horizontal,35166,347337,chatMessage
+12,5ef78875ce2f7f58fcd0a55e,pilot0,7109-2ef42705-61df-4552-a6ce-e9e6966dd760,1593280629247.0,30H4UDGLT6ICYY3PE4Q972KUE4DPMT,L,C,1,0,0,"Two horizontal blocks, one on each side of the left red line~~~ A 4x tetris piece on its side~~~",30173,30173,chatMessage
+13,5ef788b2ce2f7f58fcd0a58d,pilot0,7109-2ef42705-61df-4552-a6ce-e9e6966dd760,1593280690756.0,30H4UDGLT6ICYY3PE4Q972KUE4DPMT,L,C,1,2,0,"Nice~~~ Now another 4x Tetris piece horizontally up the left side, so it stands on top of the other 1~~~",36753,91674,chatMessage
+14,5ef788eace2f7f58fcd0a5ba,pilot0,7109-2ef42705-61df-4552-a6ce-e9e6966dd760,1593280746517.0,30H4UDGLT6ICYY3PE4Q972KUE4DPMT,L,C,1,4,0,I meant vertically~~~ Sorry~~~ Making an L shape with 5 on the left and 4 on the bottom~~~,28047,147437,chatMessage
+15,5ef78925ce2f7f58fcd0a5e2,pilot0,7109-2ef42705-61df-4552-a6ce-e9e6966dd760,1593280805940.0,30H4UDGLT6ICYY3PE4Q972KUE4DPMT,L,C,1,6,0,"Ok, other red line - put a horizonal block so its center is on the red line",25413,206867,chatMessage
+16,5ef78945ce2f7f58fcd0a5f5,pilot0,7109-2ef42705-61df-4552-a6ce-e9e6966dd760,1593280837465.0,30H4UDGLT6ICYY3PE4Q972KUE4DPMT,L,C,1,8,0,Two vertical on top of the left side of the one just placed~~~,22455,238393,chatMessage
+17,5ef78970ce2f7f58fcd0a616,pilot0,7109-2ef42705-61df-4552-a6ce-e9e6966dd760,1593280880237.0,30H4UDGLT6ICYY3PE4Q972KUE4DPMT,L,Pi,2,0,0,"L shape on the left side, just like on the last trial~~~",18551,18551,chatMessage
+18,5ef789a0ce2f7f58fcd0a638,pilot0,7109-2ef42705-61df-4552-a6ce-e9e6966dd760,1593280928803.0,30H4UDGLT6ICYY3PE4Q972KUE4DPMT,L,Pi,2,2,0,"Arch on the right~~~ 
+XXXX
+X--X
+X--X",23508,67117,chatMessage
+19,5ef789e1ce2f7f58fcd0a65d,pilot0,7109-2ef42705-61df-4552-a6ce-e9e6966dd760,1593280993247.0,30H4UDGLT6ICYY3PE4Q972KUE4DPMT,L,Pi,2,4,0,Skip one block away from the red line and put a vertical block there~~~ Mirror that on the other side~~~,31944,131562,chatMessage
+20,5ef78a20ce2f7f58fcd0a69a,pilot0,7109-2ef42705-61df-4552-a6ce-e9e6966dd760,1593281056108.0,30H4UDGLT6ICYY3PE4Q972KUE4DPMT,C,L,3,0,1,C on the left~~~ One horizontal with its center touching the red line~~~,21359,21359,chatMessage
+21,5ef78a52ce2f7f58fcd0a6bf,pilot0,7109-2ef42705-61df-4552-a6ce-e9e6966dd760,1593281106484.0,30H4UDGLT6ICYY3PE4Q972KUE4DPMT,C,L,3,2,1,One more vertical on top of the vertical one just placed~~~,19696,71734,chatMessage
+22,5ef78a73ce2f7f58fcd0a6d9,pilot0,7109-2ef42705-61df-4552-a6ce-e9e6966dd760,1593281139317.0,30H4UDGLT6ICYY3PE4Q972KUE4DPMT,C,L,3,4,1,Yup~~~ Now an L on the right~~~ Two horizontal blocks with the red line between them~~~,20993,104568,chatMessage
+23,5ef78aa3ce2f7f58fcd0a6f6,pilot0,7109-2ef42705-61df-4552-a6ce-e9e6966dd760,1593281187357.0,30H4UDGLT6ICYY3PE4Q972KUE4DPMT,Pi,C,4,0,1,Arch on the left and C on the right~~~,19791,19791,chatMessage
+24,5ef78adfce2f7f58fcd0a717,pilot0,7109-2ef42705-61df-4552-a6ce-e9e6966dd760,1593281247181.0,30H4UDGLT6ICYY3PE4Q972KUE4DPMT,Pi,L,5,0,1,Arch on the left~~~ L on the right~~~,17068,17068,chatMessage
+25,5ef78b11ce2f7f58fcd0a72c,pilot0,7109-2ef42705-61df-4552-a6ce-e9e6966dd760,1593281297066.0,30H4UDGLT6ICYY3PE4Q972KUE4DPMT,L,Pi,6,0,2,"L on the left, arch on the right~~~ We're doing awesome~~~",14459,14459,chatMessage
+26,5ef78b4cce2f7f58fcd0a73d,pilot0,7109-2ef42705-61df-4552-a6ce-e9e6966dd760,1593281356373.0,30H4UDGLT6ICYY3PE4Q972KUE4DPMT,L,Pi,6,2,2,Arch on the right centered around the red line~~~,21509,73766,chatMessage
+27,5ef78b6dce2f7f58fcd0a749,pilot0,7109-2ef42705-61df-4552-a6ce-e9e6966dd760,1593281389810.0,30H4UDGLT6ICYY3PE4Q972KUE4DPMT,C,Pi,7,0,2,"C on the left, arch again on the right~~~",11969,11969,chatMessage
+28,5ef78b9ace2f7f58fcd0a75d,pilot0,7109-2ef42705-61df-4552-a6ce-e9e6966dd760,1593281434372.0,30H4UDGLT6ICYY3PE4Q972KUE4DPMT,L,C,8,0,2,"L on the left, C on the right~~~",10952,10952,chatMessage
+29,5ef78bc8ce2f7f58fcd0a76c,pilot0,7109-2ef42705-61df-4552-a6ce-e9e6966dd760,1593281480572.0,30H4UDGLT6ICYY3PE4Q972KUE4DPMT,C,L,9,0,3,"C on the left, L on the right~~~",14028,14029,chatMessage
+30,5ef78bf2ce2f7f58fcd0a784,pilot0,7109-2ef42705-61df-4552-a6ce-e9e6966dd760,1593281522914.0,30H4UDGLT6ICYY3PE4Q972KUE4DPMT,Pi,C,10,0,3,"Arch on the left, C on the right~~~",10809,10809,chatMessage
+31,5ef78c21ce2f7f58fcd0a798,pilot0,7109-2ef42705-61df-4552-a6ce-e9e6966dd760,1593281569115.0,30H4UDGLT6ICYY3PE4Q972KUE4DPMT,Pi,L,11,0,3,"Last one! Arch on the left, L on the right~~~",13164,13164,chatMessage
+0,5ef787b4ce2f7f58fcd0a4c3,pilot0,2391-2f396ec8-517f-4681-b366-51f930bcac22,1593280436183.0,32EYX73OY49GNJOD0YLK3713S84RUF,vertical,horizontal,practice,0,practice,place one column 3 row 1,43137,43137,chatMessage
+1,5ef787f8ce2f7f58fcd0a4f8,pilot0,2391-2f396ec8-517f-4681-b366-51f930bcac22,1593280504481.0,32EYX73OY49GNJOD0YLK3713S84RUF,vertical,horizontal,practice,0,practice,"place blue block flat and two away from right side
+",39034,39034,chatMessage
+2,5ef78843ce2f7f58fcd0a536,pilot0,2391-2f396ec8-517f-4681-b366-51f930bcac22,1593280579483.0,32EYX73OY49GNJOD0YLK3713S84RUF,vertical,horizontal,practice,2,practice,"place red blacks upright and 2 to the right 
+",37334,114038,chatMessage
+3,5ef78876ce2f7f58fcd0a55f,pilot0,2391-2f396ec8-517f-4681-b366-51f930bcac22,1593280630134.0,32EYX73OY49GNJOD0YLK3713S84RUF,L,Pi,0,0,0,place blue 1 to the right and flat,29997,29997,chatMessage
+4,5ef788abce2f7f58fcd0a584,pilot0,2391-2f396ec8-517f-4681-b366-51f930bcac22,1593280683155.0,32EYX73OY49GNJOD0YLK3713S84RUF,L,Pi,0,2,0,place blue next to the previous one and a red on top of the first,26747,83011,chatMessage
+5,5ef788d1ce2f7f58fcd0a5a6,pilot0,2391-2f396ec8-517f-4681-b366-51f930bcac22,1593280721207.0,32EYX73OY49GNJOD0YLK3713S84RUF,L,Pi,0,4,0,place another red on top of the previous red,17834,121069,chatMessage
+6,5ef788f0ce2f7f58fcd0a5bb,pilot0,2391-2f396ec8-517f-4681-b366-51f930bcac22,1593280752066.0,32EYX73OY49GNJOD0YLK3713S84RUF,L,Pi,0,6,0,place one red 1 to the left of the far right,24862,151930,chatMessage
+7,5ef78920ce2f7f58fcd0a5db,pilot0,2391-2f396ec8-517f-4681-b366-51f930bcac22,1593280800661.0,32EYX73OY49GNJOD0YLK3713S84RUF,L,Pi,0,8,0,place another red 2 to the left of the first red and then connect the two with blues,28645,200526,chatMessage
+8,5ef7895cce2f7f58fcd0a60d,pilot0,2391-2f396ec8-517f-4681-b366-51f930bcac22,1593280860946.0,32EYX73OY49GNJOD0YLK3713S84RUF,L,Pi,0,10,0,place a red 3 to the left of first red ,19717,260812,chatMessage
+9,5ef7899dce2f7f58fcd0a635,pilot0,2391-2f396ec8-517f-4681-b366-51f930bcac22,1593280925412.0,32EYX73OY49GNJOD0YLK3713S84RUF,C,Pi,1,0,0,place blue 3 to the right on left side,37174,37174,chatMessage
+10,5ef789dcce2f7f58fcd0a654,pilot0,2391-2f396ec8-517f-4681-b366-51f930bcac22,1593280988055.0,32EYX73OY49GNJOD0YLK3713S84RUF,C,Pi,1,2,0,place red above blue and 1 to the left,44225,99823,chatMessage
+11,5ef78a15ce2f7f58fcd0a691,pilot0,2391-2f396ec8-517f-4681-b366-51f930bcac22,1593281045505.0,32EYX73OY49GNJOD0YLK3713S84RUF,C,Pi,1,4,0,place 1 red 1 to the left of the far right ,35947,157273,chatMessage
+12,5ef78a3dce2f7f58fcd0a6b2,pilot0,2391-2f396ec8-517f-4681-b366-51f930bcac22,1593281085416.0,32EYX73OY49GNJOD0YLK3713S84RUF,C,Pi,1,6,0,place one blue one to the left of the far right above the red going leftward,30652,197185,chatMessage
+13,5ef78a62ce2f7f58fcd0a6d2,pilot0,2391-2f396ec8-517f-4681-b366-51f930bcac22,1593281122564.0,32EYX73OY49GNJOD0YLK3713S84RUF,C,Pi,1,8,0,place another blue next to the previous blue going leftward,21079,234336,chatMessage
+14,5ef78a9dce2f7f58fcd0a6f3,pilot0,2391-2f396ec8-517f-4681-b366-51f930bcac22,1593281181242.0,32EYX73OY49GNJOD0YLK3713S84RUF,C,Pi,1,10,0,place a blue next to the blue that is above the red blocks going leftward,43593,293011,chatMessage
+15,5ef78ac0ce2f7f58fcd0a708,pilot0,2391-2f396ec8-517f-4681-b366-51f930bcac22,1593281216990.0,32EYX73OY49GNJOD0YLK3713S84RUF,C,Pi,1,12,0,do that again but above the previous,23742,328764,chatMessage
+16,5ef78ae3ce2f7f58fcd0a71a,pilot0,2391-2f396ec8-517f-4681-b366-51f930bcac22,1593281251284.0,32EYX73OY49GNJOD0YLK3713S84RUF,L,C,2,0,0,place blue 1 to the right of the left side,20917,20917,chatMessage
+17,5ef78b18ce2f7f58fcd0a72e,pilot0,2391-2f396ec8-517f-4681-b366-51f930bcac22,1593281304277.0,32EYX73OY49GNJOD0YLK3713S84RUF,L,C,2,2,0,place another blue next to that one rightward flat on same level,32841,73910,chatMessage
+18,5ef78b5bce2f7f58fcd0a743,pilot0,2391-2f396ec8-517f-4681-b366-51f930bcac22,1593281371080.0,32EYX73OY49GNJOD0YLK3713S84RUF,L,C,2,4,0,place red tile 1 to the right on left side right above first blue ,39756,140716,chatMessage
+19,5ef78b7fce2f7f58fcd0a753,pilot0,2391-2f396ec8-517f-4681-b366-51f930bcac22,1593281407062.0,32EYX73OY49GNJOD0YLK3713S84RUF,L,C,2,6,0,place another red above the previous red tile,21399,176694,chatMessage
+20,5ef78b9fce2f7f58fcd0a75e,pilot0,2391-2f396ec8-517f-4681-b366-51f930bcac22,1593281439679.0,32EYX73OY49GNJOD0YLK3713S84RUF,L,C,2,8,0,place blue 3 to the left of the right side going leftward,27510,209316,chatMessage
+21,5ef78bcbce2f7f58fcd0a76e,pilot0,2391-2f396ec8-517f-4681-b366-51f930bcac22,1593281483646.0,32EYX73OY49GNJOD0YLK3713S84RUF,L,C,2,10,0,place red tile above the right side of blue you just placed ,29126,253281,chatMessage
+22,5ef78be0ce2f7f58fcd0a780,pilot0,2391-2f396ec8-517f-4681-b366-51f930bcac22,1593281504840.0,32EYX73OY49GNJOD0YLK3713S84RUF,L,C,2,12,0,place another red above the previous red you just placed,13744,274478,chatMessage
+23,5ef78bf5ce2f7f58fcd0a785,pilot0,2391-2f396ec8-517f-4681-b366-51f930bcac22,1593281525942.0,32EYX73OY49GNJOD0YLK3713S84RUF,L,C,2,14,0,place blue above the red you just placed but point it rightward ,16255,295579,chatMessage
+24,5ef78c1dce2f7f58fcd0a796,pilot0,2391-2f396ec8-517f-4681-b366-51f930bcac22,1593281565979.0,32EYX73OY49GNJOD0YLK3713S84RUF,C,L,3,0,1,place blue 2 to the right of the left going rightward ,30204,30204,chatMessage
+25,5ef78c45ce2f7f58fcd0a7a7,pilot0,2391-2f396ec8-517f-4681-b366-51f930bcac22,1593281605966.0,32EYX73OY49GNJOD0YLK3713S84RUF,C,L,3,2,1,place red above the blue on the blues  left side ,28217,70190,chatMessage
+26,5ef78c54ce2f7f58fcd0a7a9,pilot0,2391-2f396ec8-517f-4681-b366-51f930bcac22,1593281620405.0,32EYX73OY49GNJOD0YLK3713S84RUF,C,L,3,4,1,place another red above previous red,9026,84629,chatMessage
+27,5ef78c75ce2f7f58fcd0a7b0,pilot0,2391-2f396ec8-517f-4681-b366-51f930bcac22,1593281653448.0,32EYX73OY49GNJOD0YLK3713S84RUF,C,L,3,6,1,place a blue above the red but point it rightward,28067,117664,chatMessage
+28,5ef78c8cce2f7f58fcd0a7b3,pilot0,2391-2f396ec8-517f-4681-b366-51f930bcac22,1593281676737.0,32EYX73OY49GNJOD0YLK3713S84RUF,C,L,3,8,1,place blue 1 to the left on the right side ,15652,140963,chatMessage
+29,5ef78cbace2f7f58fcd0a7bc,pilot0,2391-2f396ec8-517f-4681-b366-51f930bcac22,1593281722525.0,32EYX73OY49GNJOD0YLK3713S84RUF,C,L,3,10,1,place another blue next to that one flat against it going leftward,32158,186747,chatMessage
+30,5ef78ce0ce2f7f58fcd0a7c5,pilot0,2391-2f396ec8-517f-4681-b366-51f930bcac22,1593281760950.0,32EYX73OY49GNJOD0YLK3713S84RUF,C,L,3,12,1,place a red above the previous blues ones left block tile ,31996,225180,chatMessage
+31,5ef78cface2f7f58fcd0a7ca,pilot0,2391-2f396ec8-517f-4681-b366-51f930bcac22,1593281786095.0,32EYX73OY49GNJOD0YLK3713S84RUF,C,L,3,14,1,place another red above the previous red,12779,250324,chatMessage
+32,5ef78d12ce2f7f58fcd0a7cf,pilot0,2391-2f396ec8-517f-4681-b366-51f930bcac22,1593281810123.0,32EYX73OY49GNJOD0YLK3713S84RUF,Pi,C,4,0,1,place red 1 to the right ,15464,15464,chatMessage
+33,5ef78d2ece2f7f58fcd0a7d4,pilot0,2391-2f396ec8-517f-4681-b366-51f930bcac22,1593281838441.0,32EYX73OY49GNJOD0YLK3713S84RUF,Pi,C,4,2,1,place blue above red going rightward ,22076,43784,chatMessage
+34,5ef78d49ce2f7f58fcd0a7dc,pilot0,2391-2f396ec8-517f-4681-b366-51f930bcac22,1593281865347.0,32EYX73OY49GNJOD0YLK3713S84RUF,Pi,C,4,4,1,place another blue next to previous blue on same level going rightward,21650,70693,chatMessage
+35,5ef78d6fce2f7f58fcd0a7e4,pilot0,2391-2f396ec8-517f-4681-b366-51f930bcac22,1593281903772.0,32EYX73OY49GNJOD0YLK3713S84RUF,Pi,C,4,6,1,place a blue next to the blue that is above red going rightward,26528,109117,chatMessage
+36,5ef78d9bce2f7f58fcd0a7ed,pilot0,2391-2f396ec8-517f-4681-b366-51f930bcac22,1593281947052.0,32EYX73OY49GNJOD0YLK3713S84RUF,Pi,C,4,8,1,place a blue 2 to the left of the far right going leftward,31766,152397,chatMessage
+37,5ef78dbbce2f7f58fcd0a7f9,pilot0,2391-2f396ec8-517f-4681-b366-51f930bcac22,1593281979187.0,32EYX73OY49GNJOD0YLK3713S84RUF,Pi,C,4,10,1,place red above blue left tile you just placed,24522,184535,chatMessage
+38,5ef78de5ce2f7f58fcd0a804,pilot0,2391-2f396ec8-517f-4681-b366-51f930bcac22,1593282021074.0,32EYX73OY49GNJOD0YLK3713S84RUF,Pi,C,4,12,1,"no the other one, one more over to the left of the one you just placed",33461,226421,chatMessage
+39,5ef78dfcce2f7f58fcd0a80e,pilot0,2391-2f396ec8-517f-4681-b366-51f930bcac22,1593282044566.0,32EYX73OY49GNJOD0YLK3713S84RUF,Pi,C,4,14,1,place another red above the previous one you just placed,15843,249916,chatMessage
+40,5ef78e16ce2f7f58fcd0a814,pilot0,2391-2f396ec8-517f-4681-b366-51f930bcac22,1593282070189.0,32EYX73OY49GNJOD0YLK3713S84RUF,Pi,L,5,0,1,place red 1 to the right ,16532,16532,chatMessage
+41,5ef78e46ce2f7f58fcd0a821,pilot0,2391-2f396ec8-517f-4681-b366-51f930bcac22,1593282118293.0,32EYX73OY49GNJOD0YLK3713S84RUF,Pi,L,5,2,1,place blues left tile above red going rightward ,35445,64635,chatMessage
+42,5ef78e5ace2f7f58fcd0a825,pilot0,2391-2f396ec8-517f-4681-b366-51f930bcac22,1593282138328.0,32EYX73OY49GNJOD0YLK3713S84RUF,Pi,L,5,4,1,place another blue next to that blue going rightward,14501,84667,chatMessage
+43,5ef78e8ace2f7f58fcd0a837,pilot0,2391-2f396ec8-517f-4681-b366-51f930bcac22,1593282186289.0,32EYX73OY49GNJOD0YLK3713S84RUF,Pi,L,5,6,1,no not flat on ground put one next to the blue that is 3 high,37055,132636,chatMessage
+44,5ef78eaace2f7f58fcd0a844,pilot0,2391-2f396ec8-517f-4681-b366-51f930bcac22,1593282218742.0,32EYX73OY49GNJOD0YLK3713S84RUF,Pi,L,5,8,1,place another blue then above the previous,19128,165087,chatMessage
+45,5ef78ec6ce2f7f58fcd0a84e,pilot0,2391-2f396ec8-517f-4681-b366-51f930bcac22,1593282246210.0,32EYX73OY49GNJOD0YLK3713S84RUF,Pi,L,5,10,1,place a blue 1 to the left going leftward,22797,192558,chatMessage
+46,5ef78ef2ce2f7f58fcd0a867,pilot0,2391-2f396ec8-517f-4681-b366-51f930bcac22,1593282290719.0,32EYX73OY49GNJOD0YLK3713S84RUF,Pi,L,5,12,1,place a blue next to that one ,28303,237068,chatMessage
+47,5ef78f0cce2f7f58fcd0a873,pilot0,2391-2f396ec8-517f-4681-b366-51f930bcac22,1593282316844.0,32EYX73OY49GNJOD0YLK3713S84RUF,Pi,L,5,14,1,stack 2 reds above the left blue tile,18158,263191,chatMessage
+48,5ef78f29ce2f7f58fcd0a883,pilot0,2391-2f396ec8-517f-4681-b366-51f930bcac22,1593282345511.0,32EYX73OY49GNJOD0YLK3713S84RUF,L,C,6,0,2,place blue 1 to the right of left side,11335,11335,chatMessage
+49,5ef78f57ce2f7f58fcd0a897,pilot0,2391-2f396ec8-517f-4681-b366-51f930bcac22,1593282391806.0,32EYX73OY49GNJOD0YLK3713S84RUF,L,C,6,2,2,place another blue next to that one,14660,57633,chatMessage
+50,5ef78f73ce2f7f58fcd0a8a7,pilot0,2391-2f396ec8-517f-4681-b366-51f930bcac22,1593282419114.0,32EYX73OY49GNJOD0YLK3713S84RUF,L,C,6,4,2,place a red above the first blue left tile,15432,84940,chatMessage
+51,5ef78f82ce2f7f58fcd0a8b2,pilot0,2391-2f396ec8-517f-4681-b366-51f930bcac22,1593282434605.0,32EYX73OY49GNJOD0YLK3713S84RUF,L,C,6,6,2,"place another one  above that one
+",6691,100430,chatMessage
+52,5ef78fa5ce2f7f58fcd0a8c2,pilot0,2391-2f396ec8-517f-4681-b366-51f930bcac22,1593282469035.0,32EYX73OY49GNJOD0YLK3713S84RUF,L,C,6,8,2,place a blue 2 to the left of right side,15500,134861,chatMessage
+53,5ef78fbdce2f7f58fcd0a8ce,pilot0,2391-2f396ec8-517f-4681-b366-51f930bcac22,1593282493532.0,32EYX73OY49GNJOD0YLK3713S84RUF,L,C,6,10,2,place red above that blue left tile,15692,159363,chatMessage
+54,5ef78fcbce2f7f58fcd0a8d7,pilot0,2391-2f396ec8-517f-4681-b366-51f930bcac22,1593282507718.0,32EYX73OY49GNJOD0YLK3713S84RUF,L,C,6,12,2,place another red above that one,8204,173547,chatMessage
+55,5ef78fdece2f7f58fcd0a8e5,pilot0,2391-2f396ec8-517f-4681-b366-51f930bcac22,1593282526648.0,32EYX73OY49GNJOD0YLK3713S84RUF,L,C,6,14,2,place a blue above that one going rightward,13073,192474,chatMessage
+56,5ef78ff5ce2f7f58fcd0a8f3,pilot0,2391-2f396ec8-517f-4681-b366-51f930bcac22,1593282549625.0,32EYX73OY49GNJOD0YLK3713S84RUF,L,Pi,7,0,2,place blue 1 to the right of left,10536,10536,chatMessage
+57,5ef79008ce2f7f58fcd0a8ff,pilot0,2391-2f396ec8-517f-4681-b366-51f930bcac22,1593282568517.0,32EYX73OY49GNJOD0YLK3713S84RUF,L,Pi,7,2,2,place another one next to that,8024,29424,chatMessage
+58,5ef79036ce2f7f58fcd0a921,pilot0,2391-2f396ec8-517f-4681-b366-51f930bcac22,1593282614353.0,32EYX73OY49GNJOD0YLK3713S84RUF,L,Pi,7,4,2,place a red above the first blues left most tile,27250,75265,chatMessage
+59,5ef79044ce2f7f58fcd0a92b,pilot0,2391-2f396ec8-517f-4681-b366-51f930bcac22,1593282628307.0,32EYX73OY49GNJOD0YLK3713S84RUF,L,Pi,7,6,2,place another red above that one,9076,89220,chatMessage
+60,5ef7906ece2f7f58fcd0a940,pilot0,2391-2f396ec8-517f-4681-b366-51f930bcac22,1593282670529.0,32EYX73OY49GNJOD0YLK3713S84RUF,L,Pi,7,8,2,place a red 1 to the left of the far right,19206,131443,chatMessage
+61,5ef7908ece2f7f58fcd0a94b,pilot0,2391-2f396ec8-517f-4681-b366-51f930bcac22,1593282702351.0,32EYX73OY49GNJOD0YLK3713S84RUF,L,Pi,7,10,2,place a blues right tile above the red going leftward,22902,163261,chatMessage
+62,5ef7909ece2f7f58fcd0a952,pilot0,2391-2f396ec8-517f-4681-b366-51f930bcac22,1593282718163.0,32EYX73OY49GNJOD0YLK3713S84RUF,L,Pi,7,12,2,place another blue next to that blue,8213,179076,chatMessage
+63,5ef790c5ce2f7f58fcd0a95f,pilot0,2391-2f396ec8-517f-4681-b366-51f930bcac22,1593282757682.0,32EYX73OY49GNJOD0YLK3713S84RUF,L,Pi,7,14,2,place another blue on same level as the first blue,33872,218591,chatMessage
+64,5ef790e0ce2f7f58fcd0a968,pilot0,2391-2f396ec8-517f-4681-b366-51f930bcac22,1593282784695.0,32EYX73OY49GNJOD0YLK3713S84RUF,C,Pi,8,0,2,place blue 2 to the right of left,17411,17411,chatMessage
+65,5ef790f3ce2f7f58fcd0a96e,pilot0,2391-2f396ec8-517f-4681-b366-51f930bcac22,1593282803085.0,32EYX73OY49GNJOD0YLK3713S84RUF,C,Pi,8,2,2,place red above blues left most tile,10300,35797,chatMessage
+66,5ef79107ce2f7f58fcd0a975,pilot0,2391-2f396ec8-517f-4681-b366-51f930bcac22,1593282823349.0,32EYX73OY49GNJOD0YLK3713S84RUF,C,Pi,8,4,2,place red above that red,5882,56065,chatMessage
+67,5ef7911dce2f7f58fcd0a97c,pilot0,2391-2f396ec8-517f-4681-b366-51f930bcac22,1593282845138.0,32EYX73OY49GNJOD0YLK3713S84RUF,C,Pi,8,6,2,place blues left tile above red going right,16337,77845,chatMessage
+68,5ef79133ce2f7f58fcd0a97e,pilot0,2391-2f396ec8-517f-4681-b366-51f930bcac22,1593282867034.0,32EYX73OY49GNJOD0YLK3713S84RUF,C,Pi,8,8,2,place a red 1 to the left  of right side,14194,99748,chatMessage
+69,5ef79145ce2f7f58fcd0a980,pilot0,2391-2f396ec8-517f-4681-b366-51f930bcac22,1593282885659.0,32EYX73OY49GNJOD0YLK3713S84RUF,C,Pi,8,10,2,place a blue above the red going leftward,12335,118370,chatMessage
+70,5ef79160ce2f7f58fcd0a982,pilot0,2391-2f396ec8-517f-4681-b366-51f930bcac22,1593282912471.0,32EYX73OY49GNJOD0YLK3713S84RUF,C,Pi,8,12,2,place a red 2 to the left of the first red,21734,145187,chatMessage
+71,5ef7918cce2f7f58fcd0a986,pilot0,2391-2f396ec8-517f-4681-b366-51f930bcac22,1593282956952.0,32EYX73OY49GNJOD0YLK3713S84RUF,C,Pi,8,14,2,place a blues left tile above the red that you just placed connecting to other blue,32219,189668,chatMessage
+72,5ef791a6ce2f7f58fcd0a989,pilot0,2391-2f396ec8-517f-4681-b366-51f930bcac22,1593282982666.0,32EYX73OY49GNJOD0YLK3713S84RUF,Pi,C,9,0,3,place a red 1 to the right of left side,16528,16528,chatMessage
+73,5ef791c3ce2f7f58fcd0a98b,pilot0,2391-2f396ec8-517f-4681-b366-51f930bcac22,1593283011093.0,32EYX73OY49GNJOD0YLK3713S84RUF,Pi,C,9,2,3,place a blues left tile above that red,15885,44958,chatMessage
+74,5ef791e0ce2f7f58fcd0a98d,pilot0,2391-2f396ec8-517f-4681-b366-51f930bcac22,1593283040264.0,32EYX73OY49GNJOD0YLK3713S84RUF,Pi,C,9,4,3,place a red tile 2 to the right of the first red ,21883,74130,chatMessage
+75,5ef791f4ce2f7f58fcd0a98f,pilot0,2391-2f396ec8-517f-4681-b366-51f930bcac22,1593283060483.0,32EYX73OY49GNJOD0YLK3713S84RUF,Pi,C,9,6,3,place a blue above that red connecting to the other blue,12342,94350,chatMessage
+76,5ef7920cce2f7f58fcd0a991,pilot0,2391-2f396ec8-517f-4681-b366-51f930bcac22,1593283084386.0,32EYX73OY49GNJOD0YLK3713S84RUF,Pi,C,9,8,3,place a blue 2 to the left on the far right,17141,118252,chatMessage
+77,5ef79224ce2f7f58fcd0a993,pilot0,2391-2f396ec8-517f-4681-b366-51f930bcac22,1593283108354.0,32EYX73OY49GNJOD0YLK3713S84RUF,Pi,C,9,10,3,place a red on the blues left most tile that you just placed,16371,142217,chatMessage
+78,5ef7923ace2f7f58fcd0a995,pilot0,2391-2f396ec8-517f-4681-b366-51f930bcac22,1593283130753.0,32EYX73OY49GNJOD0YLK3713S84RUF,Pi,C,9,12,3,place a red above that one,7882,164619,chatMessage
+79,5ef79261ce2f7f58fcd0a997,pilot0,2391-2f396ec8-517f-4681-b366-51f930bcac22,1593283169187.0,32EYX73OY49GNJOD0YLK3713S84RUF,Pi,C,9,14,3,place a blue above that red going rightward ,19435,203060,chatMessage
+80,5ef79278ce2f7f58fcd0a99a,pilot0,2391-2f396ec8-517f-4681-b366-51f930bcac22,1593283192895.0,32EYX73OY49GNJOD0YLK3713S84RUF,Pi,L,10,0,3,place a red 1 to the right of left side,14228,14228,chatMessage
+81,5ef7928bce2f7f58fcd0a99c,pilot0,2391-2f396ec8-517f-4681-b366-51f930bcac22,1593283211555.0,32EYX73OY49GNJOD0YLK3713S84RUF,Pi,L,10,2,3,place a blue above that going rightward,11992,32887,chatMessage
+82,5ef7929cce2f7f58fcd0a99e,pilot0,2391-2f396ec8-517f-4681-b366-51f930bcac22,1593283228642.0,32EYX73OY49GNJOD0YLK3713S84RUF,Pi,L,10,4,3,place a red 2 to the right of the first red,11342,49963,chatMessage
+83,5ef792afce2f7f58fcd0a9a0,pilot0,2391-2f396ec8-517f-4681-b366-51f930bcac22,1593283247961.0,32EYX73OY49GNJOD0YLK3713S84RUF,Pi,L,10,6,3,place another blue above that red connecting to the other blue,12536,69295,chatMessage
+84,5ef792bfce2f7f58fcd0a9a2,pilot0,2391-2f396ec8-517f-4681-b366-51f930bcac22,1593283263921.0,32EYX73OY49GNJOD0YLK3713S84RUF,Pi,L,10,8,3,place a blue 1 to the left of the right side,11554,85254,chatMessage
+85,5ef792d5ce2f7f58fcd0a9a4,pilot0,2391-2f396ec8-517f-4681-b366-51f930bcac22,1593283285014.0,32EYX73OY49GNJOD0YLK3713S84RUF,Pi,L,10,10,3,place another blue next to that one going left,14312,106349,chatMessage
+86,5ef792e7ce2f7f58fcd0a9a6,pilot0,2391-2f396ec8-517f-4681-b366-51f930bcac22,1593283303102.0,32EYX73OY49GNJOD0YLK3713S84RUF,Pi,L,10,12,3,place a red above that blues left most tile,11874,124438,chatMessage
+87,5ef792f8ce2f7f58fcd0a9a8,pilot0,2391-2f396ec8-517f-4681-b366-51f930bcac22,1593283320178.0,32EYX73OY49GNJOD0YLK3713S84RUF,Pi,L,10,14,3,place another ed above that one,7912,141514,chatMessage
+88,5ef7930fce2f7f58fcd0a9ab,pilot0,2391-2f396ec8-517f-4681-b366-51f930bcac22,1593283343089.0,32EYX73OY49GNJOD0YLK3713S84RUF,C,L,11,0,3,place a blue 2 to the right of left side ,13568,13568,chatMessage
+89,5ef79322ce2f7f58fcd0a9ad,pilot0,2391-2f396ec8-517f-4681-b366-51f930bcac22,1593283362199.0,32EYX73OY49GNJOD0YLK3713S84RUF,C,L,11,2,3,place a red above that blues left most tile ,11265,32679,chatMessage
+90,5ef7932ece2f7f58fcd0a9af,pilot0,2391-2f396ec8-517f-4681-b366-51f930bcac22,1593283374605.0,32EYX73OY49GNJOD0YLK3713S84RUF,C,L,11,4,3,place another red above that one,7477,45084,chatMessage
+91,5ef7933dce2f7f58fcd0a9b1,pilot0,2391-2f396ec8-517f-4681-b366-51f930bcac22,1593283389525.0,32EYX73OY49GNJOD0YLK3713S84RUF,C,L,11,6,3,place a blue above that red going rightward,10445,59991,chatMessage
+92,5ef7934fce2f7f58fcd0a9b3,pilot0,2391-2f396ec8-517f-4681-b366-51f930bcac22,1593283407540.0,32EYX73OY49GNJOD0YLK3713S84RUF,C,L,11,8,3,place a blue 1 to the left of right side,12871,78018,chatMessage
+93,5ef79362ce2f7f58fcd0a9b5,pilot0,2391-2f396ec8-517f-4681-b366-51f930bcac22,1593283426581.0,32EYX73OY49GNJOD0YLK3713S84RUF,C,L,11,10,3,place another blue next to that one going leftward,13693,97062,chatMessage
+94,5ef79378ce2f7f58fcd0a9b7,pilot0,2391-2f396ec8-517f-4681-b366-51f930bcac22,1593283448600.0,32EYX73OY49GNJOD0YLK3713S84RUF,C,L,11,12,3,place a red above that blues left most tile,17216,119080,chatMessage
+95,5ef79386ce2f7f58fcd0a9b9,pilot0,2391-2f396ec8-517f-4681-b366-51f930bcac22,1593283462142.0,32EYX73OY49GNJOD0YLK3713S84RUF,C,L,11,14,3,place another red above that one,7608,132625,chatMessage
+0,5ef78d87ce2f7f58fcd0a7e8,pilot0,9387-db1af5ad-b089-48ad-a730-baee40f08177,1593281927545.0,3R0T90IZ1WCTCZYZYW68AX1QJZMCGU,horizontal,vertical,practice,0,practice,BUILDER CAN BE ONLY PERMIT THE DOMNIO,141169,141169,chatMessage
+1,5ef78de5ce2f7f58fcd0a805,pilot0,9387-db1af5ad-b089-48ad-a730-baee40f08177,1593282021552.0,3R0T90IZ1WCTCZYZYW68AX1QJZMCGU,horizontal,vertical,practice,0,practice,arrange the blocks fastly,55057,55057,chatMessage
+2,5ef78e1cce2f7f58fcd0a815,pilot0,9387-db1af5ad-b089-48ad-a730-baee40f08177,1593282076113.0,3R0T90IZ1WCTCZYZYW68AX1QJZMCGU,horizontal,vertical,practice,0,practice,ok nice try,33800,33800,chatMessage
+3,5ef78e62ce2f7f58fcd0a827,pilot0,9387-db1af5ad-b089-48ad-a730-baee40f08177,1593282146778.0,3R0T90IZ1WCTCZYZYW68AX1QJZMCGU,L,Pi,0,0,0,next use the block easy,41227,41227,chatMessage
+4,5ef78ec0ce2f7f58fcd0a84d,pilot0,9387-db1af5ad-b089-48ad-a730-baee40f08177,1593282240178.0,3R0T90IZ1WCTCZYZYW68AX1QJZMCGU,L,C,1,0,0,ok not bad,34946,34946,chatMessage
+5,5ef78f19ce2f7f58fcd0a87a,pilot0,9387-db1af5ad-b089-48ad-a730-baee40f08177,1593282329952.0,3R0T90IZ1WCTCZYZYW68AX1QJZMCGU,C,Pi,2,0,0,super,29697,29697,chatMessage
+6,5ef78f63ce2f7f58fcd0a89e,pilot0,9387-db1af5ad-b089-48ad-a730-baee40f08177,1593282403943.0,3R0T90IZ1WCTCZYZYW68AX1QJZMCGU,C,L,3,0,1,duper,5448,5448,chatMessage
+7,5ef78f93ce2f7f58fcd0a8ba,pilot0,9387-db1af5ad-b089-48ad-a730-baee40f08177,1593282451142.0,3R0T90IZ1WCTCZYZYW68AX1QJZMCGU,Pi,C,4,0,1,super ,7953,7953,chatMessage
+8,5ef78fdcce2f7f58fcd0a8e3,pilot0,9387-db1af5ad-b089-48ad-a730-baee40f08177,1593282524190.0,3R0T90IZ1WCTCZYZYW68AX1QJZMCGU,Pi,L,5,0,1,ok,2872,2872,chatMessage
+9,5ef7900ece2f7f58fcd0a901,pilot0,9387-db1af5ad-b089-48ad-a730-baee40f08177,1593282574929.0,3R0T90IZ1WCTCZYZYW68AX1QJZMCGU,C,Pi,6,0,2,iik,4889,4889,chatMessage
+10,5ef7903bce2f7f58fcd0a924,pilot0,9387-db1af5ad-b089-48ad-a730-baee40f08177,1593282619427.0,3R0T90IZ1WCTCZYZYW68AX1QJZMCGU,L,C,7,0,2,ok,6294,6294,chatMessage
+11,5ef7906fce2f7f58fcd0a941,pilot0,9387-db1af5ad-b089-48ad-a730-baee40f08177,1593282671713.0,3R0T90IZ1WCTCZYZYW68AX1QJZMCGU,L,Pi,8,0,2,ok,5567,5567,chatMessage
+12,5ef7909cce2f7f58fcd0a951,pilot0,9387-db1af5ad-b089-48ad-a730-baee40f08177,1593282716015.0,3R0T90IZ1WCTCZYZYW68AX1QJZMCGU,Pi,C,9,0,3,ok,3909,3909,chatMessage
+13,5ef790c8ce2f7f58fcd0a960,pilot0,9387-db1af5ad-b089-48ad-a730-baee40f08177,1593282760911.0,3R0T90IZ1WCTCZYZYW68AX1QJZMCGU,C,L,10,0,3,kk,4423,4423,chatMessage
+14,5ef790fbce2f7f58fcd0a96f,pilot0,9387-db1af5ad-b089-48ad-a730-baee40f08177,1593282811546.0,3R0T90IZ1WCTCZYZYW68AX1QJZMCGU,Pi,L,11,0,3,ok,9521,9521,chatMessage
+0,5ef91311ce2f7f58fcd0aa66,pilot2,6753-24a4a6e7-e017-4cba-a068-8dea7af05cf2,1593381649753.0,3ATTHHXXWEOVBOFPFG2Y9MZGZZTXIA,horizontal,vertical,practice,0,practice,horizontal centred on left on the bottommost row,69855,69855,chatMessage
+1,5ef91362ce2f7f58fcd0aa6a,pilot2,6753-24a4a6e7-e017-4cba-a068-8dea7af05cf2,1593381730887.0,3ATTHHXXWEOVBOFPFG2Y9MZGZZTXIA,horizontal,vertical,practice,2,practice,vertical left of the right tick on the bottommost row,39870,150990,chatMessage
+2,5ef91399ce2f7f58fcd0aa6d,pilot2,6753-24a4a6e7-e017-4cba-a068-8dea7af05cf2,1593381785582.0,3ATTHHXXWEOVBOFPFG2Y9MZGZZTXIA,L,Pi,0,0,0,horizontal fully on the right of the left tick,37308,37308,chatMessage
+3,5ef913bfce2f7f58fcd0aa6f,pilot2,6753-24a4a6e7-e017-4cba-a068-8dea7af05cf2,1593381823245.0,3ATTHHXXWEOVBOFPFG2Y9MZGZZTXIA,L,Pi,0,2,0,horizontal fully on the left of the left tick,14006,74972,chatMessage
+4,5ef913f7ce2f7f58fcd0aa71,pilot2,6753-24a4a6e7-e017-4cba-a068-8dea7af05cf2,1593381879672.0,3ATTHHXXWEOVBOFPFG2Y9MZGZZTXIA,L,Pi,0,4,0,Form an L using 2 vertical blocks from the leftmost block you placed,29214,131398,chatMessage
+5,5ef91423ce2f7f58fcd0aa75,pilot2,6753-24a4a6e7-e017-4cba-a068-8dea7af05cf2,1593381923680.0,3ATTHHXXWEOVBOFPFG2Y9MZGZZTXIA,L,Pi,0,6,0,wait - centred on the right tick ,30572,175407,chatMessage
+6,5ef9145cce2f7f58fcd0aa76,pilot2,6753-24a4a6e7-e017-4cba-a068-8dea7af05cf2,1593381980084.0,3ATTHHXXWEOVBOFPFG2Y9MZGZZTXIA,L,Pi,0,8,0,vertical block on the 2nd block to the left of the right tick,30818,231810,chatMessage
+7,5ef91493ce2f7f58fcd0aa79,pilot2,6753-24a4a6e7-e017-4cba-a068-8dea7af05cf2,1593382035731.0,3ATTHHXXWEOVBOFPFG2Y9MZGZZTXIA,L,Pi,0,10,0,the second block your placed is right - wait,30745,287450,chatMessage
+8,5ef914aece2f7f58fcd0aa7a,pilot2,6753-24a4a6e7-e017-4cba-a068-8dea7af05cf2,1593382062845.0,3ATTHHXXWEOVBOFPFG2Y9MZGZZTXIA,L,Pi,0,12,0,vertical block on the 2nd block to the right of the right tick,17910,314570,chatMessage
+9,5ef914dcce2f7f58fcd0aa7c,pilot2,6753-24a4a6e7-e017-4cba-a068-8dea7af05cf2,1593382108708.0,3ATTHHXXWEOVBOFPFG2Y9MZGZZTXIA,L,Pi,0,14,0,2 Horizontal blocks making an inverted U ,28894,360433,chatMessage
+10,5ef91503ce2f7f58fcd0aa7f,pilot2,6753-24a4a6e7-e017-4cba-a068-8dea7af05cf2,1593382147127.0,3ATTHHXXWEOVBOFPFG2Y9MZGZZTXIA,L,C,1,0,0,Same L on the left tick as last time~~~ nothing on the leftmost column,28767,28767,chatMessage
+11,5ef91525ce2f7f58fcd0aa84,pilot2,6753-24a4a6e7-e017-4cba-a068-8dea7af05cf2,1593382181165.0,3ATTHHXXWEOVBOFPFG2Y9MZGZZTXIA,L,C,1,2,0,centred on the right tick horizontal block,20816,62804,chatMessage
+12,5ef9154cce2f7f58fcd0aa86,pilot2,6753-24a4a6e7-e017-4cba-a068-8dea7af05cf2,1593382220417.0,3ATTHHXXWEOVBOFPFG2Y9MZGZZTXIA,L,C,1,4,0,2 vertical blocks on top of the left block on the right tick,34289,102056,chatMessage
+13,5ef91574ce2f7f58fcd0aa89,pilot2,6753-24a4a6e7-e017-4cba-a068-8dea7af05cf2,1593382260019.0,3ATTHHXXWEOVBOFPFG2Y9MZGZZTXIA,L,C,1,6,0,horizontal block centred on the right tick above the vertical blocks,26654,141659,chatMessage
+14,5ef9159ece2f7f58fcd0aa8d,pilot2,6753-24a4a6e7-e017-4cba-a068-8dea7af05cf2,1593382302495.0,3ATTHHXXWEOVBOFPFG2Y9MZGZZTXIA,C,Pi,2,0,0,Same inverted U on the right tick as first time,25377,25377,chatMessage
+15,5ef915d2ce2f7f58fcd0aa95,pilot2,6753-24a4a6e7-e017-4cba-a068-8dea7af05cf2,1593382354511.0,3ATTHHXXWEOVBOFPFG2Y9MZGZZTXIA,C,Pi,2,2,0,Same tall tower which we built on the right tick in left tick - wait if doubt,34466,77394,chatMessage
+16,5ef915f5ce2f7f58fcd0aa97,pilot2,6753-24a4a6e7-e017-4cba-a068-8dea7af05cf2,1593382389895.0,3ATTHHXXWEOVBOFPFG2Y9MZGZZTXIA,C,Pi,2,4,0,horizontal block centred on the left tick,15623,112777,chatMessage
+17,5ef91619ce2f7f58fcd0aa9c,pilot2,6753-24a4a6e7-e017-4cba-a068-8dea7af05cf2,1593382425829.0,3ATTHHXXWEOVBOFPFG2Y9MZGZZTXIA,C,Pi,2,6,0,2 vertical blocks on top of each other on top of the left block ,25861,148708,chatMessage
+18,5ef9163ece2f7f58fcd0aaa1,pilot2,6753-24a4a6e7-e017-4cba-a068-8dea7af05cf2,1593382462581.0,3ATTHHXXWEOVBOFPFG2Y9MZGZZTXIA,C,Pi,2,8,0,horizontal block centred on the left tick above the vertical blocks,30495,185459,chatMessage
+19,5ef91670ce2f7f58fcd0aaa7,pilot2,6753-24a4a6e7-e017-4cba-a068-8dea7af05cf2,1593382512068.0,3ATTHHXXWEOVBOFPFG2Y9MZGZZTXIA,Pi,L,3,0,1,wait if doubt - inverted U on the left tick~~~ L on the right tick,28506,28506,chatMessage
+20,5ef916bbce2f7f58fcd0aab3,pilot2,6753-24a4a6e7-e017-4cba-a068-8dea7af05cf2,1593382587963.0,3ATTHHXXWEOVBOFPFG2Y9MZGZZTXIA,Pi,C,4,0,1,wait if doubt - inverted U on the left tick~~~ Tall tower on the right tick,30085,30085,chatMessage
+21,5ef91710ce2f7f58fcd0aabf,pilot2,6753-24a4a6e7-e017-4cba-a068-8dea7af05cf2,1593382672885.0,3ATTHHXXWEOVBOFPFG2Y9MZGZZTXIA,C,L,5,0,1,L on the right tick~~~ Tall tower on the left tick,29703,29703,chatMessage
+22,5ef91752ce2f7f58fcd0aace,pilot2,6753-24a4a6e7-e017-4cba-a068-8dea7af05cf2,1593382738772.0,3ATTHHXXWEOVBOFPFG2Y9MZGZZTXIA,C,Pi,6,0,2,Inverted U on the right tick and tall tower on the left tick,16481,16481,chatMessage
+23,5ef917a5ce2f7f58fcd0aadc,pilot2,6753-24a4a6e7-e017-4cba-a068-8dea7af05cf2,1593382821660.0,3ATTHHXXWEOVBOFPFG2Y9MZGZZTXIA,L,C,7,0,2,L on the left tick and tall tower on the right tick,14629,14629,chatMessage
+24,5ef917f2ce2f7f58fcd0aaec,pilot2,6753-24a4a6e7-e017-4cba-a068-8dea7af05cf2,1593382898492.0,3ATTHHXXWEOVBOFPFG2Y9MZGZZTXIA,L,Pi,8,0,2,inverted U on the right tick and L on the left tick,12596,12596,chatMessage
+25,5ef91849ce2f7f58fcd0aafb,pilot2,6753-24a4a6e7-e017-4cba-a068-8dea7af05cf2,1593382985667.0,3ATTHHXXWEOVBOFPFG2Y9MZGZZTXIA,C,L,9,0,3,Tall tower on the left tick and L on the right tick~~~,17937,17937,chatMessage
+26,5ef918a1ce2f7f58fcd0ab0a,pilot2,6753-24a4a6e7-e017-4cba-a068-8dea7af05cf2,1593383073333.0,3ATTHHXXWEOVBOFPFG2Y9MZGZZTXIA,Pi,L,10,0,3,Inverted U on the left tick and L on the right tick ,15265,15265,chatMessage
+27,5ef9190ece2f7f58fcd0ab1a,pilot2,6753-24a4a6e7-e017-4cba-a068-8dea7af05cf2,1593383182297.0,3ATTHHXXWEOVBOFPFG2Y9MZGZZTXIA,Pi,C,11,0,3,Inverted U on the left tick and tall tower on the right tick,15123,15123,chatMessage
+0,5ef91584ce2f7f58fcd0aa8c,pilot2,4282-2568ede7-963d-4fee-ab15-b69e472ef360,1593382276498.0,3EQHHY4HQWS8DEPKJMJ0WRVGRNS5GH,horizontal,vertical,practice,0,practice,place one block on A3 and one block on A4~~~ Place a block on A9 and B9,172970,172970,chatMessage
+1,5ef915f0ce2f7f58fcd0aa96,pilot2,4282-2568ede7-963d-4fee-ab15-b69e472ef360,1593382384267.0,3EQHHY4HQWS8DEPKJMJ0WRVGRNS5GH,horizontal,vertical,practice,0,practice,put one block on a3 and one on a4 then a block on a9 and one on b9,48693,48693,chatMessage
+2,5ef91635ce2f7f58fcd0aa9f,pilot2,4282-2568ede7-963d-4fee-ab15-b69e472ef360,1593382453770.0,3EQHHY4HQWS8DEPKJMJ0WRVGRNS5GH,L,C,0,0,0,"put block on a2, b2, b3, b4, b5, a1, ",41406,41406,chatMessage
+3,5ef91681ce2f7f58fcd0aaac,pilot2,4282-2568ede7-963d-4fee-ab15-b69e472ef360,1593382529498.0,3EQHHY4HQWS8DEPKJMJ0WRVGRNS5GH,L,C,0,2,0,block on a9~~~ a10,30093,117132,chatMessage
+4,5ef916c3ce2f7f58fcd0aab4,pilot2,4282-2568ede7-963d-4fee-ab15-b69e472ef360,1593382595770.0,3EQHHY4HQWS8DEPKJMJ0WRVGRNS5GH,L,C,0,4,0,"block on a9, a10, b9, 39, d9, e9, f9, f10",40874,183409,chatMessage
+5,5ef91746ce2f7f58fcd0aacc,pilot2,4282-2568ede7-963d-4fee-ab15-b69e472ef360,1593382726408.0,3EQHHY4HQWS8DEPKJMJ0WRVGRNS5GH,L,Pi,1,0,0,"a2, b2, c2, d2, e2 a3, a4, a5",34693,34693,chatMessage
+6,5ef917a2ce2f7f58fcd0aadb,pilot2,4282-2568ede7-963d-4fee-ab15-b69e472ef360,1593382818518.0,3EQHHY4HQWS8DEPKJMJ0WRVGRNS5GH,L,Pi,1,2,0,a8 b8 c8 c9,33140,126772,chatMessage
+7,5ef917dbce2f7f58fcd0aae8,pilot2,4282-2568ede7-963d-4fee-ab15-b69e472ef360,1593382875146.0,3EQHHY4HQWS8DEPKJMJ0WRVGRNS5GH,L,Pi,1,4,0,a11 b11 c11 ,32839,183436,chatMessage
+8,5ef91812ce2f7f58fcd0aaf5,pilot2,4282-2568ede7-963d-4fee-ab15-b69e472ef360,1593382930961.0,3EQHHY4HQWS8DEPKJMJ0WRVGRNS5GH,C,Pi,2,0,0,a1 b1 c1 d1 e1,30946,30946,chatMessage
+9,5ef91840ce2f7f58fcd0aafa,pilot2,4282-2568ede7-963d-4fee-ab15-b69e472ef360,1593382976532.0,3EQHHY4HQWS8DEPKJMJ0WRVGRNS5GH,C,Pi,2,2,0,a1 a3 b1,29250,76516,chatMessage
+10,5ef9187dce2f7f58fcd0ab07,pilot2,4282-2568ede7-963d-4fee-ab15-b69e472ef360,1593383037208.0,3EQHHY4HQWS8DEPKJMJ0WRVGRNS5GH,C,Pi,2,4,0,a8 b8 c8 ,30906,137191,chatMessage
+11,5ef918aace2f7f58fcd0ab0b,pilot2,4282-2568ede7-963d-4fee-ab15-b69e472ef360,1593383082633.0,3EQHHY4HQWS8DEPKJMJ0WRVGRNS5GH,C,Pi,2,6,0,a11 b11 c11 c10,30298,182621,chatMessage
+12,5ef918e4ce2f7f58fcd0ab17,pilot2,4282-2568ede7-963d-4fee-ab15-b69e472ef360,1593383140165.0,3EQHHY4HQWS8DEPKJMJ0WRVGRNS5GH,C,L,3,0,1,"a3 a4
+",34888,34888,chatMessage
+13,5ef9190fce2f7f58fcd0ab1b,pilot2,4282-2568ede7-963d-4fee-ab15-b69e472ef360,1593383183397.0,3EQHHY4HQWS8DEPKJMJ0WRVGRNS5GH,C,L,3,2,1,b3 c3 d3 e3 f3 ,35367,78119,chatMessage
+14,5ef9193cce2f7f58fcd0ab27,pilot2,4282-2568ede7-963d-4fee-ab15-b69e472ef360,1593383228804.0,3EQHHY4HQWS8DEPKJMJ0WRVGRNS5GH,C,L,3,4,1,a8 a9 a10 a11 ,28422,123527,chatMessage
+15,5ef91976ce2f7f58fcd0ab2c,pilot2,4282-2568ede7-963d-4fee-ab15-b69e472ef360,1593383286729.0,3EQHHY4HQWS8DEPKJMJ0WRVGRNS5GH,C,L,3,6,1,b8 c8 d8 e8,25713,181452,chatMessage
+16,5ef919abce2f7f58fcd0ab30,pilot2,4282-2568ede7-963d-4fee-ab15-b69e472ef360,1593383339820.0,3EQHHY4HQWS8DEPKJMJ0WRVGRNS5GH,Pi,C,4,0,1,a2 b2 c2 c3 c4,31039,31039,chatMessage
+17,5ef919e0ce2f7f58fcd0ab34,pilot2,4282-2568ede7-963d-4fee-ab15-b69e472ef360,1593383392722.0,3EQHHY4HQWS8DEPKJMJ0WRVGRNS5GH,Pi,C,4,2,1,a5 b5 c5 c4,30444,83942,chatMessage
+18,5ef91a16ce2f7f58fcd0ab37,pilot2,4282-2568ede7-963d-4fee-ab15-b69e472ef360,1593383446750.0,3EQHHY4HQWS8DEPKJMJ0WRVGRNS5GH,Pi,C,4,4,1,c4 c5,20170,137972,chatMessage
+19,5ef91a4ace2f7f58fcd0ab3a,pilot2,4282-2568ede7-963d-4fee-ab15-b69e472ef360,1593383498757.0,3EQHHY4HQWS8DEPKJMJ0WRVGRNS5GH,Pi,C,4,6,1,a9 a10 b9 c9 d9,30698,189975,chatMessage
+20,5ef91a82ce2f7f58fcd0ab3f,pilot2,4282-2568ede7-963d-4fee-ab15-b69e472ef360,1593383554335.0,3EQHHY4HQWS8DEPKJMJ0WRVGRNS5GH,Pi,L,5,0,1,a2 b2 c2 c3 c4,28270,28270,chatMessage
+21,5ef91abbce2f7f58fcd0ab43,pilot2,4282-2568ede7-963d-4fee-ab15-b69e472ef360,1593383611971.0,3EQHHY4HQWS8DEPKJMJ0WRVGRNS5GH,Pi,L,5,2,1,a5 b5 c5 a is horizontal,32493,85908,chatMessage
+22,5ef91af2ce2f7f58fcd0ab46,pilot2,4282-2568ede7-963d-4fee-ab15-b69e472ef360,1593383666023.0,3EQHHY4HQWS8DEPKJMJ0WRVGRNS5GH,Pi,L,5,4,1,a8 b8 c8 d8 e8,18663,139963,chatMessage
+23,5ef91b22ce2f7f58fcd0ab4b,pilot2,4282-2568ede7-963d-4fee-ab15-b69e472ef360,1593383714576.0,3EQHHY4HQWS8DEPKJMJ0WRVGRNS5GH,L,Pi,6,0,2,good a2 b2 b3 ,28049,28049,chatMessage
+24,5ef91b4ece2f7f58fcd0ab4e,pilot2,4282-2568ede7-963d-4fee-ab15-b69e472ef360,1593383758451.0,3EQHHY4HQWS8DEPKJMJ0WRVGRNS5GH,L,Pi,6,2,2,good a3 a4 a5,14725,71930,chatMessage
+25,5ef91b7cce2f7f58fcd0ab51,pilot2,4282-2568ede7-963d-4fee-ab15-b69e472ef360,1593383804215.0,3EQHHY4HQWS8DEPKJMJ0WRVGRNS5GH,L,Pi,6,4,2,a8 b8 c8 a is horizontal,30051,117696,chatMessage
+26,5ef91ba1ce2f7f58fcd0ab54,pilot2,4282-2568ede7-963d-4fee-ab15-b69e472ef360,1593383841565.0,3EQHHY4HQWS8DEPKJMJ0WRVGRNS5GH,L,Pi,6,6,2,good a11 b11 c11,22377,155048,chatMessage
+27,5ef91bd2ce2f7f58fcd0ab58,pilot2,4282-2568ede7-963d-4fee-ab15-b69e472ef360,1593383890828.0,3EQHHY4HQWS8DEPKJMJ0WRVGRNS5GH,C,Pi,7,0,2,a1 a2 a is horizontal ,25881,25881,chatMessage
+28,5ef91bf6ce2f7f58fcd0ab5a,pilot2,4282-2568ede7-963d-4fee-ab15-b69e472ef360,1593383926725.0,3EQHHY4HQWS8DEPKJMJ0WRVGRNS5GH,C,Pi,7,2,2,"I lied, it's a3 a 4 instead ",14110,61781,chatMessage
+29,5ef91c1ece2f7f58fcd0ab5c,pilot2,4282-2568ede7-963d-4fee-ab15-b69e472ef360,1593383966267.0,3EQHHY4HQWS8DEPKJMJ0WRVGRNS5GH,C,Pi,7,4,2,good b3 c3 d3 d4 d5 ,28830,101321,chatMessage
+30,5ef91c60ce2f7f58fcd0ab5f,pilot2,4282-2568ede7-963d-4fee-ab15-b69e472ef360,1593384032126.0,3EQHHY4HQWS8DEPKJMJ0WRVGRNS5GH,C,Pi,7,6,2,f4 f3 e3,22959,167185,chatMessage
+31,5ef91c87ce2f7f58fcd0ab62,pilot2,4282-2568ede7-963d-4fee-ab15-b69e472ef360,1593384071008.0,3EQHHY4HQWS8DEPKJMJ0WRVGRNS5GH,C,Pi,7,8,2,good a8 b8 c8 ,17840,206067,chatMessage
+32,5ef91cc0ce2f7f58fcd0ab66,pilot2,4282-2568ede7-963d-4fee-ab15-b69e472ef360,1593384128522.0,3EQHHY4HQWS8DEPKJMJ0WRVGRNS5GH,L,C,8,0,2,ok good a2 up to e,38217,38217,chatMessage
+33,5ef91cddce2f7f58fcd0ab6a,pilot2,4282-2568ede7-963d-4fee-ab15-b69e472ef360,1593384157159.0,3EQHHY4HQWS8DEPKJMJ0WRVGRNS5GH,L,C,8,2,2,ok good a3 to a 5,16881,66848,chatMessage
+34,5ef91d02ce2f7f58fcd0ab6d,pilot2,4282-2568ede7-963d-4fee-ab15-b69e472ef360,1593384194448.0,3EQHHY4HQWS8DEPKJMJ0WRVGRNS5GH,L,C,8,4,2,good a9 a10 ,19650,104142,chatMessage
+35,5ef91d35ce2f7f58fcd0ab70,pilot2,4282-2568ede7-963d-4fee-ab15-b69e472ef360,1593384245489.0,3EQHHY4HQWS8DEPKJMJ0WRVGRNS5GH,L,C,8,6,2,a8 up to f8,29955,155185,chatMessage
+36,5ef91d5dce2f7f58fcd0ab73,pilot2,4282-2568ede7-963d-4fee-ab15-b69e472ef360,1593384285973.0,3EQHHY4HQWS8DEPKJMJ0WRVGRNS5GH,Pi,C,9,0,3, a2 b2 c2,28398,28398,chatMessage
+37,5ef91d82ce2f7f58fcd0ab76,pilot2,4282-2568ede7-963d-4fee-ab15-b69e472ef360,1593384322150.0,3EQHHY4HQWS8DEPKJMJ0WRVGRNS5GH,Pi,C,9,2,3,c3 c4 c5 c6,22374,64556,chatMessage
+38,5ef91db7ce2f7f58fcd0ab79,pilot2,4282-2568ede7-963d-4fee-ab15-b69e472ef360,1593384375061.0,3EQHHY4HQWS8DEPKJMJ0WRVGRNS5GH,Pi,C,9,4,3,a5 b5 c5,11806,117489,chatMessage
+39,5ef91de7ce2f7f58fcd0ab7c,pilot2,4282-2568ede7-963d-4fee-ab15-b69e472ef360,1593384423686.0,3EQHHY4HQWS8DEPKJMJ0WRVGRNS5GH,Pi,C,9,6,3,a9 a10 b9 ,17269,166116,chatMessage
+40,5ef91e16ce2f7f58fcd0ab80,pilot2,4282-2568ede7-963d-4fee-ab15-b69e472ef360,1593384470111.0,3EQHHY4HQWS8DEPKJMJ0WRVGRNS5GH,Pi,L,10,0,3,a2 b2 c2,13698,13698,chatMessage
+41,5ef91e40ce2f7f58fcd0ab83,pilot2,4282-2568ede7-963d-4fee-ab15-b69e472ef360,1593384512728.0,3EQHHY4HQWS8DEPKJMJ0WRVGRNS5GH,Pi,L,10,2,3,good c3 c4 c5,17277,56313,chatMessage
+42,5ef91e75ce2f7f58fcd0ab86,pilot2,4282-2568ede7-963d-4fee-ab15-b69e472ef360,1593384565055.0,3EQHHY4HQWS8DEPKJMJ0WRVGRNS5GH,Pi,L,10,4,3,a5 b5 c5,10204,108644,chatMessage
+43,5ef91ea2ce2f7f58fcd0ab89,pilot2,4282-2568ede7-963d-4fee-ab15-b69e472ef360,1593384610691.0,3EQHHY4HQWS8DEPKJMJ0WRVGRNS5GH,Pi,L,10,6,3,good a8 across to a11,22442,154283,chatMessage
+44,5ef91eccce2f7f58fcd0ab8d,pilot2,4282-2568ede7-963d-4fee-ab15-b69e472ef360,1593384652010.0,3EQHHY4HQWS8DEPKJMJ0WRVGRNS5GH,C,L,11,0,3,good a3 up to f3,20286,20286,chatMessage
+45,5ef91ef8ce2f7f58fcd0ab91,pilot2,4282-2568ede7-963d-4fee-ab15-b69e472ef360,1593384696202.0,3EQHHY4HQWS8DEPKJMJ0WRVGRNS5GH,C,L,11,2,3,a8 up to f8,28471,64481,chatMessage
+46,5ef91f2bce2f7f58fcd0ab95,pilot2,4282-2568ede7-963d-4fee-ab15-b69e472ef360,1593384747828.0,3EQHHY4HQWS8DEPKJMJ0WRVGRNS5GH,C,L,11,4,3,good a9 to a11,22244,116109,chatMessage
+0,5ef96248ce2f7f58fcd0abb7,pilot2,5584-cb7536bf-73d0-4d3c-a0ec-2735882de660,1593401928176.0,3GU1KF0O4M1GF7ZSNF00TM902BXBPQ,vertical,horizontal,practice,0,practice,hi,52070,52070,chatMessage
+1,5ef9629dce2f7f58fcd0abbb,pilot2,5584-cb7536bf-73d0-4d3c-a0ec-2735882de660,1593402013982.0,3GU1KF0O4M1GF7ZSNF00TM902BXBPQ,vertical,horizontal,practice,0,practice,use left and right arrow,35109,35109,chatMessage
+2,5ef962cdce2f7f58fcd0abbf,pilot2,5584-cb7536bf-73d0-4d3c-a0ec-2735882de660,1593402061771.0,3GU1KF0O4M1GF7ZSNF00TM902BXBPQ,vertical,horizontal,practice,0,practice,build a block,21738,21738,chatMessage
+3,5ef96326ce2f7f58fcd0abc3,pilot2,5584-cb7536bf-73d0-4d3c-a0ec-2735882de660,1593402150220.0,3GU1KF0O4M1GF7ZSNF00TM902BXBPQ,L,Pi,0,0,0,Place a dominoes,68577,68577,chatMessage
+4,5ef96376ce2f7f58fcd0abcd,pilot2,5584-cb7536bf-73d0-4d3c-a0ec-2735882de660,1593402230300.0,3GU1KF0O4M1GF7ZSNF00TM902BXBPQ,L,C,1,0,0,make a blocks,37231,37231,chatMessage
+5,5ef963b3ce2f7f58fcd0abd7,pilot2,5584-cb7536bf-73d0-4d3c-a0ec-2735882de660,1593402291990.0,3GU1KF0O4M1GF7ZSNF00TM902BXBPQ,C,Pi,2,0,0,If you finish click done,24372,24372,chatMessage
+6,5ef9640bce2f7f58fcd0abe1,pilot2,5584-cb7536bf-73d0-4d3c-a0ec-2735882de660,1593402379201.0,3GU1KF0O4M1GF7ZSNF00TM902BXBPQ,Pi,L,3,0,1,we get bonus,61322,61322,chatMessage
+7,5ef9642ace2f7f58fcd0abeb,pilot2,5584-cb7536bf-73d0-4d3c-a0ec-2735882de660,1593402410104.0,3GU1KF0O4M1GF7ZSNF00TM902BXBPQ,Pi,C,4,0,1,Make a architect,7326,7326,chatMessage
+8,5ef96453ce2f7f58fcd0abf5,pilot2,5584-cb7536bf-73d0-4d3c-a0ec-2735882de660,1593402451419.0,3GU1KF0O4M1GF7ZSNF00TM902BXBPQ,C,L,5,0,1,move red and blue block,8717,8717,chatMessage
+9,5ef96493ce2f7f58fcd0abff,pilot2,5584-cb7536bf-73d0-4d3c-a0ec-2735882de660,1593402515596.0,3GU1KF0O4M1GF7ZSNF00TM902BXBPQ,C,Pi,6,0,2,build a block,9132,9132,chatMessage
+10,5ef964c6ce2f7f58fcd0ac09,pilot2,5584-cb7536bf-73d0-4d3c-a0ec-2735882de660,1593402566379.0,3GU1KF0O4M1GF7ZSNF00TM902BXBPQ,L,Pi,7,0,2,build a block,31529,31529,chatMessage
+11,5ef96507ce2f7f58fcd0ac13,pilot2,5584-cb7536bf-73d0-4d3c-a0ec-2735882de660,1593402631796.0,3GU1KF0O4M1GF7ZSNF00TM902BXBPQ,L,C,8,0,2,build a architect,31641,31641,chatMessage
+12,5ef96531ce2f7f58fcd0ac1f,pilot2,5584-cb7536bf-73d0-4d3c-a0ec-2735882de660,1593402673595.0,3GU1KF0O4M1GF7ZSNF00TM902BXBPQ,Pi,C,9,0,3,get bonus 20,20527,20527,chatMessage
+13,5ef96550ce2f7f58fcd0ac2b,pilot2,5584-cb7536bf-73d0-4d3c-a0ec-2735882de660,1593402704985.0,3GU1KF0O4M1GF7ZSNF00TM902BXBPQ,Pi,L,10,0,3,build a blocks,11504,11504,chatMessage
+14,5ef96574ce2f7f58fcd0ac36,pilot2,5584-cb7536bf-73d0-4d3c-a0ec-2735882de660,1593402740456.0,3GU1KF0O4M1GF7ZSNF00TM902BXBPQ,C,L,11,0,3,done,7039,7039,chatMessage
+0,5ef9665ace2f7f58fcd0ac4f,pilot2,6691-dee56275-2f4b-44b8-a47c-d4d41c945670,1593402970972.0,3OXV7EAXLIQ326DATQML53K7JEL63F,horizontal,vertical,practice,0,practice,build a block,70693,70693,chatMessage
+1,5ef9667dce2f7f58fcd0ac55,pilot2,6691-dee56275-2f4b-44b8-a47c-d4d41c945670,1593403005227.0,3OXV7EAXLIQ326DATQML53K7JEL63F,horizontal,vertical,practice,0,practice,move the blue block,11108,11108,chatMessage
+2,5ef9669ace2f7f58fcd0ac5a,pilot2,6691-dee56275-2f4b-44b8-a47c-d4d41c945670,1593403034297.0,3OXV7EAXLIQ326DATQML53K7JEL63F,horizontal,vertical,practice,0,practice,move the red block to left,15680,15680,chatMessage
+3,5ef966b8ce2f7f58fcd0ac62,pilot2,6691-dee56275-2f4b-44b8-a47c-d4d41c945670,1593403064488.0,3OXV7EAXLIQ326DATQML53K7JEL63F,horizontal,vertical,practice,0,practice,move the blocks,14914,14914,chatMessage
+4,5ef966dece2f7f58fcd0ac69,pilot2,6691-dee56275-2f4b-44b8-a47c-d4d41c945670,1593403102497.0,3OXV7EAXLIQ326DATQML53K7JEL63F,horizontal,vertical,practice,0,practice,build the block,19081,19082,chatMessage
+5,5ef966fbce2f7f58fcd0ac6f,pilot2,6691-dee56275-2f4b-44b8-a47c-d4d41c945670,1593403131574.0,3OXV7EAXLIQ326DATQML53K7JEL63F,horizontal,vertical,practice,0,practice,move the left block,13516,13516,chatMessage
+6,5ef96735ce2f7f58fcd0ac78,pilot2,6691-dee56275-2f4b-44b8-a47c-d4d41c945670,1593403189450.0,3OXV7EAXLIQ326DATQML53K7JEL63F,horizontal,vertical,practice,0,practice,build the blue block,42739,42739,chatMessage
+7,5ef96755ce2f7f58fcd0ac7e,pilot2,6691-dee56275-2f4b-44b8-a47c-d4d41c945670,1593403221117.0,3OXV7EAXLIQ326DATQML53K7JEL63F,C,Pi,0,0,0,build the block,16679,16679,chatMessage
+8,5ef9679bce2f7f58fcd0ac86,pilot2,6691-dee56275-2f4b-44b8-a47c-d4d41c945670,1593403291258.0,3OXV7EAXLIQ326DATQML53K7JEL63F,C,Pi,0,2,0,build the another block,56994,86823,chatMessage
+9,5ef967bace2f7f58fcd0ac8f,pilot2,6691-dee56275-2f4b-44b8-a47c-d4d41c945670,1593403322647.0,3OXV7EAXLIQ326DATQML53K7JEL63F,C,Pi,0,4,0,move the left block,12035,118209,chatMessage
+10,5ef967dfce2f7f58fcd0ac99,pilot2,6691-dee56275-2f4b-44b8-a47c-d4d41c945670,1593403359686.0,3OXV7EAXLIQ326DATQML53K7JEL63F,L,Pi,1,0,0,move left,6013,6013,chatMessage
+11,5ef967fbce2f7f58fcd0ac9f,pilot2,6691-dee56275-2f4b-44b8-a47c-d4d41c945670,1593403387053.0,3OXV7EAXLIQ326DATQML53K7JEL63F,L,Pi,1,2,0,build the another block ,17156,33371,chatMessage
+12,5ef96836ce2f7f58fcd0acab,pilot2,6691-dee56275-2f4b-44b8-a47c-d4d41c945670,1593403446264.0,3OXV7EAXLIQ326DATQML53K7JEL63F,L,C,2,0,0,move the blue block to the left ,21088,21088,chatMessage
+13,5ef96865ce2f7f58fcd0acb7,pilot2,6691-dee56275-2f4b-44b8-a47c-d4d41c945670,1593403493153.0,3OXV7EAXLIQ326DATQML53K7JEL63F,Pi,L,3,0,1,move the block to right,11545,11545,chatMessage
+14,5ef9689ece2f7f58fcd0acc5,pilot2,6691-dee56275-2f4b-44b8-a47c-d4d41c945670,1593403550149.0,3OXV7EAXLIQ326DATQML53K7JEL63F,C,L,4,0,1,move the block to back,21247,21247,chatMessage
+15,5ef968cdce2f7f58fcd0acdc,pilot2,6691-dee56275-2f4b-44b8-a47c-d4d41c945670,1593403597620.0,3OXV7EAXLIQ326DATQML53K7JEL63F,Pi,C,5,0,1,move the right block to the left,17729,17729,chatMessage
+16,5ef968fcce2f7f58fcd0acea,pilot2,6691-dee56275-2f4b-44b8-a47c-d4d41c945670,1593403644052.0,3OXV7EAXLIQ326DATQML53K7JEL63F,L,Pi,6,0,2,move to left,11082,11082,chatMessage
+17,5ef96924ce2f7f58fcd0acfe,pilot2,6691-dee56275-2f4b-44b8-a47c-d4d41c945670,1593403684562.0,3OXV7EAXLIQ326DATQML53K7JEL63F,L,C,7,0,2,move to left,12369,12369,chatMessage
+18,5ef96947ce2f7f58fcd0ad14,pilot2,6691-dee56275-2f4b-44b8-a47c-d4d41c945670,1593403719679.0,3OXV7EAXLIQ326DATQML53K7JEL63F,C,Pi,8,0,2,move the right block,11209,11209,chatMessage
+19,5ef96969ce2f7f58fcd0ad28,pilot2,6691-dee56275-2f4b-44b8-a47c-d4d41c945670,1593403753856.0,3OXV7EAXLIQ326DATQML53K7JEL63F,Pi,C,9,0,3,move to the left,10317,10317,chatMessage
+20,5ef9698cce2f7f58fcd0ad39,pilot2,6691-dee56275-2f4b-44b8-a47c-d4d41c945670,1593403788084.0,3OXV7EAXLIQ326DATQML53K7JEL63F,Pi,L,10,0,3,move the red block,15403,15403,chatMessage
+21,5ef969aace2f7f58fcd0ad49,pilot2,6691-dee56275-2f4b-44b8-a47c-d4d41c945670,1593403818808.0,3OXV7EAXLIQ326DATQML53K7JEL63F,C,L,11,0,3,build the block,8597,8597,chatMessage
+0,5ef96729ce2f7f58fcd0ac76,pilot2,8548-343a533f-0369-4b20-bbd4-a00f25359cea,1593403177337.0,3HMIGG0U4P6RMNTMBQC9FBCBYA68Y9,horizontal,vertical,practice,0,practice,move left,48220,48220,chatMessage
+1,5ef967a8ce2f7f58fcd0ac88,pilot2,8548-343a533f-0369-4b20-bbd4-a00f25359cea,1593403304165.0,3HMIGG0U4P6RMNTMBQC9FBCBYA68Y9,horizontal,vertical,practice,2,practice,"move right
+",30290,175055,chatMessage
+2,5ef967d9ce2f7f58fcd0ac97,pilot2,8548-343a533f-0369-4b20-bbd4-a00f25359cea,1593403353483.0,3HMIGG0U4P6RMNTMBQC9FBCBYA68Y9,horizontal,vertical,practice,0,practice,"build the block
+",27155,27155,chatMessage
+3,5ef9689ece2f7f58fcd0acc6,pilot2,8548-343a533f-0369-4b20-bbd4-a00f25359cea,1593403550370.0,3HMIGG0U4P6RMNTMBQC9FBCBYA68Y9,horizontal,vertical,practice,2,practice,"build the red block
+",156369,224046,chatMessage
+4,5ef968fece2f7f58fcd0aceb,pilot2,8548-343a533f-0369-4b20-bbd4-a00f25359cea,1593403646696.0,3HMIGG0U4P6RMNTMBQC9FBCBYA68Y9,horizontal,vertical,practice,0,practice,move the right block to the left,80114,80114,chatMessage
+5,5ef9692ece2f7f58fcd0ad05,pilot2,8548-343a533f-0369-4b20-bbd4-a00f25359cea,1593403694141.0,3HMIGG0U4P6RMNTMBQC9FBCBYA68Y9,horizontal,vertical,practice,0,practice,"move the lift block to the right
+",20881,20881,chatMessage
+6,5ef9695bce2f7f58fcd0ad22,pilot2,8548-343a533f-0369-4b20-bbd4-a00f25359cea,1593403739528.0,3HMIGG0U4P6RMNTMBQC9FBCBYA68Y9,horizontal,vertical,practice,0,practice,move the right red,23420,23420,chatMessage
+7,5ef96980ce2f7f58fcd0ad35,pilot2,8548-343a533f-0369-4b20-bbd4-a00f25359cea,1593403776926.0,3HMIGG0U4P6RMNTMBQC9FBCBYA68Y9,horizontal,vertical,practice,0,practice,build the blue block,19866,19866,chatMessage
+8,5ef969a6ce2f7f58fcd0ad48,pilot2,8548-343a533f-0369-4b20-bbd4-a00f25359cea,1593403814836.0,3HMIGG0U4P6RMNTMBQC9FBCBYA68Y9,horizontal,vertical,practice,0,practice,bulid the red block,17555,17555,chatMessage
+9,5ef969e5ce2f7f58fcd0ad5e,pilot2,8548-343a533f-0369-4b20-bbd4-a00f25359cea,1593403877780.0,3HMIGG0U4P6RMNTMBQC9FBCBYA68Y9,horizontal,vertical,practice,0,practice,move the right bulid the left,49385,49385,chatMessage
+10,5ef96a19ce2f7f58fcd0ad67,pilot2,8548-343a533f-0369-4b20-bbd4-a00f25359cea,1593403929320.0,3HMIGG0U4P6RMNTMBQC9FBCBYA68Y9,horizontal,vertical,practice,0,practice,move the blue block,32406,32406,chatMessage
+11,5ef96b3dce2f7f58fcd0ada0,pilot2,8548-343a533f-0369-4b20-bbd4-a00f25359cea,1593404221122.0,3HMIGG0U4P6RMNTMBQC9FBCBYA68Y9,horizontal,vertical,practice,0,practice,move the left block to the right corner,275127,275127,chatMessage
+12,5ef96b64ce2f7f58fcd0ada9,pilot2,8548-343a533f-0369-4b20-bbd4-a00f25359cea,1593404260555.0,3HMIGG0U4P6RMNTMBQC9FBCBYA68Y9,horizontal,vertical,practice,2,practice,build the block to next blue block,19902,314557,chatMessage
+13,5ef96b94ce2f7f58fcd0adb0,pilot2,8548-343a533f-0369-4b20-bbd4-a00f25359cea,1593404308733.0,3HMIGG0U4P6RMNTMBQC9FBCBYA68Y9,horizontal,vertical,practice,0,practice,move the red block to the right corner to the blue block,32749,32749,chatMessage
+14,5ef96bc1ce2f7f58fcd0adb9,pilot2,8548-343a533f-0369-4b20-bbd4-a00f25359cea,1593404353197.0,3HMIGG0U4P6RMNTMBQC9FBCBYA68Y9,horizontal,vertical,practice,0,practice,move to left block to right,18546,18546,chatMessage
+15,5ef96be2ce2f7f58fcd0adbe,pilot2,8548-343a533f-0369-4b20-bbd4-a00f25359cea,1593404386528.0,3HMIGG0U4P6RMNTMBQC9FBCBYA68Y9,horizontal,vertical,practice,0,practice,move the next block,13962,13962,chatMessage
+16,5ef96c14ce2f7f58fcd0adc4,pilot2,8548-343a533f-0369-4b20-bbd4-a00f25359cea,1593404436018.0,3HMIGG0U4P6RMNTMBQC9FBCBYA68Y9,L,Pi,0,0,0,move left,22257,22257,chatMessage
+17,5ef96c2ace2f7f58fcd0adc7,pilot2,8548-343a533f-0369-4b20-bbd4-a00f25359cea,1593404458684.0,3HMIGG0U4P6RMNTMBQC9FBCBYA68Y9,L,Pi,0,2,0,move right,13741,44924,chatMessage
+18,5ef96c54ce2f7f58fcd0adcb,pilot2,8548-343a533f-0369-4b20-bbd4-a00f25359cea,1593404500554.0,3HMIGG0U4P6RMNTMBQC9FBCBYA68Y9,L,Pi,0,4,0,"bulid the right the left block
+",20320,86798,chatMessage
+19,5ef96c89ce2f7f58fcd0add9,pilot2,8548-343a533f-0369-4b20-bbd4-a00f25359cea,1593404553718.0,3HMIGG0U4P6RMNTMBQC9FBCBYA68Y9,C,Pi,1,0,0,"move left
+",14479,14479,chatMessage
+20,5ef96cd2ce2f7f58fcd0aded,pilot2,8548-343a533f-0369-4b20-bbd4-a00f25359cea,1593404626373.0,3HMIGG0U4P6RMNTMBQC9FBCBYA68Y9,L,C,2,0,0,bulid the right to left block,20520,20520,chatMessage
+21,5ef96d0dce2f7f58fcd0ae01,pilot2,8548-343a533f-0369-4b20-bbd4-a00f25359cea,1593404685775.0,3HMIGG0U4P6RMNTMBQC9FBCBYA68Y9,C,L,3,0,1,move left to right block,16621,16621,chatMessage
+22,5ef96d4bce2f7f58fcd0ae15,pilot2,8548-343a533f-0369-4b20-bbd4-a00f25359cea,1593404747018.0,3HMIGG0U4P6RMNTMBQC9FBCBYA68Y9,Pi,C,4,0,1,move right to left block ,14657,14657,chatMessage
+23,5ef96d80ce2f7f58fcd0ae29,pilot2,8548-343a533f-0369-4b20-bbd4-a00f25359cea,1593404800229.0,3HMIGG0U4P6RMNTMBQC9FBCBYA68Y9,Pi,L,5,0,1,move right,6386,6386,chatMessage
+24,5ef96daace2f7f58fcd0ae3d,pilot2,8548-343a533f-0369-4b20-bbd4-a00f25359cea,1593404842870.0,3HMIGG0U4P6RMNTMBQC9FBCBYA68Y9,C,Pi,6,0,2,move right,7647,7647,chatMessage
+25,5ef96dd1ce2f7f58fcd0ae4d,pilot2,8548-343a533f-0369-4b20-bbd4-a00f25359cea,1593404881324.0,3HMIGG0U4P6RMNTMBQC9FBCBYA68Y9,L,C,7,0,2,mobe left,8283,8283,chatMessage
+26,5ef96dfbce2f7f58fcd0ae5b,pilot2,8548-343a533f-0369-4b20-bbd4-a00f25359cea,1593404923955.0,3HMIGG0U4P6RMNTMBQC9FBCBYA68Y9,L,Pi,8,0,2,movbe left,7655,7655,chatMessage
+27,5ef96e1dce2f7f58fcd0ae6f,pilot2,8548-343a533f-0369-4b20-bbd4-a00f25359cea,1593404957742.0,3HMIGG0U4P6RMNTMBQC9FBCBYA68Y9,Pi,C,9,0,3,move right,7412,7412,chatMessage
+28,5ef96e43ce2f7f58fcd0ae81,pilot2,8548-343a533f-0369-4b20-bbd4-a00f25359cea,1593404995177.0,3HMIGG0U4P6RMNTMBQC9FBCBYA68Y9,C,L,10,0,3,move left,6569,6569,chatMessage
+29,5ef96e6ace2f7f58fcd0ae8e,pilot2,8548-343a533f-0369-4b20-bbd4-a00f25359cea,1593405034633.0,3HMIGG0U4P6RMNTMBQC9FBCBYA68Y9,Pi,L,11,0,3,move left,10478,10478,chatMessage
+0,5ef96840ce2f7f58fcd0acaf,pilot2,1959-2f467add-c0d9-49a6-b35c-c5a40cca728d,1593403456101.0,3ON104KXQOWMEHBKKM48D2BQLGJ4W8,horizontal,vertical,practice,0,practice,Place one block between the tick on the left,26976,26976,chatMessage
+1,5ef96868ce2f7f58fcd0acb9,pilot2,1959-2f467add-c0d9-49a6-b35c-c5a40cca728d,1593403496888.0,3ON104KXQOWMEHBKKM48D2BQLGJ4W8,horizontal,vertical,practice,2,practice,Place the other block vertical on the left of the right tick~~~,28127,67763,chatMessage
+2,5ef9688cce2f7f58fcd0acc3,pilot2,1959-2f467add-c0d9-49a6-b35c-c5a40cca728d,1593403532376.0,3ON104KXQOWMEHBKKM48D2BQLGJ4W8,horizontal,vertical,practice,4,practice,"Left block, let it fall and move one spot left",22712,103251,chatMessage
+3,5ef968bbce2f7f58fcd0acd8,pilot2,1959-2f467add-c0d9-49a6-b35c-c5a40cca728d,1593403579546.0,3ON104KXQOWMEHBKKM48D2BQLGJ4W8,horizontal,vertical,practice,0,practice,One block between the tick on the left~~~,20847,20847,chatMessage
+4,5ef968e1ce2f7f58fcd0ace0,pilot2,1959-2f467add-c0d9-49a6-b35c-c5a40cca728d,1593403617158.0,3ON104KXQOWMEHBKKM48D2BQLGJ4W8,horizontal,vertical,practice,0,practice,"Between the tick on the left~~~
+",26244,26244,chatMessage
+5,5ef96908ce2f7f58fcd0acf0,pilot2,1959-2f467add-c0d9-49a6-b35c-c5a40cca728d,1593403656420.0,3ON104KXQOWMEHBKKM48D2BQLGJ4W8,horizontal,vertical,practice,0,practice,Blue block between the tick on the left~~~,28726,28726,chatMessage
+6,5ef96928ce2f7f58fcd0ad01,pilot2,1959-2f467add-c0d9-49a6-b35c-c5a40cca728d,1593403688307.0,3ON104KXQOWMEHBKKM48D2BQLGJ4W8,horizontal,vertical,practice,0,practice,Grab the red block and place it between the tick on the left~~~,17612,17612,chatMessage
+7,5ef9694bce2f7f58fcd0ad15,pilot2,1959-2f467add-c0d9-49a6-b35c-c5a40cca728d,1593403723299.0,3ON104KXQOWMEHBKKM48D2BQLGJ4W8,horizontal,vertical,practice,0,practice,Same as last time but reverse the blocks~~~,17867,17867,chatMessage
+8,5ef96970ce2f7f58fcd0ad2d,pilot2,1959-2f467add-c0d9-49a6-b35c-c5a40cca728d,1593403760984.0,3ON104KXQOWMEHBKKM48D2BQLGJ4W8,horizontal,vertical,practice,0,practice,"Red stands up, while blue is horizontal~~~",22362,22362,chatMessage
+9,5ef9698dce2f7f58fcd0ad3a,pilot2,1959-2f467add-c0d9-49a6-b35c-c5a40cca728d,1593403789232.0,3ON104KXQOWMEHBKKM48D2BQLGJ4W8,horizontal,vertical,practice,2,practice,"Move it 6 spot right~~~
+",18881,50608,chatMessage
+10,5ef969b5ce2f7f58fcd0ad52,pilot2,1959-2f467add-c0d9-49a6-b35c-c5a40cca728d,1593403829978.0,3ON104KXQOWMEHBKKM48D2BQLGJ4W8,horizontal,vertical,practice,0,practice,"Blue block placed it three spot form the LEFT side~~~
+",24035,24035,chatMessage
+11,5ef969d7ce2f7f58fcd0ad59,pilot2,1959-2f467add-c0d9-49a6-b35c-c5a40cca728d,1593403862997.0,3ON104KXQOWMEHBKKM48D2BQLGJ4W8,horizontal,vertical,practice,2,practice,"That five spots, not three~~~",16792,57054,chatMessage
+12,5ef969fbce2f7f58fcd0ad63,pilot2,1959-2f467add-c0d9-49a6-b35c-c5a40cca728d,1593403899536.0,3ON104KXQOWMEHBKKM48D2BQLGJ4W8,horizontal,vertical,practice,0,practice,Blue block two empty spaces from left side~~~,22664,22664,chatMessage
+13,5ef96a60ce2f7f58fcd0ad6f,pilot2,1959-2f467add-c0d9-49a6-b35c-c5a40cca728d,1593404000773.0,3ON104KXQOWMEHBKKM48D2BQLGJ4W8,horizontal,vertical,practice,2,practice,Place the red block on top of the blue one~~~,81252,123899,chatMessage
+14,5ef96a88ce2f7f58fcd0ad74,pilot2,1959-2f467add-c0d9-49a6-b35c-c5a40cca728d,1593404040506.0,3ON104KXQOWMEHBKKM48D2BQLGJ4W8,horizontal,vertical,practice,0,practice,"Leave three empty spot from the RIGHT side, place red there~~~",26637,26637,chatMessage
+15,5ef96a9ace2f7f58fcd0ad7a,pilot2,1959-2f467add-c0d9-49a6-b35c-c5a40cca728d,1593404058214.0,3ON104KXQOWMEHBKKM48D2BQLGJ4W8,horizontal,vertical,practice,0,practice,Try that again~~~,7092,7092,chatMessage
+16,5ef96ab8ce2f7f58fcd0ad82,pilot2,1959-2f467add-c0d9-49a6-b35c-c5a40cca728d,1593404088951.0,3ON104KXQOWMEHBKKM48D2BQLGJ4W8,horizontal,vertical,practice,0,practice,"Leave 3 empty spots from the the RIGHT side, place RED there~~~",19603,19603,chatMessage
+17,5ef96ad0ce2f7f58fcd0ad87,pilot2,1959-2f467add-c0d9-49a6-b35c-c5a40cca728d,1593404112505.0,3ON104KXQOWMEHBKKM48D2BQLGJ4W8,horizontal,vertical,practice,0,practice,"Correct, Leave 3 empty spots from the the RIGHT side, place RED there~~~",14186,14186,chatMessage
+18,5ef96b01ce2f7f58fcd0ad93,pilot2,1959-2f467add-c0d9-49a6-b35c-c5a40cca728d,1593404161864.0,3ON104KXQOWMEHBKKM48D2BQLGJ4W8,horizontal,vertical,practice,0,practice,"Blue is right, BUT red = Leave 3 empty spots from the the RIGHT side, place RED there~~~",20309,20309,chatMessage
+19,5ef96b23ce2f7f58fcd0ad99,pilot2,1959-2f467add-c0d9-49a6-b35c-c5a40cca728d,1593404195512.0,3ON104KXQOWMEHBKKM48D2BQLGJ4W8,horizontal,vertical,practice,0,practice,Again but switch them~~~,10287,10287,chatMessage
+20,5ef96b3dce2f7f58fcd0ad9f,pilot2,1959-2f467add-c0d9-49a6-b35c-c5a40cca728d,1593404221014.0,3ON104KXQOWMEHBKKM48D2BQLGJ4W8,horizontal,vertical,practice,0,practice,Switch them~~~,10356,10356,chatMessage
+21,5ef96b66ce2f7f58fcd0adaa,pilot2,1959-2f467add-c0d9-49a6-b35c-c5a40cca728d,1593404262223.0,3ON104KXQOWMEHBKKM48D2BQLGJ4W8,horizontal,vertical,practice,0,practice,"XXOOXXXXOXXX
+                   O",21883,21883,chatMessage
+22,5ef96ba5ce2f7f58fcd0adb3,pilot2,1959-2f467add-c0d9-49a6-b35c-c5a40cca728d,1593404325908.0,3ON104KXQOWMEHBKKM48D2BQLGJ4W8,horizontal,vertical,practice,0,practice,xxOOxxxx8xxx,31255,31255,chatMessage
+23,5ef96bdbce2f7f58fcd0adbd,pilot2,1959-2f467add-c0d9-49a6-b35c-c5a40cca728d,1593404379626.0,3ON104KXQOWMEHBKKM48D2BQLGJ4W8,L,C,0,0,0,xoooo,27513,27513,chatMessage
+24,5ef96c4dce2f7f58fcd0adca,pilot2,1959-2f467add-c0d9-49a6-b35c-c5a40cca728d,1593404493901.0,3ON104KXQOWMEHBKKM48D2BQLGJ4W8,L,C,0,2,0,  ,75954,141791,chatMessage
+25,5ef96c79ce2f7f58fcd0add4,pilot2,1959-2f467add-c0d9-49a6-b35c-c5a40cca728d,1593404537317.0,3ON104KXQOWMEHBKKM48D2BQLGJ4W8,L,C,0,4,0,Next one upright to the previous~~~,31538,185205,chatMessage
+26,5ef96ca2ce2f7f58fcd0addc,pilot2,1959-2f467add-c0d9-49a6-b35c-c5a40cca728d,1593404578562.0,3ON104KXQOWMEHBKKM48D2BQLGJ4W8,L,Pi,1,0,0,"Form a giant L 5 ontop, 4 onbottom",27924,27924,chatMessage
+27,5ef96cd7ce2f7f58fcd0adee,pilot2,1959-2f467add-c0d9-49a6-b35c-c5a40cca728d,1593404631867.0,3ON104KXQOWMEHBKKM48D2BQLGJ4W8,C,Pi,2,0,0,"Using four blocks, a giant C~~~",33583,33583,chatMessage
+28,5ef96d17ce2f7f58fcd0ae02,pilot2,1959-2f467add-c0d9-49a6-b35c-c5a40cca728d,1593404695836.0,3ON104KXQOWMEHBKKM48D2BQLGJ4W8,C,L,3,0,1,Make a C and a L~~~ 4 block a piece~~~,27423,27423,chatMessage
+29,5ef96d59ce2f7f58fcd0ae16,pilot2,1959-2f467add-c0d9-49a6-b35c-c5a40cca728d,1593404761131.0,3ON104KXQOWMEHBKKM48D2BQLGJ4W8,Pi,L,4,0,1,Make a table using four blocks~~~,24286,24286,chatMessage
+30,5ef96d8ece2f7f58fcd0ae2d,pilot2,1959-2f467add-c0d9-49a6-b35c-c5a40cca728d,1593404814897.0,3ON104KXQOWMEHBKKM48D2BQLGJ4W8,Pi,C,5,0,1,Make a table using FOUR blocks~~~,15502,15502,chatMessage
+31,5ef96dbfce2f7f58fcd0ae44,pilot2,1959-2f467add-c0d9-49a6-b35c-c5a40cca728d,1593404863207.0,3ON104KXQOWMEHBKKM48D2BQLGJ4W8,L,C,6,0,2,"Make an L using four blocks, two as a base~~~",23964,23964,chatMessage
+32,5ef96dfdce2f7f58fcd0ae5c,pilot2,1959-2f467add-c0d9-49a6-b35c-c5a40cca728d,1593404925214.0,3ON104KXQOWMEHBKKM48D2BQLGJ4W8,L,Pi,7,0,2,"Using only FOUR blocks, make an L using two as a base~~~",28610,28610,chatMessage
+33,5ef96e35ce2f7f58fcd0ae77,pilot2,1959-2f467add-c0d9-49a6-b35c-c5a40cca728d,1593404981334.0,3ON104KXQOWMEHBKKM48D2BQLGJ4W8,C,Pi,8,0,2,"Make a table using blocks blocks, enough to fit a square inside",30572,30572,chatMessage
+34,5ef96e6ace2f7f58fcd0ae8d,pilot2,1959-2f467add-c0d9-49a6-b35c-c5a40cca728d,1593405034108.0,3ON104KXQOWMEHBKKM48D2BQLGJ4W8,Pi,L,9,0,3,"You know, I'm sending instruc~~~ for one object at a time~~~~~~~~~",31778,31778,chatMessage
+35,5ef96ea1ce2f7f58fcd0aea1,pilot2,1959-2f467add-c0d9-49a6-b35c-c5a40cca728d,1593405089470.0,3ON104KXQOWMEHBKKM48D2BQLGJ4W8,C,L,10,0,3,"First object, lay a single block between the leftmost tick~~~",19067,19067,chatMessage
+36,5ef96edcce2f7f58fcd0aeac,pilot2,1959-2f467add-c0d9-49a6-b35c-c5a40cca728d,1593405148758.0,3ON104KXQOWMEHBKKM48D2BQLGJ4W8,Pi,C,11,0,3,Make a table of 4 blocks leaving a 2x2 empty spot between the left tick~~~,38436,38436,chatMessage
+0,5efa1301ce2f7f58fcd0aeb9,pilot2,3086-e9f8b532-4969-4703-852e-f6f029d281e2,1593447169132.0,32EYX73OY49GNJOD0YLK3713SIRRUM,horizontal,vertical,practice,0,practice,Thrid block from right place blue,40238,40238,chatMessage
+1,5efa132bce2f7f58fcd0aebb,pilot2,3086-e9f8b532-4969-4703-852e-f6f029d281e2,1593447211521.0,32EYX73OY49GNJOD0YLK3713SIRRUM,horizontal,vertical,practice,2,practice,Third block form left place blue,22967,82631,chatMessage
+2,5efa1362ce2f7f58fcd0aebe,pilot2,3086-e9f8b532-4969-4703-852e-f6f029d281e2,1593447266663.0,32EYX73OY49GNJOD0YLK3713SIRRUM,horizontal,vertical,practice,0,practice,"Third block from left place the first block of blue
+",36046,36046,chatMessage
+3,5efa1383ce2f7f58fcd0aec0,pilot2,3086-e9f8b532-4969-4703-852e-f6f029d281e2,1593447299537.0,32EYX73OY49GNJOD0YLK3713SIRRUM,horizontal,vertical,practice,2,practice,the forth block from the right place red,20408,68962,chatMessage
+4,5efa13adce2f7f58fcd0aec3,pilot2,3086-e9f8b532-4969-4703-852e-f6f029d281e2,1593447341212.0,32EYX73OY49GNJOD0YLK3713SIRRUM,C,Pi,0,0,0,3rd block from left place blue,22865,22865,chatMessage
+5,5efa13d8ce2f7f58fcd0aec5,pilot2,3086-e9f8b532-4969-4703-852e-f6f029d281e2,1593447384010.0,32EYX73OY49GNJOD0YLK3713SIRRUM,C,Pi,0,2,0,"place red block on top left of that block
+",27952,65658,chatMessage
+6,5efa13f5ce2f7f58fcd0aec7,pilot2,3086-e9f8b532-4969-4703-852e-f6f029d281e2,1593447413277.0,32EYX73OY49GNJOD0YLK3713SIRRUM,C,Pi,0,4,0,place red on top of that one~~~ ,15354,94931,chatMessage
+7,5efa1414ce2f7f58fcd0aec9,pilot2,3086-e9f8b532-4969-4703-852e-f6f029d281e2,1593447444554.0,32EYX73OY49GNJOD0YLK3713SIRRUM,C,Pi,0,6,0,"place blue on top to form a ""c""",14519,126210,chatMessage
+8,5efa1430ce2f7f58fcd0aecb,pilot2,3086-e9f8b532-4969-4703-852e-f6f029d281e2,1593447472568.0,32EYX73OY49GNJOD0YLK3713SIRRUM,C,Pi,0,8,0,place blue on 2 from right,16369,154199,chatMessage
+9,5efa1464ce2f7f58fcd0aecd,pilot2,3086-e9f8b532-4969-4703-852e-f6f029d281e2,1593447524606.0,32EYX73OY49GNJOD0YLK3713SIRRUM,C,Pi,0,10,0,place red block on five from right,25539,206259,chatMessage
+10,5efa1490ce2f7f58fcd0aecf,pilot2,3086-e9f8b532-4969-4703-852e-f6f029d281e2,1593447568593.0,32EYX73OY49GNJOD0YLK3713SIRRUM,C,Pi,0,12,0,blue on top of red pointing right,34423,250243,chatMessage
+11,5efa14a7ce2f7f58fcd0aed1,pilot2,3086-e9f8b532-4969-4703-852e-f6f029d281e2,1593447591641.0,32EYX73OY49GNJOD0YLK3713SIRRUM,C,Pi,0,14,0,blue connect previous blue,12835,273292,chatMessage
+12,5efa14d0ce2f7f58fcd0aed4,pilot2,3086-e9f8b532-4969-4703-852e-f6f029d281e2,1593447632991.0,32EYX73OY49GNJOD0YLK3713SIRRUM,L,Pi,1,0,0,red 2 from left,13864,13864,chatMessage
+13,5efa14fdce2f7f58fcd0aed6,pilot2,3086-e9f8b532-4969-4703-852e-f6f029d281e2,1593447677561.0,32EYX73OY49GNJOD0YLK3713SIRRUM,L,Pi,1,2,0,red on top of red,13133,58431,chatMessage
+14,5efa1525ce2f7f58fcd0aed8,pilot2,3086-e9f8b532-4969-4703-852e-f6f029d281e2,1593447717488.0,32EYX73OY49GNJOD0YLK3713SIRRUM,L,Pi,1,4,0,blue 3 from bottem next to red,29307,98356,chatMessage
+15,5efa1544ce2f7f58fcd0aeda,pilot2,3086-e9f8b532-4969-4703-852e-f6f029d281e2,1593447748518.0,32EYX73OY49GNJOD0YLK3713SIRRUM,L,Pi,1,6,0,blue next to last blue,15804,129389,chatMessage
+16,5efa1556ce2f7f58fcd0aedc,pilot2,3086-e9f8b532-4969-4703-852e-f6f029d281e2,1593447766147.0,32EYX73OY49GNJOD0YLK3713SIRRUM,L,Pi,1,8,0,red 2 from right,9767,147012,chatMessage
+17,5efa1578ce2f7f58fcd0aede,pilot2,3086-e9f8b532-4969-4703-852e-f6f029d281e2,1593447800600.0,32EYX73OY49GNJOD0YLK3713SIRRUM,L,Pi,1,10,0,red 5 from right,17156,181473,chatMessage
+18,5efa1592ce2f7f58fcd0aee0,pilot2,3086-e9f8b532-4969-4703-852e-f6f029d281e2,1593447826825.0,32EYX73OY49GNJOD0YLK3713SIRRUM,L,Pi,1,12,0, 2 blues attach in 2 reds,19252,207698,chatMessage
+19,5efa15b4ce2f7f58fcd0aee2,pilot2,3086-e9f8b532-4969-4703-852e-f6f029d281e2,1593447860040.0,32EYX73OY49GNJOD0YLK3713SIRRUM,L,Pi,1,14,0,blue on top,14983,240904,chatMessage
+20,5efa15c6ce2f7f58fcd0aee5,pilot2,3086-e9f8b532-4969-4703-852e-f6f029d281e2,1593447878455.0,32EYX73OY49GNJOD0YLK3713SIRRUM,L,C,2,0,0,blue 2 from left,9987,9987,chatMessage
+21,5efa15e0ce2f7f58fcd0aee7,pilot2,3086-e9f8b532-4969-4703-852e-f6f029d281e2,1593447904658.0,32EYX73OY49GNJOD0YLK3713SIRRUM,L,C,2,2,0,blue next to that one,11911,36193,chatMessage
+22,5efa15f5ce2f7f58fcd0aee9,pilot2,3086-e9f8b532-4969-4703-852e-f6f029d281e2,1593447925961.0,32EYX73OY49GNJOD0YLK3713SIRRUM,L,C,2,4,0,red on top of most left blue,11682,57480,chatMessage
+23,5efa161bce2f7f58fcd0aeeb,pilot2,3086-e9f8b532-4969-4703-852e-f6f029d281e2,1593447963488.0,32EYX73OY49GNJOD0YLK3713SIRRUM,L,C,2,6,0,red on top of most left blue,23686,95020,chatMessage
+24,5efa1639ce2f7f58fcd0aeed,pilot2,3086-e9f8b532-4969-4703-852e-f6f029d281e2,1593447993844.0,32EYX73OY49GNJOD0YLK3713SIRRUM,L,C,2,8,0,blue 3 and 4 from right,20240,125377,chatMessage
+25,5efa166cce2f7f58fcd0aef0,pilot2,3086-e9f8b532-4969-4703-852e-f6f029d281e2,1593448044633.0,32EYX73OY49GNJOD0YLK3713SIRRUM,L,C,2,10,0,red 4 from right on top blue,28955,176162,chatMessage
+26,5efa1683ce2f7f58fcd0aef2,pilot2,3086-e9f8b532-4969-4703-852e-f6f029d281e2,1593448067989.0,32EYX73OY49GNJOD0YLK3713SIRRUM,L,C,2,12,0,red on top of red,7957,199521,chatMessage
+27,5efa1696ce2f7f58fcd0aef5,pilot2,3086-e9f8b532-4969-4703-852e-f6f029d281e2,1593448086905.0,32EYX73OY49GNJOD0YLK3713SIRRUM,C,L,3,0,1,blue 3 from left,9266,9266,chatMessage
+28,5efa16acce2f7f58fcd0aef7,pilot2,3086-e9f8b532-4969-4703-852e-f6f029d281e2,1593448108739.0,32EYX73OY49GNJOD0YLK3713SIRRUM,C,L,3,2,1,red 3 from left on blue,11658,31108,chatMessage
+29,5efa16bdce2f7f58fcd0aef9,pilot2,3086-e9f8b532-4969-4703-852e-f6f029d281e2,1593448125929.0,32EYX73OY49GNJOD0YLK3713SIRRUM,C,L,3,4,1,red on red,4875,48299,chatMessage
+30,5efa16d4ce2f7f58fcd0aefb,pilot2,3086-e9f8b532-4969-4703-852e-f6f029d281e2,1593448148278.0,32EYX73OY49GNJOD0YLK3713SIRRUM,C,L,3,6,1,"blue on top of red to form ""c""",16451,70639,chatMessage
+31,5efa16e9ce2f7f58fcd0aefd,pilot2,3086-e9f8b532-4969-4703-852e-f6f029d281e2,1593448169986.0,32EYX73OY49GNJOD0YLK3713SIRRUM,C,L,3,8,1,blue 2 from right,13670,92352,chatMessage
+32,5efa16fdce2f7f58fcd0aeff,pilot2,3086-e9f8b532-4969-4703-852e-f6f029d281e2,1593448189950.0,32EYX73OY49GNJOD0YLK3713SIRRUM,C,L,3,10,1,blue next to blue,12050,112314,chatMessage
+33,5efa1710ce2f7f58fcd0af01,pilot2,3086-e9f8b532-4969-4703-852e-f6f029d281e2,1593448208851.0,32EYX73OY49GNJOD0YLK3713SIRRUM,C,L,3,12,1,red 5 from right on top of blue,13017,131219,chatMessage
+34,5efa1727ce2f7f58fcd0af03,pilot2,3086-e9f8b532-4969-4703-852e-f6f029d281e2,1593448231384.0,32EYX73OY49GNJOD0YLK3713SIRRUM,C,L,3,14,1,red on red,4909,153749,chatMessage
+35,5efa1745ce2f7f58fcd0af06,pilot2,3086-e9f8b532-4969-4703-852e-f6f029d281e2,1593448261714.0,32EYX73OY49GNJOD0YLK3713SIRRUM,Pi,C,4,0,1,red 2 from left,13522,13522,chatMessage
+36,5efa1761ce2f7f58fcd0af08,pilot2,3086-e9f8b532-4969-4703-852e-f6f029d281e2,1593448289496.0,32EYX73OY49GNJOD0YLK3713SIRRUM,Pi,C,4,2,1,blue on red hanging over right,16252,41309,chatMessage
+37,5efa1774ce2f7f58fcd0af0a,pilot2,3086-e9f8b532-4969-4703-852e-f6f029d281e2,1593448308200.0,32EYX73OY49GNJOD0YLK3713SIRRUM,Pi,C,4,4,1,blue next to blue,7961,59997,chatMessage
+38,5efa1799ce2f7f58fcd0af0c,pilot2,3086-e9f8b532-4969-4703-852e-f6f029d281e2,1593448345553.0,32EYX73OY49GNJOD0YLK3713SIRRUM,Pi,C,4,6,1,connect blue to ground with red,22061,97361,chatMessage
+39,5efa17b5ce2f7f58fcd0af0f,pilot2,3086-e9f8b532-4969-4703-852e-f6f029d281e2,1593448373345.0,32EYX73OY49GNJOD0YLK3713SIRRUM,Pi,C,4,8,1,blue 3 from right,17727,125155,chatMessage
+40,5efa17d0ce2f7f58fcd0af11,pilot2,3086-e9f8b532-4969-4703-852e-f6f029d281e2,1593448400034.0,32EYX73OY49GNJOD0YLK3713SIRRUM,Pi,C,4,10,1,red 4 from right on top of blue,15623,151845,chatMessage
+41,5efa17dece2f7f58fcd0af13,pilot2,3086-e9f8b532-4969-4703-852e-f6f029d281e2,1593448414384.0,32EYX73OY49GNJOD0YLK3713SIRRUM,Pi,C,4,12,1,red on red,5066,166196,chatMessage
+42,5efa17f4ce2f7f58fcd0af16,pilot2,3086-e9f8b532-4969-4703-852e-f6f029d281e2,1593448436256.0,32EYX73OY49GNJOD0YLK3713SIRRUM,Pi,L,5,0,1,red 2 from left,10748,10748,chatMessage
+43,5efa180fce2f7f58fcd0af18,pilot2,3086-e9f8b532-4969-4703-852e-f6f029d281e2,1593448463287.0,32EYX73OY49GNJOD0YLK3713SIRRUM,Pi,L,5,2,1,blue on top of red hanging over right,16722,37780,chatMessage
+44,5efa182fce2f7f58fcd0af1a,pilot2,3086-e9f8b532-4969-4703-852e-f6f029d281e2,1593448495240.0,32EYX73OY49GNJOD0YLK3713SIRRUM,Pi,L,5,4,1,red five from left,23695,69733,chatMessage
+45,5efa184fce2f7f58fcd0af1c,pilot2,3086-e9f8b532-4969-4703-852e-f6f029d281e2,1593448527007.0,32EYX73OY49GNJOD0YLK3713SIRRUM,Pi,L,5,6,1,blue on top of red hanging over left,20280,101501,chatMessage
+46,5efa185fce2f7f58fcd0af1e,pilot2,3086-e9f8b532-4969-4703-852e-f6f029d281e2,1593448543030.0,32EYX73OY49GNJOD0YLK3713SIRRUM,Pi,L,5,8,1,blue 2 from right,8450,117522,chatMessage
+47,5efa1882ce2f7f58fcd0af20,pilot2,3086-e9f8b532-4969-4703-852e-f6f029d281e2,1593448578916.0,32EYX73OY49GNJOD0YLK3713SIRRUM,Pi,L,5,10,1,blue four from right,12022,153406,chatMessage
+48,5efa1898ce2f7f58fcd0af22,pilot2,3086-e9f8b532-4969-4703-852e-f6f029d281e2,1593448600038.0,32EYX73OY49GNJOD0YLK3713SIRRUM,Pi,L,5,12,1,red 5 from right on top of blue,12818,174523,chatMessage
+49,5efa18abce2f7f58fcd0af24,pilot2,3086-e9f8b532-4969-4703-852e-f6f029d281e2,1593448619523.0,32EYX73OY49GNJOD0YLK3713SIRRUM,Pi,L,5,14,1,red on red,5532,194015,chatMessage
+50,5efa18c9ce2f7f58fcd0af27,pilot2,3086-e9f8b532-4969-4703-852e-f6f029d281e2,1593448649933.0,32EYX73OY49GNJOD0YLK3713SIRRUM,L,C,6,0,2,blue 2 from left,12761,12761,chatMessage
+51,5efa18d9ce2f7f58fcd0af29,pilot2,3086-e9f8b532-4969-4703-852e-f6f029d281e2,1593448665874.0,32EYX73OY49GNJOD0YLK3713SIRRUM,L,C,6,2,2,blue 4 from left,8505,28702,chatMessage
+52,5efa18f8ce2f7f58fcd0af2b,pilot2,3086-e9f8b532-4969-4703-852e-f6f029d281e2,1593448696497.0,32EYX73OY49GNJOD0YLK3713SIRRUM,L,C,6,4,2,red 2 from left ontop of blue,20975,59322,chatMessage
+53,5efa191bce2f7f58fcd0af2d,pilot2,3086-e9f8b532-4969-4703-852e-f6f029d281e2,1593448731447.0,32EYX73OY49GNJOD0YLK3713SIRRUM,L,C,6,6,2,red on red,5527,94271,chatMessage
+54,5efa1932ce2f7f58fcd0af2f,pilot2,3086-e9f8b532-4969-4703-852e-f6f029d281e2,1593448754228.0,32EYX73OY49GNJOD0YLK3713SIRRUM,L,C,6,8,2,blue 3 from right,10481,117053,chatMessage
+55,5efa194dce2f7f58fcd0af31,pilot2,3086-e9f8b532-4969-4703-852e-f6f029d281e2,1593448781760.0,32EYX73OY49GNJOD0YLK3713SIRRUM,L,C,6,10,2,red 4 from right ontop of blue,18115,144583,chatMessage
+56,5efa195bce2f7f58fcd0af33,pilot2,3086-e9f8b532-4969-4703-852e-f6f029d281e2,1593448795497.0,32EYX73OY49GNJOD0YLK3713SIRRUM,L,C,6,12,2,red on red,3971,158323,chatMessage
+57,5efa196cce2f7f58fcd0af35,pilot2,3086-e9f8b532-4969-4703-852e-f6f029d281e2,1593448812747.0,32EYX73OY49GNJOD0YLK3713SIRRUM,L,C,6,14,2,"blue on top of red to form a ""c""",12914,175539,chatMessage
+58,5efa198fce2f7f58fcd0af38,pilot2,3086-e9f8b532-4969-4703-852e-f6f029d281e2,1593448847660.0,32EYX73OY49GNJOD0YLK3713SIRRUM,L,Pi,7,0,2,blue 2 from left,12050,12050,chatMessage
+59,5efa19adce2f7f58fcd0af3a,pilot2,3086-e9f8b532-4969-4703-852e-f6f029d281e2,1593448877957.0,32EYX73OY49GNJOD0YLK3713SIRRUM,L,Pi,7,2,2,blue 4 from left,10790,42347,chatMessage
+60,5efa19c8ce2f7f58fcd0af3c,pilot2,3086-e9f8b532-4969-4703-852e-f6f029d281e2,1593448904613.0,32EYX73OY49GNJOD0YLK3713SIRRUM,L,Pi,7,4,2,red 2 from left on blue,15589,69005,chatMessage
+61,5efa19dbce2f7f58fcd0af3e,pilot2,3086-e9f8b532-4969-4703-852e-f6f029d281e2,1593448923412.0,32EYX73OY49GNJOD0YLK3713SIRRUM,L,Pi,7,6,2,red on red,5346,87804,chatMessage
+62,5efa19f4ce2f7f58fcd0af40,pilot2,3086-e9f8b532-4969-4703-852e-f6f029d281e2,1593448948029.0,32EYX73OY49GNJOD0YLK3713SIRRUM,L,Pi,7,8,2,red 2 from right,14955,112419,chatMessage
+63,5efa1a06ce2f7f58fcd0af42,pilot2,3086-e9f8b532-4969-4703-852e-f6f029d281e2,1593448966566.0,32EYX73OY49GNJOD0YLK3713SIRRUM,L,Pi,7,10,2,red 5 from right,10340,130956,chatMessage
+64,5efa1a30ce2f7f58fcd0af44,pilot2,3086-e9f8b532-4969-4703-852e-f6f029d281e2,1593449008798.0,32EYX73OY49GNJOD0YLK3713SIRRUM,L,Pi,7,12,2,connect the 2 reds with 2 blues to form,32172,173185,chatMessage
+65,5efa1a5cce2f7f58fcd0af48,pilot2,3086-e9f8b532-4969-4703-852e-f6f029d281e2,1593449052212.0,32EYX73OY49GNJOD0YLK3713SIRRUM,C,Pi,8,0,2,Blue 3 form left,13508,13508,chatMessage
+66,5efa1a6dce2f7f58fcd0af4a,pilot2,3086-e9f8b532-4969-4703-852e-f6f029d281e2,1593449069641.0,32EYX73OY49GNJOD0YLK3713SIRRUM,C,Pi,8,2,2,red 3 from left on blue,12111,30935,chatMessage
+67,5efa1a7ece2f7f58fcd0af4c,pilot2,3086-e9f8b532-4969-4703-852e-f6f029d281e2,1593449086268.0,32EYX73OY49GNJOD0YLK3713SIRRUM,C,Pi,8,4,2,red on red,6360,47564,chatMessage
+68,5efa1a8dce2f7f58fcd0af4e,pilot2,3086-e9f8b532-4969-4703-852e-f6f029d281e2,1593449101651.0,32EYX73OY49GNJOD0YLK3713SIRRUM,C,Pi,8,6,2,"blue on red to form a ""c""",9325,62944,chatMessage
+69,5efa1aa6ce2f7f58fcd0af50,pilot2,3086-e9f8b532-4969-4703-852e-f6f029d281e2,1593449126675.0,32EYX73OY49GNJOD0YLK3713SIRRUM,C,Pi,8,8,2,red five from right,12840,87970,chatMessage
+70,5efa1ab7ce2f7f58fcd0af52,pilot2,3086-e9f8b532-4969-4703-852e-f6f029d281e2,1593449143791.0,32EYX73OY49GNJOD0YLK3713SIRRUM,C,Pi,8,10,2,red 2 from right,8268,105086,chatMessage
+71,5efa1af9ce2f7f58fcd0af54,pilot2,3086-e9f8b532-4969-4703-852e-f6f029d281e2,1593449209579.0,32EYX73OY49GNJOD0YLK3713SIRRUM,C,Pi,8,12,2,"connect 2 reds with 2 blues to create upside down ""u""",29258,170872,chatMessage
+72,5efa1b1cce2f7f58fcd0af58,pilot2,3086-e9f8b532-4969-4703-852e-f6f029d281e2,1593449244865.0,32EYX73OY49GNJOD0YLK3713SIRRUM,Pi,C,9,0,3,red 2 from left,12533,12533,chatMessage
+73,5efa1b3cce2f7f58fcd0af5a,pilot2,3086-e9f8b532-4969-4703-852e-f6f029d281e2,1593449276159.0,32EYX73OY49GNJOD0YLK3713SIRRUM,Pi,C,9,2,3,blue on top of red hanging over right,20349,43827,chatMessage
+74,5efa1b49ce2f7f58fcd0af5c,pilot2,3086-e9f8b532-4969-4703-852e-f6f029d281e2,1593449289117.0,32EYX73OY49GNJOD0YLK3713SIRRUM,Pi,C,9,4,3,blue next to blue,6590,56783,chatMessage
+75,5efa1b64ce2f7f58fcd0af5f,pilot2,3086-e9f8b532-4969-4703-852e-f6f029d281e2,1593449316824.0,32EYX73OY49GNJOD0YLK3713SIRRUM,Pi,C,9,6,3,blue 3 from left,13100,84490,chatMessage
+76,5efa1b7fce2f7f58fcd0af61,pilot2,3086-e9f8b532-4969-4703-852e-f6f029d281e2,1593449343890.0,32EYX73OY49GNJOD0YLK3713SIRRUM,Pi,C,9,8,3,red 4 from right on top of blue,21347,111555,chatMessage
+77,5efa1b8cce2f7f58fcd0af63,pilot2,3086-e9f8b532-4969-4703-852e-f6f029d281e2,1593449356273.0,32EYX73OY49GNJOD0YLK3713SIRRUM,Pi,C,9,10,3,red on red,3578,123939,chatMessage
+78,5efa1b9dce2f7f58fcd0af65,pilot2,3086-e9f8b532-4969-4703-852e-f6f029d281e2,1593449373586.0,32EYX73OY49GNJOD0YLK3713SIRRUM,Pi,C,9,12,3,"blue on red to form ""c""",10299,141249,chatMessage
+79,5efa1bc8ce2f7f58fcd0af68,pilot2,3086-e9f8b532-4969-4703-852e-f6f029d281e2,1593449416309.0,32EYX73OY49GNJOD0YLK3713SIRRUM,Pi,L,10,0,3,red 2 from left,11812,11812,chatMessage
+80,5efa1bedce2f7f58fcd0af6a,pilot2,3086-e9f8b532-4969-4703-852e-f6f029d281e2,1593449453845.0,32EYX73OY49GNJOD0YLK3713SIRRUM,Pi,L,10,2,3,blue 2 from left on red,17293,49346,chatMessage
+81,5efa1c15ce2f7f58fcd0af6c,pilot2,3086-e9f8b532-4969-4703-852e-f6f029d281e2,1593449493517.0,32EYX73OY49GNJOD0YLK3713SIRRUM,Pi,L,10,4,3,blue next to blue,6030,89007,chatMessage
+82,5efa1c27ce2f7f58fcd0af6f,pilot2,3086-e9f8b532-4969-4703-852e-f6f029d281e2,1593449511924.0,32EYX73OY49GNJOD0YLK3713SIRRUM,Pi,L,10,6,3,blue 2 from right,11091,107423,chatMessage
+83,5efa1c3cce2f7f58fcd0af71,pilot2,3086-e9f8b532-4969-4703-852e-f6f029d281e2,1593449532529.0,32EYX73OY49GNJOD0YLK3713SIRRUM,Pi,L,10,8,3,blue next to blue,7577,128028,chatMessage
+84,5efa1c57ce2f7f58fcd0af73,pilot2,3086-e9f8b532-4969-4703-852e-f6f029d281e2,1593449559190.0,32EYX73OY49GNJOD0YLK3713SIRRUM,Pi,L,10,10,3,"form ""L"" with final two reds",18177,154688,chatMessage
+85,5efa1c98ce2f7f58fcd0af77,pilot2,3086-e9f8b532-4969-4703-852e-f6f029d281e2,1593449624555.0,32EYX73OY49GNJOD0YLK3713SIRRUM,C,L,11,0,3,blue 2 from left,28563,28563,chatMessage
+86,5efa1cb1ce2f7f58fcd0af79,pilot2,3086-e9f8b532-4969-4703-852e-f6f029d281e2,1593449649493.0,32EYX73OY49GNJOD0YLK3713SIRRUM,C,L,11,2,3,red 3 from right,10737,53494,chatMessage
+87,5efa1cdfce2f7f58fcd0af7b,pilot2,3086-e9f8b532-4969-4703-852e-f6f029d281e2,1593449695182.0,32EYX73OY49GNJOD0YLK3713SIRRUM,C,L,11,4,3,I messed up~~~  red on blue 3 form left,29513,99188,chatMessage
+88,5efa1cf4ce2f7f58fcd0af7d,pilot2,3086-e9f8b532-4969-4703-852e-f6f029d281e2,1593449716847.0,32EYX73OY49GNJOD0YLK3713SIRRUM,C,L,11,6,3,red on red,4971,120846,chatMessage
+89,5efa1d05ce2f7f58fcd0af7f,pilot2,3086-e9f8b532-4969-4703-852e-f6f029d281e2,1593449733544.0,32EYX73OY49GNJOD0YLK3713SIRRUM,C,L,11,8,3,blue on red hanging over right,11388,137546,chatMessage
+90,5efa1d22ce2f7f58fcd0af81,pilot2,3086-e9f8b532-4969-4703-852e-f6f029d281e2,1593449762126.0,32EYX73OY49GNJOD0YLK3713SIRRUM,C,L,11,10,3,blue  4 from right,16026,166125,chatMessage
+91,5efa1d40ce2f7f58fcd0af83,pilot2,3086-e9f8b532-4969-4703-852e-f6f029d281e2,1593449792469.0,32EYX73OY49GNJOD0YLK3713SIRRUM,C,L,11,12,3,red 5 from right on blue,16442,196475,chatMessage
+92,5efa1d56ce2f7f58fcd0af85,pilot2,3086-e9f8b532-4969-4703-852e-f6f029d281e2,1593449814192.0,32EYX73OY49GNJOD0YLK3713SIRRUM,C,L,11,14,3,red on red,5881,218197,chatMessage
+0,5efa28f2ce2f7f58fcd0af8c,pilot2,2083-6615b44d-57a8-4953-beca-afa15df0c195,1593452786751.0,3RKNTXVS3QYP748HJH8GVDEZT1PA4K,vertical,horizontal,practice,0,practice,Place one domino verticle on left space of red dash,27166,27166,chatMessage
+1,5efa2939ce2f7f58fcd0af8e,pilot2,2083-6615b44d-57a8-4953-beca-afa15df0c195,1593452857177.0,3RKNTXVS3QYP748HJH8GVDEZT1PA4K,vertical,horizontal,practice,2,practice,Correct~~~ Place blue horizontal in middle of red dash on bottom line,42630,97584,chatMessage
+2,5efa2967ce2f7f58fcd0af91,pilot2,2083-6615b44d-57a8-4953-beca-afa15df0c195,1593452903523.0,3RKNTXVS3QYP748HJH8GVDEZT1PA4K,L,C,0,0,0,Place horizontal in middle of red dash on first line~~~ (Same place as second one in practice),27047,27047,chatMessage
+3,5efa2991ce2f7f58fcd0af93,pilot2,2083-6615b44d-57a8-4953-beca-afa15df0c195,1593452945707.0,3RKNTXVS3QYP748HJH8GVDEZT1PA4K,L,C,0,2,0,Place vertical on top of the one just placed on the left side,25421,69231,chatMessage
+4,5efa29abce2f7f58fcd0af95,pilot2,2083-6615b44d-57a8-4953-beca-afa15df0c195,1593452971361.0,3RKNTXVS3QYP748HJH8GVDEZT1PA4K,L,C,0,4,0,Place vertical directly on top of block just placed,14876,94883,chatMessage
+5,5efa29d0ce2f7f58fcd0af97,pilot2,2083-6615b44d-57a8-4953-beca-afa15df0c195,1593453008596.0,3RKNTXVS3QYP748HJH8GVDEZT1PA4K,L,C,0,6,0,Place horizontal on top of vertical just placed~~~ Left box on horizontal should be on top of vertical,28220,132118,chatMessage
+6,5efa29f9ce2f7f58fcd0af99,pilot2,2083-6615b44d-57a8-4953-beca-afa15df0c195,1593453049123.0,3RKNTXVS3QYP748HJH8GVDEZT1PA4K,L,C,0,8,0,Move to other red dash~~~ Horizontal domino where left most box is the space to the right of the red ,28806,172645,chatMessage
+7,5efa2a29ce2f7f58fcd0af9d,pilot2,2083-6615b44d-57a8-4953-beca-afa15df0c195,1593453097209.0,3RKNTXVS3QYP748HJH8GVDEZT1PA4K,L,C,0,10,0,Place another horizontal touching last one placed~~~ on bottom row to right of red dash,27254,220733,chatMessage
+8,5efa2a5bce2f7f58fcd0afa0,pilot2,2083-6615b44d-57a8-4953-beca-afa15df0c195,1593453147653.0,3RKNTXVS3QYP748HJH8GVDEZT1PA4K,L,C,0,12,0,Place horizontal to left of left most domino (touching),18976,271177,chatMessage
+9,5efa2a79ce2f7f58fcd0afa2,pilot2,2083-6615b44d-57a8-4953-beca-afa15df0c195,1593453177588.0,3RKNTXVS3QYP748HJH8GVDEZT1PA4K,L,C,0,14,0,Stack a vertical on top of left box of left most domino,19748,301108,chatMessage
+10,5efa2aa5ce2f7f58fcd0afa6,pilot2,2083-6615b44d-57a8-4953-beca-afa15df0c195,1593453221227.0,3RKNTXVS3QYP748HJH8GVDEZT1PA4K,C,Pi,1,0,0,Place horizontal right in the middle of left most red dash on bottm,31303,31303,chatMessage
+11,5efa2ac7ce2f7f58fcd0afaa,pilot2,2083-6615b44d-57a8-4953-beca-afa15df0c195,1593453255448.0,3RKNTXVS3QYP748HJH8GVDEZT1PA4K,C,Pi,1,2,0,Place vertical on top of left most block of domino just placed,17158,65526,chatMessage
+12,5efa2addce2f7f58fcd0afac,pilot2,2083-6615b44d-57a8-4953-beca-afa15df0c195,1593453277557.0,3RKNTXVS3QYP748HJH8GVDEZT1PA4K,C,Pi,1,4,0,Stack one more vertical on top of that one,11112,87627,chatMessage
+13,5efa2afdce2f7f58fcd0afaf,pilot2,2083-6615b44d-57a8-4953-beca-afa15df0c195,1593453309935.0,3RKNTXVS3QYP748HJH8GVDEZT1PA4K,C,Pi,1,6,0,Place horizontal where left box of horizontal is on top of vertical just stacked,20108,120012,chatMessage
+14,5efa2b38ce2f7f58fcd0afb3,pilot2,2083-6615b44d-57a8-4953-beca-afa15df0c195,1593453368056.0,3RKNTXVS3QYP748HJH8GVDEZT1PA4K,C,Pi,1,8,0,Place a vertical block on the BOTTOM layer one space to the left of the right edge of gameboard,24059,178131,chatMessage
+15,5efa2b65ce2f7f58fcd0afb8,pilot2,2083-6615b44d-57a8-4953-beca-afa15df0c195,1593453413688.0,3RKNTXVS3QYP748HJH8GVDEZT1PA4K,C,Pi,1,10,0,Place another vertical block three spaces to the left of that one on the bottom layer,18925,223765,chatMessage
+16,5efa2b85ce2f7f58fcd0afbb,pilot2,2083-6615b44d-57a8-4953-beca-afa15df0c195,1593453445173.0,3RKNTXVS3QYP748HJH8GVDEZT1PA4K,C,Pi,1,12,0,Place two horizontal blocks on top of those just placed to make a roof~~~ ,22021,255249,chatMessage
+17,5efa2baece2f7f58fcd0afc0,pilot2,2083-6615b44d-57a8-4953-beca-afa15df0c195,1593453486699.0,3RKNTXVS3QYP748HJH8GVDEZT1PA4K,L,Pi,2,0,0,Make same house-like structure as in the last round ,24722,24722,chatMessage
+18,5efa2bd9ce2f7f58fcd0afc5,pilot2,2083-6615b44d-57a8-4953-beca-afa15df0c195,1593453529556.0,3RKNTXVS3QYP748HJH8GVDEZT1PA4K,L,Pi,2,2,0,Perfect~~~ place horizontal one space to the right of left edge of gameboard on bottom layer,26290,67580,chatMessage
+19,5efa2bfece2f7f58fcd0afc8,pilot2,2083-6615b44d-57a8-4953-beca-afa15df0c195,1593453566780.0,3RKNTXVS3QYP748HJH8GVDEZT1PA4K,L,Pi,2,4,0,Place another horizontal to the right of the one just placed (touching),14446,104805,chatMessage
+20,5efa2c32ce2f7f58fcd0afcd,pilot2,2083-6615b44d-57a8-4953-beca-afa15df0c195,1593453618418.0,3RKNTXVS3QYP748HJH8GVDEZT1PA4K,L,Pi,2,6,0,Place a vertical on top of the left box of the domino in the second layer,18715,156442,chatMessage
+21,5efa2c5fce2f7f58fcd0afd3,pilot2,2083-6615b44d-57a8-4953-beca-afa15df0c195,1593453663947.0,3RKNTXVS3QYP748HJH8GVDEZT1PA4K,Pi,C,3,0,1,Make same house-like structure except on other side of board (one space from left),26601,26601,chatMessage
+22,5efa2c87ce2f7f58fcd0afd8,pilot2,2083-6615b44d-57a8-4953-beca-afa15df0c195,1593453703662.0,3RKNTXVS3QYP748HJH8GVDEZT1PA4K,Pi,C,3,2,1,Perfect~~~ Place horizontal right in middle of right side red dash on bottom layer,22460,66317,chatMessage
+23,5efa2c9cce2f7f58fcd0afdc,pilot2,2083-6615b44d-57a8-4953-beca-afa15df0c195,1593453724015.0,3RKNTXVS3QYP748HJH8GVDEZT1PA4K,Pi,C,3,4,1,Stack vertical on top of left box of domino just placed,12547,86669,chatMessage
+24,5efa2cb1ce2f7f58fcd0afe0,pilot2,2083-6615b44d-57a8-4953-beca-afa15df0c195,1593453745069.0,3RKNTXVS3QYP748HJH8GVDEZT1PA4K,Pi,C,3,6,1,Stack one more vertical on top of that one,11577,107720,chatMessage
+25,5efa2ccece2f7f58fcd0afe2,pilot2,2083-6615b44d-57a8-4953-beca-afa15df0c195,1593453774216.0,3RKNTXVS3QYP748HJH8GVDEZT1PA4K,Pi,C,3,8,1,Great job! Place a horizontal so the left box of horizontal rests on top of vertical just placed,22714,136871,chatMessage
+26,5efa2cebce2f7f58fcd0afe5,pilot2,2083-6615b44d-57a8-4953-beca-afa15df0c195,1593453803948.0,3RKNTXVS3QYP748HJH8GVDEZT1PA4K,Pi,L,4,0,1,Build same house-like structure on the left side of gameboard like last time,15779,15779,chatMessage
+27,5efa2d0ece2f7f58fcd0afee,pilot2,2083-6615b44d-57a8-4953-beca-afa15df0c195,1593453838418.0,3RKNTXVS3QYP748HJH8GVDEZT1PA4K,Pi,L,4,2,1,Place a horizontal on bottom layer one space to the left of right edge of gameboard,22291,50249,chatMessage
+28,5efa2d2dce2f7f58fcd0aff0,pilot2,2083-6615b44d-57a8-4953-beca-afa15df0c195,1593453869018.0,3RKNTXVS3QYP748HJH8GVDEZT1PA4K,Pi,L,4,4,1,Place another horizontal to the left of that one on the bottom layer touching it,17052,80844,chatMessage
+29,5efa2d4ace2f7f58fcd0aff4,pilot2,2083-6615b44d-57a8-4953-beca-afa15df0c195,1593453898089.0,3RKNTXVS3QYP748HJH8GVDEZT1PA4K,Pi,L,4,6,1,Place vertical on top of left-most box of last horizontal placed ,22060,109918,chatMessage
+30,5efa2d6ece2f7f58fcd0aff8,pilot2,2083-6615b44d-57a8-4953-beca-afa15df0c195,1593453934895.0,3RKNTXVS3QYP748HJH8GVDEZT1PA4K,Pi,L,4,8,1,Place another vertical on one just placed~~~ H will = horizontal and V = vertical,27980,146725,chatMessage
+31,5efa2d99ce2f7f58fcd0b001,pilot2,2083-6615b44d-57a8-4953-beca-afa15df0c195,1593453977687.0,3RKNTXVS3QYP748HJH8GVDEZT1PA4K,C,L,5,0,1,Build another L shape on right of board~~~ Start with H one to the left of right edge,27975,27975,chatMessage
+32,5efa2dbbce2f7f58fcd0b008,pilot2,2083-6615b44d-57a8-4953-beca-afa15df0c195,1593454011038.0,3RKNTXVS3QYP748HJH8GVDEZT1PA4K,C,L,5,2,1,Build another H to the left of H just placed,15076,61332,chatMessage
+33,5efa2dd5ce2f7f58fcd0b00d,pilot2,2083-6615b44d-57a8-4953-beca-afa15df0c195,1593454037093.0,3RKNTXVS3QYP748HJH8GVDEZT1PA4K,C,L,5,4,1,Place V on top of left-most box of last placed H,15276,87388,chatMessage
+34,5efa2de4ce2f7f58fcd0b010,pilot2,2083-6615b44d-57a8-4953-beca-afa15df0c195,1593454052881.0,3RKNTXVS3QYP748HJH8GVDEZT1PA4K,C,L,5,6,1,Place one more V on top of one just placed,9686,103176,chatMessage
+35,5efa2dfdce2f7f58fcd0b016,pilot2,2083-6615b44d-57a8-4953-beca-afa15df0c195,1593454077860.0,3RKNTXVS3QYP748HJH8GVDEZT1PA4K,C,L,5,8,1,Place H on bottom layer in the center of the red dash on left side of board,19814,128146,chatMessage
+36,5efa2e15ce2f7f58fcd0b01b,pilot2,2083-6615b44d-57a8-4953-beca-afa15df0c195,1593454101088.0,3RKNTXVS3QYP748HJH8GVDEZT1PA4K,C,L,5,10,1,Place 2 V's on top of left-most box of H just placed,16180,151379,chatMessage
+37,5efa2e36ce2f7f58fcd0b023,pilot2,2083-6615b44d-57a8-4953-beca-afa15df0c195,1593454134769.0,3RKNTXVS3QYP748HJH8GVDEZT1PA4K,L,Pi,6,0,2,Make same house-like structure on right side of board (starts one box in from right side),20467,20467,chatMessage
+38,5efa2e65ce2f7f58fcd0b02e,pilot2,2083-6615b44d-57a8-4953-beca-afa15df0c195,1593454181409.0,3RKNTXVS3QYP748HJH8GVDEZT1PA4K,L,Pi,6,2,2,Great! Place H one box to the right of left side of gameboard on bottm,31339,67102,chatMessage
+39,5efa2e7cce2f7f58fcd0b032,pilot2,2083-6615b44d-57a8-4953-beca-afa15df0c195,1593454204927.0,3RKNTXVS3QYP748HJH8GVDEZT1PA4K,L,Pi,6,4,2,Place another H to the right of one just placed on bottom layer,14120,90624,chatMessage
+40,5efa2e9ace2f7f58fcd0b035,pilot2,2083-6615b44d-57a8-4953-beca-afa15df0c195,1593454234682.0,3RKNTXVS3QYP748HJH8GVDEZT1PA4K,L,Pi,6,6,2,Place two V's on top of left-most box of left-most H~~~ (will make another L shape),21310,120379,chatMessage
+41,5efa2ebdce2f7f58fcd0b03e,pilot2,2083-6615b44d-57a8-4953-beca-afa15df0c195,1593454269654.0,3RKNTXVS3QYP748HJH8GVDEZT1PA4K,L,C,7,0,2,Build another L shape in the exact same place as last round,21106,21106,chatMessage
+42,5efa2edbce2f7f58fcd0b047,pilot2,2083-6615b44d-57a8-4953-beca-afa15df0c195,1593454299671.0,3RKNTXVS3QYP748HJH8GVDEZT1PA4K,L,C,7,2,2,On right-side red dash place an H in the middle of the dash on the bottom layer,16011,51122,chatMessage
+43,5efa2ef8ce2f7f58fcd0b04c,pilot2,2083-6615b44d-57a8-4953-beca-afa15df0c195,1593454328084.0,3RKNTXVS3QYP748HJH8GVDEZT1PA4K,L,C,7,4,2,Place 2 V's on top of left-most box of H just placed,13218,79533,chatMessage
+44,5efa2f1dce2f7f58fcd0b052,pilot2,2083-6615b44d-57a8-4953-beca-afa15df0c195,1593454365596.0,3RKNTXVS3QYP748HJH8GVDEZT1PA4K,L,C,7,6,2,Place H where left-most box of H sits on V just placed (ill call this C-shape),25859,117047,chatMessage
+45,5efa2f44ce2f7f58fcd0b05e,pilot2,2083-6615b44d-57a8-4953-beca-afa15df0c195,1593454404848.0,3RKNTXVS3QYP748HJH8GVDEZT1PA4K,C,Pi,8,0,2,Build same C shape as last round on one space to right of the left edge of game board,25176,25176,chatMessage
+46,5efa2f68ce2f7f58fcd0b06b,pilot2,2083-6615b44d-57a8-4953-beca-afa15df0c195,1593454440673.0,3RKNTXVS3QYP748HJH8GVDEZT1PA4K,C,Pi,8,2,2,Build house structure on right edge of game board,10607,61002,chatMessage
+47,5efa2f91ce2f7f58fcd0b075,pilot2,2083-6615b44d-57a8-4953-beca-afa15df0c195,1593454481040.0,3RKNTXVS3QYP748HJH8GVDEZT1PA4K,Pi,C,9,0,3,Build house structure one block to the right of the left edge of gameboard,18248,18248,chatMessage
+48,5efa2fb1ce2f7f58fcd0b081,pilot2,2083-6615b44d-57a8-4953-beca-afa15df0c195,1593454513921.0,3RKNTXVS3QYP748HJH8GVDEZT1PA4K,Pi,C,9,2,3,Build C shape two blocks to the left of the right edge of the game board,20080,51130,chatMessage
+49,5efa2fdbce2f7f58fcd0b08c,pilot2,2083-6615b44d-57a8-4953-beca-afa15df0c195,1593454555047.0,3RKNTXVS3QYP748HJH8GVDEZT1PA4K,Pi,L,10,0,3,Build house structure on left side of board one space to the right of the left edge,16959,16959,chatMessage
+50,5efa2ff6ce2f7f58fcd0b093,pilot2,2083-6615b44d-57a8-4953-beca-afa15df0c195,1593454582343.0,3RKNTXVS3QYP748HJH8GVDEZT1PA4K,Pi,L,10,2,3,Build L-shape one block to the left of the right edge of the game board,14452,44255,chatMessage
+51,5efa301ace2f7f58fcd0b0a2,pilot2,2083-6615b44d-57a8-4953-beca-afa15df0c195,1593454618123.0,3RKNTXVS3QYP748HJH8GVDEZT1PA4K,C,L,11,0,3,Build another L shape identical to last one,13733,13733,chatMessage
+52,5efa3058ce2f7f58fcd0b0b1,pilot2,2083-6615b44d-57a8-4953-beca-afa15df0c195,1593454680175.0,3RKNTXVS3QYP748HJH8GVDEZT1PA4K,C,L,11,2,3,Build C shape two blocks to the right of the left edge of the gameboard,24829,75785,chatMessage
+0,5efa2c90ce2f7f58fcd0afda,pilot2,4909-705b801e-4ec3-4910-b180-bb7612d80f25,1593453712273.0,3LJ7UR74RLDWRN26SLDLHJYZS8ON4H,vertical,horizontal,practice,0,practice,red block 1 tick to the left of the left red tick~~~  blue block in the middle or right red tick,102244,102244,chatMessage
+1,5efa2cfece2f7f58fcd0afea,pilot2,4909-705b801e-4ec3-4910-b180-bb7612d80f25,1593453822861.0,3LJ7UR74RLDWRN26SLDLHJYZS8ON4H,vertical,horizontal,practice,0,practice,R 3rd from left wall~~~  B 3rd and 4th from right wall,80602,80602,chatMessage
+2,5efa2d3cce2f7f58fcd0aff2,pilot2,4909-705b801e-4ec3-4910-b180-bb7612d80f25,1593453884655.0,3LJ7UR74RLDWRN26SLDLHJYZS8ON4H,L,Pi,0,0,0,B 2nd and 3rd from left wall,42969,42969,chatMessage
+3,5efa2d53ce2f7f58fcd0aff6,pilot2,4909-705b801e-4ec3-4910-b180-bb7612d80f25,1593453907284.0,3LJ7UR74RLDWRN26SLDLHJYZS8ON4H,L,Pi,0,2,0,B 4th and 5th from left wall,8643,65599,chatMessage
+4,5efa2d78ce2f7f58fcd0affa,pilot2,4909-705b801e-4ec3-4910-b180-bb7612d80f25,1593453944310.0,3LJ7UR74RLDWRN26SLDLHJYZS8ON4H,L,Pi,0,4,0,R on top of 1st B placed (2nd from left wall),25694,102620,chatMessage
+5,5efa2d8ace2f7f58fcd0affd,pilot2,4909-705b801e-4ec3-4910-b180-bb7612d80f25,1593453962488.0,3LJ7UR74RLDWRN26SLDLHJYZS8ON4H,L,Pi,0,6,0,R on top of last R placed,8251,120798,chatMessage
+6,5efa2d98ce2f7f58fcd0b000,pilot2,4909-705b801e-4ec3-4910-b180-bb7612d80f25,1593453976969.0,3LJ7UR74RLDWRN26SLDLHJYZS8ON4H,L,Pi,0,8,0,R 2nd from right wall,7801,135281,chatMessage
+7,5efa2da7ce2f7f58fcd0b005,pilot2,4909-705b801e-4ec3-4910-b180-bb7612d80f25,1593453991468.0,3LJ7UR74RLDWRN26SLDLHJYZS8ON4H,L,Pi,0,10,0,R 5th from right wall,5668,149781,chatMessage
+8,5efa2dd9ce2f7f58fcd0b00f,pilot2,4909-705b801e-4ec3-4910-b180-bb7612d80f25,1593454041352.0,3LJ7UR74RLDWRN26SLDLHJYZS8ON4H,L,Pi,0,12,0,B on top of last R placed (4th and 5th from right wall),40566,199663,chatMessage
+9,5efa2dfdce2f7f58fcd0b015,pilot2,4909-705b801e-4ec3-4910-b180-bb7612d80f25,1593454077302.0,3LJ7UR74RLDWRN26SLDLHJYZS8ON4H,L,Pi,0,14,0,B directly to the right of last B placed (2nd and 3rd from right wall),22915,235618,chatMessage
+10,5efa2e27ce2f7f58fcd0b021,pilot2,4909-705b801e-4ec3-4910-b180-bb7612d80f25,1593454119250.0,3LJ7UR74RLDWRN26SLDLHJYZS8ON4H,C,Pi,1,0,0,R 3rd from left wall,25787,25787,chatMessage
+11,5efa2e4ece2f7f58fcd0b02b,pilot2,4909-705b801e-4ec3-4910-b180-bb7612d80f25,1593454158182.0,3LJ7UR74RLDWRN26SLDLHJYZS8ON4H,C,Pi,1,2,0,skip a space above then place another R vertical from last R,32687,64722,chatMessage
+12,5efa2e9cce2f7f58fcd0b036,pilot2,4909-705b801e-4ec3-4910-b180-bb7612d80f25,1593454236785.0,3LJ7UR74RLDWRN26SLDLHJYZS8ON4H,C,Pi,1,4,0,"R bottom block = 3 from left, 4 from bottom",44688,143324,chatMessage
+13,5efa2f28ce2f7f58fcd0b056,pilot2,4909-705b801e-4ec3-4910-b180-bb7612d80f25,1593454376521.0,3LJ7UR74RLDWRN26SLDLHJYZS8ON4H,C,Pi,1,6,0,R 2nd from right wall,112995,283062,chatMessage
+14,5efa2f3cce2f7f58fcd0b05a,pilot2,4909-705b801e-4ec3-4910-b180-bb7612d80f25,1593454396090.0,3LJ7UR74RLDWRN26SLDLHJYZS8ON4H,C,Pi,1,8,0,R 5th from right wall,8337,302631,chatMessage
+15,5efa2f53ce2f7f58fcd0b062,pilot2,4909-705b801e-4ec3-4910-b180-bb7612d80f25,1593454419797.0,3LJ7UR74RLDWRN26SLDLHJYZS8ON4H,C,Pi,1,10,0,B on top of last R placed (4th and 5th from right wall),14718,326328,chatMessage
+16,5efa2f71ce2f7f58fcd0b06c,pilot2,4909-705b801e-4ec3-4910-b180-bb7612d80f25,1593454449290.0,3LJ7UR74RLDWRN26SLDLHJYZS8ON4H,C,Pi,1,12,0,B next to last B placed (2nd and 3rd from right wall),17732,355830,chatMessage
+17,5efa2faace2f7f58fcd0b080,pilot2,4909-705b801e-4ec3-4910-b180-bb7612d80f25,1593454506588.0,3LJ7UR74RLDWRN26SLDLHJYZS8ON4H,C,Pi,1,14,0,"B 6 up from bottom, 3rd and 4th from left wall",46678,413126,chatMessage
+18,5efa2fd8ce2f7f58fcd0b08b,pilot2,4909-705b801e-4ec3-4910-b180-bb7612d80f25,1593454552342.0,3LJ7UR74RLDWRN26SLDLHJYZS8ON4H,C,Pi,1,16,0,B 3rd and 4th from left wall,23052,458880,chatMessage
+19,5efa2ffdce2f7f58fcd0b094,pilot2,4909-705b801e-4ec3-4910-b180-bb7612d80f25,1593454589700.0,3LJ7UR74RLDWRN26SLDLHJYZS8ON4H,C,Pi,1,18,0,"R on top of last B, 3rd from left wall",17569,496240,chatMessage
+20,5efa300fce2f7f58fcd0b09f,pilot2,4909-705b801e-4ec3-4910-b180-bb7612d80f25,1593454607801.0,3LJ7UR74RLDWRN26SLDLHJYZS8ON4H,C,Pi,1,20,0,B on top of last R 3rd and 4th from left wall,12534,514343,chatMessage
+21,5efa302ace2f7f58fcd0b0a4,pilot2,4909-705b801e-4ec3-4910-b180-bb7612d80f25,1593454634282.0,3LJ7UR74RLDWRN26SLDLHJYZS8ON4H,L,C,2,0,0,B 2nd and 3rd from left wall,17182,17182,chatMessage
+22,5efa303bce2f7f58fcd0b0ab,pilot2,4909-705b801e-4ec3-4910-b180-bb7612d80f25,1593454651479.0,3LJ7UR74RLDWRN26SLDLHJYZS8ON4H,L,C,2,2,0,B 4th and 5th from left wall,8933,34380,chatMessage
+23,5efa3058ce2f7f58fcd0b0b2,pilot2,4909-705b801e-4ec3-4910-b180-bb7612d80f25,1593454680263.0,3LJ7UR74RLDWRN26SLDLHJYZS8ON4H,L,C,2,4,0,"R on top of 1st B, 2nd from left wall",12152,63164,chatMessage
+24,5efa306cce2f7f58fcd0b0ba,pilot2,4909-705b801e-4ec3-4910-b180-bb7612d80f25,1593454700312.0,3LJ7UR74RLDWRN26SLDLHJYZS8ON4H,L,C,2,6,0,"R on top of last R, 2nd from left wall",12119,83214,chatMessage
+25,5efa307ace2f7f58fcd0b0be,pilot2,4909-705b801e-4ec3-4910-b180-bb7612d80f25,1593454714626.0,3LJ7UR74RLDWRN26SLDLHJYZS8ON4H,L,C,2,8,0,B 3rd and 4th from right wall,8316,97529,chatMessage
+26,5efa308bce2f7f58fcd0b0c2,pilot2,4909-705b801e-4ec3-4910-b180-bb7612d80f25,1593454731712.0,3LJ7UR74RLDWRN26SLDLHJYZS8ON4H,L,C,2,10,0,"R on top of last B, 4th from right wall",10119,114616,chatMessage
+27,5efa309ace2f7f58fcd0b0c8,pilot2,4909-705b801e-4ec3-4910-b180-bb7612d80f25,1593454746528.0,3LJ7UR74RLDWRN26SLDLHJYZS8ON4H,L,C,2,12,0,"R on top of last R, 4th from right wall",7253,129431,chatMessage
+28,5efa30adce2f7f58fcd0b0cd,pilot2,4909-705b801e-4ec3-4910-b180-bb7612d80f25,1593454765297.0,3LJ7UR74RLDWRN26SLDLHJYZS8ON4H,L,C,2,14,0,"B on top of last R, 3rd and 4th from right wall",11947,148195,chatMessage
+29,5efa30c2ce2f7f58fcd0b0d2,pilot2,4909-705b801e-4ec3-4910-b180-bb7612d80f25,1593454786044.0,3LJ7UR74RLDWRN26SLDLHJYZS8ON4H,Pi,C,3,0,1,R 2nd from left wall,7878,7878,chatMessage
+30,5efa30d3ce2f7f58fcd0b0d6,pilot2,4909-705b801e-4ec3-4910-b180-bb7612d80f25,1593454803551.0,3LJ7UR74RLDWRN26SLDLHJYZS8ON4H,Pi,C,3,2,1,"B on top of last R, 2nd and 3rd from left wall",11112,25387,chatMessage
+31,5efa30f6ce2f7f58fcd0b0dc,pilot2,4909-705b801e-4ec3-4910-b180-bb7612d80f25,1593454838410.0,3LJ7UR74RLDWRN26SLDLHJYZS8ON4H,Pi,C,3,4,1,R 5th from left wall,28121,60245,chatMessage
+32,5efa310bce2f7f58fcd0b0de,pilot2,4909-705b801e-4ec3-4910-b180-bb7612d80f25,1593454859476.0,3LJ7UR74RLDWRN26SLDLHJYZS8ON4H,Pi,C,3,6,1,"B on top of last R, 4th and 5th from left wall",11433,81311,chatMessage
+33,5efa3121ce2f7f58fcd0b0e1,pilot2,4909-705b801e-4ec3-4910-b180-bb7612d80f25,1593454881808.0,3LJ7UR74RLDWRN26SLDLHJYZS8ON4H,Pi,C,3,8,1,B 3rd and 4th from right wall,10621,103642,chatMessage
+34,5efa3134ce2f7f58fcd0b0e4,pilot2,4909-705b801e-4ec3-4910-b180-bb7612d80f25,1593454900380.0,3LJ7UR74RLDWRN26SLDLHJYZS8ON4H,Pi,C,3,10,1,"R on top of last B, 4th from right wall",11059,122216,chatMessage
+35,5efa3144ce2f7f58fcd0b0e6,pilot2,4909-705b801e-4ec3-4910-b180-bb7612d80f25,1593454916556.0,3LJ7UR74RLDWRN26SLDLHJYZS8ON4H,Pi,C,3,12,1,"R on top of last R, 4th from right wall",9365,138392,chatMessage
+36,5efa3155ce2f7f58fcd0b0ea,pilot2,4909-705b801e-4ec3-4910-b180-bb7612d80f25,1593454933388.0,3LJ7UR74RLDWRN26SLDLHJYZS8ON4H,Pi,C,3,14,1,"B on top of last R, 3rd and 4th from right wall",11930,155224,chatMessage
+37,5efa316ace2f7f58fcd0b0f5,pilot2,4909-705b801e-4ec3-4910-b180-bb7612d80f25,1593454954249.0,3LJ7UR74RLDWRN26SLDLHJYZS8ON4H,Pi,L,4,0,1,R 2nd from left wall,8927,8927,chatMessage
+38,5efa317bce2f7f58fcd0b0f8,pilot2,4909-705b801e-4ec3-4910-b180-bb7612d80f25,1593454971602.0,3LJ7UR74RLDWRN26SLDLHJYZS8ON4H,Pi,L,4,2,1,"B on top of last R, 2nd and 3rd from left wall",11551,26280,chatMessage
+39,5efa3187ce2f7f58fcd0b0fa,pilot2,4909-705b801e-4ec3-4910-b180-bb7612d80f25,1593454983096.0,3LJ7UR74RLDWRN26SLDLHJYZS8ON4H,Pi,L,4,4,1,R 5th from left wall,5351,37774,chatMessage
+40,5efa3198ce2f7f58fcd0b101,pilot2,4909-705b801e-4ec3-4910-b180-bb7612d80f25,1593455000894.0,3LJ7UR74RLDWRN26SLDLHJYZS8ON4H,Pi,L,4,6,1,"B on top of last R, 4th and 5th from left wall",10091,55573,chatMessage
+41,5efa31a5ce2f7f58fcd0b103,pilot2,4909-705b801e-4ec3-4910-b180-bb7612d80f25,1593455013899.0,3LJ7UR74RLDWRN26SLDLHJYZS8ON4H,Pi,L,4,8,1,B 2nd and 3rd from right wall,6116,68577,chatMessage
+42,5efa31b4ce2f7f58fcd0b109,pilot2,4909-705b801e-4ec3-4910-b180-bb7612d80f25,1593455028916.0,3LJ7UR74RLDWRN26SLDLHJYZS8ON4H,Pi,L,4,10,1,B 4th and 5th from right wall,6676,83592,chatMessage
+43,5efa31c4ce2f7f58fcd0b10b,pilot2,4909-705b801e-4ec3-4910-b180-bb7612d80f25,1593455044632.0,3LJ7UR74RLDWRN26SLDLHJYZS8ON4H,Pi,L,4,12,1,"R on top of last B, 5th from right wall",8726,99311,chatMessage
+44,5efa31d6ce2f7f58fcd0b10e,pilot2,4909-705b801e-4ec3-4910-b180-bb7612d80f25,1593455062393.0,3LJ7UR74RLDWRN26SLDLHJYZS8ON4H,Pi,L,4,14,1,"R on top of last R, 5th from right wall",8841,117072,chatMessage
+45,5efa31f3ce2f7f58fcd0b117,pilot2,4909-705b801e-4ec3-4910-b180-bb7612d80f25,1593455091625.0,3LJ7UR74RLDWRN26SLDLHJYZS8ON4H,C,L,5,0,1,B 3rd and 4th from LW,19215,19215,chatMessage
+46,5efa320dce2f7f58fcd0b11f,pilot2,4909-705b801e-4ec3-4910-b180-bb7612d80f25,1593455117082.0,3LJ7UR74RLDWRN26SLDLHJYZS8ON4H,C,L,5,2,1,"R on top of last B, 3rd from LW",16418,44671,chatMessage
+47,5efa321fce2f7f58fcd0b122,pilot2,4909-705b801e-4ec3-4910-b180-bb7612d80f25,1593455135443.0,3LJ7UR74RLDWRN26SLDLHJYZS8ON4H,C,L,5,4,1,"R on top of last R, 3rd from LW",9042,63033,chatMessage
+48,5efa322fce2f7f58fcd0b127,pilot2,4909-705b801e-4ec3-4910-b180-bb7612d80f25,1593455151262.0,3LJ7UR74RLDWRN26SLDLHJYZS8ON4H,C,L,5,6,1,"B on top of last R, 3rd and 4th from LW",10871,78841,chatMessage
+49,5efa323cce2f7f58fcd0b12a,pilot2,4909-705b801e-4ec3-4910-b180-bb7612d80f25,1593455164688.0,3LJ7UR74RLDWRN26SLDLHJYZS8ON4H,C,L,5,8,1,B 2nd and 3rd from RW,6876,92279,chatMessage
+50,5efa3248ce2f7f58fcd0b12d,pilot2,4909-705b801e-4ec3-4910-b180-bb7612d80f25,1593455176519.0,3LJ7UR74RLDWRN26SLDLHJYZS8ON4H,C,L,5,10,1,B 4th and 5th from RW,5989,104109,chatMessage
+51,5efa3257ce2f7f58fcd0b133,pilot2,4909-705b801e-4ec3-4910-b180-bb7612d80f25,1593455191979.0,3LJ7UR74RLDWRN26SLDLHJYZS8ON4H,C,L,5,12,1,R on top of last B 5th from RW,9916,119570,chatMessage
+52,5efa3267ce2f7f58fcd0b137,pilot2,4909-705b801e-4ec3-4910-b180-bb7612d80f25,1593455207271.0,3LJ7UR74RLDWRN26SLDLHJYZS8ON4H,C,L,5,14,1,"R on top of last R, 5th from RW",7322,134862,chatMessage
+53,5efa3278ce2f7f58fcd0b141,pilot2,4909-705b801e-4ec3-4910-b180-bb7612d80f25,1593455224861.0,3LJ7UR74RLDWRN26SLDLHJYZS8ON4H,C,Pi,6,0,2,B 3rd and 4th from LW,7578,7578,chatMessage
+54,5efa3288ce2f7f58fcd0b144,pilot2,4909-705b801e-4ec3-4910-b180-bb7612d80f25,1593455240080.0,3LJ7UR74RLDWRN26SLDLHJYZS8ON4H,C,Pi,6,2,2,"R on top of last B, 3rd from LW",8800,22797,chatMessage
+55,5efa3295ce2f7f58fcd0b147,pilot2,4909-705b801e-4ec3-4910-b180-bb7612d80f25,1593455253268.0,3LJ7UR74RLDWRN26SLDLHJYZS8ON4H,C,Pi,6,4,2,"R on top of last R, 3rd from LW",6624,35983,chatMessage
+56,5efa32a4ce2f7f58fcd0b149,pilot2,4909-705b801e-4ec3-4910-b180-bb7612d80f25,1593455268286.0,3LJ7UR74RLDWRN26SLDLHJYZS8ON4H,C,Pi,6,6,2,"B on top of last R, 3rd and 4th from LW",9456,51002,chatMessage
+57,5efa32b4ce2f7f58fcd0b14c,pilot2,4909-705b801e-4ec3-4910-b180-bb7612d80f25,1593455284244.0,3LJ7UR74RLDWRN26SLDLHJYZS8ON4H,C,Pi,6,8,2,R 5th from RW,10135,66961,chatMessage
+58,5efa32c6ce2f7f58fcd0b14f,pilot2,4909-705b801e-4ec3-4910-b180-bb7612d80f25,1593455302505.0,3LJ7UR74RLDWRN26SLDLHJYZS8ON4H,C,Pi,6,10,2,"B on top of last R, 4th and 5th from RW",8181,85223,chatMessage
+59,5efa32d1ce2f7f58fcd0b156,pilot2,4909-705b801e-4ec3-4910-b180-bb7612d80f25,1593455313808.0,3LJ7UR74RLDWRN26SLDLHJYZS8ON4H,C,Pi,6,12,2,R 2nd from RW,3550,96526,chatMessage
+60,5efa32e0ce2f7f58fcd0b15d,pilot2,4909-705b801e-4ec3-4910-b180-bb7612d80f25,1593455328606.0,3LJ7UR74RLDWRN26SLDLHJYZS8ON4H,C,Pi,6,14,2,"B on top of last R,, 2nd and 3rd from RW",6664,111324,chatMessage
+61,5efa32f9ce2f7f58fcd0b165,pilot2,4909-705b801e-4ec3-4910-b180-bb7612d80f25,1593455353684.0,3LJ7UR74RLDWRN26SLDLHJYZS8ON4H,L,Pi,7,0,2,B 4th and 5th from LW,11862,11862,chatMessage
+62,5efa330ace2f7f58fcd0b16c,pilot2,4909-705b801e-4ec3-4910-b180-bb7612d80f25,1593455370516.0,3LJ7UR74RLDWRN26SLDLHJYZS8ON4H,L,Pi,7,2,2,B 2nd and 3rd from LW,6223,28689,chatMessage
+63,5efa331cce2f7f58fcd0b174,pilot2,4909-705b801e-4ec3-4910-b180-bb7612d80f25,1593455388769.0,3LJ7UR74RLDWRN26SLDLHJYZS8ON4H,L,Pi,7,4,2,"R on top of last B, 2nd from LW",6895,46946,chatMessage
+64,5efa332ace2f7f58fcd0b17a,pilot2,4909-705b801e-4ec3-4910-b180-bb7612d80f25,1593455402089.0,3LJ7UR74RLDWRN26SLDLHJYZS8ON4H,L,Pi,7,6,2,"R on top of last R, 2nd from LW",4494,60259,chatMessage
+65,5efa3335ce2f7f58fcd0b17d,pilot2,4909-705b801e-4ec3-4910-b180-bb7612d80f25,1593455413943.0,3LJ7UR74RLDWRN26SLDLHJYZS8ON4H,L,Pi,7,8,2,R 5th from RW,7363,72119,chatMessage
+66,5efa334cce2f7f58fcd0b184,pilot2,4909-705b801e-4ec3-4910-b180-bb7612d80f25,1593455436623.0,3LJ7UR74RLDWRN26SLDLHJYZS8ON4H,L,Pi,7,10,2,"B on top of last R, 4th and 5th from RW",12366,94802,chatMessage
+67,5efa3359ce2f7f58fcd0b187,pilot2,4909-705b801e-4ec3-4910-b180-bb7612d80f25,1593455449156.0,3LJ7UR74RLDWRN26SLDLHJYZS8ON4H,L,Pi,7,12,2,R 2nd from RW,3796,107334,chatMessage
+68,5efa3367ce2f7f58fcd0b18d,pilot2,4909-705b801e-4ec3-4910-b180-bb7612d80f25,1593455463838.0,3LJ7UR74RLDWRN26SLDLHJYZS8ON4H,L,Pi,7,14,2,"B on top of last R,, 2nd and 3rd from RW",6648,122015,chatMessage
+69,5efa337cce2f7f58fcd0b199,pilot2,4909-705b801e-4ec3-4910-b180-bb7612d80f25,1593455484961.0,3LJ7UR74RLDWRN26SLDLHJYZS8ON4H,L,C,8,0,2,B 4th and 5th from LW,9060,9060,chatMessage
+70,5efa338bce2f7f58fcd0b19e,pilot2,4909-705b801e-4ec3-4910-b180-bb7612d80f25,1593455499549.0,3LJ7UR74RLDWRN26SLDLHJYZS8ON4H,L,C,8,2,2,B 2nd and 3rd from LW,4714,23646,chatMessage
+71,5efa339cce2f7f58fcd0b1a6,pilot2,4909-705b801e-4ec3-4910-b180-bb7612d80f25,1593455516524.0,3LJ7UR74RLDWRN26SLDLHJYZS8ON4H,L,C,8,4,2,"R on top of last B, 2nd from LW",6707,40623,chatMessage
+72,5efa33a8ce2f7f58fcd0b1ab,pilot2,4909-705b801e-4ec3-4910-b180-bb7612d80f25,1593455528766.0,3LJ7UR74RLDWRN26SLDLHJYZS8ON4H,L,C,8,6,2,"R on top of last R, 2nd from LW",3848,52866,chatMessage
+73,5efa33b4ce2f7f58fcd0b1b3,pilot2,4909-705b801e-4ec3-4910-b180-bb7612d80f25,1593455540544.0,3LJ7UR74RLDWRN26SLDLHJYZS8ON4H,L,C,8,8,2,B 3rd and 4th from RW,7602,64641,chatMessage
+74,5efa33c4ce2f7f58fcd0b1b6,pilot2,4909-705b801e-4ec3-4910-b180-bb7612d80f25,1593455556676.0,3LJ7UR74RLDWRN26SLDLHJYZS8ON4H,L,C,8,10,2,"R on top of last B, 4th from RW",6122,80773,chatMessage
+75,5efa33d4ce2f7f58fcd0b1bd,pilot2,4909-705b801e-4ec3-4910-b180-bb7612d80f25,1593455572303.0,3LJ7UR74RLDWRN26SLDLHJYZS8ON4H,L,C,8,12,2,"R on top of last R, 4th from RW",6096,96400,chatMessage
+76,5efa33e5ce2f7f58fcd0b1c0,pilot2,4909-705b801e-4ec3-4910-b180-bb7612d80f25,1593455589482.0,3LJ7UR74RLDWRN26SLDLHJYZS8ON4H,L,C,8,14,2,"B on top of last R, 3rd and 4th from RW",10932,113579,chatMessage
+77,5efa33face2f7f58fcd0b1cd,pilot2,4909-705b801e-4ec3-4910-b180-bb7612d80f25,1593455610118.0,3LJ7UR74RLDWRN26SLDLHJYZS8ON4H,C,L,9,0,3,B 3rd and 4th from LW,7117,7117,chatMessage
+78,5efa340ace2f7f58fcd0b1d0,pilot2,4909-705b801e-4ec3-4910-b180-bb7612d80f25,1593455626350.0,3LJ7UR74RLDWRN26SLDLHJYZS8ON4H,C,L,9,2,3,"R on top of last B, 3rd from LW",8143,23355,chatMessage
+79,5efa3414ce2f7f58fcd0b1d3,pilot2,4909-705b801e-4ec3-4910-b180-bb7612d80f25,1593455636085.0,3LJ7UR74RLDWRN26SLDLHJYZS8ON4H,C,L,9,4,3,"R on top of last R, 3rd from LW",3461,33093,chatMessage
+80,5efa341fce2f7f58fcd0b1d9,pilot2,4909-705b801e-4ec3-4910-b180-bb7612d80f25,1593455647979.0,3LJ7UR74RLDWRN26SLDLHJYZS8ON4H,C,L,9,6,3,"B on top of last R, 3rd and 4th from LW",7177,44985,chatMessage
+81,5efa342fce2f7f58fcd0b1df,pilot2,4909-705b801e-4ec3-4910-b180-bb7612d80f25,1593455663291.0,3LJ7UR74RLDWRN26SLDLHJYZS8ON4H,C,L,9,8,3,B 2nd and 3rd from RW,8172,60300,chatMessage
+82,5efa343ece2f7f58fcd0b1e7,pilot2,4909-705b801e-4ec3-4910-b180-bb7612d80f25,1593455678575.0,3LJ7UR74RLDWRN26SLDLHJYZS8ON4H,C,L,9,10,3,B 4th and 5th from RW,6290,75580,chatMessage
+83,5efa344ece2f7f58fcd0b1ea,pilot2,4909-705b801e-4ec3-4910-b180-bb7612d80f25,1593455694689.0,3LJ7UR74RLDWRN26SLDLHJYZS8ON4H,C,L,9,12,3,"R on top of last B, 5th from RW",9091,91696,chatMessage
+84,5efa345fce2f7f58fcd0b1ec,pilot2,4909-705b801e-4ec3-4910-b180-bb7612d80f25,1593455711953.0,3LJ7UR74RLDWRN26SLDLHJYZS8ON4H,C,L,9,14,3,"R on top of last R, 5th from RW",8090,108942,chatMessage
+85,5efa346ece2f7f58fcd0b1f0,pilot2,4909-705b801e-4ec3-4910-b180-bb7612d80f25,1593455726989.0,3LJ7UR74RLDWRN26SLDLHJYZS8ON4H,Pi,L,10,0,3,R 2nd from LW,4671,4671,chatMessage
+86,5efa347fce2f7f58fcd0b1f6,pilot2,4909-705b801e-4ec3-4910-b180-bb7612d80f25,1593455743696.0,3LJ7UR74RLDWRN26SLDLHJYZS8ON4H,Pi,L,10,2,3,"B on top of last R, 2nd and 3rd from LW",9695,21379,chatMessage
+87,5efa348cce2f7f58fcd0b1fb,pilot2,4909-705b801e-4ec3-4910-b180-bb7612d80f25,1593455756346.0,3LJ7UR74RLDWRN26SLDLHJYZS8ON4H,Pi,L,10,4,3,R 5th from LW,6329,34028,chatMessage
+88,5efa349bce2f7f58fcd0b1fd,pilot2,4909-705b801e-4ec3-4910-b180-bb7612d80f25,1593455771876.0,3LJ7UR74RLDWRN26SLDLHJYZS8ON4H,Pi,L,10,6,3,"B on top of last R, 4th and 5th from LW",7248,49560,chatMessage
+89,5efa34a9ce2f7f58fcd0b1ff,pilot2,4909-705b801e-4ec3-4910-b180-bb7612d80f25,1593455785522.0,3LJ7UR74RLDWRN26SLDLHJYZS8ON4H,Pi,L,10,8,3,B 2nd and 3rd from RW,6323,63207,chatMessage
+90,5efa34b8ce2f7f58fcd0b206,pilot2,4909-705b801e-4ec3-4910-b180-bb7612d80f25,1593455800624.0,3LJ7UR74RLDWRN26SLDLHJYZS8ON4H,Pi,L,10,10,3,B 4th and 5th from RW,6115,78308,chatMessage
+91,5efa34c6ce2f7f58fcd0b208,pilot2,4909-705b801e-4ec3-4910-b180-bb7612d80f25,1593455814940.0,3LJ7UR74RLDWRN26SLDLHJYZS8ON4H,Pi,L,10,12,3,"R on top of last B, 5th from RW",8041,92624,chatMessage
+92,5efa34d5ce2f7f58fcd0b20a,pilot2,4909-705b801e-4ec3-4910-b180-bb7612d80f25,1593455829971.0,3LJ7UR74RLDWRN26SLDLHJYZS8ON4H,Pi,L,10,14,3,"R on top of last R, 5th from RW",4314,107655,chatMessage
+93,5efa34e9ce2f7f58fcd0b20f,pilot2,4909-705b801e-4ec3-4910-b180-bb7612d80f25,1593455849308.0,3LJ7UR74RLDWRN26SLDLHJYZS8ON4H,Pi,C,11,0,3,R 2nd from LW,7433,7433,chatMessage
+94,5efa34fece2f7f58fcd0b215,pilot2,4909-705b801e-4ec3-4910-b180-bb7612d80f25,1593455870321.0,3LJ7UR74RLDWRN26SLDLHJYZS8ON4H,Pi,C,11,2,3,"B on top of last R, 2nd and 3rd from LW",15019,28447,chatMessage
+95,5efa350ace2f7f58fcd0b218,pilot2,4909-705b801e-4ec3-4910-b180-bb7612d80f25,1593455882596.0,3LJ7UR74RLDWRN26SLDLHJYZS8ON4H,Pi,C,11,4,3,R 5th from LW,5567,40721,chatMessage
+96,5efa351ace2f7f58fcd0b21e,pilot2,4909-705b801e-4ec3-4910-b180-bb7612d80f25,1593455898889.0,3LJ7UR74RLDWRN26SLDLHJYZS8ON4H,Pi,C,11,6,3,"B on top of last R, 4th and 5th from LW",6357,57007,chatMessage
+97,5efa3528ce2f7f58fcd0b223,pilot2,4909-705b801e-4ec3-4910-b180-bb7612d80f25,1593455912732.0,3LJ7UR74RLDWRN26SLDLHJYZS8ON4H,Pi,C,11,8,3,B 3rd and 4th from RW,6874,70858,chatMessage
+98,5efa353ace2f7f58fcd0b228,pilot2,4909-705b801e-4ec3-4910-b180-bb7612d80f25,1593455930484.0,3LJ7UR74RLDWRN26SLDLHJYZS8ON4H,Pi,C,11,10,3,"R on top of last B, 4th from RW",8420,88610,chatMessage
+99,5efa3545ce2f7f58fcd0b22a,pilot2,4909-705b801e-4ec3-4910-b180-bb7612d80f25,1593455941345.0,3LJ7UR74RLDWRN26SLDLHJYZS8ON4H,Pi,C,11,12,3,"R on top of last R, 4th from RW",3792,99472,chatMessage
+100,5efa3552ce2f7f58fcd0b22c,pilot2,4909-705b801e-4ec3-4910-b180-bb7612d80f25,1593455954768.0,3LJ7UR74RLDWRN26SLDLHJYZS8ON4H,Pi,C,11,14,3,"B on top of last R, 3rd and 4th from RW",7269,112894,chatMessage
+0,5efa2d97ce2f7f58fcd0afff,pilot2,5895-de8412be-4cb1-49e4-9c61-ca6a11481af8,1593453975245.0,3Z9WI9EOZ3OPVT5YAF5OJGQZ3I5HKS,vertical,horizontal,practice,0,practice,place the red verticle on the bottom row just to the left of the red mark on the left side,48266,48266,chatMessage
+1,5efa2dc3ce2f7f58fcd0b009,pilot2,5895-de8412be-4cb1-49e4-9c61-ca6a11481af8,1593454019152.0,3Z9WI9EOZ3OPVT5YAF5OJGQZ3I5HKS,vertical,horizontal,practice,2,practice,move it one column to the left,22301,92170,chatMessage
+2,5efa2df2ce2f7f58fcd0b013,pilot2,5895-de8412be-4cb1-49e4-9c61-ca6a11481af8,1593454066077.0,3Z9WI9EOZ3OPVT5YAF5OJGQZ3I5HKS,vertical,horizontal,practice,0,practice,Put the horizontal blue one on the bottom row splitting the red mark on the right side,35571,35571,chatMessage
+3,5efa2e10ce2f7f58fcd0b01a,pilot2,5895-de8412be-4cb1-49e4-9c61-ca6a11481af8,1593454096558.0,3Z9WI9EOZ3OPVT5YAF5OJGQZ3I5HKS,vertical,horizontal,practice,2,practice,move it over to the other red mark on the right,21342,66046,chatMessage
+4,5efa2e3bce2f7f58fcd0b024,pilot2,5895-de8412be-4cb1-49e4-9c61-ca6a11481af8,1593454139730.0,3Z9WI9EOZ3OPVT5YAF5OJGQZ3I5HKS,vertical,horizontal,practice,0,practice,correct but do they both need to be left up in their places?,27053,27053,chatMessage
+5,5efa2eb6ce2f7f58fcd0b03b,pilot2,5895-de8412be-4cb1-49e4-9c61-ca6a11481af8,1593454262133.0,3Z9WI9EOZ3OPVT5YAF5OJGQZ3I5HKS,L,C,0,0,0,place 2 blue blocks on the left on either side of the red mark and then 2 red blocks on top on left,96153,96153,chatMessage
+6,5efa2f2ece2f7f58fcd0b058,pilot2,5895-de8412be-4cb1-49e4-9c61-ca6a11481af8,1593454382236.0,3Z9WI9EOZ3OPVT5YAF5OJGQZ3I5HKS,L,C,0,2,0,move red on top of red~~~ Then add 1 blue on right splitting the red hash and stack 2 red on top,88888,216248,chatMessage
+7,5efa2f8dce2f7f58fcd0b074,pilot2,5895-de8412be-4cb1-49e4-9c61-ca6a11481af8,1593454477329.0,3Z9WI9EOZ3OPVT5YAF5OJGQZ3I5HKS,L,Pi,1,0,0,2 blue on either side of left red mark then 2 red on top of each other on left side~~~,49398,49398,chatMessage
+8,5efa3037ce2f7f58fcd0b0a7,pilot2,5895-de8412be-4cb1-49e4-9c61-ca6a11481af8,1593454647366.0,3Z9WI9EOZ3OPVT5YAF5OJGQZ3I5HKS,L,Pi,1,2,0,"remove 2nd row of blue~~~ Add on right, 2 blue splitting red hash 3 rows up and make upside down U ",139105,219433,chatMessage
+9,5efa307dce2f7f58fcd0b0bf,pilot2,5895-de8412be-4cb1-49e4-9c61-ca6a11481af8,1593454717323.0,3Z9WI9EOZ3OPVT5YAF5OJGQZ3I5HKS,L,Pi,1,4,0,"on right, 3 rows up place 2 blue splitting hash and add verticle reds on each end from bottom",56375,289386,chatMessage
+10,5efa30d2ce2f7f58fcd0b0d5,pilot2,5895-de8412be-4cb1-49e4-9c61-ca6a11481af8,1593454802228.0,3Z9WI9EOZ3OPVT5YAF5OJGQZ3I5HKS,C,Pi,2,0,0,left blue splits hash with 2 reds on top left and another blue on the reds~~~,55882,55882,chatMessage
+11,5efa3146ce2f7f58fcd0b0e7,pilot2,5895-de8412be-4cb1-49e4-9c61-ca6a11481af8,1593454918779.0,3Z9WI9EOZ3OPVT5YAF5OJGQZ3I5HKS,C,Pi,2,2,0,on right reds skip one from red hash on each side then top with 2 blue to make upside down U,89440,172435,chatMessage
+12,5efa3197ce2f7f58fcd0b100,pilot2,5895-de8412be-4cb1-49e4-9c61-ca6a11481af8,1593454999560.0,3Z9WI9EOZ3OPVT5YAF5OJGQZ3I5HKS,Pi,C,3,0,1,"On left, reds skip one from red hash on each side and top with 2 blues to make upside down U",45501,45501,chatMessage
+13,5efa31d8ce2f7f58fcd0b10f,pilot2,5895-de8412be-4cb1-49e4-9c61-ca6a11481af8,1593455064492.0,3Z9WI9EOZ3OPVT5YAF5OJGQZ3I5HKS,Pi,C,3,2,1,On right 1 blue splitting red hash then red on left then red on red then blue on top,38890,110433,chatMessage
+14,5efa3266ce2f7f58fcd0b136,pilot2,5895-de8412be-4cb1-49e4-9c61-ca6a11481af8,1593455206991.0,3Z9WI9EOZ3OPVT5YAF5OJGQZ3I5HKS,Pi,L,4,0,1,on left skip 1 from red hash on each side and place red then top with 2 blue to make upside down  U,94159,94159,chatMessage
+15,5efa32b1ce2f7f58fcd0b14b,pilot2,5895-de8412be-4cb1-49e4-9c61-ca6a11481af8,1593455281623.0,3Z9WI9EOZ3OPVT5YAF5OJGQZ3I5HKS,Pi,L,4,2,1,On right place 1 blue on each side of hash mark then stack 2 reds on left side to make L,55113,168793,chatMessage
+16,5efa330dce2f7f58fcd0b16d,pilot2,5895-de8412be-4cb1-49e4-9c61-ca6a11481af8,1593455373800.0,3Z9WI9EOZ3OPVT5YAF5OJGQZ3I5HKS,C,L,5,0,1,On left 1 blue splitting hash mark then on left add red and another red on that and top with blue,49958,49958,chatMessage
+17,5efa3368ce2f7f58fcd0b18e,pilot2,5895-de8412be-4cb1-49e4-9c61-ca6a11481af8,1593455464241.0,3Z9WI9EOZ3OPVT5YAF5OJGQZ3I5HKS,C,L,5,2,1,On right 1 blue on each side of hash then 2 reds on left side to make L,73024,140414,chatMessage
+18,5efa3399ce2f7f58fcd0b1a4,pilot2,5895-de8412be-4cb1-49e4-9c61-ca6a11481af8,1593455513823.0,3Z9WI9EOZ3OPVT5YAF5OJGQZ3I5HKS,C,Pi,6,0,2,on left 1 blue splitting hash the red on left and red on red and top with blue,30092,30092,chatMessage
+19,5efa33e6ce2f7f58fcd0b1c1,pilot2,5895-de8412be-4cb1-49e4-9c61-ca6a11481af8,1593455590148.0,3Z9WI9EOZ3OPVT5YAF5OJGQZ3I5HKS,C,Pi,6,2,2,on right skip one from hash on each side with red then top with blue to make upside down U,52874,106424,chatMessage
+20,5efa3432ce2f7f58fcd0b1e1,pilot2,5895-de8412be-4cb1-49e4-9c61-ca6a11481af8,1593455666290.0,3Z9WI9EOZ3OPVT5YAF5OJGQZ3I5HKS,L,Pi,7,0,2,On left 1 blue on each side of hash and 2 reds stacked on left side to make L,49173,49173,chatMessage
+21,5efa346fce2f7f58fcd0b1f1,pilot2,5895-de8412be-4cb1-49e4-9c61-ca6a11481af8,1593455727534.0,3Z9WI9EOZ3OPVT5YAF5OJGQZ3I5HKS,L,Pi,7,2,2,On right skip one from hash on each side with reds then  top with 2 blues to make upside down U,44540,110411,chatMessage
+22,5efa34acce2f7f58fcd0b200,pilot2,5895-de8412be-4cb1-49e4-9c61-ca6a11481af8,1593455788049.0,3Z9WI9EOZ3OPVT5YAF5OJGQZ3I5HKS,L,C,8,0,2,On left 1 blue on each side of hash and 2 reds stacked on left side to make L,35554,35554,chatMessage
+23,5efa34dfce2f7f58fcd0b20d,pilot2,5895-de8412be-4cb1-49e4-9c61-ca6a11481af8,1593455839608.0,3Z9WI9EOZ3OPVT5YAF5OJGQZ3I5HKS,L,C,8,2,2,On right 1 blue splitting hash the stack red on left and another red on that and top with blue,37626,87102,chatMessage
+24,5efa3506ce2f7f58fcd0b217,pilot2,5895-de8412be-4cb1-49e4-9c61-ca6a11481af8,1593455878802.0,3Z9WI9EOZ3OPVT5YAF5OJGQZ3I5HKS,Pi,L,9,0,3,Upside down U on left,14344,14344,chatMessage
+25,5efa3523ce2f7f58fcd0b220,pilot2,5895-de8412be-4cb1-49e4-9c61-ca6a11481af8,1593455907348.0,3Z9WI9EOZ3OPVT5YAF5OJGQZ3I5HKS,Pi,L,9,2,3,L on right,7737,42895,chatMessage
+26,5efa3576ce2f7f58fcd0b22f,pilot2,5895-de8412be-4cb1-49e4-9c61-ca6a11481af8,1593455990267.0,3Z9WI9EOZ3OPVT5YAF5OJGQZ3I5HKS,C,L,10,0,3,Left is blue splitting hash with red on left and red on red and blue on top~~~  Right is an L,66424,66424,chatMessage
+27,5efa35cfce2f7f58fcd0b24e,pilot2,5895-de8412be-4cb1-49e4-9c61-ca6a11481af8,1593456079478.0,3Z9WI9EOZ3OPVT5YAF5OJGQZ3I5HKS,Pi,C,11,0,3,Left is upside down U~~~ Right is blue splits hash with red on left and red on red then top with blue,56730,56730,chatMessage
+0,5efa2e3fce2f7f58fcd0b026,pilot2,0662-7a9212c9-5aa7-44de-9ed7-4663c56562d2,1593454143780.0,3JC6VJ2SAFJ73NCHXMRQ05KDTXKA5P,vertical,horizontal,practice,0,practice,"hello
+",61924,61924,chatMessage
+1,5efa2e66ce2f7f58fcd0b02f,pilot2,0662-7a9212c9-5aa7-44de-9ed7-4663c56562d2,1593454182973.0,3JC6VJ2SAFJ73NCHXMRQ05KDTXKA5P,vertical,horizontal,practice,2,practice,"need to place one vertically on the very bottom, three spots from the left",33489,101115,chatMessage
+2,5efa2e9ece2f7f58fcd0b037,pilot2,0662-7a9212c9-5aa7-44de-9ed7-4663c56562d2,1593454238691.0,3JC6VJ2SAFJ73NCHXMRQ05KDTXKA5P,vertical,horizontal,practice,4,practice,now the other is place horizontally 6 spots to the right of the last one on the very bottom also,34511,156832,chatMessage
+3,5efa2ee5ce2f7f58fcd0b048,pilot2,0662-7a9212c9-5aa7-44de-9ed7-4663c56562d2,1593454309932.0,3JC6VJ2SAFJ73NCHXMRQ05KDTXKA5P,L,Pi,0,0,0,okay two blocks placed horizontally side by side~~~ one spot from left,38933,38933,chatMessage
+4,5efa2f13ce2f7f58fcd0b051,pilot2,0662-7a9212c9-5aa7-44de-9ed7-4663c56562d2,1593454355779.0,3JC6VJ2SAFJ73NCHXMRQ05KDTXKA5P,L,Pi,0,2,0,"now on top of that~~~ at the very left square, 2 blocks vertically goin up from there~~~ to make an L",31912,84778,chatMessage
+5,5efa2f48ce2f7f58fcd0b060,pilot2,0662-7a9212c9-5aa7-44de-9ed7-4663c56562d2,1593454408864.0,3JC6VJ2SAFJ73NCHXMRQ05KDTXKA5P,L,Pi,0,4,0,"nice~~~ ok, now two spots to the right of that L you will place one vertical on the bottom row",29676,137860,chatMessage
+6,5efa2f68ce2f7f58fcd0b06a,pilot2,0662-7a9212c9-5aa7-44de-9ed7-4663c56562d2,1593454440164.0,3JC6VJ2SAFJ73NCHXMRQ05KDTXKA5P,L,Pi,0,6,0,now two spots to the right of that another vertical,13122,169157,chatMessage
+7,5efa2fb6ce2f7f58fcd0b082,pilot2,0662-7a9212c9-5aa7-44de-9ed7-4663c56562d2,1593454518354.0,3JC6VJ2SAFJ73NCHXMRQ05KDTXKA5P,L,Pi,0,8,0,now two horizontal blocks connecting the two~~~ above them~~~ to make an upside down u~~~ like an n,25014,247352,chatMessage
+8,5efa2ff3ce2f7f58fcd0b092,pilot2,0662-7a9212c9-5aa7-44de-9ed7-4663c56562d2,1593454579751.0,3JC6VJ2SAFJ73NCHXMRQ05KDTXKA5P,L,C,1,0,0,"same as last one~~~ on the left side, one spot from left you will make an L~~~ two horizontal, two vert",41916,41916,chatMessage
+9,5efa3022ce2f7f58fcd0b0a3,pilot2,0662-7a9212c9-5aa7-44de-9ed7-4663c56562d2,1593454626295.0,3JC6VJ2SAFJ73NCHXMRQ05KDTXKA5P,L,C,1,2,0,"nice, now 3 spots from that to the right place one horizontal on bottom row",24283,88459,chatMessage
+10,5efa3049ce2f7f58fcd0b0ad,pilot2,0662-7a9212c9-5aa7-44de-9ed7-4663c56562d2,1593454665336.0,3JC6VJ2SAFJ73NCHXMRQ05KDTXKA5P,L,C,1,4,0,"now 2 vertical from that one, above it~~~ from the left square",19560,127501,chatMessage
+11,5efa306bce2f7f58fcd0b0b9,pilot2,0662-7a9212c9-5aa7-44de-9ed7-4663c56562d2,1593454699555.0,3JC6VJ2SAFJ73NCHXMRQ05KDTXKA5P,L,C,1,6,0,now one horizontal from that~~~ on top~~~ to form a long looking C,19419,161715,chatMessage
+12,5efa3097ce2f7f58fcd0b0c7,pilot2,0662-7a9212c9-5aa7-44de-9ed7-4663c56562d2,1593454743055.0,3JC6VJ2SAFJ73NCHXMRQ05KDTXKA5P,C,Pi,2,0,0,"okay, that same C we just did~~~ now its on the left side~~~ starts 2 spots from the left on the bottom",31544,31544,chatMessage
+13,5efa30d1ce2f7f58fcd0b0d4,pilot2,0662-7a9212c9-5aa7-44de-9ed7-4663c56562d2,1593454801911.0,3JC6VJ2SAFJ73NCHXMRQ05KDTXKA5P,C,Pi,2,2,0,"now upside down u~~~ 3 spots to right of the C~~~ one vert, then two horizontal, then one vert again~~~ ",34234,90393,chatMessage
+14,5efa3149ce2f7f58fcd0b0e9,pilot2,0662-7a9212c9-5aa7-44de-9ed7-4663c56562d2,1593454921922.0,3JC6VJ2SAFJ73NCHXMRQ05KDTXKA5P,C,Pi,2,4,0,now one horizontal to the right~~~ then one vert under that,18857,210412,chatMessage
+15,5efa3178ce2f7f58fcd0b0f7,pilot2,0662-7a9212c9-5aa7-44de-9ed7-4663c56562d2,1593454968408.0,3JC6VJ2SAFJ73NCHXMRQ05KDTXKA5P,Pi,L,3,0,1,okay same upside down u~~~ one spot from left,15458,15458,chatMessage
+16,5efa31cece2f7f58fcd0b10d,pilot2,0662-7a9212c9-5aa7-44de-9ed7-4663c56562d2,1593455054409.0,3JC6VJ2SAFJ73NCHXMRQ05KDTXKA5P,Pi,L,3,2,1,"now 2 spots to the right, another big L~~~ 2 horizontal pieces, then 2 vert pieces from left square",43126,101458,chatMessage
+17,5efa3206ce2f7f58fcd0b11e,pilot2,0662-7a9212c9-5aa7-44de-9ed7-4663c56562d2,1593455110601.0,3JC6VJ2SAFJ73NCHXMRQ05KDTXKA5P,C,L,4,0,1,"okay a long C, 2 spots from left, one horizontal, 2 vert from left square, then one horz on top",28934,28934,chatMessage
+18,5efa3239ce2f7f58fcd0b129,pilot2,0662-7a9212c9-5aa7-44de-9ed7-4663c56562d2,1593455161650.0,3JC6VJ2SAFJ73NCHXMRQ05KDTXKA5P,C,L,4,2,1,"okay now another big L, 3 spots to right",12666,79981,chatMessage
+19,5efa3264ce2f7f58fcd0b135,pilot2,0662-7a9212c9-5aa7-44de-9ed7-4663c56562d2,1593455204179.0,3JC6VJ2SAFJ73NCHXMRQ05KDTXKA5P,Pi,C,5,0,1,"upside down u, one spot from left",15077,15077,chatMessage
+20,5efa328ece2f7f58fcd0b146,pilot2,0662-7a9212c9-5aa7-44de-9ed7-4663c56562d2,1593455246576.0,3JC6VJ2SAFJ73NCHXMRQ05KDTXKA5P,Pi,C,5,2,1,"long C, 3 spots to right, just like this last one you made but on the left side",19714,57475,chatMessage
+21,5efa32dcce2f7f58fcd0b15c,pilot2,0662-7a9212c9-5aa7-44de-9ed7-4663c56562d2,1593455324772.0,3JC6VJ2SAFJ73NCHXMRQ05KDTXKA5P,L,C,6,0,2,"big L, one spot from left",10844,10844,chatMessage
+22,5efa32f3ce2f7f58fcd0b164,pilot2,0662-7a9212c9-5aa7-44de-9ed7-4663c56562d2,1593455347420.0,3JC6VJ2SAFJ73NCHXMRQ05KDTXKA5P,L,C,6,2,2,long C 3 spots to right,11901,33487,chatMessage
+23,5efa3315ce2f7f58fcd0b170,pilot2,0662-7a9212c9-5aa7-44de-9ed7-4663c56562d2,1593455381380.0,3JC6VJ2SAFJ73NCHXMRQ05KDTXKA5P,C,Pi,7,0,2,long C 2 spots from left,10071,10071,chatMessage
+24,5efa3331ce2f7f58fcd0b17c,pilot2,0662-7a9212c9-5aa7-44de-9ed7-4663c56562d2,1593455409821.0,3JC6VJ2SAFJ73NCHXMRQ05KDTXKA5P,C,Pi,7,2,2,upside down u 3 spots to right,15331,38513,chatMessage
+25,5efa3351ce2f7f58fcd0b185,pilot2,0662-7a9212c9-5aa7-44de-9ed7-4663c56562d2,1593455441729.0,3JC6VJ2SAFJ73NCHXMRQ05KDTXKA5P,L,Pi,8,0,2,big L one spot from left,8320,8320,chatMessage
+26,5efa336cce2f7f58fcd0b18f,pilot2,0662-7a9212c9-5aa7-44de-9ed7-4663c56562d2,1593455468377.0,3JC6VJ2SAFJ73NCHXMRQ05KDTXKA5P,L,Pi,8,2,2,upside down u 2 spots to right,13486,34967,chatMessage
+27,5efa3390ce2f7f58fcd0b19f,pilot2,0662-7a9212c9-5aa7-44de-9ed7-4663c56562d2,1593455504293.0,3JC6VJ2SAFJ73NCHXMRQ05KDTXKA5P,C,L,9,0,3,long C 2 spots from left,10129,10129,chatMessage
+28,5efa33a4ce2f7f58fcd0b1a9,pilot2,0662-7a9212c9-5aa7-44de-9ed7-4663c56562d2,1593455524740.0,3JC6VJ2SAFJ73NCHXMRQ05KDTXKA5P,C,L,9,2,3,long L 3 spots to right,10039,30575,chatMessage
+29,5efa33c7ce2f7f58fcd0b1b7,pilot2,0662-7a9212c9-5aa7-44de-9ed7-4663c56562d2,1593455559284.0,3JC6VJ2SAFJ73NCHXMRQ05KDTXKA5P,Pi,C,10,0,3,upside down u 1 spot from left,11223,11223,chatMessage
+30,5efa33e3ce2f7f58fcd0b1bf,pilot2,0662-7a9212c9-5aa7-44de-9ed7-4663c56562d2,1593455587510.0,3JC6VJ2SAFJ73NCHXMRQ05KDTXKA5P,Pi,C,10,2,3,long C 3 spots to right,16789,39450,chatMessage
+31,5efa340bce2f7f58fcd0b1d1,pilot2,0662-7a9212c9-5aa7-44de-9ed7-4663c56562d2,1593455627058.0,3JC6VJ2SAFJ73NCHXMRQ05KDTXKA5P,Pi,L,11,0,3,upside down u one spot from left,12198,12198,chatMessage
+32,5efa3426ce2f7f58fcd0b1da,pilot2,0662-7a9212c9-5aa7-44de-9ed7-4663c56562d2,1593455654114.0,3JC6VJ2SAFJ73NCHXMRQ05KDTXKA5P,Pi,L,11,2,3,big L 2 spots to right,7304,39253,chatMessage
+0,5efa3c74ce2f7f58fcd0b289,pilot2,9940-419571e8-f021-4083-9210-892897d2b4df,1593457780315.0,3JBT3HLQFC2CX528TTG3F4G3TIVZP4,horizontal,vertical,practice,0,practice,"rotate the first block to stright
+rotate the second block to left
+",123231,123232,chatMessage
+1,5efa3cb9ce2f7f58fcd0b28d,pilot2,9940-419571e8-f021-4083-9210-892897d2b4df,1593457849613.0,3JBT3HLQFC2CX528TTG3F4G3TIVZP4,horizontal,vertical,practice,0,practice,"first one vertical and second one is horizantal 
+",45277,45277,chatMessage
+2,5efa3d5ace2f7f58fcd0b291,pilot2,9940-419571e8-f021-4083-9210-892897d2b4df,1593458010158.0,3JBT3HLQFC2CX528TTG3F4G3TIVZP4,horizontal,vertical,practice,0,practice,"place first one in 4th block vertically~~~place second one in 9th block horizantally
+",134891,134891,chatMessage
+3,5efa3dc7ce2f7f58fcd0b295,pilot2,9940-419571e8-f021-4083-9210-892897d2b4df,1593458119343.0,3JBT3HLQFC2CX528TTG3F4G3TIVZP4,horizontal,vertical,practice,0,practice,1st one 4th block vertically and 2nd one 9th block horizantal,84306,84306,chatMessage
+4,5efa3e36ce2f7f58fcd0b299,pilot2,9940-419571e8-f021-4083-9210-892897d2b4df,1593458230651.0,3JBT3HLQFC2CX528TTG3F4G3TIVZP4,horizontal,vertical,practice,0,practice,1st one 3rd block vertical and 2nd one 8th block horizantal,84588,84588,chatMessage
+5,5efa3e94ce2f7f58fcd0b29d,pilot2,9940-419571e8-f021-4083-9210-892897d2b4df,1593458324347.0,3JBT3HLQFC2CX528TTG3F4G3TIVZP4,L,C,0,0,0,"turn horizantally second one
+",70841,70841,chatMessage
+6,5efa3eefce2f7f58fcd0b2a0,pilot2,9940-419571e8-f021-4083-9210-892897d2b4df,1593458415498.0,3JBT3HLQFC2CX528TTG3F4G3TIVZP4,L,C,0,2,0,place verical block on 2nd block,25425,161957,chatMessage
+7,5efa3f3bce2f7f58fcd0b2a2,pilot2,9940-419571e8-f021-4083-9210-892897d2b4df,1593458491914.0,3JBT3HLQFC2CX528TTG3F4G3TIVZP4,L,C,0,4,0,"place vertical block on 2nd block
+",53526,238409,chatMessage
+8,5efa3f84ce2f7f58fcd0b2a4,pilot2,9940-419571e8-f021-4083-9210-892897d2b4df,1593458564497.0,3JBT3HLQFC2CX528TTG3F4G3TIVZP4,L,C,0,6,0,place horizantal block on 2nd and 3rd place ,59844,310977,chatMessage
+9,5efa3faece2f7f58fcd0b2a6,pilot2,9940-419571e8-f021-4083-9210-892897d2b4df,1593458606280.0,3JBT3HLQFC2CX528TTG3F4G3TIVZP4,L,C,0,8,0,"super~~~~~~~~~place vertical block on second place
+",33013,352772,chatMessage
+10,5efa3fedce2f7f58fcd0b2a8,pilot2,9940-419571e8-f021-4083-9210-892897d2b4df,1593458669396.0,3JBT3HLQFC2CX528TTG3F4G3TIVZP4,L,C,0,10,0,"nice ~~~~~~~~~~~~place vertical block on 2nd place
+",43459,415886,chatMessage
+11,5efa401cce2f7f58fcd0b2aa,pilot2,9940-419571e8-f021-4083-9210-892897d2b4df,1593458716285.0,3JBT3HLQFC2CX528TTG3F4G3TIVZP4,L,C,0,12,0,great ~~~~~~~~~~~~place horizantal block on 9 and 10th place,40060,462778,chatMessage
+12,5efa4056ce2f7f58fcd0b2ad,pilot2,9940-419571e8-f021-4083-9210-892897d2b4df,1593458774976.0,3JBT3HLQFC2CX528TTG3F4G3TIVZP4,L,Pi,1,0,0,place horizantal block on 2nd and 3rd place,33472,33472,chatMessage
+13,5efa4084ce2f7f58fcd0b2af,pilot2,9940-419571e8-f021-4083-9210-892897d2b4df,1593458820208.0,3JBT3HLQFC2CX528TTG3F4G3TIVZP4,L,Pi,1,2,0,"place horizantal block on 4th and 5th place
+",37078,78703,chatMessage
+14,5efa40adce2f7f58fcd0b2b1,pilot2,9940-419571e8-f021-4083-9210-892897d2b4df,1593458861245.0,3JBT3HLQFC2CX528TTG3F4G3TIVZP4,L,Pi,1,4,0,"great~~~~~~place vertical block on 2nd place
+",30098,119719,chatMessage
+15,5efa40d0ce2f7f58fcd0b2b3,pilot2,9940-419571e8-f021-4083-9210-892897d2b4df,1593458896223.0,3JBT3HLQFC2CX528TTG3F4G3TIVZP4,L,Pi,1,6,0,super~~~~~~~~~place vertical block on 2nd place,27611,154719,chatMessage
+16,5efa40fece2f7f58fcd0b2b4,pilot2,9940-419571e8-f021-4083-9210-892897d2b4df,1593458942618.0,3JBT3HLQFC2CX528TTG3F4G3TIVZP4,L,Pi,1,8,0,"place vertical block on second place dude
+",30833,201114,chatMessage
+17,5efa4122ce2f7f58fcd0b2b6,pilot2,9940-419571e8-f021-4083-9210-892897d2b4df,1593458978853.0,3JBT3HLQFC2CX528TTG3F4G3TIVZP4,L,Pi,1,10,0,great~~~~~~~~~palce vertical block on 8th place,32125,237343,chatMessage
+18,5efa4146ce2f7f58fcd0b2b8,pilot2,9940-419571e8-f021-4083-9210-892897d2b4df,1593459014365.0,3JBT3HLQFC2CX528TTG3F4G3TIVZP4,L,Pi,1,12,0,place horizantal block on 8 and 9th place,21320,272859,chatMessage
+19,5efa4181ce2f7f58fcd0b2ba,pilot2,9940-419571e8-f021-4083-9210-892897d2b4df,1593459073676.0,3JBT3HLQFC2CX528TTG3F4G3TIVZP4,L,Pi,1,14,0,place vertical block on 11th place,43145,332158,chatMessage
+20,5efa41aece2f7f58fcd0b2bc,pilot2,9940-419571e8-f021-4083-9210-892897d2b4df,1593459118813.0,3JBT3HLQFC2CX528TTG3F4G3TIVZP4,L,Pi,1,16,0,place horizantal block on 10 and 11th place,31762,377308,chatMessage
+21,5efa41f5ce2f7f58fcd0b2bf,pilot2,9940-419571e8-f021-4083-9210-892897d2b4df,1593459189422.0,3JBT3HLQFC2CX528TTG3F4G3TIVZP4,C,Pi,2,0,0,place vertical block on 3 and 4th place,43034,43034,chatMessage
+22,5efa4231ce2f7f58fcd0b2c2,pilot2,9940-419571e8-f021-4083-9210-892897d2b4df,1593459249941.0,3JBT3HLQFC2CX528TTG3F4G3TIVZP4,C,Pi,2,2,0,place vertical block on 3rd place,31431,103553,chatMessage
+23,5efa425bce2f7f58fcd0b2c4,pilot2,9940-419571e8-f021-4083-9210-892897d2b4df,1593459291303.0,3JBT3HLQFC2CX528TTG3F4G3TIVZP4,C,Pi,2,4,0,place vertical block on 8th place,34517,144904,chatMessage
+24,5efa4282ce2f7f58fcd0b2c6,pilot2,9940-419571e8-f021-4083-9210-892897d2b4df,1593459330896.0,3JBT3HLQFC2CX528TTG3F4G3TIVZP4,C,Pi,2,6,0,place vertical block on 11th place,21274,184507,chatMessage
+25,5efa42b3ce2f7f58fcd0b2c8,pilot2,9940-419571e8-f021-4083-9210-892897d2b4df,1593459379365.0,3JBT3HLQFC2CX528TTG3F4G3TIVZP4,C,Pi,2,8,0,place horizantal block on 8 and 9 th place,23985,232975,chatMessage
+26,5efa42f8ce2f7f58fcd0b2ca,pilot2,9940-419571e8-f021-4083-9210-892897d2b4df,1593459448145.0,3JBT3HLQFC2CX528TTG3F4G3TIVZP4,C,Pi,2,10,0,place horizantal block on 10 and 11th place,28062,301756,chatMessage
+27,5efa431cce2f7f58fcd0b2cc,pilot2,9940-419571e8-f021-4083-9210-892897d2b4df,1593459484250.0,3JBT3HLQFC2CX528TTG3F4G3TIVZP4,C,Pi,2,12,0,place vertical block on 2nd place,21456,337860,chatMessage
+28,5efa4341ce2f7f58fcd0b2cf,pilot2,9940-419571e8-f021-4083-9210-892897d2b4df,1593459521856.0,3JBT3HLQFC2CX528TTG3F4G3TIVZP4,C,L,3,0,1,place horizantal block on 3 and 4th place,27073,27073,chatMessage
+29,5efa436ace2f7f58fcd0b2d1,pilot2,9940-419571e8-f021-4083-9210-892897d2b4df,1593459562425.0,3JBT3HLQFC2CX528TTG3F4G3TIVZP4,C,L,3,2,1,super ~~~~~~~~~~~~place vertical block on 3rd place,33988,67729,chatMessage
+30,5efa439ece2f7f58fcd0b2d3,pilot2,9940-419571e8-f021-4083-9210-892897d2b4df,1593459614367.0,3JBT3HLQFC2CX528TTG3F4G3TIVZP4,C,L,3,4,1,good ~~~~~~place vertical block on 3rd place,27023,119638,chatMessage
+31,5efa43bece2f7f58fcd0b2d5,pilot2,9940-419571e8-f021-4083-9210-892897d2b4df,1593459646577.0,3JBT3HLQFC2CX528TTG3F4G3TIVZP4,C,L,3,6,1,place horizantal block on 3 and 4th place,20619,151880,chatMessage
+32,5efa43dace2f7f58fcd0b2d7,pilot2,9940-419571e8-f021-4083-9210-892897d2b4df,1593459674354.0,3JBT3HLQFC2CX528TTG3F4G3TIVZP4,C,L,3,8,1,place horizantal block on 8 and 9,22644,179657,chatMessage
+33,5efa4408ce2f7f58fcd0b2d9,pilot2,9940-419571e8-f021-4083-9210-892897d2b4df,1593459720472.0,3JBT3HLQFC2CX528TTG3F4G3TIVZP4,C,L,3,10,1,place horizantal block on 10 and 11 th place,27066,225767,chatMessage
+34,5efa442fce2f7f58fcd0b2db,pilot2,9940-419571e8-f021-4083-9210-892897d2b4df,1593459759255.0,3JBT3HLQFC2CX528TTG3F4G3TIVZP4,C,L,3,12,1,place vertical block on 8th place,27988,264558,chatMessage
+35,5efa443bce2f7f58fcd0b2dd,pilot2,9940-419571e8-f021-4083-9210-892897d2b4df,1593459771033.0,3JBT3HLQFC2CX528TTG3F4G3TIVZP4,C,L,3,14,1,place vertical block on 8th place,3386,276297,chatMessage
+36,5efa4470ce2f7f58fcd0b2e0,pilot2,9940-419571e8-f021-4083-9210-892897d2b4df,1593459824000.0,3JBT3HLQFC2CX528TTG3F4G3TIVZP4,Pi,C,4,0,1,place vertical on 2nd place,23087,23087,chatMessage
+37,5efa44a0ce2f7f58fcd0b2e2,pilot2,9940-419571e8-f021-4083-9210-892897d2b4df,1593459872479.0,3JBT3HLQFC2CX528TTG3F4G3TIVZP4,Pi,C,4,2,1,place vertical on 5th place,30351,71568,chatMessage
+38,5efa44c7ce2f7f58fcd0b2e4,pilot2,9940-419571e8-f021-4083-9210-892897d2b4df,1593459911860.0,3JBT3HLQFC2CX528TTG3F4G3TIVZP4,Pi,C,4,4,1,place horizontal on 2 and 3rd place,30346,110863,chatMessage
+39,5efa44eece2f7f58fcd0b2e6,pilot2,9940-419571e8-f021-4083-9210-892897d2b4df,1593459950213.0,3JBT3HLQFC2CX528TTG3F4G3TIVZP4,Pi,C,4,6,1,place harizantal on 4 and 5th place,33002,149301,chatMessage
+40,5efa451fce2f7f58fcd0b2e8,pilot2,9940-419571e8-f021-4083-9210-892897d2b4df,1593459999985.0,3JBT3HLQFC2CX528TTG3F4G3TIVZP4,Pi,C,4,8,1,place horizNTal block on 9 and 10th place,39556,199072,chatMessage
+41,5efa453fce2f7f58fcd0b2ea,pilot2,9940-419571e8-f021-4083-9210-892897d2b4df,1593460031921.0,3JBT3HLQFC2CX528TTG3F4G3TIVZP4,Pi,C,4,10,1,place vertical block on 9th place,13571,231007,chatMessage
+42,5efa4552ce2f7f58fcd0b2ec,pilot2,9940-419571e8-f021-4083-9210-892897d2b4df,1593460050746.0,3JBT3HLQFC2CX528TTG3F4G3TIVZP4,Pi,C,4,12,1,place vertical block on 8th place,12740,249830,chatMessage
+43,5efa4563ce2f7f58fcd0b2ee,pilot2,9940-419571e8-f021-4083-9210-892897d2b4df,1593460067945.0,3JBT3HLQFC2CX528TTG3F4G3TIVZP4,Pi,C,4,14,1,place vertical block on 8th place,9124,267033,chatMessage
+44,5efa4573ce2f7f58fcd0b2ef,pilot2,9940-419571e8-f021-4083-9210-892897d2b4df,1593460083469.0,3JBT3HLQFC2CX528TTG3F4G3TIVZP4,Pi,C,4,16,1,place vertical block on 8th place,10340,282548,chatMessage
+45,5efa4586ce2f7f58fcd0b2f2,pilot2,9940-419571e8-f021-4083-9210-892897d2b4df,1593460102350.0,3JBT3HLQFC2CX528TTG3F4G3TIVZP4,Pi,L,5,0,1,place vertical block on 8th place,7446,7446,chatMessage
+46,5efa4596ce2f7f58fcd0b2f4,pilot2,9940-419571e8-f021-4083-9210-892897d2b4df,1593460118066.0,3JBT3HLQFC2CX528TTG3F4G3TIVZP4,Pi,L,5,2,1,place vertical block on 8th place,4743,23161,chatMessage
+47,5efa45abce2f7f58fcd0b2f6,pilot2,9940-419571e8-f021-4083-9210-892897d2b4df,1593460139094.0,3JBT3HLQFC2CX528TTG3F4G3TIVZP4,Pi,L,5,4,1,place vertical block on 2th place,8467,44190,chatMessage
+48,5efa45bace2f7f58fcd0b2f8,pilot2,9940-419571e8-f021-4083-9210-892897d2b4df,1593460154582.0,3JBT3HLQFC2CX528TTG3F4G3TIVZP4,Pi,L,5,6,1,place vertical block on 5th place,8055,59680,chatMessage
+49,5efa45dace2f7f58fcd0b2fa,pilot2,9940-419571e8-f021-4083-9210-892897d2b4df,1593460186816.0,3JBT3HLQFC2CX528TTG3F4G3TIVZP4,Pi,L,5,8,1,place horiz on 2 3 4 5 place,24005,91904,chatMessage
+50,5efa4617ce2f7f58fcd0b2fd,pilot2,9940-419571e8-f021-4083-9210-892897d2b4df,1593460247262.0,3JBT3HLQFC2CX528TTG3F4G3TIVZP4,Pi,L,5,10,1,place horizantal on 9 10 11 12,37540,152333,chatMessage
+51,5efa4648ce2f7f58fcd0b301,pilot2,9940-419571e8-f021-4083-9210-892897d2b4df,1593460296562.0,3JBT3HLQFC2CX528TTG3F4G3TIVZP4,C,Pi,6,0,2,place vertical on 8 and 11,28196,28196,chatMessage
+52,5efa4665ce2f7f58fcd0b304,pilot2,9940-419571e8-f021-4083-9210-892897d2b4df,1593460325603.0,3JBT3HLQFC2CX528TTG3F4G3TIVZP4,C,Pi,6,2,2,horiz on 8 9 10 11,17675,57239,chatMessage
+53,5efa4692ce2f7f58fcd0b307,pilot2,9940-419571e8-f021-4083-9210-892897d2b4df,1593460370277.0,3JBT3HLQFC2CX528TTG3F4G3TIVZP4,C,Pi,6,4,2,horiz 3 and 4 and vertical 3,34093,101912,chatMessage
+54,5efa46aece2f7f58fcd0b30a,pilot2,9940-419571e8-f021-4083-9210-892897d2b4df,1593460398039.0,3JBT3HLQFC2CX528TTG3F4G3TIVZP4,C,Pi,6,6,2,vertical 3 and horiz 3 4,13399,129675,chatMessage
+55,5efa46d9ce2f7f58fcd0b30e,pilot2,9940-419571e8-f021-4083-9210-892897d2b4df,1593460441973.0,3JBT3HLQFC2CX528TTG3F4G3TIVZP4,L,Pi,7,0,2,place vertical 1 2 3 4 5 6 7 8 ,20995,20995,chatMessage
+56,5efa4705ce2f7f58fcd0b318,pilot2,9940-419571e8-f021-4083-9210-892897d2b4df,1593460485884.0,3JBT3HLQFC2CX528TTG3F4G3TIVZP4,L,C,8,0,2,place vertic 12345678,13617,13617,chatMessage
+57,5efa472ace2f7f58fcd0b322,pilot2,9940-419571e8-f021-4083-9210-892897d2b4df,1593460522983.0,3JBT3HLQFC2CX528TTG3F4G3TIVZP4,C,L,9,0,3,place vertic 23456789,13327,13327,chatMessage
+58,5efa475bce2f7f58fcd0b32c,pilot2,9940-419571e8-f021-4083-9210-892897d2b4df,1593460571152.0,3JBT3HLQFC2CX528TTG3F4G3TIVZP4,Pi,C,10,0,3,place vertic 23456789,11130,11130,chatMessage
+59,5efa478dce2f7f58fcd0b336,pilot2,9940-419571e8-f021-4083-9210-892897d2b4df,1593460621641.0,3JBT3HLQFC2CX528TTG3F4G3TIVZP4,Pi,L,11,0,3,place vertic 23456789,9849,9849,chatMessage
