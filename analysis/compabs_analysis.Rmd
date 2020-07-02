@@ -11,7 +11,7 @@ library(tidyverse)
 library(lme4)
 library(arm)
 ```
-Start by reading in the data
+#### Start by reading in the data (CSV compiled in compabs_analysis.ipynb)
 ```{r}
 df_block = read.csv('df_block.csv')
 df_chat = read.csv('df_chat.csv')
@@ -19,14 +19,60 @@ df_trial = read.csv('df_trial.csv')
 df_exit = read.csv('df_exit.csv')
 View(df.block)
 ```
-Find GameIDs that satisfy exclusion criteria
+
+#### Find GameIDs that satisfy exclusion criteria
 ```{r}
  
+#Preprocessing ensures all dyads in these CSVs have completed all trials
+
+#How many dyads fulfill 75% Accuracy on 75% of trials
+  #currently including "score>75" to account for livetest0 which had diff    name
+games75 = df_trial %>% 
+  group_by(gameid, trialNum) %>% 
+  filter(trialScore > 75 | score >75 & repNum != 'practice') %>%
+  group_by(gameid)%>% 
+  tally %>% 
+  filter(n/12 >=0.75) %>% 
+  distinct(gameid)
+
+#How many dyads said they were confused <-- this is probably inverse coded...
+gamesConfused = df_exit %>% 
+  filter(confused == 'yes') %>% 
+  distinct(gameid)
+
+#How many dyads said they spoke English
+gamesEnglish = df_exit %>% 
+  filter(nativeEnglish == 'yes') %>% 
+  distinct(gameid)
+
+gamesToKeep = intersect(games75, gamesConfused, gamesEnglish)
+gamesToKeep
 ```
 
+#### Plot first order analyses (word-block-message-score/repNum)
+##### Word count/char count per repNum and trialNum
+```{r}
+df_chat$wordCount = sapply(strsplit(tolower(df_chat$content), " "), length)
+df_chat$charCount =  nchar(tolower(df_chat$content))
+df_chat$repNum = as.numeric(as.character(df_chat$repNum))
+df_chat$trialNum = as.numeric(as.character(df_chat$trialNum))
 
-Plot first order analyses (word-block-message-score/repNum)
+df_chat %>% 
+  select(gameid,repNum,wordCount) %>% 
+  group_by(gameid,repNum) %>% 
+  summarise(wordCount = sum(wordCount)) %>% 
+  group_by(repNum) %>% summarise(wordCountAvg = mean(wordCount)) %>% 
+  ggplot(aes(x = repNum, y = wordCountAvg)) + geom_line()
 
+df_chat %>% 
+  select(gameid,repNum,charCount) %>% 
+  group_by(gameid,repNum) %>% 
+  summarise(charCount = sum(charCount)) %>% 
+  group_by(repNum) %>% summarise(charCountAvg = mean(charCount)) %>% 
+  ggplot(aes(x = repNum, y = charCountAvg)) + geom_line()
+
+```
+##### Word count per repNum and trialNum
 Join dfs to get score correlations with: numMessages, wordCount
 
 Predictive model for scores?
