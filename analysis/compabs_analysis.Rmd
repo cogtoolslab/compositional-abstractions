@@ -9,7 +9,7 @@ output: html_document
 knitr::opts_chunk$set(message = FALSE, warning = FALSE)
 library(tidyverse)
 library(lme4)
-library(arm)
+library(lmerTest)
 ```
 #### Start by reading in the data (CSV compiled in compabs_analysis.ipynb)
 ```{r}
