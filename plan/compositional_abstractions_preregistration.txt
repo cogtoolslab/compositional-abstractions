@@ -77,9 +77,7 @@ We plan on manually validating the data for each of the 50 sessions run, rejecti
 * Dyads who do not complete all 12 trials
 * Dyads who achieve below 75% accuracy on 75% or more of the trials
 * Subjects whose exit survey indicates they did not understand the study (self-reported)
-* Subjects who indicate English is not their first language
-
-
+* Participants who report lack of fluency in English
 
 
 Variables 
