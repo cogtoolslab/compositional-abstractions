@@ -109,7 +109,7 @@ b = df_trial %>% dplyr::select(gameid,trialNum, repNum,trialScore, towerSet) %>%
 c = merge(a, b, by = c("gameid", "trialNum", "repNum"))
 #d = merge(c,gamesToKeep, by = "gameid", all.y = TRUE)
 c  %>% 
-  ggplot(aes(x = trialNum, y = trialScore, color = repNum))+
+  ggplot(aes(x = trialNum, y = wordCount, color = repNum))+
   geom_point()+
   geom_smooth()
 
@@ -117,12 +117,15 @@ c  %>%
 
 
 ```{r}
-#Needs to be fixed...
+View(c)
 lin = lm(data = c, trialScore ~ trialNum + wordCount + repNum)
 summary(lin)
-lme = lmer(data = c, trialScore ~ repNum + (1 + towerSet | gameid))
-summary(lme)          
-#lme = lme4::lmer(data = c, p ~ 1 + (1|trialNum) + (1|wordCount) + (1|repNum))
+#Score
+lme = lmer(data = c, trialScore ~ repNum + (1 | gameid) + (1| towerSet))
+summary(lme)   
+#Word Count
+lme = lmer(data = c, wordCount ~ repNum + (1 | gameid) + (1| towerSet))
+summary(lme)  
 #lme_null = lme4::lmer(data = c, p ~ 1 + (1|trialNum) + (1|wordCount))
 #anova(lme,lme_null, test = "Chisq")
 #lme4::ranef(lme)
