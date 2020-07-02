@@ -1,0 +1,48 @@
+---
+title: "Compabs"
+author: "Cameron Holdaway"
+date: "7/1/2020"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+library(tidyverse)
+library(lme4)
+library(arm)
+```
+Start by reading in the data
+```{r}
+df_block = read.csv('df_block.csv')
+df_chat = read.csv('df_chat.csv')
+df_trial = read.csv('df_trial.csv')
+df_exit = read.csv('df_exit.csv')
+View(df.block)
+```
+Find GameIDs that satisfy exclusion criteria
+```{r}
+ 
+```
+
+
+Plot first order analyses (word-block-message-score/repNum)
+
+Join dfs to get score correlations with: numMessages, wordCount
+
+Predictive model for scores?
+
+```{r}
+lin = lm(data = df, p ~ tradeoff+prompt.type+jitter)
+summary(lin)
+lme = lme4::lmer(data = df, p ~ 1 + (1|tradeoff) + (1|prompt.type) + (1|jitter))
+lme_null = lme4::lmer(data = df, p ~ 1 + (1|tradeoff) + (1|jitter))
+anova(lme,lme_null, test = "Chisq")
+lme4::ranef(lme)
+arm::se.ranef(lme)
+#lme4
+#arm
+#broom.mixed
+broom.mixed::tidy(lme, effects = c('fixed', 'ran_vals'))
+lme.table = broom.mixed::tidy(lme, effects = c('fixed', 'ran_vals'))
+xtable(lme.table)
+```
