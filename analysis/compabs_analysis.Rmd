@@ -9,20 +9,17 @@ output: html_document
 knitr::opts_chunk$set(message = FALSE, warning = FALSE)
 library(tidyverse)
 library(lme4)
-<<<<<<< HEAD
-=======
-library(arm)
-library(xtable)
->>>>>>> 6559fc76df0cac1a2a4d29f9819773f2e52c5bcf
+# library(arm)
+# library(xtable)
 library(lmerTest)
 ```
 #### Start by reading in the data (CSV compiled in compabs_analysis.ipynb)
 ```{r}
-df_block = read.csv('df_block.csv')
-df_chat = read.csv('df_chat.csv')
-df_trial = read.csv('df_trial.csv')
-
-df_exit = read.csv('df_exit.csv')
+# import dataframes
+df_block = read.csv('../results/csv/df_block.csv')
+df_chat = read.csv('../results/csv/df_chat.csv')
+df_trial = read.csv('../results/csv/df_trial.csv')
+df_exit = read.csv('../results/csv/df_exit.csv')
 
 df_chat$trialNum = as.numeric(as.character(df_chat$trialNum))
 df_chat$repNum = as.numeric(as.character(df_chat$repNum))
@@ -97,43 +94,39 @@ df_chat %>%
 
 ```
 ### Join dfs to get score correlations
-##### Score and Word Count
+
+
+### Visualize word count over time (trialNum, repNum)
 ```{r}
-#join chat and score to get correlation of words and score
 a = df_chat %>% 
   dplyr::select(gameid,trialNum,repNum,wordCount) %>% 
   group_by(gameid,trialNum, repNum) %>% 
   summarise(wordCount = sum(wordCount))
 
-b = df_trial %>% dplyr::select(gameid,trialNum, repNum,trialScore, towerSet) %>% 
-  group_by(gameid,trialNum, repNum, towerSet) %>% 
+b = df_trial %>% dplyr::select(gameid, trialNum, repNum, trialScore, towerSet) %>% 
+  group_by(gameid, trialNum, repNum, towerSet) %>% 
   summarise(trialScore = max(trialScore)) #to deal with multiple practices
 
 c = merge(a, b, by = c("gameid", "trialNum", "repNum"))
-#d = merge(c,gamesToKeep, by = "gameid", all.y = TRUE)
-c  %>% 
-  ggplot(aes(x = trialNum, y = wordCount, color = repNum))+
+
+d = merge(c,gamesToKeep, by = "gameid", all.y = TRUE)
+
+d  %>% 
+  ggplot(aes(x = repNum, y = wordCount, color = repNum))+
   geom_point()+
   geom_smooth()
-
 ```
 
 
+## Fit linear regression model to predict word count from repetition number
 ```{r}
-View(c)
-lin = lm(data = c, trialScore ~ trialNum + wordCount + repNum)
-summary(lin)
-#Score
+lme = lmer(data = c, wordCount ~ repNum + (1 | gameid) + (1 | towerSet))
+summary(lme)  
+
+```
+
+## Fit linear regression model to predict accuracy from repetition number
+```{r}
 lme = lmer(data = c, trialScore ~ repNum + (1 | gameid) + (1| towerSet))
 summary(lme)   
-#Word Count
-lme = lmer(data = c, wordCount ~ repNum + (1 | gameid) + (1| towerSet))
-summary(lme)  
-#lme_null = lme4::lmer(data = c, p ~ 1 + (1|trialNum) + (1|wordCount))
-#anova(lme,lme_null, test = "Chisq")
-#lme4::ranef(lme)
-#arm::se.ranef(lme)
-broom.mixed::tidy(lme, effects = c('fixed', 'ran_vals'))
-lme.table = broom.mixed::tidy(lme, effects = c('fixed', 'ran_vals'))
-#xtable(lme.table)
 ```
