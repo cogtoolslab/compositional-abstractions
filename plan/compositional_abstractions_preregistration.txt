@@ -1,0 +1,119 @@
+﻿June 23, 2020
+Title
+Coordinating on shared procedural abstractions for physical assembly
+
+
+Researchers
+Will McCarthy, Cameron Holdaway, Robert Hawkins, Judith Fan
+
+
+Description / Question/ Hypothesis
+
+
+Description/Question
+
+
+How do people decide what is necessary and relevant to say when explaining how to make something, especially things that need to be made more than once? The goal of this study is to examine the language people use to instruct others in a collaborative assembly task, and how this language evolves over time as they continue making the same things with the same collaborator. We are particularly interested in the ability to gradually abstract from exhaustive, fine-grained procedures to more concise, structured representations. 
+
+
+Participants will be paired in an online environment to perform a collaborative physical assembly task, in which one participant will act as the Architect and the other as the Builder. On each trial, the Architect will view two block towers and issue instructions to the Builder, who is able to place blocks, but unable to see the target structure. The trial ends when all blocks have been placed, and feedback is given on the accuracy of the construction. Importantly, each tower is built multiple times to test how the Architect’s utterances and the Builder’s behavior change as they accumulate shared history.
+
+
+Hypotheses
+
+
+We hypothesize that Architects will:
+* Use more concise language (i.e. use fewer words and fewer total instructions) when providing instructions across repetitions of the same target tower, given positive feedback that Builders are correctly understanding their instructions.
+
+
+We hypothesize that Builders will:
+* Place more blocks per instruction and reconstruct each target tower more accurately across repetitions.
+
+
+
+
+Design Plan
+
+
+Stimuli
+All towers will be constructed from two primitive blocks: a 2x1 (horizontal) domino, and a 1 x 2 (vertical) domino. Specifically, we use three particular towers consisting of four dominoes each: (1) an arch; (2) a tower resembling the letter “C,” and (3) one resembling the letter “L.” On each trial, we will show the Architect a pair of these towers in an 8x12 grid environment, placing one on the left side of the environment, and one on the right side.
+
+
+Task Procedure
+
+
+Participants will be paired online to perform a collaborative physical assembly task. One participant will be assigned the role of “Architect” and the other will be assigned the role of “Builder”. On each trial, the Architect is presented with a target configuration of towers that is not visible to the Builder. The Architect will type messages into a chat window to send instructions to the Builder about how to construct the towers. Once a message is sent, control shifts to the Builder, who must use the instructions to place dominoes in the grid environment. The Builder will not be able to use the chat window to reply, or change a block once it is placed. The Builder is allowed to place as many blocks as they wish before pressing the “done” button, including zero blocks. This button ends their turn and allows the Architect to type another message into the window. The Architect will be able to see the location of each block placed by the Builder in real-time. During each turn, there will be a timer counting down from 30 seconds to encourage the Architect and Builder to work quickly, though there is no penalty for exceeding this time limit. The trial ends when the Builder has placed eight blocks in the grid environment (all stimuli contain exactly eight blocks). 
+
+
+Following the successful completion of a practice trial with a simpler structure, subjects will complete 12 total trials. The trial sequence is designed such that each possible pair of the three towers (i.e. AB, BC, and AC) appears in randomized order in each block of three trials, such that each stimulus is repeated exactly four times. 
+
+
+Study Type:  This study will be an experiment with tower-hemified pairings manipulated between trials within a pair of subjects.
+
+Study design: Behavioral experiment
+
+
+Randomization: Roles are randomly assigned to participants as they enter the waiting room, towers are randomly assigned to the left and right sides, and the order of the stimuli is randomized within each block of three trials.
+
+
+Participants
+
+
+We plan to recruit 100 English-speaking adults using Amazon Mechanical Turk. Participants will be paired for a total of 50 dyads. Each participant will provide informed consent and receive $4.00 for their participation in our ~20 minute study, with the possibility of earning up to $1.20 in performance bonus (approx. $12-15.60/hr), in accordance with UCSD IRB. 
+
+
+Existing data: Preregistration prior to collection of data
+
+
+Stopping rule: Data collection will stop when 50 dyads (100 participants) have successfully completed the study.
+
+
+Data Validation / Exclusion Criteria
+
+
+We plan on manually validating the data for each of the 50 sessions run, rejecting sessions on the following criteria: 
+
+
+* Dyads who do not complete all 12 trials
+* Dyads who achieve below 75% accuracy on 75% or more of the trials
+* Subjects whose exit survey indicates they did not understand the study (self-reported)
+* Participants who report lack of fluency in English
+
+
+Variables 
+  
+Manipulated Variables
+
+
+This study manipulates the type of block tower and its position (left or right hemifield) within the experiment environment on each trial. 
+
+
+Measured Variables
+
+
+To measure the efficiency of the Architect’s instructions, we will count the number of words and characters used in each instruction given by the Architect. We will additionally measure the number of messages in each trial. 
+
+
+To measure the accuracy of the Builder’s reconstruction, we will use a bitmap representation of the 12x8 gridworld environment to compute the F1 score of each final reconstruction, which takes into account both recall (proportion of the target tower with blocks covering them) and precision (proportion of the reconstruction lying within the target tower). 
+
+
+Finally, we will also measure the time taken by each participant in each trial to complete their actions. We will measure how long Architects take to complete each turn, by measuring total time between the activation of the chat box until the submission of their instruction, summed across all instructions within trial. We will similarly measure the time the Builder spends placing blocks, by measuring the total time between receiving the Architect’s instructions and when they end their turn, summed across all turns within a trial.
+
+
+Natural Language Preprocessing
+
+
+We also have an opportunity to go beyond simple efficiency measures to characterize the content of the instructions sent by the Architect. For these analyses, which require stable estimates of which words are conventionalized across repetitions, which words are dropped, and which words are introduced on later repetitions, we will lemmatize and remove a list of common stop words. We may also run a spell checker and manually correct typos. 
+
+
+Analysis Plan
+
+
+Statistical Models
+We will use linear mixed-effects models to measure the effect of repeated trials  on language efficiency, block placing accuracy, and time taken to complete each action. Insofar as subjects develop efficient, yet accurate communication, we hypothesize that across repeated trials, subjects will: use fewer words per message, compose fewer messages per trial, reconstruct each tower increasingly accurately, and use less time to both compose messages and place blocks. Specifically, we will include a fixed effect of tower repetition block, and a maximal random-effects structure with intercepts and slopes for different dyads and towerIDs. If the maximal structure does not converge, we will simplify the random effects structure until we reach a converging model.
+
+
+lmer(DV ~ tower_repetition_num + (1 + tower_repetition_num | gameID) + (1 + tower_repetition_num | towerID)
+
+
+As a control analysis, we will additionally analyze any potential biases due to the side each tower appears on, by including it as an additional predictor in the above statistical model.

@@ -99,10 +99,10 @@ class UI {
     $('#button_error').show();
     var game = event.data.game;
     game.data = _.extend(game.data, {
-      'comments' : $('#comments').val().trim(),
-      'strategy' : $('#strategy').val().trim(),
+      'comments' : $('#comments').val().trim().replace(/\./g, '~~~'),
+      'strategy' : $('#strategy').val().trim().replace(/\./g, '~~~'),
       'role' : game.role,
-      'score' : game.cumulativeBonus,
+      'score' : parseInt(game.cumulativeBonus * 100),
       'totalLength' : Date.now() - game.startTime
     });
     game.submitted = true;
