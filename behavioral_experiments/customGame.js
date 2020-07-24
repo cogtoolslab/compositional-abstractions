@@ -122,6 +122,10 @@ class ServerRefGame extends ServerGame {
       gc.turnNum = 0;
       var trialData = JSON.parse(message_parts[1]);
       let practiceFail = false;
+      var numFails = 0;
+      if(numFails > 3) {
+        this.end();
+      } 
 
       // Force repeat of practice round if not perfect
       if(this.currStim.trialNum == 'practice' && trialData.score < 100) {
