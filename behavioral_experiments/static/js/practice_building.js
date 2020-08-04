@@ -17,9 +17,48 @@ class PracticeUI {
     this.blockUniverse = new BlockUniverse();
     this.confetti = new Confetti(300);
     this.targetBlocks = stim.makeBuildPracticeScene();
+    this.targetMap = scoring.getDiscreteWorld(this.targetBlocks);
+    this.blockNum = 0;
+    this.failedAttempts = 0;
+
     this.practiceStim = {
         targetBlocks: this.targetBlocks
       };
+    this.blocksInStructure = this.targetBlocks.length;
+    console.log(this.blocksInStructure);
+    this.blockUniverse.blockSender = function (blockData) {}
+
+    // this.blockUniverse.blockSender = function (blockData) {
+    //     console.log(this.blockNum);
+    //     if (this.sendingBlocks == this.blocksInStructure) {
+    //         //resetTimer(game, 30, document.getElementById('timer');
+    //         $('#done-button').prop('disabled', !game.speakerTurn);
+    //         this.blockUniverse.disabledBlockPlacement = true;
+    //         var trialScore = parseInt(scoring.getScoreDiscrete(this.targetMap, scoring.getDiscreteWorld(this.blockUniverse.sendingBlocks)));
+    //         console.log(trialScore);
+    //     }
+    // };
+
+    $("#done-button").click(() => {
+        var trialScore = parseInt(scoring.getScoreDiscrete(this.targetMap, scoring.getDiscreteWorld(this.blockUniverse.sendingBlocks)));
+        console.log('score', trialScore);
+        if(trialScore < 100){
+            this.failedAttempts += 1;
+            // update attempts remaining
+            if(this.failedAttempts > 3){
+                location.replace("./fail.html");
+            } else {
+                this.reset();
+            }
+        }
+        else{
+            location.replace("./../../index.html");
+            console.log('success!');
+        }
+        // This prevents the form from submitting & disconnecting person
+        return false;
+      });
+
   }
 
   reset() {
@@ -29,11 +68,15 @@ class PracticeUI {
       this.blockUniverse.removeEnv();
       this.blockUniverse.removeStimWindow();
     }
+    this.blockUniverse.sendingBlocks = [];
+
     this.confetti.reset();
+
+    this.blockNum = 0;
     
     this.targetMap = scoring.getDiscreteWorld(this.targetBlocks); // Add discrete map for scoring
     this.blockUniverse.setupEnvs(this.practiceStim);
-    this.blockUniverse.blockSender = function (blockData) {};
+
    
     // Update counters
     // $("#block-counter").text('0/' + 2 + ' blocks placed'); //hardcoded for now
