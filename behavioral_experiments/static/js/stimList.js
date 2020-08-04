@@ -20,7 +20,12 @@ const _rawStimList = {
     Pi: [{ "x": 0, "y": 0, "width": 1, "height": 2 },
     { "x": 3, "y": 0, "width": 1, "height": 2 },
     { "x": 0, "y": 2, "width": 2, "height": 1 },
-    { "x": 2, "y": 2, "width": 2, "height": 1 }]
+    { "x": 2, "y": 2, "width": 2, "height": 1 }],
+
+    Build_Practice: [{ "x": 1, "y": 0, "width": 2, "height": 1 },
+    { "x": 1, "y": 1, "width": 1, "height": 2 },
+    { "x": 0, "y": 3, "width": 2, "height": 1 },
+    { "x": 0, "y": 4, "width": 1, "height": 2 }],
 };
 
 function getPossibleObjects (){
@@ -43,7 +48,7 @@ function shiftStimulus(stimName, shift) {
 };
 
 function placeStimulus(stimName, direction) {
-  var directions = {'left': 1, 'right': 7};
+  var directions = {'left': 1, 'right': 7, 'center': 4};
   return shiftStimulus(stimName, directions[direction]);
 };
 
@@ -56,10 +61,15 @@ function makeScene(stimArray){
                   placeStimulus(stimArray[1], 'right'));
 }
 
+function makeBuildPracticeScene(){
+  return _.concat(placeStimulus("Build_Practice", 'center'));
+}
+
 module.exports = {
   getRawStimList,
   shiftStimulus,
   placeStimulus,
   getPossibleObjects,
-  makeScene
+  makeScene,
+  makeBuildPracticeScene
 };

@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title> Reference game </title>
+
+
+  <!-- <link rel="stylesheet" href="/static/css/bootstrap.min.css" type="text/css"> -->
+  <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"> -->
+
+  <!-- Load jQuery, which lets us handle mouse events -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.15/lodash.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/6.2.2/math.min.js"></script>
+  <script src="../js/canvasInteraction.js"></script>
+  <!-- <script src="/static/js/evaluateScore.js" type="text/javascript"> </script> -->
+
+  <script type="text/javascript" src="../js/practice_bundle.js"></script>
+  <script type="text/javascript" src="../js/mmturkey.js"></script>
+
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="../css/experiment.css" type="text/css">
+</head>
+
+<body>
+  <div class="container">
+    <div class="main_div pt-3" id="main_div">
+
+      <div class="row mb-2 text-center h3">Building Practice</div>
+
+      <div class="row mb-2 text-left">
+        <p class="mt-2" id="practice-instructions">
+          This is a practice trial to give you a sense of what building blocks is like in this game.
+          The Architect will see the window on the left, and the Builder will see the window on the right.
+          After you've perfectly copied this tower, you'll be assigned a partner and find out whether you are the Architect or Builder.
+        </p>
+      </div>
+
+      <div class="row pt-2 env-div">
+        <div class="col">
+          <h2 class="text-center">Architect sees:</h2>
+          <div class="any-canvas" id="stimulus-canvas"></div>
+        </div>
+
+        <div class="col text-center">
+          <h2 class="text-center">Builder sees:</h2>
+          <div class="any-canvas" id="environment-canvas"></div>
+          <button id="done-button" type="button" class="btn btn-primary">Done</button>
+        </div>
+      </div>
+
+      <div class="row pt-2 text-center" id="trial-info">
+        <div class="col counter" id="trial-counter">
+        </div>
+        <div class="col counter" id="block-counter">
+        </div>
+        <div class="col counter" id="timer">
+        </div>
+        <div class="col counter" id="score-counter">
+        </div>
+
+      </div>
+    </div> <!-- end: main_div -->
+    <div id="exit_survey" style="display:none">
+
+      <div class="form-group row">
+        <label for="language" class="col-sm-4 col-form-label"> Are you a native English speaker? </label>
+        <div class="col-sm-2">
+          <select id="language" class="form-control">
+	    <option value="language::noResponse"></option>
+	    <option value="language::yes">Yes</option>
+	    <option value="language::no">No</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="form-group row">
+        <label for="human" class="col-sm-4 col-form-label">
+          Did you believe you were playing against another human?
+        </label>
+        <div class="col-sm-5">
+          <select id="human" class="form-control">
+            <option value="human::NoResponse"></option>
+            <option value="human::human">Yes, I thought they were a human</option>
+            <option value="human::program">No, I thought it was a computer program</option>
+          </select>
+          <small id='humanResult' class="form-text text-muted" style="display:none;color:red">
+            Thank you for your response! In this experiment everyone was human!
+          </small>
+        </div>
+      </div>
+
+      <div class="form-group row">
+        <label for="didCorrectly" class="col-sm-4 col-form-label">
+          Did you read the instructions and do you think you did the HIT correctly?
+        </label>
+        <div class="col-sm-2">
+          <select class="form-control">
+            <option value="didCorrectly::NoResponse"></option>
+            <option value="didCorrectly::yes">Yes</option>
+            <option value="didCorrectly::no">No</option>
+            <option value="didCorrectly::confused">I was confused</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="form-group row">
+        <label for="strategy" class="col-sm-4 col-form-label">
+          How would you describe your strategy in this experiment? 
+        </label>
+        <div class="col-sm-4">
+          <textarea class="form-control" id='strategy' rows="4"></textarea>
+        </div>
+      </div>
+
+      <div class="form-group row">
+        <label for="comments" class="col-sm-4 col-form-label">
+          Did you notice any problems or have any other comments on the experiment?
+        </label>
+        <div class="col-sm-4">
+          <textarea class="form-control" id='comments' rows="4"></textarea>
+        </div>
+      </div>
+      
+      <p> Clicking this button should automatically submit the HIT and close this tab. </p>
+      <div><button id="surveySubmit" class="btn-primary" type="button">Submit HIT</button></div>
+      <small style="display:none" class="form-text text-muted" id="button_error">
+        <p>
+          If you have clicked the button and nothing happened, you
+          can use the code box that appeared on the mturk tab as
+          a <b>backup method</b> to make sure you still get paid: just
+          enter the code <strong>E2iQwi3m</strong> -- no need to contact us!
+        </p>
+        <p>
+          If still experience a problem submitting with that method,
+          please contact cogtoolslab.requester@gmail.com for compensation.
+        </p>
+      </small>
+    </div> <!-- end: exit_survey> -->
+  </div> <!-- end: container-fluid -->
+</body>
+
+</html>
