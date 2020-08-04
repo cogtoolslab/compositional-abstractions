@@ -16,6 +16,7 @@ class ServerRefGame extends ServerGame {
     this.trialList = this.makeTrialList();
     this.numRounds = this.trialList.length;
     this.turnNum = 0;
+    this.numFails = 0;
     // console.log(this.trialList);
   }
 
@@ -123,17 +124,18 @@ class ServerRefGame extends ServerGame {
       gc.turnNum = 0;
       var trialData = JSON.parse(message_parts[1]);
       let practiceFail = false;
-      var numFails = 0;
-      if(numFails > 3) {
-        this.end();
-      } 
-
       // Force repeat of practice round if not perfect
       if(this.currStim.trialNum == 'practice' && trialData.score < 100) {
         gc.roundNum -= 1;
         practiceFail = true;
+        this.numFails +=1; // increment numFails
       }
 
+      if(this.numFails >= 3) {
+        this.end();
+      } 
+
+      
       // Send feedback
       _.map(all, p => p.player.instance.emit('feedback', {
           score: trialData.score,

@@ -74,7 +74,11 @@ gamesEnglish = df_exit %>%
   distinct(gameid)
 
 gamesToKeep = intersect(games75, gamesConfused, gamesEnglish)
-gamesToKeep
+```
+
+#### Get count of failed practice trials
+```{r}
+View(df_trial %>% mutate(keepGame = gameid %in% gamesToKeep$gameid) %>% filter(is.na(trialNum)) %>% group_by(gameid, keepGame) %>% tally())
 ```
 
 #### Plot first order analyses (word-block-message-score/repNum)
