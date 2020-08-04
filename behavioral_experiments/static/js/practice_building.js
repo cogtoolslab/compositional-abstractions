@@ -20,6 +20,8 @@ class PracticeUI {
     this.targetMap = scoring.getDiscreteWorld(this.targetBlocks);
     this.blockNum = 0;
     this.failedAttempts = 0;
+    this.attemptsAllowed = 4;
+    $("#attempt-counter").text((this.attemptsAllowed - this.failedAttempts) + ' attempts left');
 
     this.practiceStim = {
         targetBlocks: this.targetBlocks
@@ -40,24 +42,32 @@ class PracticeUI {
     // };
 
     $("#done-button").click(() => {
-        var trialScore = parseInt(scoring.getScoreDiscrete(this.targetMap, scoring.getDiscreteWorld(this.blockUniverse.sendingBlocks)));
-        console.log('score', trialScore);
-        if(trialScore < 100){
-            this.failedAttempts += 1;
-            // update attempts remaining
-            if(this.failedAttempts > 3){
-                location.replace("./fail.html");
-            } else {
-                this.reset();
+        if(this.blockUniverse.sendingBlocks.length > 0){
+            var trialScore = parseInt(scoring.getScoreDiscrete(this.targetMap, scoring.getDiscreteWorld(this.blockUniverse.sendingBlocks)));
+            console.log('score', trialScore);
+            if(trialScore < 100){
+                this.failedAttempts += 1;
+                var attemptsLeft = this.attemptsAllowed - this.failedAttempts;
+                if(attemptsLeft > 1){
+                    $("#attempt-counter").text((this.attemptsAllowed - this.failedAttempts) + ' attempts left');
+                } else {
+                    $("#attempt-counter").text('last try!');
+                }
+                // update attempts remaining
+                if(this.failedAttempts == this.attemptsAllowed){
+                    location.replace("./fail.html");
+                } else {
+                    this.reset();
+                }
             }
-        }
-        else{
-            location.replace("./../../index.html");
-            console.log('success!');
+            else {
+                location.replace("./../../index.html");
+                console.log('success!');
+            }
         }
         // This prevents the form from submitting & disconnecting person
         return false;
-      });
+    });
 
   }
 
