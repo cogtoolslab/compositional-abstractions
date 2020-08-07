@@ -22,6 +22,7 @@ class PracticeUI {
     this.failedAttempts = 0;
     this.attemptsAllowed = 3;
     $("#attempt-counter").text((this.attemptsAllowed - this.failedAttempts) + ' attempts left');
+    $("#practice-feedback").hide();
 
     this.practiceStim = {
         targetBlocks: this.targetBlocks
@@ -48,6 +49,7 @@ class PracticeUI {
             if(trialScore < 100){
                 this.failedAttempts += 1;
                 var attemptsLeft = this.attemptsAllowed - this.failedAttempts;
+                $("#practice-feedback").show();
                 if(attemptsLeft > 1){
                     $("#attempt-counter").text((this.attemptsAllowed - this.failedAttempts) + ' attempts left');
                 } else {

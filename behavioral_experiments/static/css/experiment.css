@@ -136,7 +136,9 @@ practice-instructions {
     font-weight: 700;
 }
 
-
+#practice-feedback{
+    color: red;
+}
 
 .btn{
     border: solid 4px #1c363e;
