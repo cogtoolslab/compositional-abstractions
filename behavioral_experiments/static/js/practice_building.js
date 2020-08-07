@@ -20,7 +20,7 @@ class PracticeUI {
     this.targetMap = scoring.getDiscreteWorld(this.targetBlocks);
     this.blockNum = 0;
     this.failedAttempts = 0;
-    this.attemptsAllowed = 4;
+    this.attemptsAllowed = 3;
     $("#attempt-counter").text((this.attemptsAllowed - this.failedAttempts) + ' attempts left');
 
     this.practiceStim = {

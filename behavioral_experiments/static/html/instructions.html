@@ -255,11 +255,15 @@
                 var assignmentId = urlParams.assignmentId;
                 var hitId = urlParams.hitId;
                 var turkSubmitTo = urlParams.turkSubmitTo;
-                location.replace("./pass.html?workerId=" + workerId
+                location.replace("./practice_building.html?workerId=" + workerId
                     + "&assignmentId=" + assignmentId
                     + "&hitId=" + hitId + "&turkSubmitTo=" + turkSubmitTo);
-            } else if (counter == 2) {
-                location.replace("./practice_building.html");
+                // location.replace("./pass.html?workerId=" + workerId
+                //     + "&assignmentId=" + assignmentId
+                //     + "&hitId=" + hitId + "&turkSubmitTo=" + turkSubmitTo);
+            } else if (counter == 1) {
+                location.replace("./fail.html");
+                // location.replace("./practice_building.html");
             } else {
                 $('.error').show()
                 counter += 1;
