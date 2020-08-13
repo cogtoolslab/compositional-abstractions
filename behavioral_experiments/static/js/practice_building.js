@@ -23,54 +23,77 @@ class PracticeUI {
     this.attemptsAllowed = 3;
     $("#attempt-counter").text((this.attemptsAllowed - this.failedAttempts) + ' attempts left');
     $("#practice-feedback").hide();
+    $("#block-counter").text('0/' + String(this.targetBlocks.length) + ' blocks placed');
+    $("#done-button").hide();
 
     this.practiceStim = {
         targetBlocks: this.targetBlocks
       };
     this.blocksInStructure = this.targetBlocks.length;
-    console.log(this.blocksInStructure);
-    this.blockUniverse.blockSender = function (blockData) {}
 
-    // this.blockUniverse.blockSender = function (blockData) {
-    //     console.log(this.blockNum);
-    //     if (this.sendingBlocks == this.blocksInStructure) {
-    //         //resetTimer(game, 30, document.getElementById('timer');
-    //         $('#done-button').prop('disabled', !game.speakerTurn);
-    //         this.blockUniverse.disabledBlockPlacement = true;
+    this.blockUniverse.ui = this
+
+    this.blockUniverse.blockSender = function (blockData) {
+      $("#block-counter").text(String(blockData.blockNum) + '/' + String(this.targetBlocks.length) + ' blocks placed');
+      if(blockData.blockNum==this.blocksInStructure){
+        this.submitAttempt()
+      }
+    }.bind(this)
+
+    // $("#done-button").click(() => {
+    //     if(this.blockUniverse.sendingBlocks.length > 0){
     //         var trialScore = parseInt(scoring.getScoreDiscrete(this.targetMap, scoring.getDiscreteWorld(this.blockUniverse.sendingBlocks)));
-    //         console.log(trialScore);
+    //         console.log('score', trialScore);
+    //         if(trialScore < 100){
+    //             this.failedAttempts += 1;
+    //             var attemptsLeft = this.attemptsAllowed - this.failedAttempts;
+    //             $("#practice-feedback").show();
+    //             if(attemptsLeft > 1){
+    //                 $("#attempt-counter").text((this.attemptsAllowed - this.failedAttempts) + ' attempts left');
+    //             } else {
+    //                 $("#attempt-counter").text('last try!');
+    //             }
+    //             // update attempts remaining
+    //             if(this.failedAttempts == this.attemptsAllowed){
+    //                 location.replace("./fail.html");
+    //             } else {
+    //                 this.reset();
+    //             }
+    //         }
+    //         else {
+    //             location.replace("./../../index.html");
+    //             console.log('success!');
+    //         }
     //     }
-    // };
+    //     // This prevents the form from submitting & disconnecting person
+    //     return false;
+    // });
 
-    $("#done-button").click(() => {
-        if(this.blockUniverse.sendingBlocks.length > 0){
-            var trialScore = parseInt(scoring.getScoreDiscrete(this.targetMap, scoring.getDiscreteWorld(this.blockUniverse.sendingBlocks)));
-            console.log('score', trialScore);
-            if(trialScore < 100){
-                this.failedAttempts += 1;
-                var attemptsLeft = this.attemptsAllowed - this.failedAttempts;
-                $("#practice-feedback").show();
-                if(attemptsLeft > 1){
-                    $("#attempt-counter").text((this.attemptsAllowed - this.failedAttempts) + ' attempts left');
-                } else {
-                    $("#attempt-counter").text('last try!');
-                }
-                // update attempts remaining
-                if(this.failedAttempts == this.attemptsAllowed){
-                    location.replace("./fail.html");
-                } else {
-                    this.reset();
-                }
-            }
-            else {
-                location.replace("./../../index.html");
-                console.log('success!');
-            }
+  }
+
+  submitAttempt() {
+    var trialScore = parseInt(scoring.getScoreDiscrete(this.targetMap, scoring.getDiscreteWorld(this.blockUniverse.sendingBlocks)));
+    console.log('score', trialScore);
+    if(trialScore < 100){
+        this.failedAttempts += 1;
+        var attemptsLeft = this.attemptsAllowed - this.failedAttempts;
+        $("#practice-feedback").show();
+        if(attemptsLeft > 1){
+            $("#attempt-counter").text((this.attemptsAllowed - this.failedAttempts) + ' attempts left');
+        } else {
+            $("#attempt-counter").text('last try!');
         }
-        // This prevents the form from submitting & disconnecting person
-        return false;
-    });
-
+        // update attempts remaining
+        if(this.failedAttempts == this.attemptsAllowed){
+            location.replace("./fail.html");
+        } else {
+            this.reset();
+        }
+    }
+    else {
+        location.replace("./../../index.html");
+        console.log('success!');
+    }
   }
 
   reset() {
@@ -85,6 +108,7 @@ class PracticeUI {
     this.confetti.reset();
 
     this.blockNum = 0;
+    $("#block-counter").text('0/' + String(this.targetBlocks.length) + ' blocks placed');
     
     this.targetMap = scoring.getDiscreteWorld(this.targetBlocks); // Add discrete map for scoring
     this.blockUniverse.setupEnvs(this.practiceStim);

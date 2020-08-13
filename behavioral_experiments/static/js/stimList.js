@@ -22,10 +22,16 @@ const _rawStimList = {
     { "x": 0, "y": 2, "width": 2, "height": 1 },
     { "x": 2, "y": 2, "width": 2, "height": 1 }],
 
-    Build_Practice: [{ "x": 1, "y": 0, "width": 2, "height": 1 },
+    Build_Practice_l: [{ "x": 2, "y": 0, "width": 2, "height": 1 },
+    { "x": 2, "y": 1, "width": 1, "height": 2 },
+    { "x": 1, "y": 3, "width": 2, "height": 1 },
+    { "x": 1, "y": 4, "width": 1, "height": 2 }],
+
+    Build_Practice_r: [{ "x": 0, "y": 0, "width": 2, "height": 1 },
     { "x": 1, "y": 1, "width": 1, "height": 2 },
-    { "x": 0, "y": 3, "width": 2, "height": 1 },
-    { "x": 0, "y": 4, "width": 1, "height": 2 }],
+    { "x": 1, "y": 3, "width": 2, "height": 1 },
+    { "x": 2, "y": 4, "width": 1, "height": 2 }],
+
 };
 
 function getPossibleObjects (){
@@ -62,7 +68,8 @@ function makeScene(stimArray){
 }
 
 function makeBuildPracticeScene(){
-  return _.concat(placeStimulus("Build_Practice", 'center'));
+  return _.concat(placeStimulus("Build_Practice_l", 'left'),
+                  placeStimulus("Build_Practice_r", 'right'));
 }
 
 module.exports = {

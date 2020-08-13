@@ -36,12 +36,19 @@
 
       <div class="row mb-2 text-left">
         <p class="mt-2" id="practice-instructions">
-          Great job -- you passed the quiz! Before you get paired with your partner, let’s get some practice with what it’s like to build a tower. 
-          <br/>The display on the left is what the Architect will see, and the display on the right is what the Builder will see. 
-          <br/>Go ahead and pretend you’re the Builder: <b>click and place blocks in the display on the right to recreate the tower on the left.</b> 
-          <br/>Remember that you can’t pick up blocks after you place them, so be careful! After you perfectly copy this tower, you’ll be assigned a partner and find out whether you are assigned the Architect or Builder role. You have 3 attempts. Press ‘Done’ when you’ve finished.
+          Great job -- you passed the quiz! Before you get paired with your partner, let’s see what it’s like to build a
+          tower.
+          <br />The display on the left is what the Architect will see, and the display on the right is what the Builder
+          will see.
+          <br />Go ahead and pretend you’re the Builder: <b>click and place blocks in the display on the right to
+            recreate the tower on the left.</b>
+          <br />Remember that you can’t pick up blocks after you place them, and the trial will end once you've placed 8
+          blocks.
+          <br />After you perfectly copy this tower, you’ll be assigned a partner and find out whether you are assigned
+          the Architect or Builder role. You have 3 attempts.
         </p>
-        <p id="practice-feedback">Oops that's not quite right. Remember the tower needs to be in the correct location too.</p>
+        <p id="practice-feedback">Oops that's not quite right. Remember the tower needs to be in the correct location
+          too.</p>
       </div>
 
       <div class="row pt-2 env-div">
@@ -65,86 +72,86 @@
         <div class="col counter" id="timer">
         </div>
         <div class="col counter" id="attempt-counter"></div>
-        </div>
-
-      </div>
-    </div> <!-- end: main_div -->
-    <div id="exit_survey" style="display:none">
-
-      <div class="form-group row">
-        <label for="language" class="col-sm-4 col-form-label"> Are you a native English speaker? </label>
-        <div class="col-sm-2">
-          <select id="language" class="form-control">
-	    <option value="language::noResponse"></option>
-	    <option value="language::yes">Yes</option>
-	    <option value="language::no">No</option>
-          </select>
-        </div>
       </div>
 
-      <div class="form-group row">
-        <label for="human" class="col-sm-4 col-form-label">
-          Did you believe you were playing against another human?
-        </label>
-        <div class="col-sm-5">
-          <select id="human" class="form-control">
-            <option value="human::NoResponse"></option>
-            <option value="human::human">Yes, I thought they were a human</option>
-            <option value="human::program">No, I thought it was a computer program</option>
-          </select>
-          <small id='humanResult' class="form-text text-muted" style="display:none;color:red">
-            Thank you for your response! In this experiment everyone was human!
-          </small>
-        </div>
-      </div>
+    </div>
+  </div> <!-- end: main_div -->
+  <div id="exit_survey" style="display:none">
 
-      <div class="form-group row">
-        <label for="didCorrectly" class="col-sm-4 col-form-label">
-          Did you read the instructions and do you think you did the HIT correctly?
-        </label>
-        <div class="col-sm-2">
-          <select class="form-control">
-            <option value="didCorrectly::NoResponse"></option>
-            <option value="didCorrectly::yes">Yes</option>
-            <option value="didCorrectly::no">No</option>
-            <option value="didCorrectly::confused">I was confused</option>
-          </select>
-        </div>
+    <div class="form-group row">
+      <label for="language" class="col-sm-4 col-form-label"> Are you a native English speaker? </label>
+      <div class="col-sm-2">
+        <select id="language" class="form-control">
+          <option value="language::noResponse"></option>
+          <option value="language::yes">Yes</option>
+          <option value="language::no">No</option>
+        </select>
       </div>
+    </div>
 
-      <div class="form-group row">
-        <label for="strategy" class="col-sm-4 col-form-label">
-          How would you describe your strategy in this experiment? 
-        </label>
-        <div class="col-sm-4">
-          <textarea class="form-control" id='strategy' rows="4"></textarea>
-        </div>
+    <div class="form-group row">
+      <label for="human" class="col-sm-4 col-form-label">
+        Did you believe you were playing against another human?
+      </label>
+      <div class="col-sm-5">
+        <select id="human" class="form-control">
+          <option value="human::NoResponse"></option>
+          <option value="human::human">Yes, I thought they were a human</option>
+          <option value="human::program">No, I thought it was a computer program</option>
+        </select>
+        <small id='humanResult' class="form-text text-muted" style="display:none;color:red">
+          Thank you for your response! In this experiment everyone was human!
+        </small>
       </div>
+    </div>
 
-      <div class="form-group row">
-        <label for="comments" class="col-sm-4 col-form-label">
-          Did you notice any problems or have any other comments on the experiment?
-        </label>
-        <div class="col-sm-4">
-          <textarea class="form-control" id='comments' rows="4"></textarea>
-        </div>
+    <div class="form-group row">
+      <label for="didCorrectly" class="col-sm-4 col-form-label">
+        Did you read the instructions and do you think you did the HIT correctly?
+      </label>
+      <div class="col-sm-2">
+        <select class="form-control">
+          <option value="didCorrectly::NoResponse"></option>
+          <option value="didCorrectly::yes">Yes</option>
+          <option value="didCorrectly::no">No</option>
+          <option value="didCorrectly::confused">I was confused</option>
+        </select>
       </div>
-      
-      <p> Clicking this button should automatically submit the HIT and close this tab. </p>
-      <div><button id="surveySubmit" class="btn-primary" type="button">Submit HIT</button></div>
-      <small style="display:none" class="form-text text-muted" id="button_error">
-        <p>
-          If you have clicked the button and nothing happened, you
-          can use the code box that appeared on the mturk tab as
-          a <b>backup method</b> to make sure you still get paid: just
-          enter the code <strong>E2iQwi3m</strong> -- no need to contact us!
-        </p>
-        <p>
-          If you still experience a problem submitting with that method,
-          please contact cogtoolslab.requester@gmail.com for compensation.
-        </p>
-      </small>
-    </div> <!-- end: exit_survey> -->
+    </div>
+
+    <div class="form-group row">
+      <label for="strategy" class="col-sm-4 col-form-label">
+        How would you describe your strategy in this experiment?
+      </label>
+      <div class="col-sm-4">
+        <textarea class="form-control" id='strategy' rows="4"></textarea>
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <label for="comments" class="col-sm-4 col-form-label">
+        Did you notice any problems or have any other comments on the experiment?
+      </label>
+      <div class="col-sm-4">
+        <textarea class="form-control" id='comments' rows="4"></textarea>
+      </div>
+    </div>
+
+    <p> Clicking this button should automatically submit the HIT and close this tab. </p>
+    <div><button id="surveySubmit" class="btn-primary" type="button">Submit HIT</button></div>
+    <small style="display:none" class="form-text text-muted" id="button_error">
+      <p>
+        If you have clicked the button and nothing happened, you
+        can use the code box that appeared on the mturk tab as
+        a <b>backup method</b> to make sure you still get paid: just
+        enter the code <strong>E2iQwi3m</strong> -- no need to contact us!
+      </p>
+      <p>
+        If you still experience a problem submitting with that method,
+        please contact cogtoolslab.requester@gmail.com for compensation.
+      </p>
+    </small>
+  </div> <!-- end: exit_survey> -->
   </div> <!-- end: container-fluid -->
 </body>
 

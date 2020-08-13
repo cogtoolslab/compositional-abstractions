@@ -302,8 +302,9 @@ class BlockUniverse {
           y: newBlock.y_index,
           width: newBlock.blockKind.w,
           height: newBlock.blockKind.h,
-          color: transluscent_color // appends alpha value to color of block- will fail if block is not opaque
-        }
+          color: transluscent_color, // appends alpha value to color of block- will fail if block is not opaque
+        },
+        blockNum: this.blocks.length
       }
 
       this.sendingBlocks.push(sendingBlockData.block);
