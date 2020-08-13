@@ -77,7 +77,7 @@ function serve() {
         const collection = database.collection(collectionName);        
         collection.find(query, projection).limit(1).toArray((err, items) => {          
           callback(!_.isEmpty(items));
-        });  
+        });
       }
 
       function checkEach(collectionList, checkCollectionForHits, query,
