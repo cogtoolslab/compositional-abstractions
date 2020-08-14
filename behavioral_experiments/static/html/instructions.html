@@ -261,8 +261,11 @@
                 // location.replace("./pass.html?workerId=" + workerId
                 //     + "&assignmentId=" + assignmentId
                 //     + "&hitId=" + hitId + "&turkSubmitTo=" + turkSubmitTo);
-            } else if (counter == 1) {
-                location.replace("./fail.html");
+            } else if (counter == 2) {
+                // location.replace("./fail.html");
+                location.replace("./fail.html?workerId=" + workerId
+                    + "&assignmentId=" + assignmentId
+                    + "&hitId=" + hitId + "&turkSubmitTo=" + turkSubmitTo);
                 // location.replace("./practice_building.html");
             } else {
                 $('.error').show()

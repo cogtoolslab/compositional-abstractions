@@ -44,7 +44,7 @@
       </p>
 
       <p>
-        <button id="submit-to-turl" type="button" onclick="turk.submit(practiceData, true)" class="btn btn-primary">Click here</button> to get your base pay.
+        <button id="submit-to-turk" type="button" onclick="turk.submit(practiceData, true)" class="btn btn-primary">Click here</button> to get your base pay.
       </p>
 
     </div> <!-- /container -->
@@ -65,14 +65,13 @@
       var assignmentId = urlParams.assignmentId;
       var hitId = urlParams.hitId;
       var turkSubmitTo = urlParams.turkSubmitTo;
-      var nAttempts = urlParams.nAttempts;
+      // var nAttempts = urlParams.nAttempts;
 
       var practiceData = {
         workerId: workerId,
         assignmentId: assignmentId,
         hitId: hitId,
-        turkSubmitTo: turkSubmitTo,
-        nAttempts: nAttempts
+        turkSubmitTo: turkSubmitTo
       }
 
       

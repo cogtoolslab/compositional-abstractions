@@ -4,11 +4,12 @@ var stim = require('./stimList.js');
 var scoring = require('./scoring.js');
 var _ = require('lodash');
 
-window.onload = function(){
+window.onload = function () {
   var customConfig = require('../../config.json');
   practiceUI = new PracticeUI();
   practiceUI.reset();
 };
+
 
 class PracticeUI {
   // Since all the action is happening in experimentEnvironment, this
@@ -27,15 +28,15 @@ class PracticeUI {
     $("#done-button").hide();
 
     this.practiceStim = {
-        targetBlocks: this.targetBlocks
-      };
+      targetBlocks: this.targetBlocks
+    };
     this.blocksInStructure = this.targetBlocks.length;
 
     this.blockUniverse.ui = this
 
     this.blockUniverse.blockSender = function (blockData) {
       $("#block-counter").text(String(blockData.blockNum) + '/' + String(this.targetBlocks.length) + ' blocks placed');
-      if(blockData.blockNum==this.blocksInStructure){
+      if (blockData.blockNum == this.blocksInStructure) {
         this.submitAttempt()
       }
     }.bind(this)
@@ -71,35 +72,45 @@ class PracticeUI {
 
   }
 
+  // Get URL params to pass along
+
+
   submitAttempt() {
     var trialScore = parseInt(scoring.getScoreDiscrete(this.targetMap, scoring.getDiscreteWorld(this.blockUniverse.sendingBlocks)));
     console.log('score', trialScore);
-    if(trialScore < 100){
-        this.failedAttempts += 1;
-        var attemptsLeft = this.attemptsAllowed - this.failedAttempts;
-        $("#practice-feedback").show();
-        if(attemptsLeft > 1){
-            $("#attempt-counter").text((this.attemptsAllowed - this.failedAttempts) + ' attempts left');
-        } else {
-            $("#attempt-counter").text('last try!');
-        }
-        // update attempts remaining
-        if(this.failedAttempts == this.attemptsAllowed){
-            location.replace("./fail.html");
-        } else {
-            this.reset();
-        }
+    if (trialScore < 100) {
+      this.failedAttempts += 1;
+      var attemptsLeft = this.attemptsAllowed - this.failedAttempts;
+      $("#practice-feedback").show();
+      if (attemptsLeft > 1) {
+        $("#attempt-counter").text((this.attemptsAllowed - this.failedAttempts) + ' attempts left');
+      } else {
+        $("#attempt-counter").text('last try!');
+      }
+      // update attempts remaining
+      if (this.failedAttempts == this.attemptsAllowed) {
+        // location.replace("./fail.html");
+        location.replace("./fail.html?workerId=" + workerId
+          + "&assignmentId=" + assignmentId
+          + "&hitId=" + hitId + "&turkSubmitTo=" + turkSubmitTo);
+      } else {
+        this.reset();
+      }
     }
     else {
-        location.replace("./../../index.html");
-        console.log('success!');
+      // location.replace("./../../index.html");
+      location.replace("./../../index.html?workerId=" + workerId
+        + "&assignmentId=" + assignmentId
+        + "&hitId=" + hitId + "&turkSubmitTo=" + turkSubmitTo
+        + "&individualPracticeAttempts=" + this.failedAttempts);
+      console.log('success!');
     }
   }
 
   reset() {
     // Need to remove old screens
-    if(_.has(this.blockUniverse, 'p5env') ||
-       _.has(this.blockUniverse, 'p5stim')) {
+    if (_.has(this.blockUniverse, 'p5env') ||
+      _.has(this.blockUniverse, 'p5stim')) {
       this.blockUniverse.removeEnv();
       this.blockUniverse.removeStimWindow();
     }
@@ -109,11 +120,11 @@ class PracticeUI {
 
     this.blockNum = 0;
     $("#block-counter").text('0/' + String(this.targetBlocks.length) + ' blocks placed');
-    
+
     this.targetMap = scoring.getDiscreteWorld(this.targetBlocks); // Add discrete map for scoring
     this.blockUniverse.setupEnvs(this.practiceStim);
 
-   
+
     // Update counters
     // $("#block-counter").text('0/' + 2 + ' blocks placed'); //hardcoded for now
     // $("#score-counter").text('Total bonus: $' + String(game.cumulativeBonus.toFixed(2)));
@@ -131,26 +142,26 @@ class PracticeUI {
     // $("#reproduction").focus();
   }
 
-//   submit (event) {
-//     $('#button_error').show();
-//     var game = event.data.game;
-//     game.data = _.extend(game.data, {
-//       'comments' : $('#comments').val().trim().replace(/\./g, '~~~'),
-//       'strategy' : $('#strategy').val().trim().replace(/\./g, '~~~'),
-//       'role' : game.role,
-//       'score' : parseInt(game.cumulativeBonus * 100),
-//       'totalLength' : Date.now() - game.startTime
-//     });
-//     game.submitted = true;
-//     console.log("data is...");
-//     console.log(game.data);
-//     game.socket.send("exitSurvey." + JSON.stringify(game.data));
-//     if(_.size(game.urlParams) >= 4) {
-//       window.opener.turk.submit(game.data, true);
-//       window.close(); 
-//     } else {
-//       console.log("would have submitted the following :")
-//       console.log(game.data);
-//     }
-//   }
+  //   submit (event) {
+  //     $('#button_error').show();
+  //     var game = event.data.game;
+  //     game.data = _.extend(game.data, {
+  //       'comments' : $('#comments').val().trim().replace(/\./g, '~~~'),
+  //       'strategy' : $('#strategy').val().trim().replace(/\./g, '~~~'),
+  //       'role' : game.role,
+  //       'score' : parseInt(game.cumulativeBonus * 100),
+  //       'totalLength' : Date.now() - game.startTime
+  //     });
+  //     game.submitted = true;
+  //     console.log("data is...");
+  //     console.log(game.data);
+  //     game.socket.send("exitSurvey." + JSON.stringify(game.data));
+  //     if(_.size(game.urlParams) >= 4) {
+  //       window.opener.turk.submit(game.data, true);
+  //       window.close(); 
+  //     } else {
+  //       console.log("would have submitted the following :")
+  //       console.log(game.data);
+  //     }
+  //   }
 }
