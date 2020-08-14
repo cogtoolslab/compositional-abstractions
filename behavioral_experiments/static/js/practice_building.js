@@ -36,7 +36,7 @@ class PracticeUI {
 
     this.blockUniverse.blockSender = function (blockData) {
       $("#block-counter").text(String(blockData.blockNum) + '/' + String(this.targetBlocks.length) + ' blocks placed');
-      if (blockData.blockNum == this.blocksInStructure) {
+      if (blockData.blockNum >= this.blocksInStructure) {
         this.submitAttempt()
       }
     }.bind(this)
