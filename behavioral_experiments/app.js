@@ -108,6 +108,8 @@ var initialize = function (query, client, id) {
   client.userid = id;
   client.workerid = query.workerId ? query.workerId : '';
   client.assignmentid = query.assignmentId ? query.assignmentId : '';
+  client.individualPracticeAttempts = query.individualPracticeAttempts ? individualPracticeAttempts : null;
+  console.log(client.individualPracticeAttempts);
 
   // Good to know when they connected
   console.log('\t socket.io:: player ' + client.userid + ' connected');

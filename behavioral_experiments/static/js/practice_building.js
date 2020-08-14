@@ -98,7 +98,7 @@ class PracticeUI {
       }
     }
     else {
-      // location.replace("./../../index.html");
+      // advance to real experiment
       location.replace("./../../index.html?workerId=" + workerId
         + "&assignmentId=" + assignmentId
         + "&hitId=" + hitId + "&turkSubmitTo=" + turkSubmitTo
