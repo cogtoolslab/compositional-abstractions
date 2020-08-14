@@ -17,6 +17,7 @@
     <link href="../css/bootstrap-theme.min.css" rel="stylesheet">
 
     <script type="text/javascript" src="../js/mmturkey.js"></script>
+    <script type="text/javascript" src="../js/getURLParams.js"></script>
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -48,38 +49,17 @@
       </p>
 
     </div> <!-- /container -->
-    <script>
-
-      var urlParams;
-      var match,
-      pl     = /\+/g,  // Regex for replacing addition symbol with a space
-      search = /([^&=]+)=?([^&]*)/g,
-      decode = function (s) { return decodeURIComponent(s.replace(pl, " ")); },
-      query  = location.search.substring(1);
-      urlParams = {};
-      while (match = search.exec(query))
-        urlParams[decode(match[1])] = decode(match[2]);
-
-      // these are currently not sent from practice_building, so it won't work
-      var workerId = urlParams.workerId;
-      var assignmentId = urlParams.assignmentId;
-      var hitId = urlParams.hitId;
-      var turkSubmitTo = urlParams.turkSubmitTo;
-      // var nAttempts = urlParams.nAttempts;
-
+    <script type="text/javascript">
       var practiceData = {
         workerId: workerId,
         assignmentId: assignmentId,
         hitId: hitId,
         turkSubmitTo: turkSubmitTo
-      }
+      };
 
       submitPracticeData = function(){
         turk.submit(practiceData, true);
       }
-
-      
-
     </script>
 
     <!-- Bootstrap core JavaScript

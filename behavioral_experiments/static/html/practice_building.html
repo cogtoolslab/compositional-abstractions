@@ -16,6 +16,8 @@
 
   <script type="text/javascript" src="../js/practice_bundle.js"></script>
   <script type="text/javascript" src="../js/mmturkey.js"></script>
+  <script type="text/javascript" src="../js/getURLParams.js"></script>
+
 
   <!-- jQuery first, then Popper.js, then Bootstrap JS -->
   <script src="https://code.jquery.com/jquery-3.4.1.min.js"
@@ -154,26 +156,6 @@
     </small>
   </div> <!-- end: exit_survey> -->
   </div> <!-- end: container-fluid -->
-
-  <script type="text/javascript">
-    $('html,body').scrollTop(0);
-    var urlParams;
-    var match,
-      pl = /\+/g,  // Regex for replacing addition symbol with a space
-      search = /([^&=]+)=?([^&]*)/g,
-      decode = function (s) { return decodeURIComponent(s.replace(pl, " ")); },
-      query = location.search.substring(1);
-  
-    urlParams = {};
-    while (match = search.exec(query))
-      urlParams[decode(match[1])] = decode(match[2]);
-  
-    console.log(urlParams)
-    var workerId = urlParams.workerId;
-    var assignmentId = urlParams.assignmentId;
-    var hitId = urlParams.hitId;
-    var turkSubmitTo = urlParams.turkSubmitTo;
-  </script>
 </body>
 
 </html>
