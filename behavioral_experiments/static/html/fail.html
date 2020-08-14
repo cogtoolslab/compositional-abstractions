@@ -40,11 +40,11 @@
 
       <p>
         Unfortunately you cannot participate further in this study.
-        </br>However you will receive full compensation for taking the time to read our (lengthy) instructions, and we hope to see you again in a study soon.
+        </br>But don't worry, you will receive full base compensation for taking the time to read our instructions, and we hope to see you again in a study soon!
       </p>
 
       <p>
-        <button id="submit-to-turk" type="button" onclick="turk.submit(practiceData, true)" class="btn btn-primary">Click here</button> to get your base pay.
+        <button id="submit-to-turk" type="button" onclick="submitPracticeData()" class="btn btn-primary">Click here</button> to get your base pay.
       </p>
 
     </div> <!-- /container -->
@@ -72,6 +72,10 @@
         assignmentId: assignmentId,
         hitId: hitId,
         turkSubmitTo: turkSubmitTo
+      }
+
+      submitPracticeData = function(){
+        turk.submit(practiceData, true);
       }
 
       
