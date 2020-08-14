@@ -201,6 +201,7 @@ class ServerRefGame extends ServerGame {
         trialNum: client.game.currStim.trialNum,
         turnNum: client.game.turnNum,
         repNum: client.game.currStim.repNum,
+        individualPracticeAttempts: client.individualPracticeAttempts
         // trialStartTime: client.game.trialStartTime,
         // turnStartTime: client.game.turnStartTime,
         // turnTimeElapsed: timeNow - client.game.turnStartTime
