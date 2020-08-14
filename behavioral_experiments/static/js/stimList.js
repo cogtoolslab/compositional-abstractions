@@ -1,7 +1,7 @@
 const _ = require('lodash');
 
 const _rawStimList = {
-  "L": [{ "x": 0, "y": 1, "width": 1, "height": 2 },
+  L: [{ "x": 0, "y": 1, "width": 1, "height": 2 },
 	{ "x": 0, "y": 3, "width": 1, "height": 2 },
 	{ "x": 0, "y": 0, "width": 2, "height": 1 },
 	{ "x": 2, "y": 0, "width": 2, "height": 1 }],
@@ -35,7 +35,7 @@ const _rawStimList = {
 };
 
 function getPossibleObjects (){
-  return _.keys(_.omit(_rawStimList, ['horizontal', 'vertical']));
+  return _.keys(_.omit(_rawStimList, ['horizontal', 'vertical','Build_Practice_l','Build_Practice_r']));
 }
 
 // Protect this just in case someone mutates one of these objects down
