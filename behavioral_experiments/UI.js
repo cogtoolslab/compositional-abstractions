@@ -110,8 +110,7 @@ class UI {
     console.log(game.data);
     game.socket.send("exitSurvey." + JSON.stringify(game.data));
     if(_.size(game.urlParams) >= 4) {
-      window.opener.turk.submit(game.data, true);
-      window.close(); 
+      turk.submit(game.data, true);
     } else {
       console.log("would have submitted the following :")
       console.log(game.data);
