@@ -214,10 +214,8 @@
 
 
             </br>
+	    <div class="error" style="display:none"> Ooops! Looks like you made a mistake - take another look at your responses. You have one more try. </div>
             <input id="quiz_submit" type="submit" value="Submit">
-            </br>
-            </br>
-            <div class="error" style="display:none"> Ooops! Looks like you made a mistake. You have one more try. </div>
         </div> <!-- /container -->
     </div>
     <script type="text/javascript">
@@ -236,18 +234,14 @@
             if (ans1 == "yes" && ans2 == "yes" && ans3 == "yes" &&
                 ans4 == "yes" && ans5 == "yes" && ans6 == "yes" && ans7 == "yes") {
                 
-                location.replace("./practice_building.html?workerId=" + workerId
-                    + "&assignmentId=" + assignmentId
-                    + "&hitId=" + hitId + "&turkSubmitTo=" + turkSubmitTo);
-                // location.replace("./pass.html?workerId=" + workerId
-                //     + "&assignmentId=" + assignmentId
-                //     + "&hitId=" + hitId + "&turkSubmitTo=" + turkSubmitTo);
+                location.replace("./practice_building.html?workerId=" + urlParams.workerId
+                    + "&assignmentId=" + urlParams.assignmentId
+                    + "&hitId=" + urlParams.hitId + "&turkSubmitTo=" + urlParams.turkSubmitTo);
             } else if (counter == 2) {
-                // location.replace("./fail.html");
-                location.replace("./fail.html?workerId=" + workerId
-                    + "&assignmentId=" + assignmentId
-                    + "&hitId=" + hitId + "&turkSubmitTo=" + turkSubmitTo);
-                // location.replace("./practice_building.html");
+                location.replace("./fail.html?workerId=" + urlParams.workerId
+				 + "&assignmentId=" + urlParams.assignmentId
+				 + "&hitId=" + urlParams.hitId + "&turkSubmitTo=" + urlParams.turkSubmitTo
+				 + "&failType=instructionsQuiz");
             } else {
                 $('.error').show()
                 counter += 1;
