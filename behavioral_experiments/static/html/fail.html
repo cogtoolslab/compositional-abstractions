@@ -50,15 +50,9 @@
 
     </div> <!-- /container -->
     <script type="text/javascript">
-      var practiceData = {
-        workerId: workerId,
-        assignmentId: assignmentId,
-        hitId: hitId,
-        turkSubmitTo: turkSubmitTo
-      };
-
       submitPracticeData = function(){
-        turk.submit(practiceData, true);
+	console.log(urlParams)
+        turk.submit({failType: urlParams.failType}, true);
       }
     </script>
 
