@@ -32,18 +32,19 @@
 </head>
 
 <body>
+  <div class="container occluder text-center" id="practice-feedback">Oops that's not quite right.</div>
   <div class="container">
     <div class="main_div pt-3" id="main_div">
 
       <div class="row mb-2 text-center h3">Building Practice</div>
 
-      <div class="row mb-2 text-left">
-        <p class="mt-2" id="practice-instructions">
+      <div class="row text-left">
+        <p class="mt-1" id="practice-instructions">
           Great job -- you passed the quiz! Before you get paired with your partner, let’s see what it’s like to build a
           tower.
           The display on the <b>left is what the Architect will see</b>, and the display on the <b>right is what the Builder
           will see</b>.
-          Go ahead and pretend you’re the Builder: <b>click and place blocks in the display on the right to
+          Go ahead and pretend you’re the Builder: <b>click to pick up and place blocks in the display on the right to
             recreate the tower on the left.</b>
           Remember that you can’t pick up blocks after you place them, and the <b>trial will end once you've placed 8
           blocks</b>.
@@ -51,24 +52,22 @@
           Once you've done that, you’ll be assigned a partner and find out whether you are assigned
           the Architect or Builder role.
         </p>
-        <p id="practice-feedback">Oops that's not quite right. Remember the tower needs to be in the correct location
-          too.</p>
       </div>
 
       <div class="row pt-2 env-div">
         <div class="col">
-          <h2 class="text-center">Architect sees:</h2>
+          <h3 class="text-center">Architect sees:</h2>
           <div class="any-canvas" id="stimulus-canvas"></div>
         </div>
 
         <div class="col text-center">
-          <h2 class="text-center">Builder sees:</h2>
+          <h3 class="text-center">Builder sees:</h2>
           <div class="any-canvas" id="environment-canvas"></div>
           <button id="done-button" type="button" class="btn btn-primary">Done</button>
         </div>
       </div>
 
-      <div class="row pt-2 text-center" id="trial-info">
+      <div class="row text-center" id="trial-info">
         <div class="col counter" id="trial-counter">
         </div>
         <div class="col counter" id="block-counter">

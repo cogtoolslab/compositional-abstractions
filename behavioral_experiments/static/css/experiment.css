@@ -29,10 +29,19 @@
 /*     text-align:center; */
 /* } */
 
-practice-instructions {
-    
-}
-
+.occluder {
+    float: middle;
+    border:solid 1px #FFFFFF;
+    height: 100vh;
+    width: 100%;
+    padding-top: 20%;
+    bottom: auto; left:0; right: 0;
+    background: #FFFFFF;
+    position: absolute;
+    z-index: 12;
+    opacity: 1;
+    color: black;
+  }
 
 .d-block{
     display: inline-block;
