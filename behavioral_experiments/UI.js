@@ -102,7 +102,7 @@ class UI {
       'comments' : $('#comments').val().trim().replace(/\./g, '~~~'),
       'strategy' : $('#strategy').val().trim().replace(/\./g, '~~~'),
       'role' : game.role,
-      'score' : parseInt(game.cumulativeBonus * 100),
+      'score' : parseInt((game.cumulativeBonus * 100) + 300), // add $3 completion bonus if they submit survey
       'totalLength' : Date.now() - game.startTime
     });
     game.submitted = true;
