@@ -75,7 +75,7 @@ class PracticeUI {
         setTimeout(function () {
           $("#practice-feedback").hide();
           this.reset();
-        }.bind(this), 5000);
+        }.bind(this), 3000);
 
       } else {
         $("#practice-feedback").hide();
