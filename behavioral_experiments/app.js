@@ -127,3 +127,16 @@ var initialize = function (query, client, id) {
       refGameServer.endGame(client.game.id, client.userid);
   });
 };
+
+var bodyParser = require('body-parser');
+//var multer = require('multer'); 
+
+app.use(bodyParser.json()); // for parsing application/json
+app.use(bodyParser.urlencoded({ extended: true })); // for parsing application/x-www-form-urlencoded
+//app.use(multer()); // for parsing multipart/form-data
+
+app.post('/addPpt', function (req, res) {
+  var id = req.query.workerId;
+  utils.addPptToMongo(req.body);
+
+});

@@ -112,6 +112,7 @@ function serve() {
     });
 
     app.post('/db/insert', (request, response) => {
+
       if (!request.body) {
         return failure(response, '/db/insert needs post request body');
       }
