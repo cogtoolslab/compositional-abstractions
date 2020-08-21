@@ -136,7 +136,7 @@ app.use(bodyParser.urlencoded({ extended: true })); // for parsing application/x
 //app.use(multer()); // for parsing multipart/form-data
 
 app.post('/addPpt', function (req, res) {
+  console.log(req.body);
   var id = req.query.workerId;
   utils.addPptToMongo(req.body);
-
 });

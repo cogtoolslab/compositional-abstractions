@@ -51,38 +51,39 @@
 
     </div> <!-- /container -->
     <script type="text/javascript">
-      submitPracticeData = function(){
 
-        var addPptToMongo = function(urlParams) {
+      var addPptToMongo = function(urlParams) {
 
-          var pptData = {
-            dbname: "compositional-abstractions",
-            colname: "two-towers",
-            workerID: urlParams.workerID,
-            failType: urlParams.failType,
-          };
-
-          console.log(pptData);
-          
-          $.post(
-            'https://cogtoolslab.org:8883/addPpt',
-            pptData,
-            // (error, res, body) => {
-            //   if (!error && res.statusCode === 200) {
-            //     console.log(`sent data to store`);
-            //   } else {
-            //     console.log(`error sending data to store: ${error} ${body}`);
-            //   }
-            // }
-            (data, status) => {
-              console.log(data);
-            }
-          );
+        var pptData = {
+          dbname: "compositional-abstractions",
+          colname: "two-towers",
+          workerId: urlParams.workerId,
+          failType: urlParams.failType,
         };
 
-        //urlParams.workerID = 'test';
+        console.log(pptData);
+
+        $.post(
+          'https://cogtoolslab.org:8883/addPpt',
+          pptData,
+          // (error, res, body) => {
+          //   if (!error && res.statusCode === 200) {
+          //     console.log(`sent data to store`);
+          //   } else {
+          //     console.log(`error sending data to store: ${error} ${body}`);
+          //   }
+          // }
+          (data, status) => {
+            console.log(data);
+          }
+        );
+      };
+
+      submitPracticeData = function(){
+
+        console.log(urlParams);
         
-        if(urlParams.workerID){
+        if(urlParams.workerId){
           addPptToMongo(urlParams);
         }
         
