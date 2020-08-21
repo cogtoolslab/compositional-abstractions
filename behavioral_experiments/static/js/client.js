@@ -9,3 +9,10 @@ window.onload = function(){
   game.listen();
 };
 
+window.addEventListener('beforeunload', function (e) {
+  // If you prevent default behavior in Mozilla Firefox prompt will always be shown
+  e.preventDefault(); 
+  // Chrome requires returnValue to be set
+  e.returnValue = '';
+});
+
