@@ -98,11 +98,13 @@ class UI {
   submit (event) {
     $('#button_error').show();
     var game = event.data.game;
+    let scoreForBonusing = parseInt((game.cumulativeBonus * 100) + (300 * game.trialNum/12)); // add proportion of $3 completion bonus if they submit survey
+    console.log(scoreForBonusing);
     game.data = _.extend(game.data, {
       'comments' : $('#comments').val().trim().replace(/\./g, '~~~'),
       'strategy' : $('#strategy').val().trim().replace(/\./g, '~~~'),
       'role' : game.role,
-      'score' : parseInt(game.cumulativeBonus * 100), // add proportion$3 completion bonus if they submit survey
+      'score' : scoreForBonusing,
       'totalLength' : Date.now() - game.startTime
     });
     game.submitted = true;
