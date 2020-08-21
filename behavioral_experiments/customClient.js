@@ -83,17 +83,17 @@ var constructFeedback = function(game, data) {
     UI.confetti.drop();
     return {
       'trialBonus' : expConfig.bonusHigh,
-      'message' : "Perfect! ⭐️⭐️⭐️ 10¢ bonus!"
+      'message' : "Perfect! ⭐️⭐️⭐️ "+ parseInt(expConfig.bonusHigh*100).toString() +"¢ bonus!"
     }
   } else if (data.score > expConfig.bonusThresholdMid) { 
     return {
       'trialBonus' : expConfig.bonusMid,
-      'message' : "Great Job! ⭐️⭐️ 6¢ bonus!"
+      'message' : "Great Job! ⭐️⭐️ "+ parseInt(expConfig.bonusMid*100).toString() +"¢ bonus!"
     }
   } else if (data.score > expConfig.bonusThresholdLow) { 
     return {
       'trialBonus' : expConfig.bonusLow,
-      'message' : "Not bad! ⭐️ 2¢ bonus!"
+      'message' : "Not bad! ⭐️ "+ parseInt(expConfig.bonusLow*100).toString() +"¢ bonus!"
     } 
   } else {
     return {

@@ -112,6 +112,21 @@ var writeDataToMongo = function(game, line) {
   );
 };
 
+var addPptToMongo = function(postData) {
+  sendPostRequest(
+    'http://localhost:5000/db/insert',
+    { json: postData },
+    (error, res, body) => {
+      if (!error && res.statusCode === 200) {
+        console.log(`sent data to store`);
+      } else {
+      	console.log(`error sending data to store: ${error} ${body}`);
+      }
+    }
+  );
+};
+
+
 var UUID = function() {
   var baseName = (Math.floor(Math.random() * 10) + '' +
         Math.floor(Math.random() * 10) + '' +
@@ -300,6 +315,7 @@ module.exports = {
   establishStream,
   writeDataToCSV,
   writeDataToMongo,
+  addPptToMongo,
   hsl2lab,
   fillArray,
   randomColor,

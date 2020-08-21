@@ -108,6 +108,8 @@ var initialize = function (query, client, id) {
   client.userid = id;
   client.workerid = query.workerId ? query.workerId : '';
   client.assignmentid = query.assignmentId ? query.assignmentId : '';
+  client.individualPracticeAttempts = query.individualPracticeAttempts ? query.individualPracticeAttempts : null;
+  console.log(client.individualPracticeAttempts);
 
   // Good to know when they connected
   console.log('\t socket.io:: player ' + client.userid + ' connected');
@@ -125,3 +127,16 @@ var initialize = function (query, client, id) {
       refGameServer.endGame(client.game.id, client.userid);
   });
 };
+
+var bodyParser = require('body-parser');
+//var multer = require('multer'); 
+
+app.use(bodyParser.json()); // for parsing application/json
+app.use(bodyParser.urlencoded({ extended: true })); // for parsing application/x-www-form-urlencoded
+//app.use(multer()); // for parsing multipart/form-data
+
+app.post('/addPpt', function (req, res) {
+  console.log(req.body);
+  var id = req.query.workerId;
+  utils.addPptToMongo(req.body);
+});

@@ -104,13 +104,14 @@ class ServerGame extends Game {
     if (this.roundNum == this.numRounds - 1) {
       this.end();
     } else {
-      // Otherwise, get the preset list of tangrams for the new round
       this.roundNum += 1;
       this.currStim = this.trialList[this.roundNum];
       var state = this.takeSnapshot();
-      _.forEach(this.activePlayers(), p => {
-        setTimeout(() => p.player.instance.emit('newRoundUpdate', state), delay);
-      });
+      if(this.activePlayers().length > 1){ // added check to see if both players are in round
+        _.forEach(this.activePlayers(), p => {
+          setTimeout(() => p.player.instance.emit('newRoundUpdate', state), delay);
+        });
+      }
     }
   };
 }
