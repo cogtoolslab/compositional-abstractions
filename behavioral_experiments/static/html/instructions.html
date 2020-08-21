@@ -247,6 +247,40 @@
                 counter += 1;
             }
         };
+
+        // var checkPreviousParticipant = function(workerId, callback) {
+        //     var p = {'workerId': workerId};
+        //     var postData = {
+        //         dbname: 'compositional-abstractions',
+        //         query: p,
+        //         projection: {'_id': 1}
+        //     };
+        //     sendPostRequest(
+        //         'http://localhost:5000/db/exists', //change url
+        //         {json: postData},
+        //         (error, res, body) => {
+        //             try {
+        //                 if (!error && res.statusCode === 200) {
+        //                 console.log("success! Received data " + JSON.stringify(body));
+        //                 callback(body);
+        //             } else {
+        //             throw `${error}`;
+        //             }
+        //             } catch (err) {
+        //                 console.log(err);
+        //                 console.log('no database; allowing participant to continue');
+        //                 return callback(false);
+        //             }
+        //         }
+        //     );
+        // };
+
+
+        // checkPreviousParticipant(urlParams.workerId, (exists) => {
+        //     location.replace("./duplicate.html");
+        //     //return exists ? utils.handleDuplicate(req, res) : utils.serveFile(req, res);
+        // });
+
     </script>
 
     <script src="./validate-form.js"></script>

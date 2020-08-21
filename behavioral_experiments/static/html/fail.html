@@ -16,6 +16,7 @@
     <!-- <\!-- Bootstrap theme -\-> -->
     <link href="../css/bootstrap-theme.min.css" rel="stylesheet">
 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script type="text/javascript" src="../js/mmturkey.js"></script>
     <script type="text/javascript" src="../js/getURLParams.js"></script>
 
@@ -51,7 +52,37 @@
     </div> <!-- /container -->
     <script type="text/javascript">
       submitPracticeData = function(){
-	console.log(urlParams)
+
+        var addPptToMongo = function(urlParams) {
+
+          var postData = {
+            dbname: "compositional-abstractions",
+            colname: "two-towers",
+            workerID: urlParams.workerID,
+            failType: urlParams.failType,
+          };
+
+          console.log(postData);
+          
+          $.post(
+            'http://cogtoolslab.org:5000/db/insert',
+            postData,
+            (error, res, body) => {
+              if (!error && res.statusCode === 200) {
+                console.log(`sent data to store`);
+              } else {
+                console.log(`error sending data to store: ${error} ${body}`);
+              }
+            }
+          );
+        };
+
+        // urlParams.workerID = 'test';
+        
+        if(urlParams.workerID){
+          addPptToMongo(urlParams);
+        }
+        
         turk.submit({failType: urlParams.failType}, true);
       }
     </script>
