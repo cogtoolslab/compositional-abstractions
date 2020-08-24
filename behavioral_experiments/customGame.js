@@ -17,6 +17,7 @@ class ServerRefGame extends ServerGame {
     this.numRounds = this.trialList.length;
     this.turnNum = 0;
     this.numFails = 0;
+    this.finished = false;
     // console.log(this.trialList);
   }
 

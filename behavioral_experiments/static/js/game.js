@@ -167,6 +167,7 @@ class ClientGame extends Game {
     }.bind(this));
 
     this.socket.on('showExitSurvey', function (data) {
+      this.finished = true;
       if (this.viewport) {
         this.viewport.style.display = "none";
       } else if (document.getElementById('viewport')) {
