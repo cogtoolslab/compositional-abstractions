@@ -44,7 +44,7 @@ class UI {
       $('#feedback').css('border-color', "red")
       $("#roleLabel").text("You are the builder.");
       $('#instructions').text("Click and place blocks to build the towers\
-                                 your partner is describing.");
+                                 your partner is describing. Press 'Done' to end your turn and request more instructions.");
     }
 
     if (game.trialNum == 'practice'){

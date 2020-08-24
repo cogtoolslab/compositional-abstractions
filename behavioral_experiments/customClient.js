@@ -63,7 +63,11 @@ var resetTimer = function(game, timeLeft, timeElem){
   function countdown() {
     if (game.timeLeft == 0) {
       clearTimeout(game.timerId);
-      $('#timer').html("Time's up!");
+      if (game.role == 'listener') {
+        $('#timer').html("Time's up! Press Done!");
+      } else {
+        $('#timer').html("Time's up!");
+      }
       $('#timer').css("color", "red");
     } else {
       timeElem.innerHTML = game.timeLeft + ' seconds remaining';
