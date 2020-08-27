@@ -100,7 +100,7 @@ class UI {
     var game = event.data.game;
     game.finished = true;
     let scoreForBonusing = parseInt((game.cumulativeBonus * 100) + (300 * game.trialNum/12)); // add proportion of $3 completion bonus if they submit survey
-    console.log(scoreForBonusing);
+    //console.log(scoreForBonusing);
     game.data = _.extend(game.data, {
       'comments' : $('#comments').val().trim().replace(/\./g, '~~~'),
       'strategy' : $('#strategy').val().trim().replace(/\./g, '~~~'),
@@ -109,8 +109,8 @@ class UI {
       'totalLength' : Date.now() - game.startTime
     });
     game.submitted = true;
-    console.log("data is...");
-    console.log(game.data);
+    //console.log("data is...");
+    //console.log(game.data);
     game.socket.send("exitSurvey." + JSON.stringify(game.data));
     if(_.size(game.urlParams) >= 4) {
       turk.submit(game.data, true);

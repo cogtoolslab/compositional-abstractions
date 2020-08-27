@@ -11,8 +11,8 @@ var
 
 let gameport;
 let expPath;
-var researchers = ['A4SSYO0HDVD4E', 'A1BOIDKD33QSDK', 'A1MMCS8S8CTWKU', 'A1MMCS8S8CTWKV', 'A1MMCS8S8CTWKS', 'A1RFS3YXD1ZIKG'];
-var blockResearcher = false;
+var researchers = ['A4SSYO0HDVD4E', 'A1BOIDKD33QSDK', 'A1MMCS8S8CTWKU', 'A1MMCS8S8CTWKV', 'A1MMCS8S8CTWKS','A9AHPCS83TFFE','A1RFS3YXD1ZIKG'];
+var blockResearcher = true;
 
 if (argv.gameport) {
   gameport = argv.gameport;
@@ -136,7 +136,7 @@ app.use(bodyParser.urlencoded({ extended: true })); // for parsing application/x
 //app.use(multer()); // for parsing multipart/form-data
 
 app.post('/addPpt', function (req, res) {
-  console.log(req.body);
+  //console.log(req.body);
   var id = req.query.workerId;
   utils.addPptToMongo(req.body);
 });
