@@ -77,7 +77,7 @@ class ServerRefGame extends ServerGame {
 
   onMessage(client, message) {
     //Cut the message up into sub components
-    console.log(message);
+    //console.log(message);
     var message_parts = message.split(".");
 
     //The first is always the type of message

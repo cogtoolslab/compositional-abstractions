@@ -24,6 +24,7 @@ var handleInvalidID = function(req, res) {
 
 var checkPreviousParticipant = function(workerId, callback) {
   var p = {'workerId': workerId};
+  console.log('checking participant for duplicates: ', workerId.toString());
   var postData = {
     dbname: 'compositional-abstractions',
     query: p,
@@ -35,7 +36,7 @@ var checkPreviousParticipant = function(workerId, callback) {
     (error, res, body) => {
       try {
 	if (!error && res.statusCode === 200) {
-	  console.log("success! Received data " + JSON.stringify(body));
+	  //console.log("success! Received data " + JSON.stringify(body));
 	  callback(body);
 	} else {
 	  throw `${error}`;
