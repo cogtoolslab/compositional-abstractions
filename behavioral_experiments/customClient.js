@@ -118,7 +118,7 @@ var customEvents = function (game) {
     var origMsg = $('#chatbox').val();
     var timeElapsedInTurn = Date.now() - game.turnStartTime;
     var timeElapsedInTrial = Date.now() - game.trialStartTime;
-    var msg = ['chatMessage', origMsg.replace(/\./g, '~~~'), timeElapsedInTurn, timeElapsedInTrial].join('.');
+    var msg = ['chatMessage', origMsg.replace(/\./g, '~~~'), timeElapsedInTurn, timeElapsedInTrial, game.turnStartTime, game.trialStartTime].join('.');
     if ($('#chatbox').val() != '') {
       game.socket.send(msg);
       game.socket.send('switchTurn');

@@ -107,7 +107,7 @@ class ServerRefGame extends ServerGame {
           _.map(all, (p) =>
             p.player.instance.emit("chatMessage", {
               user: client.userid,
-              msg: msg,
+              msg: msg
             })
           );
         }
@@ -202,9 +202,7 @@ class ServerRefGame extends ServerGame {
         trialNum: client.game.currStim.trialNum,
         turnNum: client.game.turnNum,
         repNum: client.game.currStim.repNum,
-        individualPracticeAttempts: client.individualPracticeAttempts
-        // trialStartTime: client.game.trialStartTime,
-        // turnStartTime: client.game.turnStartTime,
+        individualPracticeAttempts: client.individualPracticeAttempts,
         // turnTimeElapsed: timeNow - client.game.turnStartTime
       };
     }
@@ -217,16 +215,22 @@ class ServerRefGame extends ServerGame {
           "distractorGoalSet",
           "trialType",
           "trialNum",
+          "turnStartTime",
+          "trialStartTime",
+          "repNum"
         ]),
         subjInfo
       );
     };
 
     var messageOutput = function (client, message_data) {
+      console.log('chatMessageClient:', client);
       return _.extend(commonOutput(client, message_data), {
         content: message_data[1],
         timeElapsedInTurn: message_data[2],
         timeElapsedInTrial: message_data[3],
+        turnStartTime: message_data[4],
+        trialStartTime: message_data[5] //see customClient for these definitions
       });
     };
 
@@ -236,6 +240,7 @@ class ServerRefGame extends ServerGame {
         trialScore: scores.score,
         cumulativeScore: scores.cumulativeScore,
         cumulativeBonus: scores.cumulativeBonus / 100,
+        trialStartTime: client.game.trialStartTime
       });
     };
 
