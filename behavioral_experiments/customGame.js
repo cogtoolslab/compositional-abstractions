@@ -219,7 +219,10 @@ class ServerRefGame extends ServerGame {
           "trialStartTime",
           "repNum"
         ]),
-        subjInfo
+        subjInfo,
+        {
+          pairedPracticeFails: client.game.numFails
+        }
       );
     };
 
