@@ -227,7 +227,8 @@
 
 
             </br>
-	    <div class="error" style="display:none"> Ooops! Looks like you made a mistake - take another look at your responses. You have one more try. </div>
+            <div class="error" id="quiz-error1" style="display:none; color:red"> Ooops! Looks like you made a mistake - take another look at your responses. </div>
+            <div class="error" id="quiz-error2" style="display:none; color:red"> You have one more try- only press submit if you're sure! </div>
             <input id="quiz_submit" type="submit" value="Submit">
         </div> <!-- /container -->
     </div>
@@ -255,10 +256,14 @@
 				 + "&assignmentId=" + urlParams.assignmentId
 				 + "&hitId=" + urlParams.hitId + "&turkSubmitTo=" + urlParams.turkSubmitTo
 				 + "&failType=instructionsQuiz");
-            } else {
-                $('.error').show()
+            } else if (counter == 0){
+                $('#quiz-error1').show()
+                counter += 1;
+            } else{
+                $('#quiz-error2').show()
                 counter += 1;
             }
+
         };
 
         // var checkPreviousParticipant = function(workerId, callback) {

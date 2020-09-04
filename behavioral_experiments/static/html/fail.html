@@ -59,7 +59,7 @@
           colname: "two-towers",
           workerId: urlParams.workerId,
           failType: urlParams.failType,
-          iterationName: "pilot3_debug"
+          iterationName: "pilot4"
         };
 
         //console.log(pptData);
@@ -88,7 +88,8 @@
           addPptToMongo(urlParams);
         }
         
-        turk.submit({failType: urlParams.failType}, true);
+        turk.submit({failType: urlParams.failType, 
+                     score: 0}, true);
       }
     </script>
 

@@ -95,3 +95,8 @@ Iteration 0 (Pilot): All towers will be constructed from two primitive blocks: a
 * Allowing only 3 fails in comprehension quiz, solo practice, and partner practice
 * Changes to compensation: $2 base, $3 for completing experiment ($0.25 for each trial), upto $3 bonus (up to $0.25 for each trial)
 * 
+
+#### `pilot4`:
+* iterationName now must be set in fail.html, as well as config 
+* Minor changes to instructions
+* Some more timing variables saved
