@@ -2,10 +2,12 @@
   "email" : "cogtoolslab.requester@gmail.com",
   "projectName" : "compositional-abstractions",
   "experimentName" : "two-towers",
-  "iterationName" : "pilot4",
+  "iterationName" : "pilot4_debug",
   "anonymizeCSV" : true,
   "bonusAmt" : 5, 
   "dataStore" : ["csv", "mongo"],
+  "dbname" : "compositional-abstractions",
+  "colname" : "two-towers",
   "playersThreshold" : 2,
   "playerRoleNames" : {
     "role1" : "speaker",

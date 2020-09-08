@@ -54,33 +54,43 @@
 
       var addPptToMongo = function(urlParams) {
 
-        var pptData = {
-          dbname: "compositional-abstractions",
-          colname: "two-towers",
-          workerId: urlParams.workerId,
-          failType: urlParams.failType,
-          iterationName: "pilot4"
-        };
+        var pptData;
 
-        //console.log(pptData);
+        $.getJSON("../../config.json", function(config) {
 
-        $.post(
-          'https://cogtoolslab.org:8883/addPpt',
-          pptData,
-          // (error, res, body) => {
-          //   if (!error && res.statusCode === 200) {
-          //     console.log(`sent data to store`);
-          //   } else {
-          //     console.log(`error sending data to store: ${error} ${body}`);
-          //   }
-          // }
-          (data, status) => {
-            console.log(data);
-          }
-        );
+          pptData = {
+            dbname: config.dbname,
+            colname: config.colname,
+            iterationName: config.iterationName,
+            workerId: urlParams.workerId,
+            failType: urlParams.failType
+          };
+
+          console.log(pptData);
+
+          $.post(
+            'https://cogtoolslab.org:8883/addPpt',
+            pptData,
+            // (error, res, body) => {
+            //   if (!error && res.statusCode === 200) {
+            //     console.log(`sent data to store`);
+            //   } else {
+            //     console.log(`error sending data to store: ${error} ${body}`);
+            //   }
+            // }
+            (data, status) => {
+              console.log(data);
+            }
+          );
+        }); 
+
       };
 
       submitPracticeData = function(){
+
+        urlParams = {
+          workerId: 'test',
+        }
 
         console.log(urlParams);
         
