@@ -36,6 +36,12 @@ Iteration 0 (Pilot): All towers will be constructed from two primitive blocks: a
 
 ### Experiment log
 
+# Before running an experiment:
+
+1. Change blockResearcher to true in app.js
+
+2. Change iterationName in config.json
+
 #### MongoDB params
 
 `dbname` : `compositional-abstractions`
@@ -100,3 +106,9 @@ Iteration 0 (Pilot): All towers will be constructed from two primitive blocks: a
 * iterationName now must be set in fail.html, as well as config 
 * Minor changes to instructions
 * Some more timing variables saved
+
+
+#### 'pilot4b': 
+* Block progress in HIT if submitting wrong answers in <90 seconds
+* Minor instructions changes, 'trial' to 'round'. 
+* Edit final quiz question

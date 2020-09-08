@@ -100,10 +100,10 @@ class ServerRefGame extends ServerGame {
         break;
 
       case "chatMessage":
-        console.log("received chat message");
+        //console.log("received chat message");
         if (client.game.playerCount == gc.playersThreshold && !gc.paused) {
           var msg = message_parts[1].replace(/~~~/g, ".");
-          console.log(msg);
+          //console.log(msg);
           _.map(all, (p) =>
             p.player.instance.emit("chatMessage", {
               user: client.userid,
@@ -227,7 +227,7 @@ class ServerRefGame extends ServerGame {
     };
 
     var messageOutput = function (client, message_data) {
-      console.log('chatMessageClient:', client);
+      //console.log('chatMessageClient:', client);
       return _.extend(commonOutput(client, message_data), {
         content: message_data[1],
         timeElapsedInTurn: message_data[2],

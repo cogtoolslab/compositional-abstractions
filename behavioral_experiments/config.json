@@ -2,7 +2,7 @@
   "email" : "cogtoolslab.requester@gmail.com",
   "projectName" : "compositional-abstractions",
   "experimentName" : "two-towers",
-  "iterationName" : "pilot4_debug",
+  "iterationName" : "pilot4b",
   "anonymizeCSV" : true,
   "bonusAmt" : 5, 
   "dataStore" : ["csv", "mongo"],
