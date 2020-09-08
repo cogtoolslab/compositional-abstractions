@@ -234,6 +234,9 @@
     </div>
     <script type="text/javascript">
 
+        var startTime = Date.now();
+        console.log('start time:', startTime.toString());
+
         var counter = 0;
         document.getElementById("quiz_submit").onclick = function () {
             var ans1 = $('input[name="sendMessage"]:checked').val();
@@ -245,12 +248,24 @@
             var ans7 = $('input[name="endRound"]:checked').val();
             // var ans7 = $('input[name="incorrect"]:checked').val();
 
+            submitTime = Date.now();
+            console.log('submit time:', submitTime.toString());
+
+            timeInInstructions = submitTime - startTime;
+            console.log('time in instructions:', timeInInstructions.toString());
+
             if (ans1 == "yes" && ans2 == "yes" && ans3 == "yes" &&
                 ans4 == "yes" && ans5 == "yes" && ans6 == "yes" && ans7 == "yes") {
                 
                 location.replace("./practice_building.html?workerId=" + urlParams.workerId
                     + "&assignmentId=" + urlParams.assignmentId
                     + "&hitId=" + urlParams.hitId + "&turkSubmitTo=" + urlParams.turkSubmitTo);
+            } else if (timeInInstructions < 90000) { // if submitted a wrong answer in <90 seconds, block from experiment
+                console.log('too fast!');
+                location.replace("./please_return_hit.html?workerId=" + urlParams.workerId
+				 + "&assignmentId=" + urlParams.assignmentId
+				 + "&hitId=" + urlParams.hitId + "&turkSubmitTo=" + urlParams.turkSubmitTo
+				 + "&failType=instructionsQuiz");
             } else if (counter == 2) {
                 location.replace("./fail.html?workerId=" + urlParams.workerId
 				 + "&assignmentId=" + urlParams.assignmentId
