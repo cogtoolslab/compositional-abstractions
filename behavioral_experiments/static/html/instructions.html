@@ -59,7 +59,7 @@
             <h3> Two roles: Architect and Builder </h3>
 
             <p>
-                On each trial, you and your partner will collaborate to recreate two towers, each composed of four dominoes.
+                In each round, you and your partner will collaborate to recreate two towers, each composed of four dominoes.
                 One of you will act as the <b>Architect</b> and the other will be the <b>Builder</b>.
             </p>
             <h4> Architect</h4>
@@ -67,9 +67,11 @@
                 The <b>Architect</b> is able to see how the towers should look and where they should be located.
                 They are unable to place any dominoes in the building environment. So their goal is to provide
                 step-by-step instructions using the chat window so the <b>Builder</b> knows what to do to recreate them
-                exactly as they appear. Whenever it is their turn, the <b>Architect</b> can only send <b> one </b> set
+                exactly as they appear. When it is their turn, the <b>Architect</b> can send <b> one </b> set
+                of instructions. These are limited to 100 characters, so it is important for these instructions to be concise, as well as informative!
+                <!-- Whenever it is their turn, the <b>Architect</b> can only send <b> one </b> set
                 of instructions. Moreover, each set of instructions will be limited to 100 characters, so it is
-                important for these instructions to be concise, as well as informative!
+                important for these instructions to be concise, as well as informative! -->
             </p>
 
             <p>There are two red lines below the floor on the left and right sides of the building environment. 
@@ -79,20 +81,20 @@
             <p>
             <figure>
                 <center><img src="images/architect_view.png" alt="architect_view" style="width:620px;height:300px">
-                    <figcaption><b>Architect</b> view at the start of a trial</figcaption>
+                    <figcaption><b>Architect</b> view at the start of a round</figcaption>
                 </center>
             </figure>
             <br>
             </p>
             <h4> Builder </h4>
             <p>
-                After receiving each set of instructions from the <b>Architect</b>, the <b>Builder</b> will try to
+                After receiving a set of instructions from the <b>Architect</b>, the <b>Builder</b> will try to
                 follow them by placing dominoes in the environment.
                 The <b>Builder</b> is free to place more than one domino on each turn, but they should be confident they
                 are accurately interpreting the <b>Architect's</b> instructions -- there is no way to "undo" an action
                 or move a domino once it has been placed.
                 Once the <b>Builder</b> has placed the blocks they wish to place, they should click the "Done" button to
-                end their turn.
+                end their turn and request more instructions from the <b>Architect</b>. There is no limit to the number of turns per round.
                 If the <b>Builder</b> is uncertain, they can choose to end their turn without placing a domino.
                 The <b>Architect</b> will be able to see when the <b>Builder</b> places each domino, allowing them to
                 adjust their instructions accordingly.
@@ -100,7 +102,7 @@
             </p>
             <figure>
                 <center><img src="images/builder_view.png" alt="builder_view" style="width:620px;height:330px">
-                    <figcaption><b>Builder</b> view at the start of a trial</figcaption>
+                    <figcaption><b>Builder</b> view at the start of a round</figcaption>
                 </center>
             </figure>
             <br>
@@ -108,20 +110,20 @@
             
             <p>
                 <ul>
-                    <li>Each game consists of <b>12 trials</b>, which is expected to take around 30-45 minutes.</li>
+                    <li>Each game consists of <b>12 rounds</b>, which is expected to take around 30-45 minutes.</li>
                     <li>You want to try your best to complete your turn within <b>30 seconds</b>! However, you and your partner are free to take as many turns as you need, as your main goal is to recreate the towers as <b>accurately</b> as possible.</li>
-                    <li>Once <b>eight blocks</b> have been placed, the trial will automatically end.</li>
-                    <li>After each trial ends, the <b>Builder</b> will get to see what the towers actually looked like, and you will both receive a bonus of up to $0.25. The more accurate your reconstruction, the larger the bonus both of you will receive.</li>
-                    <li>Remember that you can earn a partial bonus even if your reconstruction isn't perfect — so even if there is a mistake, it is still worth it to keep trying on each trial to maximize your bonus.</li>
+                    <li>Once <b>eight blocks</b> have been placed, the round will automatically end.</li>
+                    <li>After each round ends, the <b>Builder</b> will get to see what the towers actually looked like, and you will both receive a bonus of up to $0.25. The more accurate your reconstruction, the larger the bonus both of you will receive.</li>
+                    <li>Remember that you can earn a partial bonus even if your reconstruction isn't perfect — so even if there is a mistake, it is still worth it to keep trying in each round to maximize your bonus.</li>
                 </ul>                                                        
             <p> 
 
             <h3> How payment will work on this HIT </h3>
             <p> You can earn up to $8.00 by working on this HIT. Your total compensation consists of three components:
             <ul>
-                <li> $2.00 just for reading these instructions and attempting the following comprehension quiz and practice trials. Even if you do not pass these, we will still accept your HIT submission and approve your work. </li>
+                <li> $2.00 just for reading these instructions and attempting the following comprehension quiz and practice rounds. Even if you do not pass these, we will still accept your HIT submission and approve your work. </li>
                 <li> $3.00 more for completing the entire HIT. </li>
-                <li> $3.00 for producing accurate reconstructions throughout the game (up to $0.25 per trial x 12 trials). </li>
+                <li> up to $3.00 for producing accurate reconstructions throughout the game (up to $0.25 per round x 12 rounds). </li>
             </ul>
 
             If you experience any issues with your compensation, please email us (cogtoolslab.requester@gmail.com). 
@@ -176,7 +178,7 @@
             </br>
 
             </br>
-            Each trial ends when 10 blocks are placed.
+            Each round ends when 10 blocks are placed.
             </br>
             <input type="radio" name="endRound" value="no"> True
             </br>
@@ -217,7 +219,7 @@
             </br>
 
             </br>
-            The <b>Architect</b> may only send one message per trial.
+            In each of the 12 rounds, the <b>Architect</b> can only send one message.
             </br>
             <input type="radio" name="allInfo" value="no"> True
             </br>
