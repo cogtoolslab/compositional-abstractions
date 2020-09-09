@@ -36,6 +36,12 @@ Iteration 0 (Pilot): All towers will be constructed from two primitive blocks: a
 
 ### Experiment log
 
+# Before running an experiment:
+
+1. Change blockResearcher to true in app.js
+
+2. Change iterationName in config.json
+
 #### MongoDB params
 
 `dbname` : `compositional-abstractions`
@@ -95,3 +101,14 @@ Iteration 0 (Pilot): All towers will be constructed from two primitive blocks: a
 * Allowing only 3 fails in comprehension quiz, solo practice, and partner practice
 * Changes to compensation: $2 base, $3 for completing experiment ($0.25 for each trial), upto $3 bonus (up to $0.25 for each trial)
 * 
+
+#### `pilot4`:
+* iterationName now must be set in fail.html, as well as config 
+* Minor changes to instructions
+* Some more timing variables saved
+
+
+#### 'pilot4b': 
+* Block progress in HIT if submitting wrong answers in <90 seconds
+* Minor instructions changes, 'trial' to 'round'. 
+* Edit final quiz question

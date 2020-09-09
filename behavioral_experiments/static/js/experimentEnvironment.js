@@ -43,9 +43,9 @@ class BlockUniverse {
 
     this.blockNames = ['v', 'h'];
 
-    // Metavariables
-    this.dbname = 'block_construction';
-    this.colname = 'silhouette';
+    // // Metavariables
+    // this.dbname = 'block_construction';
+    // this.colname = 'silhouette';
 
     this.sendingBlocks = [];
 

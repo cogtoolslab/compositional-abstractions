@@ -8,7 +8,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Experiment</title>
+    <title>Please return HIT</title>
 
     <!-- Bootstrap core CSS -->
     <link href="../css/bootstrap.min.css" rel="stylesheet">
@@ -41,12 +41,7 @@
       </div>
 
       <p>
-        Unfortunately you cannot participate further in this study.
-        </br>But don't worry, you will receive full base compensation for taking the time to read our instructions, and we hope to see you again in a study soon!
-      </p>
-
-      <p>
-        <button id="submit-to-turk" type="button" onclick="submitPracticeData()" class="btn btn-primary">Click here</button> to get your base pay.
+        Unfortunately you cannot participate further in this study, please return this HIT.
       </p>
 
     </div> <!-- /container -->
@@ -86,17 +81,8 @@
 
       };
 
-      submitPracticeData = function(){
+      //addPptToMongo(urlParams);
 
-        console.log(urlParams);
-        
-        if(urlParams.workerId){
-          addPptToMongo(urlParams);
-        }
-        
-        turk.submit({failType: urlParams.failType, 
-                     score: 0}, true);
-      }
     </script>
 
     <!-- Bootstrap core JavaScript

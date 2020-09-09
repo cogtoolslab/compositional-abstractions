@@ -66,7 +66,7 @@ class UI {
     if(game.trialNum === 'practice') {
       $("#trial-counter").text("Practice building the tower!");
     } else {
-      $("#trial-counter").text('trial ' + (game.trialNum + 1) + '/12');
+      $("#trial-counter").text('Round ' + (game.trialNum + 1) + '/12');
     }
     $("#story").empty();
     $("#response-form").show();
