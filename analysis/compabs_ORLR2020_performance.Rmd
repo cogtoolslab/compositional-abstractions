@@ -24,6 +24,9 @@ theme_update(# axis labels
   text = element_text(size=16), 
   element_line(size=1), 
   element_rect(size=2, color="#00000"))
+
+primary_color = '#22AA99'
+secondary_color = '#22AAAA'
 ```
 
 #### Read data, as output by compabs_analysis_df_generator.ipynb
@@ -110,6 +113,7 @@ df_exit <- df_exit %>%
 acc.boot <- df_trial %>%
   group_by(repNum) %>%
   tidyboot_mean(column=trialScore, nboot=100)
+acc.boot
 ```
 
 
@@ -117,9 +121,9 @@ acc.boot <- df_trial %>%
 acc.boot %>%
   ggplot(aes(x=repNum, y=empirical_stat)) +
     geom_errorbar(aes(ymin=ci_lower, ymax = ci_upper), width = 0, size = 1.5,
-                  data = acc.boot) +  
-    geom_line(size=1.5)+
-    geom_point(size = 4) +
+                  data = acc.boot, color = primary_color) +  
+    geom_line(size=1.5, color = primary_color)+
+    geom_point(size = 4, color = primary_color) +
     ylab("Accuracy (F1)") +
     xlab("Repetition") +
     theme_few() +
@@ -135,7 +139,7 @@ acc.boot %>%
 df_trial$perfect <- as.numeric(df_trial$trialScore == 100)
 
 perf.boot <- df_trial %>%
-  group_by(repNum) %>%
+  group_by(repNum) %>% 
   tidyboot_mean(column=perfect, nboot=100)
 
 perf.boot
@@ -144,15 +148,15 @@ perf.boot
 perf.boot %>%
   ggplot(aes(x=repNum, y=empirical_stat)) +
     geom_errorbar(aes(ymin=ci_lower, ymax = ci_upper), width = 0, size = 1.5,
-                  data = perf.boot) +  
-    geom_line(size=1.5)+
-    geom_point(size = 4) +
+                  data = perf.boot, color=primary_color) +  
+    geom_line(size=1.5, color=primary_color)+
+    geom_point(size = 4, color=primary_color) +
     ylab("Proportion trials perfect") +
     xlab("Repetition") +
     theme_few() +
     # scale_x_continuous(breaks = round(seq(1, 4, by =1),1)) +
     # xlim(c(0.5,4.5)) +  
-    # ylim(c(50,100)) +
+    ylim(c(0.4,1)) +
     #scale_x_continuous(limits = c(0.6,4.4), breaks = c(1,2,3,4),labels=c('first', '2nd','3rd','final')) +
     # scale_y_continuous(breaks = seq(-0.5,2.5,0.5)) +
     theme(legend.position = 'FALSE', text = element_text(size=16), element_line(size=1), element_rect(size=2, color="#00000"))
@@ -166,7 +170,7 @@ summary(m.acc)
 ```
 
 ```{r}
-m.acc = glm(data = df_trial, family = 'binomial',  perfect  ~ repNum)
+m.acc = glmer(data = df_trial, family = 'binomial',  perfect ~ repNum + (1 + repNum | gameid))
 summary(m.acc)
 ```
 
@@ -186,9 +190,9 @@ wc.boot
 wc.boot %>%
   ggplot(aes(x=repNum,y=empirical_stat)) +
     geom_errorbar(aes(ymin=ci_lower, ymax = ci_upper), width = 0, size = 1.5,
-                  data = wc.boot) +  
-    geom_line(size=1.5)+
-    geom_point(size = 4) +
+                  data = wc.boot, color = primary_color) +  
+    geom_line(size=1.5, color = primary_color)+
+    geom_point(size = 4, color = primary_color) +
     ylab("word count") +
     xlab("repetition") +
     theme_few() +
@@ -222,9 +226,9 @@ cc.boot
 cc.boot %>%
   ggplot(aes(x=repNum,y=empirical_stat)) +
     geom_errorbar(aes(ymin=ci_lower, ymax = ci_upper), width = 0, size = 1.5,
-                  data = cc.boot) +  
-    geom_line(size=1.5)+
-    geom_point(size = 4) +
+                  data = cc.boot, color = primary_color) +  
+    geom_line(size=1.5, color = primary_color)+
+    geom_point(size = 4, color = primary_color) +
     ylab("character count") +
     xlab("repetition") +
     theme_few() +
@@ -256,9 +260,9 @@ cc.boot
 cc.boot %>%
   ggplot(aes(x=repNum, y=empirical_stat)) +
     geom_errorbar(aes(ymin=ci_lower, ymax = ci_upper), width = 0, size = 1.5,
-                  data = cc.boot) +  
-    geom_line(size=1.5)+
-    geom_point(size = 4) +
+                  data = cc.boot, color = primary_color) +  
+    geom_line(size=1.5, color = primary_color)+
+    geom_point(size = 4, color = primary_color) +
     ylab("messages") +
     xlab("repetition") +
     theme_few() +
@@ -291,9 +295,9 @@ chat.time.boot
 ```{r}
 chat.time.boot %>%
   ggplot(aes(x=repNum, y=empirical_stat)) +
-    geom_errorbar(aes(ymin=ci_lower, ymax = ci_upper), width = 0, size = 1.5) +  
-    geom_line(size=1.5)+
-    geom_point(size = 4) +
+    geom_errorbar(aes(ymin=ci_lower, ymax = ci_upper), width = 0, size = 1.5,color = primary_color) +  
+    geom_line(size=1.5, color = primary_color)+
+    geom_point(size = 4, color = primary_color) +
     ylab("total chat duration") +
     xlab("repetition") +
     theme_few() +
@@ -323,9 +327,9 @@ block.time.boot <- df_trial %>%
 ```{r}
 block.time.boot %>%
   ggplot(aes(x=repNum, y=empirical_stat)) +
-    geom_errorbar(aes(ymin=ci_lower, ymax = ci_upper), width = 0, size = 1.5) +  
-    geom_line(size=1.5)+
-    geom_point(size = 4) +
+    geom_errorbar(aes(ymin=ci_lower, ymax = ci_upper), width = 0, size = 1.5, color = primary_color) +  
+    geom_line(size=1.5, color = primary_color)+
+    geom_point(size = 4, color = primary_color) +
     ylab("total build duration") +
     xlab("repetition") +
     theme_few() +
