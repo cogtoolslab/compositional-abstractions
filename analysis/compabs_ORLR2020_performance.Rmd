@@ -25,7 +25,7 @@ theme_update(# axis labels
   element_line(size=1), 
   element_rect(size=2, color="#00000"))
 
-primary_color = '#22AA99'
+primary_color = '#21606C'
 secondary_color = '#22AAAA'
 ```
 
@@ -53,7 +53,7 @@ df_block = df_block %>%
                                 (leftTarget == 'L' | rightTarget == 'L')
                             & (leftTarget == 'C' | rightTarget == 'C') ~ 'L/C', TRUE~'C/Pi'))
 df_trial$trialNum = as.numeric(as.character(df_trial$trialNum))
-df_trial$repNum = as.numeric(as.character(df_trial$repNum))
+df_trial$repNum = as.numeric(as.character(df_trial$repNum)) +1
 
 ```
 
@@ -77,9 +77,6 @@ gamesConfused = df_exit %>%
 gamesEnglish = df_exit %>% 
   filter(nativeEnglish == 'yes') %>% 
   distinct(gameid)
-
-#How many dyads said they spoke English
-gamesComplete = df_trial %>%
 
 gamesToKeep = intersect(games75, gamesConfused, gamesEnglish)$gameid
 ```
@@ -124,16 +121,17 @@ acc.boot %>%
                   data = acc.boot, color = primary_color) +  
     geom_line(size=1.5, color = primary_color)+
     geom_point(size = 4, color = primary_color) +
-    ylab("Accuracy (F1)") +
-    xlab("Repetition") +
+    ylab("accuracy (F1)") +
+    xlab("repetition") +
     theme_few() +
     # scale_x_continuous(breaks = round(seq(1, 4, by =1),1)) +
-    # xlim(c(0.5,4.5)) +  
     ylim(c(50,100)) +
-    #scale_x_continuous(limits = c(0.6,4.4), breaks = c(1,2,3,4),labels=c('first', '2nd','3rd','final')) +
+    xlim(c(0.75,4.25)) +
+    scale_y_continuous(limits = c(50,100), breaks = c(50,60,70,80,90,100),labels=c('0.5','0.6','0.7','0.8','0.9','1.0')) +
     # scale_y_continuous(breaks = seq(-0.5,2.5,0.5)) +
-    theme(legend.position = 'FALSE', text = element_text(size=16), element_line(size=1), element_rect(size=2, color="#00000"))
-
+    ggtitle('builder accuracy') +
+    theme(legend.position = 'FALSE', text = element_text(size=16), element_line(size=1), plot.title = element_text(hjust = 0.5, size=16), element_rect(size=2, color="#00000"))
+ggsave('../results/plots/ORLR/CA_ORLR20_F1_reps.pdf', width=7, height = 11, units='cm', useDingbats = F)
 ```
 ```{r}
 df_trial$perfect <- as.numeric(df_trial$trialScore == 100)
@@ -155,11 +153,12 @@ perf.boot %>%
     xlab("Repetition") +
     theme_few() +
     # scale_x_continuous(breaks = round(seq(1, 4, by =1),1)) +
-    # xlim(c(0.5,4.5)) +  
+    xlim(c(0.75,4.25)) +
     ylim(c(0.4,1)) +
     #scale_x_continuous(limits = c(0.6,4.4), breaks = c(1,2,3,4),labels=c('first', '2nd','3rd','final')) +
     # scale_y_continuous(breaks = seq(-0.5,2.5,0.5)) +
-    theme(legend.position = 'FALSE', text = element_text(size=16), element_line(size=1), element_rect(size=2, color="#00000"))
+    ggtitle('perfect trials') +
+    theme(legend.position = 'FALSE', text = element_text(size=16), element_line(size=1), plot.title = element_text(hjust = 0.5, size=16), element_rect(size=2, color="#00000"))
 
 ```
 
@@ -193,22 +192,24 @@ wc.boot %>%
                   data = wc.boot, color = primary_color) +  
     geom_line(size=1.5, color = primary_color)+
     geom_point(size = 4, color = primary_color) +
-    ylab("word count") +
+    ylab("words") +
     xlab("repetition") +
     theme_few() +
     # scale_x_continuous(breaks = round(seq(1, 4, by =1),1)) +
-    # xlim(c(0.5,4.5)) +  
-    # ylim(c(0.6,1)) +
+    xlim(c(0.5,4.5)) +  
+    ylim(c(0,70)) +
     #scale_x_continuous(limits = c(0.6,4.4), breaks = c(1,2,3,4),labels=c('first', '2nd','3rd','final')) +
     # scale_y_continuous(breaks = seq(-0.5,2.5,0.5)) +
-    theme(legend.position = 'FALSE', text = element_text(size=16), element_line(size=1), element_rect(size=2, color="#00000"))
-
+    ggtitle('words per trial') +
+    theme(legend.position = 'FALSE', text = element_text(size=16), element_line(size=1), plot.title = element_text(hjust = 0.5, size=16), element_rect(size=2, color="#00000"))
+ggsave('../results/plots/ORLR/CA_ORLR20_word_count_reps.pdf', width=7, height = 11, units='cm', useDingbats = F)
 ```
 
 ```{r}
 # Using || gets rid of correlations in random effects (not maximal model anymore)
 m.wc = lmer(data = df_trial, word_count ~ repNum + (1 + repNum || gameid) + (1 + repNum || towerSet))
 summary(m.wc)
+
 ```
 
 ### Character Count 
@@ -229,17 +230,19 @@ cc.boot %>%
                   data = cc.boot, color = primary_color) +  
     geom_line(size=1.5, color = primary_color)+
     geom_point(size = 4, color = primary_color) +
-    ylab("character count") +
+    ylab("characters") +
     xlab("repetition") +
     theme_few() +
     # scale_x_continuous(breaks = round(seq(1, 4, by =1),1)) +
-    # xlim(c(0.5,4.5)) +  
-    # ylim(c(0.6,1)) +
+    xlim(c(0.75,4.25)) +
+    ylim(c(0,350)) +
     #scale_x_continuous(limits = c(0.6,4.4), breaks = c(1,2,3,4),labels=c('first', '2nd','3rd','final')) +
     # scale_y_continuous(breaks = seq(-0.5,2.5,0.5)) +
-    theme(legend.position = 'FALSE', text = element_text(size=16), element_line(size=1), element_rect(size=2, color="#00000"))
-
+    ggtitle('characters per trial') +
+    theme(legend.position = 'FALSE', text = element_text(size=16), element_line(size=1), plot.title = element_text(hjust = 0.5, size=16), element_rect(size=2, color="#00000"))
+ggsave('../results/plots/ORLR/CA_ORLR20_char_count_reps.pdf', width=7, height = 11, units='cm', useDingbats = F)
 ```
+
 ```{r}
 m.cc = lmer(data = df_trial, char_count ~ repNum + (1 + repNum || gameid) + (1 + repNum || towerSet))
 summary(m.cc)
@@ -250,29 +253,30 @@ summary(m.cc)
 
 #### Number of messages across trials
 ```{r}
-cc.boot <- df_trial %>%
+mess.boot <- df_trial %>%
   group_by(repNum) %>%
   tidyboot_mean(column=n_messages, nboot=100)
-cc.boot
+mess.boot
 ```
 
 ```{r}
-cc.boot %>%
+mess.boot %>%
   ggplot(aes(x=repNum, y=empirical_stat)) +
     geom_errorbar(aes(ymin=ci_lower, ymax = ci_upper), width = 0, size = 1.5,
-                  data = cc.boot, color = primary_color) +  
+                  data = mess.boot, color = primary_color) +  
     geom_line(size=1.5, color = primary_color)+
     geom_point(size = 4, color = primary_color) +
     ylab("messages") +
     xlab("repetition") +
     theme_few() +
     # scale_x_continuous(breaks = round(seq(1, 4, by =1),1)) +
-    # xlim(c(0.5,4.5)) +  
-     ylim(c(1,7)) +
-    #scale_x_continuous(limits = c(0.6,4.4), breaks = c(1,2,3,4),labels=c('first', '2nd','3rd','final')) +
-    # scale_y_continuous(breaks = seq(-0.5,2.5,0.5)) +
-    theme(legend.position = 'FALSE', text = element_text(size=16), element_line(size=1), element_rect(size=2, color="#00000"))
-
+    xlim(c(0.75,4.25)) +
+    # ylim(c(1,7)) +
+    #scale_x_continuous(limits = c(1,6), breaks = c(1,2,3,4),labels=c('first', '2nd','3rd','final')) +
+    scale_y_continuous(limits = c(1,6), breaks = c(1,2,3,4,5,6),labels=c(' 1', ' 2',' 3',' 4',' 5',' 6')) +
+    ggtitle('messages per trial') +
+    theme(legend.position = 'FALSE', text = element_text(size=16), element_line(size=1), plot.title = element_text(hjust = 0.5, size=16), element_rect(size=2, color="#00000"))
+ggsave('../results/plots/ORLR/CA_ORLR20_messages_reps.pdf', width=7, height = 11, units='cm', useDingbats = F)
 ```
 
 ```{r}
@@ -298,16 +302,17 @@ chat.time.boot %>%
     geom_errorbar(aes(ymin=ci_lower, ymax = ci_upper), width = 0, size = 1.5,color = primary_color) +  
     geom_line(size=1.5, color = primary_color)+
     geom_point(size = 4, color = primary_color) +
-    ylab("total chat duration") +
+    ylab("total chat duration (s)") +
     xlab("repetition") +
     theme_few() +
     # scale_x_continuous(breaks = round(seq(1, 4, by =1),1)) +
     # xlim(c(0.5,4.5)) +  
     # ylim(c(0,7)) +
     #scale_x_continuous(limits = c(0.6,4.4), breaks = c(1,2,3,4),labels=c('first', '2nd','3rd','final')) +
-    # scale_y_continuous(breaks = seq(-0.5,2.5,0.5)) +
-    theme(legend.position = 'FALSE', text = element_text(size=16), element_line(size=1), element_rect(size=2, color="#00000"))
-
+    scale_y_continuous(limits = c(40000,200000), labels = c('40','60','120','160','200')) +
+    ggtitle('messaging time') +
+    theme(legend.position = 'FALSE', text = element_text(size=16), element_line(size=1), plot.title = element_text(hjust = 0.5, size=16), element_rect(size=2, color="#00000"))
+ggsave('../results/plots/ORLR/CA_ORLR20_chat_duration_reps.pdf', width=7, height = 11, units='cm', useDingbats = F)
 ```
 
 ```{r}
