@@ -1,21 +1,54 @@
 library(tidyverse)
 library(lme4)
+library(tidyboot)
+library(ggthemes)
 
-df = read_csv('justin_julia_tag.csv')
+theme_set(theme_classic())
+theme_update(# axis labels
+  axis.title = element_text(size = 28),
+  # tick labels
+  axis.text = element_text(size = 24),
+  # title 
+  title = element_text(size = 24),
+  legend.position = 'FALSE', 
+  text = element_text(size=16), 
+  element_line(size=1), 
+  element_rect(size=2, color="#00000"))
+
+primary_color = '#21606c'
+secondary_color = '#22AAAA'
+
+df= read_csv('justin_julia_tag.csv')
 glimpse(df)
-
+df = df[complete.cases(df), ]
+glimpse(df)
+df$repNum = df$repNum +1
 #df$block_diff = df$block_justin - df$block_julia
 #mean(df$block_diff)
 #hist(df$block_diff)
-df = df %>%  filter(repNum == 3 | repNum == 0)
+
+#df = df %>%  filter(repNum == 3 | repNum == 0)
 
 lin = lm(data = df, refExp ~ repNum*rater*expType)
 summary(lin)
 
 
-interaction = df %>% group_by(repNum, expType) %>% summarise(mu = mean(refExp))
-View(interaction)
+interaction = df %>% 
+  group_by(repNum, expType) %>% 
+  summarise(mu = mean(refExp), sd = sd(refExp), n = n(), sem = sd(refExp)/sqrt(n()))
+glimpse(interaction)
 
-ggplot(interaction) + geom_line(aes(x=repNum, y=mu, colour=expType))
+ggplot(interaction, aes(x=repNum, y=mu, colour=expType)) + geom_line(size = 1.5)+
+  geom_errorbar(aes(ymin=mu-sem, ymax=mu+sem), width = 0, size = 1.5)+
+  geom_point(size = 4) +
+  theme_few() +
+  xlab("repetition")+
+  ylab("referring expressions")+
+  theme(legend.position = 'FALSE', text = element_text(size=16),
+        element_line(size=1),
+        element_rect(size=2, color="#00000"))+
+  scale_color_manual(values=c("#151515","#7D7D7D"))
+  ggsave()
+
 
 
