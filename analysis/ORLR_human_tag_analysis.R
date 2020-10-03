@@ -58,3 +58,7 @@ ggsave('../results/plots/CA_ORLR20_referring_exps.pdf', width=7, height = 11, un
 df_trial_total = interaction %>% group_by(repNum)
 
 
+data(assemblage)
+chiperm(data=assemblage, B=199, resid=TRUE, cramer=TRUE)
+
+
