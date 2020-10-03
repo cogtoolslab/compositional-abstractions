@@ -80,7 +80,7 @@ chiperm <- function(data, B=999, resid=FALSE, filter=FALSE, thresh=1.96, cramer=
 # glimpse(data_wide)  
 # data_wide$rep3[1]
 df = read_csv("JJ_content.csv")
-df = df_chat %>% 
+df = df %>% 
     select(gameid, repNum, content) %>%
     filter(repNum %in% c(0,3)) %>%
     group_by(gameid, repNum) %>%
@@ -90,19 +90,19 @@ glimpse(df)
 df[df$gameid == '0738-513adaa7-2548-44a4-8d01-7e2fb3ecbfd4', ]$content
 
 
-my.corpus = VCorpus(VectorSource(df[df$gameid == '0738-513adaa7-2548-44a4-8d01-7e2fb3ecbfd4', ]$content))
+my.corpus = VCorpus(VectorSource(df[df$gameid == "4909-705b801e-4ec3-4910-b180-bb7612d80f25", ]$content))
 my.corpus <- tm_map(my.corpus, removePunctuation)
 my.corpus = tm_map(my.corpus, content_transformer(tolower))
-my.corpus = tm_map(my.corpus, removePunctuation)
+#my.corpus = tm_map(my.corpus, removePunctuation)
 my.corpus = tm_map(my.corpus, removeWords, stopwords())
 my.tdm <- TermDocumentMatrix(my.corpus)
 my.dtm <- DocumentTermMatrix(my.corpus, control = list(stopwords = TRUE))
 
-dtm <- tidy(my.dtm)
-# dtm %>%
-#   ggplot(aes(x = term, y = count, fill = factor(document))) +
-#   geom_bar(stat = "identity", position = "stack") +
-#   coord_flip()
+dtm <-tidy(my.dtm)
+dtm %>%
+  ggplot(aes(x = term, y = count, fill = factor(document))) +
+  geom_bar(stat = "identity", position = "stack") +
+  coord_flip()
 
 dtm <- spread(dtm, term, count)
 dtm[is.na(dtm)] <- 0
@@ -122,6 +122,7 @@ chiperm(result, B = 999, resid = FALSE, filter = FALSE,
 p_list = list()
 for(i in 1:length(unique(df$gameid))){
   game = unique(df$gameid)[i]
+  print(game)
   my.corpus = VCorpus(VectorSource(df[df$gameid == game, ]$content))
   my.corpus <- tm_map(my.corpus, removePunctuation)
   my.corpus = tm_map(my.corpus, content_transformer(tolower))
@@ -151,4 +152,5 @@ p_list
 Reduce(min, p_list)
 p = unlist(p_list, use.names=FALSE)
 p
+length(p)
 log(prod(p))
