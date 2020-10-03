@@ -89,10 +89,8 @@ glimpse(df)
 
 df[df$gameid == '0738-513adaa7-2548-44a4-8d01-7e2fb3ecbfd4', ]$content
 
-df %>%
-  split(.$cyl) %>%
-  map_dbl("r.squared")
-my.corpus = VCorpus(VectorSource(df[df$gameid == '0110-5784fec9-109a-4d7a-a343-4820f4d42144', ]$content))
+
+my.corpus = VCorpus(VectorSource(df[df$gameid == '0738-513adaa7-2548-44a4-8d01-7e2fb3ecbfd4', ]$content))
 my.corpus <- tm_map(my.corpus, removePunctuation)
 my.corpus = tm_map(my.corpus, content_transformer(tolower))
 my.corpus = tm_map(my.corpus, removePunctuation)
@@ -121,25 +119,36 @@ chiperm(result, B = 999, resid = FALSE, filter = FALSE,
 
 
 #TRY functino on all gameids with purr
-gameids = unique(df$gameid)
-
-map_dbl(gameids, ~ {
-  dtm <- df %>% 
-    filter(gameid == .x) %>%
-    pull(content) %>% 
-    VectorSource() %>%
-    VCorpus() %>%
-    tm_map(removePunctuation) %>%
-    tm_map(content_transformer(tolower)) %>%
-    tm_map(removePunctuation) %>%
-    tm_map(removeWords, stopwords()) %>%
-    DocumentTermMatrix(control = list(stopwords = TRUE)) %>%
-    tidy() %>%
-    spread(term, count)
+p_list = list()
+for(i in 1:length(unique(df$gameid))){
+  game = unique(df$gameid)[i]
+  my.corpus = VCorpus(VectorSource(df[df$gameid == game, ]$content))
+  my.corpus <- tm_map(my.corpus, removePunctuation)
+  my.corpus = tm_map(my.corpus, content_transformer(tolower))
+  my.corpus = tm_map(my.corpus, removePunctuation)
+  my.corpus = tm_map(my.corpus, removeWords, stopwords())
+  my.tdm <- TermDocumentMatrix(my.corpus)
+  my.dtm <- DocumentTermMatrix(my.corpus, control = list(stopwords = TRUE))
+  
+  dtm <- tidy(my.dtm)
+  # dtm %>%
+  #   ggplot(aes(x = term, y = count, fill = factor(document))) +
+  #   geom_bar(stat = "identity", position = "stack") +
+  #   coord_flip()
+  
+  dtm <- spread(dtm, term, count)
   dtm[is.na(dtm)] <- 0
   row.names(dtm) <- dtm$document
   result <- dtm[-1]
   row.names(result) <- dtm$document
-  chiperm(result, B = 999, resid = FALSE, filter = FALSE,
+  
+  
+  p = chiperm(result, B = 999, resid = FALSE, filter = FALSE,
           thresh = 1.96, cramer = FALSE)
-})
+  p_list <- append(p_list, list(p))
+}
+p_list
+Reduce(min, p_list)
+p = unlist(p_list, use.names=FALSE)
+p
+log(prod(p))
