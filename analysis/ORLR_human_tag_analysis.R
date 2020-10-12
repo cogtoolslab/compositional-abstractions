@@ -48,6 +48,7 @@ ggplot(interaction, aes(x=repNum, y=mu, colour=refType)) + geom_line(size = 1.5)
   theme_few() +
   xlab("repetition")+
   ylab("referring expressions")+
+  xlim(c(0.5,4.5)) +  
   theme(legend.position = 'FALSE', text = element_text(size=16),
         element_line(size=1),
         element_rect(size=2, color="#00000"))+

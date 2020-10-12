@@ -97,7 +97,6 @@ df_block <- df_block %>%
 
 df_exit <- df_exit %>% 
   subset(gameid %in% gamesToKeep)
-
 ```
 
 ## Performance
@@ -143,6 +142,12 @@ perf.boot <- df_trial %>%
 perf.boot
 ```
 ```{r}
+m.acc = lmer(data = df_trial, trialScore  ~ repNum + (1 | gameid))
+summary(m.acc)
+```
+
+
+```{r}
 perf.boot %>%
   ggplot(aes(x=repNum, y=empirical_stat)) +
     geom_errorbar(aes(ymin=ci_lower, ymax = ci_upper), width = 0, size = 1.5,
@@ -160,12 +165,6 @@ perf.boot %>%
     ggtitle('perfect trials') +
     theme(legend.position = 'FALSE', text = element_text(size=16), element_line(size=1), plot.title = element_text(hjust = 0.5, size=16), element_rect(size=2, color="#00000"))
 
-```
-
-
-```{r}
-m.acc = lmer(data = df_trial, trialScore  ~ repNum + (1 | gameid))
-summary(m.acc)
 ```
 
 ```{r}
@@ -207,7 +206,7 @@ ggsave('../results/plots/ORLR/CA_ORLR20_word_count_reps.pdf', width=7, height = 
 
 ```{r}
 # Using || gets rid of correlations in random effects (not maximal model anymore)
-m.wc = lmer(data = df_trial, word_count ~ repNum + (1 + repNum || gameid) + (1 + repNum || towerSet))
+m.wc = lmer(data = df_trial, word_count ~ repNum + (1 + repNum || gameid) + (1 | towerSet))
 summary(m.wc)
 
 ```
@@ -236,15 +235,15 @@ cc.boot %>%
     # scale_x_continuous(breaks = round(seq(1, 4, by =1),1)) +
     xlim(c(0.75,4.25)) +
     ylim(c(0,350)) +
+    ggtitle('characters per trial') +
     #scale_x_continuous(limits = c(0.6,4.4), breaks = c(1,2,3,4),labels=c('first', '2nd','3rd','final')) +
     # scale_y_continuous(breaks = seq(-0.5,2.5,0.5)) +
-    ggtitle('characters per trial') +
     theme(legend.position = 'FALSE', text = element_text(size=16), element_line(size=1), plot.title = element_text(hjust = 0.5, size=16), element_rect(size=2, color="#00000"))
 ggsave('../results/plots/ORLR/CA_ORLR20_char_count_reps.pdf', width=7, height = 11, units='cm', useDingbats = F)
 ```
 
 ```{r}
-m.cc = lmer(data = df_trial, char_count ~ repNum + (1 + repNum || gameid) + (1 + repNum || towerSet))
+m.cc = lmer(data = df_trial, char_count ~ repNum + (1 + repNum || gameid) + (1 | towerSet))
 summary(m.cc)
 ```
 
@@ -280,7 +279,7 @@ ggsave('../results/plots/ORLR/CA_ORLR20_messages_reps.pdf', width=7, height = 11
 ```
 
 ```{r}
-m.mes = lmer(data = df_trial, n_messages ~ repNum + (1 + repNum | gameid) + (1 + repNum | towerSet))
+m.mes = lmer(data = df_trial, n_messages ~ repNum + (1 + repNum || gameid) + (1 | towerSet))
 summary(m.mes)
 ```
 
@@ -291,7 +290,7 @@ Have to exclude participants marked as 'flagged', as techical errors/ connectivi
 #### Total time to send messages across trials
 ```{r}
 chat.time.boot <- df_trial %>%
-  group_by(repNum) %>%
+  group_by(repNum) %>%($b=$, $t=$, $p<0.0001$)
   tidyboot_mean(column=total_chat_duration, nboot=100)
 chat.time.boot
 ```
@@ -355,5 +354,72 @@ summary(m.block.time)
 
 
 ```{r}
-df_trial
+
+df_ref = read_csv('justin_julia_tag.csv')
+df_ref = df_ref[complete.cases(df_ref), ]
+df_ref$repNum = df_ref$repNum +1
+#df$block_diff = df$block_justin - df$block_julia
+#mean(df$block_diff)
+#hist(df$block_diff)
+
+#df = df %>%  filter(repNum == 3 | repNum == 0)
+
+lin = lm(data = df_ref, refExp ~ repNum*rater*expType)
+summary(lin)
+
+# interaction = df_ref %>% 
+#   group_by(repNum, expType) %>% 
+#   summarise(mu = mean(refExp), sd = sd(refExp), n = n(), sem = sd(refExp)/sqrt(n()))
+# glimpse(interaction)
+
+```
+
+```{r}
+ref.boot <- df_ref %>%
+  group_by(repNum, expType) %>%
+  tidyboot_mean(column=refExp, nboot=1000)
+ref.boot
+```
+
+```{r}
+ggplot(ref.boot, aes(x=repNum, y=empirical_stat, colour=expType)) + geom_line(size = 1.5)+
+  geom_errorbar(aes(ymin=ci_lower, ymax=ci_upper), width = 0, size = 1.5)+
+  geom_point(size = 4) +
+  theme_few() +
+  xlab("repetition")+
+  ylab("referring expressions")+
+  theme(legend.position = 'FALSE', text = element_text(size=16),
+        element_line(size=1),
+        element_rect(size=2, color="#00000"))+
+  scale_color_manual(values=c("#303030","#9D9D9D")) +
+  xlim(c(0.75,4.25)) +
+  ylim(c(0, 1.65)) +
+  # scale_y_continuous(limits = c(1,6), breaks = c(1,2,3,4,5,6),labels=c(' 1', ' 2',' 3',' 4',' 5',' 6')) +
+  ggtitle('referring expressions') +
+  theme(legend.position = 'FALSE', text = element_text(size=16), element_line(size=1), plot.title = element_text(hjust = 0.5, size=16), element_rect(size=2, color="#00000"))
+ggsave('../results/plots/ORLR/CA_ORLR20_ref_exp.pdf', width=7, height = 11, units='cm', useDingbats = F)
+```
+
+
+```{r}
+ggplot(interaction, aes(x=repNum, y=mu, colour=expType)) + geom_line(size = 1.5)+
+  geom_errorbar(aes(ymin=mu-sem, ymax=mu+sem), width = 0, size = 1.5)+
+  geom_point(size = 4) +
+  theme_few() +
+  xlab("repetition")+
+  ylab("referring expressions")+
+  theme(legend.position = 'FALSE', text = element_text(size=16),
+        element_line(size=1),
+        element_rect(size=2, color="#00000"))+
+  scale_color_manual(values=c("#151515","#7D7D7D")) +
+  xlim(c(0.75,4.25)) +
+  ylim(c(0, 1.6)) +
+  # scale_y_continuous(limits = c(1,6), breaks = c(1,2,3,4,5,6),labels=c(' 1', ' 2',' 3',' 4',' 5',' 6')) +
+  ggtitle('referring expressions') +
+  theme(legend.position = 'FALSE', text = element_text(size=16), element_line(size=1), plot.title = element_text(hjust = 0.5, size=16), element_rect(size=2, color="#00000"))
+#ggsave('../results/plots/ORLR/CA_ORLR20_test_ref_exp.pdf', width=7, height = 11, units='cm', useDingbats = F)
+```
+
+```{r}
+
 ```
