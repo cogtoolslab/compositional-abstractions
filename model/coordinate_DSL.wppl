@@ -36,8 +36,6 @@ var lexiconPrior = function(dsl) {
   }, baseLexicon, dsl.slice(2));
 }
 
-//console.log(lexiconPrior(trialSequence[0].dsl));
-
 // recursively parse expressions written in DSL into language
 var parseDSL = function(e, lexicon) {
   return lexicon[e];
@@ -58,8 +56,7 @@ var lexiconPosterior = function(originAgent, dsl, data) {
     condition(_.uniq(_.values(lexicon)).length == dsl.length);
     
     // loop through data from previous rounds, condition on data from partner
-    mapData({data: data}, function(datum){
-      
+    mapData({data: data}, function(datum){      
       if(originAgent === 'B') {
         factor(_.isEqual(parseDSL(datum.targetInstruction, lexicon), datum.utt) ? 0 : -3);
       } else if(originAgent === 'A') {
@@ -80,7 +77,6 @@ var Builder = function(utt, state, prevData) {
 
 // conventional Architect (S1, reasoning about expected L1 behavior across lexicons)
 var Architect = cache(function(target, state, prevData) {
-  var currentDSL = state.dsl;
   return Infer({method:"enumerate"}, function(){
     var lexicon = sample(lexiconPosterior('A', state.dsl, prevData));
     return parseDSL(target, lexicon);
