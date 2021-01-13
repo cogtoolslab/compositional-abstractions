@@ -1,105 +1,125 @@
 // target towers (hand-encoded into speaker's DSL)
-var L_tower = ["h", ["l", 2], "v", "v", ["r", 2], 'h']
-var L_tower_reduced = ["new_chunk1"]
-var pi_tower = ["v", "v", ["r", 4], "v", "v"]
-var pi_tower_reduced = ["new_chunk2"]
+// var L_tower = ["h", ["l", 2], "v", "v", ["r", 2], 'h']
+// var L_tower_reduced = ["new_chunk1"]
+// var pi_tower = ["v", "v", ["r", 4], "v", "v"]
+// var pi_tower_reduced = ["new_chunk2"]
 
-var lexemes = ['make an L.', 'make a PI.']
-var baseLexicon = {
-  'h' : 'place a horizontal block.',
-  'v' : 'place a vertical block.',
-  'l' : 'move left by',
-  'r' : 'move right by'
-}
+var trialSequence = json.read('./synthesis_data/ca_synthesis_output_tmp.json');
+var totalNumInstructions = reduce(function(trial, rest) {
+  return rest + trial.sceneProgram.split(' ').length;
+}, 0, trialSequence);
+var numInstructionsPerTrial = map(function(trial) {
+  return trial.sceneProgram.split(' ').length;
+}, trialSequence);
+
+var lexemes = ['blah', 'blab', 'bloop', 'bleep'];
+
+var makeObject = function(key, value) {
+  return _.zipObject([key], [value]);
+};
 
 // extend starting lexicon to include (uncertain) mapping for new DSL primitives
-var lexiconPrior = function() {
-  return extend(baseLexicon, {
-    'new_chunk1' : uniformDraw(lexemes),
-    'new_chunk2' : uniformDraw(lexemes),
-  })
+var lexiconPrior = function(dsl) {
+  var baseLexicon = {
+    'h' : 'place a horizontal block.',
+    'v' : 'place a vertical block.',
+  };
+  return reduce(function(item, rest) {
+    var newItem = (
+      item[0] == 'r' ?
+        makeObject(item, 'move to the right by ' + item.split('_')[1]) :
+        item[0] == 'l' ? 
+        makeObject(item, 'move to the left by ' + item.split('_')[1]) :
+        makeObject(item, sample(Categorical({vs: lexemes})))
+    );
+    return extend(rest, newItem);
+  }, baseLexicon, dsl.slice(2));
 }
+
+//console.log(lexiconPrior(trialSequence[0].dsl));
 
 // recursively parse expressions written in DSL into language
 var parseDSL = function(e, lexicon) {
-  if(_.isArray(e)) {
-    return reduce(function(val, rst) {
-      return parseDSL(val, lexicon) + ' ' + rst
-    }, '', e)
-  } else if (_.has(lexicon, e)) {
-    return lexicon[e]
-  } else if (_.isNumber(e)) {
-    return e + '.'
-  }
-}
+  return lexicon[e];
+};
 
 // parse expressions written in language back to own DSL
-var parseLanguage = function(e, lexicon) {
-  var invertedLexicon = _.invert(lexicon)
-  var invertedStr = reduce(function(phrase, rst) {
-    return rst.replaceAll(phrase, invertedLexicon[phrase])
-  }, e, _.values(lexicon))
-  return invertedStr.trim().split(/[.\s]+/g)
-}
+var parseLanguage = function(language, lexicon) {
+  return _.invert(lexicon)[language];
+};
 
 // compute lexicon posterior, taking into account some previous observations
 // speakers do this by assuming data came from knowledgable listener, and vice versa
-var lexiconPosterior = function(originAgent, data) {
+var lexiconPosterior = function(originAgent, dsl, data) {
   return Infer({method: 'enumerate'}, function() {
-    var lexicon = lexiconPrior();
+    var lexicon = lexiconPrior(dsl);
 
     // enforce mutual exclusivity (i.e. no two chunks map to same word)
-    condition(_.uniq(_.values(lexicon)).length
-              == lexemes.length + _.values(baseLexicon).length)
-
+    condition(_.uniq(_.values(lexicon)).length == dsl.length);
+    
     // loop through data from previous rounds, condition on data from partner
     mapData({data: data}, function(datum){
-      if(originAgent === 'B') 
-        factor(_.isEqual(parseDSL(datum.target, lexicon), datum.utt) ? 0 : -10)
-      else if(originAgent === 'A') 
-        factor(_.isEqual(parseLanguage(datum.utt, lexicon), datum.response)? 0 : -10)
+      
+      if(originAgent === 'B') {
+        //        console.log(_.isEqual(parseDSL(datum.target, lexicon), datum.utt) ? 0 : -10);
+        //condition(_.isEqual(parseDSL(datum.target, lexicon), datum.utt))
+        factor(_.isEqual(parseDSL(datum.targetInstruction, lexicon), datum.utt) ? 0 : -3)
+      } else if(originAgent === 'A') {
+//        console.log(_.isEqual(parseLanguage(datum.utt, lexicon), datum.response)? 0 : -10)
+        factor(_.isEqual(parseLanguage(datum.utt, lexicon), datum.response)? 0 : -3)
+      }
     });
     return lexicon;
   });
 };
 
 // conventional builder (L0, marginalizing over lexicons)
-var Builder = function(utt, data) {
+var Builder = function(utt, state, prevData) {
   return Infer({method:"enumerate"}, function(){
-    var lexicon = sample(lexiconPosterior('B', data));
+    var lexicon = sample(lexiconPosterior('B', state.dsl, prevData));
     return parseLanguage(utt, lexicon);
   });
 };
 
 // conventional Architect (S1, reasoning about expected L1 behavior across lexicons)
-var Architect = cache(function(state, data) {
+var Architect = cache(function(target, state, prevData) {
+  var currentDSL = state.dsl;
   return Infer({method:"enumerate"}, function(){
-    var lexicon = sample(lexiconPosterior('A', data));
-    return parseDSL(state, lexicon);
+    var lexicon = sample(lexiconPosterior('A', state.dsl, prevData));
+    return parseDSL(target, lexicon);
   });
 });
 
 var step = function(remainingTrials, prevData) {
   if(remainingTrials.length == 0) 
     return prevData;
-  var currTrial = first(remainingTrials)
-  var target = currTrial.target;
-  var utt = sample(Architect(target, prevData));
-  var response = sample(Builder(utt, prevData));
-  var newDatum = {utt, response, target};
-  return step(rest(remainingTrials), prevData.concat(newDatum));
+  var currTrial = first(remainingTrials);
+  var target = currTrial.sceneProgram;
+  var newData = map(function(targetInstruction) {
+    var speakerDist = Architect(targetInstruction, currTrial, prevData);
+    var utt = sample(speakerDist);
+    var listenerDist = Builder(utt, currTrial, prevData);
+    var response = sample(listenerDist);
+    return {utt, response, targetInstruction,
+            correct: response == targetInstruction};
+  }, target.split(' '));
+  return step(rest(remainingTrials), prevData.concat(newData));
 };
 
-//print()
-//parseLanguage(parseDSL(L, baseLexicon), baseLexicon)
-var trialSequence = [
-  {target: L_tower},
-  {target: pi_tower},
-  {target: L_tower_reduced},
-  {target: pi_tower_reduced},
-  {target: L_tower_reduced},
-  {target: pi_tower_reduced},
-  {target: L_tower_reduced},
-  {target: pi_tower_reduced},
-]
-JSON.stringify(step(trialSequence, []), null,'\t');
+var runs = Infer({method: 'forward', samples: 100}, function() {
+  console.log('running');
+  var output = step(trialSequence, []);
+  return map(function(instruction) {return instruction.correct;}, output);
+});
+
+map(function(instructionNum) {
+  console.log(
+    'instruction #' + instructionNum + ':',
+    expectation(runs, function(run) {return run[instructionNum];})
+  );
+}, _.range(totalNumInstructions));
+''
+//console.log('last trial', expectation(runs, function(run) {return run[-1]}))
+
+
+//, null,'\t');
