@@ -61,12 +61,9 @@ var lexiconPosterior = function(originAgent, dsl, data) {
     mapData({data: data}, function(datum){
       
       if(originAgent === 'B') {
-        //        console.log(_.isEqual(parseDSL(datum.target, lexicon), datum.utt) ? 0 : -10);
-        //condition(_.isEqual(parseDSL(datum.target, lexicon), datum.utt))
-        factor(_.isEqual(parseDSL(datum.targetInstruction, lexicon), datum.utt) ? 0 : -3)
+        factor(_.isEqual(parseDSL(datum.targetInstruction, lexicon), datum.utt) ? 0 : -3);
       } else if(originAgent === 'A') {
-//        console.log(_.isEqual(parseLanguage(datum.utt, lexicon), datum.response)? 0 : -10)
-        factor(_.isEqual(parseLanguage(datum.utt, lexicon), datum.response)? 0 : -3)
+        factor(_.isEqual(parseLanguage(datum.utt, lexicon), datum.response)? 0 : -3);
       }
     });
     return lexicon;
