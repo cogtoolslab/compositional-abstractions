@@ -4,7 +4,7 @@
 // var pi_tower = ["v", "v", ["r", 4], "v", "v"]
 // var pi_tower_reduced = ["new_chunk2"]
 
-var trialSequence = json.read('./synthesis_data/ca_synthesis_output_tmp.json');
+var trialSequence = json.read('./synthesis_data/ca_synthesis_output_manual_edit.json');
 var totalNumInstructions = reduce(function(trial, rest) {
   return rest + trial.sceneProgram.split(' ').length;
 }, 0, trialSequence);
