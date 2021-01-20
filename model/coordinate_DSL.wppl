@@ -4,12 +4,12 @@
 // var pi_tower = ["v", "v", ["r", 4], "v", "v"]
 // var pi_tower_reduced = ["new_chunk2"]
 
-var trialSequence = json.read('./synthesis_data/ca_synthesis_output_manual_edit.json');
+var trialSequence = json.read('./synthesis_data/ca_synthesis_output_manual_min_and_dechunked.json');
 var totalNumInstructions = reduce(function(trial, rest) {
-  return rest + trial.sceneProgram.split(' ').length;
+  return rest + trial.min_program.split(' ').length;
 }, 0, trialSequence);
 var numInstructionsPerTrial = map(function(trial) {
-  return trial.sceneProgram.split(' ').length;
+  return trial.min_program.split(' ').length;
 }, trialSequence);
 
 var lexemes = ['blah', 'blab', 'bloop', 'bleep'];
@@ -87,7 +87,7 @@ var step = function(remainingTrials, prevData) {
   if(remainingTrials.length == 0) 
     return prevData;
   var currTrial = first(remainingTrials);
-  var target = currTrial.sceneProgram;
+  var target = currTrial.min_program; // need to sample target program based on program length. Use currTrial.
   var newData = map(function(targetInstruction) {
     var speakerDist = Architect(targetInstruction, currTrial, prevData);
     var utt = sample(speakerDist);
