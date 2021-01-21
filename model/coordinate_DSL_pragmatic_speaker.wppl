@@ -114,7 +114,7 @@ var Architect = cache(function(currTrial, prevData) {
       return _.isEqual(literalBuilder(utt, lexicon), instructSeq);
     });
     factor(alpha * ((1 - beta) * utility - beta * instructSeq.length));
-    return utt;
+    return {utt: utt, intendedSeq: instructSeq};
   });
 });
 
@@ -122,21 +122,22 @@ var step = function(remainingTrials, prevData) {
   if(remainingTrials.length == 0) 
     return prevData;
   var currTrial = first(remainingTrials);
-  var newData = reduce(function(targetInstruction, acc) {
-    var speakerDist = Architect(targetInstruction, currTrial, prevData);
-    var utt = sample(speakerDist);
-    var listenerDist = Builder(utt, currTrial, prevData);
-    var response = sample(listenerDist);
-    return {utt: acc.utt.concat(utt),
-            response: acc.response.concat(response),
-            targetInstruction: acc.targetInstruction.concat(targetInstruction),
-            numCorrect: acc.numCorrect + (response == targetInstruction)};
-  }, {
-    utt: [], response: [], targetInstruction: [], numCorrect: 0
-  }, target.split(' '));
-  var numInstructions = currTrial.programs_with_length[target]; 
-  return step(rest(remainingTrials),
-              prevData.concat(extend(newData, {numInstructions})));
+  var speakerDist = Architect(currTrial, prevData);
+  var speakerAction = sample(speakerDist);
+  var intendedSeq = speakerAction.intendedSeq;
+
+  var listenerActionSeq = map(function(uttPart) {    
+    var listenerDist = Builder(uttPart, currTrial, prevData);
+    return sample(listenerDist);
+  }, speakerAction.utt);
+
+  // TODO: give partial credit (this is currently a 'all-or-none' acc)
+  var correct = listenerActionSeq == intendedSeq;
+
+  var numInstructions = intendedSeq.length;
+  // TODO: figure out what to return here
+  // return step(rest(remainingTrials),
+  //             prevData.concat(extend(newData, {correct, numInstructions})));
 };
 
 var runs = Infer({method: 'forward', samples: 20}, function() {
