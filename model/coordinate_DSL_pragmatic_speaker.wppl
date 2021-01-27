@@ -1,7 +1,8 @@
 // target towers (hand-encoded into speaker's DSL)
-var trialSequence = json.read('./synthesis_data/ca_synthesis_output_manual_min_and_dechunked.json');
+var trialSequence = json.read('./input/ca_synthesis_output_manual_min_and_dechunked.json');
 
 var lexemes = ['blah', 'blab', 'bloop', 'bleep', 'blarp'];
+var numIterations = argv.numIterations;
 var alpha = argv.alpha;
 var beta = argv.beta;
 
@@ -60,6 +61,8 @@ var lexiconPosterior = function(originAgent, dsl, prevTrials) {
     // loop through data from previous rounds, condition on data from partner
     mapData({data: prevTrials}, function(trial){
       var instructions = _.zip(trial.utt, trial.responses, trial.targetInstruction);
+
+      // loop through sub-trial "events" 
       mapData({data: instructions }, function(instruction){
         var utt = instruction[0];
         var response = instruction[1];
@@ -94,8 +97,6 @@ var literalBuilder = function(uttSequence, lexicon) {
 var Architect = cache(function(currTrial, prevData) {
   // construct current program prior
   var possiblePrograms = _.keys(currTrial.programs_with_length);
-  // var lengths = map(function(v) {return Math.exp(- priorWeight * v);},
-  //                   _.values(currTrial.programs_with_length));
   var programPrior = Categorical({vs: possiblePrograms});
   var posterior = lexiconPosterior('A', currTrial.dsl, prevData);
   
@@ -106,11 +107,6 @@ var Architect = cache(function(currTrial, prevData) {
 
     // marginalize over lexicon beliefs
     var utility = expectation(posterior, function(lexicon) {
-      // console.log('lexicon', lexicon)
-      // console.log('utterance', utt)      
-      // console.log('true sequence', instructSeq);
-      // console.log('builder actions', literalBuilder(utt, lexicon));
-      // console.log('correct', _.isEqual(literalBuilder(utt, lexicon), instructSeq));
       return _.isEqual(literalBuilder(utt, lexicon), instructSeq);
     });
     factor(alpha * ((1 - beta) * utility - beta * instructSeq.length));
@@ -118,49 +114,54 @@ var Architect = cache(function(currTrial, prevData) {
   });
 });
 
-var step = function(remainingTrials, prevData) {
+var step = function(i, remainingTrials, prevData, filename) {
   if(remainingTrials.length == 0) 
     return prevData;
+  var trialNum = prevData.length;
   var currTrial = first(remainingTrials);
   var speakerDist = Architect(currTrial, prevData);
   var speakerAction = sample(speakerDist);
   var intendedSeq = speakerAction.intendedSeq;
-
   var listenerActionSeq = map(function(uttPart) {    
     var listenerDist = Builder(uttPart, currTrial, prevData);
     return sample(listenerDist);
   }, speakerAction.utt);
 
-  // TODO: give partial credit (this is currently a 'all-or-none' acc)
-  var correct = listenerActionSeq == intendedSeq;
-
-  var numInstructions = intendedSeq.length;
-  // TODO: figure out what to return here
-  // return step(rest(remainingTrials),
-  //             prevData.concat(extend(newData, {correct, numInstructions})));
+  // TODO: give partial credit (correct is currently 'all-or-none')
+  var newData = {
+    targetInstruction: intendedSeq,
+    utt : speakerAction.utt,
+    responses : listenerActionSeq,
+    correct: _.isEqual(listenerActionSeq, intendedSeq.split(' ')),
+    numInstructions: intendedSeq.split(' ').length
+  };
+  csv.writeLine([argv.chainNum, i, argv.alpha, argv.beta, trialNum,
+                 newData.correct, newData.numInstructions, newData.targetInstruction,
+                 newData.utt.join("~~~"), newData.responses.join(' ')], filename);
+  return step(i, rest(remainingTrials), prevData.concat(newData), filename);
 };
 
-var runs = Infer({method: 'forward', samples: 20}, function() {
-  console.log('running');
-  return step(trialSequence, []);
-});
-
-map(function(trialNum) {
-  console.log(
-    'accuracy on instruction #' + (trialNum + 1) + ':',
-    expectation(runs, function(run) {
-      return run[trialNum].numCorrect / run[trialNum].numInstructions
-    }).toFixed(2)
-  );
-  console.log(
-    'length on instruction #' + (trialNum + 1) + ':',
-    expectation(runs, function(run) {
-      return run[trialNum].numInstructions;
-    }).toFixed(2)
-  );
-}, _.range(trialSequence.length));
-''
+var fine_grained_csv = csv.open('output/trajectory_bytrial_chain' + argv.chainNum + '.csv');
+csv.writeLine(['chainNum', 'iteration', 'alpha', 'beta', 'trialNum', 'accuracy',
+               'descriptionLength', 'speakerUtterance', 'intendedSequence',
+               'listenerResponse'],
+              fine_grained_csv);
+map(function(i) {
+  step(i, trialSequence, [], fine_grained_csv);
+}, _.range(argv.numIterations));
+'';
+// var f = csv.open('output/trajectory_aggregated_chain' + argv.chainNum + '.csv');
+// csv.writeLine(['chainNum', 'alpha', 'beta', 'trialNum', 'accuracy', 'descriptionLength'], f);
+// map(function(trialNum) {
+//   var acc = expectation(runs, function(run) {
+//     return run[trialNum].correct;
+//   }).toFixed(2);
+//   var len = expectation(runs, function(run) {
+//     return run[trialNum].numInstructions;
+//   }).toFixed(2);
+  
+//   csv.writeLine([argv.chainNum, argv.alpha, argv.beta, trialNum, acc, len], f);
+// }, _.range(trialSequence.length));
+// csv.close(f);
 //console.log('last trial', expectation(runs, function(run) {return run[-1]}))
-
-
 //, null,'\t');
