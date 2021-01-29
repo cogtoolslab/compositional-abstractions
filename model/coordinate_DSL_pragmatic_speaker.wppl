@@ -6,6 +6,8 @@ var numIterations = argv.numIterations;
 var alpha = argv.alpha;
 var beta = argv.beta;
 
+console.log('alpha ', alpha, 'beta ', beta)
+
 var makeObject = function(key, value) {
   return _.zipObject([key], [value]);
 };
@@ -46,6 +48,7 @@ var parseDSL = function(e, lexicon) {
 
 // parse expressions written in language back to own DSL
 var parseLanguage = function(language, lexicon) {
+  // console.log(uniformDraw(_.uniq(_.keys(lexicon))));
   return _.has(_.invert(lexicon), language) ? _.invert(lexicon)[language] : '?';
 };
 
@@ -143,7 +146,7 @@ var step = function(i, remainingTrials, prevData, filename) {
 
 var fine_grained_csv = csv.open('output/trajectory_bytrial_chain' + argv.chainNum + '.csv');
 csv.writeLine(['chainNum', 'iteration', 'alpha', 'beta', 'trialNum', 'accuracy',
-               'descriptionLength', 'speakerUtterance', 'intendedSequence',
+               'descriptionLength', 'intendedSequence', 'speakerUtterance',
                'listenerResponse'],
               fine_grained_csv);
 map(function(i) {
