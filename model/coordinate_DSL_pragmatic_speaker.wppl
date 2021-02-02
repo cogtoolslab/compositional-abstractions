@@ -2,10 +2,13 @@
 var trialSequence = json.read('./input/ca_synthesis_output_manual_min_and_dechunked.json');
 
 var lexemes = ['blah', 'blab', 'bloop', 'bleep', 'blarp'];
+var baseDSLPrimitives = ['h', 'v']
+    .concat(map(function(i) { return 'l_' + i}, _.range(13)),
+            map(function(i) { return 'r_' + i}, _.range(13)));
 var numIterations = argv.numIterations;
 var alpha = argv.alpha;
 var beta = argv.beta;
-var epsilon = 0.01
+var epsilon = 0.1;
 console.log('running with {alpha: ', alpha, 'beta: ', beta, '}');
 
 var makeObject = function(key, value) {
@@ -47,22 +50,26 @@ var parseDSL = function(e, lexicon) {
 };
 
 // parse expressions written in language back to own DSL
-var parseLanguage = function(language, lexicon) {
+// if we don't know a word, we randomly pick one of the 'fancy' ones...
+var parseLanguage = cache(function(language, lexicon) {
+  var fancyOnes = _.difference(_.keys(lexicon), baseDSLPrimitives);
+  var invertedLex = _.invert(lexicon);
   return Infer({method: 'enumerate'}, function() {
-    var leftover = _.difference(_.values(_.invert(lexicon)), _.keys(lexicon));
-    var meaning = _.has(_.invert(lexicon), language) ? _.invert(lexicon)[language] : uniformDraw(leftover);
-    return flip(epsilon) ? uniformDraw(_.keys(lexicon)) : meaning;
+    return (flip(epsilon) ? uniformDraw(_.keys(lexicon)) :
+            _.has(invertedLex, language) ? invertedLex[language] :
+            uniformDraw(fancyOnes));
   });
-};
+});
 
 // compute lexicon posterior, taking into account some previous observations
 // speakers do this by assuming data came from knowledgable listener, and vice versa
-var lexiconPosterior = function(originAgent, dsl, prevTrials) {
+var lexiconPosterior = function(originAgent, currDSL, prevTrials) {
+  var combinedPrimitives = _.uniq(_.flatten(_.map(prevTrials, 'dsl')).concat(currDSL));
   return Infer({method: 'enumerate'}, function() {
-    var lexicon = sample(LexiconPrior(dsl));
+    var lexicon = sample(LexiconPrior(combinedPrimitives));
 
     // enforce mutual exclusivity (i.e. no two chunks map to same word)
-    condition(_.uniq(_.values(lexicon)).length == dsl.length);
+    //condition(_.uniq(_.values(lexicon)).length == dsl.length);
     
     // loop through data from previous rounds, condition on data from partner
     mapData({data: prevTrials}, function(trial){
@@ -110,18 +117,13 @@ var Architect = cache(function(currTrial, prevData) {
     // decide which program to produce
     var instructSeq = sample(programPrior);
     var uttSeq = sample(UtterancePrior(instructSeq, currTrial.dsl));
-
-    console.log('architect considering instruction seq', instructSeq);
-    console.log('architect considering utt', uttSeq);
-
+    
     // marginalize over lexicon beliefs
     var utility = expectation(posterior, function(lexicon) {
       return sum(map2(function(utt, instruct) {
         return parseLanguage(utt, lexicon).score(instruct);
       }, uttSeq, instructSeq.split(' ')));
     });
-
-    console.log('utility', utility);
     
     factor(alpha * ((1 - beta) * utility - beta * instructSeq.length));
     return {utt: uttSeq, intendedSeq: instructSeq};
@@ -132,12 +134,11 @@ var step = function(i, remainingTrials, prevData, filename) {
   if(remainingTrials.length == 0) 
     return prevData;
   var trialNum = prevData.length;
-  console.log('on trial', trialNum);
   var currTrial = first(remainingTrials);
   var speakerDist = Architect(currTrial, prevData);
   var speakerAction = sample(speakerDist);
   var intendedSeq = speakerAction.intendedSeq;
-  var listenerActionSeq = map(function(uttPart) {    
+  var listenerActionSeq = map(function(uttPart) {
     var listenerDist = Builder(uttPart, currTrial, prevData);
     return sample(listenerDist);
   }, speakerAction.utt);
@@ -148,7 +149,8 @@ var step = function(i, remainingTrials, prevData, filename) {
     utt : speakerAction.utt,
     responses : listenerActionSeq,
     correct: _.isEqual(listenerActionSeq, intendedSeq.split(' ')),
-    numInstructions: intendedSeq.split(' ').length
+    numInstructions: intendedSeq.split(' ').length,
+    dsl : currTrial.dsl
   };
   csv.writeLine([argv.chainNum, i, argv.alpha, argv.beta, trialNum,
                  newData.correct, newData.numInstructions, newData.targetInstruction,
@@ -165,18 +167,3 @@ map(function(i) {
   step(i, trialSequence, [], fine_grained_csv);
 }, _.range(argv.numIterations));
 '';
-// var f = csv.open('output/trajectory_aggregated_chain' + argv.chainNum + '.csv');
-// csv.writeLine(['chainNum', 'alpha', 'beta', 'trialNum', 'accuracy', 'descriptionLength'], f);
-// map(function(trialNum) {
-//   var acc = expectation(runs, function(run) {
-//     return run[trialNum].correct;
-//   }).toFixed(2);
-//   var len = expectation(runs, function(run) {
-//     return run[trialNum].numInstructions;
-//   }).toFixed(2);
-  
-//   csv.writeLine([argv.chainNum, argv.alpha, argv.beta, trialNum, acc, len], f);
-// }, _.range(trialSequence.length));
-// csv.close(f);
-//console.log('last trial', expectation(runs, function(run) {return run[-1]}))
-//, null,'\t');
