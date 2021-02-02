@@ -377,3 +377,8 @@ chainNum,iteration,alpha,beta,trialNum,accuracy,descriptionLength,intendedSequen
 8,31,1,0.8,3,true,13,h l_1 v v r_1 h r_12 h l_4 h l_1 v v,place a horizontal block.~~~move to the left by 1~~~place a vertical block.~~~place a vertical block.~~~move to the right by 1~~~place a horizontal block.~~~move to the right by 12~~~place a horizontal block.~~~move to the left by 4~~~place a horizontal block.~~~move to the left by 1~~~place a vertical block.~~~place a vertical block.,h l_1 v v r_1 h r_12 h l_4 h l_1 v v
 8,31,1,0.8,4,false,8,chunk_8 r_1 h r_6 chunk_9 h r_4 h,blab~~~move to the right by 1~~~place a horizontal block.~~~move to the right by 6~~~blah~~~place a horizontal block.~~~move to the right by 4~~~place a horizontal block.,chunk_8 r_1 h r_6 chunk_8 h r_4 h
 8,31,1,0.8,5,false,3,chunk_L r_9 chunk_Pi,blab~~~move to the right by 9~~~blah,chunk_C r_9 chunk_8
+8,31,1,0.8,6,false,3,chunk_Pi r_7 chunk_C,blarp~~~move to the right by 7~~~blah,chunk_8 r_7 chunk_L
+8,31,1,0.8,7,false,3,chunk_Pi r_9 chunk_L,blah~~~move to the right by 9~~~blah,l_6 r_9 chunk_L
+8,31,1,0.8,8,true,3,chunk_L r_12 chunk_C,bleep~~~move to the right by 12~~~blah,chunk_L r_12 chunk_C
+8,31,1,0.8,9,false,3,chunk_C r_12 chunk_L,blab~~~move to the right by 12~~~bleep,chunk_Pi r_12 chunk_8
+8,31,1,0.8,10,false,3,chunk_L r_9 chunk_Pi,blah~~~move to the right by 9~~~blab,chunk_8 r_9 chunk_8
