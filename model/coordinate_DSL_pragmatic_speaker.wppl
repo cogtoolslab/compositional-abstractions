@@ -8,7 +8,7 @@ var baseDSLPrimitives = ['h', 'v']
 var numIterations = argv.numIterations;
 var alpha = argv.alpha;
 var beta = argv.beta;
-var epsilon = 0.1;
+var epsilon = 0.01;
 console.log('running with {alpha: ', alpha, 'beta: ', beta, '}');
 
 var makeObject = function(key, value) {
@@ -58,6 +58,7 @@ var parseLanguage = cache(function(language, lexicon) {
     return (flip(epsilon) ? uniformDraw(_.keys(lexicon)) :
             _.has(invertedLex, language) ? invertedLex[language] :
             uniformDraw(fancyOnes));
+    // return  _.has(invertedLex, language) ? invertedLex[language] : uniformDraw(fancyOnes);
   });
 });
 
