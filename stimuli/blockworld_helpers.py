@@ -395,7 +395,7 @@ class World:
         # block parameters
         self.block_dims = block_dims
         self.block_colors = block_colors               
-        self.base_blocks = [BaseBlock(w,h,color=c) for ((w,h),c) in list(zip(sorted(block_dims),block_colors[0:len(block_dims)]))] # Block types should be in order from left to right, thinest to thickest, shortest to tallest
+        self.base_blocks = [BaseBlock(w,h,color=c) for ((w,h),c) in list(zip(block_dims,block_colors[0:len(block_dims)]))] # Block types should be in order from left to right, thinest to thickest, shortest to tallest
         self.block_widths = list(map(lambda b: b.width, self.base_blocks))  
         self.base_block_dict = dict(zip(block_dims, self.base_blocks))
         
@@ -601,7 +601,15 @@ class World:
         Fill world object with blocks saved as block dictionary (very similar to populate_from_json above)
         '''
         for b in block_dict["blocks"]:
-            self.add_block(b['width'], b['height'], b['x'], b['y'])                        
+            self.add_block(b['width'], b['height'], b['x'], b['y'])           
+
+
+    def populate_from_block_list(self, block_list):
+        '''
+        Fill world object with blocks saved as block dictionary (very similar to populate_from_json above)
+        '''
+        for b in block_list:
+            self.add_block(b['width'], b['height'], b['x'], b['y'])             
     
     def jenga_block(self, block_number, render = False, checking = False):
         '''
