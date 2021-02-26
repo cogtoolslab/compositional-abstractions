@@ -657,12 +657,22 @@ class World:
         print('Index of block to remove out of range')     
         
 
-    def fully_connected(self):
+    def fully_connected(self, connectivity=None):
         '''
         Check if all blocks are connected
         '''
-        component_labels = measure.label(self.block_map)
+        component_labels = measure.label(self.block_map, connectivity=connectivity)
         return np.max(component_labels) < 2
+    
+    def blocks_above_ground(self, n_blocks):
+        '''
+        Returns true if at least n_blocks are currently above ground level
+        '''
+        block_heights = np.array([block.y for block in self.blocks])
+        blocks_above_ground = block_heights > 0
+        
+        return np.sum(blocks_above_ground) >= n_blocks
+        
     
     
 def worldify(block_dicts, **kwargs):
