@@ -6,6 +6,7 @@ import matplotlib.pyplot as plt
 import matplotlib.image as mpimg
 from matplotlib.path import Path
 import matplotlib.patches as patches
+from skimage import measure
 import copy
 import json
 import datetime
@@ -653,4 +654,18 @@ class World:
             
             return (stable, self)
 
-        print('Index of block to remove out of range')          
+        print('Index of block to remove out of range')     
+        
+
+    def fully_connected(self):
+        '''
+        Check if all blocks are connected
+        '''
+        component_labels = measure.label(self.block_map)
+        return np.max(component_labels) < 2
+    
+    
+def worldify(block_dicts, **kwargs):
+    w = World(**kwargs)
+    w.populate_from_block_list(block_dicts)
+    return w
