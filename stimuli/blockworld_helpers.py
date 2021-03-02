@@ -674,6 +674,15 @@ class World:
         return np.sum(blocks_above_ground) >= n_blocks
         
     
+    def two_h_two_v(self):
+        '''
+        Only use if you know towers contain only 1x2 and 2x1 blocks
+        Returns true if two blocks have height 1 and two blocks have height 2
+        '''
+        block_heights = np.sort(np.array([block.height for block in self.blocks]))
+        
+        return (block_heights == (np.array([1,1,2,2]))).all()
+    
     
 def worldify(block_dicts, **kwargs):
     w = World(**kwargs)
