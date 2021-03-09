@@ -672,13 +672,26 @@ class World:
         blocks_above_ground = block_heights > 0
         
         return np.sum(blocks_above_ground) >= n_blocks
+    
+    def n_blocks_above_ground(self):
+        '''
+        Returns true if at least n_blocks are currently above ground level
+        '''
+        block_heights = np.array([block.y for block in self.blocks])
+        blocks_above_ground = block_heights > 0
+        
+        return np.sum(blocks_above_ground)
         
     
     def two_h_two_v(self):
         '''
-        Only use if you know towers contain only 1x2 and 2x1 blocks
+        WARNING: Only use if you know towers contain only 1x2 and 2x1 blocks
         Returns true if two blocks have height 1 and two blocks have height 2
         '''
+        
+        if len(self.blocks) != 4:
+            return False
+        
         block_heights = np.sort(np.array([block.height for block in self.blocks]))
         
         return (block_heights == (np.array([1,1,2,2]))).all()
