@@ -701,3 +701,10 @@ def worldify(block_dicts, **kwargs):
     w = World(**kwargs)
     w.populate_from_block_list(block_dicts)
     return w
+
+
+def convert_to_str(world):
+    flat_world = world.flatten()
+    s = [str(i) for i in list(flat_world)] 
+    res = "".join(s)
+    return res
