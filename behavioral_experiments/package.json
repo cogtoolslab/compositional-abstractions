@@ -23,7 +23,7 @@
     "underscore": "~1.7.0",
     "uuid": "^3.3.2",
     "webpack": "^4.28.3",
-    "xmldom": "^0.1.27"
+    "xmldom": "^0.5.0"
   },
   "devDependencies": {
     "webpack-cli": "^3.2.0"
