@@ -16,8 +16,8 @@ function Experiment() {
   this.dbname = 'compositional-abstractions';
   this.colname = 'prior-elicitation_example';
   this.iterationName = 'run_0';
-  this.condition = 'interesting' //_.sample([0, 1]) == 1 ? 'interesting' : 'stable';
-  this.prompt = this.condition == 'interesting' ? 'How interesting is this?' : 'How stable is this?';
+  // this.condition = 'interesting' //_.sample([0, 1]) == 1 ? 'interesting' : 'stable';
+  // this.prompt = this.condition == 'interesting' ? 'How interesting is this?' : 'How stable is this?';
 };
 
 function setupGame() {
@@ -86,9 +86,8 @@ function setupGame() {
 
 
     var instructionsHTML = {
-      'str1': ['<p> On each trial, you will see an image of a block structure. Your goal is to rate how '+ experimentInstance.condition + ' it is. \
-      The rating scale ranges from 1 (not ' + experimentInstance.condition + ' at all) to 5 (extremely ' + experimentInstance.condition + '). </p> <p>Here are \
-      some example towers that should be given a score of 1 and some towers that should be given a score of 5.</p>',
+      'str1': ['<p> On each trial, you will see an image of a block structure. \
+      Your task will be to provide a short name or description for the structure (100 characters or less).</p>',
       '<div class="example_images">', 
         
       
