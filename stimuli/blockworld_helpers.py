@@ -573,17 +573,25 @@ class World:
         else:
             print('These block dimensions not supported for this World. Use:')
             print(self.block_dims)
-            
+
+    
     def snap_to_floor(self, w, h, x):
+        '''
+        Finds first available y location for block, working down from ceiling
+        '''
+        y = self.world_height
         
-        y=0
         if (w,h) in self.base_block_dict:
             base_block = self.base_block_dict[(w,h)]
+            
             block = Block(base_block, x, y)
-            while not (self.can_place(block)):
-                y += 1
+            while ((self.can_place(block)) & (y>=0)):
+                y -= 1
                 block = Block(base_block, x, y)
                 
+            y+=1
+            block = Block(base_block, x, y)
+            
             self.blocks.append(block)
             self._update_map_with_blocks([block])
             
@@ -739,6 +747,29 @@ class World:
         block_heights = np.sort(np.array([block.height for block in self.blocks]))
         
         return (block_heights == (np.array([1,1,2,2]))).all()
+    
+    def tower_width(self):
+        if not self.aligned_left():
+            print('WARNING: tower not aligned left. Do this manually')
+        else:
+            x = self.world_width-1
+            while not(self.block_map[:,x].any()):
+                x -= 1
+            return x + 1
+            
+        
+    def tower_height(self):
+        y = self.world_height - 1
+        while not(self.block_map[self.world_height-y,:].any()):
+            y = y - 1
+            if y == 0:
+                print('empty world')
+        return y
+            
+
+    def aligned_left(self):
+        return self.block_map[:,0].any()
+        
     
     
 def worldify(block_dicts, **kwargs):
