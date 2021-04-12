@@ -63,5 +63,5 @@ ggplot(df_ref, aes(x=repNum, y = Freq, fill=mixType)) +
     scale_fill_manual(values=c('black', primary_color, "light grey"))+
   xlab("repetition")+
   ylab('frequency')
-
+ggsave("referring_expressions_barplot.pdf")
 ```
