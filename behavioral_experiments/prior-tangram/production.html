@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Tangram Production</title>
+    <script src="jspsych-6.1.0/jspsych.js"></script>
+    <script src="/socket.io/socket.io.js" type="text/javascript"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lodash@4.17.10/lodash.min.js"></script>
+    <script src="jspsych-6.1.0/plugins/jspsych-html-button-response.js"></script>
+    <script src="jspsych-6.1.0/plugins/jspsych-survey-text.js"></script>
+    <script src="jspsych-6.1.0/plugins/jspsych-external-html.js"></script>
+    <script type="text/javascript" src="consent/consent.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="jspsych-6.1.0/css/jspsych.css"></link>
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+  </head>
+  <body></body>
+
+    <script>
+      window.onload = function() {
+	setupGame();
+      };
+
+      function setupGame() {
+	var socket = io.connect();
+	/* get info from turk */
+	var turkInfo = jsPsych.turk.turkInfo();
+
+	/* create timeline */
+	var timeline = [];
+
+
+	// reCAPTCHA object
+	// var recaptcha = {
+	//   type: "external-html",
+	//   url: "recaptcha.html",
+	//   cont_btn: "submit_button",
+	//   execute_script: true
+	// };
+	// timeline.push(recaptcha);
+
+	// consent form
+	var consent = {
+	  type:'external-html',
+	  url: "consent/consent.html",
+	  cont_btn: "start"
+	};
+	timeline.push(consent);
+      
+	// trials
+
+	var instructions = {
+	  type: "html-button-response",
+	  stimulus: "<p>In this experiment, you will see one or more pictures on the screen at a time.</p><p>One of the objects will be in a <span style='color:blue'>blue box</span>.</p><p>Please describe this object as best as you can in <strong>one or two words</strong>.</p>",
+	  choices: ['Start'],
+	  data: {test_part: 'setup'},
+	  post_trial_gap: 1000
+	};
+	timeline.push(instructions);
+
+	var iso_item_block = {
+	  type: "html-button-response",
+	  stimulus: "<p>In this block, you will see one picture on the screen at a time.</p><p>Please describe this object as best as you can in <strong>one or two words</strong>.</p><p>",
+	  choices: ['Continue'],
+	  data: {test_part: 'block-setup'},
+	  post_trial_gap: 500
+	};
+
+	var paired_item_block = {
+	  type: "html-button-response",
+	  stimulus: "<p>In this block, you will see two pictures on the screen at a time.</p><p>One of the objects will be in a <span style='color:blue'>blue box</span>.</p><p>Please describe this object as best as you can in <strong>one or two words</strong></p>. <p>We will show your description to someone else and ask them to pick which image you meant, so try your best to help them uniquely identify it!</p>",
+	  choices: ['Continue'],
+	  data: {test_part: 'block-setup'},
+	  post_trial_gap: 500
+	};
+
+
+	var close_tangrams = [
+          {target: "images/tangram-55.jpg", foil: "images/N1.jpg"},
+          {target: "images/tangram-48.jpg", foil: "images/tangram-187.jpg"},
+          {target: "images/tangram-67.jpg", foil: "images/tangram-32.jpg"},
+          {target: "images/tangram-164.jpg", foil: "images/tangram-183.jpg"},
+          {target: "images/A2.jpg", foil: "images/tangram-99.jpg"},
+          {target: "images/H1.jpg", foil: "images/I1.jpg"},
+          {target: "images/tangram-90.jpg", foil: "images/tangram-81.jpg"},
+          {target: "images/B1.jpg", foil: "images/P1.jpg"}
+	];
+
+	var far_tangrams = [
+          {target: "images/tangram-55.jpg", foil: "images/tangram-143.jpg"},
+          {target: "images/tangram-48.jpg", foil: "images/D1.jpg"},
+          {target: "images/tangram-67.jpg", foil: "images/G1.jpg"},
+          {target: "images/tangram-164.jpg", foil: "images/tangram-64.jpg"},
+          {target: "images/A2.jpg", foil: "images/C1.jpg"},
+          {target: "images/H1.jpg", foil: "images/tangram-8.jpg"},
+          {target: "images/tangram-90.jpg", foil: "images/tangram-120.jpg"},
+          {target: "images/B1.jpg", foil: "images/tangram-4.jpg"}
+	];
+
+	var close_familiar = [
+	  {target: "images/germanshepherd.jpg", foil: "images/pug.jpg"},
+	  {target: "images/sparrow.jpg", foil: "images/eagle.jpg"},
+	  {target: "images/grizzlybear.jpg", foil: "images/polarbear.jpg"},
+	  {target: "images/goldfish.jpg", foil: "images/swordfish.jpg"},
+	  {target: "images/mnms.jpg", foil: "images/gummybears.jpg"},
+	  {target: "images/sedan.jpg", foil: "images/sportscar.jpg"},
+	  {target: "images/diningtable.jpg", foil: "images/picnictable.jpg"},
+	  {target: "images/poloshirt.jpg", foil: "images/hawaiishirt.jpg"}
+	];
+	
+	var far_familiar = [
+	  {target: "images/germanshepherd.jpg", foil: "images/cow.jpg"},
+	  {target: "images/sparrow.jpg", foil: "images/squirrel.jpg"},
+	  {target: "images/grizzlybear.jpg", foil: "images/lion.jpg"},
+	  {target: "images/goldfish.jpg", foil: "images/iguana.jpg"},
+	  {target: "images/mnms.jpg", foil: "images/pretzels.jpg"},
+	  {target: "images/sedan.jpg", foil: "images/firetruck.jpg"},
+	  {target: "images/diningtable.jpg", foil: "images/wardrobe.jpg"},
+	  {target: "images/poloshirt.jpg", foil: "images/dress.jpg"}
+	];
+
+	var all_imgs = _.flatten(_.map(
+	  close_tangrams.concat(far_tangrams, close_familiar, far_familiar),
+	  v => {
+            return [v.target, v.foil];
+	  }
+	));
+
+	var iso_trial = {
+	  type: "survey-text",
+	  preamble: function(){
+            var target = ("<img style='border: 10px solid blue; margin: 50px' src='" +
+			  jsPsych.timelineVariable('target', true) +
+			  "' height='200px'>");
+            return target;
+	  },
+	  questions: [{prompt: "Describe the object in the <span style='color:blue'>blue border</span> in <strong>one or two words</strong>", required: true, columns: 20}],
+	  post_trial_gap: 500
+	};
+
+	var paired_trial = {
+	  type: "survey-text",
+	  preamble: function(){
+            var target = ("<img style='border: 10px solid blue; margin: 50px' src='" +
+			  jsPsych.timelineVariable('target', true) +
+			  "' height='200px'>");
+            var foil = ("<img style='margin: 50px' src='" +
+			jsPsych.timelineVariable('foil', true)+
+			"' height='200px'>");
+            return _.shuffle([target, foil]).join('');
+	  },
+	  questions: [{prompt: "Describe the object in the <span style='color:blue'>blue border</span> in <strong>one or two word</strong> that uniquely identifes it compared to the other one", required: true, columns: 20}],
+	  data: {trialtype: "paired"},//, target: jsPsych.timelineVariable('target')},
+	  post_trial_gap: 500
+	};
+
+	var tangram_close_trial = {
+	  timeline: [paired_trial],
+	  timeline_variables: close_tangrams,
+	  randomize_order: true,
+	  repetitions: 1,
+	  data: {competitor_type: "close", target_type: "tangram",
+		 test_part: 'trial'}
+	};
+
+
+	var tangram_far_trial = {
+	  timeline: [paired_trial],
+	  timeline_variables: far_tangrams,
+	  randomize_order: true,
+	  repetitions: 1,
+	  data: {competitor_type: "far", target_type: "tangram",
+		 test_part: 'trial'}
+	};
+
+	var tangram_iso_trial = {
+	  timeline: [iso_trial],
+	  timeline_variables: close_tangrams,
+	  randomize_order: true,
+	  repetitions: 1,
+	  data: {competitor_type: "isolated", target_type: "tangram",
+		 test_part: 'trial'}
+	};
+
+	var familiar_close_trial = {
+	  timeline: [paired_trial],
+	  timeline_variables: close_familiar,
+	  randomize_order: true,
+	  repetitions: 1,
+	  data: {competitor_type: "close", target_type: "familiar", test_part: 'trial'}
+	};
+
+	var familiar_far_trial = {
+	  timeline: [paired_trial],
+	  timeline_variables: far_familiar,
+	  randomize_order: true,
+	  repetitions: 1,
+	  data: {competitor_type: "far", target_type: "familiar", test_part: 'trial'}
+	};
+
+	var familiar_iso_trial = {
+	  timeline: [iso_trial],
+	  timeline_variables: close_familiar,
+	  randomize_order: true,
+	  repetitions: 1,
+	  data: {competitor_type: "isolated", target_type: "familiar", test_part: 'trial'}
+	};
+
+	var alltrials = jsPsych.randomization.sampleWithoutReplacement([tangram_close_trial, tangram_far_trial, tangram_iso_trial,familiar_close_trial, familiar_far_trial, familiar_iso_trial], 6);
+
+	for (i = 0; i < alltrials.length; i++) {
+	  console.log(alltrials[i].data)
+	  if(alltrials[i].data.competitor_type != "isolated")
+            timeline.push(paired_item_block)
+	  else
+            timeline.push(iso_item_block)
+
+	  timeline.push(alltrials[i]);
+	}
+
+	jsPsych.init({
+	  timeline: timeline,
+	  on_trial_finish: function(trialData){
+	    console.log('here');
+	    var packet = _.extend({}, trialData, {
+	      dbname: 'tangramgame',
+	      colname: 'production-optimized',
+	      wID: turkInfo.workerId,
+	      aID: turkInfo.assignmentId,
+	      hitID: turkInfo.hitId,
+	      iterationName: 'testing'
+	    })
+	    console.log(trialData)
+	    socket.emit('currentData', packet);
+	  },
+	  on_finish: function() {
+	    console.log(jsPsych.data.get().values());
+            jsPsych.turk.submitToTurk({
+	      'utterances' : jsPsych.data.get().select('utterance').values,
+	      'rt' : jsPsych.data.get().select('rt').values,
+	      'target_type' : jsPsych.data.get().select('target_type').values,
+	      'competitor_type' : jsPsych.data.get().select('competitor_type').values,
+	      'target' : jsPsych.data.get().select('target').values,
+	      'foil' : jsPsych.data.get().select('foil').values,
+	    })
+            jsPsych.data.displayData();
+	  },
+	  preload_images: all_imgs
+	})
+      }
+    </script>
+</html>
