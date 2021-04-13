@@ -74,11 +74,11 @@ def render_blockworld(patches,
     return fig
 
 
-def draw_tower(world):
+def draw_tower(world, xlim=(0,4), ylim=(0,6),figsize=(2,3),**kwargs):
     render_blockworld(patches_for_world(world.blocks), 
-                      xlim=(0,4),
-                      ylim=(0,6),
-                      figsize=(2,3)) 
+                      xlim=xlim,
+                      ylim=ylim,
+                      figsize=figsize, **kwargs) 
 
 
     
