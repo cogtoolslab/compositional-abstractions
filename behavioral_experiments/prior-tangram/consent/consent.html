@@ -1,0 +1,64 @@
+<style>
+.block-text-wide {
+  width: 1000px;
+  text-align: left;
+  margin: 0 auto;
+  margin-bottom: 1em;
+}
+
+.block-text {
+  width: 500px;
+  text-align: justify;
+  margin: 0 auto;
+  margin-bottom: 1em;
+}
+</style
+
+<div id="consent">
+  <img src="images/cmu_logo.png" alt="Carnegie Mellon University">
+  <p id='logo-text'><u>Online Consent Form</u></p>
+
+  <p class="block-text-wide">This game is part of a research study conducted by Daniel Yurovsky at Carnegie Mellon University. </p>
+
+  <p class="block-text-wide"><b>Summary</b>  In this game, you be presented a series of inoffensive stimuli designed to measure how people learn and communicate. You will be asked to make responses via mouse and keyboard. There are no foreseeable risks to you in this study, and participation will take no more than 20 minutes. Being in this study is voluntary – it is your choice.</p>
+
+  <p class="block-text-wide"><b>Purpose</b> In this study, we are investigating the development of language and communication.  Our research explores how infants and young children learn new words so quickly from the language spoken around them, as well as how adults learn language.  We are also interested in how adults foster this rapid vocabulary growth.</p>
+
+  <p class="block-text-wide"><b>Procedures</b> We will present you with a variety of stimuli, including natural and artificial language samples, pictures of known or unknown objects, and/or movies of people talking. Sometimes some of the speech you will hear will be from a foreign or made-up language. You will be asked to make judgments about these stimuli using the mouse and keyboard. This study will take at most 20 minutes and can completed online in your browser.</p>
+
+  <p class="block-text-wide"><b>Participant Requirements</b> Participation in this study is limited to individuals age 18 and older who are fluent speakers of English.</p>
+
+  <p class="block-text-wide"><b>Risks</b> The risks and discomfort associated with participation in this study are no greater than those ordinarily encountered in daily life or during other online activities. You may become bored with the game.
+
+  <p class="block-text-wide"><b>Benefits</b> There may be no personal benefit from your participation in the study but the knowledge received may be of value to humanity.
+
+  <p class="block-text-wide"><b>Compensation & Costs</b> You will be compensated at the rate at least $6/hour for your participation in this research. This duration is determined by the maximum time allotted for this study, not the amount of time you take to complete it.
+  <br>
+  There will be no cost to you if you participate in this study.</p>
+
+  <p class="block-text-wide"><b>Future Use of Information and/or Bio-Specimens</b> In the future, once we have removed all identifiable information from your data, we may use the data for our future research studies, or we may distribute the data to other investigators for their research studies.  We would do this without getting additional informed consent from you (or your legally authorized representative).  Sharing of data with other researchers will only be done in such a manner that you will not be identified.
+
+  <p class="block-text-wide"><b>Confidentiality</b> The data captured for the research does not include any personally identifiable information about you beyond your Amazon Mechanical Turk id and IP address.
+
+  <p class="block-text-wide"><b>Right to Ask Questions & Contact Information</b>
+  If you have any questions about this study, you should feel free to ask them by contacting the Principal Investigator now at: Daniel Yurovsky, Psychology Department, 5000 Forbes Ave, Pittsburgh, PA 15213. Phone: (412) 268-6266 Email: yurovsky@cmu.edu. If you have questions later, desire additional information, or wish to withdraw your participation please contact the Principal Investigator by mail, phone or e-mail in accordance with the contact information listed above.
+  <br>
+  If you have questions pertaining to your rights as a research participant; or to report concerns to this study, you should contact the Office of Research integrity and Compliance at Carnegie Mellon University. Email: irb-review@andrew.cmu.edu. Phone: 412-268-1901 or 412-268-5460. </p>
+
+  <p class="block-text-wide"><b>Voluntary Participation</b> Your participation in this research is voluntary. You may discontinue participation at any time during the research activity. You may print a copy of this consent form for your records.</p>
+
+  <p class="block-text-wide">I am age 18 or older.
+  <input type="radio" name="age" value="eighteen" onclick='enable("start")'> Yes
+  <input type="radio" name="age" value="not_eighteen" onclick='disable("start")'> No</p>
+
+  <p class="block-text-wide">I have read and understand the information above.
+  <input type="radio" name="understand" value="understood" onclick='enable("start")'> Yes
+  <input type="radio" name="understand" value="not_understood" onclick='disable("start")'> No</p>
+
+  <p class="block-text-wide">I want to participate in this research and continue with the game.
+  <input type="radio" name="give_consent" value="consent" onclick='enable("start")'> Yes
+  <input type="radio" name="give_consent" value="not_consent" onclick='disable("start")'> No </p>
+
+  <button type="button" DISABLED id="start">Start Experiment</button>
+
+</div>
