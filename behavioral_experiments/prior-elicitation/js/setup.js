@@ -190,28 +190,6 @@ function setupGame() {
     });
 
 
-    // var exitSurveyChoice = {
-    //   type: 'survey-multi-choice',
-    //   preamble: "<strong><u>Survey</u></strong>",
-    //   questions: [{
-    //     prompt: "What is your sex?",
-    //     name: "participantSex",
-    //     horizontal: true,
-    //     options: ["Male", "Female", "Neither/Other/Do Not Wish To Say"],
-    //     required: true
-    //   },
-    //   {
-    //     prompt: "Did you encounter any technical difficulties while completing this study? \
-    //         This could include: images were glitchy (e.g., did not load), ability to click \
-    //         was glitchy, or sections of the study did \
-    //         not load properly.",
-    //     name: "technicalDifficultiesBinary",
-    //     horizontal: true,
-    //     options: ["Yes", "No"],
-    //     required: true
-    //   }
-    //   ],
-    // };
     var surveyTextInfo = _.omit(_.extend({}, new Experiment), ['type', 'dev_mode']);
     var exitSurveyText = _.extend({}, surveyTextInfo, {
       type: 'survey-text',
