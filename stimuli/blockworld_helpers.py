@@ -104,6 +104,7 @@ def tower_subplot(patches,
 
 def draw_towers(worlds, figsize = (20,4)):
     
+    
     n_towers = len(worlds)
     n_col = 10
     
