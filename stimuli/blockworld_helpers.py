@@ -67,6 +67,7 @@ def render_blockworld(patches,
         ax.add_patch(patch)
     ax.set_xlim(xlim)
     ax.set_ylim(ylim) 
+    ax.axis("off")
     cur_axes = plt.gca()
     cur_axes.axes.get_xaxis().set_visible(False)
     cur_axes.axes.get_yaxis().set_visible(False)        
@@ -75,10 +76,11 @@ def render_blockworld(patches,
 
 
 def draw_tower(world, xlim=(0,4), ylim=(0,6),figsize=(2,3),**kwargs):
-    render_blockworld(patches_for_world(world.blocks), 
+    fig = render_blockworld(patches_for_world(world.blocks), 
                       xlim=xlim,
                       ylim=ylim,
                       figsize=figsize, **kwargs) 
+    return fig
 
 
     
