@@ -162,7 +162,7 @@ jsPsych.plugins['survey-text'] = (function() {
         "rt": response_time,
 	"utterance" : question_data['Q0'],
 	'target' :jsPsych.timelineVariable('target', true).replace('images/', ''),
-	'foil' :jsPsych.timelineVariable('foil', true).replace('images/', ''),	
+	// 'foil' :jsPsych.timelineVariable('foil', true).replace('images/', ''),	
         "responses": JSON.stringify(question_data)
       };
 
