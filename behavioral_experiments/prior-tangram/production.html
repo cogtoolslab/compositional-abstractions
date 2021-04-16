@@ -100,8 +100,8 @@
 	};
 
 	// var alltrials = jsPsych.randomization.sampleWithoutReplacement([tangram_close_trial, tangram_far_trial, tangram_iso_trial,familiar_close_trial, familiar_far_trial, familiar_iso_trial], 6);
-	var alltrials = jsPsych.randomization.sampleWithoutReplacement([prior_iso_trial], prior_iso_trial.length);
-
+	//var alltrials = jsPsych.randomization.sampleWithoutReplacement([prior_iso_trial], 1);
+	var alltrials = jsPsych.randomization.repeat([prior_iso_trial], 1)
 
 	for (i = 0; i < alltrials.length; i++) {
 	  console.log(alltrials[i].data)
@@ -131,7 +131,7 @@
 	jsPsych.init({
 	  timeline: timeline,
 	  on_trial_finish: function(trialData){
-	    console.log('here');
+	    // console.log('here');
 	    var packet = _.extend({}, trialData, {
 	      dbname: 'compositional-abstractions',
 	      colname: 'prior-elicitation',
