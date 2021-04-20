@@ -50,7 +50,7 @@
 
 	var instructions = {
 	  type: "html-button-response",
-	  stimulus: "<p>In this experiment, you will see one or more pictures on the screen at a time.</p>\
+	  stimulus: "<p>In this experiment, you will see one picture on the screen at a time.</p>\
 	  <p>One of the objects will be in a <span style='color:blue'>blue box</span>.</p>\
 	  <p>Please describe this object as best as you can in <strong>one or two words</strong>.</p>",
 	  choices: ['Start'],
@@ -95,8 +95,7 @@
 	  timeline_variables: stimuli,
 	  randomize_order: true,
 	  repetitions: 1,
-	  data: {competitor_type: "isolated", target_type: "tangram",
-		 test_part: 'trial'}
+	  data: {test_part: 'trial'}
 	};
 
 	// var alltrials = jsPsych.randomization.sampleWithoutReplacement([tangram_close_trial, tangram_far_trial, tangram_iso_trial,familiar_close_trial, familiar_far_trial, familiar_iso_trial], 6);

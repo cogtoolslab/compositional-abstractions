@@ -73,7 +73,7 @@ io.on('connection', function (socket) {
   socket.on('currentData', function(data) {
     console.log('currentData received: ' + JSON.stringify(data));
     sendPostRequest(
-      'http://localhost:6004/db/insert',
+      'http://localhost:6005/db/insert',
       { json: data },
       (error, res, body) => {
         if (!error && res.statusCode === 200) {
@@ -116,7 +116,7 @@ function checkPreviousParticipant (workerId, callback) {
     projection: {'_id': 1}
   };
   sendPostRequest(
-    'http://localhost:6004/db/exists',
+    'http://localhost:6005/db/exists',
     {json: postData},
     (error, res, body) => {
       try {
