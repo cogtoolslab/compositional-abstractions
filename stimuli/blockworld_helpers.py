@@ -106,7 +106,6 @@ def tower_subplot(patches,
 
 def draw_towers(worlds, figsize = (20,4)):
     
-    
     n_towers = len(worlds)
     n_col = 10
     
@@ -118,8 +117,7 @@ def draw_towers(worlds, figsize = (20,4)):
     for i, world in enumerate(worlds):
         tower_subplot(patches_for_world(world.blocks), axs[int(i/n_col),i%n_col])
         
-    
-        
+
 
 ######################### SOME I/O HELPER FUNCTIONS #######################
 ########################################################################### 
