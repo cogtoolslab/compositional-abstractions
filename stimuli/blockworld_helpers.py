@@ -19,9 +19,9 @@ import os
 ###########################################################################    
 
 def patch_for_block(b):
-    return get_patch(b.verts,color=b.base_block.color)
+    return get_patch(b.verts, color=b.base_block.color)
 
-def patches_for_world(blocks):
+def patches_for_world(blocks, block_color = None):
     patches = []
     for (b) in blocks:
         patches.append(patch_for_block(b))
