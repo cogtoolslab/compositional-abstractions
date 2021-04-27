@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="jspsych-6.1.0/css/jspsych.css"></link>
     <!-- <script src="https://www.google.com/recaptcha/api.js" async defer></script> -->
   </head>
-  <body></body>
+  <body style="background-color:rgb(232, 232, 232);"></body>
 
     <script>
       window.onload = function() {
@@ -48,20 +48,19 @@
       
 	// trials
 
-	var instructions = {
-	  type: "html-button-response",
-	  stimulus: "<p>In this experiment, you will see one picture on the screen at a time.</p>\
-	  <p>One of the objects will be in a <span style='color:blue'>blue box</span>.</p>\
-	  <p>Please describe this object as best as you can in <strong>one or two words</strong>.</p>",
-	  choices: ['Start'],
-	  data: {test_part: 'setup'},
-	  post_trial_gap: 1000
-	};
-	timeline.push(instructions);
+	// var instructions = {
+	//   type: "html-button-response",
+	//   stimulus: "<p>In this experiment, you will see one picture on the screen at a time.</p>\
+	//   <p>Please describe this object as best as you can in <strong>one or two words</strong>.</p>",
+	//   choices: ['Start'],
+	//   data: {test_part: 'setup'},
+	//   post_trial_gap: 1000
+	// };
+	// timeline.push(instructions);
 
 	var iso_item_block = {
 	  type: "html-button-response",
-	  stimulus: "<p>In this block, you will see one picture on the screen at a time.</p>\
+	  stimulus: "<p>In this experiment, you will see one picture on the screen at a time.</p>\
 	  <p>Please describe this object as best as you can in <strong>one or two words</strong>.</p><p>",
 	  choices: ['Continue'],
 	  data: {test_part: 'block-setup'},
@@ -72,8 +71,9 @@
 	//load stimuli
 	var stimuli = []
 
-	for (var i = 0, j = 133; i < j; i++){ //don't hardcode stim count...
+	for (var i = 0, j = 130; i < j; i++){ //don't hardcode stim count...
 		stimuli.push({target: "images/tower_"+i+".png"});
+		// stimuli.push({target: "../stimuli/tower_stim_unique_silhouettes/tower_"+i+".png"});
 	}
 	
 
@@ -85,7 +85,7 @@
 			  "' height='200px'>");
             return target;
 	  },
-	  questions: [{prompt: "Describe the object in the <span style='color:blue'>blue border</span> in <strong>one or two words</strong>", required: true, columns: 20}],
+	  questions: [{prompt: "Describe the object in <strong>one or two words</strong>", required: true, columns: 20}],
 	  post_trial_gap: 500
 	};
 
