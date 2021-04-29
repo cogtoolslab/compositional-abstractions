@@ -7,7 +7,7 @@ var
   fs = require('fs'),
   app = require('express')(),
   _ = require('lodash'),
-  RefGameServer = require('./static/js/server.js');
+  RefGameServer = require('../static/js/server.js');
 
 let gameport;
 let expPath;
@@ -50,7 +50,7 @@ try {
     io = require('socket.io')(server);
 }
 
-var utils = require('./static/js/sharedUtils.js');
+var utils = require('../static/js/sharedUtils.js');
 
 var global_player_set = {};
 
