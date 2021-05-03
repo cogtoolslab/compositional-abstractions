@@ -7,6 +7,9 @@
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lodash@4.17.10/lodash.min.js"></script>
     <script src="jspsych-6.1.0/plugins/jspsych-html-button-response.js"></script>
     <script src="jspsych-6.1.0/plugins/jspsych-survey-text.js"></script>
+	<script src="jspsych-6.1.0/plugins/jspsych-survey-text-exit.js"></script>
+	<script src="jspsych-6.1.0/plugins/jspsych-survey-multi-choice.js"></script>
+	<script src="jspsych-6.1.0/plugins/jspsych-instructions.js"></script>
     <script src="jspsych-6.1.0/plugins/jspsych-external-html.js"></script>
     <script type="text/javascript" src="consent/consent.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -24,6 +27,11 @@
 	var socket = io.connect();
 	/* get info from turk */
 	var turkInfo = jsPsych.turk.turkInfo();
+
+	var main_on_finish = function (data) {
+      socket.emit('currentData', data);
+      console.log('emitting data');
+    }
 
 	/* create timeline */
 	var timeline = [];
@@ -101,16 +109,70 @@
 	// var alltrials = jsPsych.randomization.sampleWithoutReplacement([tangram_close_trial, tangram_far_trial, tangram_iso_trial,familiar_close_trial, familiar_far_trial, familiar_iso_trial], 6);
 	//var alltrials = jsPsych.randomization.sampleWithoutReplacement([prior_iso_trial], 1);
 	var alltrials = jsPsych.randomization.repeat([prior_iso_trial], 1)
-
+	var exitSurveyChoice = {
+      type: 'survey-multi-choice',
+      preamble: "<strong><u>Survey</u></strong>",
+      questions: [{
+        prompt: "What is your sex?",
+        name: "participantSex",
+        horizontal: true,
+        options: ["Male", "Female", "Neither/Other/Do Not Wish To Say"],
+        required: true
+      },
+      {
+        prompt: "Did you encounter any technical difficulties while completing this study? \
+            This could include: images were glitchy (e.g., did not load), ability to click \
+            was glitchy, or sections of the study did \
+            not load properly.",
+        name: "technicalDifficultiesBinary",
+        horizontal: true,
+        options: ["Yes", "No"],
+        required: true
+      }
+      ],
+      on_finish: main_on_finish
+    };
+	var multi_choice_block = {
+		type: 'survey-text-exit',
+      questions: [
+        { prompt: "Please enter your age:" },
+        { prompt: "What strategies did you use to describe the shapes?", rows: 5, columns: 40 },
+        { prompt: "Any final thoughts?", rows: 5, columns: 40 }
+      ],
+	  on_finish: main_on_finish
+	};
+	var goodbye = {
+      type: 'instructions',
+      pages: [
+        'Congrats! You are all done. Thanks for participating in our experiment! \
+        Click NEXT to submit this study.',
+      ],
+      show_clickable_nav: true,
+      allow_backward: false,
+      delay: false,
+      on_finish: function() {
+        // $(".confetti").remove();
+        document.body.innerHTML = '<p> Please wait. You will be redirected back to Prolific in a few moments.</p>'
+                setTimeout(function () { location.href = "https://app.prolific.co/submissions/complete?cc=1580086C"}, 500)
+        sendData();
+      }
+      //change the link below to your prolific-provided URL
+      // window.open("https://app.prolific.co/submissions/complete?cc=7A827F20","_self");
+    };
+	
 	for (i = 0; i < alltrials.length; i++) {
 	  console.log(alltrials[i].data)
 	//   if(alltrials[i].data.competitor_type != "isolated")
     //         timeline.push(paired_item_block)
 	//   else
         timeline.push(iso_item_block)
-
 	  timeline.push(alltrials[i]);
 	}
+	timeline.push(exitSurveyChoice)
+	timeline.push(multi_choice_block)
+	timeline.push(goodbye)
+
+	
 
 
 	function UUID () {
@@ -138,22 +200,25 @@
 	      wID: turkInfo.workerId,
 	      aID: turkInfo.assignmentId,
 	      hitID: turkInfo.hitId,
-	      iterationName: 'testing'
+	      iterationName: 'testPilot'
 	    })
 	    console.log(trialData)
 	    socket.emit('currentData', packet);
 	  },
 	  on_finish: function() {
 	    console.log(jsPsych.data.get().values());
-            jsPsych.turk.submitToTurk({
-	    //   'utterances' : jsPsych.data.get().select('utterance').values,
-	    //   'rt' : jsPsych.data.get().select('rt').values,
-	    //   'target_type' : jsPsych.data.get().select('target_type').values,
-	    //   'competitor_type' : jsPsych.data.get().select('competitor_type').values,
-	    //   'target' : jsPsych.data.get().select('target').values,
-	    //   'foil' : jsPsych.data.get().select('foil').values,
-	    })
-            jsPsych.data.displayData();
+		// document.body.innerHTML = '<p> Please wait. You will be redirected back to Prolific in a few moments.</p>'
+        //         setTimeout(function () { location.href = "https://app.prolific.co/submissions/complete?cc=1580086C"}, 500)
+        // sendData();
+        //     jsPsych.turk.submitToTurk({
+	    // //   'utterances' : jsPsych.data.get().select('utterance').values,
+	    // //   'rt' : jsPsych.data.get().select('rt').values,
+	    // //   'target_type' : jsPsych.data.get().select('target_type').values,
+	    // //   'competitor_type' : jsPsych.data.get().select('competitor_type').values,
+	    // //   'target' : jsPsych.data.get().select('target').values,
+	    // //   'foil' : jsPsych.data.get().select('foil').values,
+	    // })
+            // jsPsych.data.displayData();
 	  },
 	//   preload_images: all_imgs
 	preload_images: _.map(stimuli, "target")
