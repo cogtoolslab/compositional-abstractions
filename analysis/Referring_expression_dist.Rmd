@@ -10,6 +10,20 @@ knitr::opts_chunk$set(echo = TRUE)
 
 setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
 library(tidyverse)
+theme_set(theme_classic())
+theme_update(# axis labels
+  axis.title = element_text(size = 28),
+  # tick labels
+  axis.text = element_text(size = 24),
+  # title 
+  title = element_text(size = 24),
+  legend.position = 'FALSE', 
+  text = element_text(size=16), 
+  element_line(size=1), 
+  element_rect(size=2, color="#00000"))
+
+primary_color = '#21606C'
+secondary_color = '#22AAAA'
 ```
 
 ## R Markdown
@@ -40,10 +54,14 @@ dat_grouped$mixType = ifelse(dat_grouped$block>0 & dat_grouped$tower > 0, 'mixed
 
 ### Plot
 ```{r}
+
 df_ref =  as.data.frame(table(dat_grouped$repNum, dat_grouped$mixType))
 df_ref = df_ref %>% rename(repNum = Var1, mixType = Var2)
 df_ref = df_ref %>% filter(mixType != 'none')
 ggplot(df_ref, aes(x=repNum, y = Freq, fill=mixType)) + 
-    geom_bar(stat="identity",position = 'fill')
-
+    geom_bar(stat="identity",position = 'fill')+
+    scale_fill_manual(values=c('black', primary_color, "light grey"))+
+  xlab("repetition")+
+  ylab('frequency')
+ggsave("referring_expressions_barplot.pdf")
 ```
