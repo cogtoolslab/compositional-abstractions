@@ -1,5 +1,6 @@
 // target towers (hand-encoded into speaker's DSL)
-var trialSequence = json.read('./input/ca_synthesis_output_manual_min_and_dechunked.json');
+var trialSequence = json.read('./input/ca_synthesis_output_manual_min_and_dechunked'
+                              + argv.participantNumber + '.json');
 
 var lexemes = ['blah', 'blab', 'bloop', 'bleep', 'blarp'];
 var baseDSLPrimitives = ['h', 'v']
@@ -152,7 +153,7 @@ var step = function(i, remainingTrials, prevData, filename) {
     numInstructions: intendedSeq.split(' ').length,
     dsl : currTrial.dsl
   };
-  csv.writeLine([argv.chainNum, i, argv.alpha, argv.beta, trialNum,
+  csv.writeLine([argv.chainNum, argv.partipantNumber, i, argv.alpha, argv.beta, trialNum,
                  newData.correct, newData.numInstructions, newData.targetInstruction,
                  newData.utt.join("~~~"), newData.responses.join(' ')], filename);
   return step(i, rest(remainingTrials), prevData.concat(newData), filename);
