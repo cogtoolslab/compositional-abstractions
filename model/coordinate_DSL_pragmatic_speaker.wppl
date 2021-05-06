@@ -1,5 +1,5 @@
 // target towers (hand-encoded into speaker's DSL)
-var trialSequence = json.read('./input/ca_synthesis_output_manual_min_and_dechunked'
+var trialSequence = json.read('./all_trials_synthesis_output/ca_synthesis_cogsci_21_ppt_'
                               + argv.participantNumber + '.json');
 
 var lexemes = ['blah', 'blab', 'bloop', 'bleep', 'blarp'];
