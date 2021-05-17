@@ -1,3 +1,7 @@
+'''
+Used to generate parameters for run_model.sh, which runs coordinate_DSL_pragmatic_speaker.wppl
+'''
+
 import csv
 import numpy as np
 

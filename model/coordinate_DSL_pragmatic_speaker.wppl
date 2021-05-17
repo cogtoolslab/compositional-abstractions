@@ -1,5 +1,5 @@
 // target towers (hand-encoded into speaker's DSL)
-var trialSequence = json.read('./input/synthesis_output_all_trial_seqs/ca_synthesis_cogsci_21_ppt_'
+var trialSequence = json.read('./lib_learning_output/synthesis_output_cogsci_revised/ca_synthesis_cogsci_21_ppt_'
                               + argv.participantNumber + '.json');
 
 var lexemes = ['blah', 'blab', 'bloop', 'bleep', 'blarp'];
@@ -160,7 +160,7 @@ var step = function(i, remainingTrials, prevData, filename) {
   return step(i, rest(remainingTrials), prevData.concat(newData), filename);
 };
 
-var fine_grained_csv = csv.open('output/49ppts/trajectory_bytrial_chain' + argv.chainNum + '.csv');
+var fine_grained_csv = csv.open('language_output/49ppts/trajectory_bytrial_chain' + argv.chainNum + '.csv');
 csv.writeLine(['chainNum', 'ppt', 'iteration', 'alpha', 'beta', 'trialNum', 'accuracy',
                'descriptionLength', 'intendedSequence', 'speakerUtterance',
                'listenerResponse'],
