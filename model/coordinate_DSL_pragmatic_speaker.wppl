@@ -1,5 +1,5 @@
 // target towers (hand-encoded into speaker's DSL)
-var trialSequence = json.read('./input/ca_synthesis_output_manual_min_and_dechunked'
+var trialSequence = json.read('./lib_learning_output/synthesis_output_cogsci_revised/ca_synthesis_cogsci_21_ppt_'
                               + argv.participantNumber + '.json');
 
 var lexemes = ['blah', 'blab', 'bloop', 'bleep', 'blarp'];
@@ -154,14 +154,14 @@ var step = function(i, remainingTrials, prevData, filename) {
     numInstructions: intendedSeq.split(' ').length,
     dsl : currTrial.dsl
   };
-  csv.writeLine([argv.chainNum, argv.partipantNumber, i, argv.alpha, argv.beta, trialNum,
+  csv.writeLine([argv.chainNum, argv.participantNumber, i, argv.alpha, argv.beta, trialNum,
                  newData.correct, newData.numInstructions, newData.targetInstruction,
                  newData.utt.join("~~~"), newData.responses.join(' ')], filename);
   return step(i, rest(remainingTrials), prevData.concat(newData), filename);
 };
 
-var fine_grained_csv = csv.open('output/trajectory_bytrial_chain' + argv.chainNum + '.csv');
-csv.writeLine(['chainNum', 'iteration', 'alpha', 'beta', 'trialNum', 'accuracy',
+var fine_grained_csv = csv.open('language_output/49ppts/trajectory_bytrial_chain' + argv.chainNum + '.csv');
+csv.writeLine(['chainNum', 'ppt', 'iteration', 'alpha', 'beta', 'trialNum', 'accuracy',
                'descriptionLength', 'intendedSequence', 'speakerUtterance',
                'listenerResponse'],
               fine_grained_csv);
