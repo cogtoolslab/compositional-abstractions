@@ -1,3 +1,0 @@
-iterationName	gameid	time	leftTarget	rightTarget	trialNum	turnNum	repNum	block	blockNum	eventType
-testing	7282-7037ca5e-2b43-4e9a-a379-cad55681efdf	1588745556453	L	Pi	0	1	0	{"x":3,"y":0,"width":1,"height":2,"color":[179,47,10,155]}	0	block
-testing	7282-7037ca5e-2b43-4e9a-a379-cad55681efdf	1588745557777	L	Pi	0	1	0	{"x":2,"y":0,"width":1,"height":2,"color":[179,47,10,155]}	1	block

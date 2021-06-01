@@ -1,9 +1,0 @@
-iterationName	gameid	time	leftTarget	rightTarget	trialNum	turnNum	repNum	block	blockNum	eventType
-testing	2792-3d2372ec-4f00-4f36-8d44-778493bc7600	1588723199585	L	C	0	1	0	{"x":3,"y":0,"width":1,"height":2,"color":[179,47,10,155]}	0	block
-testing	2792-3d2372ec-4f00-4f36-8d44-778493bc7600	1588723201431	L	C	0	1	0	{"x":4,"y":0,"width":1,"height":2,"color":[179,47,10,155]}	1	block
-testing	2792-3d2372ec-4f00-4f36-8d44-778493bc7600	1588723202558	L	C	0	1	0	{"x":2,"y":0,"width":1,"height":2,"color":[179,47,10,155]}	2	block
-testing	2792-3d2372ec-4f00-4f36-8d44-778493bc7600	1588723203542	L	C	0	1	0	{"x":5,"y":0,"width":1,"height":2,"color":[179,47,10,155]}	3	block
-testing	2792-3d2372ec-4f00-4f36-8d44-778493bc7600	1588723204689	L	C	0	1	0	{"x":1,"y":0,"width":1,"height":2,"color":[179,47,10,155]}	4	block
-testing	2792-3d2372ec-4f00-4f36-8d44-778493bc7600	1588723205889	L	C	0	1	0	{"x":6,"y":0,"width":1,"height":2,"color":[179,47,10,155]}	5	block
-testing	2792-3d2372ec-4f00-4f36-8d44-778493bc7600	1588723210941	L	C	0	1	0	{"x":7,"y":0,"width":1,"height":2,"color":[179,47,10,155]}	6	block
-testing	2792-3d2372ec-4f00-4f36-8d44-778493bc7600	1588723212693	L	C	0	1	0	{"x":6,"y":2,"width":2,"height":1,"color":[10,47,179,155]}	7	block
