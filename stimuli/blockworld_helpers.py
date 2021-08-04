@@ -80,7 +80,7 @@ def draw_tower(world, xlim=(0,4), ylim=(0,6),figsize=(2,3),**kwargs):
                       xlim=xlim,
                       ylim=ylim,
                       figsize=figsize, **kwargs) 
-    return fig
+    return
 
 
     
