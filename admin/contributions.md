@@ -56,3 +56,14 @@ These example contributions are adapted from CRediT (Contributor Roles Taxonomy)
 * Wrote drafts of paper (Methods, behavioral results, full paper revisions)
 * Developed prior elicitation experiment
 * Ran prior elicitation experiment
+
+## Robert Hawkins
+
+* Conceptualization of research goals and aims
+* Design of dyadic task
+* Help debug parts of experiment and analysis code
+* Implementation computational model with Will
+* Supervision and administration of data collection 
+* Drafted parts of paper (Intro/Discussion/Modeling sections)
+* Revised paper
+
