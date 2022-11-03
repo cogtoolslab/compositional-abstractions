@@ -57,6 +57,7 @@ These example contributions are adapted from CRediT (Contributor Roles Taxonomy)
 * Developed prior elicitation experiment
 * Ran prior elicitation experiment
 
+
 ## Robert Hawkins
 
 * Conceptualization of research goals and aims
@@ -67,3 +68,13 @@ These example contributions are adapted from CRediT (Contributor Roles Taxonomy)
 * Drafted parts of paper (Intro/Discussion/Modeling sections)
 * Revised paper
 
+
+## Haoliang Wang
+
+* Modeling
+  * Developed program synthesis model for the block domain
+  * Ran model on blocks by sweeping though the cost and trial num space
+  * Manually identified the libraries learned from the block corpus
+* Created figure for learned libraries vs cost & trial num
+* Wrote *Procedural abstraction as program learning* in the Method section
+* Revised paper
