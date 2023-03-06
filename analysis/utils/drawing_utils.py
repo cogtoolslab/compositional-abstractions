@@ -3,6 +3,7 @@ import sys
 import urllib, io
 os.getcwd()
 sys.path.append("..")
+sys.path.append("../../stimuli/block_utils")
 
 from os import listdir
 from os.path import isfile, join

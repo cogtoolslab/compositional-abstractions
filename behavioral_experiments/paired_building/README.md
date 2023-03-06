@@ -82,6 +82,8 @@ Iteration 0 (Pilot): All towers will be constructed from two primitive blocks: a
 * Appears to run smoothly
 * n = 2 on 6/27/20
 
+## Pilots 0 to 4b included in final dataseset
+
 #### `pilot0`:
 * First "production" run
 * n = 8 dyads on 6/27/20
@@ -100,7 +102,7 @@ Iteration 0 (Pilot): All towers will be constructed from two primitive blocks: a
 * Added solo practice trial
 * Allowing only 3 fails in comprehension quiz, solo practice, and partner practice
 * Changes to compensation: $2 base, $3 for completing experiment ($0.25 for each trial), upto $3 bonus (up to $0.25 for each trial)
-* 
+
 
 #### `pilot4`:
 * iterationName now must be set in fail.html, as well as config 
@@ -108,7 +110,7 @@ Iteration 0 (Pilot): All towers will be constructed from two primitive blocks: a
 * Some more timing variables saved
 
 
-#### 'pilot4b': 
+#### `pilot4b`: 
 * Block progress in HIT if submitting wrong answers in <90 seconds
 * Minor instructions changes, 'trial' to 'round'. 
 * Edit final quiz question

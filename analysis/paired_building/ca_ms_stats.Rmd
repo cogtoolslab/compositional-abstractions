@@ -578,16 +578,12 @@ glimpse(df)
 
 df = df %>% group_by(rater,repNum,trialNum,dyad,refType) %>% summarise(refExp = sum(refExp, na.rm = TRUE))
 
-#df$block_diff = df$block_justin - df$block_julia
-#mean(df$block_diff)
-#hist(df$block_diff)
-
-#df = df %>%  filter(repNum == 3 | repNum == 0)
 
 lin = lm(data = df, refExp ~ repNum*rater*refType)
 summary(lin)
+```
 
-
+```{r}
 interaction = df %>% 
   group_by(repNum, refType) %>% 
   summarise(mu = mean(refExp), sd = sd(refExp), n = n(), sem = sd(refExp)/sqrt(n()))
