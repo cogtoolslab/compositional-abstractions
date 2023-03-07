@@ -1,0 +1,112 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>Experiment</title>
+
+  <!-- Bootstrap theme -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+  <link href="../css/bootstrap-theme.min.css" rel="stylesheet">
+  <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <!-- <\!-- Bootstrap theme -\-> -->
+
+  <script type="text/javascript" src="../js/mmturkey.js"></script>
+  <script type="text/javascript" src="validate-form.js"></script>
+
+
+  </head>
+
+  <body role="document">
+
+    <div class="container theme-showcase" role="main">
+
+      </br>
+      <div class="progress">
+        <div class="progress-bar" role="progressbar" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" style="width: 30%;"><span class="sr-only">40% Complete</span></div>
+      </div>
+
+      <div class="page-header">
+        <h1>Congratulations!  You passed the comprehension checks.</h1>
+      </div>
+
+      <div class="well" style="width:800px; margin 0 auto">
+      <p align="left">
+	Click below to start the game! 
+      </p>
+
+      <p align="left"> You may have to wait briefly until another player
+	connects. At the end of the game, your HIT will automatically
+	be submitted and the window will close!  Do not worry about
+	using a code to submit with your HIT. Do not refresh the page,
+	or you will not be able to finish the game!
+      </p>
+      </div>
+
+      <p>
+        <center><button id="agree" type="button" class="btn btn-sm btn-primary">START</button></center>
+	<noscript><strong>JavaScript must be enabled to start.</strong></noscript>
+
+	<center><td style="vertical-align: middle;"><input class="form-control" id="surveycode" name="surveycode" placeholder="e.g. 5872-dd5b23c4-f1c6-433c-9de2-50ad90b5953f" style="display:none;" type="text"/></td>
+      </p>
+
+    </div> <!-- /container -->
+
+     <form id="mturk_form" method="POST" action="<% URL filled in below>">
+    <input type="hidden" id="assignmentId" name="assignmentId" value="<%=assignmentId filled in below %>">
+    <input type="hidden" id="code" name="code" value="">
+    <input type="hidden" id="comments" name="comments" value="">
+
+     </form>
+
+         <button type="button" id="submitButton" value="Submit to MTurk" onclick="submissionFunc()" style="display:none;"> Submit to MTurk! </button>
+  <div> <p id="error" style="display: none"> This code is incorrect -- please try again </p> </div>
+  <script>
+    var urlParams;
+    var match,
+        pl     = /\+/g,  // Regex for replacing addition symbol with a space
+        search = /([^&=]+)=?([^&]*)/g,
+        decode = function (s) { return decodeURIComponent(s.replace(pl, " ")); },
+        query  = location.search.substring(1);
+    urlParams = {};
+    while (match = search.exec(query))
+       urlParams[decode(match[1])] = decode(match[2]);
+
+    if(urlParams.assignmentId != "ASSIGNMENT_ID_NOT_AVAILABLE") {
+      document.getElementById("assignmentId").value = urlParams.assignmentId;
+      document.getElementById("mturk_form").action = urlParams.turkSubmitTo + "/mturk/externalSubmit";
+    }
+    
+    var submissionFunc = function() {
+        var surveyVal = $("#surveycode").val()
+        if(surveyVal == "E2iQwi3m") {
+            document.forms["mturk_form"].submit();
+        } else {
+            $("#error").show()
+      }
+    }
+
+    document.getElementById("agree").onclick = function () {
+      var workerId = urlParams.workerId;
+      var assignmentId = urlParams.assignmentId;
+      var hitId = urlParams.hitId;
+      var turkSubmitTo = urlParams.turkSubmitTo;
+    
+      window.open("../../index.html?workerId=" + workerId
+                 + "&assignmentId=" + assignmentId
+                 + "&hitId=" + hitId + "&turkSubmitTo=" + turkSubmitTo,
+                 '_blank');
+      $("#surveycode").show();
+      $("#submitButton").show();
+    };
+
+  </script>
+
+
+  </body>
+</html>

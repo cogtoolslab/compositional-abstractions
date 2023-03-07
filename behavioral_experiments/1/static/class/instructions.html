@@ -1,0 +1,321 @@
+<!-- set size = 6  -->
+<!-- to manually change to set size 4, change images to 4chairs.png (and adjust size to 400, 100), "six objects" to "four objects", and 48 trials to 40 -->
+<!-- and second to last question in comprehension check  -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../favicon.ico">
+
+    <title>Experiment</title>
+
+    <!-- Bootstrap core CSS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+
+    <script type="text/javascript" src="../js/getURLParams.js"></script>
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body role="document">
+
+    <div class="container theme-showcase" role="main">
+
+        </br>
+        <!-- <div class="progress"> -->
+        <!--     <div class="progress-bar" role="progressbar" aria-valuenow="5" aria-valuemin="0" aria-valuemax="100" -->
+        <!--         style="width: 5%;"><span class="sr-only">5% Complete</span></div> -->
+        <!-- </div> -->
+
+        <div class="page-header">
+            <h1>Instructions</h1>
+        </div>
+
+        <div class="well" style="width:800px; margin: 0 auto">
+
+            <h2>
+                <center>Building Game!</center>
+            </h2>
+
+            <p>
+                In this experiment you will play a game with another student! You will be working together
+                to build towers like the one below using a set of red and blue dominoes:
+            </p>
+            <p>
+                <center><img src="./images/example_tower.png" alt="Example tower" style="width:400px;height:400px">
+                </center>
+            </p>
+            
+            <h3> Two roles: Architect and Builder </h3>
+
+            <p>
+                In each round, you and your partner will collaborate to recreate two towers, each composed of four dominoes.
+                One of you will act as the <b>Architect</b> and the other will be the <b>Builder</b>.
+            </p>
+            <h4> Architect</h4>
+            <p>
+                The <b>Architect</b> is able to see how the towers should look and where they should be located.
+                They are unable to place any dominoes in the building environment. So their goal is to provide
+                step-by-step instructions using the chat window so the <b>Builder</b> knows what to do to recreate them
+                exactly as they appear. When it is their turn, the <b>Architect</b> can send <b> one </b> set
+                of instructions. These are limited to 100 characters, so it is important for these instructions to be concise, as well as informative!
+                <!-- Whenever it is their turn, the <b>Architect</b> can only send <b> one </b> set
+                of instructions. Moreover, each set of instructions will be limited to 100 characters, so it is
+                important for these instructions to be concise, as well as informative! -->
+            </p>
+
+            <p>There are two red lines below the floor on the left and right sides of the building environment. 
+                These appear in the same location for both players, so feel free to use these as stable landmarks when providing your instructions. 
+            </p>
+
+            <p>
+            <figure>
+                <center><img src="images/architect_view.png" alt="architect_view" style="width:620px;height:300px">
+                    <figcaption><b>Architect</b> view at the start of a round</figcaption>
+                </center>
+            </figure>
+            <br>
+            </p>
+            <h4> Builder </h4>
+            <p>
+                After receiving a set of instructions from the <b>Architect</b>, the <b>Builder</b> will try to
+                follow them by placing dominoes in the environment.
+                The <b>Builder</b> is free to place more than one domino on each turn, but they should be confident they
+                are accurately interpreting the <b>Architect's</b> instructions -- there is no way to "undo" an action
+                or move a domino once it has been placed.
+                Once the <b>Builder</b> has placed the blocks they wish to place, they should click the "Done" button to
+                end their turn and request more instructions from the <b>Architect</b>. There is no limit to the number of turns per round.
+                If the <b>Builder</b> is uncertain, they can choose to end their turn without placing a domino.
+                The <b>Architect</b> will be able to see when the <b>Builder</b> places each domino, allowing them to
+                adjust their instructions accordingly.
+            </p>
+            <figure>
+                <center><img src="images/builder_view.png" alt="builder_view" style="width:620px;height:330px">
+                    <figcaption><b>Builder</b> view at the start of a round</figcaption>
+                </center>
+            </figure>
+            <br>
+            <h3> How this game will work </h3>
+            
+            <p>
+                <ul>
+                    <li>Each game consists of <b>12 rounds</b>, which is expected to take around 30-45 minutes.</li>
+                    <li>You want to try your best to complete your turn within <b>30 seconds</b>! However, you and your partner are free to take as many turns as you need, as your main goal is to recreate the towers as <b>accurately</b> as possible.</li>
+                    <li>Once <b>eight blocks</b> have been placed, the round will automatically end.</li>
+                    <li>After each round ends, the <b>Builder</b> will get to see what the towers actually looked like, and you will both receive a 'bonus' of up to $0.25 (note that this is not real money!). The more accurate your reconstruction, the more points you will receive.</li>
+                    <li>Remember that you can earn a bonus even if your reconstruction isn't perfect — so even if there is a mistake, it is still worth it to keep trying in each round to maximize your bonus.</li>
+                </ul>                                                        
+            <p> 
+
+            <h3> Final notes </h3>
+            <ul>
+                <li>Since you are playing with another player, you may see this screen before the game begins:</li>
+                <center><img src="images/waiting_view.png" alt="watiting screen" style="width:400px;height:250px">
+                </center>
+                <li>
+                If you are the <b>Architect</b>, try to provide instructions that are informative and concise.
+                If you are the <b>Builder</b>, please try your best to follow your partner's instructions as accurately
+                as possible so you can both earn the highest possible bonus.</li>
+                <li>Please DO NOT refresh the page at any point once you start
+                the game (including the waiting page). If you refresh, you will not
+                be able to rejoin the game you were in. </li>
+
+            </ul>
+
+            <!-- Just hold tight. Another player should join the game within the next
+                few minutes. If you're in the waiting room for more than 5 minutes without
+                another player joining, please return the HIT and try again later! -->
+            <!-- Otherwise, once your partner joins, you will be notified and need to
+                click a button to start the game. -->
+            </p>
+
+
+
+            <p>
+              Please fill out this short quiz below before getting started. Good luck and have fun!
+            </p>
+
+
+
+
+        </div>
+        <div class="page-header">
+            <h3>Comprehension Quiz</h3>
+        </div>
+
+        <div class="well" style="width:800px; margin: 0 auto">
+
+            </br>
+            The <b>Architect</b> is the only one who can send instructions.
+            </br>
+            <input type="radio" name="sendMessage" value="yes"> True
+            </br>
+            <input type="radio" name="sendMessage" value="no"> False
+            </br>
+
+            </br>
+            Each round ends when 10 blocks are placed.
+            </br>
+            <input type="radio" name="endRound" value="no"> True
+            </br>
+            <input type="radio" name="endRound" value="yes"> False
+            </br>
+
+            </br>
+            The <b>Builder</b> is the only one who can place dominoes.
+            </br>
+            <input type="radio" name="placeBlocks" value="yes"> True
+            </br>
+            <input type="radio" name="placeBlocks" value="no"> False
+            </br>
+
+
+            </br>
+            If the <b>Builder</b> is uncertain, they can end their turn without placing a block.
+            </br>
+            <input type="radio" name="placeZero" value="yes"> True
+            </br>
+            <input type="radio" name="placeZero" value="no"> False
+            </br>
+
+            </br>
+            The <b>Builder</b> <i>cannot</i> change a block once it is placed.
+            </br>
+            <input type="radio" name="changeBlock" value="yes"> True
+            </br>
+            <input type="radio" name="changeBlock" value="no"> False
+            </br>
+
+            </br>
+            It is possible to earn some points even if your reconstruction is not perfect.
+            </br>
+            <input type="radio" name="partialCredit" value="yes"> True
+            </br>
+            <input type="radio" name="partialCredit" value="no"> False
+            </br>
+
+            </br>
+            In each of the 12 rounds, the <b>Architect</b> can only send one message.
+            </br>
+            <input type="radio" name="allInfo" value="no"> True
+            </br>
+            <input type="radio" name="allInfo" value="yes"> False
+            </br>
+
+
+
+            </br>
+            <div class="error" id="quiz-error1" style="display:none; color:red"> Ooops! Looks like you made a mistake - take another look at your responses. </div>
+            <div class="error" id="quiz-error2" style="display:none; color:red"> You have one more try- only press submit if you're sure! </div>
+            <input id="quiz_submit" type="submit" value="Submit">
+        </div> <!-- /container -->
+    </div>
+    <script type="text/javascript">
+
+        var startTime = Date.now();
+        console.log('start time:', startTime.toString());
+
+        var counter = 0;
+        document.getElementById("quiz_submit").onclick = function () {
+            var ans1 = $('input[name="sendMessage"]:checked').val();
+            var ans2 = $('input[name="placeBlocks"]:checked').val();
+            var ans3 = $('input[name="placeZero"]:checked').val();
+            var ans4 = $('input[name="changeBlock"]:checked').val();
+            var ans5 = $('input[name="partialCredit"]:checked').val();
+            var ans6 = $('input[name="allInfo"]:checked').val();
+            var ans7 = $('input[name="endRound"]:checked').val();
+            // var ans7 = $('input[name="incorrect"]:checked').val();
+
+            submitTime = Date.now();
+            console.log('submit time:', submitTime.toString());
+
+            timeInInstructions = submitTime - startTime;
+            console.log('time in instructions:', timeInInstructions.toString());
+
+            if (ans1 == "yes" && ans2 == "yes" && ans3 == "yes" &&
+                ans4 == "yes" && ans5 == "yes" && ans6 == "yes" && ans7 == "yes") {
+                
+                location.replace("./practice_building.html?workerId=" + urlParams.workerId
+                    + "&assignmentId=" + urlParams.assignmentId
+                    + "&hitId=" + urlParams.hitId + "&turkSubmitTo=" + urlParams.turkSubmitTo
+                    + "&qAs=" + counter);
+            // } else if (timeInInstructions < 90000) { // if submitted a wrong answer in <90 seconds, block from experiment
+            //     console.log('too fast!');
+            //     location.replace("./please_return_hit.html?workerId=" + urlParams.workerId
+			// 	 + "&assignmentId=" + urlParams.assignmentId
+			// 	 + "&hitId=" + urlParams.hitId + "&turkSubmitTo=" + urlParams.turkSubmitTo
+			// 	 + "&failType=instructionsQuiz");
+            // } else if (counter == 2) {
+            //     location.replace("./fail.html?workerId=" + urlParams.workerId
+			// 	 + "&assignmentId=" + urlParams.assignmentId
+			// 	 + "&hitId=" + urlParams.hitId + "&turkSubmitTo=" + urlParams.turkSubmitTo
+			// 	 + "&failType=instructionsQuiz");
+            } else if (counter == 0){
+                $('#quiz-error1').show()
+                counter += 1;
+            } else {
+                $('#quiz-error2').show()
+                counter += 1;
+                // console.log('attempts:', counter);
+            }
+
+        };
+
+        // var checkPreviousParticipant = function(workerId, callback) {
+        //     var p = {'workerId': workerId};
+        //     var postData = {
+        //         dbname: 'compositional-abstractions',
+        //         query: p,
+        //         projection: {'_id': 1}
+        //     };
+        //     sendPostRequest(
+        //         'http://localhost:5000/db/exists', //change url
+        //         {json: postData},
+        //         (error, res, body) => {
+        //             try {
+        //                 if (!error && res.statusCode === 200) {
+        //                 console.log("success! Received data " + JSON.stringify(body));
+        //                 callback(body);
+        //             } else {
+        //             throw `${error}`;
+        //             }
+        //             } catch (err) {
+        //                 console.log(err);
+        //                 console.log('no database; allowing participant to continue');
+        //                 return callback(false);
+        //             }
+        //         }
+        //     );
+        // };
+
+
+        // checkPreviousParticipant(urlParams.workerId, (exists) => {
+        //     location.replace("./duplicate.html");
+        //     //return exists ? utils.handleDuplicate(req, res) : utils.serveFile(req, res);
+        // });
+
+    </script>
+
+    <script src="./validate-form.js"></script>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+
+    <!-- <script src="../lib/js/bootstrap.min.js"></script> -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+        integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

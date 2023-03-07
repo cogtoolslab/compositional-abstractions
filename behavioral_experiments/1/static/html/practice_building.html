@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title> Reference game </title>
+
+
+  <!-- <link rel="stylesheet" href="/static/css/bootstrap.min.css" type="text/css"> -->
+  <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"> -->
+
+  <!-- Load jQuery, which lets us handle mouse events -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.15/lodash.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/6.2.2/math.min.js"></script>
+  <script src="../js/canvasInteraction.js"></script>
+  <!-- <script src="/static/js/evaluateScore.js" type="text/javascript"> </script> -->
+
+  <script type="text/javascript" src="../js/getURLParams.js"></script>
+  <script type="text/javascript" src="../js/practice_bundle.js"></script>
+  <script type="text/javascript" src="../js/mmturkey.js"></script>
+  
+
+
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="../css/experiment.css" type="text/css">
+</head>
+
+<body>
+  <div class="container occluder text-center" id="practice-feedback">Oops that's not quite right.</div>
+  <div class="container">
+    <div class="main_div pt-3" id="main_div">
+
+      <!-- <div class="row mb-2 text-center h3">Building Practice</div> -->
+
+      <div class="row text-left">
+        <p class="mt-1" id="practice-instructions">
+          Great job, you passed the quiz! Before you get paired with your partner, let’s see what it’s like to build a
+          tower.
+          The display on the <b>left is what the Architect will see</b>, and the display on the <b>right is what the Builder
+          will see</b>.
+          Go ahead and pretend you’re the Builder: <b>click to pick up and place blocks in the display on the right to
+            recreate the tower on the left.</b>
+          Remember that you can’t pick up blocks after you place them, and the <b>round will end once you've placed 8
+          blocks</b>.
+          You have <b>three attempts</b> to perfectly copy these towers (in the correct place relative to the red floor markers). 
+          Once you've done that, you’ll be assigned a partner and find out whether you are assigned
+          the Architect or Builder role.
+        </p>
+      </div>
+
+      <div class="row pt-2 env-div">
+        <div class="col">
+          <h3 class="text-center">Architect view:</h2>
+          <div class="any-canvas" id="stimulus-canvas"></div>
+        </div>
+
+        <div class="col text-center">
+          <h3 class="text-center">Builder view:</h2>
+          <div class="any-canvas" id="environment-canvas"></div>
+          <button id="done-button" type="button" class="btn btn-primary">Done</button>
+        </div>
+      </div>
+
+      <div class="row text-center" id="trial-info">
+        <div class="col counter" id="trial-counter">
+        </div>
+        <div class="col counter" id="block-counter">
+        </div>
+        <div class="col counter" id="timer">
+        </div>
+        <div class="col counter" id="attempt-counter"></div>
+      </div>
+    </div>
+  </div> <!-- end: main_div -->
+  </div> <!-- end: container-fluid -->
+</body>
+
+</html>
+
