@@ -31,6 +31,11 @@ body{
     padding-left: 10px;
 }
 
+div#message-column{
+    width: 500px;
+    padding: 20px 10px 20px 0px;
+}
+
 #all-messages {
     max-height: 450px;
     overflow-y: scroll;
@@ -40,14 +45,32 @@ body{
 div#messages-col {
 } */
 
+.stim-no-resize{
+    max-width: fit-content;
+}
+
 p.message{
     font-size: smaller;
     text-align: left;
+    margin-bottom: 0px;
+    padding: 5px;
+}
+
+div.message-text-div{
+    max-width: none;
+    background-color: #fff0a3;
+    /* padding: 5px 5px; */
+    margin-right: 10px;
+}
+
+input.ref-exp-input{
+    margin: auto 3px;
+    height: 30px;
+    width: 30px;
 }
 
 div.message-row{
-    max-width: none;
-    background-color: #fff0a3;
+    margin-bottom: 10px;
 }
 
 /* #instructions { */

@@ -27,6 +27,10 @@ jsPsych.plugins["ca-label-ref-exp"] = (function () {
         type: jsPsych.plugins.parameterType.OBJECT,
         default: {},
       },
+      levels: {
+        type: jsPsych.plugins.parameterType.OBJECT,
+        default: ["block", "tower", "scene"],
+      },
       stimId: {
         type: jsPsych.plugins.parameterType.STRING,
         default: "None",
@@ -56,7 +60,7 @@ jsPsych.plugins["ca-label-ref-exp"] = (function () {
     var html_content = "";
 
     html_content += '<div class="row pt-1 env-row">';
-    html_content += '<div class="col env-div" id="stimulus-canvas"></div>';
+    html_content += '<div class="col env-div stim-no-resize" id="stimulus-canvas"></div>';
     html_content += '<div class="col env-div" id="message-column">';
     html_content += '<div class="col" id="all-messages">';
     html_content += '</div>';
@@ -76,38 +80,37 @@ jsPsych.plugins["ca-label-ref-exp"] = (function () {
 
     // ##### Generate text boxes #####
 
-    trial.messages = _.concat(trial.messages,trial.messages,trial.messages);
+    trial.messages = _.concat(trial.messages);
 
     let allMessages = document.querySelector("#all-messages");
 
+
     for (var i = 0; i < trial.messages.length; i++) {
       let message = trial.messages[i]["clean_msg"];
+
+      messageRow = document.createElement("div");
+      messageRow.setAttribute("id", "message-row-" + i.toString());
+      messageRow.setAttribute("class", "row message-row");
       
       messageDiv = document.createElement("div");
       messageDiv.setAttribute("id", "message-" + i.toString());
-      messageDiv.setAttribute("class", "col-sm-6 message-row");
+      messageDiv.setAttribute("class", "col message-text-div");
 
       messageP = document.createElement("p");
       messageP.setAttribute("class", "message");
       messageP.appendChild(document.createTextNode(message));
       
       messageDiv.appendChild(messageP);
+      messageRow.appendChild(messageDiv);
 
-      // messageDiv.innerHTML= "<p>" + message + "</p>";
-      // messageDiv.setAttribute("autocomplete","off");
-      // messageDiv.setAttribute("type", "text");
-      // messageDiv.setAttribute("cols", question.columns); // change input to textarea and use these settings for multi-line input
-      // messageDiv.setAttribute("rows", question.rows);
-      // messageDiv.setAttribute("size", message.columns);
-      // messageDiv.setAttribute("name", message.name);
-      // messageDiv.setAttribute("data-name", message.name);
-      // messageDiv.setAttribute("placeholder", message.placeholder);
-      // messageDiv.required = true; 
-    
-      allMessages.appendChild(messageDiv);
+      trial.levels.forEach(level => {
+        newInput = createInput(level, i, cols=2);
+        messageRow.appendChild(newInput);
+      });
+
+      allMessages.appendChild(messageRow);
       console.log(allMessages);
     }
-
 
 
     // ##### Display Scene #####
@@ -128,6 +131,28 @@ jsPsych.plugins["ca-label-ref-exp"] = (function () {
     var showBuilding = false;
 
     blockSetup(constructionTrial, showStimulus, showBuilding);
+
+
+    function createInput(level, msgNum, cols=20) {
+
+      let newInput = document.createElement("input");
+      newInput.setAttribute("id", "input-msg-" + msgNum.toString() + "-" + level);
+      newInput.setAttribute("class", "ref-exp-input");
+      newInput.setAttribute("autocomplete","off");
+      newInput.setAttribute("type", "text");
+      newInput.setAttribute("maxlength", "1");
+      newInput.setAttribute("title", level);
+      // newInput.setAttribute("cols", question.columns); // change input to textarea and use these settings for multi-line input
+      // newInput.setAttribute("rows", question.rows);
+      newInput.setAttribute("size", cols);
+      newInput.setAttribute("name", "msg-" + msgNum.toString() + "-" + level);
+      newInput.setAttribute("data-name", "msg-" + msgNum.toString() + "-" + level);
+      newInput.setAttribute("placeholder", "0");
+      newInput.required = true; 
+
+      return newInput;
+
+    };
 
 
 

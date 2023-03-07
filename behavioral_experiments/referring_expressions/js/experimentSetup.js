@@ -52,7 +52,7 @@ function setupExperiment() {
          */
 
 
-        trialMetadata = _.filter(metadata.trials, (trial) => trial['condition'] != 'foil');
+        trialMetadata = metadata.trials;
         
         window.totalPhaseTrials = trialMetadata.length;
 
@@ -80,7 +80,7 @@ function setupExperiment() {
 
         // append learning trials to (empty) trialList
         trialList = _.concat(trialList,
-                             phaseInstructions,
+                            //  phaseInstructions,
                              phaseTrials);
 
         // forward trial list to next setup function
