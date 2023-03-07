@@ -33,6 +33,7 @@ body{
 
 div#message-column{
     width: 500px;
+    min-width: 300px;
     padding: 20px 10px 20px 0px;
 }
 
@@ -51,7 +52,7 @@ div#messages-col {
 }
 
 .ref-icon{
-    margin: 0px 14px;
+    margin: 0px 17px;
 }
 
 #next-button{
@@ -68,6 +69,31 @@ p.message{
     text-align: left;
     margin-bottom: 0px;
     padding: 5px;
+    /* -webkit-touch-callout: none; */
+    -webkit-user-select: text;
+    -khtml-user-select: text;
+    -moz-user-select: text;
+    -ms-user-select: text;
+    user-select: text;
+}
+
+p.message::selection {
+    background: #ffb7b7; /* WebKit/Blink Browsers */
+  }
+
+p.message::-moz-selection {
+    background: #ffb7b7; /* Gecko Browsers */
+}
+
+input.ref-exp-list {
+    text-align: left;
+    font-size: small;
+    color: #c9353f;
+    margin: 0px 5px 5px 5px;
+    line-height: 1em;
+    background-color: #d5b71850;
+    border: none;
+    min-width: 100%;
 }
 
 div.message-text-div{

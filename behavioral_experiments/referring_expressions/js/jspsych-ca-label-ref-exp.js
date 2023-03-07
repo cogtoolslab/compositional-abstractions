@@ -119,13 +119,27 @@ jsPsych.plugins["ca-label-ref-exp"] = (function () {
       messageDiv.setAttribute("id", "message-" + i.toString());
       messageDiv.setAttribute("class", "col message-text-div");
 
+      // refExpDiv = document.createElement("div");
+      // refExpDiv.setAttribute("id", "ref-exps-div-" + i.toString());
+      // refExpDiv.setAttribute("class", "ref-exp-text-div");
+      refExpText = document.createElement("input");
+      refExpText.setAttribute("class", "ref-exp-input");
+      refExpText.setAttribute("autocomplete","off");
+      refExpText.setAttribute("type", "text");
+      refExpText.setAttribute("id", "ref-exps-list-" + i.toString());
+      refExpText.setAttribute("class", "ref-exp-list");
+      refExpText.setAttribute("cols", "50");
+      refExpText.setAttribute("size", "30");
+      refExpText.setAttribute("placeholder", "highlight expressions and press Return");
+      refExpText.appendChild(document.createTextNode(""));
+
       messageP = document.createElement("p");
       messageP.setAttribute("class", "message");
       messageP.appendChild(document.createTextNode(message));
       
       messageDiv.appendChild(messageP);
+      messageDiv.appendChild(refExpText);
       messageRow.appendChild(messageDiv);
-      
 
       trial.levels.forEach(level => {
         newInput = createInput(level, i, cols=2);
@@ -134,7 +148,7 @@ jsPsych.plugins["ca-label-ref-exp"] = (function () {
 
       allMessages.appendChild(messageRow);
       console.log(allMessages);
-    }
+    };
 
 
     // ##### Display Scene #####
@@ -207,12 +221,18 @@ jsPsych.plugins["ca-label-ref-exp"] = (function () {
         messageResponse['counts'] = {}
 
         for (let lev = 0; lev < trial.levels.length; lev++) {
+          // counts of ref exps
           const level = trial.levels[lev];
           var id = "input-msg-" + i.toString() + "-" + level;
           var q_element = document.querySelector('#' + id);
           var val = q_element.value ? q_element.value : "0";
           messageResponse['counts'][level] = val;
 
+          // ref exps
+          let instructionList = document.querySelector("#ref-exps-list-" + i.toString());
+          messageResponse['refExps'] = instructionList.value;
+
+          // warning counter
           if(val != "0") {
             changes += 1;
           }
@@ -248,9 +268,33 @@ jsPsych.plugins["ca-label-ref-exp"] = (function () {
           nWarnings: nWarnings});
       }
     }
+    // extra controls
+    function controlHandler(event) {
+      switch (event.keyCode) {
+        case 13: // space: switch selected block
+          event.preventDefault(); //stop spacebar scrolling 
+          saveRefExp();
+          break;
+      };
+    };
+
+    function saveRefExp(){
+      var selection = window.getSelection();
+      var text = selection.toString();
+      // console.log(text);
+      let msgNum = selection.anchorNode.parentNode.parentElement.id.split("-")[1]
+      let instructionList = document.querySelector("#ref-exps-list-" + msgNum.toString());
+      // console.log("#ref-exps-list-" + msgNum.toString());
+      instructionList.value += (text + ", ");
+    };
+
+    $(document).on("keydown", controlHandler);
+    
 
 
     function endTrial(trial_data) { // called by block_widget when trial ends
+
+      $(document).off("keydown", controlHandler);
 
       trial_data = _.extend(trial_data, trial.towerDetails, {
         stimulus: trial.stimulus,
