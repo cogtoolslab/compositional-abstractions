@@ -84,6 +84,21 @@ jsPsych.plugins["ca-label-ref-exp"] = (function () {
 
     let allMessages = document.querySelector("#all-messages");
 
+    // header
+    headerDiv = document.createElement("div");
+    headerDiv.setAttribute("id", "ref-header");
+    headerDiv.setAttribute("class", "row");
+
+    _.reverse(_.clone(trial.levels)).forEach(level => {
+      icon = document.createElement("p");
+      icon.setAttribute("id", "ref-header-"+level);
+      icon.setAttribute("class", "ref-icon");
+      icon.appendChild(document.createTextNode(level[0]));
+      headerDiv.appendChild(icon);
+    });
+
+    allMessages.appendChild(headerDiv);
+
 
     for (var i = 0; i < trial.messages.length; i++) {
       let message = trial.messages[i]["clean_msg"];
@@ -102,6 +117,7 @@ jsPsych.plugins["ca-label-ref-exp"] = (function () {
       
       messageDiv.appendChild(messageP);
       messageRow.appendChild(messageDiv);
+      
 
       trial.levels.forEach(level => {
         newInput = createInput(level, i, cols=2);

@@ -45,6 +45,15 @@ div#message-column{
 div#messages-col {
 } */
 
+#ref-header{
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+.ref-icon{
+    margin: 0px 14px;
+}
+
 .stim-no-resize{
     max-width: fit-content;
 }
