@@ -110,6 +110,7 @@ function setupExperiment() {
             // towerDetails: getTowerDetails(metadatum),
             dataForwarder: () => forwardDataToMongo,
             stimulus: {'blocks': scene}, // TODO
+            sceneID: metadatum.scene,
             offset: 0, // how far into the window do you want to display the block tower?
             // iti: expConfig.experimentParameters.learningITI
         }, expConfig["taskParameters"][trialType]);
@@ -117,18 +118,18 @@ function setupExperiment() {
         return(trial);
     };
 
-    getTowerDetails = function(metadatum){
-        return {
-            block_str: metadatum.block_str,
-            tower_id: metadatum.tower_id_tall,
-            tower_A_tall_id: metadatum.tower_A_tall_id,
-            tower_A_wide_id: metadatum.tower_A_wide_id,
-            tower_B_tall_id: metadatum.tower_B_tall_id,
-            tower_B_wide_id: metadatum.tower_B_wide_id,
-            tower_id_tall: metadatum.tower_id_tall,
-            composite_id: metadatum.tower_id_tall
-        }
-    };
+    // getTowerDetails = function(metadatum){
+    //     return {
+    //         block_str: metadatum.block_str,
+    //         tower_id: metadatum.tower_id_tall,
+    //         tower_A_tall_id: metadatum.tower_A_tall_id,
+    //         tower_A_wide_id: metadatum.tower_A_wide_id,
+    //         tower_B_tall_id: metadatum.tower_B_tall_id,
+    //         tower_B_wide_id: metadatum.tower_B_wide_id,
+    //         tower_id_tall: metadatum.tower_id_tall,
+    //         composite_id: metadatum.tower_id_tall
+    //     }
+    // };
 
     mapKeys = function(instText) {
         return instText.replace(/new_key/i,metadata.response_key_dict['new'].toUpperCase()).replace(/old_key/i,metadata.response_key_dict['old'].toUpperCase())

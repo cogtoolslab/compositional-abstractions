@@ -54,6 +54,11 @@ div#messages-col {
     margin: 0px 14px;
 }
 
+#next-button{
+    float: right;
+    margin-top: 10px;
+}
+
 .stim-no-resize{
     max-width: fit-content;
 }
@@ -75,7 +80,7 @@ div.message-text-div{
 input.ref-exp-input{
     margin: auto 3px;
     height: 30px;
-    width: 30px;
+    width: 36px;
 }
 
 div.message-row{
