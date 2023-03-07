@@ -1,0 +1,473 @@
+/*!
+* Chatroom Custom CSS
+*/
+body{
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+#waiting {
+    height: 5%;
+    width: 50%;
+    text-align: center;
+    top: 35%;
+    left:25%;
+    margin-right: auto;
+    margin-bottom: auto;
+    position: absolute;
+    font-size: 3vh;
+    font-weight:lighter;
+}
+
+#messages {
+    overflow-y: scroll;
+    border: 3px solid #1C363E;
+    background-color: rgba(255, 255, 255, 0.75);
+    height:20vh;
+    padding-left: 10px;
+}
+
+/* #instructions { */
+/*     font-weight:lighter; */
+/*     font-size: 150%; */
+/*     text-align:center; */
+/* } */
+
+.occluder {
+    float: middle;
+    border:solid 1px #FFFFFF;
+    height: 100vh;
+    width: 100%;
+    padding-top: 20%;
+    bottom: auto; left:0; right: 0;
+    background: #FFFFFF;
+    position: absolute;
+    z-index: 12;
+    opacity: 1;
+    color: black;
+  }
+
+.d-block{
+    display: inline-block;
+    vertical-align: middle;
+    padding: 2%;
+    width: 50%;
+    /* border: 1px solid #000; */
+
+}
+
+#story {
+    height:20vh;
+    overflow-y: scroll;
+}
+
+#object-grid {
+    display: grid;
+    position: absolute;
+    grid-template-columns: 15vw 15vw 15vw 15vw;
+    grid-template-rows: 15vw;
+    height: 15vw;
+    width: 60vw;
+    grid-gap: 2vh;
+    bottom:20%;
+    margin-right: auto
+}
+
+/* #trial-counter { */
+/*     height: 2vh; */
+/*     width: 20vh; */
+/*     text-align: right; */
+/*     margin-left: 85%; */
+/*     margin-top: 1%; */
+/*     margin-right: auto; */
+/*     margin-bottom: auto ; */
+/*     left:auto; right:5%; top:auto; bottom: 5%; */
+/*     font-size: 150%; */
+/*     position: absolute; */
+/* } */
+
+/* #block-counter { */
+/*     height: 2vh; */
+/*     width: 20vh; */
+/*     text-align: right; */
+/*     margin-left: 85%; */
+/*     margin-top: 1%; */
+/*     margin-right: auto; */
+/*     margin-bottom: auto ; */
+/*     font-size: 150%; */
+/*     left:5%; right:auto; top:auto; bottom: 5%; */
+/*     position: absolute; */
+/* } */
+
+.pressable { 
+    margin-left: auto;
+    margin-right: auto; 
+    vertical-align: middle;
+    height: 100%;
+    width: 100%;
+    display: block;
+}
+
+::-webkit-scrollbar {
+    -webkit-appearance: none;
+    width: 7px;
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 4px;
+    background-color: rgba(50,50,50,.5);
+    -webkit-box-shadow: 0 0 1px rgba(50,50,50,.5);
+}
+
+#stimulus-canvas{
+    resize: none;
+}
+
+#evnironment-canvas{
+    resize: none;
+}
+
+#chat-history { 
+    text-align: left;
+    /* background-color: rgba(255, 255, 255, 0.75); */
+    /* border: solid 1px #1c363e; */
+}
+
+#chatbox{
+    border: 3px solid #1C363E;
+    border-radius: 0px;
+}
+
+#feedback { 
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.75);
+    border: solid 4px #56be2d;
+    width: 450px;
+    margin-left: auto;
+    margin-right: auto; 
+    font-size: x-large;
+    font-weight: 700;
+}
+
+#practice-feedback{
+    color: red;
+}
+
+.btn{
+    border: solid 4px #1c363e;
+    border-radius: 0px;
+    font-family: 'Francois One', sans-serif;
+    font-size: 24px;
+    padding: 6px 12px;
+}
+
+#zoom-message p{
+    font-size: 18px;
+    margin: 0;
+}
+
+
+#confetti {
+    position: absolute;
+}
+
+#condition-heading {
+    display: inline-block;
+    text-align: center;
+    font-family: 'Francois One', sans-serif;
+    font-size: 28px;
+}
+
+
+#timer-text {
+    color: #00b300;
+    display: block;
+    float: right;
+    text-align: right;
+    font-family: 'Francois One', sans-serif;
+    font-size: 32px;  
+    
+}
+
+.scores {
+    display: block;
+    float: left;
+    text-align: left;
+    font-family: 'Francois One', sans-serif;
+    font-size: 24px;    
+    margin: 0px !important;
+}
+
+.counter {
+    font-size: 20px;
+    border: 8px solid #FFFFFF;
+}
+
+h5#trial-counter {
+    /* display: inline-block; */
+    float: left;
+}
+
+
+h5#trial-counter-center {
+    /* display: inline-block; */
+    text-align: center;
+    margin-bottom: 0;
+}
+#defaultCanvas0, #defaultCanvas1 {
+    padding-left: 0;
+    padding-right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    border: solid 6px #1C363E;
+    /* margin: 10px auto; */
+}
+
+/* .env-row{
+    min-width: 1000px;
+} */
+
+.env-div {
+    background-color: #FFD819;
+    padding: 20px;
+}
+
+
+#experiment .col-md{
+    padding: 40px;
+}
+
+#trial-number{
+    float: none;
+    margin: auto;
+}
+
+#trial-number p{
+    text-align: center;
+}
+
+#unfinished-shape{
+    margin-top: 80%;
+    color: maroon;
+}
+
+#parts{
+    position: relative;
+    z-index:-1;
+    top: 50%;
+    /* margin-left: auto;  removed to center align wides*/
+    margin-right: auto;
+    text-align: center;
+    left: 0;
+    right: 0;
+}
+
+.part-stimulus{
+    width: 100px;
+    /* object-fit: none; */
+}
+
+#right-stimulus{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    transform: translate(150px,0)
+}
+
+#left-stimulus{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    transform: translate(-150px,0);
+    object-position: 50px 0px;
+    /* transform: translate(-50%,0%); */
+}
+
+#top-stimulus{
+        /* margin-bottom: 0; */
+    /* object-position: 0px -75px; */
+    display: block;
+    position: absolute; 
+    bottom: 0px;
+    /* left: 0;  */
+    /* right: 0;  */
+    margin-left: auto; 
+    margin-right: auto; 
+    object-position: 0px -75px;
+    transform: translate(0px, -75px);
+    /* transform: translate(0%, -50%); */
+    /* transform: translate(0%, 50%); */
+    /* margin-right: auto; */
+    /* 2x margin */
+}
+
+.monochrome#top-stimulus{
+    object-position: 0px 0px;
+    transform: translate(0px, -150px);
+}
+
+.monochrome#left-stimulus{
+    object-position: 49px 0px;
+}
+
+.monochrome#right-stimulus{
+    transform: translate(147px, 0px);
+}
+
+.monochrome#mask{
+    width: 380px;
+}
+
+#bottom-stimulus{   
+     /* margin-bottom: 160px;  */
+    /* margin-right: auto; */
+    /* 2x margin */
+    display: block;
+    position: absolute; 
+    bottom: 0px;
+    /* left: 0;  */
+    /* right: 0; */
+    margin-left: auto; 
+    margin-right: auto; 
+    transform: translate(0px, 75px);
+    /* transform: translate(0%, -100%); */
+}
+
+
+
+#composite-stimulus{
+    width: 100px;
+}
+
+
+/* .jspsych-content {
+    max-width: 900px;
+} */
+
+.jspsych-content p {
+    max-width: 900px;
+}
+
+
+.consent {
+    text-align: left;
+}
+
+#start.btn{
+    margin-bottom: 10px;
+}
+
+img.fixation{
+    width: 100px; /* MUST BE THE SAME AS WIDTH OF composite_stimulus. Change image, not css */
+    z-index:1;
+    /* width: 150px !important;
+    display: block;
+    position: absolute;
+    bottom: 0;
+    transform: translate(-25%, 25%); */
+    /* height: 216px !important; */
+}
+
+#key-reminders{
+    position: absolute !important;
+    top: 90%;
+    /* left: 100%; */
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    text-align: center;
+}
+
+.key-reminder{
+    width: 70px;
+    display: inline-block;
+} 
+
+#z-reminder{
+    float: left;
+}
+
+#m-reminder{
+    float: right;
+}
+
+.green-text{
+    color: #00b300;
+}
+
+.red-text{
+    color: #c22714;
+}
+
+.blue-text{
+    color: #3FA9F5;
+}
+ 
+.response_emoji{
+    font-size: 20pt;
+    margin-bottom: 0;
+} 
+
+ 
+.left-emoji {
+    float: left;
+    transform: translate(-20px, 45px);
+} 
+
+.right-emoji {
+    float: right;
+    transform: translate(20px, 45px);
+} 
+
+.left-emoji-text{
+    float: left;
+    transform: translate(10px, 45px);
+} 
+
+.right-emoji-text{
+    float: right;
+    transform: translate(-10px, 45px);
+} 
+
+/* 
+#valid-emoji{
+    color: #00b300;
+}
+
+#invalid-emoji{
+    color: #a12714;
+}  */
+
+#feedback-div {
+    position: relative;
+    margin: auto;
+    /* width: 0;  */
+    height: 0;
+    text-align: center;
+}
+
+.feedback-text{
+    text-align: center;
+    width: 200px;
+    margin: auto;
+    font-size: 20pt;    
+}
+
+#feedback-correct{
+    /* color: #00b300; */
+}
+
+#feedback-incorrect{
+    /* color: #c22714; */
+}
+
+#mask{
+    width: 400px;
+}
