@@ -57,10 +57,14 @@ jsPsych.plugins["ca-label-ref-exp"] = (function () {
 
     html_content += '<div class="row pt-1 env-row">';
     html_content += '<div class="col env-div" id="stimulus-canvas"></div>';
+    html_content += '<div class="col env-div" id="message-column">';
+    html_content += '<div class="col" id="all-messages">';
     html_content += '</div>';
-    html_content += '<div class="row pt-1 env-row">';
-    html_content += '<div class="col env-div" id="all-messages"></div>';
     html_content += '</div>';
+    html_content += '</div>';
+    // html_content += '<div class="row pt-1 env-row">';
+    
+    // html_content += '</div>';
 
 
     
@@ -71,6 +75,8 @@ jsPsych.plugins["ca-label-ref-exp"] = (function () {
 
 
     // ##### Generate text boxes #####
+
+    trial.messages = _.concat(trial.messages,trial.messages,trial.messages);
 
     let allMessages = document.querySelector("#all-messages");
 

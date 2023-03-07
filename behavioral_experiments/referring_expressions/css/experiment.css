@@ -27,8 +27,27 @@ body{
     overflow-y: scroll;
     border: 3px solid #1C363E;
     background-color: rgba(255, 255, 255, 0.75);
-    height:20vh;
+    height:100%;
     padding-left: 10px;
+}
+
+#all-messages {
+    max-height: 450px;
+    overflow-y: scroll;
+    padding-left: 10px;
+}
+/* 
+div#messages-col {
+} */
+
+p.message{
+    font-size: smaller;
+    text-align: left;
+}
+
+div.message-row{
+    max-width: none;
+    background-color: #fff0a3;
 }
 
 /* #instructions { */
