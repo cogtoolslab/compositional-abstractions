@@ -1,7 +1,7 @@
 var config = {
   // dimensions
-  canvasHeight: 450,
-  canvasWidth: 450,
+  canvasHeight: 300,
+  canvasWidth: 300,
   worldHeight: 10,
   worldWidth: 12,
   discreteEnvHeight: 10,   // discrete world representation for y-snapping
@@ -39,7 +39,7 @@ config.stim_scale = config.sF; //scale of stimulus silhouette (same as sF here)
 // Building Environment parameters
 config.chocolateBlocks = true;
 config.menuHeight = config.canvasHeight / 4.2;
-config.menuWidth = config.canvasWidth;
+config.menuWidth = config.canvasWidth/1.3;
 config.floorHeight = config.canvasHeight / 3.5;
 config.floorY = config.canvasHeight - (config.floorHeight / 2);
 config.top = Math.round((config.canvasHeight - config.floorHeight) / config.stim_scale);

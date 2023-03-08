@@ -73,14 +73,14 @@ function setupExperiment() {
         //     trial['trialNum'] = trialNumCounter;
         // });
 
-        console.log('refexp trials:', phaseTrials);
+        // console.log('refexp trials:', phaseTrials);
 
         // add phase instructions
         phaseInstructions = makeInstructions(expConfig['phaseInstructions']);
 
         // append learning trials to (empty) trialList
         trialList = _.concat(trialList,
-                            //  phaseInstructions,
+                             phaseInstructions,
                              phaseTrials);
 
         // forward trial list to next setup function

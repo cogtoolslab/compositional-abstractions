@@ -61,13 +61,16 @@ jsPsych.plugins["ca-label-ref-exp"] = (function () {
 
   plugin.trial = function (display_element, trial) {
 
+    window.currTrialNum += 1;
+
     // ##### HTML Layout #####
 
     display_element.innerHTML = "";
 
     var html_content = "";
 
-    html_content += '<div class="row pt-1 env-row">';
+    html_content += '<p id="instruction"> For each message: </br>1) list all of the referring expressions (separated by commas) </br>2) count how many blocks (<img src = "../img/icons/block.png" class="ref-icon ref-icon-inline ref-icon-block">), towers (<img src = "../img/icons/tower.png" class="ref-icon ref-icon-inline">), and scenes (<img src = "../img/icons/scene.png" class="ref-icon ref-icon-inline">) are referred to</p>';
+    html_content += '<div class="row pt-1 env-row" id="ref-exp-env-row">';
     html_content += '<div class="col env-div stim-no-resize" id="stimulus-canvas"></div>';
     html_content += '<div class="col env-div" id="message-column">';
     html_content += '<div class="col" id="all-messages">';
@@ -76,7 +79,12 @@ jsPsych.plugins["ca-label-ref-exp"] = (function () {
     html_content += '</div>';
     html_content += '</div>';
     html_content += '</div>';
+    html_content += '<div class="row pt-1" id="button-row">';
+    html_content += '<h5 id="trial-counter-center">Instructions '  + window.currTrialNum + ' of ' + window.totalTrials + '</h5>';
     html_content += '<button id="next-button" type="button" class="btn btn-primary">Next</button>';
+    html_content += '</div>';
+    html_content += '</div>';
+
     // html_content += '<div class="row pt-1 env-row">';
     
     // html_content += '</div>';
@@ -98,10 +106,16 @@ jsPsych.plugins["ca-label-ref-exp"] = (function () {
     headerDiv.setAttribute("class", "row");
 
     _.reverse(_.clone(trial.levels)).forEach(level => {
-      icon = document.createElement("p");
-      icon.setAttribute("id", "ref-header-"+level);
-      icon.setAttribute("class", "ref-icon");
-      icon.appendChild(document.createTextNode(level[0]));
+      // icon = document.createElement("p");
+      // icon.setAttribute("id", "ref-header-"+level);
+      // icon.setAttribute("class", "ref-icon");
+      // icon.appendChild(document.createTextNode(level[0]));
+      
+      icon = document.createElement("img");
+      icon.src = "../img/icons/"+level+".png";
+      icon.setAttribute("id", "ref-icon-"+level);
+      icon.setAttribute("class", "ref-icon ref-icon-"+level);
+
       headerDiv.appendChild(icon);
     });
 
@@ -130,7 +144,7 @@ jsPsych.plugins["ca-label-ref-exp"] = (function () {
       refExpText.setAttribute("class", "ref-exp-list");
       refExpText.setAttribute("cols", "50");
       refExpText.setAttribute("size", "30");
-      refExpText.setAttribute("placeholder", "highlight expressions and press Return");
+      refExpText.setAttribute("placeholder", "type referring expressions or highlight and press Return");
       refExpText.appendChild(document.createTextNode(""));
 
       messageP = document.createElement("p");
@@ -147,7 +161,7 @@ jsPsych.plugins["ca-label-ref-exp"] = (function () {
       });
 
       allMessages.appendChild(messageRow);
-      console.log(allMessages);
+      // console.log(allMessages);
     };
 
 
@@ -242,7 +256,7 @@ jsPsych.plugins["ca-label-ref-exp"] = (function () {
         
       };
       
-      console.log(nWarnings);
+      // console.log(nWarnings);
 
       if (nWarnings < 1) {
         if (changes == 0) {

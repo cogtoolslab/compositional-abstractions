@@ -32,8 +32,7 @@ body{
 }
 
 div#message-column{
-    width: 500px;
-    min-width: 300px;
+    min-width: 400px;
     padding: 20px 10px 20px 0px;
 }
 
@@ -50,10 +49,39 @@ div#messages-col {
     display: flex;
     flex-direction: row-reverse;
 }
+/* #ref-header p{
+    display: block;
+    float: right;
+} */
 
-.ref-icon{
+/* img.ref-icon{
+    margin: 0px 17px;
+} */
+
+img.ref-icon {
+    height: 20px;
     margin: 0px 17px;
 }
+
+img.ref-icon-inline {
+    margin: 0px !important;
+    padding: 0px 2px;
+}
+
+img.ref-icon-block {
+    height: 8px;
+    margin-top: auto;
+}
+
+img#ref-icon-tower {
+    margin-right: 12px;
+}
+
+
+img#ref-icon-scene {
+    margin-right: 10px;
+}
+
 
 #next-button{
     float: right;
@@ -63,6 +91,32 @@ div#messages-col {
 .stim-no-resize{
     max-width: fit-content;
 }
+
+.stim-no-resize canvas{
+    margin: 75px 0px;
+}
+
+#ref-exp-env-row{
+    width: 900px;
+}
+
+p#instruction{
+    font-size: smaller;
+    margin: 0px;
+}
+
+#button-row{
+    display: block;
+}
+
+#button-row button{
+    float: right;
+}
+#button-row h5{
+    float: left;
+    margin-top: 10px;
+}
+
 
 p.message{
     font-size: smaller;
@@ -75,14 +129,15 @@ p.message{
     -moz-user-select: text;
     -ms-user-select: text;
     user-select: text;
+    cursor: text;
 }
 
 p.message::selection {
-    background: #ffb7b7; /* WebKit/Blink Browsers */
+    background: #ff7d7d; /* WebKit/Blink Browsers */
   }
 
 p.message::-moz-selection {
-    background: #ffb7b7; /* Gecko Browsers */
+    background: #ff7d7d; /* Gecko Browsers */
 }
 
 input.ref-exp-list {
@@ -292,6 +347,12 @@ div.message-row{
 h5#trial-counter {
     /* display: inline-block; */
     float: left;
+    align-self: center;
+}
+
+#trial-counter-center{
+    float: right;
+    align-self: center;
 }
 
 
