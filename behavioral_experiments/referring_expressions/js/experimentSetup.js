@@ -80,7 +80,7 @@ function setupExperiment() {
 
         // append learning trials to (empty) trialList
         trialList = _.concat(trialList,
-                             phaseInstructions,
+                            //  phaseInstructions,
                              phaseTrials);
 
         // forward trial list to next setup function
@@ -151,7 +151,11 @@ function setupExperiment() {
             var instructionPages = []
 
             if (expConfig.sonaCompInfo && studyLocation == 'SONA'){
-                instructionPages = _.concat(instructionPages, expConfig.sonaCompensation);
+                instructionPages = _.concat(instructionPages, expConfig.sonaCompInfo);
+            };
+
+            if (expConfig.ProlificCompInfo && studyLocation == 'Prolific'){
+                instructionPages = _.concat(instructionPages, expConfig.ProlificCompInfo);
             };
 
             if (expConfig.mainInstructions){

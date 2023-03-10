@@ -83,7 +83,7 @@ img#ref-icon-scene {
 }
 
 
-#next-button{
+#next-button, #flag-button{
     float: right;
     margin-top: 10px;
 }
@@ -162,6 +162,18 @@ input.ref-exp-input{
     margin: auto 3px;
     height: 30px;
     width: 36px;
+}
+
+/* Chrome, Safari, Edge, Opera */
+input.ref-exp-input::-webkit-outer-spin-button,
+input.ref-exp-input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input.ref-exp-input[type=number] {
+  -moz-appearance: textfield;
 }
 
 div.message-row{

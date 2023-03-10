@@ -55,11 +55,17 @@ jsPsych.plugins["ca-label-ref-exp"] = (function () {
       messages: {
         type: jsPsych.plugins.parameterType.OBJECT,
         default: [],
+      },
+      collectRefExps: {
+        type: jsPsych.plugins.parameterType.BOOL,
+        default: false,
       }
     },
   };
 
   plugin.trial = function (display_element, trial) {
+
+    let flagged = false;
 
     window.currTrialNum += 1;
 
@@ -69,7 +75,11 @@ jsPsych.plugins["ca-label-ref-exp"] = (function () {
 
     var html_content = "";
 
-    html_content += '<p id="instruction"> For each message: </br>1) list all of the referring expressions (separated by commas) </br>2) count how many blocks (<img src = "../img/icons/block.png" class="ref-icon ref-icon-inline ref-icon-block">), towers (<img src = "../img/icons/tower.png" class="ref-icon ref-icon-inline">), and scenes (<img src = "../img/icons/scene.png" class="ref-icon ref-icon-inline">) are referred to</p>';
+    if(trial.collectRefExps){
+      html_content += '<p id="instruction"> For each message: </br>1) list all of the referring expressions (separated by commas) </br>2) count how many blocks (<img src = "../img/icons/block.png" class="ref-icon ref-icon-inline ref-icon-block">), towers (<img src = "../img/icons/tower.png" class="ref-icon ref-icon-inline">), and scenes (<img src = "../img/icons/scene.png" class="ref-icon ref-icon-inline">) are referred to</p>';
+    } else {
+      html_content += '<p id="instruction"> For each message, count the number of expressions referring to (<img src = "../img/icons/block.png" class="ref-icon ref-icon-inline ref-icon-block">), towers (<img src = "../img/icons/tower.png" class="ref-icon ref-icon-inline">), and scenes (<img src = "../img/icons/scene.png" class="ref-icon ref-icon-inline">).</p>';
+    };
     html_content += '<div class="row pt-1 env-row" id="ref-exp-env-row">';
     html_content += '<div class="col env-div stim-no-resize" id="stimulus-canvas"></div>';
     html_content += '<div class="col env-div" id="message-column">';
@@ -80,8 +90,9 @@ jsPsych.plugins["ca-label-ref-exp"] = (function () {
     html_content += '</div>';
     html_content += '</div>';
     html_content += '<div class="row pt-1" id="button-row">';
-    html_content += '<h5 id="trial-counter-center">Instructions '  + window.currTrialNum + ' of ' + window.totalTrials + '</h5>';
+    html_content += '<h5 id="trial-counter-center">'  + window.currTrialNum + ' of ' + window.totalTrials + '</h5>';
     html_content += '<button id="next-button" type="button" class="btn btn-primary">Next</button>';
+    html_content += '<button id="flag-button" type="button" class="btn btn-danger mr-3">Flag</button>';
     html_content += '</div>';
     html_content += '</div>';
 
@@ -133,30 +144,32 @@ jsPsych.plugins["ca-label-ref-exp"] = (function () {
       messageDiv.setAttribute("id", "message-" + i.toString());
       messageDiv.setAttribute("class", "col message-text-div");
 
-      // refExpDiv = document.createElement("div");
-      // refExpDiv.setAttribute("id", "ref-exps-div-" + i.toString());
-      // refExpDiv.setAttribute("class", "ref-exp-text-div");
-      refExpText = document.createElement("input");
-      refExpText.setAttribute("class", "ref-exp-input");
-      refExpText.setAttribute("autocomplete","off");
-      refExpText.setAttribute("type", "text");
-      refExpText.setAttribute("id", "ref-exps-list-" + i.toString());
-      refExpText.setAttribute("class", "ref-exp-list");
-      refExpText.setAttribute("cols", "50");
-      refExpText.setAttribute("size", "30");
-      refExpText.setAttribute("placeholder", "type referring expressions or highlight and press Return");
-      refExpText.appendChild(document.createTextNode(""));
+      if (trial.collectRefExps) {
+        // refExpDiv = document.createElement("div");
+        // refExpDiv.setAttribute("id", "ref-exps-div-" + i.toString());
+        // refExpDiv.setAttribute("class", "ref-exp-text-div");
+        refExpText = document.createElement("input");
+        refExpText.setAttribute("class", "ref-exp-input");
+        refExpText.setAttribute("autocomplete","off");
+        refExpText.setAttribute("type", "text");
+        refExpText.setAttribute("id", "ref-exps-list-" + i.toString());
+        refExpText.setAttribute("class", "ref-exp-list");
+        refExpText.setAttribute("cols", "50");
+        refExpText.setAttribute("size", "30");
+        refExpText.setAttribute("placeholder", "type referring expressions or highlight and press Return");
+        refExpText.appendChild(document.createTextNode(""));
+      };
 
       messageP = document.createElement("p");
       messageP.setAttribute("class", "message");
       messageP.appendChild(document.createTextNode(message));
       
       messageDiv.appendChild(messageP);
-      messageDiv.appendChild(refExpText);
+      if (trial.collectRefExps) {messageDiv.appendChild(refExpText)};
       messageRow.appendChild(messageDiv);
 
       trial.levels.forEach(level => {
-        newInput = createInput(level, i, cols=2);
+        newInput = createCounterInput(level, i, cols=2);
         messageRow.appendChild(newInput);
       });
 
@@ -184,8 +197,34 @@ jsPsych.plugins["ca-label-ref-exp"] = (function () {
 
     blockSetup(constructionTrial, showStimulus, showBuilding);
 
+    // show red tick marks
+    window.blockUniverse.p5stim.draw = () => {
+      
+      window.blockUniverse.p5stim.draw;
+      showMarker(window.blockUniverse.p5stim);
 
-    function createInput(level, msgNum, cols=20) {
+      function showMarker(p5stim) {
+        p5stim.push();
+        p5stim.stroke([255, 0, 0]);
+        p5stim.strokeWeight(1);
+        p5stim.line(
+          config.canvasWidth / (4/3),
+          config.canvasHeight - config.floorHeight,
+          config.canvasWidth / (4/3),
+          config.canvasHeight - config.floorHeight + 10
+        );
+        p5stim.line(
+          config.canvasWidth / 4,
+          config.canvasHeight - config.floorHeight,
+          config.canvasWidth / 4,
+          config.canvasHeight - config.floorHeight + 10
+        );
+        p5stim.pop();
+      }
+    };
+
+
+    function createCounterInput(level, msgNum, cols=20) {
 
       let newInput = document.createElement("input");
       newInput.setAttribute("id", "input-msg-" + msgNum.toString() + "-" + level);
@@ -213,6 +252,11 @@ jsPsych.plugins["ca-label-ref-exp"] = (function () {
 
     $("#next-button").click(() => {
       validateForm();
+    });
+
+    $("#flag-button").click(() => {
+      flagged = !flagged;
+      document.querySelector('#flag-button').innerText = flagged ? 'Unflag' : 'Flag';
     });
 
     let nWarnings = 0;
@@ -243,8 +287,10 @@ jsPsych.plugins["ca-label-ref-exp"] = (function () {
           messageResponse['counts'][level] = val;
 
           // ref exps
-          let instructionList = document.querySelector("#ref-exps-list-" + i.toString());
-          messageResponse['refExps'] = instructionList.value;
+          if (trial.collectRefExps) {
+            let instructionList = document.querySelector("#ref-exps-list-" + i.toString());
+            messageResponse['refExps'] = instructionList.value;
+          }
 
           // warning counter
           if(val != "0") {
@@ -259,8 +305,8 @@ jsPsych.plugins["ca-label-ref-exp"] = (function () {
       // console.log(nWarnings);
 
       if (nWarnings < 1) {
-        if (changes == 0) {
-          alert("It looks like you didn't record any referring expressions. Please enter how many blocks, towers, and scenes are referred to in each message.");
+        if (changes == 0 && !flagged) {
+          alert("It looks like you didn't record any referring expressions. Please enter how many blocks, towers, and scenes are referred to in each message. If the instruction look unusual, do your best to identify any referring expressions, then press the flag button and move on to the next trial.");
           nWarnings += 1;
           return false;
         }
@@ -286,8 +332,10 @@ jsPsych.plugins["ca-label-ref-exp"] = (function () {
     function controlHandler(event) {
       switch (event.keyCode) {
         case 13: // space: switch selected block
-          event.preventDefault(); //stop spacebar scrolling 
-          saveRefExp();
+          if (trial.collectRefExps) {
+            event.preventDefault(); //stop spacebar scrolling 
+            saveRefExp();
+          };
           break;
       };
     };
