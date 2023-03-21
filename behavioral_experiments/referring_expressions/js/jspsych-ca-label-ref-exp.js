@@ -29,7 +29,7 @@ jsPsych.plugins["ca-label-ref-exp"] = (function () {
       },
       levels: {
         type: jsPsych.plugins.parameterType.OBJECT,
-        default: ["block", "tower", "scene"],
+        default: ["block", "subtower", "tower", "pair"],
       },
       sceneID: {
         type: jsPsych.plugins.parameterType.OBJECT,
@@ -76,9 +76,9 @@ jsPsych.plugins["ca-label-ref-exp"] = (function () {
     var html_content = "";
 
     if(trial.collectRefExps){
-      html_content += '<p id="instruction"> For each message: </br>1) list all of the referring expressions (separated by commas) </br>2) count how many blocks (<img src = "../img/icons/block.png" class="ref-icon ref-icon-inline ref-icon-block">), towers (<img src = "../img/icons/tower.png" class="ref-icon ref-icon-inline">), and scenes (<img src = "../img/icons/scene.png" class="ref-icon ref-icon-inline">) are referred to</p>';
+      html_content += '<p id="instruction"> For each message: </br>1) list all of the referring expressions (separated by commas) </br>2) count how many blocks (<img src = "../img/icons/block.png" class="ref-icon ref-icon-inline ref-icon-block">), subtowers (<img src = "../img/icons/subtower.png" class="ref-icon ref-icon-inline ref-icon-subtower">), towers (<img src = "../img/icons/tower.png" class="ref-icon ref-icon-inline">), and pairs (<img src = "../img/icons/pair.png" class="ref-icon ref-icon-inline">) are referred to</p>';
     } else {
-      html_content += '<p id="instruction"> For each message, count the number of expressions referring to (<img src = "../img/icons/block.png" class="ref-icon ref-icon-inline ref-icon-block">), towers (<img src = "../img/icons/tower.png" class="ref-icon ref-icon-inline">), and scenes (<img src = "../img/icons/scene.png" class="ref-icon ref-icon-inline">).</p>';
+      html_content += '<p id="instruction"> For each message, count the number of expressions referring to blocks (<img src = "../img/icons/block.png" class="ref-icon ref-icon-inline ref-icon-block">), subtowers (<img src = "../img/icons/subtower.png" class="ref-icon ref-icon-inline ref-icon-subtower">), towers (<img src = "../img/icons/tower.png" class="ref-icon ref-icon-inline">), and pairs (<img src = "../img/icons/pair.png" class="ref-icon ref-icon-inline">).</p>';
     };
     html_content += '<div class="row pt-1 env-row" id="ref-exp-env-row">';
     html_content += '<div class="col env-div stim-no-resize" id="stimulus-canvas"></div>';
@@ -276,6 +276,7 @@ jsPsych.plugins["ca-label-ref-exp"] = (function () {
         messageResponse = {};
         messageResponse['msgNum'] = i;
         messageResponse['message'] = trial.messages[i]['clean_msg'];
+        messageResponse['message_id'] = trial.messages[i]['message_id'];
         messageResponse['counts'] = {}
 
         for (let lev = 0; lev < trial.levels.length; lev++) {
@@ -306,7 +307,7 @@ jsPsych.plugins["ca-label-ref-exp"] = (function () {
 
       if (nWarnings < 1) {
         if (changes == 0 && !flagged) {
-          alert("It looks like you didn't record any referring expressions. Please enter how many blocks, towers, and scenes are referred to in each message. If the instruction look unusual, do your best to identify any referring expressions, then press the flag button and move on to the next trial.");
+          alert("It looks like you didn't record any referring expressions. Please enter how many blocks, subtowers, towers, and pairs are referred to in each message. If the instruction look unusual, do your best to identify any referring expressions, then press the flag button and move on to the next trial.");
           nWarnings += 1;
           return false;
         }

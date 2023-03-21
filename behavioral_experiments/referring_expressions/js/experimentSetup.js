@@ -176,7 +176,7 @@ function setupExperiment() {
             var cc = studyLocation == 'Prolific' ? expConfig.completionCode :
                 (studyLocation == 'SONA' ? workerID : null)
 
-            var exitSurvey = constructDefaultExitSurvey(studyLocation, cc);
+            var exitSurvey = constructComeBackExitSurvey(studyLocation, cc);
 
             trialList.push(exitSurvey) //push
 

@@ -45,6 +45,11 @@ div#message-column{
 div#messages-col {
 } */
 
+.ref-kinds {
+    max-width: 900px;
+    text-align: left;
+}
+
 #ref-header{
     display: flex;
     flex-direction: row-reverse;
@@ -70,6 +75,11 @@ img.ref-icon-inline {
 
 img.ref-icon-block {
     height: 8px;
+    margin-top: auto;
+}
+
+img.ref-icon-subtower {
+    height: 11px;
     margin-top: auto;
 }
 
@@ -506,6 +516,7 @@ h5#trial-counter-center {
 
 .jspsych-content p {
     max-width: 900px;
+    text-align: left;
 }
 
 

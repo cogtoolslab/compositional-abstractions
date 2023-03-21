@@ -71,6 +71,34 @@ var constructDefaultConsent = function (institution) {
   return consent;
 };
 
+var constructComeBackExitSurvey = function (studyLocation, completionCode) {
+  var comments_block = {
+    type: "survey-text",
+    preamble:
+      '<p>Thank you for participating in our study!</p><p><strong>Click "Finish" to complete the experiment and receive compensation.</strong> If you have any comments, please let us know in the form below.<p></p>Enjoyed this study? You can participate multiple times! We hope to see you again!</p>',
+    questions: [{ prompt: "Did you run into any technical difficulties?", name: "technical"},
+                { prompt: "Were you confused at all about what you had to do? What did you find confusing?", name: "confused" },
+                { prompt: "Do you have any other comments to share with us?", name: "comments" }],
+    button_label: "Finish",
+    on_finish: function () {
+      window.experimentFinished = true;
+      document.body.innerHTML =
+        "<p> Please wait. You will be redirected back to "+studyLocation+" in a few moments.</p>";
+      setTimeout(function () {
+        if (studyLocation == 'Prolific'){
+          location.href =
+            "https://app.prolific.co/submissions/complete?cc=" + completionCode; // add correct completion code
+        }
+        else if (studyLocation == 'SONA'){
+          location.href =
+          "https://ucsd.sona-systems.com/webstudy_credit.aspx?experiment_id=2252&credit_token=8e4fb5c680cd4cdabe1681e8fece8f56&survey_code=" + completionCode; 
+        }
+      }, 500);
+    },
+  };
+  return comments_block;
+};
+
 var constructDefaultExitSurvey = function (studyLocation, completionCode) {
   var comments_block = {
     type: "survey-text",
