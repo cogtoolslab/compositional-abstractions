@@ -3,7 +3,7 @@ expConfig = {
     "dbname": "compositional_abstractions",
     "colname": "referring_expressions",
     "stimColName": "ca_ref_exp",
-    "iterationName": "ca_ref_exp_prolific_block_tower_deve",
+    "iterationName": "ca_ref_exp_prolific_block_tower_dev",
     "completionCode": "C3CFSKP0",
     "devMode": false,
     "experimentParameters": { // parameters for the experiment.
