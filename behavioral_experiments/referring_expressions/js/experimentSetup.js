@@ -10,7 +10,7 @@ function setupExperiment() {
     var socket = io.connect();
 
     // var workerID = urlParams.PROLIFIC_PID;
-    var workerID = urlParams.PROLIFIC_PID ? urlParams.PROLIFIC_PID : (urlParams.SONA_ID ? urlParams.SONA_ID : null)
+    var workerID = urlParams.PROLIFIC_PID ? urlParams.PROLIFIC_PID : (urlParams.SONA_ID ? urlParams.SONA_ID : (urlParams.WORKER_ID ? urlParams.WORKER_ID : null))
     var studyLocation = urlParams.PROLIFIC_PID ? 'Prolific' : (urlParams.SONA_ID ? 'SONA' : null)
     const gameID = UUID();
 
@@ -24,6 +24,7 @@ function setupExperiment() {
         socket.emit('getStim',
             {
                 gameID: gameID,
+                workerID: workerID,
                 stimColName: expConfig.stimColName,
             });
 
@@ -43,6 +44,12 @@ function setupExperiment() {
                 setupOtherTrials(trialList);
             });
         });
+
+        socket.on('noStim', () => {
+            console.log('no stims received');
+            alert('No stimuli left!')
+        });
+
     };
 
     setupPhase = function (trialList, callback){
@@ -103,6 +110,8 @@ function setupExperiment() {
 
         // create trial and add parameters for trial type from config
         let trial = _.extend({
+            batch: metadata.batch,
+            dyad_gameid: metadatum.dyad_gameid,
             type: trialPlugin,
             trialType: trialType,
             condition: metadatum.condition,

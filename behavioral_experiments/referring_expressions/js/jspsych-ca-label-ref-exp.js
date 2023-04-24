@@ -58,7 +58,15 @@ jsPsych.plugins["ca-label-ref-exp"] = (function () {
       },
       collectRefExps: {
         type: jsPsych.plugins.parameterType.BOOL,
-        default: false,
+        default: true,
+      },
+      dyad_gameid: {
+        type: jsPsych.plugins.parameterType.STRING,
+        default: '',
+      },
+      batch: {
+        type: jsPsych.plugins.parameterType.INT,
+        default: -1,
       }
     },
   };
@@ -333,7 +341,13 @@ jsPsych.plugins["ca-label-ref-exp"] = (function () {
     // extra controls
     function controlHandler(event) {
       switch (event.keyCode) {
-        case 13: // space: switch selected block
+        // case 32:
+        //   if (trial.collectRefExps) {
+        //     event.preventDefault(); //stop spacebar scrolling 
+        //     saveRefExp();
+        //   };
+        //   break;
+        case 13: // enter: switch selected block
           if (trial.collectRefExps) {
             event.preventDefault(); //stop spacebar scrolling 
             saveRefExp();
@@ -344,12 +358,17 @@ jsPsych.plugins["ca-label-ref-exp"] = (function () {
 
     function saveRefExp(){
       var selection = window.getSelection();
-      var text = selection.toString();
-      // console.log(text);
-      let msgNum = selection.anchorNode.parentNode.parentElement.id.split("-")[1]
-      let instructionList = document.querySelector("#ref-exps-list-" + msgNum.toString());
-      // console.log("#ref-exps-list-" + msgNum.toString());
-      instructionList.value += (text + ", ");
+      if(selection){
+        var text = selection.toString();
+        // console.log(text);
+        let msgNum = selection.anchorNode.parentNode.parentElement.id.split("-")[1]
+        let instructionList = document.querySelector("#ref-exps-list-" + msgNum.toString());
+        // console.log(instructionList.value);
+        if(instructionList){
+          // console.log("#ref-exps-list-" + msgNum.toString());
+          instructionList.value += (text + ", ");
+        };
+      };
     };
 
     $(document).on("keydown", controlHandler);
@@ -365,7 +384,9 @@ jsPsych.plugins["ca-label-ref-exp"] = (function () {
         levels: trial.levels,
         sceneID: trial.sceneID,
         leftTower: trial.sceneID[0],
-        rightTower: trial.sceneID[1]
+        rightTower: trial.sceneID[1],
+        dyad_gameid: trial.dyad_gameid,
+        batch: trial.batch
       });
 
       console.log(trial_data);

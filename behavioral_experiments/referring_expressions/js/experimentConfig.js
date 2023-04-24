@@ -2,10 +2,10 @@ expConfig = {
     "experimentName": "ca_referring_expressions",
     "dbname": "compositional_abstractions",
     "colname": "referring_expressions",
-    "stimColName": "ca_ref_exp",
+    "stimColName": "ca_ref_exp_internal",
     "iterationName": "ca_ref_exp_prolific_block_tower_dev",
     "completionCode": "C3CFSKP0",
-    "devMode": false,
+    "devMode": true,
     "experimentParameters": { // parameters for the experiment.
       "setITISomewhere": 1000
     },
