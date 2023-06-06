@@ -34,10 +34,10 @@ secondary_color = '#22AAAA'
 #### Read data, as output by compabs_analysis_df_generator.ipynb
 ```{r}
 # import dataframes
-df_block = read.csv('../../results/csv/df_block_cogsci21.csv')
-df_chat = read.csv('../../results/csv/df_chat_cogsci21.csv')
-df_trial = read.csv('../../results/csv/df_trial_cogsci21.csv')
-df_exit = read.csv('../../results/csv/df_exit_cogsci21.csv')
+df_block = read.csv('../results/csv/df_block_cogsci21.csv')
+df_chat = read.csv('../results/csv/df_chat_cogsci21.csv')
+df_trial = read.csv('../results/csv/df_trial_cogsci21.csv')
+df_exit = read.csv('../results/csv/df_exit_cogsci21.csv')
 
 df_block$repNum = as.numeric(as.character(df_block$repNum))
 df_chat$trialNum = as.numeric(as.character(df_chat$trialNum))
@@ -142,7 +142,7 @@ acc.boot %>%
     # scale_y_continuous(breaks = seq(-0.5,2.5,0.5)) +
     ggtitle('builder accuracy') +
     theme(legend.position = 'FALSE', text = element_text(size=16), element_line(size=1), plot.title = element_text(hjust = 0.5, size=16), element_rect(size=2, color="#00000"))
-ggsave('./plots/CunusA_ORLR20_F1_reps.pdf', width=7, height = 11, units='cm', useDingbats = F)
+# ggsave('../results/plots/ORLR/CA_ORLR20_F1_reps.pdf', width=7, height = 11, units='cm', useDingbats = F)
 ```
 #### Proportion of trials that are perfect reconstructions
 ```{r}
@@ -221,7 +221,7 @@ wc.boot %>%
     # scale_y_continuous(breaks = seq(-0.5,2.5,0.5)) +
     ggtitle('words per trial') +
     theme(legend.position = 'FALSE', text = element_text(size=16), element_line(size=1), plot.title = element_text(hjust = 0.5, size=16), element_rect(size=2, color="#00000"))
-ggsave('./plots/unused/CA_ORLR20_word_count_reps.pdf', width=7, height = 11, units='cm', useDingbats = F)
+ggsave('../results/plots/ORLR/CA_ORLR20_word_count_reps.pdf', width=7, height = 11, units='cm', useDingbats = F)
 ```
 
 #### Linear mixed effects model for word count
@@ -262,7 +262,7 @@ cc.boot %>%
     #scale_x_continuous(limits = c(0.6,4.4), breaks = c(1,2,3,4),labels=c('first', '2nd','3rd','final')) +
     # scale_y_continuous(breaks = seq(-0.5,2.5,0.5)) +
     theme(legend.position = 'FALSE', text = element_text(size=16), element_line(size=1), plot.title = element_text(hjust = 0.5, size=16), element_rect(size=2, color="#00000"))
-ggsave('./plots/unused/CA_ORLR20_char_count_reps.pdf', width=7, height = 11, units='cm', useDingbats = F)
+ggsave('../results/plots/ORLR/CA_ORLR20_char_count_reps.pdf', width=7, height = 11, units='cm', useDingbats = F)
 ```
 
 ```{r}
@@ -300,7 +300,7 @@ mess.boot %>%
     scale_y_continuous(limits = c(1,6), breaks = c(1,2,3,4,5,6),labels=c(' 1', ' 2',' 3',' 4',' 5',' 6')) +
     ggtitle('messages per trial') +
     theme(legend.position = 'FALSE', text = element_text(size=16), element_line(size=1), plot.title = element_text(hjust = 0.5, size=16), element_rect(size=2, color="#00000"))
-ggsave('./plots/unused/CA_ORLR20_messages_reps.pdf', width=7, height = 11, units='cm', useDingbats = F)
+ggsave('../results/plots/ORLR/CA_ORLR20_messages_reps.pdf', width=7, height = 11, units='cm', useDingbats = F)
 ```
 
 #### Linear mixed effects model for number of messages
@@ -339,7 +339,7 @@ chat.time.boot %>%
     scale_y_continuous(limits = c(40000,200000), labels = c('40','60','120','160','200')) +
     ggtitle('messaging time') +
     theme(legend.position = 'FALSE', text = element_text(size=16), element_line(size=1), plot.title = element_text(hjust = 0.5, size=16), element_rect(size=2, color="#00000"))
-ggsave('./plots/CA_ORLR20_chat_duration_reps.pdf', width=7, height = 11, units='cm', useDingbats = F)
+ggsave('../results/plots/ORLR/CA_ORLR20_chat_duration_reps.pdf', width=7, height = 11, units='cm', useDingbats = F)
 ```
 
 ```{r}
@@ -367,6 +367,11 @@ block.time.boot %>%
     ylab("total build duration") +
     xlab("repetition") +
     theme_few() +
+    # scale_x_continuous(breaks = round(seq(1, 4, by =1),1)) +
+    # xlim(c(0.5,4.5)) +  
+    # ylim(c(0,7)) +
+    #scale_x_continuous(limits = c(0.6,4.4), breaks = c(1,2,3,4),labels=c('first', '2nd','3rd','final')) +
+    # scale_y_continuous(breaks = seq(-0.5,2.5,0.5)) +
     theme(legend.position = 'FALSE', text = element_text(size=16), element_line(size=1), element_rect(size=2, color="#00000"))
 
 ```
@@ -375,120 +380,7 @@ block.time.boot %>%
 m.block.time = lmer(data = df_trial, total_block_duration ~ repNum + (1 + repNum | gameid) + (1 | towerSet))
 summary(m.block.time)
 ```
-
-
-## Referring expression analyses
-
-
-
-```{r}
-df_ref_exps = read_csv('../../results/csv/df_ref_exps.csv')
-df_ref_exps_melt = read_csv('../../results/csv/df_ref_exps_melt.csv')
-```
-
-
-```{r}
-m1 = lmer(data = df_ref_exps_melt, n_refs ~ exp_type + (1 | workerID) + (1 | tower_pair))
-m2 = lmer(data = df_ref_exps_melt, n_refs ~ rep + exp_type + ( 1| workerID) + (1 | tower_pair))
-m3 = lmer(data = df_ref_exps_melt, n_refs ~ rep*exp_type + (1 | workerID) + (1 | tower_pair))
-# m4 = lmer(data = df_ref_exps_melt, n_refs ~ rep*exp_type + (1 | tower_pair))
-# m5 = lmer(data = df_ref_exps_melt, n_refs ~ rep* exp_type + (1 | tower_pair))
-anova(m1, m2, m3)
-summary(m3)
-
-```
-
-```{r}
-df_ref_exps_melt
-```
-
-
-## Read in Data
-```{r}
-
-#Sum ref exp then divide by 4 (since we have 4 raters)
-dat_grouped = df_ref_exps_melt %>%  group_by(dyad_gameid, trial_num, rep, exp_type) %>% 
-  summarise(sum_ref = sum(n_refs)/4) # 4 annotators
-
-dat_grouped = spread(dat_grouped,exp_type	,sum_ref)
-
-dat_grouped$mixType = ifelse(dat_grouped$block>0 & dat_grouped$tower > 0, 'mixed', ifelse(dat_grouped$block>0, 'block',ifelse(dat_grouped$tower>0,'tower','none')))
-```
-
-### Plot
-```{r}
-
-df_ref =  as.data.frame(table(dat_grouped$rep, dat_grouped$mixType))
-df_ref
-df_ref = df_ref %>% rename(repNum = Var1, mixType = Var2)
-
-df_ref = df_ref %>% filter(mixType != 'none')
-
-ggplot(df_ref, aes(x=repNum, y = Freq, fill=mixType)) + 
-    geom_bar(stat="identity",position = 'fill') +
-    scale_fill_manual(values=c('black', primary_color, "light grey")) +
-  xlab("repetition") +
-  ylab('frequency') +
-  # ggtitle('builder accuracy') +
-  theme(legend.position = 'FALSE', text = element_text(size=16), element_line(size=1), plot.title = element_text(hjust = 0.5, size=16), element_rect(size=2, color="#00000"))
-
-ggsave("./plots/referring_expressions_barplot.pdf", width=20, height = 26, units='cm', useDingbats = F)
-```
-```{r}
-aggregate_trials <- df_ref_exps_melt %>% 
-  group_by(dyad_gameid, trial_num, rep, exp_type, workerID) %>% 
-  summarise(sum_refs = sum(n_refs))
-aggregate_trials
-
-aggregate_ratings <- aggregate_trials %>% 
-  group_by(dyad_gameid, trial_num, rep, exp_type) %>% 
-  summarise(mean_refs = mean(sum_refs))
-aggregate_ratings
-
-aggregate_reps <- aggregate_ratings %>% 
-   group_by(rep, exp_type) %>% 
-   summarise(mu = mean(mean_refs), sd = sd(mean_refs), n = n(), sem = sd(mean_refs)/sqrt(n()))
-aggregate_reps
-```
-
-
-
-```{r}
-ggplot(aggregate_reps, aes(x=rep, y=mu, colour=exp_type)) + geom_line(size = 1.5)+
-  geom_errorbar(aes(ymin=mu-sem, ymax=mu+sem), width = 0, size = 1.5)+
-  geom_point(size = 4) +
-  theme_few() +
-  xlab("repetition")+
-  ylab("referring expressions")+
-  xlim(c(0.5,4.5)) +  
-  theme(legend.position = 'FALSE', text = element_text(size=16),
-        element_line(size=1),
-        element_rect(size=2, color="#00000"))+
-  scale_color_manual(values=c("#151515","#7D7D7D"))
-ggsave('./plots/CA_ORLR20_referring_exps.pdf', width=7, height = 11, units='cm', useDingbats = F)
-
-# 
-# data(assemblage)
-# chiperm(data=assemblage, B=199, resid=TRUE, cramer=TRUE)
-
-```
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-## OLD: Referring expression analyses (we will replace these data with new ones from people outside of the lab)
+## Referring expression analyses (we will replace these data with new ones from people outside of the lab)
 
 ```{r}
 
@@ -558,7 +450,7 @@ ggplot(interaction, aes(x=repNum, y=mu, colour=expType)) + geom_line(size = 1.5)
 
 ## Read in Data
 ```{r}
-dat = read_csv('../ORLR-Justin-Julia-rating.csv')
+dat = read_csv('ORLR-Justin-Julia-rating.csv')
 
 #Sum ref exp then divide by two (since we have two raters)
 dat_grouped = dat %>%  group_by(dyad, trialNum,repNum,refType) %>% 
@@ -591,11 +483,7 @@ ggplot(df_ref, aes(x=repNum, y = Freq, fill=mixType)) +
 ggsave("referring_expressions_barplot.pdf")
 ```
 
-```{r}
-ppt_rep_word_frequencies = read_csv('../../results/csv/ppt_rep_word_frequencies.csv')
-```
-
-## Adapted from ORLR_chiperm_analysis.R
+## Copied from ORLR_chiperm_analysis.R
 ```{r}
 library(tidyverse)
 library(here)
@@ -603,14 +491,9 @@ library(lme4)
 library(tidyboot)
 library(ggthemes)
 library(tm)
+# library(GmAMisc)
 library(tidytext)
-```
 
-```{r}
-ppt_rep_word_frequencies = read_csv('../../results/csv/ppt_rep_word_frequencies.csv')
-```
-
-```{r}
 #chiperm function
 chiperm <- function(data, B=999, thresh=1.96){
   rowTotals <- rowSums(data)
@@ -629,57 +512,17 @@ chiperm <- function(data, B=999, thresh=1.96){
   two.sided.p <- 2 * min(p.lowertail, p.uppertail)
   return(two.sided.p)
 }
-```
-
-```{r}
-ppt_rep_word_frequencies = read_csv('../../results/csv/ppt_rep_word_frequencies.csv')
-ppt_rep_word_frequencies
-```
-```{r}
-my_tab <- ppt_rep_word_frequencies %>% 
-  filter(rep %in% c('1','4')) %>% 
-  filter(dyad_gameid =="0110-5784fec9-109a-4d7a-a343-4820f4d42144") %>% 
-  select(-one_of(c("rep","dyad_gameid","...1")))
 
 
-
-```
-
-
-```{r}
-# Assume we have three different datasets we want to compare
-datasets <- list(data1, data2, data3)
-
-# Calculate the number of comparisons
-num_comparisons <- length(datasets)
-
-# Initialize an empty vector to store p-values
-p_values <- vector(mode = "numeric", length = num_comparisons)
-
-# Run the permutation test for each dataset and store the p-values
-for (i in seq_along(datasets)) {
-  p_values[i] <- chiperm(datasets[[i]], B=999)
-}
-
-# Bonferroni correction
-alpha <- 0.05
-corrected_alpha <- alpha / num_comparisons
-
-# Determine which p-values are significant after the correction
-significant <- p_values < corrected_alpha
-
-```
-
-```{r}
-# ### Purr function to calculate chiperm
-# df = read_csv("../results/csv/JJ_content.csv") %>%
-#   select(gameid, repNum, content) %>%
-#   filter(repNum %in% c(0,3)) %>%
-#   group_by(gameid, repNum) %>%
-#   summarise(content=paste(content, collapse=" ")) %>%
-#   # filter out these weird games (B, R, NAs)
-#   filter(!(gameid %in% c('9387-db1af5ad-b089-48ad-a730-baee40f08177', 
-#                          '4909-705b801e-4ec3-4910-b180-bb7612d80f25')))
+### Purr function to calculate chiperm
+df = read_csv("../results/csv/JJ_content.csv") %>%
+  select(gameid, repNum, content) %>%
+  filter(repNum %in% c(0,3)) %>%
+  group_by(gameid, repNum) %>%
+  summarise(content=paste(content, collapse=" ")) %>%
+  # filter out these weird games (B, R, NAs)
+  filter(!(gameid %in% c('9387-db1af5ad-b089-48ad-a730-baee40f08177', 
+                         '4909-705b801e-4ec3-4910-b180-bb7612d80f25')))
 
 #TRY function on all gameids with purr
 ps <- purrr::map_dbl(unique(df$gameid), ~ {
