@@ -11,6 +11,7 @@ class BlockLexicon(dict) :
         dict.__init__(self)
         self.__dict__ = self
         unassigned_lexemes = lexemes.copy()
+        self.lexemes = tuple(lexemes)
         
         for primitive in primitives :
             if primitive in ['v', 'h'] :
@@ -36,7 +37,8 @@ class BlockLexicon(dict) :
         parse expression e written in DSL into language
         if dsl element unrecognized, choose at random
         '''
-        return self.get(e) if e in self else choice(lexemes)
+        unassigned_primitives = [k for k in self.keys() if k[:5] == 'chunk']
+        return self.get(e) if e in self else choice(self.lexemes)
     
     def language_to_dsl(self, e) :
         '''
