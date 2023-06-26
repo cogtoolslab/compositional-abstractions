@@ -25,7 +25,10 @@ def parse(s, base_dsl_only = False):
                 if base_dsl_only:
                     return(p(e[1]))
                 else:
-                    return 'chunk_' + render.lookup[str(utilities.unparseSExpression(e[1]))][0].name + ' '
+                    try:
+                        return 'chunk_' + render.lookup[str(utilities.unparseSExpression(e[1]))][0].name + ' '
+                    except:
+                        return 'chunk_unk'
 
             if e[0] == 'lambda':
                 assert len(e) == 2

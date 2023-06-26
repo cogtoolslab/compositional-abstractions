@@ -95,8 +95,14 @@ lookup = {
 '(lambda (1x2 (right 6 (1x2 (left 5 $0)))))': [SupervisedTower('9', '(v (r 6) v)')],
 '(lambda (2x1 (left 1 (1x2 (1x2 $0)))))': [SupervisedTower('8', '(h (l 1) v v)')],
 '(lambda (2x1 (left 4 (#(lambda (2x1 (left 1 (1x2 (1x2 $0))))) $0))))': [towers['L']],
-'(lambda (right 1 (2x1 $0)))': [SupervisedTower('6', '(h)')]
+'(lambda (right 1 (2x1 $0)))': [SupervisedTower('6', '(h)')],
+# added 06/23/23
+'(lambda (lambda (right $0 (1x2 (right 6 (1x2 (left 5 (2x1 (right 4 (2x1 $1))))))))))': [towers['Pi']],
+'(lambda (lambda (2x1 (left 4 (#(lambda (lambda (2x1 (left 1 (1x2 (1x2 (right $0 $1))))))) $0 $1)))))': [towers['L']],
+'(lambda (#(lambda (2x1 (left 4 (#(lambda (2x1 (left 1 (1x2 (1x2 $0))))) $0)))) (right 9 (#(lambda (1x2 (right 6 (1x2 (left 5 (2x1 (right 4 (2x1 $0)))))))) $0))))': [towers['LPi']]
 }
+
+
 
 from program import *
 
