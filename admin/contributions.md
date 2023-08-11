@@ -42,7 +42,7 @@ These example contributions are adapted from CRediT (Contributor Roles Taxonomy)
 * Writing – review & editing: Preparation, creation and/or presentation of the published work by those from the original research group, specifically critical review, commentary or revision – including pre* or post-publication stages.
 
 -----
-## Will McCarthy
+## XXX [first author]
 
 * Developed paired building experiment
 * Ran paired building experiment
@@ -58,7 +58,7 @@ These example contributions are adapted from CRediT (Contributor Roles Taxonomy)
 * Ran prior elicitation experiment
 
 
-## Robert Hawkins
+## YYY [Second Author]
 
 * Conceptualization of research goals and aims
 * Design of dyadic task
@@ -69,7 +69,7 @@ These example contributions are adapted from CRediT (Contributor Roles Taxonomy)
 * Revised paper
 
 
-## Haoliang Wang
+## ZZZ [Third Author]
 
 * Modeling
   * Developed program synthesis model for the block domain
