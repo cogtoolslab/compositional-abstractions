@@ -39,12 +39,11 @@ Contains two parts: library learning, and language coordination.
 
 See `./model/README.md` for more details
 
+
+
 ### Analysis
 
 Analysis for specific experiments is stored in e.g. `./analysis/experiment_name`
 For paired building experiment (cogsci21): `./analysis/paired_building`
 
 For *model* analysis, see `./model/analysis`
-
-### Paper
-Here is a link to the paper repo: https://github.com/cogtoolslab/compositional-abstractions-latex.

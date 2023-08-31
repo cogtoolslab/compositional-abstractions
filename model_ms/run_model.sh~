@@ -1,2 +1,0 @@
-# parallel --bar --colsep ',' "sh ./run_model.sh {1} {2}" :::: input/grid.csv
-webppl coordinate_DSL_pragmatic_speaker.wppl --require webppl-json -- --alpha $1 --beta $2
