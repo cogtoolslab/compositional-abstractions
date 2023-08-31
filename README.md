@@ -6,7 +6,8 @@ Project investigating how humans learn and communicate about abstract procedures
 ## Paired building task
 
 <p style="font-size: smaller;">
-  <img width="70%" src="img/task.png"></img> </p>
+  <img width="70%" alt="task schematic" src="https://github.com/cogtoolslab/compositional-abstractions/assets/5262024/650adfb9-072e-4623-8551-dceb14974ea4">
+</p>
 
 Participants are paired and designated the role of Architect or Builder.
 Architects see a target scene, and send text instructions to the Builder.
