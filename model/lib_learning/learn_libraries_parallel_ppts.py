@@ -12,8 +12,8 @@ import os
 
 g0 = Grammar.uniform(primitives, continuationType=ttower)
 ws = [1.5, 3.2, 3.3, 9.6]
-path = './model/lib_learning/dsls/'
-n_ppts = 49
+path = '/Users/will/compositional-abstractions/model/lib_learning/dsls/'
+n_ppts = 5
 
 towers = dict(C = SupervisedTower("C", "(h (l 1) v v (r 1) h)"),
                     L = SupervisedTower("L", "(h (l 4) h (l 1) v v)"),
@@ -43,19 +43,26 @@ def save_results(results, path, ppt, i):
 
 def process_ppt(ppt, path):
     trial_seq = load_data(ppt, path)
+    print('trial seq:', trial_seq)
     jobs = [[(towers[tower_scene].original, None) for tower_scene in trial_seq[:i+1]] for i in range(len(trial_seq)+1)]
 
     for i, job in enumerate(jobs):
         print('this job is of length', i+1)
         job_w_combinations = [(job, w) for w in ws]
-        with ProcessPool() as pool:
-            results = pool.map(process_job, job_w_combinations)
+        # with ProcessPool() as pool:
+            # results = pool.map(process_job, job_w_combinations)
+        results = list(map(process_job, job_w_combinations))
         print(results)
         save_results(results, path, ppt, i)
 
 def main():
-    for ppt in range(1, n_ppts+1):
-        process_ppt(ppt, path)
+
+    ppts = range(1, n_ppts+1)
+    with ProcessPool() as pool:
+        pool.map(lambda ppt: process_ppt(ppt, path), ppts)
+    
+    # for ppt in range(1, n_ppts+1):
+    #     process_ppt(ppt, path)
 
 if __name__ == "__main__":
     main()
