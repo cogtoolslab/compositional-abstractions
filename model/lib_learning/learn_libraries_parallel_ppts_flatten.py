@@ -14,7 +14,7 @@ import os
 
 g0 = Grammar.uniform(primitives, continuationType=ttower)
 ws = [1.5, 3.2, 3.3, 9.6]
-path = '/Users/will/compositional-abstractions/model/lib_learning/dsls/'
+path = '/home/wmccarth/compositional-abstractions/model/lib_learning/dsls/'
 n_ppts = 49
 
 towers = dict(C = SupervisedTower("C", "(h (l 1) v v (r 1) h)"),
@@ -97,7 +97,7 @@ def main():
 
     # [process_task(task, path) for task in tasks]
     
-    with ProcessPoolExecutor(max_workers=8) as executor: # assuming 30 cores
+    with ProcessPoolExecutor(max_workers=16) as executor: # assuming 30 cores
         executor.map(process_task, tasks)
 
 if __name__ == "__main__":
