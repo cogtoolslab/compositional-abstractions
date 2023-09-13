@@ -1,1 +1,0 @@
-Stimulus design for the latest version of this project has moved to cogtoolslab/lax - "language abstractions experiments".
