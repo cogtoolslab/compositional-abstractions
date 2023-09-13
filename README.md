@@ -19,3 +19,15 @@ See [tutorial](https://github.com/cogtoolslab/compositional_abstractions_tutoria
 * Convention formation component: `model/convention_formation`
 
 See `./model/README.md` for more details
+
+
+## To run analysis scripts
+
+1. Clone this repo.
+2. Setup virtualenv
+   1. Create a virtual env: `python3 -m venv comp_abs`
+   2. Activate it: `source comp_abs/bin/activate`
+   3. Install dependencies: `pip install -r requirements.txt`
+   4. Install new kernel for jupyter notebook  `python -m ipykernel install --user --name=comp_abs`
+   5. In the directory for this project run `jupyter notebook` > change kernel to `comp_abs`.
+3. Open /analysis/paired_building/analyses.ipynb
