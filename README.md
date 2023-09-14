@@ -1,6 +1,6 @@
 # Learning to communicate about shared procedural abstractions
 
-See [tutorial](https://github.com/cogtoolslab/compositional_abstractions_tutorial) for a pedagogical walkthrough of our analysis and modeling pipeline.
+See [tutorial](https://github.com/cogtoolslab/compositional-abstractions-tutorial) for a pedagogical walkthrough of our analysis and modeling pipeline.
 
 ## Paired building task
 
