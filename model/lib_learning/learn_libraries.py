@@ -12,8 +12,8 @@ import os
 
 g0 = Grammar.uniform(primitives, continuationType=ttower)
 ws = [1.5, 3.2, 3.3, 9.6]
-path = './model/lib_learning/dsls/'
-n_ppts = 49
+path = '/Users/will/compositional-abstractions/model/lib_learning/dsls/'
+n_ppts = 1
 
 towers = dict(C = SupervisedTower("C", "(h (l 1) v v (r 1) h)"),
                     L = SupervisedTower("L", "(h (l 4) h (l 1) v v)"),
@@ -80,6 +80,7 @@ def process_ppt(ppt, path):
     for i, job in enumerate(jobs):
         print('this job is of length', i+1)
         job_w_combinations = [(job, w) for w in ws]
+        print('job combos has length:', len(job_w_combinations))
         with ProcessPool() as pool:
             results = pool.map(process_job, job_w_combinations)
         print(results)

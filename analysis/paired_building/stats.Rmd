@@ -161,7 +161,7 @@ acc.boot <- acc.indiv %>%
 acc.boot
 ```
 
-
+### Figure 3A
 ```{r}
 ggplot(acc.boot, aes(x=repNum, y=empirical_stat)) +
   geom_jitter(aes(y = trialScore), width = 0.1, height = 2, 
@@ -244,7 +244,7 @@ summary(m.wc.poisson)
 
 ## Number of discrete messages 
 
-### Make figure S1 in supplemental
+### Figure S1
 
 ```{r}
 n_messages.indiv <- df_trial %>%
@@ -288,7 +288,7 @@ m.mes = df_trial %>%
               data = ., family = 'poisson')
 summary(m.mes)
 ```
-
+# Model
 ## library contents plot
 
 ```{r}
@@ -306,6 +306,7 @@ tower_color = '#009948'
 scene_color = '#E1AD01'
 ```
 
+### figure 5A
 ```{r}
 # Sum raw referential expression counts then divide by 4 (since we have 4 raters)
 # d.ref = d.ref.raw %>% 
@@ -354,6 +355,7 @@ tower_color = '#009948'
 scene_color = '#E1AD01'
 ```
 
+### Figure 4C
 ```{r}
 # Sum raw referential expression counts then divide by 4 (since we have 4 raters)
 d.ref = d.ref.raw %>% 
@@ -403,7 +405,7 @@ aggregate_reps <- d.ref.raw %>%
   tidyboot_mean(mean_refs)
 ```
 
-
+### Figure 4B
 ```{r}
 # ggplot(aggregate_reps, aes(x=rep, y=empirical_stat, colour=exp_type)) + geom_line(size = 1.5)+
 #   geom_errorbar(aes(ymax=ci_upper, ymin = ci_lower), width = 0, size = 1.5)+
